@@ -1,0 +1,30 @@
+body
+    margin 0
+    display flex
+    place-items center
+    min-width 320px
+    min-height 100vh
+h1
+    font-size 3.2em
+    line-height 1.1
+#app
+    max-width 1280px
+    margin 0 auto
+    padding 2rem
+    text-align center
+a.logo
+    display inline-block
+    position relative
+    &[href='https://stylus-lang.com/']::after
+        position absolute
+        inset 0
+        content ''
+        filter blur(3em)
+        background-image linear-gradient(-45deg, #86b91a60 30%, #edd53260)
+    &.own:hover
+        filter drop-shadow(0 0 2em #64ff8399)
+    img
+        height 6em
+        padding 1.5em
+        will-change filter
+        transition filter 300ms
