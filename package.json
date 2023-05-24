@@ -10,9 +10,7 @@
   },
   "devDependencies": {
     "vite": "^4.3.2",
-    "vite-plugin-pug-transformer": "^1.0.3"
-  },
-  "dependencies": {
+    "vite-plugin-pug-transformer": "^1.0.3",
     "stylus": "^0.59.0"
   }
 }
