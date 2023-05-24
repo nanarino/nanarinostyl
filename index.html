@@ -9,15 +9,10 @@
 </head>
 
 <body>
-    <div id="app">
-        <a href="/examples/index.html" class="logo own">
-            <img src="/icon.svg" alt="My logo" />
-        </a>
-        <a href="https://stylus-lang.com/" class="logo">
-            <img src="/stylus.svg" alt="stylus logo" />
-        </a>
-    </div>
-    <script type="module" src="/main.js"></script>
+    <template data-type="pug" data-src="./cover.pug"></template>
+    <script type="module">
+        import './cover.styl'
+    </script>
 </body>
 
 </html>
