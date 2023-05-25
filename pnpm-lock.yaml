@@ -2,11 +2,13 @@ lockfileVersion: 5.4
 
 specifiers:
   '@marlonmarcello/snowpack-plugin-pug': ^1.0.3
+  jstransformer-marked: ^1.3.0
   snowpack: ^3.8.8
   snowpack-plugin-stylus: ^1.0.6
 
 devDependencies:
   '@marlonmarcello/snowpack-plugin-pug': 1.0.3
+  jstransformer-marked: 1.3.0
   snowpack: 3.8.8
   snowpack-plugin-stylus: 1.0.6
 
@@ -1634,6 +1636,13 @@ packages:
       verror: 1.10.0
     dev: true
 
+  /jstransformer-marked/1.3.0:
+    resolution: {integrity: sha512-ZJeG/leW+W+o8w78BiRBtBMyakJY3mtQsNtMfoh2DminvUyrgHmadDwdcbnj3hKRdenYRdQLhjCqfx8ejsJ9Mw==}
+    engines: {node: '>=8.17.0'}
+    dependencies:
+      marked: 4.3.0
+    dev: true
+
   /jstransformer/1.0.0:
     resolution: {integrity: sha512-C9YK3Rf8q6VAPDCCU9fnqo3mAfOH6vUGnMcP4AQAYIEpWtfGLpwOTmZ+igtdK5y+VvI2n3CyYSzy4Qh34eq24A==}
     dependencies:
@@ -1735,6 +1744,12 @@ packages:
     transitivePeerDependencies:
       - bluebird
       - supports-color
+    dev: true
+
+  /marked/4.3.0:
+    resolution: {integrity: sha512-PRsaiG84bK+AMvxziE/lCFss8juXjNaWzVbN5tXAm4XjeaS9NAHhop+PjQxz2A9h8Q4M/xGmzP8vqNwy6JeK0A==}
+    engines: {node: '>= 12'}
+    hasBin: true
     dev: true
 
   /merge-stream/2.0.0:

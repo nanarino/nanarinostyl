@@ -21,7 +21,7 @@ export default {
         /* ... */
     },
     devOptions: {
-        openUrl: "http://localhost:8080/docs/cover.html"
+        openUrl: "/docs/cover.html"
     },
     buildOptions: {
         /* ... */
