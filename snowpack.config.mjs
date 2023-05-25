@@ -3,7 +3,7 @@ export default {
     mount: {
         public: { url: '/', static: true },
         docs: { url: '/docs' },
-        stylus: { url: '/stylus' },
+        lib: { url: '/lib' },
     },
     plugins: [
         "@marlonmarcello/snowpack-plugin-pug",
@@ -14,8 +14,9 @@ export default {
         // {"match": "routes", "src": ".*", "dest": "/index.html"},
     ],
     optimize: {
-        /* Example: Bundle your final build: */
-        // "bundle": true,
+        bundle: true,
+        minify: true,
+        // target: 'es2020',
     },
     packageOptions: {
         /* ... */
