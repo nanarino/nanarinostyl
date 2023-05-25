@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="icon", type="image/svg+xml",href="/icon.svg")
+        title style library
+    body
+        #app
+            a.logo.own(href="/docs/index.html")
+                img(src="/icon.svg", alt="My logo")
+            a.logo(href="https://stylus-lang.com/")
+                img(src="/stylus.svg", alt="stylus logo")
+        script(type="module").
+            import './cover.styl'

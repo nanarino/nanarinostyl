@@ -1,16 +1,16 @@
 {
   "name": "nanarinostyl",
-  "private": true,
+  "author": "☘",
+  "license": "MIT",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "snowpack dev",
+    "build": "snowpack build"
   },
   "devDependencies": {
-    "vite": "^4.3.2",
-    "vite-plugin-pug-transformer": "^1.0.3",
-    "stylus": "^0.59.0"
+    "@marlonmarcello/snowpack-plugin-pug": "^1.0.3",
+    "snowpack": "^3.8.8",
+    "snowpack-plugin-stylus": "^1.0.6"
   }
 }
