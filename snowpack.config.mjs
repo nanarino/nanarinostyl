@@ -25,6 +25,7 @@ export default {
         openUrl: "/docs/cover.html"
     },
     buildOptions: {
-        /* ... */
+        out: "./dist",
+        baseUrl: "/nanarinostyl/"
     },
 }
