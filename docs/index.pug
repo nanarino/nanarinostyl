@@ -4,13 +4,20 @@ html(lang="zh-CN")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="icon", type="image/svg+xml", href="/logo/favicon.svg")
         title 样式库
         script(type="module").
             import '/lib/index.js'
     body 
         h1 test
+        h2 code test
         :marked
             ```js
             import '/index.styl'
 
             ```
+        h2 icon test
+        span(style='color:red')
+            include /icon/media/fill/mute-fill.svg
+        span(style='color:aqua')
+            include /icon/media/outline/live-broadcast.svg

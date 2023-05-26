@@ -6,7 +6,7 @@ export default {
         lib: { url: '/lib' },
     },
     plugins: [
-        "@marlonmarcello/snowpack-plugin-pug",
+        ["@marlonmarcello/snowpack-plugin-pug", { basedir: "./public" }],
         "snowpack-plugin-stylus"
     ],
     routes: [
