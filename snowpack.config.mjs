@@ -26,6 +26,7 @@ export default {
     },
     buildOptions: {
         out: "./dist",
-        baseUrl: "/nanarinostyl/"
+        baseUrl: "/nanarinostyl/",
+        clean: true
     },
 }
