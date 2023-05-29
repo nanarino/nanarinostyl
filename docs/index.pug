@@ -8,10 +8,11 @@ html(lang="zh-CN")
         title 样式库
         script(type="module").
             import '/lib/index.js'
+            import './marked.styl'
     body 
         h1 test
         h2 code test
-        div(class=`${prefix}-font-mono`)
+        div(class="marked")
             :marked
                 ```js
                 import '/index.styl'

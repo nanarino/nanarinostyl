@@ -13,7 +13,7 @@ a.logo
     display inline-block
     position relative
     &.own:hover
-        filter drop-shadow(0 0 2em #64ff8399)
+        filter drop-shadow(0 0 2em unquote("rgba(var(--green-3), .6)"))
     img
         height 6em
         padding 1.5em
@@ -24,4 +24,4 @@ a.logo
         inset 0
         content ''
         filter blur(3em)
-        background-image linear-gradient(-45deg, unquote('rgba(var(--lime-7), .3)'), 30%, unquote('rgba(var(--yellow-3), .3)'))
+        background-image linear-gradient(-45deg, unquote("rgba(var(--lime-7), .3)"), 30%, unquote("rgba(var(--yellow-3), .3)"))
