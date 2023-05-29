@@ -6,7 +6,12 @@ export default {
         lib: { url: '/lib' },
     },
     plugins: [
-        ["@marlonmarcello/snowpack-plugin-pug", { basedir: "./public" }],
+        ["@marlonmarcello/snowpack-plugin-pug", {
+            basedir: "./public",
+            data: {
+                prefix: "nan"
+            }
+        }],
         "snowpack-plugin-stylus"
     ],
     routes: [

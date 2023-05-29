@@ -11,11 +11,12 @@ html(lang="zh-CN")
     body 
         h1 test
         h2 code test
-        :marked
-            ```js
-            import '/index.styl'
+        div(class=`${prefix}-font-mono`)
+            :marked
+                ```js
+                import '/index.styl'
 
-            ```
+                ```
         h2 icon test
         span(style='color:red')
             include /icon/media/fill/mute-fill.svg
