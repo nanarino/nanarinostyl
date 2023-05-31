@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "thisismanta.stylus-supremacy"
+        "thisismanta.stylus-supremacy",
+        "astro-build.astro-vscode"
     ]
 }

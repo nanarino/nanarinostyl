@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@stylus/*": [
+                "src/lib/*"
+            ],
+            "@icon/*": [
+                "src/assets/icon/*"
+            ],
+            "@layout/*": [
+                "src/layouts/*"
+            ]
+        }
+    }
+}

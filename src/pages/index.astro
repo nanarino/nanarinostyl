@@ -1,10 +1,26 @@
+---
+import App from "@layout/app.astro";
+---
+
+<App>
+    <div id="cover">
+        <a href="" class="logo own">
+            <img src="/favicon.svg" alt="My logo" />
+        </a>
+        <a href="https://stylus-lang.com/" class="logo">
+            <img src="/stylus.svg" alt="Stylus logo" />
+        </a>
+    </div>
+</App>
+
+<style lang="stylus">
 body
     margin 0
     display flex
     place-items center
     min-width 320px
     min-height 100vh
-#app
+#cover
     max-width 1280px
     margin 0 auto
     padding 2rem
@@ -25,3 +41,4 @@ a.logo
         content ''
         filter blur(3em)
         background-image linear-gradient(-45deg, unquote("rgba(var(--lime-7), .3)"), 30%, unquote("rgba(var(--yellow-3), .3)"))
+</style>

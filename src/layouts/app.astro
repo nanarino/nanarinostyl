@@ -1,0 +1,16 @@
+---
+import "@stylus/index.styl";
+
+const { title } = Astro.props;
+---
+
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{title || "样式库"}</title>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>

@@ -5,8 +5,7 @@
     "stylusSupremacy.insertBraces": false, // 是否插入大括号
     "stylusSupremacy.insertNewLineAroundImports": false, // import之后是否换行
     "stylusSupremacy.insertNewLineAroundBlocks": false, // 两个选择器中是否换行
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features",
+    "[astro]": {
         "editor.tabSize": 4,
     },
     "[stylus]": {

@@ -5,13 +5,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "snowpack dev",
-    "build": "snowpack build"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
-  "devDependencies": {
-    "@marlonmarcello/snowpack-plugin-pug": "^1.0.3",
-    "jstransformer-marked": "^1.3.0",
-    "snowpack": "^3.8.8",
-    "snowpack-plugin-stylus": "^1.0.6"
+  "dependencies": {
+    "astro": "^2.5.5",
+    "stylus": "^0.59.0"
   }
 }
