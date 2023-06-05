@@ -1,8 +1,11 @@
 ---
 import App from "@layout/app.astro";
+import prefix from "src/mixin/prefix";
+
+console.log(prefix);
 ---
 
-<App>
+<App title={prefix}>
     <div id="cover">
         <a href="" class="logo own">
             <img src="/favicon.svg" alt="My logo" />
