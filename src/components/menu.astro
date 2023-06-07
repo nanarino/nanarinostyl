@@ -1,0 +1,10 @@
+---
+import prefix from "src/mixin/prefix";
+const { menu } = Astro.props;
+---
+
+<aside class={`${prefix}-layout-sider`}>
+    <ul>
+        {menu.map((item: string) => <li>{item}</li>)}
+    </ul>
+</aside>

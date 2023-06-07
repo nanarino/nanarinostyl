@@ -1,0 +1,19 @@
+---
+import prefix from "src/mixin/prefix";
+---
+<header class={`${prefix}-layout-header`}>
+    <a href="/">
+        <img src="/favicon.svg" alt="My logo" class="logo"/>
+    </a>
+</header>
+<style lang="stylus">
+header
+    display flex
+    align-items center
+    height var(--line-height-8)
+    box-shadow var(--box-shadow-divider-bottom)
+    padding .5em 1em
+    img.logo
+        width var(--font-size-8)
+        height var(--font-size-8)
+</style>
