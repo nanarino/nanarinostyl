@@ -1,6 +1,6 @@
 import setPrefix from "@stylus/variable/prefix.styl?raw";
 
-let prefix = "";
+let prefix: string = "";
 try {
     eval(setPrefix);
 } catch (error) {

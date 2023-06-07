@@ -6,13 +6,13 @@ import Footer from "src/components/footer.astro";
 import Menu from "src/components/menu.astro";
 import { getMenu } from "src/mixin/menu";
 
-const menu = await getMenu("./src/pages");
+const menu = await getMenu("./src/pages/menu");
 ---
 
 <App title={prefix}>
     <Header />
     <section class={`${prefix}-layout ${prefix}-layout-has-sider`}>
-        <Menu menu={menu} />
+        <Menu menu={menu.map(url => `/menu${url}`)} />
         <main class={`${prefix}-layout-content`}>main</main>
     </section>
     <Footer />
