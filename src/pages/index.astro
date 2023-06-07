@@ -1,8 +1,6 @@
 ---
 import App from "@layout/app.astro";
 import prefix from "src/mixin/prefix";
-
-console.log(prefix);
 ---
 
 <App title={prefix}>
@@ -18,11 +16,7 @@ console.log(prefix);
 
 <style lang="stylus">
 body
-    margin 0
-    display flex
     place-items center
-    min-width 320px
-    min-height 100vh
 #cover
     max-width 1280px
     margin 0 auto

@@ -1,0 +1,46 @@
+:root {
+    /* 圆角 */
+    --border-radius-base: 4px;
+    --border-radius-xss: var(--border-radius-base);
+    --border-radius-md: calc(var(--border-radius-base) * 2);
+    --border-radius-lg: calc(var(--border-radius-base) * 4);
+
+    /* 字号 */
+    --font-size-base: 12px;
+    --font-size-1: var(--font-size-base);
+    --font-size-2: calc(var(--font-size-1) + 2);
+    --font-size-3: calc(var(--font-size-2) + 2);
+    --font-size-4: calc(var(--font-size-3) + 4);
+    --font-size-5: calc(var(--font-size-4) + 4);
+    --font-size-6: calc(var(--font-size-5) + 6);
+    --font-size-7: calc(var(--font-size-6) + 8);
+    --font-size-8: calc(var(--font-size-7) + 8);
+    --font-size-9: calc(var(--font-size-8) + 10);
+    --font-size-10: calc(var(--font-size-9) + 12);
+    --font-size-body: var(--font-size-2);
+    --font-size-h5: var(--font-size-3);
+    --font-size-h4: var(--font-size-4);
+    --font-size-h3: var(--font-size-5);
+    --font-size-h2: var(--font-size-6);
+    --font-size-h1: var(--font-size-7);
+
+    /* 行高 */
+    --font-offset-parent: 4px;
+    --line-height-1: calc(var(--font-size-1) + var(--font-offset-parent) * 2);
+    --line-height-2: calc(var(--font-size-2) + var(--font-offset-parent) * 2);
+    --line-height-3: calc(var(--font-size-3) + var(--font-offset-parent) * 2);
+    --line-height-4: calc(var(--font-size-4) + var(--font-offset-parent) * 2);
+    --line-height-5: calc(var(--font-size-5) + var(--font-offset-parent) * 2);
+    --line-height-6: calc(var(--font-size-6) + var(--font-offset-parent) * 2);
+    --line-height-7: calc(var(--font-size-7) + var(--font-offset-parent) * 2);
+    --line-height-8: calc(var(--font-size-8) + var(--font-offset-parent) * 2);
+    --line-height-9: calc(var(--font-size-9) + var(--font-offset-parent) * 2);
+    --line-height-10: calc(var(--font-size-10) + var(--font-offset-parent) * 2);
+    --line-height: var(--line-height-1);
+    --line-height-body: var(--line-height-2);
+    --line-height-h5: var(--line-height-3);
+    --line-height-h4: var(--line-height-4);
+    --line-height-h3: var(--line-height-5);
+    --line-height-h2: var(--line-height-6);
+    --line-height-h1: var(--line-height-7);
+}

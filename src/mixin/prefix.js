@@ -1,4 +1,4 @@
-import setPrefix from "@stylus/base.styl?raw";
+import setPrefix from "@stylus/variable/prefix.styl?raw";
 
 let prefix = "";
 try {
