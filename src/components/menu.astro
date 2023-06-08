@@ -17,7 +17,7 @@ function renderMenuTree(tree: Props["menu"]) {
                 <a href=${base + item.path}>${getName(item.path)}</a>
                 ${
                     (item as menu).children
-                        ? `<ul>${renderMenuTree((item as menu).children)}</ul>`
+                        ? renderMenuTree((item as menu).children)
                         : ""
                 }
             </li>`
