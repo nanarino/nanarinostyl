@@ -3,7 +3,7 @@
     "stylusSupremacy.insertColons": false, // 是否插入冒号
     "stylusSupremacy.insertSemicolons": false, // 是否插入分号
     "stylusSupremacy.insertBraces": false, // 是否插入大括号
-    "stylusSupremacy.insertNewLineAroundImports": false, // import之后是否换行
+    "stylusSupremacy.insertNewLineAroundImports": true, // import之后是否换行
     "stylusSupremacy.insertNewLineAroundBlocks": false, // 两个选择器中是否换行
     "[astro]": {
         "editor.tabSize": 4,
