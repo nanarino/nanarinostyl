@@ -1,13 +1,19 @@
 ---
 import prefix from "src/mixin/prefix";
 interface Props {
-    menu: string[];
+    menu: { url: string; name: string }[];
 }
 const { menu } = Astro.props;
 ---
 
 <aside class={`${prefix}-layout-sider`}>
     <ul>
-        {menu.map((item) => <li>{item}</li>)}
+        {
+            menu.map(({ url, name }) => (
+                <li>
+                    <a href={url}>{name || "readme"}</a>
+                </li>
+            ))
+        }
     </ul>
 </aside>
