@@ -1,19 +1,37 @@
 ---
 import prefix from "src/mixin/prefix";
+import type { page, menu } from "src/mixin/menu";
 interface Props {
-    menu: { url: string; name: string }[];
+    menu: Array<page | menu>;
+    base?: string;
 }
 const { menu } = Astro.props;
+const base = Astro.props.base ?? "";
+const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0] || "readme";
+
+function renderMenuTree(tree: Props["menu"]) {
+    return `<ul>${tree
+        .map(
+            (item) =>
+                `<li>
+                <a href=${base + item.path}>${getName(item.path)}</a>
+                ${
+                    (item as menu).children
+                        ? `<ul>${renderMenuTree((item as menu).children)}</ul>`
+                        : ""
+                }
+            </li>`
+        )
+        .reduce((html, v) => html + v, "")}</ul>`;
+}
 ---
 
-<aside class={`${prefix}-layout-sider`}>
-    <ul>
-        {
-            menu.map(({ url, name }) => (
-                <li>
-                    <a href={url}>{name || "readme"}</a>
-                </li>
-            ))
-        }
-    </ul>
+<aside class:list={[`${prefix}-layout-sider`, "menu-wrap"]}>
+    <Fragment set:html={renderMenuTree(menu)} />
 </aside>
+<style lang="stylus">
+    .menu-wrap
+        width 240px
+        overflow-y auto
+        box-shadow var(--box-shadow-divider-right)
+</style>
