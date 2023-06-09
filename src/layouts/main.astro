@@ -12,10 +12,20 @@ const menu = await getMenu("./src/pages/menu");
 <App {...Astro.props}>
     <Header />
     <section class={`${prefix}-layout ${prefix}-layout-has-sider`}>
-        <Menu menu={menu} base="/menu/" />
+        <aside class:list={[`${prefix}-layout-sider`, "menu-wrap"]}>
+            <Menu menu={menu} base="/menu/" />
+        </aside>
         <main class={`${prefix}-layout-content`}>
             <slot />
         </main>
     </section>
     <Footer />
 </App>
+
+<style lang="stylus">
+    .menu-wrap
+        width 240px
+        overflow-y auto
+        box-shadow var(--box-shadow-divider-right)
+        padding 1em 0
+</style>

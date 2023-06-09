@@ -1,0 +1,27 @@
+@import './../variable/prefix.styl'
+
+ul.{prefix}-menu
+    padding 0
+    margin 0 1em
+    display flex
+    flex-direction column
+    gap 0.5em
+    font-size var(--font-size-body)
+    line-height var(--line-height-body)
+    list-style none
+    overflow hidden
+    &>li.{prefix}-menu-submenu
+        display flex
+        flex-direction column
+        gap 0.5em
+        .{prefix}-menu-submenu-title
+            padding 0.8em 1em
+    &>li.{prefix}-menu-item
+        padding 0.8em 1em
+        cursor pointer
+        background var(--white)
+        color var(--black)
+        &-selected
+            background unquote("rgb(var(--primary-6))")
+            color var(--white)
+            border-radius var(--border-radius-md)

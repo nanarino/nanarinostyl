@@ -7,31 +7,46 @@ interface Props {
 }
 const { menu } = Astro.props;
 const base = Astro.props.base ?? "";
-const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0] || "readme";
+const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
+console.log(Astro.url.pathname, menu);
 
-function renderMenuTree(tree: Props["menu"]) {
-    return `<ul>${tree
-        .map(
-            (item) =>
-                `<li>
-                <a href=${base + item.path}>${getName(item.path)}</a>
-                ${
-                    (item as menu).children
-                        ? renderMenuTree((item as menu).children)
-                        : ""
-                }
-            </li>`
-        )
-        .reduce((html, v) => html + v, "")}</ul>`;
-}
 ---
 
-<aside class:list={[`${prefix}-layout-sider`, "menu-wrap"]}>
-    <Fragment set:html={renderMenuTree(menu)} />
-</aside>
-<style lang="stylus">
-    .menu-wrap
-        width 240px
-        overflow-y auto
-        box-shadow var(--box-shadow-divider-right)
-</style>
+<ul class={`${prefix}-menu`}>
+    {
+        menu.map((item) => {
+            if (
+                Array.isArray((item as menu).children) &&
+                (item as menu).children.length > 0
+            ) {
+                return (
+                    <li class={`${prefix}-menu-submenu`} style="order:1">
+                        <div class={`${prefix}-menu-submenu-title`}>
+                            {getName(item.path)}
+                        </div>
+                        <Astro.self
+                            menu={(item as menu).children}
+                            base={base}
+                        />
+                    </li>
+                );
+            }
+            return (
+                <li
+                    class:list={[
+                        `${prefix}-menu-item`,
+                        {
+                            [`${prefix}-menu-item-selected`]:
+                                Astro.url.pathname === base + item.path,
+                        },
+                    ]}
+                    style={{ order: getName(item.path) ? 1 : 0 }}
+                >
+                    <a href={base + item.path}>
+                        {getName(item.path) || "readme"}
+                    </a>
+                </li>
+            );
+        })
+    }
+</ul>

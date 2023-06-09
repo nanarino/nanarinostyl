@@ -1,3 +1,14 @@
+:root,
+:root:root[data-theme='theme-light'] {
+    --white: #fff;
+    --black: #000;
+}
+
+:root[data-theme='theme-dark'] {
+    --white: #000;
+    --black: #fff;
+}
+
 /**
  * @desc 配色，完全使用arco.design的默认配色
  *
