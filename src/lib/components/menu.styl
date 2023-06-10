@@ -17,11 +17,18 @@ ul.{prefix}-menu
         .{prefix}-menu-submenu-title
             padding 0.8em 1em
     &>li.{prefix}-menu-item
-        padding 0.8em 1em
+        display grid
         cursor pointer
         background var(--white)
         color var(--black)
+        transition background-color 0.3s, color 0.3s
+        &>a
+            padding 0.8em 1em
+            color inherit
+            text-decoration none
         &-selected
-            background unquote("rgb(var(--primary-6))")
+            background unquote('rgb(var(--primary-6))')
             color var(--white)
             border-radius var(--border-radius-md)
+        &:not(.{prefix}-menu-item-selected):hover
+            color unquote('rgb(var(--primary-6))')

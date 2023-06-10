@@ -8,8 +8,6 @@ interface Props {
 const { menu } = Astro.props;
 const base = Astro.props.base ?? "";
 const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
-console.log(Astro.url.pathname, menu);
-
 ---
 
 <ul class={`${prefix}-menu`}>
