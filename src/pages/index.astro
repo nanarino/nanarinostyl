@@ -15,6 +15,10 @@ import prefix from "src/mixin/prefix";
 </App>
 
 <style lang="stylus">
+green = unquote('rgb(var(--green-3) / .6)')
+lime = unquote('rgb(var(--lime-7) / .3)')
+yellow = unquote("rgb(var(--yellow-3) / .3)")
+
 #cover
     max-width 1280px
     margin auto
@@ -24,16 +28,16 @@ a.logo
     display inline-block
     position relative
     &.own:hover
-        filter drop-shadow(0 0 2em unquote("rgba(var(--green-3), .6)"))
+        filter drop-shadow(0 0 2em green)
     img
         height 6em
         padding 1.5em
         will-change filter
-        transition filter 300ms
+        transition filter .3s
     &[href='https://stylus-lang.com/']::after
         position absolute
         inset 0
         content ''
         filter blur(3em)
-        background-image linear-gradient(-45deg, unquote("rgba(var(--lime-7), .3)"), 30%, unquote("rgba(var(--yellow-3), .3)"))
+        background-image linear-gradient(-45deg, lime, 30%, yellow)
 </style>
