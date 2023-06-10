@@ -20,11 +20,11 @@
 * color: `arco默认配色 <https://arco.design/palette/list>`_
 
 
-代码规范相关
+代码规范
 ============
 * astro:
-    - astro内的typescript不省略分号。
-    - astro内的typescript里不能含有jsx表达式。
+    - 不省略分号。
+    - 模板外不能含有tsx表达式。
 * stylus:
     - 尽量省略冒号分号逗号和花括号。
     - 引入顺序 `@import` 应先引入css 再引入stylus。
