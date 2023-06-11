@@ -27,6 +27,6 @@
     - 模板外不能含有tsx表达式。
 * stylus:
     - 尽量省略冒号分号逗号和花括号。
-    - 引入顺序 `@import` 应先引入css 再引入stylus。
+    - 引入顺序 ``@import`` 应先引入css 再引入stylus。
     - 出现vscode高亮丢失时，应该将其提成stylus变量来规避。
-    - 禁止使用元组列 `color = (red #F00)` ，应该用字典 `color = {red: #F00}` 代替。
+    - 禁止使用元组列 ``color = (red #F00)`` ，应该用字典 ``color = {red: #F00}`` 代替。
