@@ -3,7 +3,7 @@
  * _rgb(0 0 0 \/ .5) => rgb(0 0 0/0.5)
  */
 _rgb(color)
-    unquote(s('rgb(%s)', color))
+    s('rgb(%s)', color)
 
 /**
  * 获取拼接的css变量
