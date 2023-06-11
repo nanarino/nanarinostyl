@@ -1,3 +1,5 @@
+@import './functions.styl'
+
 :root, :root[data-theme='theme-light']
     --white #fff
     --black #000
@@ -13,7 +15,7 @@ color_alias_dict = {
 :root
     for k, v in color_alias_dict
         for i in range(1 10)
-            {'-'}-{k}-{i} var(s('--%s-%s', unquote(v), i))
+            {_get_var_by(k, i)} var(_get_var_by(v, i))
 /**
  * @desc 配色，完全使用arco.design的默认配色
  *

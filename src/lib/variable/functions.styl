@@ -1,0 +1,15 @@
+/**
+ * 转为 css native rgb
+ * _rgb(0 0 0 \/ .5) => rgb(0 0 0/0.5)
+ */
+_rgb(color)
+    unquote(s('rgb(%s)', color))
+
+/**
+ * 获取拼接的css变量
+ * name: str
+ * level: int
+ * return: str
+ */
+_get_var_by(name, level)
+    '--%s-%s'%(unquote(name) level)
