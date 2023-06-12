@@ -4,9 +4,9 @@
 .{prefix}-switch
     display inline-flex
     position relative
-    font-size 0
     --switch-size 22px
     --switch-mover-size 18px
+    font-size calc(var(--switch-mover-size) - var(--font-offset-parent))
     &.sm
         --switch-size 16px
         --switch-mover-size 12px
@@ -17,8 +17,11 @@
         width calc(var(--switch-size) * 2)
         border-radius calc((var(--switch-size) / 2))
         background-color _rgb(var(--gray-4))
-        &::before
+        &:empty::before, &>:first-child
             content ''
+            display inline-flex
+            align-items center
+            justify-content center
             position absolute
             left 2px
             top 2px
@@ -32,7 +35,7 @@
         &:checked
             &+.{prefix}-switch-mover
                 background-color _rgb(var(--primary-6))
-                &::before
+                &:empty::before, &>:first-child
                     left calc(var(--switch-size) + 2px)
                     top 2px
                     transition all 0.5s

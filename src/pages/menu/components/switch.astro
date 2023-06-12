@@ -10,19 +10,39 @@ import prefix from "src/mixin/prefix";
         <input type="checkbox" id="switch1" checked />
         <label class={`${prefix}-switch-mover`} for="switch1"></label>
     </span>
-    <span class:list={[`${prefix}-switch`, 'sm']}>
+    <span class:list={[`${prefix}-switch`, "sm"]}>
         <input type="checkbox" id="switch2" />
         <label class={`${prefix}-switch-mover`} for="switch2"></label>
     </span>
     <span class={`${prefix}-switch`}>
-        <input type="checkbox" id="switch3" checked disabled/>
+        <input type="checkbox" id="switch3" checked disabled />
         <label class={`${prefix}-switch-mover`} for="switch3"></label>
     </span>
-    <span class:list={[`${prefix}-switch`, 'sm']}>
-        <input type="checkbox" id="switch4" disabled/>
+    <span class:list={[`${prefix}-switch`, "sm"]}>
+        <input type="checkbox" id="switch4" disabled />
         <label class={`${prefix}-switch-mover`} for="switch4"></label>
     </span>
 
+    <br />
+    <span class={`${prefix}-switch`} style="transform: scale(2); margin: 60px">
+        <input type="checkbox" id="switch5" checked />
+        <label class={`${prefix}-switch-mover`} for="switch5">
+            <span>☘</span>
+        </label>
+    </span>
+
+    <span class={`${prefix}-switch`}>
+        <input type="checkbox" id="switch6" />
+        <label class={`${prefix}-switch-mover`} for="switch6">
+            <img src="/icon/general/outline/sun.svg" alt="sun" />
+        </label>
+    </span>
+    <span class={`${prefix}-switch`}>
+        <input type="checkbox" id="switch7" checked />
+        <label class={`${prefix}-switch-mover`} for="switch7">
+            <img src="/icon/general/outline/moon.svg" alt="moon" />
+        </label>
+    </span>
 </Main>
 
 <style lang="stylus">
