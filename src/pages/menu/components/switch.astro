@@ -1,0 +1,30 @@
+---
+import Main from "@layout/main.astro";
+import prefix from "src/mixin/prefix";
+---
+
+<Main title="开关">
+    <div>开关</div>
+
+    <span class={`${prefix}-switch`}>
+        <input type="checkbox" id="switch1" checked />
+        <label class={`${prefix}-switch-mover`} for="switch1"></label>
+    </span>
+    <span class:list={[`${prefix}-switch`, 'sm']}>
+        <input type="checkbox" id="switch2" />
+        <label class={`${prefix}-switch-mover`} for="switch2"></label>
+    </span>
+    <span class={`${prefix}-switch`}>
+        <input type="checkbox" id="switch3" checked disabled/>
+        <label class={`${prefix}-switch-mover`} for="switch3"></label>
+    </span>
+    <span class:list={[`${prefix}-switch`, 'sm']}>
+        <input type="checkbox" id="switch4" disabled/>
+        <label class={`${prefix}-switch-mover`} for="switch4"></label>
+    </span>
+
+</Main>
+
+<style lang="stylus">
+    
+</style>
