@@ -4,20 +4,16 @@ import { Icon } from "astro-icon";
 ---
 
 <header class={`${prefix}-layout-header`}>
-    <div>
-        <a href="/">
-            <img src="/favicon.svg" alt="My logo" class="logo" />
-        </a>
-    </div>
-    <div>
-        <span class={`${prefix}-switch`}>
-            <input type="checkbox" id="header-theme-switch" />
-            <label class={`${prefix}-switch-mover`} for="header-theme-switch">
-                <Icon name="general/outline/sun" alt="sun" />
-                <Icon name="general/outline/moon" alt="moon" />
-            </label>
-        </span>
-    </div>
+    <a href="/">
+        <img src="/favicon.svg" alt="logo" class="logo" />
+    </a>
+    <span class={`${prefix}-switch`}>
+        <input type="checkbox" id="header-theme-switch" />
+        <label class={`${prefix}-switch-mover`} for="header-theme-switch">
+            <Icon name="general/outline/sun" alt="sun" />
+            <Icon name="general/outline/moon" alt="moon" />
+        </label>
+    </span>
 </header>
 <script src="/src/scripts/client/theme.ts"></script>
 <style lang="stylus">
@@ -27,11 +23,20 @@ header
     justify-content space-between
     height var(--line-height-8)
     padding .5em 1em
-    img.logo
-        width var(--font-size-8)
-        height var(--font-size-8)
+    a[href="/"]
+        display flex
+        img.logo
+            width var(--font-size-8)
+            height var(--font-size-8)
 
 #header-theme-switch+label
+    --primary-6 var(--pinkpurple-5)
+    --gray-4 var(--gold-3)
+    --gray-1 var(--gold-1)
+    // disabled
+    // --gray-3 var(--gold-2)
+    // --primary-3 var(--pinkpurple-2)
+    color s('rgb(%s)'%var(--gold-10))
     svg[alt=sun]
         opacity 1
     svg[alt=moon]
