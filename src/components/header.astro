@@ -1,19 +1,43 @@
 ---
-import prefix from "src/mixin/prefix";
+import prefix from "src/scripts/server/prefix";
 ---
+
 <header class={`${prefix}-layout-header`}>
-    <a href="/">
-        <img src="/favicon.svg" alt="My logo" class="logo"/>
-    </a>
+    <div>
+        <a href="/">
+            <img src="/favicon.svg" alt="My logo" class="logo" />
+        </a>
+    </div>
+    <div>
+        <span class={`${prefix}-switch`}>
+            <input type="checkbox" id="header-theme-switch" />
+            <label class={`${prefix}-switch-mover`} for="header-theme-switch">
+                <img src="/icon/general/outline/sun.svg" alt="sun" />
+                <img src="/icon/general/outline/moon.svg" alt="moon" />
+            </label>
+        </span>
+    </div>
 </header>
+<script src="/src/scripts/client/theme.ts"></script>
 <style lang="stylus">
 header
     display flex
     align-items center
+    justify-content space-between
     height var(--line-height-8)
-    box-shadow var(--box-shadow-divider-bottom)
     padding .5em 1em
     img.logo
         width var(--font-size-8)
         height var(--font-size-8)
+
+#header-theme-switch+label
+    img[alt=sun]
+        opacity 1
+    img[alt=moon]
+        opacity 0
+#header-theme-switch:checked+label
+    img[alt=sun]
+        opacity 0
+    img[alt=moon]
+        opacity 1
 </style>

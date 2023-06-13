@@ -23,6 +23,7 @@ ul.{prefix}-menu
         background var(--white)
         color var(--black)
         transition background-color 0.3s, color 0.3s
+        border-radius var(--border-radius-md)
         &>a.{prefix}-menu-item-link
             padding 0.8em 1em
             color inherit
@@ -30,6 +31,5 @@ ul.{prefix}-menu
         &-selected
             background _rgb(var(--primary-6))
             color var(--white)
-            border-radius var(--border-radius-md)
         &:not(.{prefix}-menu-item-selected):hover
             color _rgb(var(--primary-6))

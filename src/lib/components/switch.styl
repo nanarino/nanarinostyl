@@ -17,7 +17,7 @@
         width calc(var(--switch-size) * 2)
         border-radius calc((var(--switch-size) / 2))
         background-color _rgb(var(--gray-4))
-        &:empty::before, &>:first-child
+        &:empty::before, &>*
             content ''
             display inline-flex
             align-items center
@@ -35,7 +35,7 @@
         &:checked
             &+.{prefix}-switch-mover
                 background-color _rgb(var(--primary-6))
-                &:empty::before, &>:first-child
+                &:empty::before, &>*
                     left calc(var(--switch-size) + 2px)
                     top 2px
                     transition all 0.5s

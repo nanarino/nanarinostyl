@@ -1,4 +1,5 @@
 @import './variable/prefix.styl'
+
 .{prefix}-layout
     display flex
     flex-direction column
@@ -7,3 +8,12 @@
         flex-direction row
 .{prefix}-layout-content
     flex auto
+.{prefix}-layout-sider
+    &:first-child
+        box-shadow var(--box-shadow-divider-right)
+    &:last-child
+        box-shadow var(--box-shadow-divider-left)
+.{prefix}-layout-header
+    box-shadow var(--box-shadow-divider-bottom)
+.{prefix}-layout-footer
+    box-shadow var(--box-shadow-divider-top)
