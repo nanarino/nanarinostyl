@@ -27,24 +27,13 @@ import prefix from "src/scripts/server/prefix";
     <span class={`${prefix}-switch`} style="transform: scale(2); margin: 60px">
         <input type="checkbox" id="switch5" checked />
         <label class={`${prefix}-switch-mover`} for="switch5">
-            <span>☘</span>
-        </label>
-    </span>
-
-    <span class={`${prefix}-switch`}>
-        <input type="checkbox" id="switch6" />
-        <label class={`${prefix}-switch-mover`} for="switch6">
-            <img src="/icon/general/outline/sun.svg" alt="sun" />
-        </label>
-    </span>
-    <span class={`${prefix}-switch`}>
-        <input type="checkbox" id="switch7" checked />
-        <label class={`${prefix}-switch-mover`} for="switch7">
-            <img src="/icon/general/outline/moon.svg" alt="moon" />
+            <span id="clover">☘</span>
         </label>
     </span>
 </Main>
 
 <style lang="stylus">
-    
+    #switch5:checked+label #clover
+        transform rotate(360deg)
+        overflow hidden
 </style>

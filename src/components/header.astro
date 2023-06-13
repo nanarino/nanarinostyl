@@ -1,5 +1,6 @@
 ---
 import prefix from "src/scripts/server/prefix";
+import { Icon } from "astro-icon";
 ---
 
 <header class={`${prefix}-layout-header`}>
@@ -12,8 +13,8 @@ import prefix from "src/scripts/server/prefix";
         <span class={`${prefix}-switch`}>
             <input type="checkbox" id="header-theme-switch" />
             <label class={`${prefix}-switch-mover`} for="header-theme-switch">
-                <img src="/icon/general/outline/sun.svg" alt="sun" />
-                <img src="/icon/general/outline/moon.svg" alt="moon" />
+                <Icon name="general/outline/sun" alt="sun" />
+                <Icon name="general/outline/moon" alt="moon" />
             </label>
         </span>
     </div>
@@ -31,13 +32,13 @@ header
         height var(--font-size-8)
 
 #header-theme-switch+label
-    img[alt=sun]
+    svg[alt=sun]
         opacity 1
-    img[alt=moon]
+    svg[alt=moon]
         opacity 0
 #header-theme-switch:checked+label
-    img[alt=sun]
+    svg[alt=sun]
         opacity 0
-    img[alt=moon]
+    svg[alt=moon]
         opacity 1
 </style>

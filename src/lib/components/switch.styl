@@ -19,12 +19,13 @@
         background-color _rgb(var(--gray-4))
         &:empty::before, &>*
             content ''
-            display inline-flex
+            display flex
             align-items center
             justify-content center
             position absolute
             left 2px
             top 2px
+            bottom 2px
             width var(--switch-mover-size)
             height @width
             border-radius 50%
@@ -37,7 +38,6 @@
                 background-color _rgb(var(--primary-6))
                 &:empty::before, &>*
                     left calc(var(--switch-size) + 2px)
-                    top 2px
                     transition all 0.5s
             &:disabled+.{prefix}-switch-mover
                 background-color _rgb(var(--primary-3))

@@ -11,10 +11,11 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^2.5.5",
+    "astro": "^2.6.3",
+    "astro-icon": "^0.8.1",
     "stylus": "^0.59.0"
   },
   "devDependencies": {
-    "@types/node": "^20.2.5"
+    "@types/node": "^20.3.1"
   }
 }
