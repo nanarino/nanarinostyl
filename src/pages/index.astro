@@ -1,17 +1,18 @@
 ---
 import App from "@layout/app.astro";
-import prefix from "src/scripts/server/prefix";
+import Header from "src/components/header.astro";
 ---
 
-<App title={prefix}>
-    <div id="cover">
+<App>
+    <Header href="/menu/" />
+    <section id="cover">
         <a href="/menu/" class="logo own">
             <img src="/favicon.svg" alt="My logo" />
         </a>
         <a href="https://stylus-lang.com/" class="logo">
             <img src="/stylus.svg" alt="Stylus logo" />
         </a>
-    </div>
+    </section>
 </App>
 
 <style lang="stylus">

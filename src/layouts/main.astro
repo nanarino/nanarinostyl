@@ -11,7 +11,7 @@ const menu = await getMenu("./src/pages/menu");
 
 <App {...Astro.props}>
     <Header />
-    <section class={`${prefix}-layout ${prefix}-layout-has-sider`}>
+    <section class:list={[`${prefix}-layout`, `${prefix}-layout-has-sider`]}>
         <aside class:list={[`${prefix}-layout-sider`, "menu-wrap"]}>
             <Menu menu={menu} base="/menu/" />
         </aside>
