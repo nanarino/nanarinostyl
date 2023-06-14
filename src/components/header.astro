@@ -30,14 +30,12 @@ header
             height var(--font-size-8)
 
 #header-theme-switch+label
-    --primary-6 var(--pinkpurple-5)
+    --primary-6 var(--pinkpurple-6)
     --gray-4 var(--gold-3)
-    --gray-1 var(--gold-1)
-    // disabled
-    // --gray-3 var(--gold-2)
-    // --primary-3 var(--pinkpurple-2)
     color s('rgb(%s)'%var(--gold-10))
     svg[alt=sun]
+        background unset
+        filter drop-shadow(0 0 2px #f00)
         opacity 1
     svg[alt=moon]
         opacity 0
@@ -45,5 +43,7 @@ header
     svg[alt=sun]
         opacity 0
     svg[alt=moon]
+        background unset
+        filter drop-shadow(0 0 2px #fff)
         opacity 1
 </style>
