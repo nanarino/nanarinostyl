@@ -3,14 +3,17 @@ import "@stylus/index.styl";
 import prefix from "src/scripts/server/prefix";
 interface Props {
     title?: string;
+    frontmatter?: {
+        title?: string;
+    }
 }
-const { title } = Astro.props;
+const title = Astro.props.title || Astro.props.frontmatter?.title || `${prefix} style lib`;
 ---
 
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8" />
-        <title>{title || prefix}</title>
+        <title>{title}</title>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     </head>
     <body>

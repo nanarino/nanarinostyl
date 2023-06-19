@@ -11,4 +11,7 @@
     "[stylus]": {
         "editor.tabSize": 4,
     },
+    "files.associations": {
+        "*.mdx": "markdown"
+    }
 }
