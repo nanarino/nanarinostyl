@@ -22,7 +22,7 @@ export const getMenu = async (currentDir: string, rootDir: string = currentDir):
                 path.relative(rootDir, filePath)
                     .split(path.sep)
                     .join(path.posix.sep)
-                    .replace(/(index\.(mdx|md|astro))$/i, "")
+                    .replace(/index\.(mdx|md|astro)$/i, "")
                     .replace(/(\.mdx)|(\.md)|(\.astro)$/i, "")
             ,
             ...((await stat(filePath)).isFile()) ? null : {
