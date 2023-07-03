@@ -1,0 +1,24 @@
+@import './../variable/prefix.styl'
+@import './../variable/functions.styl'
+
+.{prefix}-title
+    display -webkit-box
+    -webkit-box-orient vertical
+    -webkit-line-clamp 1
+    overflow hidden
+    height var(--line-height-body)
+    line-height @height
+    font-size var(--font-size-body)
+    font-weight normal
+    margin 1em 0
+    for i in range(1 6)
+        /h{i}&
+            height var(_get_var_by(
+                line-height,
+                'h%s' % i
+            ))
+            line-height @height
+            font-size var(_get_var_by(
+                font-size,
+                'h%s' % i
+            ))
