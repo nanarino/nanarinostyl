@@ -10,8 +10,7 @@
     /**
      * 字号
      */
-    --font-size-base 12px
-    --font-size-1 @--font-size-base      // 12
+    --font-size-1 12px                   // 12
     --font-size-2 @--font-size-1 + 2px   // 14
     --font-size-3 @--font-size-2 + 2px   // 16
     --font-size-4 @--font-size-3 + 4px   // 20
@@ -21,7 +20,9 @@
     --font-size-8 @--font-size-7 + 8px   // 46
     --font-size-9 @--font-size-8 + 10px  // 56
     --font-size-10 @--font-size-9 + 12px // 68
+    --font-size-base @--font-size-1
     --font-size-body @--font-size-2
+    --font-size-h6 @--font-size-2
     --font-size-h5 @--font-size-3
     --font-size-h4 @--font-size-4
     --font-size-h3 @--font-size-5
@@ -42,8 +43,9 @@
     --line-height-8 @--font-size-8 + @--font-offset-parent * 2   // 54
     --line-height-9 @--font-size-9 + @--font-offset-parent * 2   // 64
     --line-height-10 @--font-size-10 + @--font-offset-parent * 2 // 76
-    --line-height @--line-height-1
+    --line-height-base @--line-height-1
     --line-height-body @--line-height-2
+    --line-height-h6 @--line-height-2
     --line-height-h5 @--line-height-3
     --line-height-h4 @--line-height-4
     --line-height-h3 @--line-height-5

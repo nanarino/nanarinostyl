@@ -1,0 +1,40 @@
+---
+import prefix from "src/scripts/server/prefix";
+const props = Astro.props;
+interface Props {
+    tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
+    size?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    sub?: string;
+    float?: boolean;
+    prefix?: boolean;
+}
+let { tag: Tag } = props;
+let size = "";
+if (props.size) {
+    Tag = "div";
+    size = `-${props.size}`;
+} else {
+    Tag ||= "div";
+}
+---
+
+<Tag
+    class:list={{
+        [`${prefix}-title${size}`]: true,
+        [`${prefix}-title-has-prefix`]: props.prefix,
+    }}
+>
+    <slot />
+    {
+        props.sub ? (
+            <span
+                class={`${prefix}-title-subtitle`}
+                style={{ float: props.float ? "right" : "unset" }}
+            >
+                {props.sub}
+            </span>
+        ) : (
+            ""
+        )
+    }
+</Tag>

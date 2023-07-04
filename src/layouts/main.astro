@@ -11,11 +11,11 @@ const menu = await getMenu("./src/pages/menu");
 
 <App {...Astro.props}>
     <Header />
-    <section class:list={[`${prefix}-layout`, `${prefix}-layout-has-sider`]}>
+    <section class:list={[`${prefix}-layout`, `${prefix}-layout-has-sider`]} style="overflow:hidden">
         <aside class:list={[`${prefix}-layout-sider`, "menu-wrap"]}>
             <Menu menu={menu} base="/menu/" />
         </aside>
-        <main class={`${prefix}-layout-content`}>
+        <main class={`${prefix}-layout-content`} style="overflow-y:auto">
             <slot />
         </main>
     </section>

@@ -13,3 +13,10 @@ _rgb(color)
  */
 _get_var_by(name, level)
     '--%s-%s'%(unquote(name) level)
+
+
+mixin_line_clamp(n)
+    display -webkit-box
+    -webkit-box-orient vertical
+    -webkit-line-clamp n
+    overflow hidden
