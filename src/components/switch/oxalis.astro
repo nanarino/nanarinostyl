@@ -5,7 +5,15 @@ import Switch from "./index.astro";
  */
 ---
 
-<Switch id="oxalis-switch" checked style="transform: scale(2); margin: 24px">
+<Switch
+    id="oxalis-switch"
+    checked
+    style={{
+        transform: "scale(2)",
+        margin: "24px",
+        ["--primary-6"]: "220 251 124",
+    }}
+>
     <span id="oxalis-switch-mover">☘</span>
 </Switch>
 <style lang="stylus" is:global>

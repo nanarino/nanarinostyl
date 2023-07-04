@@ -8,7 +8,7 @@ interface Props {
     float?: boolean;
     prefix?: boolean;
     id?: string;
-    style?: StylePropertyMap;
+    style?: Record<string, any> | string;
 }
 let { tag: Tag } = props;
 let size = "";

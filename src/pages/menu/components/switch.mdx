@@ -10,6 +10,7 @@ export * from 'src/components/markdown/map.mdx';
 
 # switch
 
+
 <Switch id="switch1" checked />
 <Switch id="switch2" sm/>
 
@@ -29,7 +30,7 @@ span(class=`${prefix}-switch sm`)
     label(for="switch2")
 ```
 
----
+## disabled
 
 <Switch id="switch3" sm checked disabled/>
 <Switch id="switch4" sm disabled/>
@@ -52,7 +53,7 @@ span(class=`${prefix}-switch sm`)
     label(for="switch4")
 ```
 
----
+## custom icon
 
 <Switch id="switch5" sm>
     <span>❄️</span>
@@ -68,14 +69,14 @@ span(class=`${prefix}-switch sm`)
         span ❄️
 ```
 
----
+## custom style
 
 <OxalisSwitch/>
 
 ```pug
 span(
-    class=`${prefix}-switch sm`
-    style="transform:scale(2);margin:60px"
+    class=`${prefix}-switch`
+    style="transform:scale(2); margin: 60px; --primary-6: 220 251 124"
 )
     input(
         type="checkbox"
