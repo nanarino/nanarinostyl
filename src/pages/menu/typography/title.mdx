@@ -7,19 +7,22 @@ import Title from "src/components/title.astro";
 export * from 'src/components/markdown/map.mdx';
 
 
-# 标题
+# title
+
 
 ```pug
-h1.#{prefix}-title
+h1(class=`${prefix}-title`)
     一级标题
 ```
-<Title size='h1'>一级标题</Title>
-<Title size='h2'>二级标题</Title>
-<Title size='h3'>三级标题</Title>
-<Title size='h4'>四级标题</Title>
-<Title size='h5'>五级标题</Title>
-<Title size='h6'>六级标题</Title>
+<Title tag='h1'>一级标题</Title>
+<Title tag='h2'>二级标题</Title>
+<Title tag='h3'>三级标题</Title>
+<Title tag='h4'>四级标题</Title>
+<Title tag='h5'>五级标题</Title>
+<Title tag='h6'>六级标题</Title>
 <Title>默认标题</Title>
+
+---
 
 <Title size='h1' sub='小标题'>一级标题</Title>
 <Title size='h2' sub='小标题'>二级标题</Title>
@@ -29,6 +32,8 @@ h1.#{prefix}-title
 <Title size='h6' sub='小标题'>六级标题</Title>
 <Title sub='小标题'>默认标题</Title>
 
+---
+
 <Title size='h1' sub='小标题' float>一级标题</Title>
 <Title size='h2' sub='小标题' float>二级标题</Title>
 <Title size='h3' sub='小标题' float>三级标题</Title>
@@ -36,6 +41,8 @@ h1.#{prefix}-title
 <Title size='h5' sub='小标题' float>五级标题</Title>
 <Title size='h6' sub='小标题' float>六级标题</Title>
 <Title sub='小标题' float>默认标题</Title>
+
+---
 
 <Title size='h1' sub='小标题' prefix>一级标题</Title>
 <Title size='h2' sub='小标题' prefix>二级标题</Title>
