@@ -1,0 +1,15 @@
+---
+import Switch from "./index.astro";
+/**
+ * 一个显示旋转车轴草的Switch单例 当前页只能用一次
+ */
+---
+
+<Switch id="oxalis-switch" checked style="transform: scale(2); margin: 24px">
+    <span id="oxalis-switch-mover">☘</span>
+</Switch>
+<style lang="stylus" is:global>
+    #oxalis-switch:checked+label #oxalis-switch-mover
+        transform rotate(360deg)
+        overflow hidden
+</style>

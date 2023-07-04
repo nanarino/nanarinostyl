@@ -1,5 +1,6 @@
 ---
 import prefix from "src/scripts/server/prefix";
+import Switch from "./switch/index.astro";
 import { Icon } from "astro-icon";
 interface Props {
     href?: string;
@@ -11,15 +12,14 @@ const { href } = Astro.props;
     <a href={href || "/"} class="logo">
         <img src="/favicon.svg" alt="logo" class="logo" />
     </a>
-    <span class={`${prefix}-switch`}>
-        <input type="checkbox" id="header-theme-switch" />
-        <label class={`${prefix}-switch-mover`} for="header-theme-switch">
-            <Icon name="general/outline/sun" alt="sun" />
-            <Icon name="general/outline/moon" alt="moon" />
-        </label>
-    </span>
+    <Switch id="header-theme-switch">
+        <Icon name="general/outline/sun" alt="sun" />
+        <Icon name="general/outline/moon" alt="moon" />
+    </Switch>
 </header>
+
 <script src="/src/scripts/client/theme.ts"></script>
+
 <style lang="stylus">
 header
     display flex
@@ -32,7 +32,9 @@ header
         img.logo
             width var(--font-size-8)
             height var(--font-size-8)
+</style>
 
+<style lang="stylus" is:global>
 #header-theme-switch+label
     --primary-6 var(--pinkpurple-6)
     --gray-4 var(--gold-3)

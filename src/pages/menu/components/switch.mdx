@@ -1,0 +1,91 @@
+---
+layout: "@layout/main.astro"
+title: 开关
+---
+
+import Switch from "src/components/switch/index.astro";
+import OxalisSwitch from "src/components/switch/oxalis.astro";
+export * from 'src/components/markdown/map.mdx';
+
+
+# switch
+
+<Switch id="switch1" checked />
+<Switch id="switch2" sm/>
+
+```pug
+span(class=`${prefix}-switch`)
+    input(
+        type="checkbox"
+        id="switch1"
+        checked
+    )
+    label(for="switch1")
+span(class=`${prefix}-switch sm`)
+    input(
+        type="checkbox"
+        id="switch2"
+    )
+    label(for="switch2")
+```
+
+---
+
+<Switch id="switch3" sm checked disabled/>
+<Switch id="switch4" sm disabled/>
+
+```pug
+span(class=`${prefix}-switch`)
+    input(
+        type="checkbox"
+        id="switch3"
+        checked
+        disabled
+    )
+    label(for="switch3")
+span(class=`${prefix}-switch sm`)
+    input(
+        type="checkbox"
+        id="switch4"
+        disabled
+    )
+    label(for="switch4")
+```
+
+---
+
+<Switch id="switch5" sm>
+    <span>❄️</span>
+</Switch>
+
+```pug
+span(class=`${prefix}-switch sm`)
+    input(
+        type="checkbox"
+        id="switch5"
+    )
+    label(for="switch5")
+        span ❄️
+```
+
+---
+
+<OxalisSwitch/>
+
+```pug
+span(
+    class=`${prefix}-switch sm`
+    style="transform:scale(2);margin:60px"
+)
+    input(
+        type="checkbox"
+        id="oxalis-switch"
+    )
+    label(for="oxalis-switch")
+        span(id="oxalis-switch-mover") ☘
+
+style(lang="stylus").
+    #oxalis-switch:checked+label #oxalis-switch-mover
+        transform rotate(360deg)
+        overflow hidden 
+```

@@ -1,0 +1,27 @@
+---
+import prefix from "src/scripts/server/prefix";
+const props = Astro.props;
+interface Props {
+    id: string;
+    checked?: boolean;
+    disabled?: boolean;
+    sm?: boolean;
+    style?: StylePropertyMap;
+}
+---
+
+<span
+    class:list={{
+        [`${prefix}-switch`]: true,
+        sm: props.sm,
+    }}
+    style={props.style}
+>
+    <input
+        type="checkbox"
+        id={props.id}
+        checked={props.checked}
+        disabled={props.disabled}
+    />
+    <label class={`${prefix}-switch-mover`} for={props.id}><slot /></label>
+</span>
