@@ -3,6 +3,4 @@ import prefix from "src/scripts/server/prefix";
 const props = Astro.props;
 ---
 
-<h4 class={`${prefix}-title ${prefix}-font-serif`} {...props}>
-    # <slot />
-</h4>
+<pre class={`${prefix}-pre ${prefix}-font-mono`} {...props}><slot /></pre>

@@ -35,14 +35,16 @@ header
 </style>
 
 <style lang="stylus" is:global>
+@import './../lib/variable/functions.styl'
+
 #header-theme-switch+label
     --primary-6 var(--pinkpurple-6)
     --gray-4 var(--gold-3)
     svg
         background unset
     svg[alt=sun]
-        color s('rgb(%s)'%var(--orangered-10))
-        filter drop-shadow(0 0 3px s('rgb(%s)'%var(--red-6)))
+        color _rgb(var(--orangered-10))
+        filter drop-shadow(0 0 3px _rgb(var(--red-6)))
         opacity 1
     svg[alt=moon]
         opacity 0
@@ -50,7 +52,7 @@ header
     svg[alt=sun]
         opacity 0
     svg[alt=moon]
-        color s('rgb(%s)'%var(--arcoblue-10))
-        filter drop-shadow(0 0 3px s('rgb(%s)'%var(--blue-6)))
+        color _rgb(var(--arcoblue-10))
+        filter drop-shadow(0 0 3px _rgb(var(--blue-6)))
         opacity 1
 </style>

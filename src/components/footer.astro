@@ -4,10 +4,12 @@ import prefix from "src/scripts/server/prefix";
 
 <footer class={`${prefix}-layout-footer`}>广告位招租</footer>
 <style lang="stylus">
+@import './../lib/variable/functions.styl'
+
 footer
     display flex
     justify-content center
     line-height var(--line-height-2)
     font-size var(--font-size-2)
-    color unquote("rgb(var(--gray-3))")
+    color _rgb(var(--gray-3))
 </style>
