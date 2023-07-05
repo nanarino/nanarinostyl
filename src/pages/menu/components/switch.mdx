@@ -16,17 +16,13 @@ export * from 'src/components/markdown/map.mdx';
 
 ```pug
 span(class=`${prefix}-switch`)
-    input(
+    input#switch1(
         type="checkbox"
-        id="switch1"
         checked
     )
     label(for="switch1")
 span(class=`${prefix}-switch sm`)
-    input(
-        type="checkbox"
-        id="switch2"
-    )
+    input#switch2(type="checkbox")
     label(for="switch2")
 ```
 
@@ -37,17 +33,15 @@ span(class=`${prefix}-switch sm`)
 
 ```pug
 span(class=`${prefix}-switch`)
-    input(
+    input#switch3(
         type="checkbox"
-        id="switch3"
         checked
         disabled
     )
     label(for="switch3")
 span(class=`${prefix}-switch sm`)
-    input(
+    input#switch4(
         type="checkbox"
-        id="switch4"
         disabled
     )
     label(for="switch4")
@@ -61,10 +55,7 @@ span(class=`${prefix}-switch sm`)
 
 ```pug
 span(class=`${prefix}-switch sm`)
-    input(
-        type="checkbox"
-        id="switch5"
-    )
+    input#switch5(type="checkbox")
     label(for="switch5")
         span ❄️
 ```
@@ -82,12 +73,9 @@ span(
         '--primary-6': '220 251 124'
     }
 )
-    input(
-        type="checkbox"
-        id="oxalis-switch"
-    )
+    input#oxalis-switch(type="checkbox")
     label(for="oxalis-switch")
-        span(id="oxalis-switch-mover") ☘
+        span#oxalis-switch-mover ☘
 
 style(lang="stylus").
     #oxalis-switch:checked+label #oxalis-switch-mover
