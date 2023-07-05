@@ -76,7 +76,11 @@ span(class=`${prefix}-switch sm`)
 ```pug
 span(
     class=`${prefix}-switch`
-    style="transform:scale(2); margin: 60px; --primary-6: 220 251 124"
+    style={
+        transform: 'scale(2)',
+        margin: '60px',
+        '--primary-6': '220 251 124'
+    }
 )
     input(
         type="checkbox"
