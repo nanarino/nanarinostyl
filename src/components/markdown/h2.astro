@@ -1,8 +1,10 @@
 ---
 import prefix from "src/scripts/server/prefix";
+import Title from "../title.astro";
 const props = Astro.props;
 ---
 
-<h2 class={`${prefix}-title ${prefix}-font-serif`} {...props}>
-    # <slot />
-</h2>
+<Title tag="h2" {...props}>
+    <span onclick="window.location.hash = this?.parentElement?.id ?? '#'">#</span>
+    <slot />
+</Title>

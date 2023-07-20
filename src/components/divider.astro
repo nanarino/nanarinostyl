@@ -3,8 +3,8 @@ import prefix from "src/scripts/server/prefix";
 const props = Astro.props;
 
 interface Props {
-  tag?: "hr" | "div" | "span";
-  style?: Record<string, any> | string;
+    tag?: "hr" | "div" | "span";
+    style?: Record<string, any> | string;
 }
 let { tag: Hr } = props;
 Hr ||= "hr";
