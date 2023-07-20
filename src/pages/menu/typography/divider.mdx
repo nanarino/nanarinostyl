@@ -1,0 +1,52 @@
+---
+layout: "@layout/main.astro"
+title: 标题
+---
+
+import Divider from "src/components/divider.astro";
+export * from 'src/components/markdown/map.mdx';
+
+# divider
+
+<Divider tag='div'/>
+
+```pug
+.☘-divider
+```
+
+## inline
+
+<p>楚河<Divider tag='span'/>漢界</p>
+
+```pug
+p
+    |楚河
+    span.☘-divider
+    |漢界
+```
+
+## `<hr>`
+
+<Divider />
+
+```pug
+hr.☘-divider
+```
+
+## custom style
+
+<div style="display: flex; align-items: center">
+    <Divider tag='div' style='flex: 1' />
+    <span>⭐</span>
+    <Divider tag='div' style='flex: 1' />
+</div>
+
+```pug
+div(style={ 
+    "display": "flex", 
+    "align-items": "center" 
+})
+    .☘-divider(style={ "flex":1 })
+    span ⭐
+    .☘-divider(style={ "flex":1 })
+```
