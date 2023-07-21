@@ -1,10 +1,10 @@
 ---
-import prefix from "src/scripts/server/prefix";
+import Link from "../link.astro";
 import Title from "../title.astro";
 const props = Astro.props;
 ---
 
 <Title tag="h5" {...props}>
-    <span onclick="window.location.hash = this?.parentElement?.id ?? '#'">#</span>
+    <Link onclick="window.location.hash = this?.parentElement?.id ?? '#'" connot-select>#</Link>
     <slot />
 </Title>

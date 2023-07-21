@@ -1,0 +1,35 @@
+---
+import prefix from "src/scripts/server/prefix";
+interface Props {
+    scene?: string;
+    disabled?: boolean;
+    href?: string;
+    target?: string;
+    onclick?: string;
+    'connot-select'?: boolean
+}
+const props = Astro.props;
+const suffix = (props.scene && `-${props.scene}`) ?? "";
+const target = props.target || "_blank";
+let { href, disabled, onclick} = props;
+if(disabled){
+    onclick = '';
+    href = '';
+}
+if(onclick){
+    href = '';
+}
+---
+
+<a
+    class:list={{
+        [`${prefix}-link${suffix}`]: true,
+        [`${prefix}-connot-select`]: props['connot-select']
+    }}
+    {...href ? { href } : {}}
+    {...onclick ? { onclick } : {}}
+    {...{ disabled }}
+    target={target}
+>
+    <slot />
+</a>

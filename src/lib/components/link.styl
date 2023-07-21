@@ -1,0 +1,22 @@
+@import './../variable/prefix.styl'
+@import './../variable/functions.styl'
+
+set-link-color(name)
+    color _rgb(var(_get_var_by(name, 6)))
+    &:hover
+        color _rgb(var(_get_var_by(name, 5)))
+    &:focus
+        color _rgb(var(_get_var_by(name, 7)))
+    &[disabled]
+        color _rgb(var(_get_var_by(name, 2)))
+        cursor not-allowed
+a.{prefix}-link
+    cursor pointer
+    text-decoration none
+    set-link-color('primary')
+    &-success
+        set-link-color('success')
+    &-danger
+        set-link-color('danger')
+    &-warning
+        set-link-color('warning')

@@ -1,0 +1,45 @@
+---
+layout: "@layout/main.astro"
+title: 链接
+---
+
+import Link from "src/components/link.astro";
+export * from 'src/components/markdown/map.mdx';
+
+# link
+
+<Link href="https://stylus-lang.com/">Stylus Doc</Link>
+
+```pug
+a.☘-link(href="https://stylus-lang.com/") Stylus Doc
+```
+
+
+## scene
+
+<Link>戳</Link>
+<Link scene="warning">戳</Link>
+<Link scene="danger">戳</Link>
+<Link scene="success">戳</Link>
+
+```pug
+a.☘-link 戳
+a.☘-link-warning 戳
+a.☘-link-danger 戳
+a.☘-link-success 戳
+```
+
+
+## `disabled`
+
+<Link disabled>戳</Link>
+<Link disabled scene="warning">戳</Link>
+<Link disabled scene="danger">戳</Link>
+<Link disabled scene="success">戳</Link>
+
+```pug
+a.☘-link(disabled) 戳
+a.☘-link-warning(disabled) 戳
+a.☘-link-danger(disabled) 戳
+a.☘-link-success(disabled) 戳
+```
