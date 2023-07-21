@@ -1,0 +1,22 @@
+@import './../variable/prefix.styl'
+@import './../variable/functions.styl'
+
+.{prefix}-paragraph
+    margin 1em 0
+    font-size var(--font-size-body)
+    line-height var(--line-height-body)
+    for i in range(1 6)
+        /&-p{i}
+            mixin_line_clamp(i)
+            margin 1em 0
+            line-height var(_get_var_by(
+                line-height,
+                'h%s' % i
+            ))
+            height '%s * %s' % (@line-height i)
+            font-size var(_get_var_by(
+                font-size,
+                'h%s' % i
+            ))
+.{prefix}-paragraph-indent
+    text-indent 2em

@@ -4,7 +4,7 @@ import Title from "../title.astro";
 const props = Astro.props;
 ---
 
-<Title tag="h1" {...props}>
+<Title tag="h1" {...props} serif>
     <span class={`${prefix}-connot-select`}>☘</span>
     <slot />
 </Title>

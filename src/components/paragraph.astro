@@ -1,0 +1,22 @@
+---
+import prefix from "src/scripts/server/prefix";
+const props = Astro.props;
+interface Props {
+    size?: "p1" | "p2" | "p3" | "p4" | "p5" | "p6";
+    style?: Record<string, any> | string;
+    indent?: boolean;
+    serif?: boolean
+}
+const size = (props.size && `-${props.size}`) || '';
+---
+
+<p
+    class:list={{
+        [`${prefix}-paragraph${size}`]: true,
+        [`${prefix}-paragraph-indent`]: props.indent,
+        [`${prefix}-font-serif`]: props.serif,
+    }}
+    style={props.style}
+>
+    <slot />
+</p>

@@ -3,4 +3,47 @@ layout: "@layout/main.astro"
 title: 段落
 ---
 
-# 段落
+import Paragraph from "src/components/paragraph.astro";
+export * from 'src/components/markdown/map.mdx';
+
+# paragraph
+
+<Paragraph>西游记</Paragraph>
+
+```pug
+.☘-paragraph 西游记
+```
+
+
+## size & ellipsis
+
+`.☘-paragraph-p[1,6]` 既是尺寸，也是限制的行数。适用于大字报。
+
+<Paragraph size="p1">诗曰</Paragraph>
+<Paragraph size="p2">混沌未开天地乱，茫茫渺渺无人见。
+自从盘古破鸿蒙，开辟从兹清浊辨。
+覆载群生仰至仁，发明万物皆成善。
+欲知造化会圆功，须看西游释厄传。</Paragraph>
+
+```pug
+.☘-paragraph-p1 西游记
+.☘-paragraph-p2 
+    |混沌未开天地乱，茫茫渺渺无人见。
+    |自从盘古破鸿蒙，开辟从兹清浊辨。
+    |覆载群生仰至仁，发明万物皆成善。
+    |欲知造化会圆功，须看西游释厄传。
+```
+
+
+## indent
+
+<div style='width: 20em'><Paragraph size='p6' indent>我欲因之梦吴越，一夜飞度镜湖月。 湖月照我影，送我至剡溪。 谢公宿处今尚在，渌水荡漾清猿啼。 脚著谢公屐，身登青云梯。 半壁见海日，空中闻天鸡。 千岩万转路不定，迷花倚石忽已暝。 熊咆龙吟殷岩泉，栗深林兮惊层巅。 云青青兮欲雨，水澹澹兮生烟。</Paragraph></div>
+
+```pug
+div(style={width: "20em"})
+    .☘-paragraph-p6.☘-paragraph-indent
+        | 我欲因之梦吴越，一夜飞度镜湖月。 湖月照我影，送我至剡溪。
+        | 谢公宿处今尚在，渌水荡漾清猿啼。 脚著谢公屐，身登青云梯。
+        | 半壁见海日，空中闻天鸡。 千岩万转路不定，迷花倚石忽已暝。
+        | 熊咆龙吟殷岩泉，栗深林兮惊层巅。 云青青兮欲雨，水澹澹兮生烟。
+```

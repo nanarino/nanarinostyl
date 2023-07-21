@@ -4,7 +4,7 @@ import Title from "../title.astro";
 const props = Astro.props;
 ---
 
-<Title tag="h5" {...props}>
+<Title tag="h5" {...props} serif>
     <Link onclick="window.location.hash = this?.parentElement?.id ?? '#'" connot-select>#</Link>
     <slot />
 </Title>
