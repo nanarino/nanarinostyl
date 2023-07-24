@@ -10,28 +10,31 @@
         opacity 0
 
 .{prefix}-badge
+    --badge-padding 0.3em
+    --badge-indent 1.5em
+
     white-space nowrap
     width fit-content
     display inline-flex
     align-items center
     justify-content center
-    text-indent 1.5em
+    text-indent var(--badge-indent)
     position relative
     &::before
         content ''
         position absolute
-        left 0.3em
-        top 0.3em
-        bottom 0.3em
+        left var(--badge-padding)
+        top var(--badge-padding)
+        bottom var(--badge-padding)
         aspect-ratio 1 / 1
         border-radius 50%
         background-color _rgb(var(--primary-6))
     &[data-processing]::after
         content ''
         position absolute
-        left 0.3em
-        top 0.3em
-        bottom 0.3em
+        left var(--badge-padding)
+        top var(--badge-padding)
+        bottom var(--badge-padding)
         aspect-ratio 1 / 1
         border-radius 50%
         border 1px solid _rgb(var(--primary-6))

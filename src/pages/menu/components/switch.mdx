@@ -52,14 +52,15 @@ span.☘-switch.sm(data-primary="danger")
 
 ## custom style
 
+修改原生css变量 `--switch-size` 以覆盖默认尺寸
+
 <OxalisSwitch/>
 
 ```pug
 span.☘-switch(
     style={
-        transform: 'scale(2)',
-        margin: '60px',
-        '--primary-6': '220 251 124'
+        "--switch-size": "48px",
+        "--primary-6": "220 251 124",
     }
 )
     input#oxalis-switch(type="checkbox" checked)

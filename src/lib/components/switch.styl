@@ -2,14 +2,14 @@
 @import './../variable/functions.styl'
 
 .{prefix}-switch
+    --switch-size 22px
+
     display inline-flex
     position relative
-    --switch-size 22px
-    --switch-mover-size 18px
+    --switch-mover-size calc(var(--switch-size) - 4px)
     font-size calc(var(--switch-mover-size) - var(--font-offset-parent))
     &.sm
         --switch-size 16px
-        --switch-mover-size 12px
     &>.{prefix}-switch-mover
         display inline-flex
         cursor pointer
