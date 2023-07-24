@@ -4,13 +4,13 @@ interface Props {
     scene?: string;
     disabled?: boolean;
     href?: string;
-    target?: string;
+    target?: "_self" | "_blank" | "_parent" | "_top";
     onclick?: string;
     'connot-select'?: boolean
 }
 const props = Astro.props;
 const suffix = (props.scene && `-${props.scene}`) ?? "";
-const target = props.target || "_blank";
+const target = props.target || "_self";
 let { href, disabled, onclick} = props;
 if(disabled){
     onclick = '';
