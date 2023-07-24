@@ -1,0 +1,38 @@
+@import './../variable/prefix.styl'
+@import './../variable/functions.styl'
+
+@keyframes badge-processing
+    0%
+        transform scale(1)
+        opacity 0.5
+    to
+        transform scale(3)
+        opacity 0
+
+.{prefix}-badge
+    white-space nowrap
+    width fit-content
+    display inline-flex
+    align-items center
+    justify-content center
+    text-indent 1.5em
+    position relative
+    &::before
+        content ''
+        position absolute
+        left 0.5em
+        top 0.5em
+        bottom 0.5em
+        aspect-ratio 1 / 1
+        border-radius 50%
+        background-color _rgb(var(--primary-6))
+    &[processing]::after
+        content ''
+        position absolute
+        left 0.5em
+        top 0.5em
+        bottom 0.5em
+        aspect-ratio 1 / 1
+        border-radius 50%
+        border 1px solid _rgb(var(--primary-6))
+        animation badge-processing 1.2s ease-in-out infinite

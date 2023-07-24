@@ -1,7 +1,7 @@
 ---
 import prefix from "src/scripts/server/prefix";
 interface Props {
-    scene?: string;
+    primary?: "success"|"danger"|"warning";
     disabled?: boolean;
     href?: string;
     target?: "_self" | "_blank" | "_parent" | "_top";
@@ -9,7 +9,6 @@ interface Props {
     'connot-select'?: boolean
 }
 const props = Astro.props;
-const suffix = (props.scene && `-${props.scene}`) ?? "";
 const target = props.target || "_self";
 let { href, disabled, onclick} = props;
 if(disabled){
@@ -23,13 +22,14 @@ if(onclick){
 
 <a
     class:list={{
-        [`${prefix}-link${suffix}`]: true,
+        [`${prefix}-link`]: true,
         [`${prefix}-connot-select`]: props['connot-select']
     }}
     {...href ? { href } : {}}
     {...onclick ? { onclick } : {}}
     {...{ disabled }}
     target={target}
+    data-primary={props.primary}
 >
     <slot />
 </a>

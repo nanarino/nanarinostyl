@@ -1,5 +1,3 @@
-@import './functions.styl'
-
 :root
     background var(--white)
     color var(--black)
@@ -9,16 +7,6 @@
 :root[data-theme='theme-dark']
     --white #000
     --black #fff
-color_alias_dict = {
-    primary: 'pinkpurple',
-    success: 'green',
-    danger: 'red',
-    warning: 'orange'
-}
-:root
-    for k, v in color_alias_dict
-        for i in range(1 10)
-            {_get_var_by(k, i)} var(_get_var_by(v, i))
 /**
  * @desc 配色，完全使用arco.design的默认配色
  *

@@ -16,31 +16,31 @@ a.☘-link(href="https://stylus-lang.com/" target="_blank")
 ```
 
 
-## scene
+## `data-primary`
 
 <Link>戳</Link>
-<Link scene="warning">戳</Link>
-<Link scene="danger">戳</Link>
-<Link scene="success">戳</Link>
+<Link primary="warning">戳</Link>
+<Link primary="danger">戳</Link>
+<Link primary="success">戳</Link>
 
 ```pug
 a.☘-link 戳
-a.☘-link-warning 戳
-a.☘-link-danger 戳
-a.☘-link-success 戳
+a.☘-link(data-primary="warning") 戳
+a.☘-link(data-primary="danger") 戳
+a.☘-link(data-primary="success") 戳
 ```
 
 
 ## `disabled`
 
 <Link disabled>戳</Link>
-<Link disabled scene="warning">戳</Link>
-<Link disabled scene="danger">戳</Link>
-<Link disabled scene="success">戳</Link>
+<Link disabled primary="warning">戳</Link>
+<Link disabled primary="danger">戳</Link>
+<Link disabled primary="success">戳</Link>
 
 ```pug
 a.☘-link(disabled) 戳
-a.☘-link-warning(disabled) 戳
-a.☘-link-danger(disabled) 戳
-a.☘-link-success(disabled) 戳
+a.☘-link(disabled data-primary="warning") 戳
+a.☘-link(disabled data-primary="danger") 戳
+a.☘-link(disabled data-primary="success") 戳
 ```
