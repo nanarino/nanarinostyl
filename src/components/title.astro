@@ -2,6 +2,7 @@
 import prefix from "src/scripts/server/prefix";
 const props = Astro.props;
 interface Props {
+    primary?: "success"|"danger"|"warning";
     tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
     size?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
     sub?: string;
@@ -12,10 +13,8 @@ interface Props {
     serif?: boolean
 }
 let { tag: Tag } = props;
-let size = "";
 if (props.size) {
     Tag = "div";
-    size = `-${props.size}`;
 } else {
     Tag ||= "div";
 }
@@ -23,11 +22,13 @@ if (props.size) {
 
 <Tag
     class:list={{
-        [`${prefix}-title${size}`]: true,
-        [`${prefix}-title-has-prefix`]: props.prefix,
+        [`${prefix}-title`]: true,
         [`${prefix}-font-serif`]: props.serif,
     }}
     id={props.id}
+    data-size={props.size}
+    data-primary={props.primary}
+    data-has-prefix={props.prefix}
     style={props.style}
 >
     <slot />

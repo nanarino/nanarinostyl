@@ -1,18 +1,18 @@
 ---
 import prefix from "src/scripts/server/prefix";
 interface Props {
-    scene?: string;
-    disabled?: boolean;
+    primary?: "success"|"danger"|"warning";
+    processing?: boolean;
 }
 const props = Astro.props;
-const suffix = (props.scene && `-${props.scene}`) ?? "";
-
 ---
 
 <span
     class:list={{
-        [`${prefix}-badge${suffix}`]: true,
+        [`${prefix}-badge`]: true,
     }}
+    data-processing={props.processing}
+    data-primary={props.primary}
 >
     <slot />
 </span>

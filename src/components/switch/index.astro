@@ -2,6 +2,7 @@
 import prefix from "src/scripts/server/prefix";
 const props = Astro.props;
 interface Props {
+    primary?: "success"|"danger"|"warning";
     id: string;
     checked?: boolean;
     disabled?: boolean;
@@ -16,6 +17,7 @@ interface Props {
         sm: props.sm,
     }}
     style={props.style}
+    data-primary={props.primary}
 >
     <input
         type="checkbox"

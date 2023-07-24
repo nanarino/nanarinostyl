@@ -39,12 +39,12 @@ span.☘-switch.sm
 
 ## custom icon
 
-<Switch id="switch5" sm>
-    <span>❄️</span>
+<Switch id="switch5" primary="danger" sm>
+    <span>🔥</span>
 </Switch>
 
 ```pug
-span.☘-switch.sm
+span.☘-switch.sm(data-primary="danger")
     input#switch5(type="checkbox")
     label(for="switch5")
         span ❄️

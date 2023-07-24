@@ -1,22 +1,35 @@
 @import './../variable/prefix.styl'
 @import './../variable/functions.styl'
 
-set_subtitle(size=1)
+set_title_styl(size=6)
+    mixin_line_clamp(1)
+    font-weight normal
+    margin 1em 0
+    height var(_get_var_by(
+        line-height,
+        'h%s' % size
+    ))
+    line-height @height
+    font-size var(_get_var_by(
+        font-size,
+        'h%s' % size
+    ))
+    
     .{prefix}-title-subtitle
         margin-left var(--font-offset-parent)
         line-height var(_get_var_by(
             line-height,
-            size
+            7 - size
         ))
         font-size var(_get_var_by(
             font-size,
-            size
+            7 - size
         ))
         vertical-align bottom
         color _rgb(var(_get_var_by('gray', 7)))
 
 set_has_prefix()
-    &.{prefix}-title-has-prefix
+    &[data-has-prefix]
         position relative
         padding-left calc(var(--font-offset-parent) * 3)
 
@@ -32,30 +45,14 @@ set_has_prefix()
 
 
 .{prefix}-title
-    mixin_line_clamp(1)
-    height var(--line-height-body)
-    line-height @height
-    font-size var(--font-size-body)
     font-weight normal
     margin 1em 0
-    set_subtitle()
+    set_title_styl()
     set_has_prefix()
 
     for i in range(1 6)
         /h{i}&
-        /&-h{i}
-            mixin_line_clamp(1)
-            height var(_get_var_by(
-                line-height,
-                'h%s' % i
-            ))
-            line-height @height
-            font-size var(_get_var_by(
-                font-size,
-                'h%s' % i
-            ))
-            font-weight @font-weight
-            margin @margin
-            set_subtitle(size= 7 - i)
+        &[data-size=h{i}]
+            set_title_styl(i)
             set_has_prefix()
         
