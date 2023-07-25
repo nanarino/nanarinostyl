@@ -1,0 +1,55 @@
+---
+layout: "@layout/main.astro"
+title: 排版
+---
+
+import Tag from "src/components/tag.astro";
+export * from 'src/components/markdown/map.mdx';
+
+# typography
+
+`.☘-font-serif` 衬线字体
+
+`.☘-font-mono` 等宽字体
+
+`.☘-connot-select` 无法选中文字
+
+和颜色一样，字体大小和行高有10个级别。
+
+| lv | font-size | line-height |
+| -- | --------- | ----------- |
+|  1 |      12px |        20px |
+|  2 |      14px |        22px |
+|  3 |      16px |        24px |
+|  4 |      20px |        28px |
+|  5 |      24px |        32px |
+|  6 |      30px |        38px |
+|  7 |      38px |        46px |
+|  8 |      46px |        54px |
+|  9 |      56px |        64px |
+| 10 |      68px |        76px |
+
+## `span.☘-tag`
+
+<Tag>#户外</Tag>
+<Tag>#助眠</Tag>
+
+```pug
+span.☘-tag #户外
+span.☘-tag #助眠
+```
+
+## `<code>` 和 `<pre>`
+
+用来拓展markdown
+
+`code.☘-code` 同 `span.☘-tag` 样式没有区别
+
+但是塞进 `pre.☘-pre` 可以用来显示多行代码
+
+```pug
+code.☘-code.☘-font-mono
+    pre.☘-pre.☘-font-mono
+        |    print("helloworld")
+```
+

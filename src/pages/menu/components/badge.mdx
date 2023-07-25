@@ -4,13 +4,62 @@ title: 徽标
 ---
 
 import Badge from "src/components/badge.astro";
+import Tag from "src/components/tag.astro";
+import { Icon } from "astro-icon";
 export * from 'src/components/markdown/map.mdx';
 
 # badge
 
-<Badge>1</Badge>
+## `data-primary`
 
-<Badge primary="success">2</Badge>
+<Badge>primary</Badge>
+<Badge primary="success">success</Badge>
+<Badge primary="warning">warning</Badge>
+<Badge primary="danger">danger</Badge>
 
-<Badge processing>3</Badge>
+```pug
+span.☘-badge primary
+span.☘-badge(data-primary="success") success
+span.☘-badge(data-primary="warning") warning
+span.☘-badge(data-primary="danger") danger
+```
 
+## `data-processing`
+
+<Badge processing style="font-size: 16px">processing</Badge>
+
+```pug
+span.☘-badge(data-processing style="font-size: 16px") processing
+```
+
+## custom style
+
+`--badge-processing-weight` 调整 波浪大小
+
+`--badge-padding` 反向调整 圆点大小
+
+`--badge-indent` 调整 圆点和文字的距离
+
+<Badge processing primary="danger" style="font-size: 20px; --badge-processing-weight: 2px">`debug`</Badge>
+
+<Badge processing primary="danger" style="--badge-indent: 30px ;--badge-padding: 10px">
+    <Tag>
+        <Icon name="general/outline/bug" alt="sun" width="30" height="30" style="vertical-align: middle"/>
+    </Tag>
+</Badge>
+
+```pug
+span.☘-badge(data-processing data-primary="danger" style={
+    "font-size": "20px",
+    "--badge-processing-weight": "2px"
+})
+    span.☘-code.☘-font-mono debug
+
+span.☘-badge(data-processing data-primary="danger" style={
+    "--badge-indent": "30px",
+    "--badge-padding": "10px"
+})
+    span.☘-tag 
+        svg(width="30" height="30" style="vertical-align: middle").
+            ...
+```

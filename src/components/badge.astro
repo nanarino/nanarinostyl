@@ -3,6 +3,7 @@ import prefix from "src/scripts/server/prefix";
 interface Props {
     primary?: "success"|"danger"|"warning";
     processing?: boolean;
+    style?: string | Record<string, any>;
 }
 const props = Astro.props;
 ---
@@ -13,6 +14,5 @@ const props = Astro.props;
     }}
     data-processing={props.processing}
     data-primary={props.primary}
->
-    <slot />
-</span>
+    style={props.style}
+><slot /></span>

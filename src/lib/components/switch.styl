@@ -3,10 +3,11 @@
 
 .{prefix}-switch
     --switch-size 22px
+    --switch-padding 2px
 
     display inline-flex
     position relative
-    --switch-mover-size calc(var(--switch-size) - 4px)
+    --switch-mover-size calc(var(--switch-size) - 2 * var(--switch-padding))
     font-size calc(var(--switch-mover-size) - var(--font-offset-parent))
     &.sm
         --switch-size 16px
@@ -23,9 +24,9 @@
             align-items center
             justify-content center
             position absolute
-            left 2px
-            top 2px
-            bottom 2px
+            left var(--switch-padding)
+            top var(--switch-padding)
+            bottom var(--switch-padding)
             width var(--switch-mover-size)
             height @width
             border-radius 50%
@@ -37,7 +38,7 @@
             &+.{prefix}-switch-mover
                 background-color _rgb(var(--primary-6))
                 &:empty::before, &>*
-                    left calc(var(--switch-size) + 2px)
+                    left calc(var(--switch-size) + var(--switch-padding))
             &:disabled+.{prefix}-switch-mover
                 background-color _rgb(var(--primary-3))
         &:disabled+.{prefix}-switch-mover

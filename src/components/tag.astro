@@ -1,0 +1,6 @@
+---
+import prefix from "src/scripts/server/prefix";
+const props = Astro.props;
+---
+
+<span class={`${prefix}-tag`} {...props}><slot /></span>
