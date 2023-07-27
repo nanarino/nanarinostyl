@@ -1,0 +1,6 @@
+---
+import prefix from "src/scripts/server/prefix";
+const props = Astro.props;
+---
+
+<th class={`${prefix}-table-cell ${prefix}-font-serif`} {...props}><slot /></th>

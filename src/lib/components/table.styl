@@ -1,0 +1,48 @@
+@import './../variable/prefix.styl'
+@import './../variable/functions.styl'
+
+.{prefix}-table-container
+    display grid
+    overflow auto
+    position relative
+    thead, .{prefix}-table-header-group
+        z-index 5
+        position sticky
+        top 0
+
+.{prefix}-table
+    --padding-cell 9px 12px
+    --border-cell none
+    --text-align-cell left
+    --font-size-table var(--font-size-body)
+    --line-height-table var(--line-height-body)
+
+    font-size var(--font-size-table)
+    line-height var(--line-height-table)
+    &.lg
+        --padding-cell 13px 16px
+    &.sm
+        --padding-cell 5px 8px
+        --font-size-table var(--font-size-base)
+        --line-height-table var(--line-height-base)
+    &[data-cell-align=center]
+        --text-align-cell center
+
+    display table
+    max-width 100%
+    border-collapse collapse
+
+    tr, &-row
+        display table-row
+        box-sizing border-box
+    td, th, &-cell
+        display table-cell
+        white-space nowrap
+        padding var(--padding-cell)
+        background-color var(--white)
+        text-align var(--text-align-cell)
+        border var(--border-cell)
+        box-shadow var(--box-shadow-divider-bottom)
+    
+    th, &-header-group>.{prefix}-table-cell
+        background-color _rgb(var(--gray-1))
