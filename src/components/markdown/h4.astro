@@ -1,10 +1,12 @@
 ---
-import Link from "../link.astro";
-import Title from "../title.astro";
+import prefix from "src/scripts/server/prefix";
+interface Props {
+    id: string
+}
 const props = Astro.props;
 ---
 
-<Title tag="h4" {...props} serif>
-    <Link onclick="window.location.hash = this?.parentElement?.id ?? '#'" connot-select>#</Link>
+<h4 class={`${prefix}-title ${prefix}-font-serif`} id={props.id}>
+    <a href={`#${props.id}`} class={`${prefix}-link ${prefix}-connot-select`}>#</a>
     <slot />
-</Title>
+</h4>

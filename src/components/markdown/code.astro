@@ -1,13 +1,12 @@
 ---
 import prefix from "src/scripts/server/prefix";
 import escape from "src/scripts/server/escape";
-const props = Astro.props;
 let code: string = "";
 if (Astro.slots.has("default")) {
     code = escape(await Astro.slots.render("default"));
 }
 ---
 
-<code class={`${prefix}-code ${prefix}-font-mono`} {...props}
+<code class={`${prefix}-code ${prefix}-font-mono`}
     ><Fragment set:html={code} /></code
 >

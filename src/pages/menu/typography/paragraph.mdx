@@ -3,12 +3,12 @@ layout: "@layout/main.astro"
 title: 段落
 ---
 
-import Paragraph from "src/components/paragraph.astro";
+import Scape from "src/components/scape.astro";
 export * from 'src/components/markdown/map.mdx';
 
 # paragraph
 
-<Paragraph>西游记</Paragraph>
+<Scape class="☘-paragraph">西游记</Scape>
 
 ```pug
 .☘-paragraph 西游记
@@ -17,7 +17,7 @@ export * from 'src/components/markdown/map.mdx';
 
 ## `data-size`
 
-<Paragraph size="p1">诗曰：</Paragraph>
+<Scape class="☘-paragraph" data-size="p1">诗曰：</Scape>
 
 ```pug
 .☘-paragraph(data-size="p1") 诗曰：
@@ -25,10 +25,10 @@ export * from 'src/components/markdown/map.mdx';
 
 ## `data-ellipsis`
 
-<Paragraph size="p2" ellipsis="l2">混沌未分天地乱，茫茫渺渺无人见。
+<Scape class="☘-paragraph" data-size="p2" data-ellipsis="l2">混沌未分天地乱，茫茫渺渺无人见。
 自从盘古破鸿蒙，开辟从兹清浊辨。
 覆载群生仰至仁，发明万物接为善。
-欲知造化会元功，须看西游释厄传。</Paragraph>
+欲知造化会元功，须看西游释厄传。</Scape>
 
 ```pug
 .☘-paragraph(data-size="p2" data-ellipsis="l2")
@@ -41,11 +41,13 @@ export * from 'src/components/markdown/map.mdx';
 
 ## `data-has-indent`
 
-<div style='width: 20em'><Paragraph ellipsis="l5" indent>我欲因之梦吴越，一夜飞度镜湖月。 湖月照我影，送我至剡溪。 谢公宿处今尚在，渌水荡漾清猿啼。 脚著谢公屐，身登青云梯。 半壁见海日，空中闻天鸡。 千岩万转路不定，迷花倚石忽已暝。 熊咆龙吟殷岩泉，栗深林兮惊层巅。 云青青兮欲雨，水澹澹兮生烟。</Paragraph></div>
+<div style='width: 20em'>
+    <Scape class="☘-paragraph" data-ellipsis="l5" data-has-indent>我欲因之梦吴越，一夜飞度镜湖月。 湖月照我影，送我至剡溪。 谢公宿处今尚在，渌水荡漾清猿啼。 脚著谢公屐，身登青云梯。 半壁见海日，空中闻天鸡。 千岩万转路不定，迷花倚石忽已暝。 熊咆龙吟殷岩泉，栗深林兮惊层巅。 云青青兮欲雨，水澹澹兮生烟。</Scape>
+</div>
 
 ```pug
 div(style={width: "20em"})
-    .☘-paragraph-p6(data-has-indent data-ellipsis="l5")
+    .☘-paragraph(data-has-indent data-ellipsis="l5")
         | 我欲因之梦吴越，一夜飞度镜湖月。 湖月照我影，送我至剡溪。
         | 谢公宿处今尚在，渌水荡漾清猿啼。 脚著谢公屐，身登青云梯。
         | 半壁见海日，空中闻天鸡。 千岩万转路不定，迷花倚石忽已暝。

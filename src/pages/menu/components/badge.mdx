@@ -3,19 +3,18 @@ layout: "@layout/main.astro"
 title: 徽标
 ---
 
-import Badge from "src/components/badge.astro";
-import Tag from "src/components/tag.astro";
+import Scape from "src/components/scape.astro";
 import { Icon } from "astro-icon";
-export * from 'src/components/markdown/map.mdx';
+export * from "src/components/markdown/map.mdx";
 
 # badge
 
 ## `data-primary`
 
-<Badge>primary</Badge>
-<Badge primary="success">success</Badge>
-<Badge primary="warning">warning</Badge>
-<Badge primary="danger">danger</Badge>
+<Scape tag="span" class="☘-badge">primary</Scape>
+<Scape tag="span" class="☘-badge" data-primary="success">success</Scape>
+<Scape tag="span" class="☘-badge" data-primary="warning">warning</Scape>
+<Scape tag="span" class="☘-badge" data-primary="danger">danger</Scape>
 
 ```pug
 span.☘-badge primary
@@ -26,7 +25,7 @@ span.☘-badge(data-primary="danger") danger
 
 ## `data-processing`
 
-<Badge processing style="font-size: 16px">processing</Badge>
+<Scape tag="span" class="☘-badge" data-processing style="font-size: 16px">processing</Scape>
 
 ```pug
 span.☘-badge(data-processing style="font-size: 16px") processing
@@ -40,13 +39,13 @@ span.☘-badge(data-processing style="font-size: 16px") processing
 
 `--badge-indent` 调整 圆点和文字的距离
 
-<Badge processing primary="danger" style="font-size: 20px; --badge-processing-weight: 2px">`debug`</Badge>
+<Scape tag="span" class="☘-badge" data-processing data-primary="danger" style="font-size: 20px; --badge-processing-weight: 2px">`debug`</Scape>
 
-<Badge processing primary="danger" style="--badge-indent: 30px ;--badge-padding: 10px">
-    <Tag>
+<Scape tag="span" class="☘-badge" data-processing data-primary="danger" style="--badge-indent: 30px ;--badge-padding: 10px">
+    <Scape tag="span" class="☘-tag">
         <Icon name="general/outline/bug" alt="bug" width="30" height="30" style="vertical-align: middle"/>
-    </Tag>
-</Badge>
+    </Scape>
+</Scape>
 
 ```pug
 span.☘-badge(data-processing data-primary="danger" style={
@@ -60,6 +59,5 @@ span.☘-badge(data-processing data-primary="danger" style={
     "--badge-padding": "10px"
 })
     span.☘-tag 
-        svg(alt="bug" width="30" height="30" style="vertical-align: middle").
-            ...
+        svg(alt="bug" width="30" height="30" style="vertical-align: middle")
 ```

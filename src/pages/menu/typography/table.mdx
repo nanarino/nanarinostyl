@@ -1,0 +1,229 @@
+---
+layout: "@layout/main.astro"
+title: 表格
+---
+
+import Scape from "src/components/scape.astro";
+export * from 'src/components/markdown/map.mdx';
+
+# table
+
+<Scape class="☘-table-container">
+    <Scape tag="table" class="☘-table sm">
+        <thead>
+            <tr>
+                <th> Mode </th>
+                <th> Ionian </th>
+                <th> Aeolian </th>
+                <th> Mixolydian</th>
+                <th> Dorian </th>
+                <th> Phrygian </th>
+                <th> Lydian </th>
+                <th> Locrian </th>
+            </tr>
+            <tr>
+                <th> Key Signature </th>
+                <th> Major </th>
+                <th> Minor </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> 7 sharps </td>
+                <td> `C#` </td>
+                <td> `A#m` </td>
+                <td> `G#Mix` </td>
+                <td> `D#Dor` </td>
+                <td> `E#Phr` </td>
+                <td> `F#Lyd` </td>
+                <td> `B#Loc` </td>
+            </tr>
+            <tr>
+                <td> 6 sharps </td>
+                <td> `F#` </td>
+                <td> `D#m` </td>
+                <td> `C#Mix` </td>
+                <td> `G#Dor` </td>
+                <td> `A#Phr` </td>
+                <td> `BLyd` </td>
+                <td> `E#Loc` </td>
+            </tr>
+            <tr>
+                <td> 5 sharps </td>
+                <td> `B` </td>
+                <td> `G#m` </td>
+                <td> `F#Mix` </td>
+                <td> `C#Dor` </td>
+                <td> `D#Phr` </td>
+                <td> `ELyd` </td>
+                <td> `A#Loc` </td>
+            </tr>
+            <tr>
+                <td> 4 sharps </td>
+                <td> `E` </td>
+                <td> `C#m` </td>
+                <td> `BMix` </td>
+                <td> `F#Dor` </td>
+                <td> `G#Phr` </td>
+                <td> `ALyd` </td>
+                <td> `D#Loc` </td>
+            </tr>
+            <tr>
+                <td> 3 sharps </td>
+                <td> `A` </td>
+                <td> `F#m` </td>
+                <td> `EMix` </td>
+                <td> `BDor` </td>
+                <td> `C#Phr` </td>
+                <td> `DLyd` </td>
+                <td> `G#Loc` </td>
+            </tr>
+            <tr>
+                <td> 2 sharps </td>
+                <td> `D` </td>
+                <td> `Bm` </td>
+                <td> `AMix` </td>
+                <td> `EDor` </td>
+                <td> `F#Phr` </td>
+                <td> `GLyd` </td>
+                <td> `C#Loc` </td>
+            </tr>
+            <tr>
+                <td> 1 sharp </td>
+                <td> `G` </td>
+                <td> `Em` </td>
+                <td> `DMix` </td>
+                <td> `ADor` </td>
+                <td> `BPhr` </td>
+                <td> `CLyd` </td>
+                <td> `F#Loc` </td>
+            </tr>
+            <tr>
+                <td> 0 sharps/flats </td>
+                <td> `C` </td>
+                <td> `Am` </td>
+                <td> `GMix` </td>
+                <td> `DDor` </td>
+                <td> `EPhr` </td>
+                <td> `FLyd` </td>
+                <td> `BLoc` </td>
+            </tr>
+            <tr>
+                <td> 1 flat </td>
+                <td> `F` </td>
+                <td> `Dm` </td>
+                <td> `CMix` </td>
+                <td> `GDor` </td>
+                <td> `APhr` </td>
+                <td> `BbLyd` </td>
+                <td> `ELoc` </td>
+            </tr>
+            <tr>
+                <td> 2 flats </td>
+                <td> `Bb` </td>
+                <td> `Gm` </td>
+                <td> `FMix` </td>
+                <td> `CDor` </td>
+                <td> `DPhr` </td>
+                <td> `EbLyd` </td>
+                <td> `ALoc` </td>
+            </tr>
+            <tr>
+                <td> 3 flats </td>
+                <td> `Eb` </td>
+                <td> `Cm` </td>
+                <td> `BbMix` </td>
+                <td> `FDor` </td>
+                <td> `GPhr` </td>
+                <td> `AbLyd` </td>
+                <td> `DLoc` </td>
+            </tr>
+            <tr>
+                <td> 4 flats </td>
+                <td> `Ab` </td>
+                <td> `Fm` </td>
+                <td> `EbMix` </td>
+                <td> `BbDor` </td>
+                <td> `CPhr` </td>
+                <td> `DbLyd` </td>
+                <td> `GLoc` </td>
+            </tr>
+            <tr>
+                <td> 5 flats </td>
+                <td> `Db` </td>
+                <td> `Bbm` </td>
+                <td> `AbMix` </td>
+                <td> `EbDor` </td>
+                <td> `FPhr` </td>
+                <td> `GbLyd` </td>
+                <td> `CLoc` </td>
+            </tr>
+            <tr>
+                <td> 6 flats </td>
+                <td> `Gb` </td>
+                <td> `Ebm` </td>
+                <td> `DbMix` </td>
+                <td> `AbDor` </td>
+                <td> `BbPhr` </td>
+                <td> `CbLyd` </td>
+                <td> `FLoc` </td>
+            </tr>
+            <tr>
+                <td> 7 flats </td>
+                <td> `Cb` </td>
+                <td> `Abm` </td>
+                <td> `GbMix` </td>
+                <td> `DbDor` </td>
+                <td> `EbPhr` </td>
+                <td> `FbLyd` </td>
+                <td> `BbLoc` </td>
+            </tr>
+        </tbody>
+    </Scape>
+</Scape>
+
+## `<table>`
+
+```pug
+.☘-table-container
+    table.☘-table
+        thead
+            tr
+                th ...
+        tbody
+            tr
+                td ...
+```
+
+## `<div>`
+
+```pug
+.☘-table-container
+    .☘-table
+        .☘-table-header-group
+            .☘-table-row
+                .☘-table-cell ...
+        .☘-table-row
+            .☘-table-cell ...
+```
+
+## `.sm` & `.lg`
+
+尺寸更小或更大的表格
+
+## custom style
+
+`--padding-cell` 表格内边距
+
+`--border-cell` 表格边框
+
+`--text-align-cell` 调整 表格文字默认居左
+
+`--font-size-table` 表格字体
+
+`--line-height-table` 表格字体行高

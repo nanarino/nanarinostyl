@@ -1,10 +1,8 @@
 ---
 import prefix from "src/scripts/server/prefix";
-import Title from "../title.astro";
-const props = Astro.props;
 ---
 
-<Title tag="h1" {...props} serif>
+<h1 class={`${prefix}-title ${prefix}-font-serif`}>
     <span class={`${prefix}-connot-select`}>☘</span>
     <slot />
-</Title>
+</h1>

@@ -1,6 +1,5 @@
 ---
-import Divider from "../divider.astro";
-const props = Astro.props;
+import prefix from "src/scripts/server/prefix";
 ---
 
-<Divider tag="hr" {...props} />
+<hr class={`${prefix}-divider`}/>

@@ -1,8 +1,7 @@
 ---
-import Paragraph from "../paragraph.astro";
-const props = Astro.props;
+import prefix from "src/scripts/server/prefix";
 ---
 
-<Paragraph size="p6" {...props} serif>
+<p data-size="p6" class={`${prefix}-paragraph ${prefix}-font-serif`}>
     <slot />
-</Paragraph>
+</p>

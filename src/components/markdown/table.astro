@@ -1,9 +1,8 @@
 ---
 import prefix from "src/scripts/server/prefix";
-const props = Astro.props;
 ---
 <div class={`${prefix}-table-container`}>
-    <table class={`${prefix}-table md`} data-cell-align="center" {...props}>
+    <table class={`${prefix}-table md`} style="--text-align-cell: center">
         <slot />
     </table>
 </div>

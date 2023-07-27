@@ -1,0 +1,23 @@
+---
+import escape from "src/scripts/server/escape";
+interface Props {
+    tag?: string;
+}
+const props = Astro.props;
+let { tag: Tag } = props;
+Tag ||= "div";
+const attrs = {}
+for(const [key, value] of Object.entries(props)){
+    if(key !== 'tag'){
+        if(typeof(value)==='string'){
+            Reflect.set(attrs, key, escape(value))
+        }else{
+            Reflect.set(attrs, key, value)
+        }
+    }
+}
+---
+
+<Tag {...attrs}>
+    <slot />
+</Tag>

@@ -3,7 +3,7 @@ layout: "@layout/main.astro"
 title: 排版
 ---
 
-import Tag from "src/components/tag.astro";
+import Scape from "src/components/scape.astro";
 export * from 'src/components/markdown/map.mdx';
 
 # typography
@@ -31,11 +31,11 @@ export * from 'src/components/markdown/map.mdx';
 
 ## `span.☘-tag`
 
-<Tag>#户外</Tag>
-<Tag>#助眠</Tag>
+<Scape tag='span' class='☘-tag'>#户外</Scape> &nbsp; <Scape tag='span' class='☘-tag'>#助眠</Scape>
 
 ```pug
 span.☘-tag #户外
+&nbsp;
 span.☘-tag #助眠
 ```
 
