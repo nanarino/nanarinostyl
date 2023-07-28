@@ -6,14 +6,14 @@ interface Props {
     id: string;
     checked?: boolean;
     disabled?: boolean;
-    className?: string;
+    class?: string;
     style?: Record<string, any> | string;
     dataList?: Record<string, any>;
 }
 ---
 
 <span
-    class={`${prefix}-switch ${props.className || ""}`}
+    class={`${prefix}-switch ${props.class || ""}`}
     style={props.style}
     {...attrs(props.dataList || {})}
 >
