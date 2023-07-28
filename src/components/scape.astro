@@ -6,7 +6,7 @@ interface Props {
 const props = Astro.props;
 let { tag: Tag } = props;
 Tag ||= "div";
-const attrs = {}
+const attrs: Record<string, any> = {}
 for(const [key, value] of Object.entries(props)){
     if(key !== 'tag'){
         if(typeof(value)==='string'){

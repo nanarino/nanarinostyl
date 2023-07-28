@@ -1,23 +1,21 @@
 ---
 import prefix from "src/scripts/server/prefix";
+import attrs from "src/scripts/server/attrs";
 const props = Astro.props;
 interface Props {
-    primary?: "success"|"danger"|"warning";
     id: string;
     checked?: boolean;
     disabled?: boolean;
-    sm?: boolean;
+    className?: string;
     style?: Record<string, any> | string;
+    dataList?: Record<string, any>;
 }
 ---
 
 <span
-    class:list={{
-        [`${prefix}-switch`]: true,
-        sm: props.sm,
-    }}
+    class={`${prefix}-switch ${props.className || ""}`}
     style={props.style}
-    data-primary={props.primary}
+    {...attrs(props.dataList || {})}
 >
     <input
         type="checkbox"

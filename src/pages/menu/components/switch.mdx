@@ -22,7 +22,7 @@ span.☘-switch
 
 ## `.sm`
 
-<Switch id="switch2" sm/>
+<Switch id="switch2" className="sm"/>
 
 ```pug
 span.☘-switch.sm
@@ -33,7 +33,7 @@ span.☘-switch.sm
 ## `disabled`
 
 <Switch id="switch3" checked disabled/>
-<Switch id="switch4" sm disabled/>
+<Switch id="switch4" className="sm" disabled/>
 
 ```pug
 span.☘-switch
@@ -46,7 +46,7 @@ span.☘-switch.sm
 
 ## custom mover
 
-<Switch id="switch5" primary="danger" sm>
+<Switch id="switch5" dataList={{ primary : "danger" }} className="sm">
     <span>🔥</span>
 </Switch>
 
