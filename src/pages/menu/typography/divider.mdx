@@ -3,14 +3,14 @@ layout: "@layout/main.astro"
 title: 分割线
 ---
 
-import Scape from "src/components/scape.astro";
+import T from "src/components/T.astro";
 export * from 'src/components/markdown/map.mdx';
 
 # divider
 
 ## `<div>`
 
-<Scape class="☘-divider" />
+<T class="☘-divider" />
 
 ```pug
 .☘-divider
@@ -18,7 +18,7 @@ export * from 'src/components/markdown/map.mdx';
 
 ## `<span>`
 
-<p>楚河<Scape tag="span" class="☘-divider" />漢界</p>
+<p>楚河<T tag="span" class="☘-divider" />漢界</p>
 
 ```pug
 p
@@ -31,7 +31,7 @@ p
 
 【浏览器代理样式】为border实现
 
-<Scape tag="hr" class="☘-divider" />
+<T tag="hr" class="☘-divider" />
 
 ```pug
 hr.☘-divider
@@ -39,16 +39,16 @@ hr.☘-divider
 
 ## custom style
 
-<Scape tag="hr" class="☘-divider" style="border: 1px dotted rgb(var(--primary-2)"/>
+<T tag="hr" class="☘-divider" style="border: 1px dotted rgb(var(--primary-2)"/>
 
 ```pug
 hr.☘-divider(style="border: 1px dotted rgb(var(--primary-2)")
 ```
 
 <div style="display: flex; align-items: center">
-    <Scape class="☘-divider" style='flex: 1' />
+    <T class="☘-divider" style='flex: 1' />
     <span>⭐</span>
-    <Scape class="☘-divider" style='flex: 1' />
+    <T class="☘-divider" style='flex: 1' />
 </div>
 
 ```pug

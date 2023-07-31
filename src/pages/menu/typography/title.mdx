@@ -3,7 +3,7 @@ layout: "@layout/main.astro"
 title: 标题
 ---
 
-import Scape from "src/components/scape.astro";
+import T from "src/components/T.astro";
 export * from 'src/components/markdown/map.mdx';
 
 
@@ -11,11 +11,11 @@ export * from 'src/components/markdown/map.mdx';
 
 ## `<h1>` ~ `<h6>`
 
-<Scape class="☘-title" tag='h2'>𓀉 𓀊 𓀋 𓀌 𓀍</Scape>
-<Scape class="☘-title" tag='h3'>𓀘 𓀙 𓀚 𓀛 𓀜 𓀝 𓀞𓀀</Scape>
-<Scape class="☘-title" tag='h4'>𓀁 𓀂 𓀄 𓀅 𓀆 𓀇 𓀈</Scape>
-<Scape class="☘-title" tag='h5'>𓀁 𓀂 𓀃 𓀄 𓀅 𓀆 𓀇 𓀈</Scape>
-<Scape class="☘-title" tag='h6'>𓀎 𓀏 𓀐 𓀑 𓀒𓀓  𓀖 𓀗</Scape>
+<T class="☘-title" tag='h2'>𓀉 𓀊 𓀋 𓀌 𓀍</T>
+<T class="☘-title" tag='h3'>𓀘 𓀙 𓀚 𓀛 𓀜 𓀝 𓀞𓀀</T>
+<T class="☘-title" tag='h4'>𓀁 𓀂 𓀄 𓀅 𓀆 𓀇 𓀈</T>
+<T class="☘-title" tag='h5'>𓀁 𓀂 𓀃 𓀄 𓀅 𓀆 𓀇 𓀈</T>
+<T class="☘-title" tag='h6'>𓀎 𓀏 𓀐 𓀑 𓀒𓀓  𓀖 𓀗</T>
 
 ```pug
 h2.☘-title 𓀉 𓀊 𓀋 𓀌 𓀍
@@ -27,11 +27,11 @@ h6.☘-title 𓀎 𓀏 𓀐 𓀑 𓀒𓀓  𓀖 𓀗
 
 ## `data-size`
 
-<Scape class="☘-title" data-size='h3'>𓀉 𓀊 𓀋 𓀌 𓀍</Scape>
-<Scape class="☘-title" data-size='h4'>𓀘 𓀙 𓀚 𓀛 𓀜 𓀝 𓀞𓀀</Scape>
-<Scape class="☘-title" data-size='h5'>𓀁 𓀂 𓀄 𓀅 𓀆 𓀇 𓀈</Scape>
-<Scape class="☘-title" data-size='h6'>𓀁 𓀂 𓀃 𓀄 𓀅 𓀆 𓀇 𓀈</Scape>
-<Scape>𓀎 𓀏 𓀐 𓀑 𓀒𓀓  𓀖 𓀗</Scape>
+<T class="☘-title" data-size='h3'>𓀉 𓀊 𓀋 𓀌 𓀍</T>
+<T class="☘-title" data-size='h4'>𓀘 𓀙 𓀚 𓀛 𓀜 𓀝 𓀞𓀀</T>
+<T class="☘-title" data-size='h5'>𓀁 𓀂 𓀄 𓀅 𓀆 𓀇 𓀈</T>
+<T class="☘-title" data-size='h6'>𓀁 𓀂 𓀃 𓀄 𓀅 𓀆 𓀇 𓀈</T>
+<T>𓀎 𓀏 𓀐 𓀑 𓀒𓀓  𓀖 𓀗</T>
 
 ```pug
 .☘-title(data-size='h3') 𓀉 𓀊 𓀋 𓀌 𓀍
@@ -43,7 +43,7 @@ h6.☘-title 𓀎 𓀏 𓀐 𓀑 𓀒𓀓  𓀖 𓀗
 
 ## subtitle
 
-<Scape class="☘-title" data-size='h1'>红楼梦<Scape tag="span" class="☘-title-subtitle">戚序本</Scape></Scape>
+<T class="☘-title" data-size='h1'>红楼梦<T tag="span" class="☘-title-subtitle">戚序本</T></T>
 
 ```pug
 .☘-title(data-size='h1')
@@ -53,7 +53,7 @@ h6.☘-title 𓀎 𓀏 𓀐 𓀑 𓀒𓀓  𓀖 𓀗
 
 ***
 
-<Scape class="☘-title" tag='h2'>红楼梦<Scape tag="span" class="☘-title-subtitle" style="float:right">戚序本</Scape></Scape>
+<T class="☘-title" tag='h2'>红楼梦<T tag="span" class="☘-title-subtitle" style="float:right">戚序本</T></T>
 
 ```pug
 h2.☘-title
@@ -63,8 +63,8 @@ h2.☘-title
 
 ## `data-has-prefix`
 
-<Scape class="☘-title" tag='h6' data-has-prefix data-primary="danger">石头记</Scape>
-<Scape class="☘-title" data-size='h3' sub='戚序本' data-has-prefix>红楼梦<Scape tag="span" class="☘-title-subtitle">戚序本</Scape></Scape>
+<T class="☘-title" tag='h6' data-has-prefix data-primary="danger">石头记</T>
+<T class="☘-title" data-size='h3' sub='戚序本' data-has-prefix>红楼梦<T tag="span" class="☘-title-subtitle">戚序本</T></T>
 
 ```pug
 h6.☘-title(data-has-prefix data-primary="danger") 石头记

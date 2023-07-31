@@ -3,12 +3,12 @@ layout: "@layout/main.astro"
 title: 链接
 ---
 
-import Scape from "src/components/scape.astro";
+import T from "src/components/T.astro";
 export * from 'src/components/markdown/map.mdx';
 
 # link
 
-<Scape tag="a" class="☘-link" href="https://stylus-lang.com/" target="_blank">Stylus Doc</Scape>
+<T tag="a" class="☘-link" href="https://stylus-lang.com/" target="_blank">Stylus Doc</T>
 
 ```pug
 a.☘-link(href="https://stylus-lang.com/" target="_blank")
@@ -18,10 +18,10 @@ a.☘-link(href="https://stylus-lang.com/" target="_blank")
 
 ## `data-primary`
 
-<Scape tag="a" class="☘-link">戳</Scape>
-<Scape tag="a" class="☘-link" data-primary="warning">戳</Scape>
-<Scape tag="a" class="☘-link" data-primary="danger">戳</Scape>
-<Scape tag="a" class="☘-link" data-primary="success">戳</Scape>
+<T tag="a" class="☘-link">戳</T>
+<T tag="a" class="☘-link" data-primary="warning">戳</T>
+<T tag="a" class="☘-link" data-primary="danger">戳</T>
+<T tag="a" class="☘-link" data-primary="success">戳</T>
 
 ```pug
 a.☘-link 戳
@@ -33,10 +33,10 @@ a.☘-link(data-primary="success") 戳
 
 ## `disabled`
 
-<Scape tag="a" class="☘-link" disabled>戳</Scape>
-<Scape tag="a" class="☘-link" disabled data-primary="warning">戳</Scape>
-<Scape tag="a" class="☘-link" disabled data-primary="danger">戳</Scape>
-<Scape tag="a" class="☘-link" disabled data-primary="success">戳</Scape>
+<T tag="a" class="☘-link" disabled>戳</T>
+<T tag="a" class="☘-link" disabled data-primary="warning">戳</T>
+<T tag="a" class="☘-link" disabled data-primary="danger">戳</T>
+<T tag="a" class="☘-link" disabled data-primary="success">戳</T>
 
 ```pug
 a.☘-link(disabled) 戳
