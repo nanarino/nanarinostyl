@@ -12,7 +12,7 @@ const { href } = Astro.props;
     <a href={href || "/"} class="logo">
         <img src="/favicon.svg" alt="logo" class="logo" />
     </a>
-    <Switch id="header-theme-switch">
+    <Switch id="header-theme-switch" title="theme" name="theme">
         <Icon name="general/outline/sun" alt="sun" />
         <Icon name="general/outline/moon" alt="moon" />
     </Switch>

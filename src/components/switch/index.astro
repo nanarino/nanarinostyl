@@ -4,6 +4,8 @@ import attrs from "src/scripts/server/attrs";
 const props = Astro.props;
 interface Props {
     id: string;
+    title?: string;
+    name?: string;
     checked?: boolean;
     disabled?: boolean;
     class?: string;
@@ -20,8 +22,13 @@ interface Props {
     <input
         type="checkbox"
         id={props.id}
+        name={props.name||props.id}
         checked={props.checked}
         disabled={props.disabled}
     />
-    <label class={`${prefix}-switch-mover`} for={props.id}><slot /></label>
+    <label 
+        class={`${prefix}-switch-mover`}
+        for={props.id}
+        title={props.title||props.id}
+    ><slot /></label>
 </span>
