@@ -8,186 +8,87 @@ export * from 'src/components/markdown/map.mdx';
 
 # table
 
+## `<table>`
+
 <T class="☘-table-container">
     <T tag="table" class="☘-table sm">
-        <thead>
-            <tr>
-                <th> Mode </th>
-                <th> Ionian </th>
-                <th> Aeolian </th>
-                <th> Mixolydian</th>
-                <th> Dorian </th>
-                <th> Phrygian </th>
-                <th> Lydian </th>
-                <th> Locrian </th>
-            </tr>
-            <tr>
-                <th> Key Signature </th>
-                <th> Major </th>
-                <th> Minor </th>
-                <th> </th>
-                <th> </th>
-                <th> </th>
-                <th> </th>
-                <th> </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td> 7 sharps </td>
-                <td> `C#` </td>
-                <td> `A#m` </td>
-                <td> `G#Mix` </td>
-                <td> `D#Dor` </td>
-                <td> `E#Phr` </td>
-                <td> `F#Lyd` </td>
-                <td> `B#Loc` </td>
-            </tr>
-            <tr>
-                <td> 6 sharps </td>
-                <td> `F#` </td>
-                <td> `D#m` </td>
-                <td> `C#Mix` </td>
-                <td> `G#Dor` </td>
-                <td> `A#Phr` </td>
-                <td> `BLyd` </td>
-                <td> `E#Loc` </td>
-            </tr>
-            <tr>
-                <td> 5 sharps </td>
-                <td> `B` </td>
-                <td> `G#m` </td>
-                <td> `F#Mix` </td>
-                <td> `C#Dor` </td>
-                <td> `D#Phr` </td>
-                <td> `ELyd` </td>
-                <td> `A#Loc` </td>
-            </tr>
-            <tr>
-                <td> 4 sharps </td>
-                <td> `E` </td>
-                <td> `C#m` </td>
-                <td> `BMix` </td>
-                <td> `F#Dor` </td>
-                <td> `G#Phr` </td>
-                <td> `ALyd` </td>
-                <td> `D#Loc` </td>
-            </tr>
-            <tr>
-                <td> 3 sharps </td>
-                <td> `A` </td>
-                <td> `F#m` </td>
-                <td> `EMix` </td>
-                <td> `BDor` </td>
-                <td> `C#Phr` </td>
-                <td> `DLyd` </td>
-                <td> `G#Loc` </td>
-            </tr>
-            <tr>
-                <td> 2 sharps </td>
-                <td> `D` </td>
-                <td> `Bm` </td>
-                <td> `AMix` </td>
-                <td> `EDor` </td>
-                <td> `F#Phr` </td>
-                <td> `GLyd` </td>
-                <td> `C#Loc` </td>
-            </tr>
-            <tr>
-                <td> 1 sharp </td>
-                <td> `G` </td>
-                <td> `Em` </td>
-                <td> `DMix` </td>
-                <td> `ADor` </td>
-                <td> `BPhr` </td>
-                <td> `CLyd` </td>
-                <td> `F#Loc` </td>
-            </tr>
-            <tr>
-                <td> 0 sharps/flats </td>
-                <td> `C` </td>
-                <td> `Am` </td>
-                <td> `GMix` </td>
-                <td> `DDor` </td>
-                <td> `EPhr` </td>
-                <td> `FLyd` </td>
-                <td> `BLoc` </td>
-            </tr>
-            <tr>
-                <td> 1 flat </td>
-                <td> `F` </td>
-                <td> `Dm` </td>
-                <td> `CMix` </td>
-                <td> `GDor` </td>
-                <td> `APhr` </td>
-                <td> `BbLyd` </td>
-                <td> `ELoc` </td>
-            </tr>
-            <tr>
-                <td> 2 flats </td>
-                <td> `Bb` </td>
-                <td> `Gm` </td>
-                <td> `FMix` </td>
-                <td> `CDor` </td>
-                <td> `DPhr` </td>
-                <td> `EbLyd` </td>
-                <td> `ALoc` </td>
-            </tr>
-            <tr>
-                <td> 3 flats </td>
-                <td> `Eb` </td>
-                <td> `Cm` </td>
-                <td> `BbMix` </td>
-                <td> `FDor` </td>
-                <td> `GPhr` </td>
-                <td> `AbLyd` </td>
-                <td> `DLoc` </td>
-            </tr>
-            <tr>
-                <td> 4 flats </td>
-                <td> `Ab` </td>
-                <td> `Fm` </td>
-                <td> `EbMix` </td>
-                <td> `BbDor` </td>
-                <td> `CPhr` </td>
-                <td> `DbLyd` </td>
-                <td> `GLoc` </td>
-            </tr>
-            <tr>
-                <td> 5 flats </td>
-                <td> `Db` </td>
-                <td> `Bbm` </td>
-                <td> `AbMix` </td>
-                <td> `EbDor` </td>
-                <td> `FPhr` </td>
-                <td> `GbLyd` </td>
-                <td> `CLoc` </td>
-            </tr>
-            <tr>
-                <td> 6 flats </td>
-                <td> `Gb` </td>
-                <td> `Ebm` </td>
-                <td> `DbMix` </td>
-                <td> `AbDor` </td>
-                <td> `BbPhr` </td>
-                <td> `CbLyd` </td>
-                <td> `FLoc` </td>
-            </tr>
-            <tr>
-                <td> 7 flats </td>
-                <td> `Cb` </td>
-                <td> `Abm` </td>
-                <td> `GbMix` </td>
-                <td> `DbDor` </td>
-                <td> `EbPhr` </td>
-                <td> `FbLyd` </td>
-                <td> `BbLoc` </td>
-            </tr>
-        </tbody>
+        <tr style="--text-align-cell: center">
+            <th> </th>
+            <th colspan="2"> abc at concert pitch </th>
+            <th colspan="2"> abc at written pitch </th>
+        </tr>
+        <tr>
+            <th> Instrument </th>
+            <th> `instrument=<n>/c` </th>
+            <th> `score=<n>` </th>
+            <th> `instrument=<n>/<n>` </th>
+            <th> `instrument=<n>` </th>
+        </tr>
+        <tr>
+            <td> piccolo </td>
+            <td> `instrument=c'/c` </td>
+            <td> `score=c' ` </td>
+            <td> `instrument=c'/c' ` </td>
+            <td> `instrument=c' ` </td>
+        </tr>
+        <tr>
+            <td> Bb clarinet </td>
+            <td> `instrument=_B/c` </td>
+            <td> `score=_B` </td>
+            <td> `instrument=_B/_B` </td>
+            <td> `instrument=_B` </td>
+        </tr>
+        <tr>
+            <td> soprano sax </td>
+            <td> `instrument=_B/c` </td>
+            <td> `score=_B` </td>
+            <td> `instrument=_B/_B` </td>
+            <td> `instrument=_B` </td>
+        </tr>
+        <tr>
+            <td> A clarinet </td>
+            <td> `instrument=A/c` </td>
+            <td> `score=A` </td>
+            <td> `instrument=A/A` </td>
+            <td> `instrument=A` </td>
+        </tr>
+        <tr>
+            <td> alto flute </td>
+            <td> `instrument=G/c` </td>
+            <td> `score=G` </td>
+            <td> `instrument=G/G` </td>
+            <td> `instrument=G` </td>
+        </tr>
+        <tr>
+            <td> cor anglais </td>
+            <td> `instrument=F/c` </td>
+            <td> `score=F` </td>
+            <td> `instrument=F/F` </td>
+            <td> `instrument=F` </td>
+        </tr>
+        <tr>
+            <td> alto sax </td>
+            <td> `instrument=_E/c` </td>
+            <td> `score=_E` </td>
+            <td> `instrument=_E/_E` </td>
+            <td> `instrument=_E` </td>
+        </tr>
+        <tr>
+            <td> double bass </td>
+            <td> `instrument=C/c` </td>
+            <td> `score=C` </td>
+            <td> `instrument=C/C` </td>
+            <td> `instrument=C` </td>
+        </tr>
+        <tr>
+            <td> tenor sax </td>
+            <td> `instrument=_B,/c` </td>
+            <td> `score=_B,` </td>
+            <td> `instrument=_B,/_B,` </td>
+            <td> `instrument=_B,` </td>
+        </tr>
     </T>
 </T>
-
-## `<table>`
 
 ```pug
 .☘-table-container
@@ -202,6 +103,183 @@ export * from 'src/components/markdown/map.mdx';
 
 ## `<div>`
 
+<T class="☘-table-container">
+    <T class="☘-table">
+        <T class="☘-table-header-group">
+            <T class="☘-table-row">
+                <T class="☘-table-cell"> Mode </T>
+                <T class="☘-table-cell"> Ionian </T>
+                <T class="☘-table-cell"> Aeolian </T>
+                <T class="☘-table-cell"> Mixolydian</T>
+                <T class="☘-table-cell"> Dorian </T>
+                <T class="☘-table-cell"> Phrygian </T>
+                <T class="☘-table-cell"> Lydian </T>
+                <T class="☘-table-cell"> Locrian </T>
+            </T>
+            <T class="☘-table-row">
+                <T class="☘-table-cell"> Key Signature </T>
+                <T class="☘-table-cell"> Major </T>
+                <T class="☘-table-cell"> Minor </T>
+                <T class="☘-table-cell"> </T>
+                <T class="☘-table-cell"> </T>
+                <T class="☘-table-cell"> </T>
+                <T class="☘-table-cell"> </T>
+                <T class="☘-table-cell"> </T>
+            </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 7 sharps </T>
+            <T class="☘-table-cell"> `C#` </T>
+            <T class="☘-table-cell"> `A#m` </T>
+            <T class="☘-table-cell"> `G#Mix` </T>
+            <T class="☘-table-cell"> `D#Dor` </T>
+            <T class="☘-table-cell"> `E#Phr` </T>
+            <T class="☘-table-cell"> `F#Lyd` </T>
+            <T class="☘-table-cell"> `B#Loc` </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 6 sharps </T>
+            <T class="☘-table-cell"> `F#` </T>
+            <T class="☘-table-cell"> `D#m` </T>
+            <T class="☘-table-cell"> `C#Mix` </T>
+            <T class="☘-table-cell"> `G#Dor` </T>
+            <T class="☘-table-cell"> `A#Phr` </T>
+            <T class="☘-table-cell"> `BLyd` </T>
+            <T class="☘-table-cell"> `E#Loc` </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 5 sharps </T>
+            <T class="☘-table-cell"> `B` </T>
+            <T class="☘-table-cell"> `G#m` </T>
+            <T class="☘-table-cell"> `F#Mix` </T>
+            <T class="☘-table-cell"> `C#Dor` </T>
+            <T class="☘-table-cell"> `D#Phr` </T>
+            <T class="☘-table-cell"> `ELyd` </T>
+            <T class="☘-table-cell"> `A#Loc` </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 4 sharps </T>
+            <T class="☘-table-cell"> `E` </T>
+            <T class="☘-table-cell"> `C#m` </T>
+            <T class="☘-table-cell"> `BMix` </T>
+            <T class="☘-table-cell"> `F#Dor` </T>
+            <T class="☘-table-cell"> `G#Phr` </T>
+            <T class="☘-table-cell"> `ALyd` </T>
+            <T class="☘-table-cell"> `D#Loc` </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 3 sharps </T>
+            <T class="☘-table-cell"> `A` </T>
+            <T class="☘-table-cell"> `F#m` </T>
+            <T class="☘-table-cell"> `EMix` </T>
+            <T class="☘-table-cell"> `BDor` </T>
+            <T class="☘-table-cell"> `C#Phr` </T>
+            <T class="☘-table-cell"> `DLyd` </T>
+            <T class="☘-table-cell"> `G#Loc` </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 2 sharps </T>
+            <T class="☘-table-cell"> `D` </T>
+            <T class="☘-table-cell"> `Bm` </T>
+            <T class="☘-table-cell"> `AMix` </T>
+            <T class="☘-table-cell"> `EDor` </T>
+            <T class="☘-table-cell"> `F#Phr` </T>
+            <T class="☘-table-cell"> `GLyd` </T>
+            <T class="☘-table-cell"> `C#Loc` </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 1 sharp </T>
+            <T class="☘-table-cell"> `G` </T>
+            <T class="☘-table-cell"> `Em` </T>
+            <T class="☘-table-cell"> `DMix` </T>
+            <T class="☘-table-cell"> `ADor` </T>
+            <T class="☘-table-cell"> `BPhr` </T>
+            <T class="☘-table-cell"> `CLyd` </T>
+            <T class="☘-table-cell"> `F#Loc` </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 0 sharps/flats </T>
+            <T class="☘-table-cell"> `C` </T>
+            <T class="☘-table-cell"> `Am` </T>
+            <T class="☘-table-cell"> `GMix` </T>
+            <T class="☘-table-cell"> `DDor` </T>
+            <T class="☘-table-cell"> `EPhr` </T>
+            <T class="☘-table-cell"> `FLyd` </T>
+            <T class="☘-table-cell"> `BLoc` </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 1 flat </T>
+            <T class="☘-table-cell"> `F` </T>
+            <T class="☘-table-cell"> `Dm` </T>
+            <T class="☘-table-cell"> `CMix` </T>
+            <T class="☘-table-cell"> `GDor` </T>
+            <T class="☘-table-cell"> `APhr` </T>
+            <T class="☘-table-cell"> `BbLyd` </T>
+            <T class="☘-table-cell"> `ELoc` </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 2 flats </T>
+            <T class="☘-table-cell"> `Bb` </T>
+            <T class="☘-table-cell"> `Gm` </T>
+            <T class="☘-table-cell"> `FMix` </T>
+            <T class="☘-table-cell"> `CDor` </T>
+            <T class="☘-table-cell"> `DPhr` </T>
+            <T class="☘-table-cell"> `EbLyd` </T>
+            <T class="☘-table-cell"> `ALoc` </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 3 flats </T>
+            <T class="☘-table-cell"> `Eb` </T>
+            <T class="☘-table-cell"> `Cm` </T>
+            <T class="☘-table-cell"> `BbMix` </T>
+            <T class="☘-table-cell"> `FDor` </T>
+            <T class="☘-table-cell"> `GPhr` </T>
+            <T class="☘-table-cell"> `AbLyd` </T>
+            <T class="☘-table-cell"> `DLoc` </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 4 flats </T>
+            <T class="☘-table-cell"> `Ab` </T>
+            <T class="☘-table-cell"> `Fm` </T>
+            <T class="☘-table-cell"> `EbMix` </T>
+            <T class="☘-table-cell"> `BbDor` </T>
+            <T class="☘-table-cell"> `CPhr` </T>
+            <T class="☘-table-cell"> `DbLyd` </T>
+            <T class="☘-table-cell"> `GLoc` </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 5 flats </T>
+            <T class="☘-table-cell"> `Db` </T>
+            <T class="☘-table-cell"> `Bbm` </T>
+            <T class="☘-table-cell"> `AbMix` </T>
+            <T class="☘-table-cell"> `EbDor` </T>
+            <T class="☘-table-cell"> `FPhr` </T>
+            <T class="☘-table-cell"> `GbLyd` </T>
+            <T class="☘-table-cell"> `CLoc` </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 6 flats </T>
+            <T class="☘-table-cell"> `Gb` </T>
+            <T class="☘-table-cell"> `Ebm` </T>
+            <T class="☘-table-cell"> `DbMix` </T>
+            <T class="☘-table-cell"> `AbDor` </T>
+            <T class="☘-table-cell"> `BbPhr` </T>
+            <T class="☘-table-cell"> `CbLyd` </T>
+            <T class="☘-table-cell"> `FLoc` </T>
+        </T>
+        <T class="☘-table-row">
+            <T class="☘-table-cell"> 7 flats </T>
+            <T class="☘-table-cell"> `Cb` </T>
+            <T class="☘-table-cell"> `Abm` </T>
+            <T class="☘-table-cell"> `GbMix` </T>
+            <T class="☘-table-cell"> `DbDor` </T>
+            <T class="☘-table-cell"> `EbPhr` </T>
+            <T class="☘-table-cell"> `FbLyd` </T>
+            <T class="☘-table-cell"> `BbLoc` </T>
+        </T>
+    </T>
+</T>
+
 ```pug
 .☘-table-container
     .☘-table
@@ -214,7 +292,9 @@ export * from 'src/components/markdown/map.mdx';
 
 ## `.sm` & `.lg`
 
-尺寸更小或更大的表格
+`.☘-table.sm` 尺寸更小的表格
+
+`.☘-table.lg` 尺寸更大的表格
 
 ## custom style
 

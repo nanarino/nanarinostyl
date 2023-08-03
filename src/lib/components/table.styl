@@ -1,14 +1,29 @@
 @import './../variable/prefix.styl'
 @import './../variable/functions.styl'
 
+
+gray-cell()
+    background-color _rgb(var(--gray-1))
+
+
 .{prefix}-table-container
     display grid
     overflow auto
     position relative
+
     thead, .{prefix}-table-header-group
-        z-index 5
-        position sticky
+        display table-header-group
         top 0
+    tfoot, .{prefix}-table-footer-group
+        display table-footer-group
+        bottom 0
+    thead, .{prefix}-table-header-group,
+    tfoot, .{prefix}-table-footer-group
+        z-index 10
+        position sticky
+        .{prefix}-table-cell
+            gray-cell()
+
 
 .{prefix}-table
     --min-width-cell unset
@@ -39,10 +54,10 @@
         min-width var(--width-cell)
         white-space nowrap
         padding var(--padding-cell)
-        background-color var(--white)
         text-align var(--text-align-cell)
         border var(--border-cell)
         box-shadow var(--box-shadow-divider-bottom)
-    
-    th, &-header-group>.{prefix}-table-cell
-        background-color _rgb(var(--gray-1))
+    td, &-cell
+        background-color var(--white)
+    th
+        gray-cell()
