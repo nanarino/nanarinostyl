@@ -61,7 +61,7 @@ span.☘-switch.sm(data-primary="danger")
 
 修改原生css变量 `--switch-size` 和 `--switch-padding` 以覆盖默认尺寸
 
-<OxalisSwitch/>
+<OxalisSwitch id="oxalis-switch" />
 
 ```pug
 span.☘-switch(
@@ -71,12 +71,13 @@ span.☘-switch(
         ["--primary-6"]: "var(--lime-3)",
     }
 )
-    input#oxalis-switch(type="checkbox" checked)
+    input#oxalis-switch.oxalis-switch(type="checkbox" checked)
     label(for="oxalis-switch")
-        span#oxalis-switch-mover \☘
+        span.oxalis-switch-mover \☘
 
 style(lang="stylus").
-    #oxalis-switch:checked+label #oxalis-switch-mover
-        transform rotate(360deg)
-        overflow hidden 
+    .oxalis-switch>input:checked+label
+        .oxalis-switch-mover
+            transform rotate(360deg)
+            overflow hidden 
 ```

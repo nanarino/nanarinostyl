@@ -1,12 +1,14 @@
 ---
 import Switch from "./index.astro";
-/**
- * 一个显示旋转车轴草的Switch单例 当前页只能用一次
- */
+const props = Astro.props;
+interface Props {
+    id: string
+}
 ---
 
 <Switch
-    id="oxalis-switch"
+    id={props.id}
+    class="oxalis-switch"
     checked
     style={{
         ["--switch-size"]: "48px",
@@ -14,10 +16,11 @@ import Switch from "./index.astro";
         ["--primary-6"]: "var(--lime-3)",
     }}
 >
-    <span id="oxalis-switch-mover">☘</span>
+    <span class="oxalis-switch-mover">☘</span>
 </Switch>
 <style lang="stylus" is:global>
-    #oxalis-switch:checked+label #oxalis-switch-mover
-        transform rotate(360deg)
-        overflow hidden
+    .oxalis-switch>input:checked+label
+        .oxalis-switch-mover
+            transform rotate(360deg)
+            overflow hidden
 </style>
