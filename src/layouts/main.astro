@@ -11,17 +11,11 @@ const menu = await getMenu("./src/pages/menu");
 
 <App {...Astro.props}>
     <Header />
-    <section
-        class:list={[`${prefix}-layout`, `${prefix}-layout-has-sider`]}
-        style="overflow:hidden"
-    >
-        <aside class:list={[`${prefix}-layout-sider`, "menu-wrap"]}>
+    <section class:list={[`${prefix}-layout`, `${prefix}-layout-has-sider`]}>
+        <aside class:list={[`${prefix}-layout-sider`]}>
             <Menu menu={menu} base="/menu/" />
         </aside>
-        <main
-            class={`${prefix}-layout-content`}
-            style="overflow-y:auto; padding:2em"
-        >
+        <main class={`${prefix}-layout-content`}>
             <slot />
         </main>
     </section>
@@ -29,8 +23,14 @@ const menu = await getMenu("./src/pages/menu");
 </App>
 
 <style lang="stylus">
-    .menu-wrap
-        width 240px
-        overflow-y auto
-        padding 1em 0
+    section
+        overflow hidden
+        aside
+            width 240px
+            overflow-y auto
+            padding 1em 0
+        main
+            overflow-y auto
+            scroll-behavior smooth
+            padding 2em
 </style>
