@@ -3,21 +3,21 @@
 
 .{prefix}-paragraph
     margin 1em 0
-    font-size var(--font-size-base)
-    line-height var(--line-height-base)
+    font-size var(--font-size-body)
+    line-height var(--line-height-body)
     
     for i in range(1 6)
         &[data-size=p{i}]
-            --line-height-base var(_get_var_by(
+            --line-height-body var(_get_var_by(
                 line-height,
                 'h%s' % i
             ))
-            --font-size-base var(_get_var_by(
+            --font-size-body var(_get_var_by(
                 font-size,
                 'h%s' % i
             ))
         &[data-ellipsis=l{i}]
             mixin_line_clamp(i)
-            height 'calc(%s * %s)' % (--font-size-base i)
+            height 'calc(%s * %s)' % (--font-size-body i)
     &[data-has-indent]
         text-indent 2em

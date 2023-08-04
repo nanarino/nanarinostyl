@@ -25,17 +25,17 @@ gray-cell()
         --padding-cell 9px 12px
         --border-cell none
         --text-align-cell left
-        --font-size-table var(--font-size-body)
-        --line-height-table var(--line-height-body)
 
-        font-size var(--font-size-table)
-        line-height var(--line-height-table)
+        font-size var(--font-size-body)
+        line-height var(--line-height-body)
         &.lg
             --padding-cell 13px 16px
+            --font-size-body var(--font-size-3)
+            --line-height-body var(--line-height-3)
         &.sm
             --padding-cell 5px 8px
-            --font-size-table var(--font-size-base)
-            --line-height-table var(--line-height-base)
+            --font-size-body var(--font-size-1)
+            --line-height-body var(--line-height-1)
 
         display table
         max-width 100%
