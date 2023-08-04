@@ -1,35 +1,37 @@
 @import './../variable/prefix.styl'
 @import './../variable/functions.styl'
 
-ul.{prefix}-menu
-    padding 0
+.{prefix}-menu
     margin 0 1em
     display flex
     flex-direction column
     gap 0.5em
     font-size var(--font-size-body)
     line-height var(--line-height-body)
-    list-style none
     overflow hidden
-    &>li.{prefix}-menu-submenu
-        display flex
-        flex-direction column
-        gap 0.5em
-        .{prefix}-menu-submenu-title
-            padding 0.8em 1em
-    &>li.{prefix}-menu-item
-        display grid
-        cursor pointer
-        background var(--white)
-        color var(--black)
-        transition background-color 0.3s, color 0.3s
-        border-radius var(--border-radius-md)
-        &>a.{prefix}-menu-item-link
-            padding 0.8em 1em
-            color inherit
-            text-decoration none
-        &-selected
-            background _rgb(var(--primary-6))
-            color var(--white)
-        &:not(.{prefix}-menu-item-selected):hover
-            color _rgb(var(--primary-6))
+    ul&
+        padding 0
+        list-style none
+        li^[0]
+            &-submenu
+                display flex
+                flex-direction column
+                gap 0.5em
+                ~/-submenu-title
+                    padding 0.8em 1em
+            &-item
+                display grid
+                cursor pointer
+                background var(--white)
+                color var(--black)
+                transition background-color 0.3s, color 0.3s
+                border-radius var(--border-radius-md)
+                a^[0]-item-link
+                    padding 0.8em 1em
+                    color inherit
+                    text-decoration none
+                &-selected
+                    background _rgb(var(--primary-6))
+                    color var(--white)
+                &:not(^[0]-item-selected):hover
+                    color _rgb(var(--primary-6))

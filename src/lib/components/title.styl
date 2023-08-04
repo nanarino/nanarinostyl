@@ -15,7 +15,7 @@ set_title_styl(size=6)
         'h%s' % size
     ))
     
-    .{prefix}-title-subtitle
+    & ^[0]-subtitle
         margin-left var(--font-offset-parent)
         line-height var(_get_var_by(
             line-height,
@@ -26,7 +26,7 @@ set_title_styl(size=6)
             7 - size
         ))
         vertical-align bottom
-        color _rgb(var(_get_var_by('gray', 7)))
+        color _rgb(var(_get_var_by('gray', 6)))
 
 set_has_prefix()
     &[data-has-prefix]

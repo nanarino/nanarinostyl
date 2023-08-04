@@ -10,6 +10,15 @@
         transform scale(3)
         opacity 0
 
+badge_dot()
+    content ''
+    position absolute
+    top var(--badge-padding)
+    bottom @top
+    left @top
+    aspect-ratio 1 / 1
+    border-radius 50%
+
 .{prefix}-badge
     --badge-processing-weight 1px
     --badge-padding 0.3em
@@ -23,21 +32,9 @@
     text-indent var(--badge-indent)
     position relative
     &::before
-        content ''
-        position absolute
-        left var(--badge-padding)
-        top var(--badge-padding)
-        bottom var(--badge-padding)
-        aspect-ratio 1 / 1
-        border-radius 50%
+        badge_dot()
         background-color _rgb(var(--primary-6))
     &[data-processing]::after
-        content ''
-        position absolute
-        left var(--badge-padding)
-        top var(--badge-padding)
-        bottom var(--badge-padding)
-        aspect-ratio 1 / 1
-        border-radius 50%
+        badge_dot()
         border var(--badge-processing-weight) solid _rgb(var(--primary-6))
         animation badge-processing 1.2s ease-in-out infinite

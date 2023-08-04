@@ -1,17 +1,18 @@
 @import './../variable/prefix.styl'
 @import './../variable/functions.styl'
 
-hr.{prefix}-divider
-    border-color _rgb(var(--gray-1))
-div.{prefix}-divider
-    padding-top 2em
-    margin-bottom 2em
-    overflow hidden
-    box-shadow var(--box-shadow-divider-bottom-solid)
-span.{prefix}-divider
-    display inline-block
-    vertical-align middle
-    height 1em
-    padding-left 1em
-    margin-right 1em
-    box-shadow var(--box-shadow-divider-right-solid)
+.{prefix}-divider
+    hr&
+        border-color _rgb(var(--gray-1))
+    div&
+        padding-top 2em
+        margin-bottom 2em
+        overflow hidden
+        box-shadow var(--box-shadow-divider-bottom-solid)
+    span&
+        display inline-block
+        vertical-align middle
+        height 1em
+        padding-left 1em
+        margin-right 1em
+        box-shadow var(--box-shadow-divider-right-solid)

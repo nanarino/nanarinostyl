@@ -9,38 +9,47 @@
     position relative
     --switch-mover-size calc(var(--switch-size) - 2 * var(--switch-padding))
     font-size calc(var(--switch-mover-size) - var(--font-offset-parent))
+
     &.sm
         --switch-size 16px
-    &>.{prefix}-switch-mover
-        display inline-flex
-        cursor pointer
-        height var(--switch-size)
-        width calc(var(--switch-size) * 2)
-        border-radius calc((var(--switch-size) / 2))
-        background-color _rgb(var(--gray-4))
-        &:empty::before, &>*
-            content ''
-            display flex
-            align-items center
-            justify-content center
-            position absolute
-            left var(--switch-padding)
-            top var(--switch-padding)
-            bottom var(--switch-padding)
-            width var(--switch-mover-size)
-            height @width
-            border-radius 50%
-            background-color _rgb(var(--gray-1))
-            transition all 0.5s
+    
     &>input
         display none
-        &:checked
-            &+.{prefix}-switch-mover
-                background-color _rgb(var(--primary-6))
-                &:empty::before, &>*
-                    left calc(var(--switch-size) + var(--switch-padding))
-            &:disabled+.{prefix}-switch-mover
-                background-color _rgb(var(--primary-3))
-        &:disabled+.{prefix}-switch-mover
-            cursor not-allowed
-            background-color _rgb(var(--gray-3))
+
+        ~/-mover
+            display inline-flex
+            cursor pointer
+            height var(--switch-size)
+            width calc(var(--switch-size) * 2)
+            border-radius calc((var(--switch-size) / 2))
+            background-color _rgb(var(--gray-4))
+            ../:checked
+                &+^[-1]
+                    background-color _rgb(var(--primary-6))
+            ../:checked:disabled
+                &+^[-1]
+                    background-color _rgb(var(--primary-3))
+            ../:disabled
+                &+^[-1]
+                    background-color _rgb(var(--gray-3))
+                    cursor not-allowed
+            
+            &:empty::before, &>*
+                content ''
+                display flex
+                align-items center
+                justify-content center
+                position absolute
+                left var(--switch-padding)
+                top var(--switch-padding)
+                bottom var(--switch-padding)
+                width var(--switch-mover-size)
+                height @width
+                border-radius 50%
+                background-color _rgb(var(--gray-1))
+                transition all 0.5s
+            
+                ../../:checked
+                    &+^[-1]
+                        left calc(var(--switch-size) + var(--switch-padding))
+
