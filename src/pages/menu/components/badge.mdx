@@ -42,7 +42,7 @@ span.☘-badge(data-processing style="font-size: 16px") processing
 <T tag="span" class="☘-badge" data-processing data-primary="danger" style="font-size: 20px; --badge-processing-weight: 2px">`debug`</T>
 
 <T tag="span" class="☘-badge" data-processing data-primary="danger" style="--badge-indent: 30px ;--badge-padding: 10px">
-    <T tag="span" class="☘-tag">
+    <T tag="span" class="☘-tag" style="border-width:1pt">
         <Icon name="general/outline/bug" alt="bug" width="30" height="30" style="vertical-align: middle"/>
     </T>
 </T>
@@ -58,6 +58,6 @@ span.☘-badge(data-processing data-primary="danger" style={
     "--badge-indent": "30px",
     "--badge-padding": "10px"
 })
-    span.☘-tag 
+    span.☘-tag(style="border-width:1pt")
         svg(alt="bug" width="30" height="30" style="vertical-align: middle")
 ```

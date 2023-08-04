@@ -1,0 +1,44 @@
+---
+layout: "@layout/main.astro"
+title: 标签
+---
+
+import T from "src/components/T.astro";
+export * from 'src/components/markdown/map.mdx';
+
+# tag
+
+<T tag='span' class='☘-tag'>#户外</T> &nbsp; <T tag='span' class='☘-tag'>#助眠</T>
+
+```pug
+span.☘-tag #户外
+&nbsp;
+span.☘-tag #助眠
+```
+
+## custom style
+
+<T data-primary="success"><T tag='span' class='☘-tag' style="border-width:1pt">#户外</T> &nbsp; <T tag='span' class='☘-tag' style="border-width:1pt">#助眠</T></T>
+***
+<T tag='span' class='☘-tag' style={{
+    'font-size': `var(--font-size-5)`,
+    'line-height': `var(--line-height-5)`,
+    '--primary-1': `var(--magenta-6)`,
+    '--primary-9': `var(--magenta-1)`,
+    'box-shadow': `var(--box-shadow-base)`
+}}>𝕘𝕙𝕠𝕤𝕥</T>
+
+```pug
+div(data-primary="success")
+    span.☘-tag(style="border-width:1pt") #户外
+    &nbsp;
+    span.☘-tag(style="border-width:1pt") #助眠
+hr.☘-divider
+span.☘-tag(style={
+    "font-size": "var(--font-size-5)",
+    "line-height": "var(--line-height-5)",
+    "--primary-1": "var(--magenta-6)",
+    "--primary-9": "var(--magenta-1)",
+    "box-shadow": "var(--box-shadow-base)"
+}) 𝕘𝕙𝕠𝕤𝕥
+```

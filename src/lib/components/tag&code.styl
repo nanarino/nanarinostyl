@@ -1,9 +1,16 @@
 @import './../variable/prefix.styl'
 @import './../variable/functions.styl'
 
-code.{prefix}-code
-span.{prefix}-tag
+tag()
+    box-sizing border-box
+    padding var(--font-offset-parent)
     color _rgb(var(--primary-9))
     background-color _rgb(var(--primary-1))
     border-radius var(--border-radius-md)
-    padding var(--font-offset-parent)
+code.{prefix}-code
+    tag()
+span.{prefix}-tag
+    display inline-block
+    border 0 solid _rgb(var(--primary-9))
+    tag()
+    
