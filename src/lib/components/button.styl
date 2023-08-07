@@ -14,6 +14,7 @@
     border-radius var(--border-radius-md)
     border none
     background-color _rgb(var(--gray-2))
+    transition background 0.8s
 
     &[disabled]
         cursor not-allowed
@@ -21,7 +22,12 @@
         background-color _rgb(var(--gray-1))
     &:not([disabled]):hover
         background-color _rgb(var(--gray-3))
-    
+    &:not([disabled]):focus
+        background _rgb(var(--gray-2)) radial-gradient(circle, transparent 1%, _rgb(var(--gray-2)) 1%) center/15000%
+    &:not([disabled]):active
+        background-color _rgb(var(--gray-4))
+        background-size 100%
+        transition background 0s
 
     &[data-primary]
         color var(--white)
@@ -31,7 +37,12 @@
             background-color _rgb(var(--primary-2))
         &:not([disabled]):hover
             background-color _rgb(var(--primary-6))
-    
+        &:not([disabled]):focus
+            background _rgb(var(--primary-5)) radial-gradient(circle, transparent 1%, _rgb(var(--primary-5)) 1%) center/15000%
+        &:not([disabled]):active
+            background-color _rgb(var(--primary-7))
+            background-size 100%
+            transition background 0s
     &.sm
         --padding-cell 1px 8px
     &.lg
