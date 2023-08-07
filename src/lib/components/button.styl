@@ -2,6 +2,11 @@
 @import './../variable/functions.styl'
 @import './../variable/compatible.styl'
 
+
+btn-click-wave(bgc)
+    background bgc radial-gradient(circle, transparent 1%, bgc 1%) center/15000%
+
+
 .{prefix}-button
     --padding-cell 5px 12px
 
@@ -23,7 +28,7 @@
     &:not([disabled]):hover
         background-color _rgb(var(--gray-3))
     &:not([disabled]):focus
-        background _rgb(var(--gray-2)) radial-gradient(circle, transparent 1%, _rgb(var(--gray-2)) 1%) center/15000%
+        btn-click-wave @background-color
     &:not([disabled]):active
         background-color _rgb(var(--gray-4))
         background-size 100%
@@ -38,11 +43,11 @@
         &:not([disabled]):hover
             background-color _rgb(var(--primary-6))
         &:not([disabled]):focus
-            background _rgb(var(--primary-5)) radial-gradient(circle, transparent 1%, _rgb(var(--primary-5)) 1%) center/15000%
+            btn-click-wave @background-color
         &:not([disabled]):active
             background-color _rgb(var(--primary-7))
             background-size 100%
-            transition background 0s
+
     &.sm
         --padding-cell 1px 8px
     &.lg
