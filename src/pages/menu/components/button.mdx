@@ -8,3 +8,41 @@ export * from 'src/components/markdown/map.mdx';
 
 # button
 
+<T tag="button" class="☘-button" onclick="alert('\☘')">按</T>
+
+```pug
+button.☘-button(onclick=function(){alert('\☘')}) 按
+```
+
+## `.sm` & `.lg`
+
+尺寸更小或更大的按钮
+
+<T tag="button" class="☘-button sm">更小</T>
+
+<T tag="button" class="☘-button lg">更大</T>
+
+
+## `data-primary`
+
+<T tag="button" class="☘-button" data-primary>导出</T>
+
+<T tag="button" class="☘-button" data-primary='success'>创建</T>
+
+```pug
+button.☘-button(data-primary) 导出
+button.☘-button(data-primary='success') 创建
+```
+
+
+## `disabled`
+
+<T tag="button" class="☘-button" disabled>导入</T>
+
+<T tag="button" class="☘-button" data-primary="danger" disabled>删除</T>
+
+```pug
+button.☘-button(data-primary disabled) 导入
+button.☘-button(data-primary='danger' disabled) 删除
+```
+

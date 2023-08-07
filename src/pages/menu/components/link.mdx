@@ -33,14 +33,16 @@ a.☘-link(data-primary="success") 戳
 
 ## `disabled`
 
-<T tag="a" class="☘-link" disabled>戳</T>
-<T tag="a" class="☘-link" disabled data-primary="warning">戳</T>
-<T tag="a" class="☘-link" disabled data-primary="danger">戳</T>
-<T tag="a" class="☘-link" disabled data-primary="success">戳</T>
+`<a/>` 标签 使用 `disabled` 无法阻止跳转
+
+<T tag="button" class="☘-link" disabled>戳</T>
+<T tag="button" class="☘-link" disabled data-primary="warning">戳</T>
+<T tag="button" class="☘-link" disabled data-primary="danger">戳</T>
+<T tag="button" class="☘-link" disabled data-primary="success">戳</T>
 
 ```pug
-a.☘-link(disabled) 戳
-a.☘-link(disabled data-primary="warning") 戳
-a.☘-link(disabled data-primary="danger") 戳
-a.☘-link(disabled data-primary="success") 戳
+button.☘-link(disabled) 戳
+button.☘-link(disabled data-primary="warning") 戳
+button.☘-link(disabled data-primary="danger") 戳
+button.☘-link(disabled data-primary="success") 戳
 ```
