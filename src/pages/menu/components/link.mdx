@@ -4,6 +4,8 @@ title: 链接
 ---
 
 import T from "src/components/T.astro";
+import { Icon } from "astro-icon";
+import escape from "src/scripts/server/escape";
 export * from 'src/components/markdown/map.mdx';
 
 # link
@@ -45,4 +47,16 @@ button.☘-link(disabled) 戳
 button.☘-link(disabled data-primary="warning") 戳
 button.☘-link(disabled data-primary="danger") 戳
 button.☘-link(disabled data-primary="success") 戳
+```
+
+## custom style
+
+<Icon disabled class={escape('☘-link')} style="--primary-2:var(--blue-2);vertical-align:middle" name="logo/outline/twitter" alt="twitter" width="18"/>
+
+```pug
+svg.☘-link(disabled style={
+    ['--primary-2']: `var(--blue-2)`,
+    'vertical-align': 'middle'
+} alt="twitter" width="18")
+    ...
 ```
