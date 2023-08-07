@@ -1,0 +1,15 @@
+@import './../variable/prefix.styl'
+@import './../variable/functions.styl'
+
+.{prefix}-image
+    position relative
+    box-sizing border-box
+    background-repeat no-repeat
+    background-size cover
+    background-position center center
+    &>img
+        // -webkit-user-drag none
+        width 100%
+        height 100%
+        object-fit @background-size
+        object-position @background-position
