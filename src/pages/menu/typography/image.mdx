@@ -1,0 +1,61 @@
+---
+layout: "@layout/main.astro"
+title: 图片
+---
+
+import T from "src/components/T.astro";
+export * from 'src/components/markdown/map.mdx';
+
+# image
+
+组件扩展后的markdown设置图片尺寸将变得容易，注意不要使用换行
+
+<T class='☘-image' style="width:100px">![未知](/public/images/unknow.png)</T>
+
+```markdown
+<div class="☘-image" style="width:100px">![未知](/public/images/unknow.png)</div>
+```
+
+
+## `<img>`
+
+以**容器**方式。如果不提供 `width` 默认块级占满。在低版本浏览器中 `width` 必须提供
+
+<T class='☘-image' style="width:300px">
+    <img src='/public/images/example.jpg' />
+</T>
+
+```pug
+.☘-image(style="width:300px")
+    img(src='/public/images/example.jpg')
+```
+
+## `background-image`
+
+以**背景**方式。必须以某种方式指定 `height` 和 `background-image`
+
+<T class='☘-image' style="height:300px;background-image:url(/public/images/example.jpg)"/>
+
+```pug
+.☘-image(style={
+    height: '300px',
+    'background-image': url('/public/images/example.png')
+})
+```
+
+## custom style
+
+<T class='☘-image' style="width:200px;height:200px;border-radius:100px;overflow:hidden;margin:auto">
+    <img src='/public/images/unknow.png' />
+</T>
+
+```pug
+.☘-image(style={
+    width: "200px",
+    height: "200px",
+    overflow: "hidden",
+    "border-radius": "100px"
+    margin: "auto"
+})
+    img(src='/public/images/unknow.png')
+```
