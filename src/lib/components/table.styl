@@ -48,6 +48,7 @@ gray-cell()
                 gray-cell()
         td, th, &-cell
             display table-cell
+            box-sizing border-box
             min-width var(--width-cell)
             white-space nowrap
             padding var(--padding-cell)
@@ -57,11 +58,11 @@ gray-cell()
         td, &-cell
             background-color var(--white)
         
-        .{prefix}-table-header-group
+        &-header-group
             display table-header-group
             .{prefix}-table-cell
                 gray-cell()
-        .{prefix}-table-footer-group
+        &-footer-group
             display table-footer-group
             .{prefix}-table-cell
                 gray-cell()
