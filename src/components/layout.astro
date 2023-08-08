@@ -1,0 +1,94 @@
+---
+import prefix from "src/scripts/server/prefix";
+---
+
+<div>
+    
+    <section class={`${prefix}-layout`}>
+        <header class={`${prefix}-layout-header`}>
+            <p class={`${prefix}-paragraph`} data-ellipsis="l1">header</p>
+        </header>
+        <main class={`${prefix}-layout-content`}>
+            <p class={`${prefix}-paragraph`} data-ellipsis="l1">main</p>
+        </main>
+        <footer class={`${prefix}-layout-footer`}>
+            <p class={`${prefix}-paragraph`} data-ellipsis="l1">footer</p>
+        </footer>
+    </section>
+
+
+    <section class={`${prefix}-layout`}>
+        <header class={`${prefix}-layout-header`}>
+            <p class={`${prefix}-paragraph`} data-ellipsis="l1">header</p>
+        </header>
+        <section class:list={[`${prefix}-layout`, `${prefix}-layout-has-sider`]} >
+            <aside class={`${prefix}-layout-sider`}>
+                <p class={`${prefix}-paragraph`} data-ellipsis="l1">aside</p>
+            </aside>
+            <main class={`${prefix}-layout-content`}>
+                <p class={`${prefix}-paragraph`} data-ellipsis="l1">main</p>
+            </main>
+        </section>
+        <footer class={`${prefix}-layout-footer`}>
+            <p class={`${prefix}-paragraph`} data-ellipsis="l1">footer</p>
+        </footer>
+    </section>
+
+
+    <section class={`${prefix}-layout`}>
+        <header class={`${prefix}-layout-header`}>
+            <p class={`${prefix}-paragraph`} data-ellipsis="l1">header</p>
+        </header>
+        <section class:list={[`${prefix}-layout`, `${prefix}-layout-has-sider`]} >
+            <main class={`${prefix}-layout-content`}>
+                <p class={`${prefix}-paragraph`} data-ellipsis="l1">main</p>
+            </main>
+            <aside class={`${prefix}-layout-sider`}>
+                <p class={`${prefix}-paragraph`} data-ellipsis="l1">aside</p>
+            </aside>
+        </section>
+        <footer class={`${prefix}-layout-footer`}>
+            <p class={`${prefix}-paragraph`} data-ellipsis="l1">footer</p>
+        </footer>
+    </section>
+
+
+    <section class:list={[`${prefix}-layout`, `${prefix}-layout-has-sider`]}>
+        <aside class={`${prefix}-layout-sider`}>
+            <p class={`${prefix}-paragraph`} data-ellipsis="l5">aside</p>
+        </aside>
+        <section class={`${prefix}-layout`}>
+            <header class={`${prefix}-layout-header`}>
+                <p class={`${prefix}-paragraph`} data-ellipsis="l1">header</p>
+            </header>
+            <main class={`${prefix}-layout-content`}>
+                <p class={`${prefix}-paragraph`} data-ellipsis="l1">main</p>
+            </main>
+            <footer class={`${prefix}-layout-footer`}>
+                <p class={`${prefix}-paragraph`} data-ellipsis="l1">footer</p>
+            </footer>
+        </section>
+    </section>
+</div>
+
+<style lang="stylus">
+@import './../lib/variable/functions.styl'
+
+div
+    display grid
+    gap 16px
+    color _rgb(var(--white))
+    &>section
+        overflow hidden
+        border-radius var(--border-radius-sm)
+    header
+    footer
+        padding 0 2em
+        background-color _rgb(var(--lime-5))
+    aside
+        padding 0 2em
+        background-color _rgb(var(--lime-6))
+    main
+        padding 0 2em
+        background-color _rgb(var(--lime-7))
+</style>
