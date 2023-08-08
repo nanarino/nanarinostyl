@@ -1,0 +1,53 @@
+---
+import prefix from "src/scripts/server/prefix";
+import { Icon } from "astro-icon";
+
+const colours = [
+    "red",
+    "orangered",
+    "orange",
+    "gold",
+    "yellow",
+    "lime",
+    "green",
+    "cyan",
+    "blue",
+    "arcoblue",
+    "purple",
+    "pinkpurple",
+    "magenta",
+    "gray",
+];
+---
+
+<div class={`${prefix}-table-container`}>
+    <table class={`${prefix}-table md`} style="--text-align-cell: center">
+        {
+        colours.map((color) => (
+            <tr>
+            <td style="position:sticky;left:0;box-shadow:var(--box-shadow-divider-right-lv1),var(--box-shadow-divider-bottom-lv1)">{color}</td>
+            {Array(10)
+                .fill(0)
+                .map((x, i) => (
+                    <td>
+                        <button class={`${prefix}-button copy`} style={{
+                            'background-color' : `rgb(var(--${color}-${i+1}))`,
+                            'color': `rgb(var(--${ i>=5 ? 'white' : 'black' }))`
+                        }}>
+                            <Icon name="edit/outline/copy" alt="copy"/>
+                        </button>
+                    </td>
+                ))}
+            </tr>
+        ))
+        }
+    </table>
+</div>
+
+<style lang="stylus">
+    button.copy
+        width 32px
+        height 32px
+        --padding-cell 6px
+        --border-radius-md 50%
+</style>
