@@ -1,70 +1,76 @@
 ---
 import prefix from "src/scripts/server/prefix";
+
+const layout = `${prefix}-layout`;
+const header = `${prefix}-layout-header`;
+const sider = `${prefix}-layout-sider`;
+const content = `${prefix}-layout-content`;
+const footer = `${prefix}-layout-footer`;
 ---
 
 <div>
     
-    <section class={`${prefix}-layout`}>
-        <header class={`${prefix}-layout-header`}>
+    <section class={layout}>
+        <header class={header}>
             <p class={`${prefix}-paragraph`} data-ellipsis="l1">header</p>
         </header>
-        <main class={`${prefix}-layout-content`}>
+        <main class={content}>
             <p class={`${prefix}-paragraph`} data-ellipsis="l1">main</p>
         </main>
-        <footer class={`${prefix}-layout-footer`}>
+        <footer class={footer}>
             <p class={`${prefix}-paragraph`} data-ellipsis="l1">footer</p>
         </footer>
     </section>
 
 
-    <section class={`${prefix}-layout`}>
-        <header class={`${prefix}-layout-header`}>
+    <section class={layout}>
+        <header class={header}>
             <p class={`${prefix}-paragraph`} data-ellipsis="l1">header</p>
         </header>
-        <section class={`${prefix}-layout`} data-has-sider>
-            <aside class={`${prefix}-layout-sider`}>
+        <section class={layout} data-has-sider>
+            <aside class={sider}>
                 <p class={`${prefix}-paragraph`} data-ellipsis="l1">aside</p>
             </aside>
-            <main class={`${prefix}-layout-content`}>
+            <main class={content}>
                 <p class={`${prefix}-paragraph`} data-ellipsis="l1">main</p>
             </main>
         </section>
-        <footer class={`${prefix}-layout-footer`}>
+        <footer class={footer}>
             <p class={`${prefix}-paragraph`} data-ellipsis="l1">footer</p>
         </footer>
     </section>
 
 
-    <section class={`${prefix}-layout`}>
-        <header class={`${prefix}-layout-header`}>
+    <section class={layout}>
+        <header class={header}>
             <p class={`${prefix}-paragraph`} data-ellipsis="l1">header</p>
         </header>
-        <section class={`${prefix}-layout`} data-has-sider>
-            <main class={`${prefix}-layout-content`}>
+        <section class={layout} data-has-sider>
+            <main class={content}>
                 <p class={`${prefix}-paragraph`} data-ellipsis="l1">main</p>
             </main>
-            <aside class={`${prefix}-layout-sider`}>
+            <aside class={sider}>
                 <p class={`${prefix}-paragraph`} data-ellipsis="l1">aside</p>
             </aside>
         </section>
-        <footer class={`${prefix}-layout-footer`}>
+        <footer class={footer}>
             <p class={`${prefix}-paragraph`} data-ellipsis="l1">footer</p>
         </footer>
     </section>
 
 
-    <section class={`${prefix}-layout`} data-has-sider>
-        <aside class={`${prefix}-layout-sider`}>
+    <section class={layout} data-has-sider>
+        <aside class={sider}>
             <p class={`${prefix}-paragraph`} data-ellipsis="l5">aside</p>
         </aside>
-        <section class={`${prefix}-layout`}>
-            <header class={`${prefix}-layout-header`}>
+        <section class={layout}>
+            <header class={header}>
                 <p class={`${prefix}-paragraph`} data-ellipsis="l1">header</p>
             </header>
-            <main class={`${prefix}-layout-content`}>
+            <main class={content}>
                 <p class={`${prefix}-paragraph`} data-ellipsis="l1">main</p>
             </main>
-            <footer class={`${prefix}-layout-footer`}>
+            <footer class={footer}>
                 <p class={`${prefix}-paragraph`} data-ellipsis="l1">footer</p>
             </footer>
         </section>

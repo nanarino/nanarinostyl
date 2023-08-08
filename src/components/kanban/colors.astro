@@ -25,7 +25,7 @@ const colours = [
         {
         colours.map((color) => (
             <tr>
-            <td style="position:sticky;left:0;box-shadow:var(--box-shadow-divider-right-lv1),var(--box-shadow-divider-bottom-lv1)">{color}</td>
+            <td class="color">{color}</td>
             {Array(10)
                 .fill(0)
                 .map((x, i) => (
@@ -45,9 +45,17 @@ const colours = [
 </div>
 
 <style lang="stylus">
-    button.copy
-        width 32px
-        height 32px
-        --padding-cell 6px
-        --border-radius-md 50%
+@import './../../lib/variable/functions.styl'
+
+button.copy
+    width 32px
+    height 32px
+    --padding-cell 6px
+    --border-radius-md 50%
+td.color
+    position sticky
+    left 0
+    box-shadow var(--box-shadow-divider-right-lv1), var(--box-shadow-divider-bottom-lv1)
+    background-color _rgb(var(--white))
+    --gray-1 var(--primary-1)
 </style>
