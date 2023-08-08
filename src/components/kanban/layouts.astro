@@ -21,7 +21,7 @@ import prefix from "src/scripts/server/prefix";
         <header class={`${prefix}-layout-header`}>
             <p class={`${prefix}-paragraph`} data-ellipsis="l1">header</p>
         </header>
-        <section class:list={[`${prefix}-layout`, `${prefix}-layout-has-sider`]} >
+        <section class={`${prefix}-layout`} data-has-sider>
             <aside class={`${prefix}-layout-sider`}>
                 <p class={`${prefix}-paragraph`} data-ellipsis="l1">aside</p>
             </aside>
@@ -39,7 +39,7 @@ import prefix from "src/scripts/server/prefix";
         <header class={`${prefix}-layout-header`}>
             <p class={`${prefix}-paragraph`} data-ellipsis="l1">header</p>
         </header>
-        <section class:list={[`${prefix}-layout`, `${prefix}-layout-has-sider`]} >
+        <section class={`${prefix}-layout`} data-has-sider>
             <main class={`${prefix}-layout-content`}>
                 <p class={`${prefix}-paragraph`} data-ellipsis="l1">main</p>
             </main>
@@ -53,7 +53,7 @@ import prefix from "src/scripts/server/prefix";
     </section>
 
 
-    <section class:list={[`${prefix}-layout`, `${prefix}-layout-has-sider`]}>
+    <section class={`${prefix}-layout`} data-has-sider>
         <aside class={`${prefix}-layout-sider`}>
             <p class={`${prefix}-paragraph`} data-ellipsis="l5">aside</p>
         </aside>

@@ -23,6 +23,7 @@
             width calc(var(--switch-size) * 2)
             border-radius calc((var(--switch-size) / 2))
             background-color _rgb(var(--gray-4))
+            transition background-color 1s
             ../:checked
                 &+^[-1]
                     background-color _rgb(var(--primary-6))
@@ -47,7 +48,7 @@
                 height @width
                 border-radius 50%
                 background-color _rgb(var(--gray-1))
-                transition all 0.5s
+                transition left 0.5s
             
                 ../../:checked
                     &+^[-1]

@@ -1,6 +1,8 @@
 @import './functions.styl'
 
 :root
+    --theme-transition .3s
+    transition background-color var(--theme-transition), color var(--theme-transition)
     background _rgb(var(--white))
     color _rgb(var(--black))
 :root, :root[data-theme='theme-light']
