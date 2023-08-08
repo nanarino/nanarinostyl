@@ -23,8 +23,8 @@
             &-item
                 display grid
                 cursor pointer
-                background var(--white)
-                color var(--black)
+                background _rgb(var(--white))
+                color _rgb(var(--black))
                 transition background-color 0.3s, color 0.3s
                 border-radius var(--border-radius-md)
                 a^[0]-item-link
@@ -34,6 +34,6 @@
                     text-decoration none
                 &-selected
                     background _rgb(var(--primary-6))
-                    color var(--white)
+                    color _rgb(var(--white))
                 &:not(^[0]-item-selected):hover
                     color _rgb(var(--primary-6))

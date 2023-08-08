@@ -1,13 +1,15 @@
+@import './functions.styl'
+
 :root
-    background var(--white)
-    color var(--black)
+    background _rgb(var(--white))
+    color _rgb(var(--black))
 :root, :root[data-theme='theme-light']
-    --white #fff
-    --black #000
+    --white 255 255 255
+    --black 0 0 0
     color-scheme light
 :root[data-theme='theme-dark']
-    --white #000
-    --black #fff
+    --white 0 0 0
+    --black 255 255 255
     color-scheme dark
 /**
  * @desc 配色，完全使用arco.design的默认配色

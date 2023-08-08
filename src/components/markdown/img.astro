@@ -1,5 +1,12 @@
 ---
+import prefix from "src/scripts/server/prefix";
+import { Icon } from "astro-icon";
 const props = Astro.props;
 ---
 
-<img {...props} ondragstart="return false" />
+<span class={`${prefix}-image`} style="display: inline-flex">
+    <img {...props} ondragstart="return false" />
+    <span class={`${prefix}-image-mask`}>
+        <Icon width="24px" name="interactive-button/outline/eye" alt="eye" onclick={`window.open('${props?.src}')`}/>
+    </span>
+</span>
