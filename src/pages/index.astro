@@ -7,18 +7,16 @@ import Header from "src/components/header.astro";
     <Header href="/menu/" />
     <section id="cover">
         <a href="/menu/" class="logo own">
-            <img src="/favicon.svg" alt="My logo" />
+            <img src="/favicon.svg" alt="My logo" title="entry"/>
         </a>
         <a href="https://stylus-lang.com/" class="logo">
-            <img src="/stylus.svg" alt="Stylus logo" />
+            <img src="/stylus.svg" alt="Stylus logo" title="stylus document"/>
         </a>
     </section>
 </App>
 
 <style lang="stylus">
-green = unquote('rgb(var(--green-3) / .6)')
-lime = unquote('rgb(var(--lime-7) / .3)')
-yellow = unquote("rgb(var(--yellow-3) / .3)")
+@import './../lib/variable/functions.styl'
 
 #cover
     max-width 1280px
@@ -29,7 +27,7 @@ a.logo
     display inline-block
     position relative
     &.own:hover
-        filter drop-shadow(0 0 2em green)
+        filter drop-shadow(0 0 2em _rgb(var(--primary-6)))
     img
         height 6em
         padding 1.5em
@@ -40,5 +38,5 @@ a.logo
         inset 0
         content ''
         filter blur(3em)
-        background-image linear-gradient(-45deg, lime, 30%, yellow)
+        background-image linear-gradient(-45deg, _rgb(var(--lime-3)), 30%, _rgb(var(--yellow-2)))
 </style>

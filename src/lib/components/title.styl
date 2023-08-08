@@ -2,9 +2,6 @@
 @import './../variable/functions.styl'
 
 set_title_styl(size=6)
-    mixin_line_clamp(1)
-    font-weight normal
-    margin 1em 0
     height var(_get_var_by(
         line-height,
         'h%s' % size
@@ -16,7 +13,6 @@ set_title_styl(size=6)
     ))
     
     & ^[0]-subtitle
-        margin-left var(--font-offset-parent)
         line-height var(_get_var_by(
             line-height,
             7 - size
@@ -25,8 +21,7 @@ set_title_styl(size=6)
             font-size,
             7 - size
         ))
-        vertical-align bottom
-        color _rgb(var(_get_var_by('gray', 6)))
+
 
 set_has_prefix()
     &[data-has-prefix]
@@ -42,13 +37,20 @@ set_has_prefix()
             top var(--font-offset-parent)
             bottom var(--font-offset-parent)
             background-color _rgb(var(--primary-6))
+            transition background-color var(--theme-transition)
 
 
 .{prefix}-title
+    mixin_line_clamp(1)
     font-weight normal
     margin 1em 0
     set_title_styl()
     set_has_prefix()
+    &-subtitle
+        margin-left var(--font-offset-parent)
+        vertical-align bottom
+        color _rgb(var(_get_var_by('gray', 6)))
+        transition color var(--theme-transition)
 
     for i in range(1 6)
         /h{i}&
