@@ -4,22 +4,36 @@ title: 图片
 ---
 
 import T from "src/components/T.astro";
+import escape from "src/scripts/server/escape";
+import { Icon } from "astro-icon";
 export * from 'src/components/markdown/map.mdx';
 
 # image
 
-组件扩展后的markdown设置图片尺寸将变得容易，注意不要使用换行
+下图是markdown拓展后的图片: 
 
-<T class='☘-image' style="width:100px">![未知](/images/unknow.png)</T>
+![未知](/images/unknow.png)
 
-```markdown
-<div class="☘-image" style="width:100px">![未知](/images/unknow.png)</div>
+`![未知](/images/unknow.png)`
+
+```pug
+p
+    span.☘-image(style="display: inline-flex")
+        img(src="/images/unknow.png" alt="未知" ondragstart="return false")
+            .☘-image-mask
+                svg(width="24px" alt="eye" click=function(){
+                    open("/images/unknow.png")
+                })
 ```
 
 
 ## `<img>`
 
-以**容器**方式。如果不提供 `width` 默认块级占满。在低版本浏览器中 `width` 必须提供
+以**容器**方式。
+
+如果不提供 `width` 默认以块级占满。你也可以同上文一样设置 `display` 为行内。
+
+在低版本浏览器中 `width` 必须提供
 
 <T class='☘-image' style="width:300px">
     <img src='/images/example.jpg' />
@@ -32,7 +46,11 @@ export * from 'src/components/markdown/map.mdx';
 
 ## `background-image`
 
-以**背景**方式。必须以某种方式指定 `height` 和 `background-image`
+以**背景**方式。
+
+必须以某种方式指定 `height` 和 `background-image`
+
+比如指定 `aspect-ratio`
 
 <T class='☘-image' style="height:300px;background-image:url(/images/example.jpg)"/>
 
@@ -43,19 +61,58 @@ export * from 'src/components/markdown/map.mdx';
 })
 ```
 
-## custom style
+## mask
 
-<T class='☘-image' style="width:200px;height:200px;border-radius:100px;overflow:hidden;margin:auto">
-    <img src='/images/unknow.png' />
+背景图或容器都可以使用的遮罩 `.☘-image>.☘-image-mask`
+
+<T class='☘-image' style="width:100px;height:100px;background-image:url(/images/example.jpg);border-radius:50px">
+    <T class='☘-image-mask'>
+        <Icon name="interactive-button/outline/heart" alt="heart" width="24px"/>
+    </T>
+</T>
+
+
+```pug
+.☘-image(style={
+    width: '100px',
+    height: '100px',
+    'background-image': url('/images/example.jpg'),
+    'border-radius': '50px'
+})
+    .☘-image-mask
+        svg(width="24px" alt="eye")
+```
+
+### footer
+
+适用于大尺寸图片（ 128像素以上 ）的底部遮罩 `.☘-image>.☘-image-footer`
+
+<T class='☘-image' style="width:300px;height:300px;border-radius:16px">
+    <img src='/images/example.jpg' />
+    <T class='☘-image-footer'>
+        <T class="☘-image-footer-content">
+            <T class="☘-title" data-size='h5'> 标题标题标题标题标题标题标题标题标题标题标题 </T>
+            <T class="☘-paragraph" data-ellipsis="l1"> 描述描述描述描述描述描述描述描述描述描述描述描述 </T>
+        </T>
+        <T class="☘-image-footer-action">
+            <Icon class={escape('☘-link')} name="interactive-button/outline/eye" alt="eye" width="24px"/>
+            <Icon class={escape('☘-link')} name="interactive-button/outline/download" alt="download" width="24px"/>
+        </T>
+    </T>
 </T>
 
 ```pug
 .☘-image(style={
-    width: "200px",
-    height: "200px",
-    overflow: "hidden",
-    "border-radius": "100px"
-    margin: "auto"
+    width: "300px",
+    height: "300px",
+    "border-radius": "16px"
 })
-    img(src='/images/unknow.png')
+    img(src='/images/example.jpg')
+    .☘-image-footer
+        .☘-image-footer-content
+            .☘-title(data-size='h5') 标题标题标题标题标题标题标题标题标题标题标题
+            .☘-paragraph(data-ellipsis="l1") 描述描述描述描述描述描述描述描述描述描述描述描述
+        .☘-image-footer-action
+            svg.☘-link(alt="eye" width="24px")
+            svg.☘-link(alt="download" width="24px")
 ```

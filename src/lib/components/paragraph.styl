@@ -18,6 +18,6 @@
             ))
         &[data-ellipsis=l{i}]
             mixin_line_clamp(i)
-            height 'calc(%s * %s)' % (--font-size-body i)
+            height 'calc(%s * %s)' % (var(--line-height-body) i)
     &[data-has-indent]
         text-indent 2em
