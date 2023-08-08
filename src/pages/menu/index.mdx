@@ -1,0 +1,23 @@
+---
+layout: "@layout/main.astro"
+title: 全局
+---
+
+import T from "src/components/T.astro";
+import Colors from "src/components/kanban/colors.astro";
+export * from 'src/components/markdown/map.mdx';
+
+# global
+
+## color
+
+在切换主题后 明度梯度将会变化
+
+纯黑 `--black` 
+
+纯白 `--white` 
+
+其他的颜色 各自有10个明度等级：
+
+<Colors />
+
