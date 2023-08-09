@@ -1,7 +1,7 @@
 import prefix from "src/scripts/prefix";
 
 
-window.addEventListener(`${prefix}-message`, (event: CustomEvent) => {
+window.addEventListener(`${prefix}-message`, (event: CustomEvent<string>) => {
 
     const queue = document.getElementById("message-queue");
 
