@@ -4,7 +4,7 @@ let theme = localStorage.getItem("theme") ?? "auto";
 if (theme === "auto") {
     theme =
         themeTuple[
-        +!window.matchMedia?.("(prefers-color-scheme: dark)")?.matches
+            +!window.matchMedia?.("(prefers-color-scheme: dark)")?.matches
         ];
 }
 root.dataset["theme"] = `theme-${theme}`;

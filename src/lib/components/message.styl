@@ -1,0 +1,27 @@
+@import './../variable/prefix.styl'
+@import './../variable/functions.styl'
+
+.{prefix}-message-queue
+    top 16px
+    left 0
+    right 0
+
+    z-index 2147
+    position fixed
+    height 0
+    overflow visible
+    display flex
+    flex-direction column
+    align-items center
+
+    .{prefix}-message
+        color _rgb(var(--gray-10))
+
+        border-radius var(--border-radius-md)
+        padding 8px
+        background-color _rgb(var(--white))
+        box-shadow var(--box-shadow-drop-bottom-lv1)
+        margin 4px
+
+        .{prefix}-paragraph
+            margin 0
