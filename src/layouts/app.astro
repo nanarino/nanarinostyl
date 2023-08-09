@@ -1,6 +1,8 @@
 ---
 import "@stylus/index.styl";
-import prefix from "src/scripts/server/prefix";
+import prefix from "src/scripts/prefix";
+import Queue from "src/components/message/queue.astro";
+
 interface Props {
     title?: string;
     frontmatter?: {
@@ -16,8 +18,10 @@ const title = Astro.props.title || Astro.props.frontmatter?.title || `${prefix} 
         <title>{title}</title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <script src="/src/scripts/client/copy.ts"></script>
     </head>
     <body>
+        <Queue />
         <slot />
     </body>
 </html>

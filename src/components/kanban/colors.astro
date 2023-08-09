@@ -1,5 +1,5 @@
 ---
-import prefix from "src/scripts/server/prefix";
+import prefix from "src/scripts/prefix";
 import { Icon } from "astro-icon";
 
 const colours = [
@@ -33,7 +33,14 @@ const colours = [
                         <button class={`${prefix}-button copy`} style={{
                             'background-color' : `rgb(var(--${color}-${i+1}))`,
                             'color': `rgb(var(--${ i>=5 ? 'white' : 'black' }))`
-                        }}>
+                        }} onclick={`
+                            window.copy('${`rgb(var(--${color}-${i+1}))`}');
+                            window.dispatchEvent(
+                                new CustomEvent('${prefix}-message', {
+                                    detail: '复制成功'
+                                })
+                            );
+                        `}>
                             <Icon name="edit/outline/copy" alt="copy"/>
                         </button>
                     </td>

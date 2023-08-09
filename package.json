@@ -14,6 +14,7 @@
     "@astrojs/mdx": "^0.19.7",
     "astro": "^2.6.4",
     "astro-icon": "^0.8.1",
+    "copy-to-clipboard": "^3.3.3",
     "stylus": "^0.59.0"
   },
   "devDependencies": {

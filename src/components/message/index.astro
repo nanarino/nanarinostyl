@@ -1,0 +1,14 @@
+---
+import prefix from "src/scripts/prefix";
+const props = Astro.props;
+interface Props {
+    msg: string;
+    style?: Record<string, any> | string;
+}
+---
+
+<div class={`${prefix}-message`} style={props.style}>
+    <p class={`${prefix}-paragraph`} data-ellipsis="l1" style="height:38px">
+        {props.msg}
+    </p>
+</div>
