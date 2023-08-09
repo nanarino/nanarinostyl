@@ -34,9 +34,7 @@ badge_dot()
     &::before
         badge_dot()
         background-color _rgb(var(--primary-6))
-        transition background-color var(--theme-transition)
     &[data-processing]::after
         badge_dot()
         border var(--badge-processing-weight) solid _rgb(var(--primary-6))
-        transition border-color var(--theme-transition)
         animation badge-processing 1.2s ease-in-out infinite
