@@ -21,6 +21,9 @@ btn-click-wave(bgc)
     background-color _rgb(var(--gray-2))
     transition background 0.8s
 
+    &:focus-visible
+        outline-color _rgb(var(--black))
+
     &[disabled]
         cursor not-allowed
         color _rgb(var(--gray-5))
