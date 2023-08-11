@@ -11,49 +11,49 @@ export * from 'src/components/markdown/map.mdx';
 # switch
 
 
-<Switch id="switch1" checked />
+<Switch id="hello" checked />
 
 ```pug
 span.☘-switch
-    input#switch1(type="checkbox" checked)
-    label(for="switch1")
+    input#hello(type="checkbox" checked)
+    label(for="hello" title="hello")
 ```
 
 
 ## `.sm`
 
-<Switch id="switch2" class="sm"/>
+<Switch id="small" class="sm"/>
 
 ```pug
 span.☘-switch.sm
-    input#switch2(type="checkbox")
-    label(for="switch2")
+    input#small(type="checkbox")
+    label(for="small" title="small")
 ```
 
 ## `disabled`
 
-<Switch id="switch3" checked disabled/>
-<Switch id="switch4" class="sm" disabled/>
+<Switch id="hibit" checked disabled/>
+<Switch id="small-hibit" class="sm" disabled/>
 
 ```pug
 span.☘-switch
-    input#switch3(type="checkbox" checked disabled)
-    label(for="switch3")
+    input#hibit(type="checkbox" checked disabled)
+    label(for="hibit" title="hibit")
 span.☘-switch.sm
-    input#switch4(type="checkbox" disabled)
-    label(for="switch4")
+    input#small-hibit(type="checkbox" disabled)
+    label(for="small-hibit" title="small-hibit")
 ```
 
 ## custom mover
 
-<Switch id="switch5" dataList={{ primary : "danger" }} class="sm">
+<Switch id="fire" dataList={{ primary : "danger" }} class="sm">
     <span>🔥</span>
 </Switch>
 
 ```pug
 span.☘-switch.sm(data-primary="danger")
-    input#switch5(type="checkbox")
-    label(for="switch5")
+    input#fire(type="checkbox")
+    label(for="fire" title="fire")
         span 🔥
 ```
 
@@ -61,7 +61,7 @@ span.☘-switch.sm(data-primary="danger")
 
 修改原生css变量 `--switch-size` 和 `--switch-padding` 以覆盖默认尺寸
 
-<OxalisSwitch id="oxalis-switch" />
+<OxalisSwitch id="oxalis" />
 
 ```pug
 span.☘-switch(
@@ -71,8 +71,8 @@ span.☘-switch(
         ["--primary-6"]: "var(--lime-3)",
     }
 )
-    input#oxalis-switch.oxalis-switch(type="checkbox" checked)
-    label(for="oxalis-switch")
+    input#oxalis.oxalis-switch(type="checkbox" checked)
+    label(for="oxalis" title="oxalis")
         span.oxalis-switch-mover \☘
 
 style(lang="stylus").
