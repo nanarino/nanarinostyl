@@ -9,10 +9,12 @@ export * from 'src/components/markdown/map.mdx';
 
 # button
 
-<T tag="button" class="☘-button" onclick="window.alert('\☘')">按</T>
+<T tag="button" class="☘-button" onclick="window.dispatchEvent(new CustomEvent('☘-message', { detail: `\☘` }))">按</T>
 
 ```pug
-button.☘-button(onclick=function(){window.alert('\☘')}) 按
+button.☘-button(onclick=function(){
+    window.dispatchEvent(new CustomEvent('☘-message', { detail: `\☘` }))
+}) 按
 ```
 
 ## `.sm` & `.lg`

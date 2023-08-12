@@ -9,6 +9,18 @@ export * from 'src/components/markdown/map.mdx';
 
 # global
 
+## message
+
+往 `body>.☘-message-queue` 里 append 以下元素即可显示消息
+
+```pug
+.☘-message
+    .☘-paragraph 新消息
+```
+
+对于本文档页面的消息使用的是：全局监听 `☘-message` 事件，添加元素后再定期移除。
+
+
 ## color
 
 在切换主题后 明度梯度将会变化
@@ -21,3 +33,14 @@ export * from 'src/components/markdown/map.mdx';
 
 <Colors />
 
+### `data-primary`
+
+`data-primary` 可以让有颜色的标签改变为以下4种目标颜色之一。
+
+- <T tag='code' class='☘-code'>[data-primary]</T>
+
+- <T tag='code' class='☘-code' data-primary="success">[data-primary=success]</T>
+
+- <T tag='code' class='☘-code' data-primary="danger">[data-primary=danger]</T>
+
+- <T tag='code' class='☘-code' data-primary="warning">[data-primary=warning]</T>
