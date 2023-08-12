@@ -3,6 +3,7 @@ import sleep from "src/scripts/sleep";
 
 const queue = document.getElementById("message-queue");
 
+// 全局触发
 window.addEventListener(`${prefix}-message`, async (event: CustomEvent<string>) => {
 
     const msg = document.createElement("div");

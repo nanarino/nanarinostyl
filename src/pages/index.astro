@@ -2,31 +2,13 @@
 import App from "@layout/app.astro";
 import Header from "src/components/header.astro";
 import prefix from "src/scripts/prefix";
-
-const background = `
-
-    :doodle {
-        @grid: 8 / 100%;
-        @shape: circle;
-    }
-        
-    transition: .2s @r(.6s);
-    border-radius: @pick(100% 0, 0 100%);
-    transform: scale(@r(.25, 1.25));
-        
-    background: hsla(
-        calc(240 - 6 * @x * @y),
-        70%, 68%, @r.8
-    )
-
-`
 ---
 
 <App>
     <Header href="/menu/" />
     <section class={`${prefix}-layout cover-layout`}>
         <main class="cover-layout-content">
-            <css-doodle>{background}</css-doodle>
+            <css-doodle></css-doodle>
             <nav class="cover-layout-content">
                 <a href="/menu/" class="logo own">
                     <img src="/favicon.svg" alt="My logo" title="进入"/>
@@ -37,6 +19,7 @@ const background = `
             </nav>
         </main>
     </section>
+    <script src="/src/scripts/client/cover.ts"></script>
 </App>
 
 <style lang="stylus">

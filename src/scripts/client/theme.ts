@@ -1,6 +1,13 @@
+import prefix from "src/scripts/prefix";
+
+type Theme = "dark" | "light";
+
 const root = document.documentElement;
-const themeTuple = ["dark", "light"];
-let theme = localStorage.getItem("theme") ?? "auto";
+const themeTuple: ["dark", "light"] = ["dark", "light"];
+
+
+// 初始化获取
+let theme: (Theme | "auto") = (localStorage.getItem("theme") as (Theme | '')) || "auto";
 if (theme === "auto") {
     theme =
         themeTuple[
@@ -8,12 +15,20 @@ if (theme === "auto") {
         ];
 }
 root.dataset["theme"] = `theme-${theme}`;
+window.theme = theme;
+
+// 全局监听
+window.addEventListener(`${prefix}-theme`, (event?: CustomEvent<Theme>) => {
+    root.dataset["theme"] = `theme-${event.detail}`;
+    localStorage.setItem("theme", event.detail);
+});
+
+// 开关触发
 const checkbox = document.getElementById(
     "header-theme-switch"
 ) as HTMLInputElement;
 checkbox.checked = theme === "dark";
 checkbox.onchange = (e: Event) => {
     const theme = themeTuple[+!(e.target as HTMLInputElement).checked];
-    root.dataset["theme"] = `theme-${theme}`;
-    localStorage.setItem("theme", theme);
+    window.dispatchEvent(new CustomEvent<Theme>(`${prefix}-theme`, { detail: theme }))
 };
