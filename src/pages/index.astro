@@ -1,42 +1,99 @@
 ---
 import App from "@layout/app.astro";
 import Header from "src/components/header.astro";
+import prefix from "src/scripts/prefix";
+
+const background = `
+
+    :doodle {
+        @grid: 8 / 100%;
+        @shape: circle;
+    }
+        
+    transition: .2s @r(.6s);
+    border-radius: @pick(100% 0, 0 100%);
+    transform: scale(@r(.25, 1.25));
+        
+    background: hsla(
+        calc(240 - 6 * @x * @y),
+        70%, 68%, @r.8
+    )
+
+`
 ---
 
 <App>
     <Header href="/menu/" />
-    <section id="cover">
-        <a href="/menu/" class="logo own">
-            <img src="/favicon.svg" alt="My logo" title="entry"/>
-        </a>
-        <a href="https://stylus-lang.com/" class="logo">
-            <img src="/stylus.svg" alt="Stylus logo" title="stylus document"/>
-        </a>
+    <section class={`${prefix}-layout cover-layout`}>
+        <main class="cover-layout-content">
+            <css-doodle>{background}</css-doodle>
+            <nav class="cover-layout-content">
+                <a href="/menu/" class="logo own">
+                    <img src="/favicon.svg" alt="My logo" title="进入"/>
+                </a>
+                <a href="https://stylus-lang.com/" class="logo">
+                    <img src="/stylus.svg" alt="Stylus logo" title="stylus document"/>
+                </a>
+            </nav>
+        </main>
     </section>
 </App>
 
 <style lang="stylus">
 @import './../lib/variable/functions.styl'
+@import './../lib/variable/compatible.styl'
 
-#cover
-    max-width 1280px
-    margin auto
-    padding 2rem
-    text-align center
-a.logo
-    display inline-block
+.cover-layout
+    user-select none
     position relative
-    &.own:hover
-        filter drop-shadow(0 0 2em _rgb(var(--primary-6)))
-    img
-        height 6em
-        padding 1.5em
-        will-change filter
-        transition filter .3s
-    &[href='https://stylus-lang.com/']::after
-        position absolute
-        inset 0
-        content ''
-        filter blur(3em)
-        background-image linear-gradient(-45deg, _rgb(var(--lime-3)), 30%, _rgb(var(--yellow-2)))
+
+main.cover-layout-content
+    width 36em
+    height @width
+    overflow hidden
+    color transparent
+
+    position absolute
+    inset 0
+    margin auto
+
+    css-doodle
+        animation rotate 120s infinite linear
+
+nav.cover-layout-content
+    position absolute
+    inset 0
+    margin auto
+
+    display flex
+    justify-content center
+    align-items center
+
+    a.logo
+        display inline-block
+        position relative
+
+        &.own:hover
+            filter drop-shadow(0 0 2em _rgb(var(--primary-7))) hue-rotate(15deg)
+        img
+            height 6em
+            padding 1.5em
+            will-change filter
+            transition filter .3s
+        &[href='https://stylus-lang.com/']::after
+            position absolute
+            inset 0
+            content ''
+            filter blur(3em)
+            background-image linear-gradient(-45deg, _rgb(var(--lime-2)), 30%, _rgb(var(--yellow-2)))
+
+
+@keyframes rotate
+
+    from 
+        transform rotate(0deg)
+    
+    to 
+        transform rotate(360deg)
+
 </style>
