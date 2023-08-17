@@ -9,6 +9,13 @@ export * from 'src/components/markdown/map.mdx';
 
 # global
 
+## `data-theme`
+
+主题变量 `theme: 'light'|'dark'`
+
+它保存在 `document.documentElement.dataset` 和 `localStorage` 里
+
+
 ## message
 
 往 `body>.☘-message-queue` 里 append 以下元素即可显示消息
@@ -22,8 +29,6 @@ export * from 'src/components/markdown/map.mdx';
 
 
 ## color
-
-在切换主题后 明度梯度将会变化
 
 - 纯黑 `--black` 
 - 纯白 `--white` 

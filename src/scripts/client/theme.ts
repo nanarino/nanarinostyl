@@ -14,12 +14,12 @@ if (theme === "auto") {
             +!window.matchMedia?.("(prefers-color-scheme: dark)")?.matches
         ];
 }
-root.dataset["theme"] = `theme-${theme}`;
+root.dataset["theme"] = theme;
 window.theme = theme;
 
-// 全局监听
+// 全局监听 维护变量
 window.addEventListener(`${prefix}-theme`, (event?: CustomEvent<Theme>) => {
-    root.dataset["theme"] = `theme-${event.detail}`;
+    root.dataset["theme"] = event.detail;
     localStorage.setItem("theme", event.detail);
 });
 
