@@ -1,9 +1,13 @@
-import prefix from "src/scripts/prefix";
+// import prefix from "src/scripts/prefix";
+// 以上代码无效，无法在inline脚本里使用import。但是我将prefix赋给了window.name。
+const prefix = window.name;
+
 
 type Theme = "dark" | "light";
 
-const root = document.documentElement;
 const themeTuple: ["dark", "light"] = ["dark", "light"];
+const root = document.documentElement;
+
 
 
 // 初始化获取
@@ -17,18 +21,9 @@ if (theme === "auto") {
 root.dataset["theme"] = theme;
 window.theme = theme;
 
+
 // 全局监听 维护变量
 window.addEventListener(`${prefix}-theme`, (event?: CustomEvent<Theme>) => {
     root.dataset["theme"] = event.detail;
     localStorage.setItem("theme", event.detail);
 });
-
-// 开关触发
-const checkbox = document.getElementById(
-    "header-theme-switch"
-) as HTMLInputElement;
-checkbox.checked = theme === "dark";
-checkbox.onchange = (e: Event) => {
-    const theme = themeTuple[+!(e.target as HTMLInputElement).checked];
-    window.dispatchEvent(new CustomEvent<Theme>(`${prefix}-theme`, { detail: theme }))
-};
