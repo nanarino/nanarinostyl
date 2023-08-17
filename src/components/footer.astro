@@ -2,7 +2,13 @@
 import prefix from "src/scripts/prefix";
 ---
 
-<footer class={`${prefix}-layout-footer`}>广告位招租</footer>
+<footer class={`${prefix}-layout-footer`}>
+    由 &nbsp; 
+    <a href="https://astro.build">
+        {Astro.generator}
+    </a> 
+    &nbsp; 构建
+</footer>
 <style lang="stylus">
 @import './../lib/variable/functions.styl'
 
@@ -12,4 +18,10 @@ footer
     line-height var(--line-height-2)
     font-size var(--font-size-2)
     color _rgb(var(--gray-3))
+
+    a
+        color _rgb(var(--primary-2))
+        &:hover
+            color _rgb(var(--primary-3))
+            
 </style>
