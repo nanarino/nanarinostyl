@@ -21,7 +21,7 @@ const colours = [
 ---
 
 <div class={`${prefix}-table-wrapper`}>
-    <table class={`${prefix}-table md`} style="--text-align-cell: center">
+    <table class={`${prefix}-table md`} id="colors-kanban">
         {
         colours.map((color) => (
             <tr>
@@ -33,14 +33,7 @@ const colours = [
                         <button class={`${prefix}-button copy`} style={{
                             'background-color' : `rgb(var(--${color}-${i+1}))`,
                             'color': `rgb(var(--${ i>=5 ? 'white' : 'black' }))`
-                        }} onclick={`
-                            window.copy('${`rgb(var(--${color}-${i+1}))`}');
-                            window.dispatchEvent(
-                                new CustomEvent('${prefix}-message', {
-                                    detail: '复制成功'
-                                })
-                            );
-                        `}>
+                        }} title={`--${color}-${i+1}`}>
                             <Icon name="edit/outline/copy" alt="copy"/>
                         </button>
                     </td>
@@ -51,18 +44,37 @@ const colours = [
     </table>
 </div>
 
+<script>
+    const table = document.getElementById('colors-kanban');
+    table.onclick = function(e){
+        const button = e.target as HTMLButtonElement
+        if(button.tagName === "BUTTON" && button.title){
+            window.copy(`rgb(var(${button.title}))`);
+            window.dispatchEvent(
+                new CustomEvent(`${window.name}-message`, {
+                    detail: '复制成功'
+                })
+            );
+        }
+    }
+</script>
+
 <style lang="stylus">
 @import './../../lib/variable/functions.styl'
 
-button.copy
-    width 32px
-    height 32px
-    --padding-cell 6px
-    --border-radius-md 50%
-td.color
-    position sticky
-    left 0
-    box-shadow var(--box-shadow-divider-right-lv1), var(--box-shadow-divider-bottom-lv1)
-    background-color _rgb(var(--white))
-    --gray-1 var(--primary-1)
+#colors-kanban
+    --text-align-cell center
+    button.copy
+        width 32px
+        height 32px
+        --padding-cell 6px
+        --border-radius-md 50%
+        svg
+            pointer-events none
+    td.color
+        position sticky
+        left 0
+        box-shadow var(--box-shadow-divider-right-lv1), var(--box-shadow-divider-bottom-lv1)
+        background-color _rgb(var(--white))
+        --gray-1 var(--primary-1)
 </style>
