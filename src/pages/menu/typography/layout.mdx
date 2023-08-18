@@ -1,0 +1,69 @@
+---
+layout: "@layout/main.astro"
+title: 布局
+---
+
+import T from "src/components/T.astro";
+import Layouts from "src/components/kanban/layouts.astro";
+export * from 'src/components/markdown/map.mdx';
+
+# layout
+
+
+<Layouts />
+
+
+## menu
+
+<T tag="ul" class="☘-menu">
+    <T tag="li" class="☘-menu-item"><T tag="a" class="☘-menu-item-link">叶子-0</T></T>
+    <T tag="li" class="☘-menu-submenu" data-folded>
+        <T class="☘-menu-submenu-title" onclick="this.parentElement.toggleAttribute('data-folded')">
+            <span>分类-1</span>
+            <T tag="i" class="☘-menu-submenu-title-arrow"/>
+        </T>
+        <T tag="ul" class="☘-menu">
+            <T tag="li" class="☘-menu-item"><T tag="a" class="☘-menu-item-link">叶子-1-1</T></T>
+            <T tag="li" class="☘-menu-item"><T tag="a" class="☘-menu-item-link">叶子-1-2</T></T>
+        </T>
+    </T>
+    <T tag="li" class="☘-menu-submenu">
+        <T class="☘-menu-submenu-title" onclick="this.parentElement.toggleAttribute('data-folded')">
+            <span>分类-2</span>
+            <T tag="i" class="☘-menu-submenu-title-arrow"/>
+        </T>
+        <T tag="ul" class="☘-menu">
+            <T tag="li" class="☘-menu-item" data-selected><T tag="a" class="☘-menu-item-link">叶子-2-1</T></T>
+            <T tag="li" class="☘-menu-item"><T tag="a" class="☘-menu-item-link">叶子-2-2</T></T>
+        </T>
+    </T>
+</T>
+
+
+```pug
+ul.☘-menu
+    li.☘-menu-item
+        a.☘-menu-item-link 叶子-0
+    li.☘-menu-submenu(data-folded)
+        .☘-menu-submenu-title(onclick=function(){
+            this.parentElement.toggleAttribute('data-folded')
+        })
+            span 分类-1
+            i.☘-menu-submenu-title-arrow
+        ul.☘-menu
+            li.☘-menu-item
+                a.☘-menu-item-link 叶子-1-1
+            li.☘-menu-item
+                a.☘-menu-item-link 叶子-1-2
+    li.☘-menu-submenu
+        .☘-menu-submenu-title(onclick=function(){
+            this.parentElement.toggleAttribute('data-folded')
+        })
+            span 分类-2
+            i.☘-menu-submenu-title-arrow
+        ul.☘-menu
+            li.☘-menu-item(data-selected)
+                a.☘-menu-item-link 叶子-2-1
+            li.☘-menu-item
+                a.☘-menu-item-link 叶子-2-2
+```

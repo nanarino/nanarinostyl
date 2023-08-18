@@ -9,6 +9,7 @@
     flex-direction column
     gap 0.5em
     overflow hidden
+
     ul&
         padding 0
         list-style none
@@ -18,8 +19,37 @@
                 flex-direction column
                 gap 0.5em
                 ~/-submenu-title
+                    display flex
+                    justify-content space-between
+                    align-items center
+                    cursor alias
                     line-height var(--line-height-body)
                     padding var(--pading-menu-item)
+                    &-arrow
+                        position relative
+                        display inline-block
+                        width 10px
+                        transform translateY(-50%)
+                        transition transform .3s
+                        &:before,&:after
+                            position absolute
+                            width 6px
+                            height 1.5px
+                            background-color currentColor
+                            border-radius 2px
+                            transition transform .3s
+                            content ""
+                        &:before
+                            transform rotate(-45deg) translate(2.5px)
+                        &:after
+                            transform rotate(45deg) translate(-2.5px)
+                        ../../[data-folded] &
+                            &:before
+                                transform rotate(45deg) translate(2.5px)
+
+                            &:after 
+                                transform rotate(-45deg) translate(-2.5px)
+
             &-item
                 display grid
                 cursor pointer
@@ -32,8 +62,13 @@
                     padding var(--pading-menu-item)
                     color inherit
                     text-decoration none
+                
                 &[data-selected]
                     background _rgb(var(--primary-6))
                     color _rgb(var(--white))
                 &:not(^[0]-item[data-selected]):hover
                     color _rgb(var(--primary-6))
+                
+                ../-submenu[data-folded] ^[0]
+                    height 0
+
