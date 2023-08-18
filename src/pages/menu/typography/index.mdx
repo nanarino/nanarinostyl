@@ -4,7 +4,6 @@ title: 排版
 ---
 
 import T from "src/components/T.astro";
-import Layouts from "src/components/kanban/layouts.astro";
 export * from 'src/components/markdown/map.mdx';
 
 # typography
@@ -59,8 +58,6 @@ export * from 'src/components/markdown/map.mdx';
 
 css变量 `--line-height-body` 和 `--font-size-body` 可以影响很多组件，
 
-但标题其不受影响，需要自行选择 `<h1/>` 到 `<h6/>` ，对应markdown里的 `#` 数量。
-
 可以像下面这样写以改变全局css变量使所有标签默认大小变成3级（即 `<h5/>` 的大小）
 
 ```stylus
@@ -69,10 +66,8 @@ body
     --line-height-body var(--line-height-3)
 ```
 
+但标题其不受影响，需要自行选择 `<h1/>` 到 `<h6/>` ，对应markdown里的 `#` 数量。
 
-## layout
-
-<Layouts />
 
 
 ## code
