@@ -5,6 +5,18 @@
 .. highlight:: bash
 
 
+
+使用 ``styl`` 来编写
+
+使用 ``pug`` 作为伪代码 
+
+事实上在astro中渲染pug是很困难 它无法完全使用 ``☘``:
+
+::
+    > Could not parse expression with acorn: Expecting Unicode escape sequence \uXXXX
+
+
+
 运行
 ======
 ::
@@ -21,6 +33,7 @@
 * icon: `arco官方图标库 <https://arco.design/iconbox/lib/89/0/>`_
 * color: `arco默认配色 <https://arco.design/palette/list>`_
 * background: `css-doodle <https://css-doodle.com/>`_
+* inspiration: `affinity-css <https://github.com/Deep-Codes/affinity-css/>`_
 
 
 约束
