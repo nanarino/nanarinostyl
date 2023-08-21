@@ -9,17 +9,20 @@ void function () {
     const root = document.documentElement;
 
 
+    Object.defineProperty(window, "theme", {
+        get: () => {
+            let theme: (Theme | "auto") = (localStorage.getItem("theme") as (Theme | '')) || "auto";
+            if (theme === "auto") {
+                theme =
+                    themeTuple[
+                        +!window.matchMedia?.("(prefers-color-scheme: dark)")?.matches
+                    ];
+            }
+            return theme
+        }
+    });
 
-    // 初始化获取
-    let theme: (Theme | "auto") = (localStorage.getItem("theme") as (Theme | '')) || "auto";
-    if (theme === "auto") {
-        theme =
-            themeTuple[
-            +!window.matchMedia?.("(prefers-color-scheme: dark)")?.matches
-            ];
-    }
-    root.dataset["theme"] = theme;
-    window.theme = theme;
+    root.dataset["theme"] = window.theme;
 
 
     // 全局监听 维护变量

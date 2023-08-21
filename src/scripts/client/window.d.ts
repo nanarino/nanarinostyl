@@ -5,7 +5,7 @@ interface Window {
         format?: string; // MIME type
         onCopy?: (clipboardData: object) => void;
     }) => boolean,
-    theme?: "dark" | "light"
+    readonly theme?: readonly("dark" | "light")
 }
 
 declare const windos: Window & typeof globalThis
