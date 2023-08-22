@@ -2,6 +2,8 @@
 import App from "@layout/app.astro";
 import Header from "src/components/header.astro";
 import prefix from "src/scripts/prefix";
+import favicon from "src/assets/favicon.svg";
+import stylus from "src/assets/stylus.svg";
 
 const menu = import.meta.env.BASE_URL + "menu/";
 ---
@@ -13,10 +15,10 @@ const menu = import.meta.env.BASE_URL + "menu/";
             <css-doodle></css-doodle>
             <nav class="cover-layout-content">
                 <a href={menu} class="logo own">
-                    <img src="/src/assets/favicon.svg" alt="My logo" title="进入"/>
+                    <img src={favicon} alt="My logo" title="进入"/>
                 </a>
                 <a href="https://stylus-lang.com/" class="logo">
-                    <img src="/src/assets/stylus.svg" alt="Stylus logo" title="stylus document"/>
+                    <img src={stylus} alt="Stylus logo" title="stylus document"/>
                 </a>
             </nav>
         </main>
