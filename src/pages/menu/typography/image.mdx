@@ -10,17 +10,17 @@ export * from 'src/components/markdown/map.mdx';
 
 # image
 
-![未知](/images/unknow.png)
+![未知](/src/assets/images/unknow.png)
 
 这个组件的显示来自拓展后的markdown。
 
 ```pug
 p
     span.☘-image(style="display: inline-flex")
-        img(src="/images/unknow.png" alt="未知" ondragstart="return false")
+        img(src="/src/assets/images/unknow.png" alt="未知" ondragstart="return false")
             .☘-image-mask
                 svg(width="24px" alt="eye" click=function(){
-                    open("/images/unknow.png")
+                    open("/src/assets/images/unknow.png")
                 })
 ```
 
@@ -33,12 +33,12 @@ p
 在低版本浏览器中 `width` 必须提供
 
 <T class='☘-image' style="width:300px">
-    <img src='/images/example.jpg' />
+    <img src='/src/assets/images/example.jpg' />
 </T>
 
 ```pug
 .☘-image(style="width:300px")
-    img(src='/images/example.jpg')
+    img(src='/src/assets/images/example.jpg')
 ```
 
 ## `background-image`
@@ -49,12 +49,12 @@ p
 
 比如指定 `aspect-ratio`
 
-<T class='☘-image' style="height:300px;background-image:url(/images/example.jpg)"/>
+<T class='☘-image' style="height:300px;background-image:url(/src/assets/images/example.jpg)"/>
 
 ```pug
 .☘-image(style={
     height: '300px',
-    'background-image': url('/images/example.png')
+    'background-image': url('/src/assets/images/example.png')
 })
 ```
 
@@ -62,7 +62,7 @@ p
 
 背景图或容器都可以使用的遮罩 `.☘-image>.☘-image-mask`
 
-<T class='☘-image' style="width:100px;height:100px;background-image:url(/images/example.jpg);border-radius:50px">
+<T class='☘-image' style="width:100px;height:100px;background-image:url(/src/assets/images/example.jpg);border-radius:50px">
     <T class='☘-image-mask'>
         <Icon name="interactive-button/outline/heart" alt="heart" width="24px"/>
     </T>
@@ -73,7 +73,7 @@ p
 .☘-image(style={
     width: '100px',
     height: '100px',
-    'background-image': url('/images/example.jpg'),
+    'background-image': url('/src/assets/images/example.jpg'),
     'border-radius': '50%'
 })
     .☘-image-mask
@@ -85,7 +85,7 @@ p
 适用于大尺寸图片（ 128像素以上 ）的底部遮罩 `.☘-image>.☘-image-footer`
 
 <T class='☘-image' style="width:300px;height:300px;border-radius:var(--border-radius-lg)">
-    <img src='/images/example.jpg' />
+    <img src='/src/assets/images/example.jpg' />
     <T class='☘-image-footer'>
         <T class="☘-image-footer-content">
             <T class="☘-title" data-size='h5'> 标题标题标题标题标题标题标题标题标题标题标题 </T>
@@ -104,7 +104,7 @@ p
     height: "300px",
     "border-radius": "var(--border-radius-lg)"
 })
-    img(src='/images/example.jpg')
+    img(src='/src/assets/images/example.jpg')
     .☘-image-footer
         .☘-image-footer-content
             .☘-title(data-size='h5') 标题标题标题标题标题标题标题标题标题标题标题
