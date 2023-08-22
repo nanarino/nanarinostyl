@@ -5,7 +5,6 @@ type Theme = "dark" | "light";
 const themeTuple: ["dark", "light"] = ["dark", "light"];
 
 
-
 // 开关触发
 const checkbox = document.getElementById(
     "header-theme-switch"

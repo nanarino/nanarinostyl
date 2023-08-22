@@ -41,9 +41,9 @@ const style = {
 
     `
 }
-
+// 获取主题后初始化封面
 window.addEventListener("load", () => doodle.update(style[window.theme]));
-
+// 响应主题
 window.addEventListener(`${prefix}-theme`, (event: CustomEvent<"dark" | "light">)  => {
     doodle.update(style[event.detail]);
 });
