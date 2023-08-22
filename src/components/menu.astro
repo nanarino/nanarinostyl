@@ -35,8 +35,9 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
                 );
             }
             return (
-                <li class={`${prefix}-menu-item`}
-                    {...{'data-selected':  Astro.url.pathname === base + item.path}}
+                <li class={`${prefix}-menu-item`} data-selected={
+                        RegExp(`^${base}${item.path}\/?$`).test(Astro.url.pathname)
+                    }
                     style={{ order: getName(item.path) ? 1 : 0 }}
                 >
                     <a
