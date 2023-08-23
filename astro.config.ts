@@ -6,5 +6,5 @@ export default defineConfig({
     integrations: [mdx()],
     build: {
         assets: 'assets'
-    }
+    },
 });
