@@ -7,24 +7,39 @@ import T from "src/components/T.astro";
 import escape from "src/scripts/server/escape";
 import { Icon } from "astro-icon";
 import example from "src/assets/images/example.jpg";
+import "src/components/image/iine.styl";
 export * from 'src/components/markdown/map.mdx';
+
 
 # image
 
-![示例](./../../../assets/images/example.jpg)
+![示例](./../../../assets/images/example.jpg) {/* <!--不支持相对路径开发时请忽略这个404错误--> */}
 
-这个组件的显示来自拓展后的markdown。但是加载失败。
+这个组件的显示来自拓展后的markdown。但是**加载失败**的效果。
 
 ```pug
 p
     span.☘-image(style="display: inline-flex")
         img(src="/src/assets/images/example.jpg" alt="示例" onerror=function(){
-            this.src="/src/assets/images/unknow.png"
+            this.src="/src/assets/images/unknow.png";
+            this.parentElement.dataset.error=true;
+            this.onerror='return false'
         } ondragstart="return false")
-            .☘-image-mask
-                svg(width="24px" alt="eye" click=function(){
-                    open("/src/assets/images/example.jpg")
-                })
+        .☘-image-mask
+            svg(width="24px" alt="eye" onclick=function(){
+                window.open("/src/assets/images/example.jpg")
+            })
+            svg(width="24px" alt="eye-invisible")
+
+style(lang="stylus").
+    .☘-image
+        svg[alt='eye']
+        cursor pointer
+        svg[alt='eye-invisible']
+            cursor not-allowed
+        &[data-error] svg[alt='eye']
+        &:not([data-error]) svg[alt='eye-invisible']
+            display none
 ```
 
 ## `<img>`
@@ -74,8 +89,9 @@ p
     'background-image': `url(${example})`,
     'border-radius': '50%'
 }}>
-    <T class='☘-image-mask'>
+    <T class='☘-image-mask' onclick="this.parentElement.toggleAttribute('data-iine')">
         <Icon name="interactive-button/outline/heart" alt="heart" width="24px"/>
+        <Icon name="interactive-button/fill/heart-fill" alt="heart-fill" width="24px"/>
     </T>
 </T>
 
@@ -87,8 +103,21 @@ p
     'background-image': url('/src/assets/images/example.jpg'),
     'border-radius': '50%'
 })
-    .☘-image-mask
-        svg(width="24px" alt="eye")
+    .☘-image-mask(onclick=function(){
+        this.parentElement.toggleAttribute('data-iine')
+    })
+        svg(width="24px" alt="heart")
+        svg(width="24px" alt="heart-fill")
+
+style(lang='stylus').
+    .☘-image
+        svg[alt='heart']
+        svg[alt='heart-fill']
+            color magenta
+            cursor pointer
+        &[data-iine] svg[alt='heart']
+        &:not([data-iine]) svg[alt='heart-fill']
+            display none
 ```
 
 ### footer
@@ -103,7 +132,9 @@ p
             <T class="☘-paragraph" data-ellipsis="l1"> 描述描述描述描述描述描述描述描述描述描述描述描述 </T>
         </T>
         <T class="☘-image-footer-action">
-            <Icon class={escape('☘-link')} name="interactive-button/outline/eye" alt="eye" width="24px"/>
+            <Icon class={escape('☘-link')} name="interactive-button/outline/eye" alt="eye" width="24px" onclick={`
+                window.open('${example}')
+            `} />
             <Icon class={escape('☘-link')} name="interactive-button/outline/download" alt="download" width="24px"/>
         </T>
     </T>
@@ -121,6 +152,8 @@ p
             .☘-title(data-size='h5') 标题标题标题标题标题标题标题标题标题标题标题
             .☘-paragraph(data-ellipsis="l1") 描述描述描述描述描述描述描述描述描述描述描述描述
         .☘-image-footer-action
-            svg.☘-link(alt="eye" width="24px")
+            svg.☘-link(alt="eye" width="24px" onclick=function(){
+                window.open("/src/assets/images/example.jpg")
+            })
             svg.☘-link(alt="download" width="24px")
 ```
