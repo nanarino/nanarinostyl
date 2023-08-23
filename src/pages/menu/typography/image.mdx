@@ -51,12 +51,12 @@ style(lang="stylus").
 在低版本浏览器中 `width` 必须提供
 
 <T class='☘-image' style="width:300px">
-    <img src={example} />
+    <img alt="示例" src={example} />
 </T>
 
 ```pug
 .☘-image(style="width:300px")
-    img(src='/src/assets/images/example.jpg')
+    img(alt="示例" src='/src/assets/images/example.jpg')
 ```
 
 ## `background-image`
@@ -89,7 +89,7 @@ style(lang="stylus").
     'background-image': `url(${example})`,
     'border-radius': '50%'
 }}>
-    <T class='☘-image-mask' onclick="this.parentElement.toggleAttribute('data-iine')">
+    <T class='☘-image-mask' onclick="event.target == this || this.parentElement.toggleAttribute('data-iine')">
         <Icon name="interactive-button/outline/heart" alt="heart" width="24px"/>
         <Icon name="interactive-button/fill/heart-fill" alt="heart-fill" width="24px"/>
     </T>
@@ -104,7 +104,7 @@ style(lang="stylus").
     'border-radius': '50%'
 })
     .☘-image-mask(onclick=function(){
-        this.parentElement.toggleAttribute('data-iine')
+        event.target == this || this.parentElement.toggleAttribute('data-iine')
     })
         svg(width="24px" alt="heart")
         svg(width="24px" alt="heart-fill")
@@ -125,7 +125,7 @@ style(lang='stylus').
 适用于大尺寸图片（ 128像素以上 ）的底部遮罩 `.☘-image>.☘-image-footer`
 
 <T class='☘-image' style="width:300px;height:300px;border-radius:var(--border-radius-lg)">
-    <img src={example} />
+    <img alt="示例" src={example} />
     <T class='☘-image-footer'>
         <T class="☘-image-footer-content">
             <T class="☘-title" data-size='h5'> 标题标题标题标题标题标题标题标题标题标题标题 </T>
@@ -146,7 +146,7 @@ style(lang='stylus').
     height: "300px",
     "border-radius": "var(--border-radius-lg)"
 })
-    img(src='/src/assets/images/example.jpg')
+    img(alt="示例" src='/src/assets/images/example.jpg')
     .☘-image-footer
         .☘-image-footer-content
             .☘-title(data-size='h5') 标题标题标题标题标题标题标题标题标题标题标题
