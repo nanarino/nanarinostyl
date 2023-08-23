@@ -8,6 +8,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build-gh-pages": "astro build --base /nanarinostyl/",
     "preview": "astro preview"
   },
   "dependencies": {
