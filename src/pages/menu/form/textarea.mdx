@@ -1,0 +1,41 @@
+---
+layout: "@layout/main.astro"
+title: 文本域
+---
+
+import T from "src/components/T.astro";
+export * from 'src/components/markdown/map.mdx';
+
+
+# textarea
+
+<T tag="textarea" class="☘-textarea ☘-font-mono" title="helloworld">helloworld</T>
+
+```pug
+textarea.☘-textarea.☘-font-mono(title='helloworld') helloworld
+```
+
+## `disabled`
+
+<T tag="textarea" class="☘-textarea ☘-font-mono" title="helloworld" disabled style="resize: none;">helloworld</T>
+
+```pug
+textarea.☘-textarea.☘-font-mono(
+    title='helloworld' 
+    disabled 
+    style={ resize: 'none' }
+) helloworld
+```
+
+## `placeholder`
+
+<T tag="textarea" class="☘-textarea ☘-font-mono" title="helloworld" placeholder='helloworld'/>
+
+```pug
+textarea.☘-textarea.☘-font-mono(title='helloworld' placeholder='helloworld')
+```
+
+## `.sm` & `.lg`
+
+- `textarea.☘-textarea.sm` 尺寸更小的文本域
+- `textarea.☘-textarea.lg` 尺寸更大的文本域

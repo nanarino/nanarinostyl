@@ -14,13 +14,18 @@
         --switch-size 16px
     
     &>input
-        display none
+        position absolute
+        opacity 0
+        pointer-events none
 
         ~/-mover
             display inline-flex
             cursor pointer
             height var(--switch-size)
             width calc(var(--switch-size) * 2)
+            ../:focus-visible
+                &+^[-1]
+                    outline 2px solid _rgb(var(--black))
             border-radius calc((var(--switch-size) / 2))
             background-color _rgb(var(--gray-4))
             transition background-color 1s

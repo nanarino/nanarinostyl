@@ -1,0 +1,25 @@
+---
+layout: "@layout/main.astro"
+title: 表单
+---
+
+import T from "src/components/T.astro";
+export * from 'src/components/markdown/map.mdx';
+
+# form
+
+## `:focus-visible`
+
+```sass
+&:focus-visible
+    outline-color rgb(var(--black))
+```
+
+使用键盘获取焦点时应该强制实现这个样式。默认是黑白，事实上浏览器已经实现。
+
+- `button` tab或回车触发
+- `a` tab触发
+- `input` tab触发
+- `textarea` tab触发
+
+在按下一次按钮后再按回车相当于再次按下，此时可以看到明显的焦点边框。

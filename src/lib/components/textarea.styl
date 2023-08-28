@@ -1,0 +1,48 @@
+@import './../variable/prefix.styl'
+@import './../variable/functions.styl'
+
+textarea.{prefix}-textarea
+    --padding-textarea 5px 12px
+    --height-textarea 54px
+
+    display flex
+    flex-direction column
+    box-sizing border-box
+    border 1px solid transparent
+    border-radius var(--border-radius-md)
+
+    font-size var(--font-size-body)
+    line-height var(--line-height-body)
+    padding var(--padding-textarea)
+
+    &.sm
+        --padding-textarea 1px 12px
+        --height-textarea 46px
+    &.lg
+        --padding-textarea 8px 12px
+        --height-textarea 64px
+        --font-size-body var(--font-size-h5)
+        --line-height-body var(--line-height-h5)
+    
+    background-color _rgb(var(--gray-1))
+    &:hover
+        border-color _rgb(var(--primary-6))
+    &:focus
+        border-color _rgb(var(--primary-6))
+        outline none
+        box-shadow var(--box-shadow-drop-bottom-lv3)
+    &:focus-visible
+        outline-color _rgb(var(--black))
+    transition box-shadow
+
+    &[disabled]
+        cursor not-allowed
+        background-color _rgb(var(--gray-2))
+        color _rgb(var(--gray-6))
+        &:hover
+            border-color transparent
+    
+    &::-webkit-input-placeholder
+        color _rgb(var(--gray-5))
+        font-size var(--font-size-body)
+        line-height var(--line-height-body)
