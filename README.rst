@@ -33,7 +33,9 @@
 ::
 
     # 构建文档
-    pnpm build
+    pnpm build-docs
+    # 构建样式
+    pnpm build-stylus
 
 
 借物

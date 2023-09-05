@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build-docs": "astro build",
+    "build-stylus": "stylus ./src/lib/index.styl --out ./dist",
     "build-gh-pages": "astro build --base /nanarinostyl/",
     "preview": "astro preview"
   },
