@@ -1,0 +1,31 @@
+---
+layout: "@layout/main.astro"
+title: 输入框
+---
+
+import T from "src/components/T.astro";
+export * from 'src/components/markdown/map.mdx';
+
+
+# input
+
+<T tag="input" class="☘-input" title="helloworld" placeholder='helloworld'/>
+
+```pug
+input.☘-input(title='helloworld' placeholder='helloworld')
+```
+
+## `disabled`
+
+<T tag="input" class="☘-input" title="helloworld" placeholder='helloworld' disabled/>
+
+```pug
+input.☘-input(title='helloworld' placeholder='helloworld' disabled)
+```
+
+## `.sm` & `.lg`
+
+- `input.☘-input.sm` 尺寸更小的输入框
+    <br/><T tag="input" class="☘-input sm" title="helloworld" />
+- `input.☘-input.lg` 尺寸更大的输入框
+    <br/><T tag="input" class="☘-input lg" title="helloworld" />
