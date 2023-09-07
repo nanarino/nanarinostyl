@@ -4,6 +4,7 @@ title: 表单
 ---
 
 import T from "src/components/T.astro";
+import Switch from "src/components/switch/index.astro";
 export * from 'src/components/markdown/map.mdx';
 
 # form
@@ -17,9 +18,14 @@ export * from 'src/components/markdown/map.mdx';
 
 使用键盘获取焦点时应该强制实现这个样式。默认是黑白，事实上浏览器已经实现。
 
-- `button` tab或回车触发
-- `a` tab触发
-- `input` tab触发
-- `textarea` tab触发
+- `button` tab或点击一次后回车触发
+    - <T tag="button" class="☘-button">按钮</T>
+- `a` tab或点击一次后回车触发
+    - <T tag="a" class="☘-link" href="#">链接</T>
+- `input` tab或点击一次后回车触发 但是普通的文本输入框不会触发
+    - <T tag="input" class="☘-input" title="input" placeholder='请输入' />
+    - <Switch id="switch" checked style="vertical-align: middle" />
+- `textarea` 无法触发
+    - <T tag="textarea" class="☘-textarea ☘-font-mono" title="textarea" placeholder='请输入' style="vertical-align: middle" />
 
-在按下一次按钮后再按回车相当于再次按下，此时可以看到明显的焦点边框。
+
