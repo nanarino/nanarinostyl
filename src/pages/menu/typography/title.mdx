@@ -27,19 +27,19 @@ h6.☘-title 𓀎 𓀏 𓀐 𓀑 𓀒𓀓  𓀖 𓀗
 
 ## `data-size`
 
-`h{i}` 值范围 `h1`到 `h6` : i级标题的大小和边距
+`{i}` 值范围 `1`到 `6` : i级标题的大小和边距
 
-<T class="☘-title" data-size='h3'>𓀉 𓀊 𓀋 𓀌 𓀍</T>
-<T class="☘-title" data-size='h4'>𓀘 𓀙 𓀚 𓀛 𓀜 𓀝 𓀞𓀀</T>
-<T class="☘-title" data-size='h5'>𓀁 𓀂 𓀄 𓀅 𓀆 𓀇 𓀈</T>
-<T class="☘-title" data-size='h6'>𓀁 𓀂 𓀃 𓀄 𓀅 𓀆 𓀇 𓀈</T>
+<T class="☘-title" data-size='3'>𓀉 𓀊 𓀋 𓀌 𓀍</T>
+<T class="☘-title" data-size='4'>𓀘 𓀙 𓀚 𓀛 𓀜 𓀝 𓀞𓀀</T>
+<T class="☘-title" data-size='5'>𓀁 𓀂 𓀄 𓀅 𓀆 𓀇 𓀈</T>
+<T class="☘-title" data-size='6'>𓀁 𓀂 𓀃 𓀄 𓀅 𓀆 𓀇 𓀈</T>
 <T>𓀎 𓀏 𓀐 𓀑 𓀒𓀓  𓀖 𓀗</T>
 
 ```pug
-.☘-title(data-size='h3') 𓀉 𓀊 𓀋 𓀌 𓀍
-.☘-title(data-size='h4') 𓀘 𓀙 𓀚 𓀛 𓀜 𓀝 𓀞𓀀
-.☘-title(data-size='h5') 𓀁 𓀂 𓀄 𓀅 𓀆 𓀇 𓀈
-.☘-title(data-size='h6') 𓀁 𓀂 𓀃 𓀄 𓀅 𓀆 𓀇 𓀈
+.☘-title(data-size='3') 𓀉 𓀊 𓀋 𓀌 𓀍
+.☘-title(data-size='4') 𓀘 𓀙 𓀚 𓀛 𓀜 𓀝 𓀞𓀀
+.☘-title(data-size='5') 𓀁 𓀂 𓀄 𓀅 𓀆 𓀇 𓀈
+.☘-title(data-size='6') 𓀁 𓀂 𓀃 𓀄 𓀅 𓀆 𓀇 𓀈
 .☘-title 𓀎 𓀏 𓀐 𓀑 𓀒𓀓  𓀖 𓀗
 ```
 
@@ -47,10 +47,10 @@ h6.☘-title 𓀎 𓀏 𓀐 𓀑 𓀒𓀓  𓀖 𓀗
 
 副标题字体大小比主标题低一级
 
-<T class="☘-title" data-size='h1'>红楼梦<T tag="span" class="☘-title-subtitle">戚序本</T></T>
+<T class="☘-title" data-size='1'>红楼梦<T tag="span" class="☘-title-subtitle">戚序本</T></T>
 
 ```pug
-.☘-title(data-size='h1')
+.☘-title(data-size='1')
     |红楼梦
     span.☘-title-subtitle 戚序本
 ```
@@ -68,7 +68,7 @@ h2.☘-title
 ## `data-has-prefix`
 
 <T class="☘-title" tag='h6' data-has-prefix data-primary="danger">石头记</T>
-<T class="☘-title" data-size='h3' sub='戚序本' data-has-prefix>红楼梦<T tag="span" class="☘-title-subtitle">戚序本</T></T>
+<T class="☘-title" data-size='3' sub='戚序本' data-has-prefix>红楼梦<T tag="span" class="☘-title-subtitle">戚序本</T></T>
 
 ```pug
 h6.☘-title(data-has-prefix data-primary="danger") 石头记
