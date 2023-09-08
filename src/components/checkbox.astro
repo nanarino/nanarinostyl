@@ -15,7 +15,7 @@ interface Props {
 ---
 
 <span
-    class={`${prefix}-switch ${props.class || ''}`}
+    class={`${prefix}-checkbox ${props.class || ''}`}
     style={props.style}
     {...attrs(props.dataList || {})}
 >
@@ -28,7 +28,7 @@ interface Props {
         disabled={props.disabled}
     />
     <label 
-        class={`${prefix}-switch-mover`}
+        class={`${prefix}-checkbox-label`}
         for={props.id}
         title={props.title||props.id}
     ><slot /></label>

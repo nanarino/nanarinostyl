@@ -1,0 +1,63 @@
+@import './../variable/prefix.styl'
+@import './../variable/functions.styl'
+
+.{prefix}-checkbox
+    font-size var(--font-size-body)
+    line-height var(--line-height-body)
+    display inline-flex
+    text-indent 20px
+    input.{prefix}-input[type=checkbox]
+        position absolute
+        opacity 0
+        pointer-events none
+        ~/-label
+            min-width 16px
+            position relative
+            display inline-flex
+            align-items center
+            cursor pointer
+            ../:focus-visible
+                &+^[-1]
+                    outline 2px solid _rgb(var(--black))
+                    border-radius var(--border-radius-sm)
+        ~/-label::before
+            content ''
+            width 16px
+            height 16px
+            position absolute
+            left 0
+            background-color _rgb(var(--gray-4))
+            border-radius var(--border-radius-sm)
+            ../:checked
+                &+^[-1]
+                    background-color _rgb(var(--primary-6))
+            ../:checked:disabled
+                &+^[-1]
+                    background-color _rgb(var(--primary-3))
+            ../:disabled
+                &+^[-1]
+                    background-color _rgb(var(--gray-3))
+
+        ~/-label::after
+            content ''
+            position absolute
+            width 12px
+            height 12px
+            left 2px
+            background-color _rgb(var(--white))
+            border-radius 2px
+            ../:checked
+                &+^[-1]
+                    left 3px
+                    margin-top -3px
+                    width 8px
+                    height 4px
+                    border 2px solid _rgb(var(--white))
+                    border-top none
+                    border-right none
+                    background 0 0
+                    transform rotate(-45deg)
+            ../:disabled:not(:checked)
+                &+^[-1]
+                    background-color _rgb(var(--gray-1))
+                

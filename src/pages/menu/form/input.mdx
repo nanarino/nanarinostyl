@@ -11,10 +11,26 @@ export * from 'src/components/markdown/map.mdx';
 
 # input
 
-<T tag="input" class="☘-input ☘-font-mono" title="helloworld" value='helloworld'/>
+适用的类型：
+
+- **`[type=text]`**
+- `[type=search]`
+- `[type=number]`
+- `[type=password]`
+- `[type=email]`
+- `[type=tel]`
+- `[type=url]`
+- `[type=date]`
+- `[type=time]`
+- `[type=month]`
+- `[type=week]`
+- `[type=datetime-local]`
+- `[type=datetime]`
+
+<T tag="input" type="datetime-local" class="☘-input ☘-font-mono" title="更改时间" value='2023-09-08T14:48'/>
 
 ```pug
-input.☘-input.☘-font-mono(title='helloworld' value='helloworld')
+input.☘-input.☘-font-mono(type="datetime-local" title='更改时间' value='2023-09-08T14:48')
 ```
 
 ## `disabled`
@@ -73,3 +89,5 @@ input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
     input.☘-input(title='with-suffix' data-with-suffix)
     svg.☘-input-suffix(alt="close" width="18px")
 ```
+注意 这不是 `type="search"`
+

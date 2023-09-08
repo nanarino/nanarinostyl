@@ -1,0 +1,37 @@
+---
+layout: "@layout/main.astro"
+title: 多选框
+---
+
+import T from "src/components/T.astro";
+import Checkbox from "src/components/checkbox.astro";
+export * from 'src/components/markdown/map.mdx';
+
+
+# checkbox
+
+<Checkbox id="hello">hello</Checkbox>
+<Checkbox id="world" checked>world</Checkbox>
+
+```pug
+span.☘-checkbox
+    input#hello.☘-input(type="checkbox")
+    label(for="hello" title="hello") hello
+span.☘-checkbox
+    input#hello.☘-input(type="checkbox")
+    label(for="hello" title="world") world
+```
+
+## `disabled`
+
+<Checkbox id="HTTP" disabled>HTTP</Checkbox>
+<Checkbox id="HTTPS" checked disabled dataList={{ primary : "success" }}>HTTPS</Checkbox>
+
+```pug
+span.☘-checkbox
+    input#HTTP.☘-input(type="checkbox" disabled)
+    label(for="HTTP" title="HTTP") HTTP
+span.☘-checkbox(data-primary="success")
+    input#HTTPS.☘-input(type="checkbox" checked disabled)
+    label(for="HTTPS" title="HTTPS") HTTPS
+```

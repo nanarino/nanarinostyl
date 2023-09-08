@@ -15,7 +15,7 @@ export * from 'src/components/markdown/map.mdx';
 
 ```pug
 span.☘-switch
-    input#hello(type="checkbox" checked)
+    input#hello.☘-input(type="checkbox" checked)
     label(for="hello" title="hello")
 ```
 
@@ -26,7 +26,7 @@ span.☘-switch
 
 ```pug
 span.☘-switch.sm
-    input#small(type="checkbox")
+    input#small.☘-input(type="checkbox")
     label(for="small" title="small")
 ```
 
@@ -38,22 +38,22 @@ span.☘-switch.sm
 
 ```pug
 span.☘-switch
-    input#hibit(type="checkbox" checked disabled)
+    input#hibit.☘-input(type="checkbox" checked disabled)
     label(for="hibit" title="hibit")
 span.☘-switch.sm
-    input#small-hibit(type="checkbox" disabled)
+    input#small-hibit.☘-input(type="checkbox" disabled)
     label(for="small-hibit" title="small-hibit")
 ```
 
 ## custom mover
 
-<Switch id="fire" dataList={{ primary : "danger" }} class="sm">
+<Switch id="fire" dataList={{ primary : "danger" }} class="sm" checked>
     <span>🔥</span>
 </Switch>
 
 ```pug
 span.☘-switch.sm(data-primary="danger")
-    input#fire(type="checkbox")
+    input#fire.☘-input(type="checkbox" checked)
     label(for="fire" title="fire")
         span 🔥
 ```
@@ -72,7 +72,7 @@ span.☘-switch(
         ["--primary-6"]: "var(--lime-3)",
     }
 )
-    input#oxalis.oxalis-switch(type="checkbox" checked)
+    input#oxalis.oxalis-switch.☘-input(type="checkbox" checked)
     label(for="oxalis" title="oxalis")
         span.oxalis-switch-mover \☘
 

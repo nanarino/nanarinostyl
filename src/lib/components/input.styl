@@ -54,32 +54,46 @@ input.{prefix}-input
     /:root
         --padding-justify-input 4px
         --padding-align-input 12px
-        
-    --padding-input var(--padding-justify-input) var(--padding-align-input)
+    
+    &:not([type])
+    &[type=text]
+    &[type=search]
+    &[type=number]
+    &[type=password]
+    &[type=email]
+    &[type=tel]
+    &[type=url]
+    &[type=date]
+    &[type=time]
+    &[type=month]
+    &[type=week]
+    &[type=datetime-local]
+    &[type=datetime]
+        --padding-input var(--padding-justify-input) var(--padding-align-input)
 
-    border 1px solid transparent
-    border-radius var(--border-radius-md)
+        border 1px solid transparent
+        border-radius var(--border-radius-md)
 
-    font-size var(--font-size-body)
-    line-height var(--line-height-body)
-    padding var(--padding-input)
+        font-size var(--font-size-body)
+        line-height var(--line-height-body)
+        padding var(--padding-input)
 
-    &.sm
-        --padding-justify-input 0
-        --padding-align-input 12px
+        &.sm
+            --padding-justify-input 0
+            --padding-align-input 12px
 
-    &.lg
-        --padding-justify-input 7px
-        --padding-align-input 12px
-        --font-size-body var(--font-size-h5)
-        --line-height-body var(--line-height-h5)
+        &.lg
+            --padding-justify-input 7px
+            --padding-align-input 12px
+            --font-size-body var(--font-size-h5)
+            --line-height-body var(--line-height-h5)
 
-    input_stat()
+        input_stat()
 
-    &[data-with-prefix]
-        padding-left calc(var(--padding-align-input) + var(--font-size-body))
-    &[data-with-suffix]
-        padding-right calc(var(--padding-align-input) + var(--font-size-body))
+        &[data-with-prefix]
+            padding-left calc(var(--padding-align-input) + var(--font-size-body))
+        &[data-with-suffix]
+            padding-right calc(var(--padding-align-input) + var(--font-size-body))
 
 
 .{prefix}-input-wrapper
