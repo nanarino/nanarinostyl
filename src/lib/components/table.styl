@@ -22,10 +22,11 @@ gray-cell()
         position sticky
 
     /.{prefix}-table
-        --min-width-cell unset
-        --padding-cell 9px 12px
-        --border-cell none
-        --text-align-cell left
+        /:root
+            --min-width-cell unset
+            --padding-cell 9px 12px
+            --border-cell none
+            --text-align-cell left
 
         font-size var(--font-size-body)
         line-height var(--line-height-body)
