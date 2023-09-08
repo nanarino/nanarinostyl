@@ -4,28 +4,72 @@ title: 输入框
 ---
 
 import T from "src/components/T.astro";
+import escape from "src/scripts/server/escape";
+import { Icon } from "astro-icon";
 export * from 'src/components/markdown/map.mdx';
 
 
 # input
 
-<T tag="input" class="☘-input" title="helloworld" placeholder='helloworld'/>
+<T tag="input" class="☘-input ☘-font-mono" title="helloworld" value='helloworld'/>
 
 ```pug
-input.☘-input(title='helloworld' placeholder='helloworld')
+input.☘-input.☘-font-mono(title='helloworld' value='helloworld')
 ```
 
 ## `disabled`
 
-<T tag="input" class="☘-input" title="helloworld" placeholder='helloworld' disabled/>
+<T tag="input" class="☘-input ☘-font-mono" title="helloworld" value='helloworld' disabled/>
 
 ```pug
-input.☘-input(title='helloworld' placeholder='helloworld' disabled)
+input.☘-input.☘-font-mono(title='helloworld' value='helloworld' disabled)
 ```
+
+## `placeholder`
+
+<T tag="input" class="☘-input ☘-font-mono" title="helloworld" placeholder='helloworld'/>
+
+```pug
+input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
+```
+
 
 ## `.sm` & `.lg`
 
-- `input.☘-input.sm` 尺寸更小的输入框
-    <br/><T tag="input" class="☘-input sm" title="helloworld" />
-- `input.☘-input.lg` 尺寸更大的输入框
-    <br/><T tag="input" class="☘-input lg" title="helloworld" />
+不设置宽高时默认是21.5个等宽半角字符宽
+
+`--padding-input` 设置内边距
+
+有下面两个预设尺寸：
+
+- `input.☘-input.sm`
+    <br/><T tag="input" class="☘-input sm" title="helloworld" placeholder="更小" />
+- `input.☘-input.lg`
+    <br/><T tag="input" class="☘-input lg" title="helloworld" placeholder="更大" />
+
+
+## affix
+
+### `data-with-prefix`
+
+<T class="☘-input-wrapper">
+    <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" alt="search" width="16px"/>
+    <T tag="input" class="☘-input" data-with-prefix title="with-prefix" />
+</T>
+```pug
+.☘-input-wrapper
+    svg.☘-input-prefix(alt="search" width="18px")
+    input.☘-input(title='with-prefix' data-with-prefix)
+```
+
+### `data-with-suffix`
+
+<T class="☘-input-wrapper">
+    <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
+    <Icon class={escape('☘-input-suffix')} name="tips/outline/close" alt="close" width="16px"/>
+</T>
+```pug
+.☘-input-wrapper
+    input.☘-input(title='with-suffix' data-with-suffix)
+    svg.☘-input-suffix(alt="close" width="18px")
+```

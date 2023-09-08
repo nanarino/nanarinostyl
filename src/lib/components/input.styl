@@ -31,23 +31,19 @@ input_stat()
 textarea.{prefix}-textarea
     /:root
         --padding-textarea 5px 12px
-        --height-textarea 54px
 
     display inline-flex
     flex-direction column
     border 1px solid transparent
     border-radius var(--border-radius-md)
-
     font-size var(--font-size-body)
     line-height var(--line-height-body)
     padding var(--padding-textarea)
 
     &.sm
         --padding-textarea 1px 12px
-        --height-textarea 46px
     &.lg
         --padding-textarea 8px 12px
-        --height-textarea 64px
         --font-size-body var(--font-size-h5)
         --line-height-body var(--line-height-h5)
     
@@ -56,7 +52,9 @@ textarea.{prefix}-textarea
 
 input.{prefix}-input
     /:root
-        --padding-input 4px 12px
+        --padding-justify-input 4px
+        --padding-align-input 12px
+        --padding-input var(--padding-justify-input) var(--padding-align-input)
 
     border 1px solid transparent
     border-radius var(--border-radius-md)
@@ -66,11 +64,36 @@ input.{prefix}-input
     padding var(--padding-input)
 
     &.sm
-        --padding-input 0 12px
+        --padding-justify-input 0
+        --padding-align-input 12px
 
     &.lg
-        --padding-input 7px 12px
+        --padding-justify-input 7px
+        --padding-align-input 12px
         --font-size-body var(--font-size-h5)
         --line-height-body var(--line-height-h5)
 
     input_stat()
+
+    &[data-with-prefix]
+        padding-left calc(var(--padding-align-input) + var(--font-size-body))
+    &[data-with-suffix]
+        padding-right calc(var(--padding-align-input) + var(--font-size-body))
+
+
+.{prefix}-input-wrapper
+    display inline-flex
+    align-items center
+    position relative
+    .{prefix}-input-prefix
+    .{prefix}-input-suffix
+        position absolute
+        // top 0
+        // bottom 0
+        margin auto 0
+        z-index 1
+    .{prefix}-input-prefix
+        left calc(var(--padding-align-input) / 2)
+    .{prefix}-input-suffix
+        right calc(var(--padding-align-input) / 2)
+        
