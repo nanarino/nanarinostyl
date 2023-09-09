@@ -70,12 +70,12 @@ input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
 
 <T class="☘-input-wrapper">
     <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" alt="search" width="16px"/>
-    <T tag="input" class="☘-input" data-with-prefix title="with-prefix" />
+    <T tag="input" class="☘-input" data-with-prefix title="with-prefix" type="search"/>
 </T>
 ```pug
 .☘-input-wrapper
-    svg.☘-input-prefix(alt="search" width="18px")
-    input.☘-input(title='with-prefix' data-with-prefix)
+    svg.☘-input-prefix(alt="search" width="16px")
+    input.☘-input(title='with-prefix' data-with-prefix type="search")
 ```
 
 ### `data-with-suffix`
@@ -87,7 +87,52 @@ input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
 ```pug
 .☘-input-wrapper
     input.☘-input(title='with-suffix' data-with-suffix)
-    svg.☘-input-suffix(alt="close" width="18px")
+    svg.☘-input-suffix(alt="close" width="16px")
 ```
-注意 这不是 `type="search"`
 
+### `button`
+
+上述属性和 `button` 一起使用可以增强语义，同时可以被键盘控制焦点。
+
+当然 也可以是：
+- `input[type=button]`
+- `input[type=reset]`
+- `input[type=submit]`
+
+<T class="☘-input-wrapper" data-primary="danger" style={{
+    'border-style': 'solid'
+}}>
+    <T tag="input" class="☘-input" title="in-suffix" data-with-suffix />
+    <button class={escape('☘-input-suffix')} type="submit" title="search">
+        <Icon name="interactive-button/outline/search" alt="search" width="18px"/>
+    </button>
+</T>
+```pug
+.☘-input-wrapper(data-primary="danger" style={
+    'border-style': 'solid'
+})
+    input.☘-input(title='out-suffix')
+    button.☘-input-suffix(type="submit" title="search")
+        svg(alt="search" width="18px")
+```
+
+***
+
+<T class="☘-input-wrapper" data-primary style={{
+    'border-style': 'solid',
+    '--box-shadow-drop-bottom-lv3': 'none'
+}}>
+    <T tag="input" class="☘-input" title="out-suffix"/>
+    <button type="submit" title="search">
+        <Icon name="interactive-button/outline/search" alt="search" width="18px"/>
+    </button>
+</T>
+```pug
+.☘-input-wrapper(data-primary style={
+    'border-style': 'solid',
+    '--box-shadow-drop-bottom-lv3': 'none'
+})
+    input.☘-input(title='out-suffix')
+    button(type="submit" title="search")
+        svg(alt="search" width="18px")
+```

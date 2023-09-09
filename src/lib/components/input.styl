@@ -3,6 +3,7 @@
 
 input_stat()
     box-sizing border-box
+    caret-color _rgb(var(--primary-9))
 
     background-color _rgb(var(--gray-1))
     &:hover
@@ -100,13 +101,46 @@ input.{prefix}-input
     display inline-flex
     align-items center
     position relative
+    border 1px none _rgb(var(--gray-1))
+    border-radius var(--border-radius-md)
+    background-color _rgb(var(--gray-1))
+
+    &>*
+        display inline-flex
+        align-items center
+    button
+    input[type=button]
+    input[type=reset]
+    input[type=submit]
+        cursor pointer
+        border none
+        background none
+        &:focus-visible
+            outline-color _rgb(var(--black))
+    
+    &[data-primary]
+        border 1px none _rgb(var(--primary-6))
+        background-color _rgb(var(--primary-6))
+        color _rgb(var(--white))
+        button
+        input:where([type=button])
+        input:where([type=reset])
+        input:where([type=submit])
+            color _rgb(var(--white))
+        .{prefix}-input-prefix
+        .{prefix}-input-suffix
+            color _rgb(var(--primary-6))
+
     .{prefix}-input-prefix
     .{prefix}-input-suffix
+        cursor pointer
         position absolute
-        // top 0
-        // bottom 0
+        top 0
+        bottom 0
         margin auto 0
         z-index 1
+        color _rgb(var(--black))
+        padding 0 // 这是祛除button的代理样式
     .{prefix}-input-prefix
         left calc(var(--padding-align-input) / 2)
     .{prefix}-input-suffix
