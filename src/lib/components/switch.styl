@@ -25,22 +25,18 @@
             cursor pointer
             height var(--size-switch)
             width calc(var(--size-switch) * 2)
-            ../:focus-visible
-                &+^[-1]
-                    outline 2px solid _rgb(var(--black))
+            ../:focus-visible+&
+                outline 2px solid _rgb(var(--black))
             border-radius calc((var(--size-switch) / 2))
             background-color _rgb(var(--gray-4))
             transition background-color 1s
-            ../:checked
-                &+^[-1]
-                    background-color _rgb(var(--primary-6))
-            ../:checked:disabled
-                &+^[-1]
-                    background-color _rgb(var(--primary-3))
-            ../:disabled
-                &+^[-1]
-                    background-color _rgb(var(--gray-3))
-                    cursor not-allowed
+            ../:checked+&
+                background-color _rgb(var(--primary-6))
+            ../:checked:disabled+&
+                background-color _rgb(var(--primary-3))
+            ../:disabled+&
+                background-color _rgb(var(--gray-3))
+                cursor not-allowed
             
             &:empty::before, &>*
                 content ''
@@ -57,7 +53,5 @@
                 background-color _rgb(var(--gray-1))
                 transition all 0.5s
             
-                ../../:checked
-                    &+^[-1]
-                        left calc(var(--size-switch) + var(--padding-switch))
-
+                ../../:checked+&
+                    left calc(var(--size-switch) + var(--padding-switch))

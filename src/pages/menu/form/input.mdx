@@ -90,14 +90,16 @@ input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
     svg.☘-input-suffix(alt="close" width="16px")
 ```
 
-### `button`
-
 上述属性和 `button` 一起使用可以增强语义，同时可以被键盘控制焦点。
 
 当然 也可以是：
 - `input[type=button]`
 - `input[type=reset]`
 - `input[type=submit]`
+
+### `data-primary`
+
+`☘-input-wrapper[data-primary]` 这个属性需要启用 启用后才能继承主题
 
 <T class="☘-input-wrapper" data-primary="danger" style={{
     'border-style': 'solid'

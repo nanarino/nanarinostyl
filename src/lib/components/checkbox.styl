@@ -16,14 +16,12 @@
             display inline-flex
             align-items center
             cursor pointer
-            ../:focus-visible
-                &+^[-1]
-                    outline 2px solid _rgb(var(--black))
-                    border-radius var(--border-radius-sm)
-            ../:disabled
-                &+^[-1]
-                    color _rgb(var(--gray-6))
-                    cursor not-allowed
+            ../:focus-visible+&
+                outline 2px solid _rgb(var(--black))
+                border-radius var(--border-radius-sm)
+            ../:disabled+&
+                color _rgb(var(--gray-6))
+                cursor not-allowed
         ~/-label::before
             content ''
             width 16px
@@ -32,15 +30,12 @@
             left 0
             background-color _rgb(var(--gray-4))
             border-radius var(--border-radius-sm)
-            ../:checked
-                &+^[-1]
-                    background-color _rgb(var(--primary-6))
-            ../:checked:disabled
-                &+^[-1]
-                    background-color _rgb(var(--primary-3))
-            ../:disabled
-                &+^[-1]
-                    background-color _rgb(var(--gray-3))
+            ../:checked+&
+                background-color _rgb(var(--primary-6))
+            ../:checked:disabled+&
+                background-color _rgb(var(--primary-3))
+            ../:disabled+&
+                background-color _rgb(var(--gray-3))
 
         ~/-label::after
             content ''
@@ -50,18 +45,16 @@
             left 2px
             background-color _rgb(var(--white))
             border-radius 2px
-            ../:checked
-                &+^[-1]
-                    left 3px
-                    margin-top -3px
-                    width 8px
-                    height 4px
-                    border 2px solid _rgb(var(--white))
-                    border-top none
-                    border-right none
-                    background 0 0
-                    transform rotate(-45deg)
-            ../:disabled:not(:checked)
-                &+^[-1]
-                    background-color _rgb(var(--gray-1))
-                
+            ../:checked+&
+                left 3px
+                margin-top -3px
+                width 8px
+                height 4px
+                border 2px solid _rgb(var(--white))
+                border-top none
+                border-right none
+                background 0 0
+                transform rotate(-45deg)
+            ../:disabled:not(:checked)+&
+                background-color _rgb(var(--gray-1))
+    
