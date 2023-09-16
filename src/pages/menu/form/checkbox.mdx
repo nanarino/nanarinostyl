@@ -35,3 +35,17 @@ span.☘-checkbox(data-primary="success")
     input#HTTPS.☘-input(type="checkbox" checked disabled)
     label(for="HTTPS" title="HTTPS") HTTPS
 ```
+
+## `data-indeterminate`
+
+<Checkbox id="Superposition" dataList={{ indeterminate : true }} onchange="
+    this.parentElement.removeAttribute('data-indeterminate')
+">叠加态</Checkbox>
+
+```pug
+span.☘-checkbox(data-indeterminate)
+    input#Superposition.☘-input(type="checkbox" onchange=function(){
+        this.parentElement.removeAttribute('data-indeterminate')
+    })
+    label(for="Superposition" title="Superposition") 叠加态
+```

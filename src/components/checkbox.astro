@@ -11,6 +11,7 @@ interface Props {
     class?: string;
     style?: Record<string, any> | string;
     dataList?: Record<string, any>;
+    onchange?: string;
 }
 ---
 
@@ -26,6 +27,7 @@ interface Props {
         name={props.name||props.id}
         checked={props.checked}
         disabled={props.disabled}
+        onchange={props.onchange}
     />
     <label 
         class={`${prefix}-checkbox-label`}

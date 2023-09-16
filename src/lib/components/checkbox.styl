@@ -2,16 +2,18 @@
 @import './../variable/functions.styl'
 
 .{prefix}-checkbox
+    position relative
     font-size var(--font-size-body)
     line-height var(--line-height-body)
     display inline-flex
-    text-indent 20px
+    text-indent 1.5em
+    vertical-align middle
     input.{prefix}-input[type=checkbox]
         position absolute
         opacity 0
         pointer-events none
         ~/-label
-            min-width 16px
+            min-width 18px
             position relative
             display inline-flex
             align-items center
@@ -26,35 +28,53 @@
             content ''
             width 16px
             height 16px
+            box-sizing border-box
+            border 2px solid _rgb(var(--gray-4))
             position absolute
             left 0
-            background-color _rgb(var(--gray-4))
+            background-color _rgb(var(--white))
             border-radius var(--border-radius-sm)
             ../:checked+&
-                background-color _rgb(var(--primary-6))
+                border-color _rgb(var(--primary-6))
+                background-color @border-color
             ../:checked:disabled+&
-                background-color _rgb(var(--primary-3))
+                border-color _rgb(var(--primary-3))
+                background-color @border-color
             ../:disabled+&
                 background-color _rgb(var(--gray-3))
+            ../:disabled:not(:checked)+&
+                background-color _rgb(var(--gray-1))
+            ~/[data-indeterminate] &
+                padding 2px
+                background-color _rgb(var(--primary-6))
+                background-clip content-box
 
         ~/-label::after
             content ''
+            width 10px
+            height 6px
+            box-sizing border-box
             position absolute
-            width 12px
-            height 12px
-            left 2px
-            background-color _rgb(var(--white))
-            border-radius 2px
+            left 3px
+            margin-top -3px
+            background none
+            transform rotate(-45deg)
             ../:checked+&
-                left 3px
-                margin-top -3px
-                width 8px
-                height 4px
-                border 2px solid _rgb(var(--white))
+                border 3px solid _rgb(var(--white))
                 border-top none
                 border-right none
-                background 0 0
-                transform rotate(-45deg)
-            ../:disabled:not(:checked)+&
-                background-color _rgb(var(--gray-1))
+                @supports (clip-path:path(""))
+                    &
+                        clip-path path("M 0 1.5 \\
+                            A 1.5 1.5 0 1 1 3 1 \\
+                            L 3 3 \\
+                            L 9 3 \\
+                            A 1.5 1.5 0 1 1 8.5 6 \\
+                            L 1.5 6 \\
+                            A 1.5 1.5 0 0 1 0 4.5 \\
+                            Z \\
+                        ")
+                        border none
+                        background-color _rgb(var(--white))
+
     
