@@ -11,13 +11,17 @@ export * from 'src/components/markdown/map.mdx';
 # checkbox
 
 <Checkbox id="hello">hello</Checkbox>
-<Checkbox id="world" checked>world</Checkbox>
+<br />
+<Checkbox id="world" checked style="--checkbox-indent: 2em">world</Checkbox>
+
+- `--checkbox-indent` 改变label文字左内边距，原本是用 `text-indent` 属性实现，，但在**Safari**中不生效，遂改用 `padding-left`
 
 ```pug
 span.☘-checkbox
     input#hello.☘-input(type="checkbox")
     label(for="hello" title="hello") hello
-span.☘-checkbox
+br
+span.☘-checkbox(style="--checkbox-indent: 2em")
     input#hello.☘-input(type="checkbox")
     label(for="hello" title="world") world
 ```

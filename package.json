@@ -5,7 +5,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "start": "astro dev",
     "build-docs": "astro build",
     "build-stylus": "stylus ./src/lib/index.styl --out ./dist",

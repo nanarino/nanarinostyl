@@ -2,17 +2,21 @@
 @import './../variable/functions.styl'
 
 .{prefix}-checkbox
+    /:root
+        --checkbox-indent 20px
+    min-height 1em
     position relative
     font-size var(--font-size-body)
     line-height var(--line-height-body)
     display inline-flex
-    text-indent 1.5em
+    // text-indent 1.5em // IOS中似乎input标签不支持这个属性？遂改用label的padding-left
     vertical-align middle
     input.{prefix}-input[type=checkbox]
         position absolute
         opacity 0
         pointer-events none
         ~/-label
+            padding-left var(--checkbox-indent)
             min-width 18px
             position relative
             display inline-flex
