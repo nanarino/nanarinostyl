@@ -10,6 +10,14 @@ btn-click-wave(bgc)
 .{prefix}-button
     /:root
         --padding-button 5px 12px
+        /*
+        * 做不到达到脱离hover之后还能保持动画
+            @property --percent-button-wave
+                syntax '<percentage>'
+                inherits false
+                initial-value: 0%
+        *
+        */
 
     cursor pointer
     user-select none
@@ -35,7 +43,7 @@ btn-click-wave(bgc)
     &:not([disabled]):active
         background-color _rgb(var(--gray-4))
         background-size 100%
-        transition background 0s
+        transition none
 
     &[data-primary]
         color _rgb(var(--white))

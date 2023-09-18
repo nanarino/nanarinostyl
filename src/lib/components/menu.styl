@@ -53,18 +53,22 @@
 
             &-item
                 display grid
-                cursor pointer
                 background _rgb(var(--white))
                 color _rgb(var(--black))
                 // transition background-color
                 border-radius var(--border-radius-md)
-                a^[0]-item-link
+
+                ~/-item-link
+                    cursor pointer
+                    text-decoration none
+                    color inherit
+                ~/-item-link
+                &:not(:has(^[0]-item-link))
                     line-height var(--line-height-body)
                     padding var(--padding-menu-item)
-                    color inherit
-                    text-decoration none
-                
+
                 &[data-selected]
+                    cursor auto
                     background _rgb(var(--primary-6))
                     color _rgb(var(--white))
                 &:not(^[0]-item[data-selected]):hover
