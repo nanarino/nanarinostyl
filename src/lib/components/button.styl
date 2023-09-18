@@ -3,21 +3,35 @@
 @import './../variable/compatible.styl'
 
 
-btn-click-wave(bgc)
-    background bgc radial-gradient(circle, transparent 1%, bgc 1%) center/15000%
+/**
+ * @init 初始背景色
+ * @transparent 透过的按钮当前颜色
+ *
+ * 当 变量 --percent-button-wave 从 0% -> 100% 时 按钮当前颜色从中心扩散
+ * 一般来说 按钮当前颜色要比初始背景色要深
+ *
+ * 在此之前使用radial-gradient(1%) 然后控制 background-size 100% -> 15000% 来实现 
+ * 兼容性更好 见 https://github.com/Deep-Codes/affinity-css/blob/main/components/_button.sass
+ */
+background(init)
+    background-color init 
+    background-image radial-gradient(circle, 
+        transparent 0%,
+        transparent var(--percent-button-wave),
+        init var(--percent-button-wave), 
+        init 100%
+    )
+    background-position center
+    background-size 100%
 
 
 .{prefix}-button
     /:root
         --padding-button 5px 12px
-        /*
-        * 做不到达到脱离hover之后还能保持动画
-            @property --percent-button-wave
-                syntax '<percentage>'
-                inherits false
-                initial-value: 0%
-        *
-        */
+        @property --percent-button-wave
+            syntax '<percentage>'
+            inherits false
+            initial-value: 100%
 
     cursor pointer
     user-select none
@@ -26,8 +40,8 @@ btn-click-wave(bgc)
     line-height var(--line-height-body)
     border-radius var(--border-radius-md)
     border none
-    background-color _rgb(var(--gray-2))
-    transition background 0.8s
+    background _rgb(var(--gray-2))
+    transition --percent-button-wave .8s
 
     &:focus-visible
         outline-color _rgb(var(--black))
@@ -37,27 +51,25 @@ btn-click-wave(bgc)
         color _rgb(var(--gray-5))
         background-color _rgb(var(--gray-1))
     &:not([disabled]):hover
-        background-color _rgb(var(--gray-3))
+        box-shadow var(--box-shadow-drop-bottom)
     &:not([disabled]):focus
-        btn-click-wave @background-color
+        background-color _rgb(var(--gray-3))
     &:not([disabled]):active
-        background-color _rgb(var(--gray-4))
-        background-size 100%
+        --percent-button-wave 0%
         transition none
+ 
 
     &[data-primary]
         color _rgb(var(--white))
-        background-color _rgb(var(--primary-5))
+        background _rgb(var(--primary-5))
         &[disabled]
             color _rgb(var(--gray-1))
             background-color _rgb(var(--primary-2))
-        &:not([disabled]):hover
-            background-color _rgb(var(--primary-6))
         &:not([disabled]):focus
-            btn-click-wave @background-color
+            background-color _rgb(var(--primary-6))
         &:not([disabled]):active
-            background-color _rgb(var(--primary-7))
-            background-size 100%
+            --percent-button-wave 0%
+            transition none
 
     &.sm
         --padding-button 1px 8px
