@@ -25,7 +25,7 @@
     # 安装依赖
     pnpm i
     # 运行开发服务器
-    pnpm start
+    pnpm dev
 
 
 构建
