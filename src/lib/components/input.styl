@@ -3,17 +3,22 @@
 
 input_stat()
     box-sizing border-box
+    border 1px solid transparent
+    border-radius var(--border-radius-md)
+
+    font-size var(--font-size-body)
+    line-height var(--line-height-body)
+
     caret-color _rgb(var(--primary-9))
 
     background-color _rgb(var(--gray-1))
     &:hover
-        border-color _rgb(var(--primary-6))
-    &:focus
-        border-color _rgb(var(--primary-6))
-        outline none
         box-shadow var(--box-shadow-drop-bottom)
+    &:focus
+        border-color _rgb(var(--primary-5))
+        outline none
     &:focus-visible
-        outline-color _rgb(var(--black))
+        box-shadow var(--box-shadow-drop-bottom)
     transition border-color .3s, box-shadow .3s
 
     &[disabled]
@@ -21,7 +26,7 @@ input_stat()
         background-color _rgb(var(--gray-2))
         color _rgb(var(--gray-6))
         &:hover
-            border-color transparent
+            box-shadow none
     
     &::-webkit-input-placeholder
         color _rgb(var(--gray-5))
@@ -35,10 +40,6 @@ textarea.{prefix}-textarea
 
     display inline-flex
     flex-direction column
-    border 1px solid transparent
-    border-radius var(--border-radius-md)
-    font-size var(--font-size-body)
-    line-height var(--line-height-body)
     padding var(--padding-textarea)
 
     &.sm
@@ -70,13 +71,8 @@ input.{prefix}-input
     &[type=week]
     &[type=datetime-local]
     &[type=datetime]
+        flex 1
         --padding-input var(--padding-justify-input) var(--padding-align-input)
-
-        border 1px solid transparent
-        border-radius var(--border-radius-md)
-
-        font-size var(--font-size-body)
-        line-height var(--line-height-body)
         padding var(--padding-input)
 
         &.sm
@@ -104,14 +100,25 @@ input.{prefix}-input
     border 1px none _rgb(var(--gray-1))
     border-radius var(--border-radius-md)
     background-color _rgb(var(--gray-1))
+
+    &:has(button:not(.{prefix}-input-prefix))
+    &:has(button:not(.{prefix}-input-suffix))
+    &:has(input[type=button]:not(.{prefix}-input-prefix))
+    &:has(input[type=button]:not(.{prefix}-input-suffix))
+    &:has(input[type=reset]:not(.{prefix}-input-prefix))
+    &:has(input[type=reset]:not(.{prefix}-input-suffix))
+    &:has(input[type=submit]:not(.{prefix}-input-prefix))
+    &:has(input[type=submit]:not(.{prefix}-input-suffix))
+        background-color _rgb(var(--primary-6))
+
     &[data-primary]
         border 1px none _rgb(var(--primary-6))
-        background-color _rgb(var(--primary-6))
         color _rgb(var(--white))
 
     &>*
         display inline-flex
         align-items center
+    
     button
     input:where([type=button])
     input:where([type=reset])
@@ -123,6 +130,8 @@ input.{prefix}-input
             outline-color _rgb(var(--black))
         ~/[data-primary] ^[1..-1]
             color _rgb(var(--white))
+        &[disabled]
+            cursor not-allowed 
 
     .{prefix}-input-prefix
     .{prefix}-input-suffix

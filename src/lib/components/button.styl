@@ -13,7 +13,7 @@
  * 在此之前使用radial-gradient(1%) 然后控制 background-size 100% -> 15000% 来实现 
  * 兼容性更好 见 https://github.com/Deep-Codes/affinity-css/blob/main/components/_button.sass
  */
-background(init)
+button_background(init)
     background-color init 
     background-image radial-gradient(circle, 
         transparent 0%,
@@ -21,8 +21,6 @@ background(init)
         init var(--percent-button-wave), 
         init 100%
     )
-    background-position center
-    background-size 100%
 
 
 .{prefix}-button
@@ -40,38 +38,34 @@ background(init)
     line-height var(--line-height-body)
     border-radius var(--border-radius-md)
     border none
-    background _rgb(var(--gray-2))
-    transition --percent-button-wave .8s
-
+    transition --percent-button-wave .8s, box-shadow .3s
+    color _rgb(var(--white))
+    button_background _rgb(var(--primary-5))
     &:focus-visible
         outline-color _rgb(var(--black))
-
-    &[disabled]
-        cursor not-allowed
-        color _rgb(var(--gray-5))
-        background-color _rgb(var(--gray-1))
     &:not([disabled]):hover
         box-shadow var(--box-shadow-drop-bottom)
+    &[disabled]
+        cursor not-allowed
+        background-color _rgb(var(--primary-2))
     &:not([disabled]):focus
-        background-color _rgb(var(--gray-3))
+        background-color _rgb(var(--primary-6))
     &:not([disabled]):active
         --percent-button-wave 0%
         transition none
- 
-
-    &[data-primary]
-        color _rgb(var(--white))
-        background _rgb(var(--primary-5))
-        &[disabled]
-            color _rgb(var(--gray-1))
-            background-color _rgb(var(--primary-2))
-        &:not([disabled]):focus
-            background-color _rgb(var(--primary-6))
-        &:not([disabled]):active
-            --percent-button-wave 0%
-            transition none
 
     &.sm
         --padding-button 1px 8px
     &.lg
         --padding-button 8px 16px
+    
+    /**
+     * 不使用主题
+     */
+    &:not([data-primary])
+        --white var(--black)
+        --primary-2 var(--gray-1)
+        --primary-5 var(--gray-2)
+        --primary-6 var(--gray-3)
+        &[disabled]
+            color _rgb(var(--gray-5))

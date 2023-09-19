@@ -33,12 +33,25 @@ export * from 'src/components/markdown/map.mdx';
 input.☘-input.☘-font-mono(type="datetime-local" title='更改时间' value='2023-09-08T14:48')
 ```
 
-## `disabled`
+把它放在 `.☘-input-wrapper` 这个容器中可以用来显示前缀后缀
 
-<T tag="input" class="☘-input ☘-font-mono" title="helloworld" value='helloworld' disabled/>
+但是该容器不设置 `[data-primary]` 将不会拥有某些样式，而不是不会继承。
+
+<T class="☘-input-wrapper">
+    <T tag="input" class="☘-input ☘-font-mono" title="helloworld" value='helloworld'/>
+</T>
 
 ```pug
-input.☘-input.☘-font-mono(title='helloworld' value='helloworld' disabled)
+.☘-input-wrapper
+    input.☘-input.☘-font-mono(title='helloworld' value='helloworld')
+```
+
+## `disabled`
+
+<T tag="input" type="date" class="☘-input ☘-font-mono" title="更改日期" value='2023-09-08' disabled/>
+
+```pug
+input.☘-input.☘-font-mono(type="date" title='更改日期' value='2023-09-08' disabled)
 ```
 
 ## `placeholder`
@@ -92,6 +105,8 @@ input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
     svg.☘-input-suffix(alt="close" width="16px")
 ```
 
+***
+
 上述属性和 `button` 一起使用可以增强语义，同时可以被键盘控制焦点。
 
 当然 也可以是：
@@ -99,15 +114,11 @@ input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
 - `input[type=reset]`
 - `input[type=submit]`
 
-### `data-primary`
-
-`☘-input-wrapper[data-primary]` 这个属性需要启用 启用后才能继承主题
-
 <T class="☘-input-wrapper" data-primary="danger" style={{
     'border-style': 'solid'
 }}>
-    <T tag="input" class="☘-input" title="in-suffix" data-with-suffix />
-    <T tag="button" class="☘-input-suffix" type="submit" title="search">
+    <T tag="input" class="☘-input" title="in-suffix" data-with-suffix disabled/>
+    <T tag="button" class="☘-input-suffix" type="submit" title="search" disabled>
         <Icon name="interactive-button/outline/search" alt="search" width="18px"/>
     </T>
 </T>
@@ -115,8 +126,8 @@ input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
 .☘-input-wrapper(data-primary="danger" style={
     'border-style': 'solid'
 })
-    input.☘-input(title='out-suffix')
-    button.☘-input-suffix(type="submit" title="search")
+    input.☘-input(title='out-suffix' disabled)
+    button.☘-input-suffix(type="submit" title="search" disabled)
         svg(alt="search" width="18px")
 ```
 
