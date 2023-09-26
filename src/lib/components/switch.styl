@@ -7,6 +7,10 @@
         --padding-switch 2px
     
     --size-switch-mover calc(var(--size-switch) - 2 * var(--padding-switch))
+    --box-shadow-width-switch var(--padding-switch)
+    --box-shadow-color-switch var(--primary-6)
+    &:where(:has(input.{prefix}-input[type=checkbox]:checked))
+        --box-shadow-color-switch var(--gray-4)
 
     display inline-flex
     position relative
@@ -29,7 +33,7 @@
                 outline 2px solid _rgb(var(--black))
             border-radius calc((var(--size-switch) / 2))
             background-color _rgb(var(--gray-4))
-            transition background-color 1s
+            transition background-color 1s, box-shadow .5s
             ../:checked+&
                 background-color _rgb(var(--primary-6))
             ../:checked:disabled+&
@@ -51,7 +55,12 @@
                 height @width
                 border-radius 50%
                 background-color _rgb(var(--gray-1))
-                transition all 0.5s
+                transition all .5s
             
                 ../../:checked+&
                     left calc(var(--size-switch) + var(--padding-switch))
+        
+            ../:not(:disabled)+&:hover
+                box-shadow inset 0 0 var(--padding-switch) var(--padding-switch) _rgb(var(--box-shadow-color-switch) \/ 25%)
+                &:empty::before, &>*
+                    box-shadow 0 0 var(--box-shadow-width-switch) var(--box-shadow-width-switch) _rgb(var(--box-shadow-color-switch) \/ 25%)

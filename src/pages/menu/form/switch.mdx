@@ -47,20 +47,28 @@ span.☘-switch.sm
 
 ## custom mover
 
-<Switch id="fire" dataList={{ primary : "danger" }} class="sm" checked>
+修改 `☘-switch` 的css变量 `--box-shadow-width-switch` 可以修改阴影效果范围
+
+<Switch id="fire" dataList={{ primary : "danger" }} class="sm" style={{
+    "--box-shadow-width-switch": "12px"
+}}>
     <span>🔥</span>
 </Switch>
 
 ```pug
-span.☘-switch.sm(data-primary="danger")
-    input#fire.☘-input(type="checkbox" checked)
+span.☘-switch.sm(data-primary="danger" style={
+    "--box-shadow-width-switch": "12px"
+})
+    input#fire.☘-input(type="checkbox")
     label(for="fire" title="fire")
         span 🔥
 ```
 
 ## custom style
 
-修改原生css变量 `--size-switch` 和 `--padding-switch` 以覆盖默认尺寸
+修改全局css变量 `--size-switch` 和 `--padding-switch` 以覆盖默认尺寸
+
+修改 `☘-switch` 的css变量 `--box-shadow-color-switch` 可以单独修改阴影颜色
 
 <OxalisSwitch id="oxalis" />
 
@@ -69,7 +77,10 @@ span.☘-switch(
     style={
         ["--size-switch"]: "48px",
         ["--padding-switch"]: "4px",
-        ["--primary-6"]: "var(--lime-3)",
+        // 开启的按钮和阴影颜色
+        ["--primary-6"]: "var(--lime-6)",
+        // 关闭的按钮和阴影颜色
+        ["--gray-4"]: "var(--yellow-3)",
     }
 )
     input#oxalis.oxalis-switch.☘-input(type="checkbox" checked)
