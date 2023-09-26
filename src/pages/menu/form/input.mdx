@@ -33,19 +33,6 @@ export * from 'src/components/markdown/map.mdx';
 input.☘-input.☘-font-mono(type="datetime-local" title='更改时间' value='2023-09-08T14:48')
 ```
 
-把它放在 `.☘-input-wrapper` 这个容器中可以用来显示前缀后缀
-
-但是该容器不设置 `[data-primary]` 将不会拥有某些样式，而不是不会继承。
-
-<T class="☘-input-wrapper">
-    <T tag="input" class="☘-input ☘-font-mono" title="helloworld" value='helloworld'/>
-</T>
-
-```pug
-.☘-input-wrapper
-    input.☘-input.☘-font-mono(title='helloworld' value='helloworld')
-```
-
 ## `disabled`
 
 <T tag="input" type="date" class="☘-input ☘-font-mono" title="更改日期" value='2023-09-08' disabled/>
@@ -67,7 +54,7 @@ input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
 
 不设置宽高时默认是21.5个等宽半角字符宽
 
-`--padding-input` 设置内边距
+全局变量 `--padding-input` 设置内边距
 
 有下面两个预设尺寸：
 
@@ -78,6 +65,19 @@ input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
 
 
 ## affix
+
+把它放在 `.☘-input-wrapper` 这个容器中可以用来显示前缀后缀
+
+但是该容器不设置 `[data-primary]` 将不会拥有某些样式，而不是不会继承。
+
+<T class="☘-input-wrapper">
+    <T tag="input" class="☘-input ☘-font-mono" title="helloworld" value='helloworld'/>
+</T>
+
+```pug
+.☘-input-wrapper
+    input.☘-input.☘-font-mono(title='helloworld' value='helloworld')
+```
 
 ### `data-with-prefix`
 
