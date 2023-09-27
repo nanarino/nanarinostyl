@@ -18,7 +18,12 @@
             &-submenu
                 display flex
                 flex-direction column
-                gap 0.5em
+                gap @gap
+                &[data-folded]
+                    /**
+                     * 收起时 无间距
+                     */
+                    gap 0
                 ~/-submenu-title
                     display flex
                     justify-content space-between
@@ -32,7 +37,8 @@
                         width 10px
                         transform translateY(-50%)
                         transition transform .3s
-                        &:before,&:after
+                        &:before
+                        &:after
                             position absolute
                             width 6px
                             height 1.5px
@@ -45,9 +51,11 @@
                         &:after
                             transform rotate(45deg) translate(-2.5px)
                         ../../[data-folded] &
+                            /**
+                             * 收起时的尖角动画 🔼🔽
+                             */
                             &:before
                                 transform rotate(45deg) translate(2.5px)
-
                             &:after 
                                 transform rotate(-45deg) translate(-2.5px)
 
@@ -63,7 +71,7 @@
                     text-decoration none
                     color inherit
                 ~/-item-link
-                &:not(:has(^[0]-item-link))
+                &:not(:has(*)) // 若该标签里面没有别的标签，即纯文本。这和 `:empty()` 不同
                     line-height var(--line-height-body)
                     padding var(--padding-menu-item)
 
@@ -75,5 +83,8 @@
                     color _rgb(var(--primary-6))
                 
                 ../-submenu[data-folded] ^[0]
+                    /**
+                     * 收起时 0高度
+                     */
                     height 0
 
