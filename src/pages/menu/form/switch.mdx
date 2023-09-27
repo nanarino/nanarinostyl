@@ -16,7 +16,7 @@ export * from 'src/components/markdown/map.mdx';
 ```pug
 span.☘-switch
     input#hello.☘-input(type="checkbox" checked)
-    label(for="hello" title="hello")
+    label.☘-switch-mover(for="hello" title="hello")
 ```
 
 
@@ -27,7 +27,7 @@ span.☘-switch
 ```pug
 span.☘-switch.sm
     input#small.☘-input(type="checkbox")
-    label(for="small" title="small")
+    label.☘-switch-mover(for="small" title="small")
 ```
 
 
@@ -39,57 +39,62 @@ span.☘-switch.sm
 ```pug
 span.☘-switch
     input#hibit.☘-input(type="checkbox" checked disabled)
-    label(for="hibit" title="hibit")
+    label.☘-switch-mover(for="hibit" title="hibit")
 span.☘-switch.sm
     input#small-hibit.☘-input(type="checkbox" disabled)
-    label(for="small-hibit" title="small-hibit")
+    label.☘-switch-mover(for="small-hibit" title="small-hibit")
 ```
 
-## custom mover
+## custom style
 
-修改 `☘-switch` 的css变量 `--box-shadow-width-switch` 可以修改阴影效果范围
+**动子（ `label.☘-switch-mover>?` ）** 可以设置为一个字符/icon
 
-<Switch id="fire" dataList={{ primary : "danger" }} class="sm" style={{
-    "--box-shadow-width-switch": "12px"
+- 局部变量 `--box-shadow-width-switch` 可以修改阴影效果范围
+- 局部变量 `--box-shadow-color-switch` 可以单独设置阴影颜色
+
+
+<Switch id="fire" dataList={{ primary : "danger" }} style={{
+    "--box-shadow-width-switch": "12px",
+    "--box-shadow-color-switch": "var(--blue-5)"
 }}>
     <span>🔥</span>
 </Switch>
 
 ```pug
-span.☘-switch.sm(data-primary="danger" style={
-    "--box-shadow-width-switch": "12px"
+span.☘-switch(data-primary="danger" style={
+    "--box-shadow-width-switch": "12px",
+    "--box-shadow-color-switch": "var(--blue-5)"
 })
     input#fire.☘-input(type="checkbox")
-    label(for="fire" title="fire")
+    label.☘-switch-mover(for="fire" title="fire")
         span 🔥
 ```
+默认阴影颜色和开关背景色相同 虽然
 
-## custom style
+***
 
-修改全局css变量 `--size-switch` 和 `--padding-switch` 以覆盖默认尺寸
-
-修改 `☘-switch` 的css变量 `--box-shadow-color-switch` 可以单独修改阴影颜色
+- 全局变量 `--size-switch` 开关尺寸
+- 全局变量 `--padding-switch` 开关与开关动子的距离
 
 <OxalisSwitch id="oxalis" />
 
 ```pug
-span.☘-switch(
+span.☘-switch.oxalis-switch(
     style={
         ["--size-switch"]: "48px",
         ["--padding-switch"]: "4px",
-        // 开启的按钮和阴影颜色
+        // 开启的按钮和阴影主题颜色 这不包括禁用状态的颜色
         ["--primary-6"]: "var(--lime-6)",
-        // 关闭的按钮和阴影颜色
+        // 关闭的按钮和阴影主题颜色 这不包括禁用状态的颜色
         ["--gray-4"]: "var(--yellow-3)",
     }
 )
-    input#oxalis.oxalis-switch.☘-input(type="checkbox" checked)
-    label(for="oxalis" title="oxalis")
+    input#oxalis.☘-input(type="checkbox" name="oxalis" checked)
+    label.☘-switch-mover(for="oxalis" title="oxalis")
         span.oxalis-switch-mover \☘
 
 style(lang="stylus").
     .oxalis-switch>input:checked+label
         .oxalis-switch-mover
             transform rotate(360deg)
-            overflow hidden 
 ```
