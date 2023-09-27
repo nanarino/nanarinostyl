@@ -32,7 +32,7 @@ const colours = [
                         <button class={`${prefix}-button copy`} style={{
                             'background-color' : `rgb(var(--${color}-${i+1}))`,
                             'color': `rgb(var(--${ i>=5 ? 'white' : 'black' }))`
-                        }} title={`--${color}-${i+1}`}>
+                        }} title={`--${color}-${i+1}`} data-x={`${i}`}>
                             <Icon name="edit/outline/copy" alt="copy"/>
                         </button>
                     </td>

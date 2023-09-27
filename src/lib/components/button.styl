@@ -62,8 +62,8 @@ button_background(init)
     /**
      * 不使用主题
      */
-    &:not([data-primary])
-        --white var(--black)
+    &:where(:not([data-primary]))
+        color unset // 在Safari中是蓝色？
         --primary-2 var(--gray-1)
         --primary-5 var(--gray-2)
         --primary-6 var(--gray-3)
