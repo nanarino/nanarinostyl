@@ -1,12 +1,11 @@
 @import './functions.styl'
 
 /**
- * 颜色变量 希望不被继承 所以用通配符
+ * 希望不被继承 所以用通配符
  */
 *
     --box-shadow-color var(--gray-4)
-
-:root
+    
     /**
      * 边框
      */
@@ -22,4 +21,3 @@
     --box-shadow-drop-left -6px 0 12px 4px _rgb(var(--box-shadow-color) \/ .3), -3px 0 6px 0 _rgb(var(--box-shadow-color) \/ .5), -1px 0 2px -1px _rgb(var(--box-shadow-color) \/ .7)
     --box-shadow-drop-right 6px 0 12px 4px _rgb(var(--box-shadow-color) \/ .3), 3px 0 6px 0 _rgb(var(--box-shadow-color) \/ .5), 1px 0 2px -1px _rgb(var(--box-shadow-color) \/ .7)
     --box-shadow-drop-bottom 0 6px 12px 4px _rgb(var(--box-shadow-color) \/ .3), 0 3px 6px 0 _rgb(var(--box-shadow-color) \/ .5), 0 1px 2px -1px _rgb(var(--box-shadow-color) \/ .7)
-    

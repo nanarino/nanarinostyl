@@ -15,6 +15,8 @@ export * from 'src/components/markdown/map.mdx';
 
 它保存在 `document.documentElement.dataset` 和 `localStorage` 里
 
+使用本文档右上角可以快捷切换主题
+
 
 ## message
 
@@ -35,7 +37,7 @@ export * from 'src/components/markdown/map.mdx';
 - 纯黑 `--black` 
 - 纯白 `--white` 
 
-其他的颜色 各自有10个明度等级：
+其他的颜色 各自有10个明度等级 都是RGB值：
 
 <Colors />
 
@@ -44,9 +46,32 @@ export * from 'src/components/markdown/map.mdx';
 `data-primary` 可以让有颜色的标签改变为以下4种目标颜色之一。
 
 - <T tag='code' class='☘-code'>[data-primary]</T>
-
 - <T tag='code' class='☘-code' data-primary="success">[data-primary=success]</T>
-
 - <T tag='code' class='☘-code' data-primary="danger">[data-primary=danger]</T>
-
 - <T tag='code' class='☘-code' data-primary="warning">[data-primary=warning]</T>
+
+## shadow
+
+- 通配变量 `--box-shadow-color` 阴影颜色RGB值，默认是 `--gray-4`
+
+以下也都是通配变量
+
+<div style={{
+    'width': 'fit-content',
+    'display': 'grid',
+    'gap': '2em',
+    'grid-template-columns': '1fr 1fr'
+}}>
+{
+    ['divider', 'drop'].map(t => 
+        ['top', 'left', 'right', 'bottom'].map(p => 
+            <T tag='span' class='☘-tag' style={{
+                'box-shadow': `var(--box-shadow-${t}-${p})`,
+                '--box-shadow-color': `var(--primary-4)`,
+                'padding': '2em'
+            }}>{`--box-shadow-${t}-${p}`}</T>
+        )
+    )
+}
+</div>
+
