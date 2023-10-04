@@ -1,8 +1,9 @@
 {
   "name": "nanarinostyl",
+  "description": "style lib",
   "author": "☘",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/index.css",
   "scripts": {
     "dev": "astro dev --host",
@@ -13,14 +14,14 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "stylus": "^0.59.0"
+  },
+  "devDependencies": {
     "@astrojs/mdx": "^0.19.7",
     "astro": "^2.10.12",
     "astro-icon": "^0.8.1",
     "copy-to-clipboard": "^3.3.3",
     "css-doodle": "^0.34.11",
-    "stylus": "^0.59.0"
-  },
-  "devDependencies": {
     "@types/node": "^20.5.1",
     "rm-all": "^1.1.1"
   },
