@@ -17,6 +17,16 @@
     > Could not parse expression with acorn: Expecting Unicode escape sequence \uXXXX
 
 
+利用
+======
+::
+    
+    # 安装
+    pnpm i nanarinostyl
+    # 再在js中 import 'nanarinostyl'
+    #   抑或是 import 'nanarinostyl/src/lib/index.styl'
+
+
 
 运行
 ======
@@ -27,10 +37,6 @@
     # 运行开发服务器
     pnpm dev
 
-    # 从npm引入
-    pnpm i nanarinostyl
-    # 再在js中 import 'nanarinostyl'
-    #   抑或是 import 'nanarinostyl/src/lib/index.styl'
 
 
 构建
