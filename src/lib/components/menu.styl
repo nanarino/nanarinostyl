@@ -9,7 +9,6 @@
     display flex
     flex-direction column
     gap 0.5em
-    overflow hidden
 
     ul&
         padding 0
@@ -70,6 +69,7 @@
                     cursor pointer
                     text-decoration none
                     color inherit
+                    border-radius @border-radius // 这个是为了 `a:focus-visible` 能有圆角
                 ~/-item-link
                 &:not(:has(*)) // 若该标签里面没有别的标签，即纯文本。这和 `:empty()` 不同
                     line-height var(--line-height-body)
@@ -87,4 +87,4 @@
                      * 收起时 0高度
                      */
                     height 0
-
+                    overflow hidden

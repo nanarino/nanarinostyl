@@ -2,8 +2,11 @@
 @import './../variable/functions.styl'
 
 input_stat()
+    --outline-color-focus var(--primary-6)
+
     box-sizing border-box
-    border 1px solid transparent
+    border none
+    outline 2px solid transparent
     border-radius var(--border-radius-md)
 
     font-size var(--font-size-body)
@@ -15,8 +18,7 @@ input_stat()
     &:hover
         box-shadow var(--box-shadow-drop-bottom)
     &:focus
-        border-color _rgb(var(--primary-5))
-        outline none
+        outline-color _rgb(var(--outline-color-focus))
     &:focus-visible
         box-shadow var(--box-shadow-drop-bottom)
     transition border-color .3s, box-shadow .3s
@@ -97,7 +99,7 @@ input.{prefix}-input
     display inline-flex
     align-items center
     position relative
-    border 1px none _rgb(var(--gray-1))
+    border 2px none _rgb(var(--gray-1))
     border-radius var(--border-radius-md)
     background-color _rgb(var(--gray-1))
 
@@ -112,7 +114,7 @@ input.{prefix}-input
         background-color _rgb(var(--primary-6))
 
     &[data-primary]
-        border 1px none _rgb(var(--primary-6))
+        border-color _rgb(var(--primary-6))
         color _rgb(var(--white))
 
     &>*
@@ -127,7 +129,7 @@ input.{prefix}-input
         border none
         background none
         &:focus-visible
-            outline-color _rgb(var(--black))
+            outline-color _rgb(var(--outline-color-focus))
         ~/[data-primary] ^[1..-1]
             color _rgb(var(--white))
         &[disabled]
