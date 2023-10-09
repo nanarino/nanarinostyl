@@ -134,20 +134,22 @@ input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
 ***
 
 <T class="☘-input-wrapper" data-primary style={{
-    'border-style': 'solid',
-    '--box-shadow-drop-bottom': 'none'
+    'border-style': 'solid'
 }}>
-    <T tag="input" class="☘-input" title="out-suffix"/>
+    <T tag="input" class="☘-input" title="out-suffix" style={{
+        '--box-shadow-drop-bottom': 'none'
+    }} />
     <button type="submit" title="search">
         <Icon name="interactive-button/outline/search" alt="search" width="18px"/>
     </button>
 </T>
 ```pug
 .☘-input-wrapper(data-primary style={
-    'border-style': 'solid',
-    '--box-shadow-drop-bottom': 'none'
+    'border-style': 'solid'
 })
-    input.☘-input(title='out-suffix')
+    input.☘-input(title='out-suffix' style={
+        '--box-shadow-drop-bottom': 'none'
+    })
     button(type="submit" title="search")
         svg(alt="search" width="18px")
 ```
