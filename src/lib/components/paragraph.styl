@@ -7,7 +7,7 @@
     line-height var(--line-height-body)
     
     for i in range(1 6)
-        &[data-size=\"{i}\"]
+        &:where([data-size=\"{i}\"])
             --line-height-body var(_get_var_by(
                 line-height,
                 'h%s' % i
@@ -16,7 +16,7 @@
                 font-size,
                 'h%s' % i
             ))
-        &[data-ellipsis=\"{i}\"]
+        &:where([data-ellipsis=\"{i}\"])
             mixin_line_clamp(i)
             height 'calc(%s * %s)' % (var(--line-height-body) i)
     &[data-has-indent]
