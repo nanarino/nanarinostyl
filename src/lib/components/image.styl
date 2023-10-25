@@ -48,17 +48,23 @@ mask-color()
         align-items center
         gap 16px
 
-        &>&-content
+        &-content
             height 100%
             display flex
             flex-direction column
             justify-content space-around
             flex 1
             word-break break-all
-            .{prefix}-title, .{prefix}-paragraph
+            .{prefix}-title
+            .{prefix}-paragraph
+                /**
+                 * 不设置高度的时候 由内容撑开在多行时
+                 * 受justify-content影响 可以居中
+                 */
+                height unset
                 margin 0
         
-        &>&-action
+        &-action
             display flex
             align-items center
             gap 16px
