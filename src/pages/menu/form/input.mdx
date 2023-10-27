@@ -49,6 +49,21 @@ input.☘-input.☘-font-mono(type="date" title='更改日期' value='2023-09-08
 input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
 ```
 
+## `data-primary`
+
+设置 `[data-primary]` 可以覆盖全局css变量 `--outline-color-focus`
+
+<T tag="input" class="☘-input" title="primary" placeholder='primary' data-primary />
+<T tag="input" class="☘-input" title="success" placeholder='success' data-primary="success" />
+<T tag="input" class="☘-input" title="danger" placeholder='danger' data-primary="danger" />
+<T tag="input" class="☘-input" title="warning" placeholder='warning' data-primary="warning" />
+
+```pug
+input.☘-input(title='primary' placeholder='primary' data-primary)
+input.☘-input(title='success' placeholder='success' data-primary="success")
+input.☘-input(title='danger' placeholder='danger' data-primary="danger")
+input.☘-input(title='warning' placeholder='warning' data-primary="warning")
+```
 
 ## `.sm` & `.lg`
 
@@ -66,17 +81,22 @@ input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
 
 ## affix
 
-把它放在 `.☘-input-wrapper` 这个容器中可以用来显示前缀后缀
+把 input 放在 `.☘-input-wrapper` 这个容器中可以用来显示前缀后缀
 
-但是该容器不设置 `[data-primary]` 将不会拥有某些样式，而不是不会继承。
+该容器设置 `[data-primary]` 也会覆盖全局css变量 `--outline-color-focus` 和某些样式，注意，这些并不是继承来的
 
 <T class="☘-input-wrapper">
-    <T tag="input" class="☘-input ☘-font-mono" title="helloworld" value='helloworld'/>
+    <T tag="input" class="☘-input" title="helloworld" value='helloworld'/>
+</T>
+<T class="☘-input-wrapper" data-primary>
+    <T tag="input" class="☘-input" title="helloworld" value='helloworld'/>
 </T>
 
 ```pug
 .☘-input-wrapper
-    input.☘-input.☘-font-mono(title='helloworld' value='helloworld')
+    input.☘-input(title='helloworld' value='helloworld')
+.☘-input-wrapper(data-primary)
+    input.☘-input(title='helloworld' value='helloworld')
 ```
 
 ### `data-with-prefix`
@@ -87,8 +107,16 @@ input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
     <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" alt="search" width="16px"/>
     <T tag="input" class="☘-input" data-with-prefix title="with-prefix" type="search"/>
 </T>
+<T class="☘-input-wrapper" data-primary>
+    <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" alt="search" width="16px"/>
+    <T tag="input" class="☘-input" data-with-prefix title="with-prefix" type="search"/>
+</T>
+
 ```pug
 .☘-input-wrapper
+    svg.☘-input-prefix(alt="search" width="16px")
+    input.☘-input(title='with-prefix' data-with-prefix type="search")
+.☘-input-wrapper(data-primary)
     svg.☘-input-prefix(alt="search" width="16px")
     input.☘-input(title='with-prefix' data-with-prefix type="search")
 ```
@@ -99,8 +127,16 @@ input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
     <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
     <Icon class={escape('☘-input-suffix')} name="tips/outline/close" alt="close" width="16px"/>
 </T>
+<T class="☘-input-wrapper" data-primary>
+    <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
+    <Icon class={escape('☘-input-suffix')} name="tips/outline/close" alt="close" width="16px"/>
+</T>
+
 ```pug
 .☘-input-wrapper
+    input.☘-input(title='with-suffix' data-with-suffix)
+    svg.☘-input-suffix(alt="close" width="16px")
+.☘-input-wrapper(data-primary)
     input.☘-input(title='with-suffix' data-with-suffix)
     svg.☘-input-suffix(alt="close" width="16px")
 ```

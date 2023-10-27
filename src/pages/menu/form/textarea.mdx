@@ -35,6 +35,22 @@ textarea.☘-textarea.☘-font-mono(
 textarea.☘-textarea.☘-font-mono(title='helloworld' placeholder='helloworld')
 ```
 
+## `data-primary`
+
+设置 `[data-primary]` 可以覆盖全局css变量 `--outline-color-focus`
+
+<T tag="textarea" class="☘-textarea" title="primary" placeholder='primary' data-primary />
+<T tag="textarea" class="☘-textarea" title="success" placeholder='success' data-primary="success" />
+<T tag="textarea" class="☘-textarea" title="danger" placeholder='danger' data-primary="danger" />
+<T tag="textarea" class="☘-textarea" title="warning" placeholder='warning' data-primary="warning" />
+
+```pug
+textarea.☘-textarea(title='primary' placeholder='primary' data-primary)
+textarea.☘-textarea(title='success' placeholder='success' data-primary="success")
+textarea.☘-textarea(title='danger' placeholder='danger' data-primary="danger")
+textarea.☘-textarea(title='warning' placeholder='warning' data-primary="warning")
+```
+
 ## `.sm` & `.lg`
 
 不设置宽高时默认是2行高20个等宽半角字符宽

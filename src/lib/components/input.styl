@@ -2,8 +2,8 @@
 @import './../variable/functions.styl'
 
 input_stat()
-    --outline-color-focus var(--primary-6)
-
+    &[data-primary]
+        --outline-color-focus var(--primary-6)
     box-sizing border-box
     border none
     outline 2px solid transparent
@@ -103,19 +103,19 @@ input.{prefix}-input
     border-radius var(--border-radius-md)
     background-color _rgb(var(--gray-1))
 
-    &:has(button:not(.{prefix}-input-prefix))
-    &:has(button:not(.{prefix}-input-suffix))
-    &:has(input[type=button]:not(.{prefix}-input-prefix))
-    &:has(input[type=button]:not(.{prefix}-input-suffix))
-    &:has(input[type=reset]:not(.{prefix}-input-prefix))
-    &:has(input[type=reset]:not(.{prefix}-input-suffix))
-    &:has(input[type=submit]:not(.{prefix}-input-prefix))
-    &:has(input[type=submit]:not(.{prefix}-input-suffix))
-        background-color _rgb(var(--primary-6))
-
     &[data-primary]
+        --outline-color-focus var(--primary-6)
         border-color _rgb(var(--primary-6))
         color _rgb(var(--white))
+        &:has(button:not(.{prefix}-input-prefix))
+        &:has(button:not(.{prefix}-input-suffix))
+        &:has(input[type=button]:not(.{prefix}-input-prefix))
+        &:has(input[type=button]:not(.{prefix}-input-suffix))
+        &:has(input[type=reset]:not(.{prefix}-input-prefix))
+        &:has(input[type=reset]:not(.{prefix}-input-suffix))
+        &:has(input[type=submit]:not(.{prefix}-input-prefix))
+        &:has(input[type=submit]:not(.{prefix}-input-suffix))
+            background-color _rgb(var(--primary-6))
 
     &>*
         display inline-flex
