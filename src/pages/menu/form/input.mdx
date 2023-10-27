@@ -4,6 +4,7 @@ title: 输入框
 ---
 
 import T from "src/components/T.astro";
+import Grid from "src/components/grid.astro";
 import escape from "src/scripts/server/escape";
 import { Icon } from "astro-icon";
 export * from 'src/components/markdown/map.mdx';
@@ -53,10 +54,12 @@ input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
 
 设置 `[data-primary]` 可以覆盖全局css变量 `--outline-color-focus`
 
-<T tag="input" class="☘-input" title="primary" placeholder='primary' data-primary />
-<T tag="input" class="☘-input" title="success" placeholder='success' data-primary="success" />
-<T tag="input" class="☘-input" title="danger" placeholder='danger' data-primary="danger" />
-<T tag="input" class="☘-input" title="warning" placeholder='warning' data-primary="warning" />
+<Grid inline>
+    <T tag="input" class="☘-input" title="primary" placeholder='primary' data-primary />
+    <T tag="input" class="☘-input" title="success" placeholder='success' data-primary="success" />
+    <T tag="input" class="☘-input" title="danger" placeholder='danger' data-primary="danger" />
+    <T tag="input" class="☘-input" title="warning" placeholder='warning' data-primary="warning" />
+</Grid>
 
 ```pug
 input.☘-input(title='primary' placeholder='primary' data-primary)
@@ -83,14 +86,16 @@ input.☘-input(title='warning' placeholder='warning' data-primary="warning")
 
 把 input 放在 `.☘-input-wrapper` 这个容器中可以用来显示前缀后缀
 
-该容器设置 `[data-primary]` 也会覆盖全局css变量 `--outline-color-focus` 和某些样式，注意，这些并不是继承来的
+该容器启用 `[data-primary]` 也会覆盖全局css变量 `--outline-color-focus` 和继承某些样式
 
-<T class="☘-input-wrapper">
-    <T tag="input" class="☘-input" title="helloworld" value='helloworld'/>
-</T>
-<T class="☘-input-wrapper" data-primary>
-    <T tag="input" class="☘-input" title="helloworld" value='helloworld'/>
-</T>
+<Grid inline>
+    <T class="☘-input-wrapper">
+        <T tag="input" class="☘-input" title="helloworld" value='helloworld'/>
+    </T>
+    <T class="☘-input-wrapper" data-primary>
+        <T tag="input" class="☘-input" title="helloworld" value='helloworld'/>
+    </T>
+</Grid>
 
 ```pug
 .☘-input-wrapper
@@ -103,14 +108,16 @@ input.☘-input(title='warning' placeholder='warning' data-primary="warning")
 
 这里使用`type="search"` 在**Safari**上会有额外的放大镜图标
 
-<T class="☘-input-wrapper">
-    <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" alt="search" width="16px"/>
-    <T tag="input" class="☘-input" data-with-prefix title="with-prefix" type="search"/>
-</T>
-<T class="☘-input-wrapper" data-primary>
-    <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" alt="search" width="16px"/>
-    <T tag="input" class="☘-input" data-with-prefix title="with-prefix" type="search"/>
-</T>
+<Grid inline>
+    <T class="☘-input-wrapper">
+        <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" alt="search" width="16px"/>
+        <T tag="input" class="☘-input" data-with-prefix title="with-prefix" type="search"/>
+    </T>
+    <T class="☘-input-wrapper" data-primary>
+        <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" alt="search" width="16px"/>
+        <T tag="input" class="☘-input" data-with-prefix title="with-prefix" type="search"/>
+    </T>
+</Grid>
 
 ```pug
 .☘-input-wrapper
@@ -123,14 +130,16 @@ input.☘-input(title='warning' placeholder='warning' data-primary="warning")
 
 ### `data-with-suffix`
 
-<T class="☘-input-wrapper">
-    <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
-    <Icon class={escape('☘-input-suffix')} name="tips/outline/close" alt="close" width="16px"/>
-</T>
-<T class="☘-input-wrapper" data-primary>
-    <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
-    <Icon class={escape('☘-input-suffix')} name="tips/outline/close" alt="close" width="16px"/>
-</T>
+<Grid inline>
+    <T class="☘-input-wrapper">
+        <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
+        <Icon class={escape('☘-input-suffix')} name="tips/outline/close" alt="close" width="16px"/>
+    </T>
+    <T class="☘-input-wrapper" data-primary>
+        <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
+        <Icon class={escape('☘-input-suffix')} name="tips/outline/close" alt="close" width="16px"/>
+    </T>
+</Grid>
 
 ```pug
 .☘-input-wrapper

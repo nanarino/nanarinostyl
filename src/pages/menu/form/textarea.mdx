@@ -4,6 +4,7 @@ title: 文本域
 ---
 
 import T from "src/components/T.astro";
+import Grid from "src/components/grid.astro";
 export * from 'src/components/markdown/map.mdx';
 
 
@@ -39,10 +40,12 @@ textarea.☘-textarea.☘-font-mono(title='helloworld' placeholder='helloworld')
 
 设置 `[data-primary]` 可以覆盖全局css变量 `--outline-color-focus`
 
-<T tag="textarea" class="☘-textarea" title="primary" placeholder='primary' data-primary />
-<T tag="textarea" class="☘-textarea" title="success" placeholder='success' data-primary="success" />
-<T tag="textarea" class="☘-textarea" title="danger" placeholder='danger' data-primary="danger" />
-<T tag="textarea" class="☘-textarea" title="warning" placeholder='warning' data-primary="warning" />
+<Grid inline>
+    <T tag="textarea" class="☘-textarea" title="primary" placeholder='primary' data-primary />
+    <T tag="textarea" class="☘-textarea" title="success" placeholder='success' data-primary="success" />
+    <T tag="textarea" class="☘-textarea" title="danger" placeholder='danger' data-primary="danger" />
+    <T tag="textarea" class="☘-textarea" title="warning" placeholder='warning' data-primary="warning" />
+</Grid>
 
 ```pug
 textarea.☘-textarea(title='primary' placeholder='primary' data-primary)

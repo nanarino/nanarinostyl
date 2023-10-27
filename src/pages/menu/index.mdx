@@ -4,6 +4,7 @@ title: 全局
 ---
 
 import T from "src/components/T.astro";
+import Grid from "src/components/grid.astro";
 import Colors from "src/components/kanban/colors.astro";
 export * from 'src/components/markdown/map.mdx';
 
@@ -43,7 +44,7 @@ export * from 'src/components/markdown/map.mdx';
 
 ### `data-primary`
 
-`data-primary` 可以让有颜色的标签改变为以下4种目标颜色之一。
+`[data-primary]` 可以让有颜色的标签改变为以下4种目标颜色之一。
 
 - <T tag='code' class='☘-code'>[data-primary]</T>
 - <T tag='code' class='☘-code' data-primary="success">[data-primary=success]</T>
@@ -56,22 +57,17 @@ export * from 'src/components/markdown/map.mdx';
 
 以下也都是通配变量
 
-<div style={{
-    'width': 'fit-content',
-    'display': 'grid',
-    'gap': '2em',
-    'grid-template-columns': '1fr 1fr'
-}}>
+<Grid inline gap="2em">
 {
     ['divider', 'drop'].map(t => 
         ['top', 'left', 'right', 'bottom'].map(p => 
             <T tag='span' class='☘-tag' style={{
                 'box-shadow': `var(--box-shadow-${t}-${p})`,
                 '--box-shadow-color': `var(--primary-4)`,
-                'padding': '2em'
+                'padding': '24px'
             }}>{`--box-shadow-${t}-${p}`}</T>
         )
     )
 }
-</div>
+</Grid>
 
