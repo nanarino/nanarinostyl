@@ -21,15 +21,13 @@ a.☘-link(href="https://stylus-lang.com/" target="_blank")
 ## `data-primary`
 
 <T tag="a" class="☘-link">戳</T>
-<T tag="a" class="☘-link" data-primary="warning">戳</T>
-<T tag="a" class="☘-link" data-primary="danger">戳</T>
 <T tag="a" class="☘-link" data-primary="success">戳</T>
+<T tag="a" class="☘-link" data-primary="danger">戳</T>
+<T tag="a" class="☘-link" data-primary="warning">戳</T>
 
 ```pug
-a.☘-link 戳
-a.☘-link(data-primary="warning") 戳
-a.☘-link(data-primary="danger") 戳
-a.☘-link(data-primary="success") 戳
+each primary in ['', 'success', 'danger', 'warning']
+    a.☘-link(data-primary=primary) 戳
 ```
 
 
@@ -38,15 +36,13 @@ a.☘-link(data-primary="success") 戳
 注意： `<a/>` 标签 使用 `disabled` 无法阻止跳转
 
 <T tag="button" class="☘-link" disabled>戳</T>
-<T tag="button" class="☘-link" disabled data-primary="warning">戳</T>
-<T tag="button" class="☘-link" disabled data-primary="danger">戳</T>
 <T tag="button" class="☘-link" disabled data-primary="success">戳</T>
+<T tag="button" class="☘-link" disabled data-primary="danger">戳</T>
+<T tag="button" class="☘-link" disabled data-primary="warning">戳</T>
 
 ```pug
-button.☘-link(disabled) 戳
-button.☘-link(disabled data-primary="warning") 戳
-button.☘-link(disabled data-primary="danger") 戳
-button.☘-link(disabled data-primary="success") 戳
+each primary in ['', 'success', 'danger', 'warning']
+    button.☘-link(disabled data-primary=primary) 戳
 ```
 
 ## custom style

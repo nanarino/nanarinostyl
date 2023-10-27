@@ -48,10 +48,8 @@ textarea.☘-textarea.☘-font-mono(title='helloworld' placeholder='helloworld')
 </Grid>
 
 ```pug
-textarea.☘-textarea(title='primary' placeholder='primary' data-primary)
-textarea.☘-textarea(title='success' placeholder='success' data-primary="success")
-textarea.☘-textarea(title='danger' placeholder='danger' data-primary="danger")
-textarea.☘-textarea(title='warning' placeholder='warning' data-primary="warning")
+each primary in ['', 'success', 'danger', 'warning']
+    textarea.☘-textarea(title=primary placeholder=primary data-primary=primary)
 ```
 
 ## `.sm` & `.lg`

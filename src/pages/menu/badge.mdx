@@ -13,14 +13,12 @@ export * from "src/components/markdown/map.mdx";
 
 <T tag="span" class="☘-badge">primary</T>
 <T tag="span" class="☘-badge" data-primary="success">success</T>
-<T tag="span" class="☘-badge" data-primary="warning">warning</T>
 <T tag="span" class="☘-badge" data-primary="danger">danger</T>
+<T tag="span" class="☘-badge" data-primary="warning">warning</T>
 
 ```pug
-span.☘-badge primary
-span.☘-badge(data-primary="success") success
-span.☘-badge(data-primary="warning") warning
-span.☘-badge(data-primary="danger") danger
+each primary in ['', 'success', 'danger', 'warning']
+    span.☘-badge(data-primary=primary)= primary
 ```
 
 ## `data-processing`
