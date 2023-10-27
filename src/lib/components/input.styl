@@ -103,37 +103,38 @@ input.{prefix}-input
     border-radius var(--border-radius-md)
     background-color _rgb(var(--gray-1))
 
+    /**
+     * 输入框前缀后缀的按钮
+     */
+    buttons = button, \
+        'input:where([type=button])', \
+        'input:where([type=reset])', \
+        'input:where([type=submit])'
+
     &[data-primary]
         --outline-color-focus var(--primary-6)
         border-color _rgb(var(--primary-6))
         color _rgb(var(--white))
-        &:has(button:not(.{prefix}-input-prefix))
-        &:has(button:not(.{prefix}-input-suffix))
-        &:has(input[type=button]:not(.{prefix}-input-prefix))
-        &:has(input[type=button]:not(.{prefix}-input-suffix))
-        &:has(input[type=reset]:not(.{prefix}-input-prefix))
-        &:has(input[type=reset]:not(.{prefix}-input-suffix))
-        &:has(input[type=submit]:not(.{prefix}-input-prefix))
-        &:has(input[type=submit]:not(.{prefix}-input-suffix))
-            background-color _rgb(var(--primary-6))
+        for tag in buttons
+            &:has({tag}:not(.{prefix}-input-prefix))
+            &:has({tag}:not(.{prefix}-input-suffix))
+                background-color _rgb(var(--primary-6))
 
     &>*
         display inline-flex
         align-items center
     
-    button
-    input:where([type=button])
-    input:where([type=reset])
-    input:where([type=submit])
-        cursor pointer
-        border none
-        background none
-        &:focus-visible
-            outline-color _rgb(var(--outline-color-focus))
-        ~/[data-primary] ^[1..-1]
-            color _rgb(var(--white))
-        &[disabled]
-            cursor not-allowed 
+    for tag in buttons
+        {tag}
+            cursor pointer
+            border none
+            background none
+            &:focus-visible
+                outline-color _rgb(var(--outline-color-focus))
+            ~/[data-primary] ^[1..-1]
+                color _rgb(var(--white))
+            &[disabled]
+                cursor not-allowed 
 
     .{prefix}-input-prefix
     .{prefix}-input-suffix
