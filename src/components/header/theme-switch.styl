@@ -9,10 +9,11 @@
     --box-shadow-width-switch 48px
 
 #header-theme-switch+label
-    // 打开按钮颜色 如果不覆盖 按钮和阴影同色
+    // 打开按钮颜色 如果不覆盖 按钮和阴影同色（即上面的 `--orangered-6` ）
     --primary-6 var(--pinkpurple-6)
-    // 关闭按钮颜色 如果不覆盖 按钮和阴影同色
+    // 关闭按钮颜色 如果不覆盖 按钮和阴影同色（即上面的 `--blue-6` ）
     --gray-4 var(--gold-3)
+    
     svg
         background unset
     svg[alt=sun]
@@ -33,3 +34,5 @@
         // 关闭按钮字体羽化
         filter drop-shadow(0 0 3px _rgb(var(--blue-6)))
         opacity 1
+        @supports not (_selector(':has(*)'))
+            --box-shadow-color-switch var(--blue-6) 

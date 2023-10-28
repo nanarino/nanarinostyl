@@ -9,8 +9,9 @@
     --size-switch-mover calc(var(--size-switch) - 2 * var(--padding-switch))
     --box-shadow-width-switch var(--padding-switch)
     --box-shadow-color-switch var(--primary-6)
-    &:where(:has(input.{prefix}-input[type=checkbox]:checked))
-        --box-shadow-color-switch var(--box-shadow-color)
+    @supports _selector(':has(*)')
+        &:where(:has(input.{prefix}-input[type=checkbox]:checked))
+            --box-shadow-color-switch var(--box-shadow-color)
 
     display inline-flex
     position relative
@@ -60,6 +61,8 @@
             
                 ../../:checked+&
                     left calc(var(--size-switch) + var(--padding-switch))
+                    //@supports not (_selector(':has(*)'))
+                    //    --box-shadow-color-switch var(--primary-6)
         
             ../:not(:disabled)+&:hover
                 box-shadow inset 0 0 var(--padding-switch) var(--padding-switch) _rgb(var(--box-shadow-color-switch) \/ 25%)

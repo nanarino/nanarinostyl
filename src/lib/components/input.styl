@@ -116,10 +116,12 @@ input.{prefix}-input
         border-color _rgb(var(--primary-6))
         color _rgb(var(--white))
         for tag in buttons
-            &:has({tag}:not(.{prefix}-input-prefix))
-            &:has({tag}:not(.{prefix}-input-suffix))
+            @supports _selector(':has(*)')
+                &:has({tag}:not(.{prefix}-input-prefix))
+                &:has({tag}:not(.{prefix}-input-suffix))
+                    background-color _rgb(var(--primary-6))
+            {tag}:not(.{prefix}-input-prefix):not(.{prefix}-input-suffix)
                 background-color _rgb(var(--primary-6))
-
     &>*
         display inline-flex
         align-items center
@@ -129,6 +131,8 @@ input.{prefix}-input
             cursor pointer
             border none
             background none
+            padding 6px
+            border-radius var(--border-radius-md)
             &:focus-visible
                 outline-color _rgb(var(--outline-color-focus))
             ~/[data-primary] ^[1..-1]

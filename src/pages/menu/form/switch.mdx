@@ -49,34 +49,6 @@ span.☘-switch.sm
 
 **动子（ `label.☘-switch-mover>*` ）** 可以设置为一个字符/icon
 
-- 全局变量 `--size-switch` 开关尺寸
-- 全局变量 `--padding-switch` 开关与开关动子的距离
-
-<OxalisSwitch id="oxalis" />
-
-```pug
-span.☘-switch.oxalis-switch(
-    style={
-        ["--size-switch"]: "48px",
-        ["--padding-switch"]: "4px",
-        // 开启的按钮和阴影主题颜色 这不包括禁用状态的颜色
-        ["--primary-6"]: "var(--lime-6)",
-        // 关闭的按钮和阴影主题颜色 这不包括禁用状态的颜色
-        ["--gray-4"]: "var(--yellow-3)",
-    }
-)
-    input#oxalis.☘-input(type="checkbox" name="oxalis" checked)
-    label.☘-switch-mover(for="oxalis" title="oxalis")
-        span.oxalis-switch-mover \☘
-
-style(lang="stylus").
-    .oxalis-switch>input:checked+label
-        .oxalis-switch-mover
-            transform rotate(360deg)
-```
-
-***
-
 - 局部变量 `--box-shadow-width-switch` 可以修改阴影效果范围（默认值为 `--padding-switch` ）
 - 通配变量 `--box-shadow-color` 可以单独设置被**开启时**的阴影颜色RGB值 （关闭时是主题色）
 - 局部变量 `--box-shadow-color-switch` 可以覆盖**开启和关闭时**的阴影颜色RGB值
@@ -96,4 +68,43 @@ span.☘-switch(data-primary="danger" style={
     input#fire.☘-input(type="checkbox")
     label.☘-switch-mover(for="fire" title="fire")
         span 🔥
+```
+
+`--box-shadow-color` 利用了 `:has()`，它的兼容性很差，但可以加上以下代码来修补。
+
+```sass
+#fire:checked + label.☘-switch-mover > span
+    @supports not selector(:has(*))
+        --box-shadow-color-switch: var(--blue-5)
+``` 
+
+但可悲的是 `@supports selector()` 的兼容性也好不到哪里去
+
+***
+
+- 全局变量 `--size-switch` 开关尺寸
+- 全局变量 `--padding-switch` 开关与开关动子的距离
+
+<OxalisSwitch id="oxalis" />
+
+```pug
+span.☘-switch.oxalis-switch(
+    style={
+        ["--size-switch"]: "48px",
+        ["--padding-switch"]: "4px",
+        // 开启的按钮颜色和阴影主题颜色 这不包括禁用状态的颜色
+        ["--primary-6"]: "var(--lime-6)",
+        // 关闭的按钮颜色和阴影主题颜色 这不包括禁用状态的颜色
+        ["--gray-4"]: "var(--yellow-3)",
+        // 事实上在label上覆盖这俩颜色更为直观 尽管那样需要设置更多代码
+    }
+)
+    input#oxalis.☘-input(type="checkbox" name="oxalis" checked)
+    label.☘-switch-mover(for="oxalis" title="oxalis")
+        span.oxalis-switch-mover \☘
+
+style(lang="stylus").
+    .oxalis-switch>input:checked+label
+        .oxalis-switch-mover
+            transform rotate(360deg)
 ```
