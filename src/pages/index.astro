@@ -35,8 +35,10 @@ const menu = import.meta.env.BASE_URL + "menu/";
     position relative
 
 main.cover-layout-content
-    width 36em
-    height @width
+    display flex
+    align-items center
+
+    max-width 36em
     overflow hidden
     color transparent
 
@@ -45,6 +47,8 @@ main.cover-layout-content
     margin auto
 
     css-doodle
+        height unset
+        aspect-ratio 1 / 1
         animation rotate 120s infinite linear
 
 nav.cover-layout-content
