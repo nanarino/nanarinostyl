@@ -13,9 +13,15 @@ export * from 'src/components/markdown/map.mdx';
 
 # image
 
-![示例](./../../../assets/images/example.jpg) {/* <!--不支持相对路径开发时请忽略这个404错误--> */}
+![示例](./../../../assets/images/example.jpg)
 
-这个组件的显示来自拓展后的markdown。但是**加载失败**的效果。
+{/**
+  * 不支持相对路径开发时请忽略这个404错误
+  * 使用绝对路径：
+  * ![示例](/src/assets/images/example.jpg)
+  */}
+
+这个组件的显示来自拓展后的markdown。但是故意写错了src导致**加载失败**的效果。
 
 ```pug
 p
@@ -26,10 +32,10 @@ p
             this.onerror='return false'
         } ondragstart="return false")
         .☘-image-mask
-            svg(width="24px" role="img" aria-label="eye" onclick=function(){
+            svg(width="24px" role="button" aria-label="eye" onclick=function(){
                 window.open("/src/assets/images/example.jpg")
             })
-            svg(width="24px" role="img" aria-label="eye-invisible")
+            svg(width="24px" role="note" aria-label="eye-invisible")
 
 style(lang="stylus").
     .☘-image
@@ -90,8 +96,8 @@ style(lang="stylus").
     'border-radius': '50%'
 }}>
     <T class='☘-image-mask' onclick="event.target == this || this.parentElement.toggleAttribute('data-iine')">
-        <Icon name="interactive-button/outline/heart" role="img" aria-label="heart" width="24px"/>
-        <Icon name="interactive-button/fill/heart-fill" role="img" aria-label="heart-fill" width="24px"/>
+        <Icon name="interactive-button/outline/heart" role="button" aria-label="heart" width="24px"/>
+        <Icon name="interactive-button/fill/heart-fill" role="button" aria-label="heart-fill" width="24px"/>
     </T>
 </T>
 
@@ -106,8 +112,8 @@ style(lang="stylus").
     .☘-image-mask(onclick=function(){
         event.target == this || this.parentElement.toggleAttribute('data-iine')
     })
-        svg(width="24px" role="img" aria-label="heart")
-        svg(width="24px" role="img" aria-label="heart-fill")
+        svg(width="24px" role="button" aria-label="heart")
+        svg(width="24px" role="button" aria-label="heart-fill")
 
 style(lang='stylus').
     .☘-image
@@ -132,10 +138,10 @@ style(lang='stylus').
             <T class="☘-paragraph" data-ellipsis="1"> 描述描述描述描述描述描述描述描述描述描述描述描述 </T>
         </T>
         <T class="☘-image-footer-action">
-            <Icon class={escape('☘-link')} name="interactive-button/outline/eye" role="img" aria-label="eye" width="24px" onclick={`
+            <Icon class={escape('☘-link')} name="interactive-button/outline/eye" role="button" aria-label="Open the image in a new tab" width="24px" onclick={`
                 window.open('${example}')
             `} />
-            <Icon class={escape('☘-link')} name="interactive-button/outline/download" role="img" aria-label="download" width="24px"/>
+            <Icon class={escape('☘-link')} name="interactive-button/outline/download" role="button" aria-label="Download the image" width="24px"/>
         </T>
     </T>
 </T>
@@ -152,8 +158,8 @@ style(lang='stylus').
             .☘-title(data-size='5') 标题标题标题标题标题标题标题标题标题标题标题
             .☘-paragraph(data-ellipsis="1") 描述描述描述描述描述描述描述描述描述描述描述描述
         .☘-image-footer-action
-            svg.☘-link(role="img" aria-label="eye" width="24px" onclick=function(){
+            svg.☘-link(role="button" aria-label="Open the image in a new tab" width="24px" onclick=function(){
                 window.open("/src/assets/images/example.jpg")
             })
-            svg.☘-link(role="img" aria-label="download" width="24px")
+            svg.☘-link(role="button" aria-label="Download the image" width="24px")
 ```

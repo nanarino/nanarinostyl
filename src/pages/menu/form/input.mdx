@@ -111,11 +111,11 @@ each primary in ['', 'success', 'danger', 'warning']
 
 <Grid inline>
     <T class="☘-input-wrapper">
-        <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" role="img" aria-label="search" width="16px"/>
+        <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" role="button" aria-label="search" width="16px"/>
         <T tag="input" class="☘-input" data-with-prefix title="with-prefix" type="search"/>
     </T>
     <T class="☘-input-wrapper" data-primary>
-        <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" role="img" aria-label="search" width="16px"/>
+        <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" role="button" aria-label="search" width="16px"/>
         <T tag="input" class="☘-input" data-with-prefix title="with-prefix" type="search"/>
     </T>
 </Grid>
@@ -134,21 +134,21 @@ each primary in ['', 'success', 'danger', 'warning']
 <Grid inline>
     <T class="☘-input-wrapper">
         <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
-        <Icon class={escape('☘-input-suffix')} name="tips/outline/close" role="img" aria-label="close" width="16px"/>
+        <Icon class={escape('☘-input-suffix')} name="tips/outline/close" role="button" aria-label="close" width="16px"/>
     </T>
     <T class="☘-input-wrapper" data-primary>
         <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
-        <Icon class={escape('☘-input-suffix')} name="tips/outline/close" role="img" aria-label="close" width="16px"/>
+        <Icon class={escape('☘-input-suffix')} name="tips/outline/close" role="button" aria-label="close" width="16px"/>
     </T>
 </Grid>
 
 ```pug
 .☘-input-wrapper
     input.☘-input(title='with-suffix' data-with-suffix)
-    svg.☘-input-suffix(role="img" aria-label="close" width="16px")
+    svg.☘-input-suffix(role="button" aria-label="close" width="16px")
 .☘-input-wrapper(data-primary)
     input.☘-input(title='with-suffix' data-with-suffix)
-    svg.☘-input-suffix(role="img" aria-label="close" width="16px")
+    svg.☘-input-suffix(role="button" aria-label="close" width="16px")
 ```
 
 ***
