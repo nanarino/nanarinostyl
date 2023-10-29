@@ -22,19 +22,19 @@
         height 100%
         will-change transform
         filter drop-shadow(0 0 2px _rgb(var(--box-shadow-color-switch)))
-    i.sun
+    i[aria-label="sun"]
         // 打开按钮 字体颜色
         color _rgb(var(--orangered-10))
         opacity 1
-    i.moon
+    i[aria-label="moon"]
         // 关闭按钮 字体颜色
         color _rgb(var(--blue-10))
         opacity 0
 
 #header-theme-switch:checked+label
-    i.sun
+    i[aria-label="sun"]
         opacity 0
-    i.moon
+    i[aria-label="moon"]
         opacity 1
         // 兼容不支持 `:has()` 选择器的如UC浏览器
         @supports not (_selector(':has(*)'))

@@ -42,10 +42,10 @@ const { href } = Astro.props;
           * 为了兼容 Safari浏览器里 `<svg>` 不能同时拥有 `box-shadow` 和 `drop-shadow`
           * 所以额外用了 `<i>` 来包裹 `<svg>`
           */}
-        <i class="sun" aria-label="light">
+        <i role="img" aria-label="sun">
             <Icon name="general/outline/sun"/>
         </i>
-        <i class="moon" aria-label="dark">
+        <i role="img" aria-label="moon">
             <Icon name="general/outline/moon"/>
         </i>
     </Switch>
