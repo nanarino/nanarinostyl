@@ -47,11 +47,11 @@ each primary in ['', 'success', 'danger', 'warning']
 
 ## custom style
 
-<Icon disabled class={escape('☘-link')} style="--primary-2:var(--blue-2);vertical-align:middle" name="logo/outline/twitter" alt="twitter" width="18"/>
+<Icon disabled class={escape('☘-link')} style="--primary-2:var(--blue-2);vertical-align:middle" name="logo/outline/twitter" role="img" aria-label="twitter" width="18"/>
 
 ```pug
 svg.☘-link(disabled style={
     ['--primary-2']: `var(--blue-2)`,
     'vertical-align': 'middle'
-} alt="twitter" width="18")
+} role="img" aria-label="twitter" width="18")
 ```

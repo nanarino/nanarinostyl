@@ -111,21 +111,21 @@ each primary in ['', 'success', 'danger', 'warning']
 
 <Grid inline>
     <T class="☘-input-wrapper">
-        <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" alt="search" width="16px"/>
+        <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" role="img" aria-label="search" width="16px"/>
         <T tag="input" class="☘-input" data-with-prefix title="with-prefix" type="search"/>
     </T>
     <T class="☘-input-wrapper" data-primary>
-        <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" alt="search" width="16px"/>
+        <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" role="img" aria-label="search" width="16px"/>
         <T tag="input" class="☘-input" data-with-prefix title="with-prefix" type="search"/>
     </T>
 </Grid>
 
 ```pug
 .☘-input-wrapper
-    svg.☘-input-prefix(alt="search" width="16px")
+    svg.☘-input-prefix(role="img" aria-label="search" width="16px")
     input.☘-input(title='with-prefix' data-with-prefix type="search")
 .☘-input-wrapper(data-primary)
-    svg.☘-input-prefix(alt="search" width="16px")
+    svg.☘-input-prefix(role="img" aria-label="search" width="16px")
     input.☘-input(title='with-prefix' data-with-prefix type="search")
 ```
 
@@ -134,21 +134,21 @@ each primary in ['', 'success', 'danger', 'warning']
 <Grid inline>
     <T class="☘-input-wrapper">
         <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
-        <Icon class={escape('☘-input-suffix')} name="tips/outline/close" alt="close" width="16px"/>
+        <Icon class={escape('☘-input-suffix')} name="tips/outline/close" role="img" aria-label="close" width="16px"/>
     </T>
     <T class="☘-input-wrapper" data-primary>
         <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
-        <Icon class={escape('☘-input-suffix')} name="tips/outline/close" alt="close" width="16px"/>
+        <Icon class={escape('☘-input-suffix')} name="tips/outline/close" role="img" aria-label="close" width="16px"/>
     </T>
 </Grid>
 
 ```pug
 .☘-input-wrapper
     input.☘-input(title='with-suffix' data-with-suffix)
-    svg.☘-input-suffix(alt="close" width="16px")
+    svg.☘-input-suffix(role="img" aria-label="close" width="16px")
 .☘-input-wrapper(data-primary)
     input.☘-input(title='with-suffix' data-with-suffix)
-    svg.☘-input-suffix(alt="close" width="16px")
+    svg.☘-input-suffix(role="img" aria-label="close" width="16px")
 ```
 
 ***
@@ -165,7 +165,7 @@ each primary in ['', 'success', 'danger', 'warning']
 }}>
     <T tag="input" class="☘-input" title="in-suffix" data-with-suffix disabled/>
     <T tag="button" class="☘-input-suffix" type="submit" title="search" disabled>
-        <Icon name="interactive-button/outline/search" alt="search" width="18px"/>
+        <Icon name="interactive-button/outline/search" role="img" aria-label="search" width="18px"/>
     </T>
 </T>
 ```pug
@@ -174,7 +174,7 @@ each primary in ['', 'success', 'danger', 'warning']
 })
     input.☘-input(title='out-suffix' disabled)
     button.☘-input-suffix(type="submit" title="search" disabled)
-        svg(alt="search" width="18px")
+        svg(role="img" aria-label="search" width="18px")
 ```
 
 ***
@@ -186,7 +186,7 @@ each primary in ['', 'success', 'danger', 'warning']
         '--box-shadow-drop-bottom': 'none'
     }} />
     <button type="submit" title="search">
-        <Icon name="interactive-button/outline/search" alt="search" width="18px"/>
+        <Icon name="interactive-button/outline/search" role="img" aria-label="search" width="18px"/>
     </button>
 </T>
 ```pug
@@ -197,5 +197,5 @@ each primary in ['', 'success', 'danger', 'warning']
         '--box-shadow-drop-bottom': 'none'
     })
     button(type="submit" title="search")
-        svg(alt="search" width="18px")
+        svg(role="img" aria-label="search" width="18px")
 ```

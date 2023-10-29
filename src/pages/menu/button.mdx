@@ -61,7 +61,7 @@ button.☘-button(data-primary='danger' disabled) 删除
 使用 `<svg/>` 需要设置容器或者其自身宽或高。
 
 <T tag="button" title="关机" class="☘-button" style="width:32px;height:32px;padding:5px" data-primary="danger" onclick="window.close()">
-    <Icon name="interactive-button/outline/poweroff" alt="shutdown"/>
+    <Icon name="interactive-button/outline/poweroff" role="img" aria-label="shutdown"/>
 </T>
 
 ```pug
@@ -70,5 +70,5 @@ button.☘-button(title="关机" data-primary="danger" style={
     height: '32px',
     padding: '5px'
 } onclick=function(){window.close()})
-    svg(alt="shutdown")
+    svg(role="img" aria-label="shutdown")
 ```

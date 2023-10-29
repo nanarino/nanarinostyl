@@ -32,7 +32,7 @@ span.☘-badge(data-processing style="font-size: 16px") processing
 ## custom style
 
 - 全局变量 `--badge-processing-weight` 调整 波浪大小
-- 全局变量 `--badge-indent` 调整文字左内边距，原本是用 `text-indent` 属性实现，但在**Safari**中 `text-indent` 似乎有一部分标签不支持，且会导致波纹是**椭圆形**，这也可能是 `aspect-ratio 1 / 1` 兼容性影响。见下：
+- 全局变量 `--badge-indent` 调整文字左内边距，原本是用 `text-indent` 属性实现。如果使用 `text-indent` 效果见下：
 
 <T tag="span" class="☘-badge" data-processing data-primary="danger" style="
     --badge-indent: 0; 
@@ -51,6 +51,8 @@ span.☘-badge(data-processing data-primary="danger" style={
     span.☘-code.☘-font-mono debug
 ```
 
+但在**Safari**中 `text-indent` 似乎有一部分标签不支持，且会导致波纹是**椭圆形**，且圆心也偏移了。遂改用 `padding-left` 来实现
+
 ***
 
 - 全局变量 `--badge-margin` 圆点的边距，可以用来反向调整圆点大小（你又小来他又大）
@@ -59,7 +61,7 @@ span.☘-badge(data-processing data-primary="danger" style={
 
 <T tag="span" class="☘-tag" data-primary="danger" style="--badge-indent:30px;--badge-margin:6px;border-style:dashed">
     <T tag="span" class="☘-badge" data-processing>
-        <Icon name="general/outline/bug" alt="bug" width="30" height="30" style="vertical-align: middle"/>
+        <Icon name="general/outline/bug" role="img" aria-label="bug" width="30" height="30" style="vertical-align: middle"/>
     </T>
 </T>
 
@@ -70,5 +72,5 @@ span.☘-tag(data-primary="danger" style={
     "border-style": "dashed"
 })
     span.☘-badge(data-processing)
-        svg(alt="bug" width="30" height="30" style="vertical-align: middle")
+        svg(role="img" aria-label="bug" width="30" height="30" style="vertical-align: middle")
 ```

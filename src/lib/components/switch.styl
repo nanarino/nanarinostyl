@@ -1,5 +1,6 @@
 @import './../variable/prefix.styl'
 @import './../variable/functions.styl'
+@import './../variable/compatible.styl'
 
 .{prefix}-switch
     /:root
@@ -67,4 +68,5 @@
             ../:not(:disabled)+&:hover
                 box-shadow inset 0 0 var(--padding-switch) var(--padding-switch) _rgb(var(--box-shadow-color-switch) \/ 25%)
                 &:empty::before, &>*
+                    filter drop-shadow(0 0 var(--padding-switch) _rgb(var(--box-shadow-color-switch)))
                     box-shadow 0 0 var(--box-shadow-width-switch) var(--box-shadow-width-switch) _rgb(var(--box-shadow-color-switch) \/ 25%)

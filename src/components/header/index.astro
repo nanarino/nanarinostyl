@@ -22,8 +22,8 @@ const { href } = Astro.props;
                 title="menu"
                 data-collapsed
             >
-                <Icon name="direction/outline/menu-fold" alt="fold" />
-                <Icon name="direction/outline/menu-unfold" alt="unfold" />
+                <Icon name="direction/outline/menu-fold" role="img" aria-label="fold" />
+                <Icon name="direction/outline/menu-unfold" role="img" aria-label="unfold" />
             </button>
         )
     }
@@ -38,8 +38,16 @@ const { href } = Astro.props;
         title="theme"
         name="theme"
     >
-        <Icon name="general/outline/sun" alt="sun" />
-        <Icon name="general/outline/moon" alt="moon" />
+        {/**
+          * 为了兼容 Safari浏览器里 `<svg>` 不能同时拥有 `box-shadow` 和 `drop-shadow`
+          * 所以额外用了 `<i>` 来包裹 `<svg>`
+          */}
+        <i class="sun" aria-label="light">
+            <Icon name="general/outline/sun"/>
+        </i>
+        <i class="moon" aria-label="dark">
+            <Icon name="general/outline/moon"/>
+        </i>
     </Switch>
 </header>
 

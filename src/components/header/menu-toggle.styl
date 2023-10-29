@@ -8,6 +8,6 @@
     svg
         grid-area 1 / 1 / 2 / 2
         transition opacity .3s 
-    &[data-collapsed]>svg[alt=fold]
-    &:not([data-collapsed])>svg[alt=unfold]
+    &[data-collapsed]>svg[aria-label=fold]
+    &:not([data-collapsed])>svg[aria-label=unfold]
         opacity 0

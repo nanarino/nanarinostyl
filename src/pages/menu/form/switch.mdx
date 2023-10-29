@@ -49,7 +49,7 @@ span.☘-switch.sm
 
 **动子（ `label.☘-switch-mover>*` ）** 可以设置为一个字符/icon
 
-- 局部变量 `--box-shadow-width-switch` 可以修改阴影效果范围（默认值为 `--padding-switch` ）
+- 局部变量 `--box-shadow-width-switch` 可以修改阴影效果范围（默认值为全局变量 `--padding-switch` ，见下 ）
 - 通配变量 `--box-shadow-color` 可以单独设置被**开启时**的阴影颜色RGB值 （关闭时是主题色）
 - 局部变量 `--box-shadow-color-switch` 可以覆盖**开启和关闭时**的阴影颜色RGB值
 
@@ -70,7 +70,7 @@ span.☘-switch(data-primary="danger" style={
         span 🔥
 ```
 
-`--box-shadow-color` 利用了 `:has()`，它的兼容性很差，但可以加上以下代码来修补。
+`--box-shadow-color` 利用了 `:has()`，它的兼容性很差，但可以加上以下代码来弥补。
 
 ```sass
 #fire:checked + label.☘-switch-mover > span
@@ -78,7 +78,9 @@ span.☘-switch(data-primary="danger" style={
         --box-shadow-color-switch: var(--blue-5)
 ``` 
 
-但可悲的是 `@supports selector()` 的兼容性也好不到哪里去
+但可悲的是 `@supports selector()` 的兼容性也好不到哪里去。
+
+文档中此处并未做兼容。如果这个开关的阴影始终是红色，说明你的浏览器不支持 `:has()`
 
 ***
 

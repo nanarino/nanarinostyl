@@ -2,13 +2,13 @@
 
 .{prefix}-image
     
-    svg[alt='eye']
+    svg[aria-label='eye']
         cursor pointer
     
-    svg[alt='eye-invisible']
+    svg[aria-label='eye-invisible']
         cursor not-allowed
     
-    &[data-error] svg[alt='eye']
-    &:not([data-error]) svg[alt='eye-invisible']
+    &[data-error] svg[aria-label='eye']
+    &:not([data-error]) svg[aria-label='eye-invisible']
         display none
 

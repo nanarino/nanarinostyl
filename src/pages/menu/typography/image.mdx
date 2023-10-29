@@ -26,19 +26,19 @@ p
             this.onerror='return false'
         } ondragstart="return false")
         .☘-image-mask
-            svg(width="24px" alt="eye" onclick=function(){
+            svg(width="24px" role="img" aria-label="eye" onclick=function(){
                 window.open("/src/assets/images/example.jpg")
             })
-            svg(width="24px" alt="eye-invisible")
+            svg(width="24px" role="img" aria-label="eye-invisible")
 
 style(lang="stylus").
     .☘-image
-        svg[alt='eye']
+        svg[aria-label='eye']
         cursor pointer
-        svg[alt='eye-invisible']
+        svg[aria-label='eye-invisible']
             cursor not-allowed
-        &[data-error] svg[alt='eye']
-        &:not([data-error]) svg[alt='eye-invisible']
+        &[data-error] svg[aria-label='eye']
+        &:not([data-error]) svg[aria-label='eye-invisible']
             display none
 ```
 
@@ -90,8 +90,8 @@ style(lang="stylus").
     'border-radius': '50%'
 }}>
     <T class='☘-image-mask' onclick="event.target == this || this.parentElement.toggleAttribute('data-iine')">
-        <Icon name="interactive-button/outline/heart" alt="heart" width="24px"/>
-        <Icon name="interactive-button/fill/heart-fill" alt="heart-fill" width="24px"/>
+        <Icon name="interactive-button/outline/heart" role="img" aria-label="heart" width="24px"/>
+        <Icon name="interactive-button/fill/heart-fill" role="img" aria-label="heart-fill" width="24px"/>
     </T>
 </T>
 
@@ -106,17 +106,17 @@ style(lang="stylus").
     .☘-image-mask(onclick=function(){
         event.target == this || this.parentElement.toggleAttribute('data-iine')
     })
-        svg(width="24px" alt="heart")
-        svg(width="24px" alt="heart-fill")
+        svg(width="24px" role="img" aria-label="heart")
+        svg(width="24px" role="img" aria-label="heart-fill")
 
 style(lang='stylus').
     .☘-image
-        svg[alt='heart']
-        svg[alt='heart-fill']
+        svg[aria-label='heart']
+        svg[aria-label='heart-fill']
             color magenta
             cursor pointer
-        &[data-iine] svg[alt='heart']
-        &:not([data-iine]) svg[alt='heart-fill']
+        &[data-iine] svg[aria-label='heart']
+        &:not([data-iine]) svg[aria-label='heart-fill']
             display none
 ```
 
@@ -132,10 +132,10 @@ style(lang='stylus').
             <T class="☘-paragraph" data-ellipsis="1"> 描述描述描述描述描述描述描述描述描述描述描述描述 </T>
         </T>
         <T class="☘-image-footer-action">
-            <Icon class={escape('☘-link')} name="interactive-button/outline/eye" alt="eye" width="24px" onclick={`
+            <Icon class={escape('☘-link')} name="interactive-button/outline/eye" role="img" aria-label="eye" width="24px" onclick={`
                 window.open('${example}')
             `} />
-            <Icon class={escape('☘-link')} name="interactive-button/outline/download" alt="download" width="24px"/>
+            <Icon class={escape('☘-link')} name="interactive-button/outline/download" role="img" aria-label="download" width="24px"/>
         </T>
     </T>
 </T>
@@ -152,8 +152,8 @@ style(lang='stylus').
             .☘-title(data-size='5') 标题标题标题标题标题标题标题标题标题标题标题
             .☘-paragraph(data-ellipsis="1") 描述描述描述描述描述描述描述描述描述描述描述描述
         .☘-image-footer-action
-            svg.☘-link(alt="eye" width="24px" onclick=function(){
+            svg.☘-link(role="img" aria-label="eye" width="24px" onclick=function(){
                 window.open("/src/assets/images/example.jpg")
             })
-            svg.☘-link(alt="download" width="24px")
+            svg.☘-link(role="img" aria-label="download" width="24px")
 ```

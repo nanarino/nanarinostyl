@@ -67,6 +67,7 @@
                 border 3px solid _rgb(var(--white))
                 border-top none
                 border-right none
+                // 支持 `path()` 的浏览器增强效果
                 @supports (clip-path:path(""))
                     &
                         clip-path path("M 0 1.5 \\

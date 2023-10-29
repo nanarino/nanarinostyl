@@ -22,40 +22,49 @@ const colours = [
 <div class={`${prefix}-table-wrapper`}>
     <table class={`${prefix}-table md`} id="colors-kanban">
         {
-        colours.map((color) => (
-            <tr>
-            <td class="color">{color}</td>
-            {Array(10)
-                .fill(0)
-                .map((x, i) => (
-                    <td>
-                        <button class={`${prefix}-button copy`} style={{
-                            'background-color' : `rgb(var(--${color}-${i+1}))`,
-                            'color': `rgb(var(--${ i>=5 ? 'white' : 'black' }))`
-                        }} title={`--${color}-${i+1}`}>
-                            <Icon name="edit/outline/copy" alt="copy"/>
-                        </button>
-                    </td>
-                ))}
-            </tr>
-        ))
+            colours.map((color) => (
+                <tr>
+                    <td class="color">{color}</td>
+                    {Array(10)
+                        .fill(0)
+                        .map((x, i) => (
+                            <td>
+                                <button
+                                    class={`${prefix}-button copy`}
+                                    style={{
+                                        "background-color": `rgb(var(--${color}-${
+                                            i + 1
+                                        }))`,
+                                        color: `rgb(var(--${
+                                            i >= 5 ? "white" : "black"
+                                        }))`,
+                                    }}
+                                    title={`--${color}-${i + 1}`}
+                                    aria-label="copy color code"
+                                >
+                                    <Icon name="edit/outline/copy" />
+                                </button>
+                            </td>
+                        ))}
+                </tr>
+            ))
         }
     </table>
 </div>
 
 <script>
-    const table = document.getElementById('colors-kanban');
-    table.onclick = function(e){
-        const button = e.target as HTMLButtonElement
-        if(button.tagName === "BUTTON" && button.title){
+    const table = document.getElementById("colors-kanban");
+    table.onclick = function (e) {
+        const button = e.target as HTMLButtonElement;
+        if (button.tagName === "BUTTON" && button.title) {
             window.copy(`rgb(var(${button.title}))`);
             window.dispatchEvent(
                 new CustomEvent(`${window.name}-message`, {
-                    detail: '复制成功'
+                    detail: "复制成功",
                 })
             );
         }
-    }
+    };
 </script>
 
 <style lang="stylus">

@@ -3,11 +3,11 @@
 
 .{prefix}-image
 
-    svg[alt='heart']
-    svg[alt='heart-fill']
+    svg[aria-label='heart']
+    svg[aria-label='heart-fill']
         color _rgb(var(--magenta-6))
         cursor pointer
     
-    &[data-iine] svg[alt='heart']
-    &:not([data-iine]) svg[alt='heart-fill']
+    &[data-iine] svg[aria-label='heart']
+    &:not([data-iine]) svg[aria-label='heart-fill']
         display none
