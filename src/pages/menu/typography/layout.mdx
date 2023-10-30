@@ -20,23 +20,33 @@ export * from 'src/components/markdown/map.mdx';
 <T tag="ul" class="☘-menu">
     <T tag="li" class="☘-menu-item"><T tag="a" class="☘-menu-item-link">叶子-0</T></T>
     <T tag="li" class="☘-menu-submenu" data-folded>
-        <T class="☘-menu-submenu-title" onclick="this.parentElement.toggleAttribute('data-folded')">
+        <T class="☘-menu-submenu-title" onclick="
+            this.parentElement.toggleAttribute('data-folded')
+        ">
             <span>分类-1</span>
             <T tag="i" class="☘-menu-submenu-title-arrow"/>
         </T>
         <T tag="ul" class="☘-menu">
-            <T tag="li" class="☘-menu-item"><T tag="a" class="☘-menu-item-link">叶子-1-1</T></T>
-            <T tag="li" class="☘-menu-item"><T tag="a" class="☘-menu-item-link">叶子-1-2</T></T>
+            <T tag="li" class="☘-menu-item">
+                <T tag="a" class="☘-menu-item-link">叶子-1-1</T>
+            </T>
+            <T tag="li" class="☘-menu-item">
+                <T tag="a" class="☘-menu-item-link">叶子-1-2</T>
+            </T>
         </T>
     </T>
     <T tag="li" class="☘-menu-submenu">
-        <T class="☘-menu-submenu-title" onclick="this.parentElement.toggleAttribute('data-folded')">
+        <T class="☘-menu-submenu-title" onclick="
+            this.parentElement.toggleAttribute('data-folded')
+        ">
             <span>分类-2</span>
             <T tag="i" class="☘-menu-submenu-title-arrow"/>
         </T>
         <T tag="ul" class="☘-menu">
             <T tag="li" class="☘-menu-item" data-selected>叶子-2-1</T>
-            <T tag="li" class="☘-menu-item"><T tag="a" class="☘-menu-item-link">叶子-2-2</T></T>
+            <T tag="li" class="☘-menu-item">
+                <T tag="a" class="☘-menu-item-link">叶子-2-2</T>
+            </T>
         </T>
     </T>
 </T>

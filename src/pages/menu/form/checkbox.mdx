@@ -5,6 +5,7 @@ title: 多选框
 
 import T from "src/components/T.astro";
 import Checkbox from "src/components/checkbox.astro";
+import Grid from "src/components/grid.astro";
 export * from 'src/components/markdown/map.mdx';
 
 
@@ -28,8 +29,12 @@ span.☘-checkbox(style="--checkbox-indent: 2em")
 
 ## `disabled`
 
-<Checkbox id="HTTP" disabled>HTTP</Checkbox>
-<Checkbox id="HTTPS" checked disabled dataList={{ primary : "success" }}>HTTPS</Checkbox>
+<Grid inline>
+    <Checkbox id="HTTP" disabled>HTTP</Checkbox>
+    <Checkbox id="HTTPS" checked disabled dataset={{ 
+        primary : "success" 
+    }}>HTTPS</Checkbox>
+</Grid>
 
 ```pug
 span.☘-checkbox
@@ -42,7 +47,7 @@ span.☘-checkbox(data-primary="success")
 
 ## `data-indeterminate`
 
-<Checkbox id="Superposition" dataList={{ indeterminate : true }} onchange="
+<Checkbox id="Superposition" dataset={{ indeterminate : true }} onchange="
     this.parentElement.removeAttribute('data-indeterminate')
 ">叠加态</Checkbox>
 

@@ -10,14 +10,14 @@ interface Props {
     disabled?: boolean;
     class?: string;
     style?: Record<string, any> | string;
-    dataList?: Record<string, any>;
+    dataset?: Record<string, any>;
 }
 ---
 
 <span
     class={`${prefix}-switch ${props.class || ''}`}
     style={props.style}
-    {...attrs(props.dataList || {})}
+    {...attrs(props.dataset || {})}
 >
     <input
         type="checkbox"

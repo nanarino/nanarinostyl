@@ -59,9 +59,21 @@ span.☘-badge(data-processing data-primary="danger" style={
 
 使用 `<svg/>` 需要设置容器或者其自身宽或高。
 
-<T tag="span" class="☘-tag" data-primary="danger" style="--badge-indent:30px;--badge-margin:6px;border-style:dashed">
+<T
+    tag="span"
+    class="☘-tag"
+    data-primary="danger"
+    style="--badge-indent:30px;--badge-margin:6px;border-style:dashed"
+>
     <T tag="span" class="☘-badge" data-processing>
-        <Icon name="general/outline/bug" role="img" aria-label="bug" width="30" height="30" style="vertical-align: middle"/>
+        <Icon
+            name="general/outline/bug"
+            role="img"
+            aria-label="bug"
+            width="30"
+            height="30"
+            style="vertical-align: middle"
+        />
     </T>
 </T>
 
@@ -72,5 +84,11 @@ span.☘-tag(data-primary="danger" style={
     "border-style": "dashed"
 })
     span.☘-badge(data-processing)
-        svg(role="img" aria-label="bug" width="30" height="30" style="vertical-align: middle")
+        svg(
+            role="img"
+            aria-label="bug"
+            width="30"
+            height="30"
+            style="vertical-align: middle"
+        )
 ```

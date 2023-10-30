@@ -10,7 +10,12 @@ export * from 'src/components/markdown/map.mdx';
 
 # link
 
-<T tag="a" class="☘-link" href="https://stylus-lang.com/" target="_blank">Stylus Doc</T>
+<T 
+    tag="a"
+    class="☘-link"
+    href="https://stylus-lang.com/"
+    target="_blank"
+> Stylus Doc </T>
 
 ```pug
 a.☘-link(href="https://stylus-lang.com/" target="_blank")
@@ -47,11 +52,27 @@ each primary in ['', 'success', 'danger', 'warning']
 
 ## custom style
 
-<Icon disabled class={escape('☘-link')} style="--primary-2:var(--blue-2);vertical-align:middle" name="logo/outline/twitter" role="img" aria-label="twitter" width="18"/>
+<Icon
+    disabled
+    class={escape('☘-link')}
+    style="--primary-2:var(--blue-2);vertical-align:middle"
+    name="logo/outline/twitter"
+    role="link"
+    aria-label="twitter"
+    aria-disabled
+    width="18"
+/>
 
 ```pug
-svg.☘-link(disabled style={
-    ['--primary-2']: `var(--blue-2)`,
-    'vertical-align': 'middle'
-} role="img" aria-label="twitter" width="18")
+svg.☘-link(
+    disabled
+    style={
+        ['--primary-2']: `var(--blue-2)`,
+        'vertical-align': 'middle'
+    }
+    role="link"
+    aria-label="twitter"
+    aria-disabled
+    width="18"
+)
 ```

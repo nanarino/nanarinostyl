@@ -25,26 +25,43 @@ export * from 'src/components/markdown/map.mdx';
 
 ```pug
 p
-    span.☘-image(style="display: inline-flex")
-        img(src="/src/assets/images/example.jpg" alt="示例" onerror=function(){
-            this.src="/src/assets/images/unknow.png";
-            this.parentElement.dataset.error=true;
-            this.onerror='return false'
-        } ondragstart="return false")
+    span.☘-image(style={
+        display: "inline-flex"
+    })
+        img(
+            src="/src/assets/images/example.jpg" 
+            alt="示例"
+            onerror=function(){
+                this.src="/src/assets/images/unknow.png";
+                this.parentElement.dataset.error=true;
+                this.onerror='return false'
+            }
+            ondragstart="return false"
+        )
         .☘-image-mask
-            svg(width="24px" role="button" aria-label="eye" onclick=function(){
-                window.open("/src/assets/images/example.jpg")
-            })
-            svg(width="24px" role="note" aria-label="eye-invisible")
+            svg(
+                width="24px"
+                role="button"
+                aria-label="Open the image in a new tab"
+                onclick=function(){
+                    window.open("/src/assets/images/example.jpg")
+                }
+            )
+            svg(
+                width="24px"
+                role="note"
+                aria-label="The image failed to load"
+                aria-disabled
+            )
 
 style(lang="stylus").
     .☘-image
-        svg[aria-label='eye']
-        cursor pointer
-        svg[aria-label='eye-invisible']
+        svg[role=button]
+            cursor pointer
+        svg[aria-disabled]
             cursor not-allowed
-        &[data-error] svg[aria-label='eye']
-        &:not([data-error]) svg[aria-label='eye-invisible']
+        &[data-error] svg[aria-label='Open the image in a new tab']
+        &:not([data-error]) svg[aria-label='The image failed to load']
             display none
 ```
 
@@ -95,9 +112,16 @@ style(lang="stylus").
     'background-image': `url(${example})`,
     'border-radius': '50%'
 }}>
-    <T class='☘-image-mask' onclick="event.target == this || this.parentElement.toggleAttribute('data-iine')">
-        <Icon name="interactive-button/outline/heart" role="button" aria-label="heart" width="24px"/>
-        <Icon name="interactive-button/fill/heart-fill" role="button" aria-label="heart-fill" width="24px"/>
+    <T
+        class='☘-image-mask'
+        role="button"
+        aria-label="like"
+        onclick="
+            event.target == this || this.parentElement.toggleAttribute('data-iine')
+        "
+    >
+        <Icon name="interactive-button/outline/heart" width="24px"/>
+        <Icon name="interactive-button/fill/heart-fill" width="24px"/>
     </T>
 </T>
 
@@ -112,17 +136,18 @@ style(lang="stylus").
     .☘-image-mask(onclick=function(){
         event.target == this || this.parentElement.toggleAttribute('data-iine')
     })
-        svg(width="24px" role="button" aria-label="heart")
-        svg(width="24px" role="button" aria-label="heart-fill")
+        svg(width="24px" astro-icon='interactive-button/outline/heart')
+        svg(width="24px" astro-icon='interactive-button/fill/heart-fill')
 
 style(lang='stylus').
     .☘-image
-        svg[aria-label='heart']
-        svg[aria-label='heart-fill']
-            color magenta
+        svg[astro-icon='interactive-button/outline/heart']
+        svg[astro-icon='interactive-button/fill/heart-fill']
+            color _rgb(var(--magenta-6))
             cursor pointer
-        &[data-iine] svg[aria-label='heart']
-        &:not([data-iine]) svg[aria-label='heart-fill']
+        
+        &[data-iine] svg[astro-icon='interactive-button/outline/heart']
+        &:not([data-iine]) svg[astro-icon='interactive-button/fill/heart-fill']
             display none
 ```
 
@@ -130,18 +155,39 @@ style(lang='stylus').
 
 适用于大尺寸图片（ 128像素以上 ）的底部遮罩 `.☘-image>.☘-image-footer`
 
-<T class='☘-image' style="width:300px;height:300px;border-radius:var(--border-radius-lg)">
+<T class='☘-image' style="
+    width:300px;height:300px;border-radius:var(--border-radius-lg)
+">
     <img alt="示例" src={example} />
     <T class='☘-image-footer'>
         <T class="☘-image-footer-content">
-            <T class="☘-title" data-size='5'> 标题标题标题标题标题标题标题标题标题标题标题 </T>
-            <T class="☘-paragraph" data-ellipsis="1"> 描述描述描述描述描述描述描述描述描述描述描述描述 </T>
+            <T
+                class="☘-title"
+                data-size='5'
+            > 标题标题标题标题标题标题标题标题标题标题标题 </T>
+            <T
+                class="☘-paragraph"
+                data-ellipsis="1"
+            > 描述描述描述描述描述描述描述描述描述描述描述描述 </T>
         </T>
         <T class="☘-image-footer-action">
-            <Icon class={escape('☘-link')} name="interactive-button/outline/eye" role="button" aria-label="Open the image in a new tab" width="24px" onclick={`
-                window.open('${example}')
-            `} />
-            <Icon class={escape('☘-link')} name="interactive-button/outline/download" role="button" aria-label="Download the image" width="24px"/>
+            <Icon
+                class={escape('☘-link')}
+                name="interactive-button/outline/eye"
+                role="button"
+                aria-label="Open the image in a new tab"
+                width="24px"
+                onclick={`
+                    window.open('${example}')
+                `}
+            />
+            <Icon
+                class={escape('☘-link')}
+                name="interactive-button/outline/download"
+                role="button"
+                aria-label="Download the image"
+                width="24px"
+            />
         </T>
     </T>
 </T>
@@ -158,8 +204,17 @@ style(lang='stylus').
             .☘-title(data-size='5') 标题标题标题标题标题标题标题标题标题标题标题
             .☘-paragraph(data-ellipsis="1") 描述描述描述描述描述描述描述描述描述描述描述描述
         .☘-image-footer-action
-            svg.☘-link(role="button" aria-label="Open the image in a new tab" width="24px" onclick=function(){
-                window.open("/src/assets/images/example.jpg")
-            })
-            svg.☘-link(role="button" aria-label="Download the image" width="24px")
+            svg.☘-link(
+                role="button"
+                aria-label="Open the image in a new tab"
+                width="24px"
+                onclick=function(){
+                    window.open("/src/assets/images/example.jpg")
+                }
+            )
+            svg.☘-link(
+                role="button"
+                aria-label="Download the image"
+                width="24px"
+            )
 ```

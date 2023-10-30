@@ -3,11 +3,11 @@
 
 .{prefix}-image
 
-    svg[aria-label='heart']
-    svg[aria-label='heart-fill']
+    svg[astro-icon='interactive-button/outline/heart']
+    svg[astro-icon='interactive-button/fill/heart-fill']
         color _rgb(var(--magenta-6))
         cursor pointer
     
-    &[data-iine] svg[aria-label='heart']
-    &:not([data-iine]) svg[aria-label='heart-fill']
+    &[data-iine] svg[astro-icon='interactive-button/outline/heart']
+    &:not([data-iine]) svg[astro-icon='interactive-button/fill/heart-fill']
         display none

@@ -28,26 +28,56 @@ export * from 'src/components/markdown/map.mdx';
 - `[type=datetime-local]`
 - `[type=datetime]`
 
-<T tag="input" type="datetime-local" class="☘-input ☘-font-mono" title="更改时间" value='2023-09-08T14:48'/>
+<T
+    tag="input"
+    type="datetime-local"
+    class="☘-input ☘-font-mono"
+    title="更改时间"
+    value='2023-09-08T14:48'
+/>
 
 ```pug
-input.☘-input.☘-font-mono(type="datetime-local" title='更改时间' value='2023-09-08T14:48')
+input.☘-input.☘-font-mono(
+    type="datetime-local"
+    title='更改时间'
+    value='2023-09-08T14:48'
+)
 ```
 
 ## `disabled`
 
-<T tag="input" type="date" class="☘-input ☘-font-mono" title="更改日期" value='2023-09-08' disabled/>
+<T
+    tag="input"
+    type="date"
+    class="☘-input ☘-font-mono"
+    title="更改日期"
+    value='2023-09-08'
+    disabled
+/>
 
 ```pug
-input.☘-input.☘-font-mono(type="date" title='更改日期' value='2023-09-08' disabled)
+input.☘-input.☘-font-mono(
+    type="date"
+    title='更改日期'
+    value='2023-09-08'
+    disabled
+)
 ```
 
 ## `placeholder`
 
-<T tag="input" class="☘-input ☘-font-mono" title="helloworld" placeholder='helloworld'/>
+<T
+    tag="input"
+    class="☘-input ☘-font-mono"
+    title="helloworld"
+    placeholder='helloworld'
+/>
 
 ```pug
-input.☘-input.☘-font-mono(title='helloworld' placeholder='helloworld')
+input.☘-input.☘-font-mono(
+    title='helloworld'
+    placeholder='helloworld'
+)
 ```
 
 ## `data-primary`
@@ -111,21 +141,44 @@ each primary in ['', 'success', 'danger', 'warning']
 
 <Grid inline>
     <T class="☘-input-wrapper">
-        <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" role="button" aria-label="search" width="16px"/>
-        <T tag="input" class="☘-input" data-with-prefix title="with-prefix" type="search"/>
+        <Icon
+            class={escape('☘-input-prefix')}
+            name="interactive-button/outline/search"
+            role="button"
+            aria-label="search"
+            width="16px"/>
+        <T
+            tag="input"
+            class="☘-input"
+            data-with-prefix
+            title="with-prefix"
+            type="search"
+        />
     </T>
     <T class="☘-input-wrapper" data-primary>
-        <Icon class={escape('☘-input-prefix')} name="interactive-button/outline/search" role="button" aria-label="search" width="16px"/>
-        <T tag="input" class="☘-input" data-with-prefix title="with-prefix" type="search"/>
+        <Icon
+            class={escape('☘-input-prefix')}
+            name="interactive-button/outline/search"
+            role="button"
+            aria-label="search"
+            width="16px"
+        />
+        <T
+            tag="input"
+            class="☘-input"
+            data-with-prefix
+            title="with-prefix"
+            type="search"
+        />
     </T>
 </Grid>
 
 ```pug
 .☘-input-wrapper
-    svg.☘-input-prefix(role="img" aria-label="search" width="16px")
+    svg.☘-input-prefix(role="button" aria-label="search" width="16px")
     input.☘-input(title='with-prefix' data-with-prefix type="search")
 .☘-input-wrapper(data-primary)
-    svg.☘-input-prefix(role="img" aria-label="search" width="16px")
+    svg.☘-input-prefix(role="button" aria-label="search" width="16px")
     input.☘-input(title='with-prefix' data-with-prefix type="search")
 ```
 
@@ -134,11 +187,23 @@ each primary in ['', 'success', 'danger', 'warning']
 <Grid inline>
     <T class="☘-input-wrapper">
         <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
-        <Icon class={escape('☘-input-suffix')} name="tips/outline/close" role="button" aria-label="close" width="16px"/>
+        <Icon
+            class={escape('☘-input-suffix')}
+            name="tips/outline/close"
+            role="button"
+            aria-label="close"
+            width="16px"
+        />
     </T>
     <T class="☘-input-wrapper" data-primary>
         <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
-        <Icon class={escape('☘-input-suffix')} name="tips/outline/close" role="button" aria-label="close" width="16px"/>
+        <Icon
+            class={escape('☘-input-suffix')}
+            name="tips/outline/close"
+            role="button"
+            aria-label="close"
+            width="16px"
+        />
     </T>
 </Grid>
 
@@ -153,7 +218,7 @@ each primary in ['', 'success', 'danger', 'warning']
 
 ***
 
-上述属性和 `button` 一起使用可以增强语义，同时可以被键盘控制焦点。
+上述属性和 `<button>` 一起使用可以增强语义，同时可以被键盘控制焦点。
 
 当然 也可以是：
 - `input[type=button]`
@@ -163,18 +228,31 @@ each primary in ['', 'success', 'danger', 'warning']
 <T class="☘-input-wrapper" data-primary="danger" style={{
     'border-style': 'solid'
 }}>
-    <T tag="input" class="☘-input" title="in-suffix" data-with-suffix disabled/>
-    <T tag="button" class="☘-input-suffix" type="submit" title="search" disabled>
-        <Icon name="interactive-button/outline/search" role="img" aria-label="search" width="18px"/>
+    <T
+        tag="input"
+        class="☘-input"
+        title="in-suffix"
+        data-with-suffix
+        disabled
+    />
+    <T
+        tag="button"
+        class="☘-input-suffix"
+        type="submit"
+        title="search"
+        disabled
+    >
+        <Icon name="interactive-button/outline/search" width="18px" />
     </T>
 </T>
+
 ```pug
 .☘-input-wrapper(data-primary="danger" style={
     'border-style': 'solid'
 })
     input.☘-input(title='out-suffix' disabled)
     button.☘-input-suffix(type="submit" title="search" disabled)
-        svg(role="img" aria-label="search" width="18px")
+        svg(astro-icon="interactive-button/outline/search" width="18px")
 ```
 
 ***
@@ -186,9 +264,10 @@ each primary in ['', 'success', 'danger', 'warning']
         '--box-shadow-drop-bottom': 'none'
     }} />
     <button type="submit" title="search">
-        <Icon name="interactive-button/outline/search" role="img" aria-label="search" width="18px"/>
+        <Icon name="interactive-button/outline/search" width="18px"/>
     </button>
 </T>
+
 ```pug
 .☘-input-wrapper(data-primary style={
     'border-style': 'solid'
@@ -197,5 +276,5 @@ each primary in ['', 'success', 'danger', 'warning']
         '--box-shadow-drop-bottom': 'none'
     })
     button(type="submit" title="search")
-        svg(role="img" aria-label="search" width="18px")
+        svg(astro-icon="interactive-button/outline/search" width="18px")
 ```

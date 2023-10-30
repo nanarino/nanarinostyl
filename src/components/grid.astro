@@ -1,14 +1,21 @@
 ---
+import attrs from "src/scripts/server/attrs";
+
 interface Props {
     inline?: boolean;
     gap?: string;
+    dataset?: Record<string, any>;
 }
+const props = Astro.props;
 ---
 
-<div style={{
-    display: `${Astro.props.inline ? 'inline-' : ''}grid`,
-    gap: Astro.props.gap || '1em'
-}}>
+<div
+    style={{
+        display: `${props.inline ? "inline-" : ""}grid`,
+        gap: props.gap || "1em",
+    }}
+    {...attrs(props.dataset || {})}
+>
     <slot />
 </div>
 

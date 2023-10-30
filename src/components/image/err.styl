@@ -2,13 +2,13 @@
 
 .{prefix}-image
     
-    svg[aria-label='eye']
+    svg[role=button]
         cursor pointer
     
-    svg[aria-label='eye-invisible']
+    svg[aria-disabled]
         cursor not-allowed
     
-    &[data-error] svg[aria-label='eye']
-    &:not([data-error]) svg[aria-label='eye-invisible']
+    &[data-error] svg[aria-label='Open the image in a new tab']
+    &:not([data-error]) svg[aria-label='The image failed to load']
         display none
 

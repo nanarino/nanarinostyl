@@ -8,13 +8,29 @@ const props = Astro.props;
 ---
 
 <span class={`${prefix}-image`} style="display: inline-flex">
-    <img {...props} ondragstart="return false" onerror={`
-        this.src='${unknow}';
-        this.parentElement.dataset.error=true;
-        this.onerror='return false'
-    `}/>
+    <img
+        {...props}
+        ondragstart="return false"
+        onerror={`
+            this.src='${unknow}';
+            this.parentElement.dataset.error=true;
+            this.onerror='return false'
+        `}
+    />
     <span class={`${prefix}-image-mask`}>
-        <Icon width="24px" name="interactive-button/outline/eye" role="button" aria-label="eye" onclick={`window.open('${props?.src}')`}/>
-        <Icon width="24px" name="interactive-button/outline/eye-invisible" role="note" aria-label="eye-invisible" />
+        <Icon
+            width="24px"
+            name="interactive-button/outline/eye"
+            role="button"
+            aria-label="Open the image in a new tab"
+            onclick={`window.open('${props?.src}')`}
+        />
+        <Icon
+            width="24px"
+            name="interactive-button/outline/eye-invisible"
+            role="note"
+            aria-label="The image failed to load"
+            aria-disabled
+        />
     </span>
 </span>
