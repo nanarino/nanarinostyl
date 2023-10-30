@@ -1,6 +1,6 @@
 ---
 import prefix from "src/scripts/prefix";
-import attrs from "src/scripts/server/attrs";
+import dataset from "src/scripts/server/dataset";
 const props = Astro.props;
 interface Props {
     id: string;
@@ -15,21 +15,21 @@ interface Props {
 ---
 
 <span
-    class={`${prefix}-switch ${props.class || ''}`}
+    class={`${prefix}-switch ${props.class || ""}`}
     style={props.style}
-    {...attrs(props.dataset || {})}
+    {...dataset(props.dataset || {})}
 >
     <input
         type="checkbox"
         class={`${prefix}-input`}
         id={props.id}
-        name={props.name||props.id}
+        name={props.name || props.id}
         checked={props.checked}
         disabled={props.disabled}
     />
-    <label 
+    <label
         class={`${prefix}-switch-mover`}
         for={props.id}
-        title={props.title||props.id}
-    ><slot /></label>
+        title={props.title || props.id}><slot /></label
+    >
 </span>

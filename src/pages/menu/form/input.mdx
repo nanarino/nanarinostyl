@@ -85,15 +85,26 @@ input.☘-input.☘-font-mono(
 设置 `[data-primary]` 可以覆盖全局css变量 `--outline-color-focus`
 
 <Grid inline>
-    <T tag="input" class="☘-input" title="primary" placeholder='primary' data-primary />
-    <T tag="input" class="☘-input" title="success" placeholder='success' data-primary="success" />
-    <T tag="input" class="☘-input" title="danger" placeholder='danger' data-primary="danger" />
-    <T tag="input" class="☘-input" title="warning" placeholder='warning' data-primary="warning" />
+{
+    ['primary', 'success', 'danger', 'warning'].map(primary => 
+        <T
+            tag='input'
+            class="☘-input"
+            title={primary}
+            placeholder={primary}
+            data-primary={primary}
+        />
+    )
+}
 </Grid>
 
 ```pug
-each primary in ['', 'success', 'danger', 'warning']
-    input.☘-input(title=primary placeholder=primary data-primary=primary)
+each primary in ['primary', 'success', 'danger', 'warning']
+    input.☘-input(
+        title=primary
+        placeholder=primary
+        data-primary=primary
+    )
 ```
 
 ## `.sm` & `.lg`

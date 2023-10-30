@@ -1,21 +1,26 @@
 ---
 import escape from "src/scripts/server/escape";
+import dataset from "src/scripts/server/dataset";
+
 interface Props {
     tag?: string;
+    dataset?: Record<string, any>;
+    [key: string]: any;
 }
+
 const props = Astro.props;
 let { tag: Tag } = props;
 Tag ||= "div";
-const attrs: Record<string, any> = {}
-for(const [key, value] of Object.entries(props)){
-    if(key !== 'tag'){
-        if(typeof(value)==='string'){
-            Reflect.set(attrs, key, escape(value))
-        }else{
-            Reflect.set(attrs, key, value)
+const attrs: Record<string, any> = {};
+for (const [key, value] of Object.entries(props)) {
+    if (key !== "tag" && key !== "dataset") {
+        if (typeof value === "string") {
+            Reflect.set(attrs, key, escape(value));
+        } else {
+            Reflect.set(attrs, key, value);
         }
     }
 }
 ---
 
-<Tag {...attrs}><slot /></Tag>
+<Tag {...attrs} {...dataset(props.dataset || {})}><slot /></Tag>

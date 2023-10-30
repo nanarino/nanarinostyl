@@ -73,12 +73,17 @@ h2.☘-title
 
 ## `data-has-prefix`
 
-<T class="☘-title" tag='h6' data-has-prefix data-primary="danger">石头记</T>
+<T class="☘-title" tag='h6' dataset={{
+    'has-prefix': true,
+    'primary': "danger"
+}}>石头记</T>
 <T
     class="☘-title"
-    data-size='3'
     sub='戚序本'
-    data-has-prefix
+    dataset={{
+        'has-prefix': true,
+        "size": 3
+    }}
 > 红楼梦 <T tag="span" class="☘-title-subtitle">戚序本</T> </T>
 
 ```pug

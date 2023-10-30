@@ -1,5 +1,5 @@
 ---
-import attrs from "src/scripts/server/attrs";
+import dataset from "src/scripts/server/dataset";
 
 interface Props {
     inline?: boolean;
@@ -14,7 +14,7 @@ const props = Astro.props;
         display: `${props.inline ? "inline-" : ""}grid`,
         gap: props.gap || "1em",
     }}
-    {...attrs(props.dataset || {})}
+    {...dataset(props.dataset || {})}
 >
     <slot />
 </div>

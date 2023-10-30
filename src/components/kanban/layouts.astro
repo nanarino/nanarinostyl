@@ -1,83 +1,63 @@
 ---
 import prefix from "src/scripts/prefix";
+import Section from "./layout-section.astro";
 
 const layout = `${prefix}-layout`;
 const header = `${prefix}-layout-header`;
-const sider = `${prefix}-layout-sider`;
+const aside = `${prefix}-layout-aside`;
 const content = `${prefix}-layout-content`;
 const footer = `${prefix}-layout-footer`;
 ---
 
 <div id="layouts-kanban">
-    
     <section class={layout}>
-        <header class={header}>
-            <p class={`${prefix}-paragraph`} data-ellipsis="1" title={`header.${header}`}>header</p>
-        </header>
-        <main class={content}>
-            <p class={`${prefix}-paragraph`} data-ellipsis="1" title={`main.${content}`}>main</p>
-        </main>
-        <footer class={footer}>
-            <p class={`${prefix}-paragraph`} data-ellipsis="1" title={`footer.${footer}`}>footer</p>
-        </footer>
+        <Section tag="header" className={header} />
+        <Section tag="main" className={content} />
+        <Section tag="footer" className={footer} />
     </section>
 
-
     <section class={layout}>
-        <header class={header}>
-            <p class={`${prefix}-paragraph`} data-ellipsis="1" title={`header.${header}`}>header</p>
-        </header>
-        <section class={layout} data-has-sider>
-            <aside class={sider}>
-                <p class={`${prefix}-paragraph`} data-ellipsis="1" title={`section.${layout}[data-has-sider]>aside.${sider}`}>aside</p>
-            </aside>
-            <main class={content}>
-                <p class={`${prefix}-paragraph`} data-ellipsis="1" title={`main.${content}`}>main</p>
-            </main>
+        <Section tag="header" className={header} />
+        <section class={layout} data-has-aside>
+            <Section
+                tag="aside"
+                className={aside}
+                title={`section.${layout}[data-has-aside]>aside.${aside}`}
+            />
+            <Section tag="main" className={content} />
         </section>
-        <footer class={footer}>
-            <p class={`${prefix}-paragraph`} data-ellipsis="1" title={`footer.${footer}`}>footer</p>
-        </footer>
+        <Section tag="footer" className={footer} />
     </section>
-
 
     <section class={layout}>
-        <header class={header}>
-            <p class={`${prefix}-paragraph`} data-ellipsis="1" title={`header.${header}`}>header</p>
-        </header>
-        <section class={layout} data-has-sider>
-            <main class={content}>
-                <p class={`${prefix}-paragraph`} data-ellipsis="1" title={`main.${content}`}>main</p>
-            </main>
-            <aside class={sider}>
-                <p class={`${prefix}-paragraph`} data-ellipsis="1" title={`section.${layout}[data-has-sider]>aside.${sider}`}>aside</p>
-            </aside>
+        <Section tag="header" className={header} />
+        <section class={layout} data-has-aside>
+            <Section tag="main" className={content} />
+            <Section
+                tag="aside"
+                className={aside}
+                title={`section.${layout}[data-has-aside]>aside.${aside}`}
+            />
         </section>
-        <footer class={footer}>
-            <p class={`${prefix}-paragraph`} data-ellipsis="1" title={`footer.${footer}`}>footer</p>
-        </footer>
+        <Section tag="footer" className={footer} />
     </section>
 
-
-    <section class={layout} data-has-sider>
-        <aside class={sider}>
-            <p class={`${prefix}-paragraph`} data-ellipsis="5" title={`section.${layout}[data-has-sider]>aside.${sider}`}>aside</p>
-        </aside>
+    <section class={layout} data-has-aside>
+        <Section
+            tag="aside"
+            className={aside}
+            title={`section.${layout}[data-has-aside]>aside.${aside}`}
+            dataset={{ ellipsis: "5" }}
+        />
         <section class={layout}>
-            <header class={header}>
-                <p class={`${prefix}-paragraph`} data-ellipsis="1" title={`header.${header}`}>header</p>
-            </header>
-            <main class={content}>
-                <p class={`${prefix}-paragraph`} data-ellipsis="1" title={`main.${content}`}>main</p>
-            </main>
-            <footer class={footer}>
-                <p class={`${prefix}-paragraph`} data-ellipsis="1" title={`footer.${footer}`}>footer</p>
-            </footer>
+            <Section tag="header" className={header} />
+            <Section tag="main" className={content} />
+            <Section tag="footer" className={footer} />
         </section>
     </section>
 </div>
 
-<style lang="stylus">
+<style lang="stylus" is:global>
 @import './../../lib/variable/functions.styl'
 
 #layouts-kanban

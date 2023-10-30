@@ -5,19 +5,27 @@ title: 徽标
 
 import T from "src/components/T.astro";
 import { Icon } from "astro-icon";
+import Grid from "src/components/grid.astro";
 export * from "src/components/markdown/map.mdx";
 
 # badge
 
 ## `data-primary`
 
-<T tag="span" class="☘-badge">primary</T>
-<T tag="span" class="☘-badge" data-primary="success">success</T>
-<T tag="span" class="☘-badge" data-primary="danger">danger</T>
-<T tag="span" class="☘-badge" data-primary="warning">warning</T>
+<Grid inline>
+{
+    ['primary', 'success', 'danger', 'warning'].map(primary => 
+        <T
+            tag='span'
+            class="☘-badge"
+            data-primary={primary}
+        >{primary}</T>
+    )
+}
+</Grid>
 
 ```pug
-each primary in ['', 'success', 'danger', 'warning']
+each primary in ['primary', 'success', 'danger', 'warning']
     span.☘-badge(data-primary=primary)= primary
 ```
 
