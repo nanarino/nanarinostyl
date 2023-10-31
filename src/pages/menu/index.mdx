@@ -20,20 +20,6 @@ export * from 'src/components/markdown/map.mdx';
 使用本文档右上角可以快捷切换主题
 
 
-## message
-
-往 `body>.☘-message-queue` 里 append 以下元素即可显示消息
-
-```pug
-.☘-message(data-primary)
-    .☘-paragraph 新消息
-```
-
-对于本文档页面的消息使用的是：全局监听 `☘-message` 事件，添加元素后再定期移除。
-
-<EmitMessage />
-
-
 ## color
 
 全局变量
@@ -73,3 +59,16 @@ export * from 'src/components/markdown/map.mdx';
     )
 }
 </Grid>
+
+## message
+
+往 `body>.☘-message-queue` 里 append 以下元素即可显示消息
+
+```pug
+.☘-message(data-primary)
+    .☘-paragraph 发射成功
+```
+
+对于本文档页面的消息使用的是：全局监听 `☘-message` 事件，添加元素后再定期移除。
+
+<EmitMessage />
