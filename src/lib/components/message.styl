@@ -16,13 +16,18 @@
 
     color _rgb(var(--gray-10))
 
-    .{prefix}-message
-        border-radius var(--border-radius-md)
-        padding 8px
-        background-color _rgb(var(--white))
-        box-shadow var(--box-shadow-drop-bottom)
-        margin 4px
+.{prefix}-message
+    border-radius var(--border-radius-md)
+    padding 8px
+    background-color _rgb(var(--white))
+    box-shadow var(--box-shadow-drop-bottom)
+    margin 4px
 
-        .{prefix}-paragraph
-            max-width 60vw
-            margin 0
+    .{prefix}-paragraph
+        max-width 60vw
+        margin 0
+    
+    &:where([data-primary])
+        color _rgb(var(--white))
+        background-color _rgb(var(--primary-5))
+        --box-shadow-color  var(--primary-4)

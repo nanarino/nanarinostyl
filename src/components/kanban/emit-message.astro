@@ -1,0 +1,39 @@
+---
+import prefix from "src/scripts/prefix";
+import Grid from "../grid.astro";
+---
+
+<div id="message-kanban">
+    <Grid>
+        {
+            ["primary", "success", "danger", "warning"].map((primary) => (
+                <button
+                    class={`${prefix}-button`}
+                    title="emit message"
+                    data-primary={primary}
+                >
+                    {primary}
+                </button>
+            ))
+        }
+
+        <button class={`${prefix}-button`} title="emit message"> normal </button>
+    </Grid>
+</div>
+
+<script>
+    const launcher = document.getElementById("message-kanban");
+    launcher.onclick = function (e) {
+        const button = e.target as HTMLButtonElement;
+        if (button.tagName === "BUTTON") {
+            window.dispatchEvent(
+                new CustomEvent(`${window.name}-message`, {
+                    detail: {
+                        content: "发射成功",
+                        primary: button.dataset.primary,
+                    },
+                })
+            );
+        }
+    };
+</script>

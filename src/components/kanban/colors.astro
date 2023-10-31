@@ -59,7 +59,10 @@ const colours = [
             window.copy(`rgb(var(${button.title}))`);
             window.dispatchEvent(
                 new CustomEvent(`${window.name}-message`, {
-                    detail: "复制成功",
+                    detail: {
+                        content: "复制成功",
+                        primary: "success",
+                    },
                 })
             );
         }
