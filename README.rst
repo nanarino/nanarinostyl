@@ -23,8 +23,11 @@
     
     # 安装
     pnpm i nanarinostyl
-    # 再在js中 import 'nanarinostyl'
-    #   抑或是 import 'nanarinostyl/src/lib/index.styl'
+
+    # 然后在jsx中 `import 'nanarinostyl';`
+    # 或是在css中 `@import url('nanarinostyl');`
+
+    # 也可以引入stylus源码 `import 'nanarinostyl/src/lib/index.styl';`
 
 
 
