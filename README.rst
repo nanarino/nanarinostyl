@@ -4,7 +4,15 @@
 
 .. highlight:: bash
 
+.. image:: ./src/assets/favicon.svg
+    :width: 64 px
+    :alt: Nanarinostyl Logo
+    :target: https://nanarino.github.io/nanarinostyl/
 
+.. image:: ./src/assets/stylus.svg
+    :width: 64 px
+    :alt: Stylus Logo
+    :target: https://stylus-lang.com/
 
 使用 ``styl`` 来编写
 
@@ -20,7 +28,7 @@
 利用
 ======
 ::
-    
+
     # 安装
     pnpm i nanarinostyl
 
@@ -35,7 +43,7 @@
 ======
 ::
 
-    # 安装依赖
+    # 克隆仓库然后安装依赖
     pnpm i
     # 运行开发服务器
     pnpm dev

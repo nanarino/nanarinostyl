@@ -3,14 +3,13 @@
 
 .{prefix}-menu
     /:root
-        --padding-justify-menu-item 0.5em
-        --padding-align-menu-item 1em
+        --padding-vertical-menu-item 0.5em
+        --padding-horizonal-menu-item 1em
 
     margin 0 1em
     display flex
     flex-direction column
     gap 0.5em
-    --padding-menu-item var(--padding-justify-menu-item) var(--padding-align-menu-item)
 
     ul&
         padding 0
@@ -31,7 +30,7 @@
                     align-items center
                     cursor alias
                     line-height var(--line-height-body)
-                    padding var(--padding-menu-item)
+                    padding var(--padding-vertical-menu-item) var(--padding-horizonal-menu-item)
                     &-arrow
                         position relative
                         display inline-block
@@ -62,8 +61,8 @@
 
             &-item
                 position relative
-                height calc(var(--line-height-body) + 2 * var(--padding-justify-menu-item))
-                text-indent var(--padding-align-menu-item)
+                height calc(var(--line-height-body) + 2 * var(--padding-vertical-menu-item))
+                text-indent var(--padding-horizonal-menu-item)
                 display flex
                 align-items center
                 background-color _rgb(var(--white))

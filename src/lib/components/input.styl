@@ -56,8 +56,8 @@ textarea.{prefix}-textarea
 
 input.{prefix}-input
     /:root
-        --padding-justify-input 4px
-        --padding-align-input 12px
+        --padding-vertical-input 4px
+        --padding-horizonal-input 12px
     
     &:not([type])
     &[type=text]
@@ -74,25 +74,24 @@ input.{prefix}-input
     &[type=datetime-local]
     &[type=datetime]
         flex 1
-        --padding-input var(--padding-justify-input) var(--padding-align-input)
-        padding var(--padding-input)
+        padding var(--padding-vertical-input) var(--padding-horizonal-input)
 
         &.sm
-            --padding-justify-input 0
-            --padding-align-input 12px
+            --padding-vertical-input 0
+            --padding-horizonal-input 12px
 
         &.lg
-            --padding-justify-input 7px
-            --padding-align-input 12px
+            --padding-vertical-input 7px
+            --padding-horizonal-input 12px
             --font-size-body var(--font-size-h5)
             --line-height-body var(--line-height-h5)
 
         input_stat()
 
         &[data-with-prefix]
-            padding-left calc(var(--padding-align-input) + var(--font-size-body))
+            padding-left calc(var(--padding-horizonal-input) + var(--font-size-body))
         &[data-with-suffix]
-            padding-right calc(var(--padding-align-input) + var(--font-size-body))
+            padding-right calc(var(--padding-horizonal-input) + var(--font-size-body))
 
 
 .{prefix}-input-wrapper
@@ -153,7 +152,7 @@ input.{prefix}-input
         ~/[data-primary] ^[1..-1]
             color _rgb(var(--primary-6))
     .{prefix}-input-prefix
-        left calc(var(--padding-align-input) / 2)
+        left calc(var(--padding-horizonal-input) / 2)
     .{prefix}-input-suffix
-        right calc(var(--padding-align-input) / 2)
+        right calc(var(--padding-horizonal-input) / 2)
         
