@@ -18,23 +18,19 @@
     // --color-switch-mover var(--gray-1)
     // --box-shadow-color-switch var(--color-switch-checked)
     // --box-shadow-color-switch-checked var(--color-switch)
-    box-shadow-color-switch = _rgb(
-        var(
-            --box-shadow-color-switch, var(
-                --color-switch-checked, var(
-                    --primary-6
-                )
+    box-shadow-color-switch = var(
+        --box-shadow-color-switch, var(
+            --color-switch-checked, var(
+                --primary-6
             )
-        ) \/ 25%
+        )
     )
-    box-shadow-color-switch-checked = _rgb(
-        var(
-            --box-shadow-color-switch-checked, var(
-                --color-switch, var(
-                    --gray-4
-                )
+    box-shadow-color-switch-checked = var(
+        --box-shadow-color-switch-checked, var(
+            --color-switch, var(
+                --gray-4
             )
-        ) \/ 25%
+        )
     )
     // @supports _selector(':has(*)')
     //     &:where(:has(input.{prefix}-input[type=checkbox]:checked))
@@ -100,20 +96,20 @@
                     0 \
                     var(--padding-switch, 2px) \
                     var(--padding-switch, 2px) \
-                    box-shadow-color-switch
+                    _rgb(box-shadow-color-switch \/ 25%)
                 &:empty::before, &>*
                     filter drop-shadow(
                         0 \
                         0 \
                         var(--padding-switch, 2px) \
-                        box-shadow-color-switch \
+                         _rgb(box-shadow-color-switch) \
                     )
                     box-shadow \
                         0 \
                         0 \
                         box-shadow-width-switch \
                         box-shadow-width-switch \
-                        box-shadow-color-switch
+                         _rgb(box-shadow-color-switch \/ 25%)
             
 
 
@@ -124,17 +120,17 @@
                     0 \
                     var(--padding-switch, 2px) \
                     var(--padding-switch, 2px) \
-                    box-shadow-color-switch-checked
+                    _rgb(box-shadow-color-switch-checked \/ 25%)
                 &:empty::before, &>*
                     filter drop-shadow(
                         0 \
                         0 \
                         var(--padding-switch, 2px) \
-                        box-shadow-color-switch-checked \
+                        _rgb(box-shadow-color-switch-checked) \
                     )
                     box-shadow \
                         0 \
                         0 \
                         box-shadow-width-switch \
                         box-shadow-width-switch \
-                        box-shadow-color-switch-checked
+                        _rgb(box-shadow-color-switch-checked \/ 25%)
