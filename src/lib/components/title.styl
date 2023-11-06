@@ -25,6 +25,8 @@ set_title_styl(size=6)
 
 set_has_prefix()
     &[data-has-prefix]
+        --color-title-prefix var(--primary-6)
+
         position relative
         padding-left calc(var(--font-offset-parent) * 3)
 
@@ -36,7 +38,7 @@ set_has_prefix()
             left 0
             top var(--font-offset-parent)
             bottom var(--font-offset-parent)
-            background-color _rgb(var(--primary-6))
+            background-color _rgb(var(--color-title-prefix))
 
 
 .{prefix}-title
