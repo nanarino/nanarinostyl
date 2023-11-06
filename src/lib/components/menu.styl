@@ -6,6 +6,8 @@
         --padding-vertical-menu-item 0.5em
         --padding-horizonal-menu-item 1em
 
+    --color-menu var(--primary-6)
+
     margin 0 1em
     display flex
     flex-direction column
@@ -81,11 +83,11 @@
 
                 &[data-selected]
                     cursor auto
-                    background-color _rgb(var(--primary-6))
+                    background-color _rgb(var(--color-menu))
                     color _rgb(var(--white))
                 
                 &:not(^[0]-item[data-selected]):hover
-                    color _rgb(var(--primary-6))
+                    color _rgb(var(--color-menu))
                 
                 ../-submenu[data-folded] ^[0]
                     /**
