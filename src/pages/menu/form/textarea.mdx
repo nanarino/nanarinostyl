@@ -48,6 +48,8 @@ textarea.☘-textarea.☘-font-mono(
 
 设置 `[data-primary]` 可以覆盖全局css变量 `--outline-color-focus`
 
+直接使用局部变量 `--color-textarea` 也可以设置主题颜色RGB值
+
 <Grid inline>
 {
     ['primary', 'success', 'danger', 'warning'].map(primary => 
@@ -60,6 +62,13 @@ textarea.☘-textarea.☘-font-mono(
         />
     )
 }
+<T
+    tag="textarea"
+    class="☘-textarea"
+    title="custom"
+    placeholder="custom color: gold"
+    style="--color-textarea: var(--gold-6)"
+/>
 </Grid>
 
 ```pug
@@ -69,6 +78,12 @@ each primary in ['primary', 'success', 'danger', 'warning']
         placeholder=primary
         data-primary=primary
     )
+textarea.☘-textarea(
+    title="custom"
+    placeholder="primary"
+    data-primary="custom color: gold"
+    style="--color-textarea: var(--gold-6)"
+)
 ```
 
 ## `.sm` & `.lg`

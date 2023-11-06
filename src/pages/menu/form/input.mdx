@@ -84,6 +84,8 @@ input.☘-input.☘-font-mono(
 
 设置 `[data-primary]` 可以覆盖全局css变量 `--outline-color-focus`
 
+局部变量 `--color-input` 可以直接设置主题颜色RGB值
+
 <Grid inline>
 {
     ['primary', 'success', 'danger', 'warning'].map(primary => 
@@ -96,6 +98,13 @@ input.☘-input.☘-font-mono(
         />
     )
 }
+<T
+    tag="input"
+    class="☘-input"
+    title="custom"
+    placeholder="custom color: gold"
+    style="--color-input: var(--gold-6)"
+/>
 </Grid>
 
 ```pug
@@ -105,6 +114,11 @@ each primary in ['primary', 'success', 'danger', 'warning']
         placeholder=primary
         data-primary=primary
     )
+input.☘-input(
+    title="custom"
+    placeholder="custom color: gold"
+    style="--color-input: var(--gold-6)"
+)
 ```
 
 ## `.sm` & `.lg`
@@ -130,20 +144,26 @@ each primary in ['primary', 'success', 'danger', 'warning']
 
 该容器启用 `[data-primary]` 也会覆盖全局css变量 `--outline-color-focus` 和继承某些样式
 
+直接使用局部变量 `--color-input-wrapper` 也可以设置主题颜色RGB值
+
 <Grid inline>
     <T class="☘-input-wrapper">
         <T tag="input" class="☘-input" title="helloworld" value='helloworld'/>
     </T>
-    <T class="☘-input-wrapper" data-primary>
-        <T tag="input" class="☘-input" title="helloworld" value='helloworld'/>
+    <T class="☘-input-wrapper">
+        <T tag="input" class="☘-input" title="helloworld" value='helloworld'
+            style="--color-input-wrapper: var(--yellow-5)"
+        />
     </T>
 </Grid>
 
 ```pug
 .☘-input-wrapper
     input.☘-input(title='helloworld' value='helloworld')
-.☘-input-wrapper(data-primary)
-    input.☘-input(title='helloworld' value='helloworld')
+.☘-input-wrapper
+    input.☘-input(title='helloworld' value='helloworld' style={
+        '--color-input': 'var(--yellow-5)'
+    })
 ```
 
 ### `data-with-prefix`
@@ -206,7 +226,9 @@ each primary in ['primary', 'success', 'danger', 'warning']
             width="16px"
         />
     </T>
-    <T class="☘-input-wrapper" data-primary>
+    <T class="☘-input-wrapper" style="
+        --color-input-wrapper: var(--blue-6)
+    ">
         <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
         <Icon
             class={escape('☘-input-suffix')}
@@ -222,7 +244,9 @@ each primary in ['primary', 'success', 'danger', 'warning']
 .☘-input-wrapper
     input.☘-input(title='with-suffix' data-with-suffix)
     svg.☘-input-suffix(role="button" aria-label="close" width="16px")
-.☘-input-wrapper(data-primary)
+.☘-input-wrapper(style={
+    '--color-input-wrapper': 'var(--blue-6)'
+})
     input.☘-input(title='with-suffix' data-with-suffix)
     svg.☘-input-suffix(role="button" aria-label="close" width="16px")
 ```

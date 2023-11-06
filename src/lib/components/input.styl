@@ -2,8 +2,7 @@
 @import './../variable/functions.styl'
 
 input_stat()
-    &[data-primary]
-        --outline-color-focus var(--primary-6)
+
     box-sizing border-box
     border none
     outline 2px solid transparent
@@ -39,6 +38,9 @@ input_stat()
 textarea.{prefix}-textarea
     /:root
         --padding-textarea 5px 12px
+    
+    --color-textarea var(--black)
+    --outline-color-focus var(--color-textarea, var(--black))
 
     display inline-flex
     flex-direction column
@@ -53,12 +55,18 @@ textarea.{prefix}-textarea
     
     input_stat()
 
+    &[data-primary]
+        --color-textarea var(--primary-6)
+
 
 input.{prefix}-input
     /:root
         --padding-vertical-input 4px
         --padding-horizonal-input 12px
     
+    --color-input var(--black)
+    --outline-color-focus var(--color-input-wrapper, var(--color-input))
+
     &:not([type])
     &[type=text]
     &[type=search]
@@ -88,6 +96,9 @@ input.{prefix}-input
 
         input_stat()
 
+        &[data-primary]
+            --color-input var(--primary-6)
+
         &[data-with-prefix]
             padding-left calc(var(--padding-horizonal-input) + var(--font-size-body))
         &[data-with-suffix]
@@ -95,10 +106,11 @@ input.{prefix}-input
 
 
 .{prefix}-input-wrapper
+
     display inline-flex
     align-items center
     position relative
-    border 2px none _rgb(var(--gray-1))
+    border 2px none _rgb(var(--color-input-wrapper, var(--gray-1)))
     border-radius var(--border-radius-md)
     background-color _rgb(var(--gray-1))
 
@@ -111,31 +123,31 @@ input.{prefix}-input
         'input:where([type=submit])'
 
     &[data-primary]
-        --outline-color-focus var(--primary-6)
-        border-color _rgb(var(--primary-6))
+        --color-input-wrapper var(--primary-6)
         color _rgb(var(--white))
         for tag in buttons
             @supports _selector(':has(*)')
                 &:has({tag}:not(.{prefix}-input-prefix))
                 &:has({tag}:not(.{prefix}-input-suffix))
-                    background-color _rgb(var(--primary-6))
-            {tag}:not(.{prefix}-input-prefix):not(.{prefix}-input-suffix)
-                background-color _rgb(var(--primary-6))
+                    background _rgb(var(--color-input-wrapper))
     &>*
         display inline-flex
         align-items center
     
     for tag in buttons
-        {tag}
+        {tag}:not(.{prefix}-input-prefix):not(.{prefix}-input-suffix)
             cursor pointer
-            border none
-            background none
-            padding 6px
             border-radius var(--border-radius-md)
             &:focus-visible
-                outline-color _rgb(var(--outline-color-focus))
+                outline-color _rgb(var(--color-input-wrapper, var(--black)))
             ~/[data-primary] ^[1..-1]
                 color _rgb(var(--white))
+            /*
+             * 这是祛除button的代理样式
+             */
+            padding 6px
+            border none
+            background none
             &[disabled]
                 cursor not-allowed 
 
@@ -147,10 +159,16 @@ input.{prefix}-input
         bottom 0
         margin auto 0
         z-index 1
-        color _rgb(var(--black))
-        padding 0 // 这是祛除button的代理样式
-        ~/[data-primary] ^[1..-1]
-            color _rgb(var(--primary-6))
+        color _rgb(var(--color-input-wrapper, var(--black)))
+        /*
+         * 这是祛除button的代理样式
+         */
+        padding 0
+        border none
+        background none
+        &[disabled]
+            cursor not-allowed 
+
     .{prefix}-input-prefix
         left calc(var(--padding-horizonal-input) / 2)
     .{prefix}-input-suffix
