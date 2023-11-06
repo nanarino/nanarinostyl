@@ -3,26 +3,28 @@ import prefix from "src/scripts/prefix";
 import Grid from "../grid.astro";
 ---
 
-<div id="message-kanban">
+<div id="emit-message-kanban">
     <Grid>
         {
-            ["primary", "success", "danger", "warning"].map((primary) => (
-                <button
-                    class={`${prefix}-button`}
-                    title="emit message"
-                    data-primary={primary}
-                >
-                    {primary}
-                </button>
-            ))
+            ["primary", "success", "danger", "warning", "random"].map(
+                (primary) => (
+                    <button
+                        class={`${prefix}-button`}
+                        title="emit message"
+                        data-primary={primary}
+                    >
+                        {primary}
+                    </button>
+                )
+            )
         }
 
-        <button class={`${prefix}-button`} title="emit message"> normal </button>
+        <button class={`${prefix}-button`} title="emit message"> normal</button>
     </Grid>
 </div>
 
 <script>
-    const launcher = document.getElementById("message-kanban");
+    const launcher = document.getElementById("emit-message-kanban");
     launcher.onclick = function (e) {
         const button = e.target as HTMLButtonElement;
         if (button.tagName === "BUTTON") {
@@ -37,3 +39,11 @@ import Grid from "../grid.astro";
         }
     };
 </script>
+
+<style lang="stylus" is:global>
+#emit-message-kanban
+    button[data-primary=random]
+        --background-color-button var(--blue-5)
+        --background-color-button-focus var(--blue-6)
+        --background-color-button-disabled var(--blue-2)
+</style>

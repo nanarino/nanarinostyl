@@ -13,13 +13,13 @@
  * 在此之前使用radial-gradient(1%) 然后控制 background-size 100% -> 15000% 来实现 
  * 兼容性更好 见 https://github.com/Deep-Codes/affinity-css/blob/main/components/_button.sass
  */
-button_background(init)
-    background-color init 
+button_background_color_init(background_color)
+    background-color background_color 
     background-image radial-gradient(circle, 
         transparent 0%,
         transparent var(--percent-button-wave),
-        init var(--percent-button-wave), 
-        init 100%
+        background_color var(--percent-button-wave), 
+        background_color 100%
     )
 
 
@@ -31,6 +31,12 @@ button_background(init)
             inherits false
             initial-value: 100%
 
+    --color-button var(--white)
+    --color-button-disabled var(--white)
+    --background-color-button var(--primary-5)
+    --background-color-button-focus var(--primary-6)
+    --background-color-button-disabled var(--primary-2)
+    
     cursor pointer
     user-select none
     padding var(--padding-button)
@@ -39,17 +45,18 @@ button_background(init)
     border-radius var(--border-radius-md)
     border none
     transition --percent-button-wave .8s, box-shadow .3s
-    color _rgb(var(--white))
-    button_background _rgb(var(--primary-5))
+    color _rgb(var(--color-button))
+    button_background_color_init _rgb(var(--background-color-button))
     &:focus-visible
         outline-color _rgb(var(--outline-color-focus))
     &:not([disabled]):hover
         box-shadow var(--box-shadow-drop-bottom)
     &[disabled]
         cursor not-allowed
-        background-color _rgb(var(--primary-2))
+        color _rgb(var(--color-button-disabled))
+        background-color _rgb(var(--background-color-button-disabled))
     &:not([disabled]):focus
-        background-color _rgb(var(--primary-6))
+        background-color _rgb(var(--background-color-button-focus))
     &:not([disabled]):active
         --percent-button-wave 0%
         transition none
@@ -64,9 +71,8 @@ button_background(init)
      */
     &:where(:not([data-primary]))
         // color unset // 在Safari中是蓝色？
-        color _rgb(var(--gray-10))
-        --primary-2 var(--gray-1)
-        --primary-5 var(--gray-2)
-        --primary-6 var(--gray-3)
-        &[disabled]
-            color _rgb(var(--gray-5))
+        --color-button var(--gray-10)
+        --color-button-disabled var(--gray-5)
+        --background-color-button var(--gray-2)
+        --background-color-button-focus var(--gray-3)
+        --background-color-button-disabled var(--gray-1)

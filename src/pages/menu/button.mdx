@@ -43,7 +43,7 @@ button.☘-button.lg 更大
 
 ## `data-primary`
 
-`☘-button[data-primary]` 这个属性需要启用 启用后才能继承主题
+`☘-button[data-primary]` 这个属性需要启用 启用后才能继承主题和拥有某些局部样式
 
 <T tag="button" class="☘-button" data-primary>导出</T>
 
@@ -68,9 +68,36 @@ button.☘-button(data-primary='danger' disabled) 删除
 
 ## custom style
 
+以下3个局部变量可以自定义颜色rgb值
+
+背景色设置的饱和度高时 最好同时使用 `[data-primary]` 让文字颜色预设白色
+
+- `--color-button` 按钮文字颜色
+- `--color-button-disabled` 禁用状态按钮文字颜色
+- `--background-color-button` 按钮背景颜色
+- `--background-color-button-focus` 焦点状态按钮背景颜色
+- `--background-color-button-disabled` 禁用状态按钮背景颜色
+
+<T tag="button" class="☘-button" data-primary style="
+    --background-color-button: var(--blue-5);
+    --background-color-button-focus: var(--blue-6);
+    --background-color-button-disabled: var(--blue-2);
+">饿死了么</T>
+        
+
 使用 `<svg/>` 需要设置容器或者其自身宽或高。
 
-<T tag="button" title="关机" class="☘-button" style="width:32px;height:32px;padding:5px" data-primary="danger" onclick="window.close()">
+<T
+    tag="button"
+    title="关机"
+    class="☘-button"
+    style="
+        width: 32px;
+        height: 32px;
+        padding: 5px;
+    "
+    data-primary="danger"
+    onclick="window.close()">
     <Icon name="interactive-button/outline/poweroff"/>
 </T>
 

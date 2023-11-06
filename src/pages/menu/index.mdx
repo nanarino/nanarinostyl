@@ -42,7 +42,7 @@ export * from 'src/components/markdown/map.mdx';
 
 ## shadow
 
-- 通配变量 `--box-shadow-color` 阴影颜色RGB值，默认是 `--gray-4`
+- 通配变量 `--box-shadow-color` 阴影颜色RGB值，默认是 `--gray-4` 这里是 `--primary-4`
 
 以下也都是通配变量
 
@@ -65,7 +65,10 @@ export * from 'src/components/markdown/map.mdx';
 往 `body>.☘-message-queue` 里 append 以下元素即可显示消息
 
 ```pug
-.☘-message(data-primary)
+.☘-message(data-primary style={
+    "--background-color-message": 'var(--magenta-5)',
+    "--box-shadow-color": 'var(--magenta-4)'
+})
     .☘-paragraph 发射成功
 ```
 

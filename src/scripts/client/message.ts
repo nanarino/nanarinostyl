@@ -26,7 +26,28 @@ window.addEventListener(`${prefix}-message`, async (
         </div>
     `;
     if (primary) {
-        (msg.firstElementChild as HTMLDivElement).dataset.primary = primary;
+        const p = (msg.firstElementChild as HTMLDivElement)
+        p.dataset.primary = primary;
+        if (primary == "random") {
+            const colours = [
+                "red",
+                "orangered",
+                "orange",
+                "gold",
+                "yellow",
+                "lime",
+                "green",
+                "cyan",
+                "blue",
+                "purple",
+                "pinkpurple",
+                "magenta",
+                "gray",
+            ] as const;
+            const color = colours[Math.floor((Math.random() * colours.length))];
+            p.style.setProperty("--background-color-message", `var(--${color}-5)`);
+            p.style.setProperty("--box-shadow-color", `var(--${color}-4)`);
+        }
     }
 
     queue.appendChild(msg);

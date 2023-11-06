@@ -32,13 +32,17 @@ const colours = [
                                 <button
                                     class={`${prefix}-button copy`}
                                     style={{
-                                        "background-color": `rgb(var(--${color}-${
+                                        "--background-color-button": `var(--${color}-${
                                             i + 1
-                                        }))`,
-                                        color: `rgb(var(--${
-                                            i >= 5 ? "white" : "black"
-                                        }))`,
+                                        })`,
+                                        "--background-color-button-focus": `var(--${
+                                            i >= 5 ? "white" : "gray-10"
+                                        })`,
+                                        "--outline-color-focus": `var(--${color}-${
+                                            i + 1
+                                        })`,
                                     }}
+                                    data-primary={i >= 5}
                                     title={`--${color}-${i + 1}`}
                                 >
                                     <Icon name="edit/outline/copy" />
