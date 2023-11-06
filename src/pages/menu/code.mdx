@@ -7,7 +7,22 @@ import T from "src/components/T.astro";
 import Grid from "src/components/grid.astro";
 export * from 'src/components/markdown/map.mdx';
 
-# tag
+# code
+
+主要用来拓展markdown。不包括语法高亮。
+
+单行时 `code.☘-code`
+
+但是塞进 `pre.☘-pre`里 可以用来显示多行代码
+
+```pug
+code.☘-code.☘-font-mono
+    pre.☘-pre.☘-font-mono
+        |    print("helloworld")
+```
+
+
+## tag
 
 <T tag='span' class='☘-tag'>#户外</T> &nbsp; <T tag='span' class='☘-tag'>#助眠</T>
 
@@ -17,6 +32,9 @@ span.☘-tag #户外
 span.☘-tag #助眠
 ```
 
+相比 `code.☘-code` 除了字体更亮，样式没有区别
+
+
 ## custom style
 
 <Grid inline dataset={{ primary : "success" }}>
@@ -24,26 +42,31 @@ span.☘-tag #助眠
     <T tag='span' class='☘-tag' style="border-style:solid">#助眠</T>
 </Grid>
 
-***
-
-<T tag='span' class='☘-tag' style={{
-    'font-size': `var(--font-size-5)`,
-    'line-height': `var(--line-height-5)`,
-    '--primary-1': `var(--magenta-6)`,
-    '--primary-9': `var(--magenta-1)`,
-    'box-shadow': `var(--box-shadow-drop-right)`
-}}>𝕘𝕙𝕠𝕤𝕥</T>
-
 ```pug
 div(data-primary="success")
     span.☘-tag(style="border-style:solid") #户外
     span.☘-tag(style="border-style:solid") #助眠
-hr.☘-divider
-span.☘-tag(style={
+```
+
+***
+
+- 局部变量 `--background-color-[tag|code]` 背景颜色
+- 局部变量 `--color-[tag|code]` 字体和边框颜色
+
+<T tag='code' class='☘-code' style={{
+    'font-size': `var(--font-size-5)`,
+    'line-height': `var(--line-height-5)`,
+    '--background-color-code': `var(--magenta-6)`,
+    '--color-code': `var(--magenta-1)`,
+    'box-shadow': `var(--box-shadow-drop-right)`
+}}>𝕘𝕙𝕠𝕤𝕥</T>
+
+```pug
+code.☘-code(style={
     "font-size": "var(--font-size-5)",
     "line-height": "var(--line-height-5)",
-    "--primary-1": "var(--magenta-6)",
-    "--primary-9": "var(--magenta-1)",
+    "--background-color-code": "var(--magenta-6)",
+    "--color-code": "var(--magenta-1)",
     "box-shadow": "var(--box-shadow-drop-right)"
 }) 𝕘𝕙𝕠𝕤𝕥
 ```

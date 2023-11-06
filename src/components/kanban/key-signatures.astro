@@ -14,7 +14,7 @@ const MODES = {
 ---
 
 <T class="☘-table-wrapper">
-    <T class="☘-table">
+    <T class="☘-table" id="key-signatures-kanban">
         <T class="☘-table-header-group">
             <T class="☘-table-row">
                 <T class="☘-table-cell">𝗠𝗼𝗱𝗲</T>
@@ -39,7 +39,12 @@ const MODES = {
         </T>
         {
             offsetRange.map((offset) => (
-                <T class="☘-table-row">
+                <T
+                    class="☘-table-row"
+                    dataset={{
+                        primary: offset == 0 ? "danger" : "warning",
+                    }}
+                >
                     <T class="☘-table-cell">
                         {Math.abs(offset)}&nbsp;
                         {offset > 1 ? "sharps" : ""}
@@ -61,3 +66,9 @@ const MODES = {
         }
     </T>
 </T>
+
+<style lang="stylus" is:global>
+#key-signatures-kanban
+    code
+        --color-code var(--primary-6)
+</style>

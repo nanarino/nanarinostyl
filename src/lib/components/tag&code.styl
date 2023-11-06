@@ -2,15 +2,30 @@
 @import './../variable/functions.styl'
 
 tag()
+
     box-sizing border-box
     padding var(--font-offset-parent)
-    color _rgb(var(--primary-9))
-    background-color _rgb(var(--primary-1))
     border-radius var(--border-radius-md)
+
+
 code.{prefix}-code
+
+    --color-code var(--primary-9)
+    --background-color-code var(--primary-1)
+
+    color _rgb(var(--color-code))
+    background-color _rgb(var(--background-color-code))
     tag()
+
+
 span.{prefix}-tag
+
+    --color-tag var(--primary-6)
+    --background-color-tag var(--primary-1)
+
     display inline-block
-    border 1px none _rgb(var(--primary-9))
+    border 1px none _rgb(var(--color-tag))
+    color _rgb(var(--color-tag))
+    background-color _rgb(var(--background-color-tag))
     tag()
     
