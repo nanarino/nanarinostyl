@@ -40,6 +40,11 @@ export * from 'src/components/markdown/map.mdx';
 - <T tag='code' class='☘-code' data-primary="danger">[data-primary=danger]</T>
 - <T tag='code' class='☘-code' data-primary="warning">[data-primary=warning]</T>
 
+有些样式需要 `[data-primary]` 才能额外获得的 往往具有局部变量，如 `button` 的 `--color-button`
+
+有些样式不需要 `[data-primary]` 就具备主题色的 往往具有局部变量，如 `tag` 的 `--color-tag`
+
+
 ## shadow
 
 - 通配变量 `--box-shadow-color` 阴影颜色RGB值，默认是 `--gray-4` 这里是 `--primary-4`

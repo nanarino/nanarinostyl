@@ -156,7 +156,9 @@ style(lang='stylus').
 适用于大尺寸图片（ 128像素以上 ）的底部遮罩 `.☘-image>.☘-image-footer`
 
 <T class='☘-image' style="
-    width:300px;height:300px;border-radius:var(--border-radius-lg)
+    width:300px;
+    height:300px;
+    border-radius:var(--border-radius-lg)
 ">
     <img alt="示例" src={example} />
     <T class='☘-image-footer'>
@@ -218,3 +220,10 @@ style(lang='stylus').
                 width="24px"
             )
 ```
+
+以下全局变量可以修改部分样式
+
+- `--color-image` 字体颜色
+- `--color-image-mask` 遮罩颜色
+
+局部还定义了 `☘-link` 的颜色样式 需要一并修改

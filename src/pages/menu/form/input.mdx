@@ -144,7 +144,7 @@ input.☘-input(
 
 该容器启用 `[data-primary]` 也会覆盖全局css变量 `--outline-color-focus` 和继承某些样式
 
-直接使用局部变量 `--color-input-wrapper` 也可以设置主题颜色RGB值
+直接使用局部变量 `--color-input-wrapper` 也可以设置主题颜色RGB值，且优先级高于 `--color-input`
 
 <Grid inline>
     <T class="☘-input-wrapper">
@@ -152,7 +152,7 @@ input.☘-input(
     </T>
     <T class="☘-input-wrapper">
         <T tag="input" class="☘-input" title="helloworld" value='helloworld'
-            style="--color-input-wrapper: var(--yellow-5)"
+            style="--color-input: var(--yellow-5)"
         />
     </T>
 </Grid>

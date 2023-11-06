@@ -36,6 +36,17 @@ button_background_color_init(background_color)
     --background-color-button var(--primary-5)
     --background-color-button-focus var(--primary-6)
     --background-color-button-disabled var(--primary-2)
+
+    /**
+     * 不使用主题
+     */
+    &:where(:not([data-primary]))
+        // color unset // 在Safari中是蓝色？
+        --color-button var(--gray-10)
+        --color-button-disabled var(--gray-5)
+        --background-color-button var(--gray-2)
+        --background-color-button-focus var(--gray-3)
+        --background-color-button-disabled var(--gray-1)
     
     cursor pointer
     user-select none
@@ -65,14 +76,3 @@ button_background_color_init(background_color)
         --padding-button 1px 8px
     &.lg
         --padding-button 8px 16px
-    
-    /**
-     * 不使用主题
-     */
-    &:where(:not([data-primary]))
-        // color unset // 在Safari中是蓝色？
-        --color-button var(--gray-10)
-        --color-button-disabled var(--gray-5)
-        --background-color-button var(--gray-2)
-        --background-color-button-focus var(--gray-3)
-        --background-color-button-disabled var(--gray-1)

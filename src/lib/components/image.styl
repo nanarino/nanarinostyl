@@ -1,13 +1,15 @@
 @import './../variable/prefix.styl'
 @import './../variable/functions.styl'
 
-mask-color()
-    color _rgb(var(--white))
-    --primary-2 var(--gray-4)
-    --primary-5 var(--gray-2)
-    --primary-6 var(--white)
 
 .{prefix}-image
+
+    // --color-image var(--white)
+    // --color-image-mask var(--black)
+    --color-link var(--color-image, var(--white))
+    --color-link-hover var(--gray-2)
+    --color-link-disabled var(--gray-4)
+
     position relative
     box-sizing border-box
     background-repeat no-repeat
@@ -26,7 +28,7 @@ mask-color()
         position absolute
         z-index 2
         inset 0
-        mask-color()
+        color _rgb(var(--color-image, var(--white)))
         background-color _rgb(var(--black) \/ 0.5)
         display flex
         align-items center
@@ -42,13 +44,13 @@ mask-color()
         bottom 0
         left 0
         right 0
-        mask-color()
+        color _rgb(var(--color-image, var(--white)))
         background-image linear-gradient(
             180deg,
             transparent 0%,
             transparent 0%,
-            _rgb(var(--black)) 100%,
-            _rgb(var(--black)) 100%
+            _rgb(var(--color-image-mask, var(--black))) 100%,
+            _rgb(var(--color-image-mask, var(--black))) 100%
         )
         display flex
         align-items center

@@ -16,9 +16,9 @@
         --badge-processing-weight 1px
         --margin-badge 0.3em
         --indent-badge 1.2em
-
-    --color-badge var(--primary-6)
     
+    // --color-badge var(--primary-6)
+
     width fit-content
     white-space nowrap
     display inline-flex
@@ -36,7 +36,7 @@
         left 0
         aspect-ratio 1 / 1
         clip-path inset(var(--margin-badge) round 50%)
-        background-color _rgb(var(--color-badge))
+        background-color _rgb(var(--color-badge, var(--primary-6)))
     &[data-processing]::after
         content ''
         box-sizing border-box
@@ -47,5 +47,5 @@
         aspect-ratio 1 / 1 // 加上border后 IOS上显示不正确 会比1：1宽一个border距离 导致椭圆形波纹 改用outline后正常
         border-radius 50%
         // border var(--badge-processing-weight) solid _rgb(var(--color-badge))
-        outline var(--badge-processing-weight) solid _rgb(var(--color-badge))
+        outline var(--badge-processing-weight) solid _rgb(var(--color-badge, var(--primary-6)))
         animation badge-processing 1.2s ease-in-out infinite
