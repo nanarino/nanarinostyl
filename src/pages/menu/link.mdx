@@ -38,7 +38,7 @@ each primary in ['', 'success', 'danger', 'warning']
 
 ## `disabled`
 
-注意： `<a/>` 标签 使用 `disabled` 无法阻止跳转
+注意： 这里 `button` 而不是 `a`
 
 <T tag="button" class="☘-link" disabled>戳</T>
 <T tag="button" class="☘-link" disabled data-primary="success">戳</T>
@@ -52,10 +52,16 @@ each primary in ['', 'success', 'danger', 'warning']
 
 ## custom style
 
+以下局部变量自定义链接颜色
+
+- `--color-link` 链接文本颜色
+- `--color-link-hover` 鼠标移入状态链接文本颜色
+- `--color-link-focus` 焦点状态链接文本颜色
+- `--color-link-disabled` 禁用状态链接文本颜色
+
 <Icon
-    disabled
     class={escape('☘-link')}
-    style="--primary-2:var(--blue-2);vertical-align:middle"
+    style="--color-link-disabled:var(--blue-2);vertical-align:middle"
     name="logo/outline/twitter"
     role="link"
     aria-label="twitter"
@@ -65,9 +71,8 @@ each primary in ['', 'success', 'danger', 'warning']
 
 ```pug
 svg.☘-link(
-    disabled
     style={
-        ['--primary-2']: `var(--blue-2)`,
+        ['--color-link-disabled']: `var(--blue-2)`,
         'vertical-align': 'middle'
     }
     role="link"

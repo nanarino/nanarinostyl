@@ -2,18 +2,25 @@
 @import './../variable/functions.styl'
 
 .{prefix}-link
+
+    --color-link var(--primary-6)
+    --color-link-hover var(--primary-5)
+    --color-link-focus var(--primary-7)
+    --color-link-disabled var(--primary-2)
+
     border none
     background none
     padding unset
     cursor pointer
     text-decoration none
-    color _rgb(var(--primary-6))
+    color _rgb(var(--color-link))
     &:hover
-        color _rgb(var(--primary-5))
+        color _rgb(var(--color-link-hover))
     &:focus
-        color _rgb(var(--primary-7))
+        color _rgb(var(--color-link-focus))
     &[disabled]
-        color _rgb(var(--primary-2))
+    &[aria-disabled]
+        color _rgb(var(--color-link-disabled))
         cursor not-allowed
         // pointer-events none
     &:focus-visible
