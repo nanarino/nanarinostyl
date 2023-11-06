@@ -7,12 +7,12 @@
     ::selection
         background-color _rgb(var(--primary-1))
         color _rgb(var(--primary-9))
-    /:root[data-theme='dark'] &
+    /:root[data-theme=dark] &
         --primary-10 var(--gray-2)
         ::selection
             background-color _rgb(var(--primary-9))
             color _rgb(var(--primary-1))
-    padding calc(var(--font-offset-parent) + 0.5em) 1em
+    padding calc(var(--font-offset-parent) + .5em) 1em
     margin 1rem 0
     border-radius var(--border-radius-md)
     .{prefix}-code

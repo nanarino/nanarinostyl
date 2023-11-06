@@ -2,9 +2,8 @@
 @import './../variable/functions.styl'
 
 .{prefix}-checkbox
-    /:root
-        --checkbox-indent 20px
-    
+
+    // --checkbox-indent 20px
     // --color-checkbox var(--primary-6)
     // --color-checkbox-disabled var(--primary-3)
 
@@ -20,7 +19,7 @@
         opacity 0
         pointer-events none
         ~/-label
-            padding-left var(--checkbox-indent)
+            padding-left var(--checkbox-indent, 20px)
             min-width 18px
             position relative
             display inline-flex

@@ -2,9 +2,9 @@
 @import './../variable/functions.styl'
 
 .{prefix}-menu
-    /:root
-        --padding-vertical-menu-item 0.5em
-        --padding-horizonal-menu-item 1em
+    
+    // --padding-vertical-menu-item 0.5em
+    // --padding-horizonal-menu-item 1em
 
     // --color-menu var(--primary-6)
 
@@ -32,7 +32,9 @@
                     align-items center
                     cursor alias
                     line-height var(--line-height-body)
-                    padding var(--padding-vertical-menu-item) var(--padding-horizonal-menu-item)
+                    padding \
+                        var(--padding-vertical-menu-item, .5em) \
+                        var(--padding-horizonal-menu-item, 1em)
                     &-arrow
                         position relative
                         display inline-block
@@ -63,8 +65,8 @@
 
             &-item
                 position relative
-                height calc(var(--line-height-body) + 2 * var(--padding-vertical-menu-item))
-                text-indent var(--padding-horizonal-menu-item)
+                height calc(var(--line-height-body) + 2 * var(--padding-vertical-menu-item, .5em))
+                text-indent var(--padding-horizonal-menu-item, 1em)
                 display flex
                 align-items center
                 background-color _rgb(var(--white))

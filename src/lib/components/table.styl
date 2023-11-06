@@ -22,11 +22,10 @@ gray-cell()
         position sticky
 
     /.{prefix}-table
-        /:root
-            --min-width-cell unset
-            --padding-cell 9px 12px
-            --border-cell none
-            --text-align-cell left
+        // --min-width-cell unset
+        // --padding-cell 9px 12px
+        // --border-cell none
+        // --text-align-cell left
 
         font-size var(--font-size-body)
         line-height var(--line-height-body)
@@ -51,11 +50,11 @@ gray-cell()
         td, th, &-cell
             display table-cell
             box-sizing border-box
-            min-width var(--min-width-cell)
+            min-width var(--min-width-cell, unset)
             white-space nowrap
-            padding var(--padding-cell)
-            text-align var(--text-align-cell)
-            border var(--border-cell)
+            padding var(--padding-cell, 9px 12px)
+            text-align var(--text-align-cell, left)
+            border var(--border-cell, none)
             box-shadow var(--box-shadow-divider-bottom)
         
         &-header-group

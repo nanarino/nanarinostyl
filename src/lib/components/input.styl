@@ -36,15 +36,15 @@ input_stat()
 
 
 textarea.{prefix}-textarea
-    /:root
-        --padding-textarea 5px 12px
+
+    // --padding-textarea 5px 12px
     
     --color-textarea var(--black)
     --outline-color-focus var(--color-textarea)
 
     display inline-flex
     flex-direction column
-    padding var(--padding-textarea)
+    padding var(--padding-textarea, 5px 12px)
 
     &.sm
         --padding-textarea 1px 12px
@@ -60,9 +60,9 @@ textarea.{prefix}-textarea
 
 
 input.{prefix}-input
-    /:root
-        --padding-vertical-input 4px
-        --padding-horizonal-input 12px
+
+    // --padding-vertical-input 4px
+    // --padding-horizonal-input 12px
     
     --color-input var(--black)
     --outline-color-focus var(--color-input-wrapper, var(--color-input))
@@ -82,15 +82,13 @@ input.{prefix}-input
     &[type=datetime-local]
     &[type=datetime]
         flex 1
-        padding var(--padding-vertical-input) var(--padding-horizonal-input)
+        padding var(--padding-vertical-input, 4px) var(--padding-horizonal-input, 12px)
 
         &.sm
             --padding-vertical-input 0
-            --padding-horizonal-input 12px
 
         &.lg
             --padding-vertical-input 7px
-            --padding-horizonal-input 12px
             --font-size-body var(--font-size-h5)
             --line-height-body var(--line-height-h5)
 
@@ -103,9 +101,9 @@ input.{prefix}-input
          * 以后 `:has()` 全面支持后这里可以不写这俩data-
          */
         &[data-with-prefix]
-            padding-left calc(var(--padding-horizonal-input) + var(--font-size-body))
+            padding-left calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
         &[data-with-suffix]
-            padding-right calc(var(--padding-horizonal-input) + var(--font-size-body))
+            padding-right calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
 
 
 .{prefix}-input-wrapper
@@ -179,7 +177,7 @@ input.{prefix}-input
         //     cursor not-allowed
 
     .{prefix}-input-prefix
-        left calc(var(--padding-horizonal-input) / 2)
+        left calc(var(--padding-horizonal-input, 12px) / 2)
     .{prefix}-input-suffix
-        right calc(var(--padding-horizonal-input) / 2)
+        right calc(var(--padding-horizonal-input, 12px) / 2)
         
