@@ -49,13 +49,23 @@ span.☘-switch.sm
 
 **动子（ `label.☘-switch-mover>*` ）** 可以设置为一个字符/icon
 
-- 局部变量 `--box-shadow-width-switch` 可以修改阴影效果范围（默认值为全局变量 `--padding-switch` ，见下 ）
-- 通配变量 `--box-shadow-color` 可以单独设置被**开启时**的阴影颜色RGB值 （关闭时是主题色）
-- 局部变量 `--box-shadow-color-switch` 可以覆盖**开启和关闭时**的阴影颜色RGB值
+- 全局变量 `--box-shadow-width-switch` 可以修改阴影效果范围（默认值为全局变量 `--padding-switch` ，见下 ）
+
+与颜色有关的全局变量RGB值有：
+
+- `--color-switch` 关闭时颜色
+- `--color-switch-checked` 开启时主题颜色
+- `--color-switch-disabled` 禁用状态颜色
+- `--color-switch-checked-disabled` 禁用状态开启时主题颜色
+- `--color-switch-mover` 动子颜色
+- `--box-shadow-color-switch` 阴影主题颜色
+- `--box-shadow-color-switch-checked` 开启时阴影颜色
+
+描述中的占点主题色就会被 `[data-primary]` 影响
 
 <Switch id="fire" dataset={{ primary : "danger" }} style={{
     "--box-shadow-width-switch": "16px",
-    "--box-shadow-color": "var(--blue-5)"
+    "--box-shadow-color-switch-checked": "var(--blue-5)"
 }}>
     <span>🔥</span>
 </Switch>
@@ -63,24 +73,12 @@ span.☘-switch.sm
 ```pug
 span.☘-switch(data-primary="danger" style={
     "--box-shadow-width-switch": "16px",
-    "--box-shadow-color": "var(--blue-5)"
+    "--box-shadow-color-switch-checked": "var(--blue-5)"
 })
     input#fire.☘-input(type="checkbox")
     label.☘-switch-mover(for="fire" title="fire")
         span 🔥
 ```
-
-`--box-shadow-color` 利用了 `:has()`，它的兼容性很差，但可以加上以下代码来弥补。
-
-```sass
-#fire:checked + label.☘-switch-mover > span
-    @supports not selector(:has(*))
-        --box-shadow-color-switch: var(--blue-5)
-``` 
-
-但可悲的是 `@supports selector()` 的兼容性也好不到哪里去。
-
-文档中此处并未做兼容。如果这个开关的阴影始终是红色，说明你的浏览器不支持 `:has()`
 
 ***
 
@@ -94,11 +92,9 @@ span.☘-switch.oxalis-switch(
     style={
         ["--size-switch"]: "48px",
         ["--padding-switch"]: "4px",
-        // 开启的按钮颜色和阴影主题颜色 这不包括禁用状态的颜色
-        ["--primary-6"]: "var(--lime-6)",
-        // 关闭的按钮颜色和阴影主题颜色 这不包括禁用状态的颜色
-        ["--gray-4"]: "var(--yellow-3)",
-        // 事实上在label上覆盖这俩颜色更为直观 尽管那样需要设置更多代码
+        ["--color-switch-checked"]: "var(--lime-6)",
+        ["--color-switch-checked-disabled"]: "var(--lime-3)",
+        ["--color-switch"]: "var(--gold-3)",
     }
 )
     input#oxalis.☘-input(type="checkbox" name="oxalis" checked)

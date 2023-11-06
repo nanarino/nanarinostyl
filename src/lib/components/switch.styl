@@ -8,11 +8,20 @@
         --padding-switch 2px
     
     --size-switch-mover calc(var(--size-switch) - 2 * var(--padding-switch))
-    --box-shadow-width-switch var(--padding-switch)
-    --box-shadow-color-switch var(--primary-6)
-    @supports _selector(':has(*)')
-        &:where(:has(input.{prefix}-input[type=checkbox]:checked))
-            --box-shadow-color-switch var(--box-shadow-color)
+
+    // --box-shadow-width-switch var(--padding-switch)
+
+    // --color-switch var(--gray-4)
+    // --color-switch-checked var(--primary-6)
+    // --color-switch-disabled var(--gray-3)
+    // --color-switch-checked-disabled var(--primary-3)
+    // --color-switch-mover var(--gray-1)
+    // --box-shadow-color-switch var(--color-switch-checked)
+    // --box-shadow-color-switch-checked var(--color-switch)
+
+    // @supports _selector(':has(*)')
+    //     &:where(:has(input.{prefix}-input[type=checkbox]:checked))
+    //         --box-shadow-color-switch var(--box-shadow-color)
 
     display inline-flex
     position relative
@@ -34,14 +43,14 @@
             ../:focus-visible+&
                 outline 2px solid _rgb(var(--outline-color-focus))
             border-radius calc((var(--size-switch) / 2))
-            background-color _rgb(var(--gray-4))
+            background-color _rgb(var(--color-switch, var(--gray-4)))
             transition background-color 1s, box-shadow .5s
             ../:checked+&
-                background-color _rgb(var(--primary-6))
+                background-color _rgb(var(--color-switch-checked, var(--primary-6)))
             ../:checked:disabled+&
-                background-color _rgb(var(--primary-3))
+                background-color _rgb(var(--color-switch-checked-disabled, var(--primary-3)))
             ../:disabled+&
-                background-color _rgb(var(--gray-3))
+                background-color _rgb(var(--color-switch-disabled, var(--gray-3)))
                 cursor not-allowed
             
             &:empty::before, &>*
@@ -57,7 +66,7 @@
                 height @width
                 overflow hidden
                 border-radius 50%
-                background-color _rgb(var(--gray-1))
+                background-color _rgb(var(--color-switch-mover, var(--gray-1)))
                 transition all .5s
             
                 ../../:checked+&
@@ -66,7 +75,59 @@
                     //    --box-shadow-color-switch var(--primary-6)
         
             ../:not(:disabled)+&:hover
-                box-shadow inset 0 0 var(--padding-switch) var(--padding-switch) _rgb(var(--box-shadow-color-switch) \/ 25%)
+                box-shadow-color = _rgb(var(
+                    --box-shadow-color-switch, var(
+                        --color-switch-checked, var(
+                            --primary-6
+                        )
+                    )
+                ) \/ 25%)
+                box-shadow \
+                    inset \
+                    0 \
+                    0 \
+                    var(--padding-switch) \
+                    var(--padding-switch) \
+                    box-shadow-color
                 &:empty::before, &>*
-                    filter drop-shadow(0 0 var(--padding-switch) _rgb(var(--box-shadow-color-switch)))
-                    box-shadow 0 0 var(--box-shadow-width-switch) var(--box-shadow-width-switch) _rgb(var(--box-shadow-color-switch) \/ 25%)
+                    filter drop-shadow(
+                        0 \
+                        0 \
+                        var(--padding-switch) \
+                        box-shadow-color \
+                    )
+                    box-shadow \
+                        0 \
+                        0 \
+                        var(--box-shadow-width-switch, var(--padding-switch)) \
+                        var(--box-shadow-width-switch, var(--padding-switch)) \
+                        box-shadow-color
+            
+            ../:not(:disabled):checked+&:hover
+                box-shadow-color-checked = _rgb(var(
+                    --box-shadow-color-switch-checked, var(
+                        --color-switch, var(
+                            --gray-4
+                        )
+                    )
+                ) \/ 25%)
+                box-shadow \
+                    inset \
+                    0 \
+                    0 \
+                    var(--padding-switch) \
+                    var(--padding-switch) \
+                    box-shadow-color-checked
+                &:empty::before, &>*
+                    filter drop-shadow(
+                        0 \
+                        0 \
+                        var(--padding-switch) \
+                        box-shadow-color-checked \
+                    )
+                    box-shadow \
+                        0 \
+                        0 \
+                        var(--box-shadow-width-switch, var(--padding-switch)) \
+                        var(--box-shadow-width-switch, var(--padding-switch)) \
+                        box-shadow-color-checked
