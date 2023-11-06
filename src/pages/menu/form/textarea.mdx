@@ -46,7 +46,7 @@ textarea.☘-textarea.☘-font-mono(
 
 ## `data-primary`
 
-设置 `[data-primary]` 可以覆盖全局css变量 `--outline-color-focus`
+设置 `textarea.☘-textarea[data-primary]` 可以覆盖全局css变量 `--outline-color-focus`
 
 直接使用局部变量 `--color-textarea` 也可以设置主题颜色RGB值
 
@@ -66,8 +66,8 @@ textarea.☘-textarea.☘-font-mono(
     tag="textarea"
     class="☘-textarea"
     title="custom"
-    placeholder="custom color: gold"
-    style="--color-textarea: var(--gold-6)"
+    placeholder="custom"
+    style="--color-textarea: var(--blue-6)"
 />
 </Grid>
 
@@ -81,8 +81,7 @@ each primary in ['primary', 'success', 'danger', 'warning']
 textarea.☘-textarea(
     title="custom"
     placeholder="primary"
-    data-primary="custom color: gold"
-    style="--color-textarea: var(--gold-6)"
+    style="--color-textarea: var(--blue-6)"
 )
 ```
 

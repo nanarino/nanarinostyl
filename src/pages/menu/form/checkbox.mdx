@@ -58,3 +58,26 @@ span.☘-checkbox(data-indeterminate)
     })
     label(for="Superposition" title="Superposition") 叠加态
 ```
+
+## custom style
+
+- `--color-checkbox` 全局变量覆盖颜色
+- `--color-checkbox-disabled` 禁用状态全局变量覆盖颜色
+
+<Checkbox
+    id="BlueSuperposition"
+    disabled
+    dataset={{ indeterminate : true }}
+    style={{
+        '--color-checkbox': 'var(--blue-6)',
+        '--color-checkbox-disabled': 'var(--blue-2)'
+}}>饿死了</Checkbox>
+
+```pug
+span.☘-checkbox(data-indeterminate style={
+    '--color-checkbox': 'var(--blue-6)',
+    '--color-checkbox-disabled': 'var(--blue-2)'
+})
+    input#BlueSuperposition.☘-input(type="checkbox" disabled)
+    label(for="BlueSuperposition" title="BlueSuperposition") 饿死了
+```

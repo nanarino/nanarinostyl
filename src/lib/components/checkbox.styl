@@ -4,6 +4,10 @@
 .{prefix}-checkbox
     /:root
         --checkbox-indent 20px
+    
+    // --color-checkbox var(--primary-6)
+    // --color-checkbox-disabled var(--primary-3)
+
     min-height 1em
     position relative
     font-size var(--font-size-body)
@@ -39,10 +43,10 @@
             background-color _rgb(var(--white))
             border-radius var(--border-radius-sm)
             ../:checked+&
-                border-color _rgb(var(--primary-6))
+                border-color _rgb(var(--color-checkbox, var(--primary-6)))
                 background-color @border-color
             ../:checked:disabled+&
-                border-color _rgb(var(--primary-3))
+                border-color _rgb(var(--color-checkbox-disabled, var(--primary-3)))
                 background-color @border-color
             ../:disabled+&
                 background-color _rgb(var(--gray-3))
@@ -50,8 +54,10 @@
                 background-color _rgb(var(--gray-1))
             ~/[data-indeterminate] &
                 padding 2px
-                background-color _rgb(var(--primary-6))
+                background-color _rgb(var(--color-checkbox, var(--primary-6)))
                 background-clip content-box
+            ~/[data-indeterminate] ^[-2..-2]:disabled+&
+                background-color _rgb(var(--color-checkbox-disabled, var(--primary-3)))
 
         ~/-label::after
             content ''

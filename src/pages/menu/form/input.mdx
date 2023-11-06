@@ -82,7 +82,7 @@ input.☘-input.☘-font-mono(
 
 ## `data-primary`
 
-设置 `[data-primary]` 可以覆盖全局css变量 `--outline-color-focus`
+设置 `input.☘-input[data-primary]` 可以覆盖全局css变量 `--outline-color-focus`
 
 局部变量 `--color-input` 可以直接设置主题颜色RGB值
 
@@ -102,7 +102,7 @@ input.☘-input.☘-font-mono(
     tag="input"
     class="☘-input"
     title="custom"
-    placeholder="custom color: gold"
+    placeholder="custom"
     style="--color-input: var(--gold-6)"
 />
 </Grid>
@@ -116,7 +116,7 @@ each primary in ['primary', 'success', 'danger', 'warning']
     )
 input.☘-input(
     title="custom"
-    placeholder="custom color: gold"
+    placeholder="custom"
     style="--color-input: var(--gold-6)"
 )
 ```
@@ -142,7 +142,7 @@ input.☘-input(
 
 把 input 放在 `.☘-input-wrapper` 这个容器中可以用来显示前缀后缀
 
-该容器启用 `[data-primary]` 也会覆盖全局css变量 `--outline-color-focus` 和继承某些样式
+该容器启用 `.☘-input-wrapper[data-primary]` 也会覆盖全局css变量 `--outline-color-focus` 和继承某些样式
 
 直接使用局部变量 `--color-input-wrapper` 也可以设置主题颜色RGB值，且优先级高于 `--color-input`
 

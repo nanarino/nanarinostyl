@@ -144,7 +144,7 @@ input.{prefix}-input
             border-radius var(--border-radius-md)
             &:focus-visible
                 outline-color _rgb(var(--color-input-wrapper, var(--black)))
-            ~/:where([data-primary]) ^[1..-1]
+            ~/:where([data-primary]) ^[-1..-1]
                 color _rgb(var(--white))
             
             /**
@@ -166,7 +166,7 @@ input.{prefix}-input
         z-index 1
         color _rgb(var(--color-input-wrapper, var(--black)))
 
-        // ~/[data-primary] ^[1..-1]
+        // ~/[data-primary] ^[-1..-1]
         //     color _rgb(var(--color-input-wrapper))
         
         /**
