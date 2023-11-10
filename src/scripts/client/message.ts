@@ -15,8 +15,8 @@ window.addEventListener(`${prefix}-message`, async (
 
     const msg = document.createElement("div");
 
-    let duration: number;
-    let primary: string;
+    let duration: number = 2000;
+    let primary: string = "";
     let content = event.detail ?? "☘";
 
     if (typeof content != 'string') {
