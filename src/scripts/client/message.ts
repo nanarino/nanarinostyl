@@ -15,12 +15,27 @@ window.addEventListener(`${prefix}-message`, async (
 
     const msg = document.createElement("div");
 
+    /**
+     * `final duration:number;` ❌
+     * `var duration:number = 2000;` ✔
+     * 
+     * 由于继承的模板项目配置的松散类型检查，
+     * 变量很可能在分配前使用而不报错，
+     * 你最好初始化默认值。
+     * 
+     * 检查项目其他地方有没有这个问题
+     */
     let duration: number = 2000;
     let primary: string = "";
     let content = event.detail ?? "☘";
 
     if (typeof content != 'string') {
         duration = content.duration ?? 2000;
+        /**
+         * 由于继承的模板项目配置的松散类型检查，
+         * undefined 和 null的 `.toString()` 还是会报错
+         * 而使用 `${}` 风险更大 需要指定默认值
+         */
         primary = `${content.primary ?? ""}`;
 
         content = `${content.content ?? "☘"}`;
