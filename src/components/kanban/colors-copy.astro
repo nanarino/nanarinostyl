@@ -1,22 +1,7 @@
 ---
 import prefix from "src/scripts/prefix";
 import { Icon } from "astro-icon";
-
-const colours = [
-    "red",
-    "orangered",
-    "orange",
-    "gold",
-    "yellow",
-    "lime",
-    "green",
-    "cyan",
-    "blue",
-    "purple",
-    "pinkpurple",
-    "magenta",
-    "gray",
-] as const;
+import colours from "./colors";
 ---
 
 <div class={`${prefix}-table-wrapper`}>
@@ -55,23 +40,7 @@ const colours = [
     </table>
 </div>
 
-<script>
-    const table = document.getElementById("colors-kanban");
-    table.onclick = function (e) {
-        const button = e.target as HTMLButtonElement;
-        if (button.tagName === "BUTTON" && button.title) {
-            window.copy(`rgb(var(${button.title}))`);
-            window.dispatchEvent(
-                new CustomEvent(`${window.name}-message`, {
-                    detail: {
-                        content: "复制成功",
-                        primary: "success",
-                    },
-                })
-            );
-        }
-    };
-</script>
+<script src="./colors-copy.ts"></script>
 
 <style lang="stylus" is:global>
 @import './../../lib/variable/functions.styl'

@@ -10,6 +10,7 @@ window.addEventListener(`${prefix}-message`, async (
         content?: string
         primary?: "success" | "danger" | "warning" | "primary"
         duration?: number
+        style?: Record<string, string>
     }>
 ) => {
 
@@ -27,17 +28,18 @@ window.addEventListener(`${prefix}-message`, async (
      */
     let duration: number = 2000;
     let primary: string = "";
+    let style: Record<string, string> = {};
     let content = event.detail ?? "☘";
 
     if (typeof content != 'string') {
-        duration = content.duration ?? 2000;
         /**
          * 由于继承的模板项目配置的松散类型检查，
          * undefined 和 null的 `.toString()` 还是会报错
          * 而使用 `${}` 风险更大 需要指定默认值
          */
+        duration = content.duration ?? 2000;
         primary = `${content.primary ?? ""}`;
-
+        style = content.style ?? {};
         content = `${content.content ?? "☘"}`;
     }
 
@@ -49,26 +51,14 @@ window.addEventListener(`${prefix}-message`, async (
     if (primary) {
         const p = (msg.firstElementChild as HTMLDivElement)
         p.dataset.primary = primary;
-        if (primary == "random") {
-            const colours = [
-                "red",
-                "orangered",
-                "orange",
-                "gold",
-                "yellow",
-                "lime",
-                "green",
-                "cyan",
-                "blue",
-                "purple",
-                "pinkpurple",
-                "magenta",
-                "gray",
-            ] as const;
-            const color = colours[Math.floor((Math.random() * colours.length))];
-            p.style.setProperty("--background-color-message", `var(--${color}-5)`);
-            p.style.setProperty("--box-shadow-color", `var(--${color}-4)`);
-        }
+        /**
+         * 不同于 `Object.assign(p.style, style)`
+         * 
+         * This means that keys take the dash-case form, 
+         * like "background-color" rather than "backgroundColor", 
+         * and that any units must be explicitly provided 
+         */
+        Object.entries(style).map(x => p.style.setProperty(...x));
     }
 
     queue.appendChild(msg);

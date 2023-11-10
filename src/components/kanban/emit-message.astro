@@ -23,22 +23,7 @@ import Grid from "../grid.astro";
     </Grid>
 </div>
 
-<script>
-    const launcher = document.getElementById("emit-message-kanban");
-    launcher.onclick = function (e) {
-        const button = e.target as HTMLButtonElement;
-        if (button.tagName === "BUTTON") {
-            window.dispatchEvent(
-                new CustomEvent(`${window.name}-message`, {
-                    detail: {
-                        content: "发射成功",
-                        primary: button.dataset.primary,
-                    },
-                })
-            );
-        }
-    };
-</script>
+<script src="./emit-message.ts"></script>
 
 <style lang="stylus" is:global>
 #emit-message-kanban
