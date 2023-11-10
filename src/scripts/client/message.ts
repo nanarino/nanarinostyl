@@ -1,6 +1,7 @@
 import prefix from "src/scripts/prefix";
 import sleep from "src/scripts/sleep";
 
+// const queue = document.createElement("div");
 const queue = document.getElementById("message-queue");
 
 // 全局触发
@@ -8,18 +9,23 @@ window.addEventListener(`${prefix}-message`, async (
     event: CustomEvent<string | {
         content?: string
         primary?: "success" | "danger" | "warning" | "primary"
+        duration?: number
     }>
 ) => {
 
     const msg = document.createElement("div");
+
+    let duration: number;
+    let primary: string;
     let content = event.detail ?? "☘";
-    let primary = "";
+
     if (typeof content != 'string') {
+        duration = content.duration ?? 2000;
         primary = `${content.primary ?? ""}`;
+
         content = `${content.content ?? "☘"}`;
     }
 
-    msg.style.transition = "opacity 1s, height 2s";
     msg.innerHTML = `
         <div class="${prefix}-message">
             <p class="${prefix}-paragraph">${content}</p>
@@ -52,9 +58,10 @@ window.addEventListener(`${prefix}-message`, async (
 
     queue.appendChild(msg);
     msg.style.height = `${msg.offsetHeight}px`;
-    await sleep(2000);
+    msg.style.transition = "opacity 1s, height 2s";
+    await sleep(duration);
     msg.style.opacity = '0';
     msg.style.height = '0';
-    await sleep(2000);
+    await sleep(2000); // 2000对应 transition height 2s
     queue.removeChild(msg);
 });
