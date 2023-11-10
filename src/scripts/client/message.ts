@@ -4,12 +4,24 @@ import sleep from "src/scripts/sleep";
 // const queue = document.createElement("div");
 const queue = document.getElementById("message-queue");
 
-// 全局触发
+// 监听自定义事件 发射消息时主动触发
 window.addEventListener(`${prefix}-message`, async (
     event: CustomEvent<string | {
+        /**
+         * 内容 相当于直接传string
+         */
         content?: string
+        /**
+         * 主题 4种 其他非空值等效于传primary
+         */
         primary?: "success" | "danger" | "warning" | "primary"
+        /**
+         * 持续时间
+         */
         duration?: number
+        /**
+         * 额外的样式 需要传primary后才生效
+         */
         style?: Record<string, string>
     }>
 ) => {
