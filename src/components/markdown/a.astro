@@ -1,9 +1,12 @@
 ---
 import prefix from "src/scripts/prefix";
 
-const props = Astro.props;
+interface Props {
+    href: string;
+}
+const href = Astro.props.href.replace(/^\//, import.meta.env.BASE_URL);
 ---
 
-<a class={`${prefix}-link`} {...props}>
+<a class={`${prefix}-link`} href={href}>
     <slot />
 </a>
