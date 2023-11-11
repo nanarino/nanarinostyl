@@ -10,6 +10,13 @@
     --color-link-hover var(--gray-2)
     --color-link-disabled var(--gray-4)
 
+
+    display inline-flex
+    flex-direction column
+    gap 16px
+    align-items center
+    justify-content center 
+
     position relative
     box-sizing border-box
     background-repeat no-repeat
@@ -76,3 +83,39 @@
             display flex
             align-items center
             gap 16px
+    
+    // 图片上传
+    &.{prefix}-input-wrapper
+
+        color _rgb(var(--color-input-wrapper, var(--gray-6)))
+
+        input[type=file].{prefix}-input
+
+            --color-input var(--gray-6)
+            --outline-color-focus var(--color-input-wrapper, var(--color-input))
+
+            &:where([data-primary])
+                --color-input var(--primary-6)
+                
+            position absolute
+            inset 0px
+            border-radius var(--border-radius-md)
+            border 2px dashed _rgb(var(--outline-color-focus))
+            // opacity 0
+            cursor pointer
+            color transparent
+            &::-ms-browse
+                display none
+            &::-webkit-file-upload-button
+                display none
+            &::file-selector-button
+                display none
+            &[disabled]
+                cursor not-allowed
+                opacity .3
+            &:focus-visible
+                outline-color _rgb(var(--outline-color-focus))
+            
+        &:has(input[type=file].{prefix}-input:not([disabled])):hover
+            box-shadow var(--box-shadow-drop-bottom)
+            

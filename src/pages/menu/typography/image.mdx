@@ -8,6 +8,7 @@ import escape from "src/scripts/server/escape";
 import { Icon } from "astro-icon";
 import example from "src/assets/images/example.jpg";
 import "src/components/image/iine.styl";
+import Uploader from "src/components/image/uploader.astro";
 export * from 'src/components/markdown/map.mdx';
 
 
@@ -23,55 +24,12 @@ export * from 'src/components/markdown/map.mdx';
 
 以上图片的显示来自拓展后的markdown。但是故意写错了src导致**加载失败**的效果。
 
-```pug
-p
-    span.☘-image(style={
-        display: "inline-flex"
-    })
-        img(
-            src="/src/assets/images/example.jpg" 
-            alt="示例"
-            onerror=function(){
-                this.src="/src/assets/images/unknow.png";
-                this.parentElement.dataset.error=true;
-                this.onerror='return false'
-            }
-            ondragstart="return false"
-        )
-        .☘-image-mask
-            svg(
-                width="24px"
-                role="button"
-                aria-label="Open the image in a new tab"
-                onclick=function(){
-                    window.open("/src/assets/images/example.jpg")
-                }
-            )
-            svg(
-                width="24px"
-                role="note"
-                aria-label="The image failed to load"
-                aria-disabled
-            )
-
-style(lang="stylus").
-    .☘-image
-        svg[role=button]
-            cursor pointer
-        svg[aria-disabled]
-            cursor not-allowed
-        &[data-error] svg[aria-label='Open the image in a new tab']
-        &:not([data-error]) svg[aria-label='The image failed to load']
-            display none
-```
 
 ## `<img>`
 
-以**容器**方式。
+以**容器**方式
 
-如果不提供 `width` 默认以块级占满。你也可以同上文一样设置 `display` 为行内。
-
-在低版本浏览器中 `width` 必须提供
+低版本浏览器需要指定 `width`
 
 <T class='☘-image' style="width:300px">
     <img alt="示例" src={example} />
@@ -82,25 +40,34 @@ style(lang="stylus").
     img(alt="示例" src='/src/assets/images/example.jpg')
 ```
 
+
 ## `background-image`
 
-以**背景**方式。
+以**背景**方式
 
-必须以某种方式指定 `height` 和 `background-image`
+必须以某种方式指定宽高 
 
-比如指定 `aspect-ratio`
+比如指定 `height` 和 `aspect-ratio`
+
+也可用 `display: flex` 这相当于 `width: 100%`
 
 <T class='☘-image' style={{
+    display: 'flex',
     height: '300px',
     'background-image': `url(${example})`
-}}/>
+}}>
+    <T tag="p" class="☘-paragraph" data-size="1">🍂</T>
+</T>
 
 ```pug
 .☘-image(style={
+    display: 'flex',
     height: '300px',
     'background-image': url('/src/assets/images/example.png')
 })
+    p.☘-paragraph(data-size=1) 🍂
 ```
+
 
 ## mask
 
@@ -203,7 +170,7 @@ style(lang='stylus').
     img(alt="示例" src='/src/assets/images/example.jpg')
     .☘-image-footer
         .☘-image-footer-content
-            .☘-title(data-size='5') 标题标题标题标题标题标题标题标题标题标题标题
+            .☘-title(data-size=5) 标题标题标题标题标题标题标题标题标题标题标题
             .☘-paragraph(data-ellipsis="1") 描述描述描述描述描述描述描述描述描述描述描述描述
         .☘-image-footer-action
             svg.☘-link(
@@ -227,3 +194,53 @@ style(lang='stylus').
 - `--color-image-mask` 遮罩颜色
 
 局部还定义了 `☘-link` 的颜色样式 需要一并修改
+
+
+## upload
+
+配合 `.☘-input-wrapper>input[type=file].☘-input` 使用即可
+
+<Uploader 
+    disabled
+    style="
+    width:100px;
+    height:100px;
+" />
+
+<Uploader 
+    id="uploader"
+    title="点击上传图片"
+    style="
+    width:100px;
+    height:100px;
+    --color-input-wrapper: var(--blue-6)
+" />
+
+```pug
+span.☘-image.☘-input-wrapper(style={
+    width: '100px',
+    height: '100px',
+})
+    input.☘-input(type='file' disabled)
+    svg(width="24px")
+
+span.☘-image.☘-input-wrapper(style={
+    width: '100px',
+    height: '100px',
+    '--color-input-wrapper': 'var(--blue-6)'
+})
+    input.☘-input#uploader(
+        type='file'
+        title='点击上传图片'
+        onchange=function(e){
+            const reader = new FileReader();
+            reader.readAsDataURL(e.target.files[0]);
+            reader.onload = () => {
+                this.parentElement.style.backgroundImage = `url(${reader.result})`;
+            };
+        }
+    )
+    svg(width="24px")
+```
+
+`.☘-input-wrapper` 可以使用局部变量 `--color-input-wrapper` 修改颜色

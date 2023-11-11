@@ -1,7 +1,9 @@
 ---
 import prefix from "src/scripts/prefix";
+
+const props = Astro.props;
 ---
 
-<a class={`${prefix}-link`} >
+<a class={`${prefix}-link`} {...props}>
     <slot />
 </a>
