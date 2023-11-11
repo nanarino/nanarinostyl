@@ -9,20 +9,24 @@ import { Icon } from "astro-icon";
     &nbsp;
     <!-- `&nbsp;` 空格是为了视觉重心平衡左右 -->
     由
-    <a href="https://astro.build">
+    <a class={`${prefix}-link`} href="https://astro.build">
         {Astro.generator}
-    </a> 
+    </a>
     构建
     &nbsp;
-    <a title="github" href="https://github.com/nanarino/nanarinostyl" target="_blank">
-        <Icon name="logo/outline/github" />
+    <a
+        class={`${prefix}-link`}
+        title="github"
+        href="https://github.com/nanarino/nanarinostyl"
+        target="_blank"
+    >
+        <Icon name="logo/outline/github" width="1em"/>
     </a>
 </footer>
 <style lang="stylus">
 @import './../lib/variable/functions.styl'
 
 footer
-a
     display flex
     gap .5em
     justify-content center
@@ -30,12 +34,6 @@ a
     line-height var(--line-height-2)
     font-size var(--font-size-2)
     color _rgb(var(--gray-3))
-
-footer>a
-    color _rgb(var(--primary-2))
-    &:hover
-        color _rgb(var(--primary-3))
-    svg
-        width 16px
-
+    --color-link var(--primary-2)
+    --color-link-hover var(--primary-3)
 </style>

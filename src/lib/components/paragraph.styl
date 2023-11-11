@@ -2,9 +2,12 @@
 @import './../variable/functions.styl'
 
 .{prefix}-paragraph
-    margin 1em 0
+    margin calc(1em - var(--font-offset-parent)) 0
+    padding var(--font-offset-parent) 0
     font-size var(--font-size-body)
     line-height var(--line-height-body)
+    &:has(.{prefix}-code)
+        line-height calc(var(--line-height-body) + var(--font-offset-parent))
     
     for i in range(1 6)
         &:where([data-size=\"{i}\"])

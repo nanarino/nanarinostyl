@@ -42,9 +42,10 @@ set_has_prefix()
 
 
 .{prefix}-title
+    padding var(--font-offset-parent) 0
     mixin_line_clamp(1)
     font-weight normal
-    margin 1em 0
+    margin calc(1em - var(--font-offset-parent)) 0
     set_title_styl()
     set_has_prefix()
     &-subtitle

@@ -40,6 +40,6 @@
         opacity 0
     i:last-child
         opacity 1
-        // 兼容不支持 `:has()` 选择器的如UC浏览器
-        @supports not (_selector(':has(*)'))
-            --box-shadow-color-switch var(--blue-6) 
+        // 变更：switch的阴影不再使用 `:has()` 实现
+        // @supports not (_selector(':has(*)'))
+        //     --box-shadow-color-switch var(--blue-6) 

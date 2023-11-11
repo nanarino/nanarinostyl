@@ -60,13 +60,16 @@ each primary in ['', 'success', 'danger', 'warning']
 
 <Icon
     class={escape('☘-link')}
-    style="--color-link-disabled:var(--blue-2);vertical-align:middle"
+    style="
+        --color-link-disabled: var(--blue-2);
+        vertical-align: middle
+    "
     name="logo/outline/twitter"
     role="link"
     aria-label="twitter"
     aria-disabled
     width="18"
-/>
+/> Twitter
 
 ```pug
 svg.☘-link(
@@ -79,4 +82,5 @@ svg.☘-link(
     aria-disabled
     width="18"
 )
+| Twitter
 ```

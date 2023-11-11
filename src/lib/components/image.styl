@@ -115,7 +115,13 @@
                 opacity .3
             &:focus-visible
                 outline-color _rgb(var(--outline-color-focus))
-            
-        &:has(input[type=file].{prefix}-input:not([disabled])):hover
-            box-shadow var(--box-shadow-drop-bottom)
+            @supports not (_selector(':has(*)'))
+                opacity .8
+                &:not([disabled]):hover
+                    opacity 1
+            transition box-shadow .3s, opacity .3s
+        @supports _selector(':has(*)')
+            &:has(input[type=file].{prefix}-input:not([disabled])):hover
+                box-shadow var(--box-shadow-drop-bottom)
+
             

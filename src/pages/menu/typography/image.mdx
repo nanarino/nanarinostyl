@@ -203,18 +203,19 @@ style(lang='stylus').
 <Uploader 
     disabled
     style="
-    width:100px;
-    height:100px;
+        width:100px;
+        height:100px;
 " />
 
 <Uploader 
     id="uploader"
     title="点击上传图片"
     style="
-    width:100px;
-    height:100px;
-    --color-input-wrapper: var(--blue-6)
-" />
+        width:100px;
+        height:100px;
+    "
+    dataset={{primary: true}}
+/>
 
 ```pug
 span.☘-image.☘-input-wrapper(style={
@@ -227,8 +228,7 @@ span.☘-image.☘-input-wrapper(style={
 span.☘-image.☘-input-wrapper(style={
     width: '100px',
     height: '100px',
-    '--color-input-wrapper': 'var(--blue-6)'
-})
+} data-primary)
     input.☘-input#uploader(
         type='file'
         title='点击上传图片'
@@ -243,4 +243,4 @@ span.☘-image.☘-input-wrapper(style={
     svg(width="24px")
 ```
 
-`.☘-input-wrapper` 可以使用局部变量 `--color-input-wrapper` 修改颜色
+`.☘-input-wrapper` 也可以使用局部变量 `--color-input-wrapper` 修改颜色
