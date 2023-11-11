@@ -11,13 +11,13 @@ const menu = import.meta.env.BASE_URL + "menu/";
 <App>
     <Header href={menu} />
     <section class={`${prefix}-layout cover-layout`}>
-        <main class="cover-layout-content">
+        <main>
             <css-doodle></css-doodle>
-            <nav class="cover-layout-content">
-                <a href={menu} class="logo own">
+            <nav>
+                <a class="own" href={menu}>
                     <img src={favicon} alt="My logo" title="进入" />
                 </a>
-                <a href="https://stylus-lang.com/" class="logo">
+                <a class="stylus" href="https://stylus-lang.com/" target="_blank">
                     <img
                         src={stylus}
                         alt="Stylus logo"
@@ -38,7 +38,7 @@ const menu = import.meta.env.BASE_URL + "menu/";
     user-select none
     position relative
 
-main.cover-layout-content
+main
     display flex
     align-items center
 
@@ -55,28 +55,30 @@ main.cover-layout-content
         aspect-ratio 1 / 1
         animation rotate 120s infinite linear
 
-nav.cover-layout-content
+nav
     position absolute
     inset 0
     margin auto
 
-    display flex
+    display grid
+    grid-template-rows repeat(2, min-content)
+    grid-template-columns @grid-template-rows
     justify-content center
-    align-items center
+    align-content center
 
-    a.logo
+    a
         display inline-block
         position relative
         border-radius 50%
+        will-change filter
+        transition filter .3s
 
-        &.own:hover
-            filter drop-shadow(0 0 2em _rgb(var(--primary-7))) hue-rotate(15deg)
-        img
+        img,svg
             height 6em
             padding 1.5em
-            will-change filter
-            transition filter .3s
-        &[href='https://stylus-lang.com/']::after
+        &.own:hover
+            filter drop-shadow(0 0 2em _rgb(var(--primary-7))) hue-rotate(15deg)
+        &.stylus::after
             position absolute
             inset 0
             content ''
