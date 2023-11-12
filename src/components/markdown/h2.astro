@@ -11,15 +11,17 @@ const props = Astro.props;
 <h2 class={`${prefix}-title ${prefix}-font-serif`} id={props.id}>
     <a href={`#${props.id}`} class={`${prefix}-link ${prefix}-connot-select`}>
         <Icon name="logo/outline/clover" />
-    </a>
-    <slot />
+    </a><slot />
 </h2>
 
 <style lang="stylus">
+h2
+    margin-left -4px !important
 a
+    margin 4px
     vertical-align middle
-    svg
-        width 1em
-        height 1em
-        transform rotate(-90deg) rotateY(180deg)
+svg
+    width 1em
+    height 1em
+    transform rotate(-37deg) rotateY(180deg)
 </style>

@@ -4,6 +4,7 @@ import Switch from "../switch/index.astro";
 import { Icon } from "astro-icon";
 import "./theme-switch.styl";
 import "./menu-toggle.styl";
+import "./index-logo.styl"; // 这个引入也会影响主页封面的logo
 
 interface Props {
     href?: string;
@@ -69,9 +70,4 @@ header
         svg
             width var(--font-size-8)
             height @width
-            :global(path)
-                transition fill .5s ease-in
-            :global(g.leaf:hover>path)
-            :global(path.leaf:hover)
-                fill _rgb(var(--primary-2))
 </style>
