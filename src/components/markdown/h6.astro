@@ -1,12 +1,25 @@
 ---
 import prefix from "src/scripts/prefix";
+import { Icon } from "astro-icon";
+
 interface Props {
-    id: string
+    id: string;
 }
 const props = Astro.props;
 ---
 
 <h6 class={`${prefix}-title ${prefix}-font-serif`} id={props.id}>
-    <a href={`#${props.id}`} class={`${prefix}-link ${prefix}-connot-select`}>#</a>
+    <a href={`#${props.id}`} class={`${prefix}-link ${prefix}-connot-select`}>
+        <Icon name="logo/outline/clover" />
+    </a>
     <slot />
 </h6>
+
+<style lang="stylus">
+a
+    vertical-align middle
+    svg
+        width 1em
+        height 1em
+        transform rotate(-90deg) rotateY(180deg)
+</style>

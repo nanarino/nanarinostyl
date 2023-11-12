@@ -20,8 +20,8 @@ interface Props {
 >
     <span class="oxalis-switch-mover">☘</span>
 </Switch>
-<style lang="stylus" is:global>
-    .oxalis-switch>input:checked+label
-        .oxalis-switch-mover
+<style lang="stylus">
+    .oxalis-switch>:global(input:checked+label)
+        :global(.oxalis-switch-mover)
             transform rotate(360deg)
 </style>

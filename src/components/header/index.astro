@@ -2,7 +2,6 @@
 import prefix from "src/scripts/prefix";
 import Switch from "../switch/index.astro";
 import { Icon } from "astro-icon";
-import favicon from "src/assets/favicon.svg";
 import "./theme-switch.styl";
 import "./menu-toggle.styl";
 
@@ -29,7 +28,7 @@ const { href } = Astro.props;
     }
 
     <a href={href || import.meta.env.BASE_URL} class="logo">
-        <img src={favicon} alt="logo" />
+        <Icon name="logo/color/clover" />
     </a>
 
     <Switch
@@ -55,6 +54,8 @@ const { href } = Astro.props;
 <script src="./theme-switch.ts"></script>
 
 <style lang="stylus">
+@import '../../lib/variable/functions.styl'
+
 header
     display flex
     align-items center
@@ -65,7 +66,12 @@ header
     a.logo
         display flex
         border-radius 50%
-        img
+        svg
             width var(--font-size-8)
-            height var(--font-size-8)
+            height @width
+            :global(path)
+                transition fill .5s ease-in
+            :global(g.leaf:hover>path)
+            :global(path.leaf:hover)
+                fill _rgb(var(--primary-2))
 </style>

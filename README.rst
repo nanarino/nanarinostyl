@@ -4,7 +4,7 @@
 
 .. highlight:: bash
 
-.. image:: ./src/assets/favicon.svg
+.. image:: ./src/icons/logo/color/clover.svg
     :width: 64 px
     :alt: Nanarinostyl Logo
     :target: https://nanarino.github.io/nanarinostyl/

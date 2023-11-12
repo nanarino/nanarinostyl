@@ -2,7 +2,7 @@
 import App from "@layout/app.astro";
 import Header from "src/components/header/index.astro";
 import prefix from "src/scripts/prefix";
-import favicon from "src/assets/favicon.svg";
+import clover from "src/icons/logo/color/clover.svg";
 import stylus from "src/assets/stylus.svg";
 
 const menu = import.meta.env.BASE_URL + "menu/";
@@ -14,8 +14,8 @@ const menu = import.meta.env.BASE_URL + "menu/";
         <main>
             <css-doodle></css-doodle>
             <nav>
-                <a class="own" href={menu}>
-                    <img src={favicon} alt="My logo" title="进入" />
+                <a class="clover" href={menu}>
+                    <img src={clover} alt="My logo" title="进入" />
                 </a>
                 <a class="stylus" href="https://stylus-lang.com/" target="_blank">
                     <img
@@ -77,7 +77,7 @@ nav
         img,svg
             height 6em
             padding 1.5em
-        &.own:hover
+        &.clover:hover
             filter drop-shadow(0 0 2em _rgb(var(--primary-7))) hue-rotate(15deg)
         &.stylus::after
             position absolute
