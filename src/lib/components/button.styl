@@ -55,7 +55,8 @@ button_background_color_init(background_color)
     line-height var(--line-height-body)
     border-radius var(--border-radius-md)
     border none
-    transition --percent-button-wave .8s, box-shadow .3s
+    transition --percent-button-wave .5s, box-shadow .3s
+    transition-timing-function ease-in
     color _rgb(var(--color-button))
     button_background_color_init _rgb(var(--background-color-button))
     &:focus-visible
