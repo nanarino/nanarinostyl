@@ -32,9 +32,6 @@
             )
         )
     )
-    // @supports _selector(':has(*)')
-    //     &:where(:has(input.{prefix}-input[type=checkbox]:checked))
-    //         --box-shadow-color-switch var(--box-shadow-color)
 
     display inline-flex
     position relative
@@ -85,8 +82,7 @@
             
                 ../../:checked+&
                     left calc(var(--size-switch, 22px) + var(--padding-switch, 2px))
-                    // @supports not (_selector(':has(*)'))
-                    //     --box-shadow-color-switch var(--primary-6)
+                    
 
 
 

@@ -131,7 +131,10 @@ input.{prefix}-input
             @supports _selector(':has(*)')
                 &:has({tag}:not(.{prefix}-input-prefix))
                 &:has({tag}:not(.{prefix}-input-suffix))
-                    background _rgb(var(--color-input-wrapper))
+                    background-color _rgb(var(--color-input-wrapper))
+            @supports not (_selector(':has(*)'))
+                {tag}:not(.{prefix}-input-prefix):not(.{prefix}-input-suffix)
+                    background-color _rgb(var(--color-input-wrapper))
     &>*
         display inline-flex
         align-items center
@@ -139,7 +142,7 @@ input.{prefix}-input
     for tag in buttons
         {tag}
             cursor pointer
-            border-radius var(--border-radius-md)
+            border-radius calc(var(--border-radius-md) - 2px)
             &:focus-visible
                 outline-color _rgb(var(--color-input-wrapper, var(--black)))
             ~/:where([data-primary]) ^[-1..-1]
