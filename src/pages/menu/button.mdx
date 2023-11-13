@@ -6,6 +6,9 @@ title: 按钮
 import T from "src/components/T.astro";
 import { Icon } from "astro-icon";
 export * from 'src/components/markdown/map.mdx';
+import escape from "src/scripts/server/escape";
+import Grid from "src/components/grid.astro";
+
 
 # button
 
@@ -68,6 +71,11 @@ button.☘-button(data-primary='danger' disabled) 删除
 
 ## custom style
 
+全局变量控制内边距
+
+- `--padding-horizonal-button` 纵向内边距
+- `--padding-vertical-button` 横向内边距
+
 以下局部变量可以自定义颜色RGB值
 
 背景色设置的饱和度高时 最好同时使用 `[data-primary]` 让文字颜色预设白色
@@ -109,3 +117,61 @@ button.☘-button(title="关机" data-primary="danger" style={
 } onclick=function(){window.close()})
     svg(astro-icon='interactive-button/outline/poweroff')
 ```
+
+## upload
+
+配合 `input[type=file].☘-input` 使用即可
+
+<T
+    tag="input"
+    class="☘-button ☘-input"
+    title="upload"
+    data-primary
+    type='file'
+/>
+
+### `data-with-prefix`
+
+```pug
+input.☘-input.☘-button(type="file" data-primary)
+```
+
+<Grid inline>
+{
+    [
+        [false, false, false],
+        [true, false, false],
+        [false, true, false],
+        [false, true, true],
+    ].map(data => 
+        <T class="☘-input-wrapper" data-primary={data[0]}>
+            <T
+                tag="input"
+                class="☘-button ☘-input"
+                title="upload"
+                data-with-prefix
+                data-primary={data[1]}
+                type='file'
+                disabled={data[2]}
+            />
+            <Icon 
+                class={escape('☘-input-prefix')}
+                name="interactive-button/outline/upload"
+                width="18px"
+            />
+        </T>
+    )
+}
+</Grid>
+
+```pug
+.☘-input-wrapper(data-primary)
+    input.☘-input.☘-button(type="file" data-with-prefix data-primary)
+    svg.☘-input-prefix(width="18px")
+```
+
+这里实现使用了 `:has()` 选择器，如果你的浏览器不支持，你可以把prefix放在input之后
+
+- 仅支持前缀
+- 上传按钮不支持波纹点击效果
+- 上传按钮不继承容器主题色

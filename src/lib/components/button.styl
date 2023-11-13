@@ -25,7 +25,7 @@ button_background_color_init(background_color)
 
 .{prefix}-button
     /:root
-        --padding-button 5px 12px
+        // --padding--button 5px 12px
         @property --percent-button-wave
             syntax '<percentage>'
             inherits false
@@ -50,7 +50,7 @@ button_background_color_init(background_color)
     
     cursor pointer
     user-select none
-    padding var(--padding-button)
+    padding var(--padding-vertical-button, 5px) var(--padding-horizonal-button, 12px)
     font-size var(--font-size-body)
     line-height var(--line-height-body)
     border-radius var(--border-radius-md)
@@ -58,6 +58,12 @@ button_background_color_init(background_color)
     transition --percent-button-wave .5s, box-shadow .3s
     transition-timing-function ease-in
     color _rgb(var(--color-button))
+    &::-ms-browse
+        color _rgb(var(--color-button))
+    &::-webkit-file-upload-button
+        color _rgb(var(--color-button))
+    &::file-selector-button
+        color _rgb(var(--color-button))
     button_background_color_init _rgb(var(--background-color-button))
     &:focus-visible
         outline-color _rgb(var(--outline-color-focus))
@@ -66,6 +72,12 @@ button_background_color_init(background_color)
     &[disabled]
         cursor not-allowed
         color _rgb(var(--color-button-disabled))
+        &::-ms-browse
+            color _rgb(var(--color-button-disabled))
+        &::-webkit-file-upload-button
+            color _rgb(var(--color-button-disabled))
+        &::file-selector-button
+            color _rgb(var(--color-button-disabled))
         background-color _rgb(var(--background-color-button-disabled))
     &:not([disabled]):focus
         background-color _rgb(var(--background-color-button-focus))
@@ -74,6 +86,57 @@ button_background_color_init(background_color)
         transition none
 
     &.sm
-        --padding-button 1px 8px
+        // --padding-button 1px 8px
+        --padding-vertical-button 1px
+        --padding-horizonal-button 8px
     &.lg
-        --padding-button 8px 16px
+        // --padding-button 8px 16px
+        --padding-vertical-button 8px
+        --padding-horizonal-button 16px
+    
+    // 文件上传
+    /.{prefix}-input-wrapper
+
+        @supports _selector(':has(*)')
+            &:has(input[type=file].{prefix}-input^[0])
+                .{prefix}-input-prefix
+                    transform translateX(.4em)
+            &:has(input[type=file].{prefix}-input^[0][data-primary])
+            &:has(input[type=file].{prefix}-input^[0]:disabled)
+                .{prefix}-input-prefix
+                    color _rgb(var(--white))
+        
+        input[type=file].{prefix}-input^[0]
+            font-size 0
+            line-height 0
+            uploader-button()
+                font-size var(--font-size-body)
+                line-height var(--line-height-body)
+                padding 0
+                border none
+                background-color transparent
+                outline none
+                margin 0 .2em
+                ../[data-with-prefix] ^[-1..-1]
+                    color red
+                    margin 0 .4em 0 0 // 兼容右侧边距即使是0也会显示宽度的特性
+            &::-ms-browse
+                uploader-button()
+            &::-webkit-file-upload-button
+                uploader-button()
+            &::file-selector-button
+                uploader-button()
+            
+            /**
+            * 以后 `:has()` 全面支持后这里可以不写这俩data-
+            */
+            &[data-with-prefix]
+                padding-left calc(var(--padding-horizonal-button, 12px) + 1.5 * var(--font-size-body))
+
+            @supports not (_selector(':has(*)')) 
+                &+.{prefix}-input-prefix
+                    transform translateX(.4em)
+                &[data-primary]+.{prefix}-input-prefix
+                &:disabled+.{prefix}-input-prefix
+                    color _rgb(var(--white))
+
