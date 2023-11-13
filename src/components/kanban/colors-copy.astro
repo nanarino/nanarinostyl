@@ -9,7 +9,7 @@ import colours from "./colors";
         {
             colours.map((color) => (
                 <tr>
-                    <td class="color">{color}</td>
+                    <td>{color}</td>
                     {Array(10)
                         .fill(0)
                         .map((x, i) => (
@@ -54,7 +54,7 @@ import colours from "./colors";
         --border-radius-md 50%
         svg
             pointer-events none
-    td.color
+    td:first-child
         position sticky
         left 0
         box-shadow var(--box-shadow-divider-right), var(--box-shadow-divider-bottom)

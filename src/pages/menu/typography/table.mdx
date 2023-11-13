@@ -135,3 +135,15 @@ markdown中可以使用的表格
 - 全局变量 `--padding-cell` 表格内边距
 - 全局变量 `--border-cell` 表格边框
 - 全局变量 `--text-align-cell` 调整 表格文字默认居左
+
+### fixed column
+
+例如将第一列固定在左侧
+
+```sass
+td:first-child
+    position: sticky
+    left: 0
+    box-shadow: var(--box-shadow-divider-right) var(--box-shadow-divider-bottom)
+    background-color: rgb(var(--white))
+```
