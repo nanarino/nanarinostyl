@@ -31,10 +31,13 @@
             display inline-flex
             align-items center
             cursor pointer
-            ../:focus-visible+&
+            /**
+             * 使用 `^[1..1]` 代替 `../` 减少编译后体积以及选择器冗余
+             */
+            ^[1..1]:focus-visible+&
                 outline 2px solid _rgb(var(--outline-color-focus))
                 border-radius var(--border-radius-sm)
-            ../:disabled+&
+            ^[1..1]:disabled+&
                 color _rgb(var(--gray-6))
                 cursor not-allowed
         ~/-label::before
@@ -47,15 +50,15 @@
             left 0
             background-color _rgb(var(--white))
             border-radius var(--border-radius-sm)
-            ../:checked+&
+            ^[1..1]:checked+&
                 border-color _rgb(var(--color-checkbox, var(--primary-6)))
                 background-color @border-color
-            ../:checked:disabled+&
+            ^[1..1]:checked:disabled+&
                 border-color _rgb(var(--color-checkbox-disabled, var(--primary-3)))
                 background-color @border-color
-            ../:disabled+&
+            ^[1..1]:disabled+&
                 background-color _rgb(var(--gray-3))
-            ../:disabled:not(:checked)+&
+            ^[1..1]:disabled:not(:checked)+&
                 background-color _rgb(var(--gray-1))
             ~/[data-indeterminate] &
                 padding 2px
@@ -74,7 +77,7 @@
             margin-top -3px
             background none
             transform rotate(-45deg)
-            ../:checked+&
+            ^[1..1]:checked+&
                 border 3px solid _rgb(var(--white))
                 border-top none
                 border-right none

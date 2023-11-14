@@ -40,7 +40,7 @@
     &.sm
         --size-switch 16px
     
-    &>input.{prefix}-input[type=checkbox]
+    input.{prefix}-input[type=checkbox]
         position absolute
         opacity 0
         pointer-events none
@@ -50,16 +50,19 @@
             cursor pointer
             height var(--size-switch, 22px)
             width calc(var(--size-switch, 22px) * 2)
-            ../:focus-visible+&
+            ^[1..1]:focus-visible+&
                 outline 2px solid _rgb(var(--outline-color-focus))
             border-radius calc((var(--size-switch, 22px) / 2))
             background-color _rgb(var(--color-switch, var(--gray-4)))
             transition background-color 1s, box-shadow .5s
-            ../:checked+&
+            /**
+             * 使用 `^[1..1]` 代替 `../` 减少编译后体积以及选择器冗余
+             */
+            ^[1..1]:checked+&
                 background-color _rgb(var(--color-switch-checked, var(--primary-6)))
-            ../:checked:disabled+&
+            ^[1..1]:checked:disabled+&
                 background-color _rgb(var(--color-switch-checked-disabled, var(--primary-3)))
-            ../:disabled+&
+            ^[1..1]:disabled+&
                 background-color _rgb(var(--color-switch-disabled, var(--gray-3)))
                 cursor not-allowed
             
@@ -80,13 +83,13 @@
                 transition all .5s
                 will-change filter
             
-                ../../:checked+&
+                ^[1..1]:checked+&
                     left calc(var(--size-switch, 22px) + var(--padding-switch, 2px))
                     
 
 
 
-            ../:not(:disabled)+&:hover
+            ^[1..1]:not(:disabled)+&:hover
                 box-shadow \
                     inset \
                     0 \
@@ -110,7 +113,7 @@
             
 
 
-            ../:not(:disabled):checked+&:hover
+            ^[1..1]:not(:disabled):checked+&:hover
                 box-shadow \
                     inset \
                     0 \
