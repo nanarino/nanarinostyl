@@ -10,26 +10,32 @@
  * 当 变量 --percent-button-wave 从 0% -> 100% 时 按钮当前颜色从中心扩散
  * 一般来说 按钮当前颜色要比初始背景色要深
  *
- * 在此之前使用radial-gradient(1%) 然后控制 background-size 100% -> 15000% 来实现 
- * 兼容性更好 见 https://github.com/Deep-Codes/affinity-css/blob/main/components/_button.sass
+ * 兼容实现 见 https://github.com/Deep-Codes/affinity-css/blob/main/components/_button.sass
  */
 button_background_color_init(background_color)
-    background-color background_color 
-    background-image radial-gradient(circle, 
-        transparent 0%,
-        transparent var(--percent-button-wave),
-        background_color var(--percent-button-wave), 
-        background_color 100%
-    )
+    background-color background_color
+    @supports (background paint(_component))
+        background-image radial-gradient(circle, 
+            transparent 0%,
+            transparent var(--percent-button-wave),
+            background_color var(--percent-button-wave), 
+            background_color 100%
+        )
 
 
 .{prefix}-button
     /:root
         // --padding--button 5px 12px
-        @property --percent-button-wave
-            syntax '<percentage>'
-            inherits false
-            initial-value: 100%
+        @supports (background paint(_component))
+            /** 
+             * https://stackoverflow.com/questions/69612853/using-css-can-i-check-if-a-browser-supports-the-css-properties-and-values-api
+             * [Typed OM `@property` should be supported here] 
+             */
+            @property --percent-button-wave
+                syntax '<percentage>'
+                inherits false
+                initial-value 100%
+            
 
     --color-button var(--white)
     --color-button-disabled var(--white)
@@ -55,20 +61,23 @@ button_background_color_init(background_color)
     line-height var(--line-height-body)
     border-radius var(--border-radius-md)
     border none
-    transition --percent-button-wave .5s, box-shadow .3s
-    transition-timing-function ease-in
-    color _rgb(var(--color-button))
-    &::-ms-browse
-        color _rgb(var(--color-button))
-    &::-webkit-file-upload-button
-        color _rgb(var(--color-button))
-    &::file-selector-button
-        color _rgb(var(--color-button))
+
+    @supports (background paint(_component))
+        transition --percent-button-wave .5s, box-shadow .3s
+        transition-timing-function ease-in
+    @supports not (background paint(_component))
+        transition background .8s
+        transition-timing-function ease-in
+
     button_background_color_init _rgb(var(--background-color-button))
+    
+
     &:focus-visible
         outline-color _rgb(var(--outline-color-focus))
+    
     &:not([disabled]):hover
         box-shadow var(--box-shadow-drop-bottom)
+    
     &[disabled]
         cursor not-allowed
         color _rgb(var(--color-button-disabled))
@@ -79,11 +88,22 @@ button_background_color_init(background_color)
         &::file-selector-button
             color _rgb(var(--color-button-disabled))
         background-color _rgb(var(--background-color-button-disabled))
+    
     &:not([disabled]):focus
-        background-color _rgb(var(--background-color-button-focus))
+        @supports (background paint(_component))
+            background-color _rgb(var(--background-color-button-focus))
+        @supports not (background paint(_component))
+            background _rgb(var(--background-color-button)) radial-gradient(circle, 
+                transparent 1%,
+                _rgb(var(--background-color-button)) 1%
+            ) center/15000%
+    
     &:not([disabled]):active
         --percent-button-wave 0%
         transition none
+        background-color _rgb(var(--background-color-button-focus))
+        background-size 100%
+
 
     &.sm
         // --padding-button 1px 8px
@@ -94,6 +114,17 @@ button_background_color_init(background_color)
         --padding-vertical-button 8px
         --padding-horizonal-button 16px
     
+
+
+    color _rgb(var(--color-button))
+    &::-ms-browse
+        color _rgb(var(--color-button))
+    &::-webkit-file-upload-button
+        color _rgb(var(--color-button))
+    &::file-selector-button
+        color _rgb(var(--color-button))
+    
+
     // 文件上传
     /.{prefix}-input-wrapper
 
