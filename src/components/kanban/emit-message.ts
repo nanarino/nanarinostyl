@@ -6,12 +6,17 @@ const launcher = document.getElementById("emit-message-kanban");
 launcher.onclick = function (e) {
     const button = e.target as HTMLButtonElement;
     if (button.tagName === "BUTTON") {
-        const { primary } = button.dataset;
+        const primary = Object.hasOwn(button.dataset, "primary");
         const style: Record<string, string> = {};
-        if (primary == "random") {
-            const color = colours[Math.floor((Math.random() * colours.length))];
+        if (primary) {
+            let color = Reflect.get(button.dataset, "color") || "primary";
             Reflect.set(style, "--background-color-message", `var(--${color}-5)`);
             Reflect.set(style, "--box-shadow-color", `var(--${color}-4)`);
+
+            color = colours[Math.floor((Math.random() * colours.length))];
+            button.dataset.color = color;
+            button.style.setProperty("--background-color-button", `var(--${color}-5)`)
+            button.style.setProperty("--background-color-button-focus", `var(--${color}-6)`)
         }
         window.dispatchEvent(
             new CustomEvent(`${prefix}-message`, {

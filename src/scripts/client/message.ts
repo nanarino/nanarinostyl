@@ -14,7 +14,7 @@ window.addEventListener(`${prefix}-message`, async (
         /**
          * 主题 4种 其他非空值等效于传primary
          */
-        primary?: "success" | "danger" | "warning" | "primary"
+        primary?: "success" | "danger" | "warning" | "primary" | boolean
         /**
          * 持续时间
          */
@@ -39,7 +39,7 @@ window.addEventListener(`${prefix}-message`, async (
      * 检查项目其他地方有没有这个问题
      */
     let duration: number = 2000;
-    let primary: string = "";
+    let primary: string | boolean = false;
     let style: Record<string, string> = {};
     let content = event.detail ?? "☘";
 
@@ -50,7 +50,7 @@ window.addEventListener(`${prefix}-message`, async (
          * 而使用 `${}` 风险更大 需要指定默认值
          */
         duration = content.duration ?? 2000;
-        primary = `${content.primary ?? ""}`;
+        primary = content.primary ?? false;
         style = content.style ?? {};
         content = `${content.content ?? "☘"}`;
     }
@@ -62,7 +62,7 @@ window.addEventListener(`${prefix}-message`, async (
     `;
     if (primary) {
         const p = (msg.firstElementChild as HTMLDivElement)
-        p.dataset.primary = primary;
+        p.dataset.primary = primary.toString();
         /**
          * 不同于 `Object.assign(p.style, style)`
          * 

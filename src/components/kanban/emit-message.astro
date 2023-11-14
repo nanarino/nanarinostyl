@@ -5,30 +5,9 @@ import Grid from "../grid.astro";
 
 <div id="emit-message-kanban">
     <Grid>
-        {
-            ["primary", "success", "danger", "warning", "random"].map(
-                (primary) => (
-                    <button
-                        class={`${prefix}-button`}
-                        title="emit message"
-                        data-primary={primary}
-                    >
-                        {primary}
-                    </button>
-                )
-            )
-        }
-
-        <button class={`${prefix}-button`} title="emit message"> normal</button>
+        <button class={`${prefix}-button`} title="emit" data-primary> primary </button>
+        <button class={`${prefix}-button`} title="emit"> normal</button>
     </Grid>
 </div>
 
 <script src="./emit-message.ts"></script>
-
-<style lang="stylus" is:global>
-#emit-message-kanban
-    button[data-primary=random]
-        --background-color-button var(--blue-5)
-        --background-color-button-focus var(--blue-6)
-        --background-color-button-disabled var(--blue-2)
-</style>
