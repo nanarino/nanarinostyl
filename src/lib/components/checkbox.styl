@@ -3,7 +3,7 @@
 
 .{prefix}-checkbox
 
-    // --checkbox-indent 20px
+    // --checkbox-indent 1em
     // --color-checkbox var(--primary-6)
     // --color-checkbox-disabled var(--primary-3)
 
@@ -15,12 +15,18 @@
     // text-indent 1.5em // IOS中似乎input标签不支持这个属性？遂改用label的padding-left
     vertical-align middle
     input.{prefix}-input[type=checkbox]
+        margin 0
+        border 0
+        width 16px
+        height 16px
+        top 0
+        bottom 0
+        margin auto 0
         position absolute
         opacity 0
-        pointer-events none
         ~/-label
-            padding-left var(--checkbox-indent, 20px)
-            min-width 18px
+            padding-left var(--checkbox-indent, 1em)
+            min-width 2px
             position relative
             display inline-flex
             align-items center

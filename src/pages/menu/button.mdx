@@ -122,16 +122,27 @@ button.☘-button(title="关机" data-primary="danger" style={
 
 配合 `input[type=file].☘-input` 使用即可
 
+上传按钮并**不捆绑** `<label>` ，默认情况下label被点击时也会触发系统文件选择
+
 <T
     tag="input"
+    id="uploader"
     class="☘-button ☘-input"
-    title="upload"
     data-primary
     type='file'
-/>
+    onchange="
+        this.nextElementSibling.innerText = window.event.target.files[0].name
+"/><label for="uploader" title="附件">还未选择附件</label>
 
 ```pug
-input.☘-input.☘-button(type="file" data-primary)
+input.☘-input.☘-button#uploader(
+    type="file"
+    data-primary
+    onchange=function(e){
+        this.nextElementSibling.innerText = e.target.files[0].name
+    }
+)
+label(title="附件" for="uploader") 还未选择附件
 ```
 
 ### `data-with-prefix`
@@ -166,11 +177,15 @@ input.☘-input.☘-button(type="file" data-primary)
 
 ```pug
 .☘-input-wrapper(data-primary)
-    input.☘-input.☘-button(type="file" data-with-prefix data-primary)
+    input.☘-input.☘-button(
+        type="file"
+        data-with-prefix
+        data-primary
+    )
     svg.☘-input-prefix(width="18px")
 ```
 
-这里实现使用了 `:has()` 选择器，如果你的浏览器不支持，你可以把prefix放在input之后
+如果你的浏览器支持 `:has()` 选择器，你可以不用像示例代码一样，而是把prefix放在input之前
 
 - 仅支持前缀
 - 上传按钮不支持波纹点击效果
