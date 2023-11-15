@@ -23,8 +23,7 @@ launcher.onclick = function (e) {
                     detail: {
                         content: `
                             <svg 
-                                width="16"
-                                height="16"
+                                class="${prefix}-message-prefix"
                                 astro-icon="tips/fill/${icon}-circle-fill"
                             >
                                 <use
@@ -57,15 +56,14 @@ launcher.onclick = function (e) {
                     detail: {
                         content: `
                             <svg 
-                                width="16"
-                                height="16"
+                                class="${prefix}-message-prefix"
                                 astro-icon="tips/outline/${icon}-circle"
-                                style="color:rgb(var(--${{
+                                data-primary="${{
                                     check: 'success',
                                     close: 'danger',
                                     exclamation: 'warning',
-                                    info: 'primary',
-                                }[icon]}-6))"
+                                    info: "",
+                                }[icon]}"
                             >
                                 <use
                                     xlink:href="#astroicon:tips/outline/${icon}-circle"

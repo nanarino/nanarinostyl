@@ -10,11 +10,10 @@ table.onclick = function (e) {
             new CustomEvent(`${prefix}-message`, {
                 detail: {
                     content: `
-                        <svg 
-                            width="1em"
-                            height="1em"
+                        <svg
+                            class="${prefix}-message-prefix"
                             astro-icon="tips/outline/check-circle"
-                            style="color:rgb(var(--success-6))"
+                            data-primary="success"
                         >
                             <use
                                 xlink:href="#astroicon:tips/outline/check-circle"
@@ -24,7 +23,8 @@ table.onclick = function (e) {
                         <span>
                             复制成功
                         </span>
-                    `
+                    `,
+                    // duration: 100000,
                 },
             })
         );

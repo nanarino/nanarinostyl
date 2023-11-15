@@ -31,12 +31,20 @@
 
 
     .{prefix}-paragraph
+        max-width 60vw
+        margin 0
+
         &>*
             display inline-flex
             vertical-align middle
             align-items center
-        max-width 60vw
-        margin 0
+        
+        ^[1..1]>^[0]-prefix
+            width 16px
+            height 16px
+            &:where([data-primary])
+                color _rgb(var(--primary-6))
+
     
     &:where([data-primary])
         --color-message var(--white)
