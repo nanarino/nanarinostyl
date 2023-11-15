@@ -50,6 +50,9 @@
             left 0
             background-color _rgb(var(--white))
             border-radius var(--border-radius-sm)
+            transition border-color .3s
+            ^[1..1]:not(:disabled):hover+&
+                border-color _rgb(var(--color-checkbox, var(--primary-6)))
             ^[1..1]:checked+&
                 border-color _rgb(var(--color-checkbox, var(--primary-6)))
                 background-color @border-color

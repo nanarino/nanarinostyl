@@ -3,13 +3,13 @@
   "description": "style lib",
   "author": "☘",
   "license": "MIT",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "./dist/index.css",
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
     "build-docs": "astro build",
-    "build-stylus": "rma ./dist && stylus ./src/lib/index.styl --out ./dist",
+    "build-styl": "rma ./dist && stylus ./src/lib/index.styl --out ./dist",
     "build-gh-pages": "astro build --base /nanarinostyl/",
     "preview": "astro preview"
   },

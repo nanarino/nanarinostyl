@@ -46,13 +46,15 @@ div(style={'--indent-checkbox': '20px'})
 
 ## `data-indeterminate`
 
+这个样式设计来自于 [UI5](https://sap.github.io/ui5-webcomponents/playground/?path=/docs/main-check-box--docs)
+
 <Checkbox
     id="Superposition"
     dataset={{ indeterminate : true }}
     style="--indent-checkbox: 20px"
     onchange="
     this.parentElement.removeAttribute('data-indeterminate')
-">叠加态</Checkbox>
+">半信半疑</Checkbox>
 
 ```pug
 span.☘-checkbox(
@@ -68,8 +70,14 @@ span.☘-checkbox(
     label.☘-checkbox-label(
         for="Superposition"
         title="Superposition"
-    ) 叠加态
+    ) 半信半疑
 ```
+
+注意：`[data-indeterminate]` 在 checked与否 的不同状态下 观感并不相同。
+
+在这个示例里，初始没有选择，选择后**清除**了 `[data-indeterminate]`，但你可以不
+
+
 
 ## custom style
 
@@ -78,6 +86,7 @@ span.☘-checkbox(
 
 <Checkbox
     id="BlueSuperposition"
+    checked
     disabled
     dataset={{ indeterminate : true }}
     style={{
@@ -92,7 +101,11 @@ span.☘-checkbox(data-indeterminate style={
     '--color-checkbox-disabled': 'var(--blue-2)',
     '--indent-checkbox': '20px'
 })
-    input#BlueSuperposition.☘-input(type="checkbox" disabled)
+    input#BlueSuperposition.☘-input(
+        type="checkbox"
+        checked
+        disabled
+    )
     label.☘-checkbox-label(
         for="BlueSuperposition"
         title="BlueSuperposition"
@@ -103,12 +116,7 @@ span.☘-checkbox(data-indeterminate style={
 
 默认情况下label为空即可
 
-<Checkbox
-    id="NoLabel"
-    dataset={{ indeterminate : true }}
-    onchange="
-    this.parentElement.removeAttribute('data-indeterminate')
-"/>
+<Checkbox id="NoLabel" dataset={{ indeterminate : true }}/>
 
 ```pug
 span.☘-checkbox(data-indeterminate)
