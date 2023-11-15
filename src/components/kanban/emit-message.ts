@@ -60,7 +60,6 @@ launcher.onclick = function (e) {
                                 width="1em"
                                 height="1em"
                                 astro-icon="tips/outline/${icon}-circle"
-                                style="color:rgb(var(--primary-6))"
                             >
                                 <use
                                     xlink:href="#astroicon:tips/outline/${icon}-circle"

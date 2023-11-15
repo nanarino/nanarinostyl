@@ -9,8 +9,22 @@ table.onclick = function (e) {
         window.dispatchEvent(
             new CustomEvent(`${prefix}-message`, {
                 detail: {
-                    content: "复制成功",
-                    primary: "success",
+                    content: `
+                        <svg 
+                            width="1em"
+                            height="1em"
+                            astro-icon="tips/outline/check-circle"
+                            style="color:rgb(var(--success-6))"
+                        >
+                            <use
+                                xlink:href="#astroicon:tips/outline/check-circle"
+                            >
+                            </use>
+                        </svg>
+                        <span>
+                            复制成功
+                        </span>
+                    `
                 },
             })
         );
