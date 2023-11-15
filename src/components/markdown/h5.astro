@@ -11,17 +11,14 @@ const props = Astro.props;
 <h5 class={`${prefix}-title ${prefix}-font-serif`} id={props.id}>
     <a href={`#${props.id}`} class={`${prefix}-link ${prefix}-connot-select`}>
         <Icon name="logo/outline/clover" />
-    </a><slot />
+    </a>
+    <span><slot /></span>
 </h5>
 
 <style lang="stylus">
 @import '../../lib/variable/functions.styl'
 
-h5
-    margin-left -4px !important
 a
-    margin 4px
-    vertical-align middle
     &:focus-visible
         outline none
         filter drop-shadow(0 0 2px _rgb(var(--outline-color-focus)))

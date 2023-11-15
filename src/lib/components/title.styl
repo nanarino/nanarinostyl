@@ -2,11 +2,11 @@
 @import './../variable/functions.styl'
 
 set_title_styl(size=6)
-    height var(_get_var_by(
+    line-height var(_get_var_by(
         line-height,
         'h%s' % size
     ))
-    line-height @height
+    // line-height @height
     font-size var(_get_var_by(
         font-size,
         'h%s' % size
@@ -42,10 +42,15 @@ set_has_prefix()
 
 
 .{prefix}-title
-    padding var(--font-offset-parent) 0
-    mixin_line_clamp(1)
+    &>*
+        display inline-flex
+        vertical-align middle
+        align-items center
+
+    padding 0
+    // mixin_line_clamp(1)
     font-weight normal
-    margin calc(1em - var(--font-offset-parent)) 0
+    margin 1em 0
     set_title_styl()
     set_has_prefix()
     &-subtitle
