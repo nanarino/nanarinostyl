@@ -14,6 +14,7 @@ launcher.onclick = function (e) {
             Reflect.set(style, "--box-shadow-color", `var(--${color}-4)`);
 
             color = colours[Math.floor((Math.random() * colours.length))];
+            button.innerText = color;
             button.dataset.color = color;
             button.style.setProperty("--background-color-button", `var(--${color}-5)`)
             button.style.setProperty("--background-color-button-focus", `var(--${color}-6)`)
