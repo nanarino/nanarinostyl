@@ -1,7 +1,25 @@
 ---
 import prefix from "src/scripts/prefix";
+import { Sprite } from 'astro-icon';
+import Grid from "../grid.astro";
 ---
 
-<div class={`${prefix}-message-queue`} id="message-queue" />
+<Grid inline style={{ display: "none" }}>
+    <Sprite.Provider>
+
+        <Sprite name="tips/fill/check-circle-fill" />
+        <Sprite name="tips/fill/close-circle-fill" />
+        <Sprite name="tips/fill/exclamation-circle-fill" />
+        <Sprite name="tips/fill/info-circle-fill" />
+
+        <Sprite name="tips/outline/check-circle" />
+        <Sprite name="tips/outline/close-circle" />
+        <Sprite name="tips/outline/exclamation-circle" />
+        <Sprite name="tips/outline/info-circle" />
+
+    </Sprite.Provider>
+</Grid>
+
+<div class={`${prefix}-message-queue`} id="message-queue"></div>
 
 <script src="/src/scripts/client/message.ts"></script>
