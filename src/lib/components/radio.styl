@@ -1,0 +1,71 @@
+@import './../variable/prefix.styl'
+@import './../variable/functions.styl'
+
+/**
+ * 和checkbox的样式太相似
+ * 直接复制过来改了几个词就能用
+ * 暂时不考虑编译后体积
+ */
+.{prefix}-radio
+
+    // --indent-radio 1em
+    // --color-radio var(--primary-6)
+    // --color-radio-disabled var(--primary-3)
+
+    min-height 1em
+    position relative
+    font-size var(--font-size-body)
+    line-height var(--line-height-body)
+    display inline-flex
+    // text-indent 1.5em // IOS中似乎input标签不支持这个属性？遂改用label的padding-left
+    vertical-align middle
+    input.{prefix}-input[type=radio]
+        margin 0
+        border 0
+        width 16px
+        height 16px
+        top 0
+        bottom 0
+        margin auto 0
+        position absolute
+        opacity 0
+        ~/-label
+            padding-left var(--indent-radio, 1em)
+            min-width 2px
+            position relative
+            display inline-flex
+            align-items center
+            cursor pointer
+            /**
+             * 使用 `^[1..1]` 代替 `../` 减少编译后体积以及选择器冗余
+             */
+            ^[1..1]:focus-visible+&
+                outline 2px solid _rgb(var(--outline-color-focus))
+                border-radius var(--border-radius-sm)
+            ^[1..1]:disabled+&
+                color _rgb(var(--gray-6))
+                cursor not-allowed
+        ~/-label::before
+            content ''
+            width 16px
+            height 16px
+            box-sizing border-box
+            border 2px solid _rgb(var(--gray-4))
+            border-radius 8px
+            position absolute
+            left 0
+            background-color _rgb(var(--white))
+            transition border-color .3s, border-width .1s
+            ^[1..1]:not(:disabled):hover+&
+                border-color _rgb(var(--color-radio, var(--primary-6)))
+            ^[1..1]:checked+&
+                border-width 5px 
+                border-color _rgb(var(--color-radio, var(--primary-6)))
+                // background-color @border-color
+            ^[1..1]:checked:disabled+&
+                border-color _rgb(var(--color-radio-disabled, var(--primary-3)))
+                // background-color @border-color
+            ^[1..1]:disabled+&
+                background-color _rgb(var(--gray-3))
+            ^[1..1]:disabled:not(:checked)+&
+                background-color _rgb(var(--gray-1))

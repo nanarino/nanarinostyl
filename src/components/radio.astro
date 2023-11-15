@@ -1,0 +1,37 @@
+---
+import prefix from "src/scripts/prefix";
+import attrs from "src/scripts/server/dataset";
+const props = Astro.props;
+interface Props {
+    id: string;
+    title?: string;
+    name: string;
+    checked?: boolean;
+    disabled?: boolean;
+    class?: string;
+    style?: Record<string, any> | string;
+    dataset?: Record<string, any>;
+    onchange?: string;
+}
+---
+
+<span
+    class={`${prefix}-radio ${props.class || ""}`}
+    style={props.style}
+    {...attrs(props.dataset || {})}
+>
+    <input
+        type="radio"
+        class={`${prefix}-input`}
+        id={props.id}
+        name={props.name}
+        checked={props.checked}
+        disabled={props.disabled}
+        onchange={props.onchange}
+    />
+    <label
+        class={`${prefix}-radio-label`}
+        for={props.id}
+        title={props.title || props.id}><slot /></label
+    >
+</span>
