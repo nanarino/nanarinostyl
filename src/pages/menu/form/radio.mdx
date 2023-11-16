@@ -34,8 +34,8 @@ div(style="--indent-radio: 20px")
 ## `disabled`
 
 <Grid inline style={{'--indent-radio': '20px'}}>
-    <Radio name="type" id="HTTP" disabled>HTTP</Radio>
-    <Radio name="type" id="HTTPS" checked disabled dataset={{ 
+    <Radio name="type" id="HTTP" checked disabled>HTTP</Radio>
+    <Radio name="type" id="HTTPS" disabled dataset={{ 
         primary : "success" 
     }}>HTTPS</Radio>
 </Grid>
@@ -43,10 +43,10 @@ div(style="--indent-radio: 20px")
 ```pug
 div(style={'--indent-radio': '20px'})
     span.☘-radio
-        input#HTTP.☘-radio(type="radio" disabled)
+        input#HTTP.☘-radio(type="radio" checked disabled)
         label.☘-radio-label(for="HTTP" title="HTTP") HTTP
     span.☘-radio(data-primary="success")
-        input#HTTPS.☘-radio(type="radio" checked disabled)
+        input#HTTPS.☘-radio(type="radio" disabled)
         label.☘-radio-label(for="HTTPS" title="HTTPS") HTTPS
 ```
 
@@ -78,6 +78,7 @@ div(style="--indent-radio: 20px")
             type="radio"
             name="lunch"
             style={'--color-radio': 'var(--blue-6)'}
+            checked
         )
         label.☘-radio-label(for="eleme" title="eleme") 饿了么
 ```
