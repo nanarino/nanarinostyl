@@ -1,6 +1,5 @@
 export default [
     "red",
-    "orangered",
     "orange",
     "gold",
     "yellow",
