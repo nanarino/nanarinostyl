@@ -47,4 +47,13 @@ import T from "../T.astro";
     --color-menu var(--gold-6)
     border 2px solid _rgb(var(--gold-3))
     padding .5em
+    
+    [data-selected]::after
+        content ''
+        position absolute
+        inset 0
+        background-image url("/src/assets/images/watermark.svg")
+        mix-blend-mode plus-lighter
+        /:root[data-theme=dark] &
+            mix-blend-mode difference
 </style>

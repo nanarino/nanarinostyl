@@ -15,7 +15,7 @@ export * from 'src/components/markdown/map.mdx';
 
 这里实现使用了 `path()` 绘制，如果你的浏览器不支持会被降级，样式会有细微区别
 
-- 全局变量 `--indent-checkbox` 改变label文字左内边距，原本是用 `text-indent` 属性实现。但在Safari浏览器中不生效，遂改用 `padding-left` 来实现。默认值是1em（label紧贴input）
+- 全局变量 `--indent-checkbox` 改变label文字左内边距，原本是用 `text-indent` 属性实现。但在Safari中使用 `::before` 的元素不支持 `text-indent`，遂改用 `padding-left` 来实现。默认值是1em（label紧贴input）
 
 ```pug
 span.☘-checkbox(style="--indent-checkbox: 2em")

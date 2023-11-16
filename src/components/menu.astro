@@ -82,3 +82,14 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
         })
     }
 </ul>
+
+<style lang="stylus">
+    [data-selected]::after
+        content ''
+        position absolute
+        inset 0
+        background-image url("/src/assets/images/watermark.svg")
+        mix-blend-mode plus-lighter
+        /:root[data-theme=dark] &
+            mix-blend-mode difference
+</style>
