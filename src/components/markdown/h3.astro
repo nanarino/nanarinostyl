@@ -10,7 +10,7 @@ const props = Astro.props;
 
 <h3 class={`${prefix}-title ${prefix}-font-serif`} id={props.id}>
     <a href={`#${props.id}`} class={`${prefix}-link ${prefix}-connot-select`}>
-        <Icon name="logo/outline/clover" />
+        <Icon width="1em" name="logo/outline/clover" />
     </a>
     <span><slot /></span>
 </h3>
@@ -25,7 +25,5 @@ a
         svg
             fill _rgb(var(--outline-color-focus))
 svg
-    width 1em
-    height 1em
     transform rotate(-33deg) rotateY(180deg)
 </style>

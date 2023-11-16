@@ -4,13 +4,11 @@ import Icon from "astro-icon";
 ---
 
 <h1 class={`${prefix}-title ${prefix}-font-serif`}>
-    <Icon name="logo/fill/clover" />
+    <Icon width="1em" name="logo/fill/clover" />
     <span><slot /></span>
 </h1>
 
 <style lang="stylus">
 svg
-    width 1em
-    height 1em
     transform rotate(-76deg) rotateY(180deg)
 </style>

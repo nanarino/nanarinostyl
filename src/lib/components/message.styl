@@ -40,6 +40,10 @@
             align-items center
         
         ^[1..1]>^[0]-prefix
+            /**
+             * <svg> 在 <use> 的情况下需要给定宽和高
+             * 只给其中一个 另一个会复制本体的 而不是等比例缩放
+             */
             width 16px
             height 16px
             &:where([data-primary])
