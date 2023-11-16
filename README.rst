@@ -25,6 +25,18 @@
     > Could not parse expression with acorn: Expecting Unicode escape sequence \uXXXX
 
 
+
+兼容
+======
+
+====  ======  =======  ====  ====
+Edge  Safari  Firefox  vivo  夸克
+====  ======  =======  ====  ====
+ ✔   17 ✔  121 ✔   ❌    ✔ 
+====  ======  =======  ====  ====
+
+
+
 利用
 ======
 ::
