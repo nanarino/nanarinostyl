@@ -9,7 +9,12 @@
         flex-direction row
     &-content
         flex 1
+        overflow hidden auto
     &-aside
+        // --width-aside: unset
+        width var(--width-aside, unset)
+        overflow hidden auto
+
         &:first-child
             --box-shadow-color @--box-shadow-color
             box-shadow var(--box-shadow-divider-right)
@@ -18,18 +23,22 @@
             box-shadow var(--box-shadow-divider-left)
         &[data-folded]
             /**
-             * 不使用 width->0 padding->0 过渡动画 因为滚动条的消失是突变的
+             * 折叠 无动画的收起
              */
             flex 0
-            padding 0 !important
+            padding-left 0 !important
+            padding-right 0 !important
+        &[data-collapsed]
             /**
-             * overflow-x hidden
-             * overflow-y hidden
-             * overflow-x auto
-             * overflow-y auto
-             * 不知道什么原理 实际上面任意一条单独都能使 `aside[data-folded]` 实际宽度为0
+             * 塌陷 有动画的收起
              */
-            overflow hidden
+            width 0
+            padding-left 0 !important
+            padding-right 0 !important
+            @media screen and (min-width 768px) // ipad mini 尺寸
+                width var(--width-aside, unset)
+        transition padding-left .3s, padding-right .3s, width .3s
+
     &-header
         --box-shadow-color @--box-shadow-color
         box-shadow var(--box-shadow-divider-bottom)

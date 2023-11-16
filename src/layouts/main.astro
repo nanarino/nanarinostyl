@@ -28,16 +28,8 @@ const base = import.meta.env.BASE_URL + "menu/";
     section
         overflow hidden
         aside
-            width 240px
-            overflow-y auto
-            overflow-x hidden
+            --width-aside 240px
             padding 1em 0
-            // &[data-folder] 默认的样式库里的折叠没有动画效果
-            &[data-collapsed]
-                width 0
-                @media screen and (min-width 768px)
-                    width 240px
-            transition width .3s
         main
             overflow-y auto
             scroll-behavior smooth
