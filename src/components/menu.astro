@@ -85,6 +85,7 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
 
 <style lang="stylus">
     [data-selected]::after
+        pointer-events none
         content ''
         position absolute
         inset 0
