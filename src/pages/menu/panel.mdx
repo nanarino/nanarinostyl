@@ -1,0 +1,88 @@
+---
+layout: "@layout/main.astro"
+title: 面板
+---
+
+import T from "src/components/T.astro";
+export * from 'src/components/markdown/map.mdx';
+
+# panel
+
+这个样式设计来自于 [ui5 panel](https://sap.github.io/ui5-webcomponents/playground/?path=/docs/main-panel--docs)
+
+<T style={{
+    'border': '2px solid rgb(var(--black))',
+    'border-radius': '16px',
+    'overflow': 'hidden',
+}}>
+    <T tag="details" class="☘-panel">
+        <summary>进入</summary>
+        <T>到顶了</T>
+    </T>
+</T>
+
+```pug
+div(style={
+    'border': '2px solid rgb(var(--black))',
+    'border-radius': '16px',
+    'overflow': 'hidden',
+})
+    details.☘-panel
+        summary 进入
+        div 到顶了
+```
+
+
+## `data-primary`
+
+`details.☘-panel[data-primary]` 这个属性需要启用后才能继承主题和拥有某些局部样式
+
+<T tag="details" class="☘-panel" data-primary="success">
+    <summary>进入</summary>
+    <T>到顶了</T>
+</T>
+
+```pug
+details.☘-panel(data-primary="success")
+    summary 进入
+    div 到顶了
+```
+
+## custom style
+
+以下局部变量可以自定义颜色RGB值
+
+- `--background-color-panel` 概况以及内容的背景色
+- `--color-panel` 概况以及三角符号的字体颜色
+
+<T
+    tag="details"
+    class="☘-panel"
+    style={{
+        '--background-color-panel': 'var(--yellow-2)',
+        '--color-panel': 'var(--gold-7)'
+    }}
+    data-primary
+>
+    <summary>
+        <span>进入</span>
+        <span>🥰</span>
+    </summary>
+    <T
+        tag="p"
+        class="☘-paragraph"
+        data-size="2"
+        style="margin:0"
+    >😍😍😍😍😍😍</T>
+</T>
+
+```pug
+details.☘-panel(data-primary style={
+    '--background-color-panel': 'var(--yellow-2)',
+    '--color-panel': 'var(--gold-7)'
+})
+    summary 
+        span 进入
+        span 🥰
+    p.☘-paragraph(data-size=2 style="margin:0") 😍😍😍😍😍😍
+```
