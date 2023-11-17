@@ -84,6 +84,8 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
 </ul>
 
 <style lang="stylus">
+    // background-image url("/src/assets/images/watermark.svg")
+    // background-blend-mode multiply
     [data-selected]::after
         pointer-events none
         content ''
@@ -92,5 +94,5 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
         background-image url("/src/assets/images/watermark.svg")
         mix-blend-mode plus-lighter
         /:root[data-theme=dark] &
-            mix-blend-mode difference
+            mix-blend-mode multiply
 </style>

@@ -7,16 +7,17 @@ const header = `${prefix}-layout-header`;
 const aside = `${prefix}-layout-aside`;
 const content = `${prefix}-layout-content`;
 const footer = `${prefix}-layout-footer`;
+const watermark = `${prefix}-watermark`;
 ---
 
 <div id="layouts-kanban">
-    <section class={layout}>
+    <section class:list={[layout, watermark]}>
         <Section tag="header" className={header} />
         <Section tag="main" className={content} />
         <Section tag="footer" className={footer} />
     </section>
 
-    <section class={layout}>
+    <section class:list={[layout, watermark]}>
         <Section tag="header" className={header} />
         <section class={layout} data-has-aside>
             <Section
@@ -29,7 +30,7 @@ const footer = `${prefix}-layout-footer`;
         <Section tag="footer" className={footer} />
     </section>
 
-    <section class={layout}>
+    <section class:list={[layout, watermark]}>
         <Section tag="header" className={header} />
         <section class={layout} data-has-aside>
             <Section tag="main" className={content} />
@@ -42,7 +43,7 @@ const footer = `${prefix}-layout-footer`;
         <Section tag="footer" className={footer} />
     </section>
 
-    <section class={layout} data-has-aside>
+    <section class:list={[layout, watermark]} data-has-aside>
         <Section
             tag="aside"
             className={aside}
@@ -67,19 +68,14 @@ const footer = `${prefix}-layout-footer`;
     &>section
         overflow hidden
         border-radius var(--border-radius-sm)
-        background-color #fff
-        background-image url("/src/assets/images/watermark.svg")
     header
     footer
         padding 0 2em
         background-color _rgb(var(--lime-5))
-        mix-blend-mode multiply
     aside
         padding 0 2em
         background-color _rgb(var(--lime-6))
-        mix-blend-mode multiply
     main
         padding 0 2em
         background-color _rgb(var(--lime-7))
-        mix-blend-mode multiply
 </style>

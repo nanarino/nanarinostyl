@@ -18,6 +18,15 @@ export * from 'src/components/markdown/map.mdx';
 - `aside[data-collapsed]` 塌陷侧边 切换时有动画
 
 
+## watermark
+
+添加 `☘-watermark` 类名的元素即可拥有一个 `::after` 水印图层
+
+这个页面充满了水印
+
+全局变量 `--opacity-watermark` 水印调整透明度（默认0.5）
+
+
 ## menu
 
 本文档的左侧菜单利用了这个
@@ -49,7 +58,7 @@ ul.☘-menu#menu-tree-kanban
             span 分类-2
             i.☘-menu-submenu-title-arrow
         ul.☘-menu
-            li.☘-menu-item(data-selected) 叶子-2-1
+            li.☘-menu-item.☘-watermark(data-selected) 叶子-2-1
             li.☘-menu-item
                 a.☘-menu-item-link 叶子-2-2
 
