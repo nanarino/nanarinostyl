@@ -24,7 +24,7 @@
                 display flex
                 flex-direction column
                 gap @gap
-                &[data-folded]
+                &:where([data-folded])
                     /**
                      * 收起时 无间距
                      */
@@ -86,7 +86,7 @@
                     color inherit
                     border-radius @border-radius // 这个是为了 `a:focus-visible` 能有圆角
 
-                &[data-selected]
+                &:where([data-selected])
                     cursor auto
                     background-color _rgb(var(--color-menu, var(--primary-6)))
                     color _rgb(var(--white))
@@ -94,9 +94,9 @@
                 &:not(^[0]-item[data-selected]):hover
                     color _rgb(var(--color-menu, var(--primary-6)))
                 
-                ../-submenu[data-folded] ^[0]
+                ../-submenu:where([data-folded]) ^[0]
                     /**
                      * 收起时 0高度
                      */
-                    height 0
+                    flex-basis 0
                     overflow hidden

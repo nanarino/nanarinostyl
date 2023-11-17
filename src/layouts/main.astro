@@ -30,6 +30,9 @@ const base = import.meta.env.BASE_URL + "menu/";
         aside
             --width-aside 240px
             padding 1em 0
+            &[data-collapsed]
+                @media screen and (min-width 768px) // 大于等于 ipad mini 尺寸
+                    width var(--width-aside, unset)
         main
             overflow-y auto
             scroll-behavior smooth

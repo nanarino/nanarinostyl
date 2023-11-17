@@ -162,14 +162,14 @@ button_background_color_init(background_color)
             /**
             * 以后 `:has()` 全面支持后这里可以不写这俩data-
             */
-            &[data-with-prefix]
+            &:where([data-with-prefix])
                 padding-left calc(var(--padding-horizonal-button, 12px) + 1.5 * var(--font-size-body))
 
             @supports not (_selector(':has(*)')) 
                 &+.{prefix}-input-prefix
                     pointer-events none
                     transform translateX(.4em)
-                &[data-primary]+.{prefix}-input-prefix
+                &:where([data-primary])+.{prefix}-input-prefix
                 &:disabled+.{prefix}-input-prefix
                     color _rgb(var(--white))
             

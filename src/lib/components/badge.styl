@@ -37,7 +37,7 @@
         aspect-ratio 1 / 1
         clip-path inset(var(--margin-badge, .3em) round 50%)
         background-color _rgb(var(--color-badge, var(--primary-6)))
-    &[data-processing]::after
+    &:where([data-processing])::after
         content ''
         box-sizing border-box
         position absolute

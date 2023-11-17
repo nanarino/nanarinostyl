@@ -55,7 +55,7 @@ textarea.{prefix}-textarea
     
     input_stat()
 
-    &[data-primary]
+    &:where([data-primary])
         --color-textarea var(--primary-6)
 
 
@@ -100,9 +100,9 @@ input.{prefix}-input
         /**
          * 以后 `:has()` 全面支持后这里可以不写这俩data-
          */
-        &[data-with-prefix]
+        &:where([data-with-prefix])
             padding-left calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
-        &[data-with-suffix]
+        &:where([data-with-suffix])
             padding-right calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
 
 

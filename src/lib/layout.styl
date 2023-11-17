@@ -5,7 +5,7 @@
     flex-direction column
     flex 1
     --box-shadow-color var(--gray-6)
-    &[data-has-aside]
+    &:where([data-has-aside])
         flex-direction row
     &-content
         flex 1
@@ -21,22 +21,20 @@
         &:last-child
             --box-shadow-color @--box-shadow-color
             box-shadow var(--box-shadow-divider-left)
-        &[data-folded]
+        &:where([data-folded])
             /**
              * 折叠 无动画的收起
              */
             flex 0
-            padding-left 0 !important
-            padding-right 0 !important
-        &[data-collapsed]
+            padding-left 0
+            padding-right 0
+        &:where([data-collapsed])
             /**
              * 塌陷 有动画的收起
              */
             width 0
-            padding-left 0 !important
-            padding-right 0 !important
-            @media screen and (min-width 768px) // ipad mini 尺寸
-                width var(--width-aside, unset)
+            padding-left 0
+            padding-right 0
         transition padding-left .3s, padding-right .3s, width .3s
 
     &-header

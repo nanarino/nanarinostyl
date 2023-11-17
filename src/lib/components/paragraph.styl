@@ -22,5 +22,5 @@
         &:where([data-ellipsis=\"{i}\"])
             mixin_line_clamp(i)
             height 'calc(%s * %s)' % (var(--line-height-body) i)
-    &[data-has-indent]
+    &:where([data-has-indent])
         text-indent 2em
