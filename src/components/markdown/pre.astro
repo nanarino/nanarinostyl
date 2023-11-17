@@ -7,4 +7,6 @@ import prefix from "src/scripts/prefix";
 <style lang="stylus">
     pre
         background-image url("/src/assets/images/watermark.svg")
+        /:root[data-theme=dark] & // 暗黑模式下观感不一样 降低一下对比
+            background-blend-mode difference
 </style>
