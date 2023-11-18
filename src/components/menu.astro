@@ -10,10 +10,10 @@ const base = Astro.props.base ?? "";
 const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
 ---
 
-<ul class={`${prefix}-menu`}>
+<ul id="menu" class={`${prefix}-menu`}>
     {
         menu.map((item) => {
-            /** 
+            /**
              * 当前菜单
              */
             if (
@@ -25,7 +25,7 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
                         class={`${prefix}-menu-submenu`}
                         style="order:1"
                         data-folded={
-                            /** 
+                            /**
                              * 判断是否需要折叠菜单
                              */
                             !RegExp(`^${base}${item.path}`).test(
@@ -49,21 +49,24 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
                     </li>
                 );
             }
-            /** 
+            /**
              * 当前页面
              */
             if (RegExp(`^${base}${item.path}\/?$`).test(Astro.url.pathname)) {
                 return (
                     <li
-                        class={`${prefix}-menu-item`}
+                        class={`${prefix}-menu-item ${prefix}-watermark`}
                         data-selected
-                        style={{ order: getName(item.path) ? 1 : 0 }}
+                        style={{
+                            order: getName(item.path) ? 1 : 0,
+                            "--opacity-watermark": 1,
+                        }}
                     >
                         {getName(item.path) || "readme"}
                     </li>
                 );
             }
-            /** 
+            /**
              * 其他页面
              */
             return (
@@ -82,17 +85,3 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
         })
     }
 </ul>
-
-<style lang="stylus">
-    // background-image url("/src/assets/images/watermark.svg")
-    // background-blend-mode multiply
-    [data-selected]::after
-        pointer-events none
-        content ''
-        position absolute
-        inset 0
-        background-image url("/src/assets/images/watermark.svg")
-        mix-blend-mode plus-lighter
-        /:root[data-theme=dark] &
-            mix-blend-mode multiply
-</style>
