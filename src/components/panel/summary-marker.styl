@@ -2,12 +2,11 @@
 @import './../../lib/variable/functions.styl'
 
 .{prefix}-panel
-    &[data-marker='\>']
+    &[data-marker='(>)']
         summary::before
-            -webkit-mask url("/src/icons/direction/outline/right.svg") \
+            -webkit-mask url("/src/icons/direction/outline/right-circle.svg") \
                 no-repeat \
                 center center \
                 \/ \
-                16px 16px
+                18px 18px
             mask @-webkit-mask
-            background-color _rgb(var(--blue-6))
