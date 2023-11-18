@@ -55,7 +55,7 @@ details.☘-panel(data-primary)
 
 ## `data-marker=">"`
 
-预设了另一个箭头符号，使用 `data-marker=">"` 启用
+预设了另一个箭头符号，使用 `data-marker=">"` 启用，代替原先的🔺
 
 <T 
     tag="details" 
@@ -82,7 +82,7 @@ details.☘-panel(
 
 全局变量 `--color-panel` 可以覆盖面板背景色RGB值
 
-marker图标由 `mask` 遮罩图片实现，可以自定义添加你需要的图标
+marker箭头由 `summary::before` 的 `mask` 遮罩图片实现，可以自定义添加你需要的🔺图形
 
 <T
     tag="details"
@@ -95,15 +95,16 @@ marker图标由 `mask` 遮罩图片实现，可以自定义添加你需要的图
     data-marker="(>)"
 >
     <summary>
-        <span>&nbsp;正在启动</span>
+        <span>&nbsp;正在安装</span>
         <span>🥰</span>
     </summary>
-    <T
-        tag="p"
-        class="☘-paragraph"
-        data-size="2"
-        style="margin:0"
-    >😍😍😍😍😍😍</T>
+    <T>
+        <T tag="p"
+            class="☘-paragraph"
+            data-size="2"
+            style="margin:0"
+        >😍😍😍😍😍😍<span style="float:right">99%</span></T>
+    </T>
 </T>
 
 ```pug
@@ -116,11 +117,14 @@ details.☘-panel(
     }
 )
     summary 
-        span 正在启动
+        span 正在安装
         span 🥰
-    p.☘-paragraph(data-size=2 style="margin:0") 😍😍😍😍😍😍
+    div
+        p.☘-paragraph(data-size=2 style="margin:0") 
+            | 😍😍😍😍😍😍
+            span(style="float:right") 99%
 
-style(lang=stylus).
+style(lang="stylus").
     .☘-panel[data-marker="(>)"] summary::before
         -webkit-mask url("@/icons/direction/outline/right-circle.svg")
         mask @-webkit-mask

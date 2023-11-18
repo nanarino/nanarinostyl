@@ -40,6 +40,9 @@
             ^[1..1]:disabled+&
                 color _rgb(var(--gray-6))
                 cursor not-allowed
+        /**
+         * 外框
+         */
         ~/-label::before
             content ''
             width 16px
@@ -69,32 +72,46 @@
                 background-clip content-box
             ~/[data-indeterminate] ^[-2..-2]:disabled+&
                 background-color _rgb(var(--color-checkbox-disabled, var(--primary-3)))
-
+        /**
+         * 内框
+         */
         ~/-label::after
             content ''
-            width 10px
-            height 6px
+            text-align center
+            line-height 16px
             box-sizing border-box
             position absolute
             left 3px
-            margin-top -3px
-            background none
-            transform rotate(-45deg)
+            width 10px
+            height @width
+
             ^[1..1]:checked+&
-                border 3px solid _rgb(var(--white))
-                border-top none
-                border-right none
-                // 支持 `path()` 的浏览器增强效果
-                @supports (clip-path:path(""))
-                    &
-                        clip-path path("M 0 1.5 \\
-                            A 1.5 1.5 0 1 1 3 1 \\
-                            L 3 3 \\
-                            L 9 3 \\
-                            A 1.5 1.5 0 1 1 8.5 6 \\
-                            L 1.5 6 \\
-                            A 1.5 1.5 0 0 1 0 4.5 \\
-                            Z \\
-                        ")
-                        border none
-                        background-color _rgb(var(--white))
+
+                ~/:where(:not([data-marker])) &
+                    height 6px
+                    margin-top -3px
+                    transform rotate(-45deg)
+                    border 3px solid _rgb(var(--white))
+                    border-top none
+                    border-right none
+                    // 支持 `path()` 的浏览器增强效果
+                    @supports (clip-path:path(""))
+                        &
+                            clip-path path("M 0 1.5 \\
+                                A 1.5 1.5 0 1 1 3 1 \\
+                                L 3 3 \\
+                                L 9 3 \\
+                                A 1.5 1.5 0 1 1 8.5 6 \\
+                                L 1.5 6 \\
+                                A 1.5 1.5 0 0 1 0 4.5 \\
+                                Z \\
+                            ")
+                            border none
+                            background-color _rgb(var(--white))
+                    
+                ~/:where([data-marker="-"]) &
+                    background _rgb(var(--white))
+                    height 2px
+                    // 支持 `path()` 的浏览器才显示圆角 和上面的增强相符合
+                    @supports (clip-path:path(""))
+                        border-radius 2px

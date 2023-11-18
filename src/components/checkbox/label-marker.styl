@@ -1,0 +1,9 @@
+@import './../../lib/variable/prefix.styl'
+@import './../../lib/variable/functions.styl'
+
+.{prefix}-checkbox
+    &[data-marker="*"]
+        &>input:checked+^[0]-label::after
+            content '*'
+            color _rgb(var(--white))
+            font-size 18px

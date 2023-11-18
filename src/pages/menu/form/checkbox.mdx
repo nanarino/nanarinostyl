@@ -3,7 +3,8 @@ layout: "@layout/main.astro"
 title: 多选框
 ---
 
-import Checkbox from "src/components/checkbox.astro";
+import Checkbox from "src/components/checkbox/index.astro";
+import "src/components/checkbox/label-marker.styl";
 import Grid from "src/components/grid.astro";
 export * from 'src/components/markdown/map.mdx';
 
@@ -43,6 +44,7 @@ div(style={'--indent-checkbox': '20px'})
         label.☘-checkbox-label(for="HTTPS" title="HTTPS") HTTPS
 ```
 
+
 ## `data-indeterminate`
 
 这个样式设计来自于 [ui5 check-box](https://sap.github.io/ui5-webcomponents/playground/?path=/docs/main-check-box--docs)
@@ -78,37 +80,78 @@ span.☘-checkbox(
 
 
 
+## `data-marker="-"`
+
+预设了另一个**checked**符号，使用 `data-marker="-"` 启用，代替原先的✔
+
+它一般放在列表表头，用来描述只选中了一部分
+
+<Checkbox
+    id="DashAsMark"
+    checked
+    dataset={{ marker : "-" }}
+    style="--indent-checkbox: 20px"
+>部分选择</Checkbox>
+
+```pug
+span.☘-checkbox(
+    data-marker="-"
+    style="--indent-checkbox: 20px"
+)
+    input#DashAsMark.☘-input(
+        type="checkbox"
+        checked
+    )
+    label.☘-checkbox-label(
+        for="DashAsMark"
+        title="DashAsMark"
+    ) 部分选择
+```
+
 ## custom style
 
 - `--color-checkbox` 全局变量覆盖颜色RGB值
 - `--color-checkbox-disabled` 禁用状态全局变量覆盖颜色RGB值
 
+marker钩号或破折号由 `label::after` 实现，可以自定义添加你需要的✔图形
+
 <Checkbox
-    id="BlueSuperposition"
+    id="BlueTIMBox"
     checked
-    disabled
-    dataset={{ indeterminate : true }}
+    dataset={{ marker : "*" }}
     style={{
         '--color-checkbox': 'var(--blue-6)',
         '--color-checkbox-disabled': 'var(--blue-2)',
-        '--indent-checkbox': '20px'
-}}>饿死了</Checkbox>
+        '--indent-checkbox': '20px',
+        color: 'rgb(var(--blue-6))'
+}}>Tim</Checkbox>
 
 ```pug
-span.☘-checkbox(data-indeterminate style={
+span.☘-checkbox(
+    data-marker="*"
+    style={
     '--color-checkbox': 'var(--blue-6)',
     '--color-checkbox-disabled': 'var(--blue-2)',
-    '--indent-checkbox': '20px'
+    '--indent-checkbox': '20px',
+    color: 'rgb(var(--blue-6))'
 })
-    input#BlueSuperposition.☘-input(
+    input#BlueTIMBox.☘-input(
         type="checkbox"
         checked
         disabled
     )
     label.☘-checkbox-label(
-        for="BlueSuperposition"
-        title="BlueSuperposition"
-    ) 饿死了
+        for="BlueTIMBox"
+        title="BlueTIMBox"
+    ) Tim
+
+style(lang="stylus").
+    .☘-checkbox
+        &[data-marker="*"]
+            &>input:checked+^[0]-label::after
+                content '*'
+                font-size 18px
+                color _rgb(var(--white))
 ```
 
 ### hide label
