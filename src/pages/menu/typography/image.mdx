@@ -17,9 +17,10 @@ export * from 'src/components/markdown/map.mdx';
 ![示例](./../../../assets/images/example.jpg)
 
 {/**
-  * 不支持相对路径开发时请忽略这个404错误
+  * 不支持相对路径和别名
+  * 开发时请忽略这个404错误
   * 使用绝对路径：
-  * ![示例](/src/assets/images/example.jpg)
+  *   ![示例](/src/assets/images/example.jpg)
   */}
 
 以上图片的显示来自拓展后的markdown。但是故意写错了src导致**加载失败**的效果。
@@ -37,7 +38,7 @@ export * from 'src/components/markdown/map.mdx';
 
 ```pug
 .☘-image(style="width:300px")
-    img(alt="示例" src='/src/assets/images/example.jpg')
+    img(alt="示例" src='@/assets/images/example.jpg')
 ```
 
 
@@ -63,7 +64,7 @@ export * from 'src/components/markdown/map.mdx';
 .☘-image(style={
     display: 'flex',
     height: '300px',
-    'background-image': url('/src/assets/images/example.png')
+    'background-image': url('@/assets/images/example.png')
 })
     p.☘-paragraph(data-size=1) 🤡
 ```
@@ -97,7 +98,7 @@ export * from 'src/components/markdown/map.mdx';
 .☘-image(style={
     width: '100px',
     height: '100px',
-    'background-image': url('/src/assets/images/example.jpg'),
+    'background-image': url('@/assets/images/example.jpg'),
     'border-radius': '50%'
 })
     .☘-image-mask(onclick=function(){
@@ -167,7 +168,7 @@ style(lang='stylus').
     height: "300px",
     "border-radius": "var(--border-radius-lg)"
 })
-    img(alt="示例" src='/src/assets/images/example.jpg')
+    img(alt="示例" src='@/assets/images/example.jpg')
     .☘-image-footer
         .☘-image-footer-content
             .☘-title(data-size=5)
@@ -180,7 +181,7 @@ style(lang='stylus').
                 aria-label="Open the image in a new tab"
                 width="24px"
                 onclick=function(){
-                    window.open("/src/assets/images/example.jpg")
+                    window.open("@/assets/images/example.jpg")
                 }
             )
             svg.☘-link(

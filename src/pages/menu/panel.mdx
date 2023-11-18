@@ -5,6 +5,7 @@ title: 面板
 
 import T from "src/components/T.astro";
 export * from 'src/components/markdown/map.mdx';
+import "src/components/panel/summary-marker.styl";
 
 # panel
 
@@ -37,35 +38,40 @@ div(style={
 
 `details.☘-panel[data-primary]` 这个属性需要启用后才能继承主题和拥有某些局部样式
 
-<T tag="details" class="☘-panel" data-primary="success">
+<T 
+    tag="details" 
+    class="☘-panel"
+    data-primary="warning"
+    style="color:rgb(var(--gold-8))"
+>
     <summary>进入</summary>
     <T>到顶了</T>
 </T>
 
 ```pug
-details.☘-panel(data-primary="success")
+details.☘-panel(
+    data-primary="warning"
+    style="color:rgb(var(--gold-8))"
+)
     summary 进入
     div 到顶了
 ```
 
 ## custom style
 
-以下局部变量可以自定义颜色RGB值
-
-- `--background-color-panel` 背景色
-- `--color-panel` 字体颜色
+全局变量 `--color-panel` 可以覆盖面板背景色
 
 <T
     tag="details"
     class="☘-panel"
     style={{
-        '--background-color-panel': 'var(--yellow-2)',
-        '--color-panel': 'var(--gold-7)'
+        '--color-panel': 'var(--blue-1)'
     }}
     data-primary
+    data-marker=">"
 >
     <summary>
-        <span>进入</span>
+        <span>启动</span>
         <span>🥰</span>
     </summary>
     <T
@@ -76,13 +82,23 @@ details.☘-panel(data-primary="success")
     >😍😍😍😍😍😍</T>
 </T>
 
+marker图标由 `mask` 遮罩图片实现，可以自定义修改
+
 ```pug
-details.☘-panel(data-primary style={
-    '--background-color-panel': 'var(--yellow-2)',
-    '--color-panel': 'var(--gold-7)'
+details.☘-panel(
+    data-marker=">"
+    data-primary
+    style={
+    '--color-panel': 'var(--blue-1)'
 })
     summary 
-        span 进入
+        span 启动
         span 🥰
     p.☘-paragraph(data-size=2 style="margin:0") 😍😍😍😍😍😍
+
+style(lang=stylus).
+    .☘-panel[data-marker="\>"] summary::before
+        -webkit-mask url("@/icons/direction/outline/right.svg")
+        mask @-webkit-mask
+        background-color _rgb(var(--blue-6))
 ```

@@ -1,0 +1,13 @@
+@import './../../lib/variable/prefix.styl'
+@import './../../lib/variable/functions.styl'
+
+.{prefix}-panel
+    &[data-marker='\>']
+        summary::before
+            -webkit-mask url("/src/icons/direction/outline/right.svg") \
+                no-repeat \
+                center center \
+                \/ \
+                16px 16px
+            mask @-webkit-mask
+            background-color _rgb(var(--blue-6))
