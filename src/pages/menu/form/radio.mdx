@@ -16,16 +16,16 @@ export * from 'src/components/markdown/map.mdx';
     <Radio name="lang" id="kotlin">Kotlin</Radio>
 </Grid>
 
-- 全局变量 `--indent-radio` 改变label文字左内边距，原本是用 `text-indent` 属性实现。但在Safari中使用 `::before` 的元素不支持 `text-indent`，遂改用 `padding-left` 来实现。默认值是1em（label紧贴input）
+全局变量 `--indent-radio` 改变label文字左内边距，原本是用 `text-indent` 属性实现。但在Safari中使用 `::before` 的元素不支持 `text-indent`，遂改用 `padding-left` 来实现。默认值是1em（label紧贴input）
 
 ```pug
 div(style="--indent-radio: 20px")
     span.☘-radio
-        input#java.☘-input(type="radio" name="lang")
-        label.☘-radio-label(for="java" title="java") Java
+        input#java.☘-input(type="radio" name="lang" title="java")
+        label.☘-radio-label(for="java") Java
     span.☘-radio
-        input#kotlin.☘-input(type="radio" name="lang")
-        label.☘-radio-label(for="kotlin" title="kotlin") Kotlin
+        input#kotlin.☘-input(type="radio" name="lang" title="kotlin")
+        label.☘-radio-label(for="kotlin") Kotlin
 ```
 
 注意，radio**捆绑**了 `<label>` ，你必须携带它，默认情况下label被点击时也会触发选择或反选
@@ -42,11 +42,11 @@ div(style="--indent-radio: 20px")
 ```pug
 div(style={'--indent-radio': '20px'})
     span.☘-radio
-        input#HTTP.☘-radio(type="radio" checked disabled)
-        label.☘-radio-label(for="HTTP" title="HTTP") HTTP
+        input#HTTP.☘-radio(type="radio" title="HTTP" checked disabled)
+        label.☘-radio-label(for="HTTP") HTTP
     span.☘-radio(data-primary="success")
-        input#HTTPS.☘-radio(type="radio" disabled)
-        label.☘-radio-label(for="HTTPS" title="HTTPS") HTTPS
+        input#HTTPS.☘-radio(type="radio" title="HTTPS" disabled)
+        label.☘-radio-label(for="HTTPS") HTTPS
 ```
 
 ## custom style
@@ -70,27 +70,29 @@ div(style="--indent-radio: 20px")
             type="radio"
             name="lunch"
             style={'--color-radio': 'var(--gold-6)'}
+            title="meituan"
         )
-        label.☘-radio-label(for="meituan" title="meituan") 美团
+        label.☘-radio-label(for="meituan") 美团
     span.☘-radio
         input#eleme.☘-input(
             type="radio"
             name="lunch"
             style={'--color-radio': 'var(--blue-6)'}
             checked
+            title="eleme"
         )
-        label.☘-radio-label(for="eleme" title="eleme") 饿了么
+        label.☘-radio-label(for="eleme") 饿了么
 ```
 
 ### hide label
 
-默认情况下label为空即可
+label为空即可不显示
 
 <div style="display: inline-flex; gap: 6px">
 {
     colours.map((color, i) => 
         <Radio 
-            id={color}
+            title={color}
             checked={i==0}
             name="radio-color"
             style={{'--color-radio': `var(--${color}-6)`}}
@@ -104,17 +106,12 @@ each color, i in colors
     span.☘-radio
         input.☘-color(
             type="radio"
-            id=color
             checked=i==0
             name="radio-color"
             style={'--color-radio': `var(--${color}-6)`}
+            title=color
         )
-        label.☘-radio-label(for=color title=color)
+        label.☘-radio-label
 ```
 
-如果你只是需要label无法点击，只有单选框能被点击：
-
-```sass
-label.☘-radio-label
-    pointer-events: none
-```
+如果你只是需要label无法点击，只有单选框能被点击，可以不传入 `[for]`

@@ -23,14 +23,19 @@
         bottom 0
         margin auto 0
         position absolute
+        z-index 1
         opacity 0
+        cursor pointer
+        &:disabled
+            cursor not-allowed
         ~/-label
             padding-left var(--indent-checkbox, 1em)
             min-width 2px
             position relative
             display inline-flex
             align-items center
-            cursor pointer
+            &[for]
+                cursor pointer
             /**
              * 使用 `^[1..1]` 代替 `../` 减少编译后体积以及选择器冗余
              */
@@ -39,7 +44,8 @@
                 border-radius var(--border-radius-sm)
             ^[1..1]:disabled+&
                 color _rgb(var(--gray-6))
-                cursor not-allowed
+                &[for]
+                    cursor not-allowed
         /**
          * 外框
          */

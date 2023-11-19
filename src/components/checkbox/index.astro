@@ -3,7 +3,7 @@ import prefix from "src/scripts/prefix";
 import attrs from "src/scripts/server/dataset";
 const props = Astro.props;
 interface Props {
-    id: string;
+    id?: string;
     title?: string;
     name?: string;
     checked?: boolean;
@@ -12,6 +12,10 @@ interface Props {
     style?: Record<string, any> | string;
     dataset?: Record<string, any>;
     onchange?: string;
+}
+
+if (!props.id && !props.name && !props.title) {
+    throw new Error("`checkbox`必须传入`id`或者`name`或者`title`");
 }
 ---
 
@@ -28,10 +32,7 @@ interface Props {
         checked={props.checked}
         disabled={props.disabled}
         onchange={props.onchange}
+        title={props.title || props.id || props.name}
     />
-    <label
-        class={`${prefix}-checkbox-label`}
-        for={props.id}
-        title={props.title || props.id}><slot /></label
-    >
+    <label class={`${prefix}-checkbox-label`} for={props.id}><slot /></label>
 </span>

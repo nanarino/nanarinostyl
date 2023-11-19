@@ -43,9 +43,16 @@
     input.{prefix}-input[type=checkbox]
         position absolute
         opacity 0
-        pointer-events none
+        margin 0
+        // pointer-events none
+        inset 0
+        cursor pointer
+        &:disabled
+            cursor not-allowed
 
         ~/-mover
+            &:not([for])
+                pointer-events none
             display inline-flex
             cursor pointer
             height var(--size-switch, 22px)
@@ -72,6 +79,7 @@
                 align-items center
                 justify-content center
                 position absolute
+                z-index 1
                 left var(--padding-switch, 2px)
                 top var(--padding-switch, 2px)
                 bottom var(--padding-switch, 2px)

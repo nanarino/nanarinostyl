@@ -15,12 +15,12 @@ export * from 'src/components/markdown/map.mdx';
 
 这里实现使用了 `path()` 绘制，如果你的浏览器不支持会被降级，样式会有细微区别
 
-- 全局变量 `--indent-checkbox` 改变label文字左内边距，原本是用 `text-indent` 属性实现。但在Safari中使用 `::before` 的元素不支持 `text-indent`，遂改用 `padding-left` 来实现。默认值是1em（label紧贴input）
+全局变量 `--indent-checkbox` 改变label文字左内边距，原本是用 `text-indent` 属性实现。但在Safari中使用 `::before` 的元素不支持 `text-indent`，遂改用 `padding-left` 来实现。默认值是1em（label紧贴input）
 
 ```pug
 span.☘-checkbox(style="--indent-checkbox: 2em")
-    input#hello.☘-input(type="checkbox")
-    label.☘-checkbox-label(for="hello" title="world") world
+    input#hello.☘-input(type="checkbox" title="world")
+    label.☘-checkbox-label(for="hello") world
 ```
 
 注意，checkbox**捆绑**了 `<label>` ，你必须携带它，默认情况下label被点击时也会触发选择或反选
@@ -37,11 +37,11 @@ span.☘-checkbox(style="--indent-checkbox: 2em")
 ```pug
 div(style={'--indent-checkbox': '20px'})
     span.☘-checkbox
-        input#HTTP.☘-input(type="checkbox" disabled)
-        label.☘-checkbox-label(for="HTTP" title="HTTP") HTTP
+        input#HTTP.☘-input(type="checkbox" title="HTTP" disabled)
+        label.☘-checkbox-label(for="HTTP") HTTP
     span.☘-checkbox(data-primary="success")
-        input#HTTPS.☘-input(type="checkbox" checked disabled)
-        label.☘-checkbox-label(for="HTTPS" title="HTTPS") HTTPS
+        input#HTTPS.☘-input(type="checkbox" title="HTTPS" checked disabled)
+        label.☘-checkbox-label(for="HTTPS") HTTPS
 ```
 
 
@@ -67,11 +67,9 @@ span.☘-checkbox(
         onchange=function(){
             this.parentElement.removeAttribute('data-indeterminate')
         }
-    )
-    label.☘-checkbox-label(
-        for="Superposition"
         title="Superposition"
-    ) 半信半疑
+    )
+    label.☘-checkbox-label(for="Superposition") 半信半疑
 ```
 
 注意：`[data-indeterminate]` 在 checked与否 的不同状态下 观感并不相同。
@@ -100,12 +98,10 @@ span.☘-checkbox(
 )
     input#DashAsMark.☘-input(
         type="checkbox"
+        title="DashAsMark"
         checked
     )
-    label.☘-checkbox-label(
-        for="DashAsMark"
-        title="DashAsMark"
-    ) 部分选择
+    label.☘-checkbox-label(for="DashAsMark") 部分选择
 ```
 
 ## custom style
@@ -137,13 +133,11 @@ span.☘-checkbox(
 })
     input#BlueTIMBox.☘-input(
         type="checkbox"
+        title="BlueTIMBox"
         checked
         disabled
     )
-    label.☘-checkbox-label(
-        for="BlueTIMBox"
-        title="BlueTIMBox"
-    ) Tim
+    label.☘-checkbox-label(for="BlueTIMBox") Tim
 
 style(lang="stylus").
     .☘-checkbox
@@ -156,19 +150,14 @@ style(lang="stylus").
 
 ### hide label
 
-默认情况下label为空即可
+label为空即可不显示
 
-<Checkbox id="NoLabel" dataset={{ indeterminate : true }}/>
+<Checkbox name="饿死了" dataset={{ indeterminate : true }}/>
 
 ```pug
 span.☘-checkbox(data-indeterminate)
-    input#NoLabel.☘-input(type="checkbox")
-    label.☘-checkbox-label(for="NoLabel" title="NoLabel")
+    input.☘-input(type="checkbox" title="饿死了")
+    label.☘-checkbox-label
 ```
 
-如果你只是需要label无法点击，只有多选框能被点击：
-
-```sass
-label.☘-checkbox-label
-    pointer-events: none
-```
+如果你只是需要label无法点击，只有单选框能被点击，可以不传入 `[for]`

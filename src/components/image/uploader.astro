@@ -14,7 +14,7 @@ interface Props {
 const accept = [`image/gif`, `image/jpeg`, `image/png`] as const;
 
 if(!props.disabled && !props.id){
-    throw new Error("uploader需要传入id 或者 disabled");
+    throw new Error("`uploader`必须传入`id`或者`disabled`");
 }
 ---
 

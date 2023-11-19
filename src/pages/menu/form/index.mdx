@@ -7,7 +7,25 @@ import T from "src/components/T.astro";
 import Switch from "src/components/switch/index.astro";
 export * from 'src/components/markdown/map.mdx';
 
+
 # form
+
+
+## `title`
+
+输入框的规范的提示属性，没有提供 `placeholder` 的情况下需要传入 `title`
+
+如果输入框 `input#id` 有对应的 `label[for=id]`，则只需要至少其中之一传入 `title`
+
+```pug
+input(title='username')
+
+input#uname
+lable(for='uname' title='username') 用户名
+```
+另外 没有内容文字的按钮和超链接也需要添加 `title`
+
+
 
 ## `:focus-visible`
 

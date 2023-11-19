@@ -19,7 +19,9 @@ span.☘-switch
     label.☘-switch-mover(for="hello" title="hello")
 ```
 
-注意，switch**捆绑**了 `<label>` ，你必须携带它
+注意，switch**捆绑**了 `<label for="id">` ，你必须携带它，且传入for属性
+
+如果不传入 `[for]`，由于层级问题，开关将会失去鼠标移入的阴影效果，如果你能接受
 
 
 ## `.sm`

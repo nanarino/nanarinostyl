@@ -12,6 +12,17 @@ interface Props {
     style?: Record<string, any> | string;
     dataset?: Record<string, any>;
 }
+
+if (!props.id) {
+    throw new Error("`swicth`必须传入`id`");
+    /**
+     * 其实可以不传入，那样导致label[for]无法绑定开关，从而导致开关无法展示hover效果
+     * 
+     * 所以对于本文档的这个astro组件，为了完全的展示样式，必须要传入
+     * 
+     * （实际上支持label不传for是后来加的，懒得调整组件和pug示例代码了所以一刀切了）
+     */
+}
 ---
 
 <span
