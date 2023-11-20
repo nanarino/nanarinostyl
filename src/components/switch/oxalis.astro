@@ -1,15 +1,15 @@
 ---
 import Switch from "./index.astro";
+import prefix from "src/scripts/prefix";
 const props = Astro.props;
 interface Props {
-    id: string
+    id: string;
 }
 ---
 
 <Switch
     id={props.id}
     class="oxalis-switch"
-    checked
     style={{
         ["--size-switch"]: "48px",
         ["--padding-switch"]: "4px",
@@ -18,10 +18,11 @@ interface Props {
         ["--color-switch"]: "var(--gold-3)",
     }}
 >
-    <span class="oxalis-switch-mover">☘</span>
+    <span class={`${prefix}-switch-mover oxalis-switch-mover`}>☘</span>
+    <label class={`${prefix}-switch-slot`} for={props.id}></label>
 </Switch>
+
 <style lang="stylus">
-    .oxalis-switch>:global(input:checked+label)
-        :global(.oxalis-switch-mover)
-            transform rotate(360deg)
+    .oxalis-switch>:global(input:checked)+.oxalis-switch-mover
+        transform rotate(360deg)
 </style>

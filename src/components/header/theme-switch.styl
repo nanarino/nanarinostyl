@@ -14,29 +14,27 @@
     // 关闭按钮颜色 
     --color-switch var(--gold-3)
 
-#header-theme-switch+label
-    
     i
         background unset
     svg
         width 100%
         height 100%
         
-    i:first-child
+    i:first-of-type
         // 打开按钮 字体颜色
         color _rgb(var(--orange-10))
         opacity 1
         svg
             filter drop-shadow(0 0 2px _rgb(var(--gold-6)))
-    i:last-child
+    i:last-of-type
         // 关闭按钮 字体颜色
         color _rgb(var(--blue-10))
         opacity 0
         svg
             filter drop-shadow(0 0 2px _rgb(var(--blue-6)))
 
-#header-theme-switch:checked+label
-    i:first-child
+#header-theme-switch:checked~i
+    &:first-of-type
         opacity 0
-    i:last-child
+    &:last-of-type
         opacity 1

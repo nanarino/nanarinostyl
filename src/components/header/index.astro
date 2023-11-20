@@ -42,12 +42,13 @@ const { href } = Astro.props;
           * 为了兼容 Safari浏览器里 `<svg>` 不能同时拥有 `box-shadow` 和 `drop-shadow`
           * 所以额外用了 `<i>` 来包裹 `<svg>`
           */}
-        <i>
+        <i class={`${prefix}-switch-mover`}>
             <Icon name="general/outline/sun"/>
         </i>
-        <i>
+        <i class={`${prefix}-switch-mover`}>
             <Icon name="general/outline/moon"/>
         </i>
+        <label class={`${prefix}-switch-slot`} for="header-theme-switch"></label>
     </Switch>
 </header>
 

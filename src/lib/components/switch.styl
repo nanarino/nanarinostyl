@@ -37,108 +37,110 @@
     position relative
     font-size calc(var(--size-switch-mover) - var(--font-offset-parent))
 
+    height var(--size-switch, 22px)
+    width calc(var(--size-switch, 22px) * 2)
+    border-radius calc((var(--size-switch, 22px) / 2))
+    // overflow hidden
+
     &.sm
         --size-switch 16px
-    
-    input.{prefix}-input[type=checkbox]
+        
+    &-mover
+        z-index 1
+        overflow hidden
+        border-radius 50%
+        background-color _rgb(var(--color-switch-mover, var(--gray-1)))
+        will-change filter
+    &-slot
         position absolute
-        opacity 0
-        margin 0
-        // pointer-events none
+        z-index 0
+        background-color _rgb(var(--color-switch, var(--gray-4)))
+        transition background-color 1s, box-shadow .5s
         inset 0
+        border-radius @border-radius
+    &-mover
+    input.{prefix}-input[type=checkbox]
         cursor pointer
+        position absolute
+        display flex
+        align-items center
+        justify-content center
+        margin 0
+        left var(--padding-switch, 2px)
+        top var(--padding-switch, 2px)
+        bottom var(--padding-switch, 2px)
+        width var(--size-switch-mover)
+        height @width
+        transition all .5s
+    input.{prefix}-input[type=checkbox]
+        opacity 0
+        z-index 2
+        ~/[data-wider-trigger] ^[-1..-1]
+            inset 0 !important
+            width @width
+            height @height
+
+        ^[-1..-1]:focus-visible~^[0]-mover
+            outline 2px solid _rgb(var(--outline-color-focus))
+        
         &:disabled
+        ^[-1..-1]:disabled~^[0]-mover
             cursor not-allowed
+        ^[-1..-1]:disabled~^[0]-slot
+            background-color _rgb(var(--color-switch-disabled, var(--gray-3)))
+        ^[-1..-1]:checked:disabled~^[0]-slot
+            background-color _rgb(var(--color-switch-checked-disabled, var(--primary-3)))
+        
+        &:checked
+        ^[-1..-1]:checked~^[0]-mover
+            left calc(var(--size-switch, 22px) + var(--padding-switch, 2px))
+        ^[-1..-1]:checked~^[0]-slot
+            background-color _rgb(var(--color-switch-checked, var(--primary-6)))
 
-        ~/-mover
-            &:not([for])
-                pointer-events none
-            display inline-flex
-            cursor pointer
-            height var(--size-switch, 22px)
-            width calc(var(--size-switch, 22px) * 2)
-            ^[1..1]:focus-visible+&
-                outline 2px solid _rgb(var(--outline-color-focus))
-            border-radius calc((var(--size-switch, 22px) / 2))
-            background-color _rgb(var(--color-switch, var(--gray-4)))
-            transition background-color 1s, box-shadow .5s
-            /**
-             * 使用 `^[1..1]` 代替 `../` 减少编译后体积以及选择器冗余
-             */
-            ^[1..1]:checked+&
-                background-color _rgb(var(--color-switch-checked, var(--primary-6)))
-            ^[1..1]:checked:disabled+&
-                background-color _rgb(var(--color-switch-checked-disabled, var(--primary-3)))
-            ^[1..1]:disabled+&
-                background-color _rgb(var(--color-switch-disabled, var(--gray-3)))
-                cursor not-allowed
-            
-            &:empty::before, &>*
-                content ''
-                display flex
-                align-items center
-                justify-content center
-                position absolute
-                z-index 1
-                left var(--padding-switch, 2px)
-                top var(--padding-switch, 2px)
-                bottom var(--padding-switch, 2px)
-                width var(--size-switch-mover)
-                height @width
-                overflow hidden
-                border-radius 50%
-                background-color _rgb(var(--color-switch-mover, var(--gray-1)))
-                transition all .5s
-                will-change filter
-            
-                ^[1..1]:checked+&
-                    left calc(var(--size-switch, 22px) + var(--padding-switch, 2px))
-                    
-
-
-
-            ^[1..1]:not(:disabled)+&:hover
-                box-shadow \
-                    inset \
-                    0 \
-                    0 \
-                    var(--padding-switch, 2px) \
-                    var(--padding-switch, 2px) \
+        &:not(:disabled):hover~^[0]-mover
+        ^[-1..-1]:not(:disabled)~^[0]-mover:hover
+            filter drop-shadow(
+                0 \
+                0 \
+                var(--padding-switch, 2px) \
+                    _rgb(box-shadow-color-switch) \
+            )
+            box-shadow \
+                0 \
+                0 \
+                box-shadow-width-switch \
+                box-shadow-width-switch \
                     _rgb(box-shadow-color-switch \/ 25%)
-                &:empty::before, &>*
-                    filter drop-shadow(
-                        0 \
-                        0 \
-                        var(--padding-switch, 2px) \
-                         _rgb(box-shadow-color-switch) \
-                    )
-                    box-shadow \
-                        0 \
-                        0 \
-                        box-shadow-width-switch \
-                        box-shadow-width-switch \
-                         _rgb(box-shadow-color-switch \/ 25%)
-            
-
-
-            ^[1..1]:not(:disabled):checked+&:hover
-                box-shadow \
-                    inset \
-                    0 \
-                    0 \
-                    var(--padding-switch, 2px) \
-                    var(--padding-switch, 2px) \
-                    _rgb(box-shadow-color-switch-checked \/ 25%)
-                &:empty::before, &>*
-                    filter drop-shadow(
-                        0 \
-                        0 \
-                        var(--padding-switch, 2px) \
-                        _rgb(box-shadow-color-switch-checked) \
-                    )
-                    box-shadow \
-                        0 \
-                        0 \
-                        box-shadow-width-switch \
-                        box-shadow-width-switch \
-                        _rgb(box-shadow-color-switch-checked \/ 25%)
+        &:not(:disabled):hover~^[0]-slot
+        ^[-1..-1]:not(:disabled)~^[0]-slot:hover
+            box-shadow \
+                inset \
+                0 \
+                0 \
+                var(--padding-switch, 2px) \
+                var(--padding-switch, 2px) \
+                _rgb(box-shadow-color-switch \/ 25%)
+        
+        &:not(:disabled):checked:hover~^[0]-mover
+        ^[-1..-1]:not(:disabled):checked~^[0]-mover:hover
+            filter drop-shadow(
+                0 \
+                0 \
+                var(--padding-switch, 2px) \
+                _rgb(box-shadow-color-switch-checked) \
+            )
+            box-shadow \
+                0 \
+                0 \
+                box-shadow-width-switch \
+                box-shadow-width-switch \
+                _rgb(box-shadow-color-switch-checked \/ 25%)
+        &:not(:disabled):checked:hover~^[0]-slot
+        ^[-1..-1]:not(:disabled):checked~^[0]-slot:hover
+            box-shadow \
+                inset \
+                0 \
+                0 \
+                var(--padding-switch, 2px) \
+                var(--padding-switch, 2px) \
+                _rgb(box-shadow-color-switch-checked \/ 25%)
