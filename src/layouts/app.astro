@@ -25,20 +25,15 @@ const title =
         <link rel="icon" type="image/svg+xml" href={favicon} />
         <!-- 初始化主题值 `<Final Union<'dark'|'light'>>window.theme` -->
         <script is:inline fetchpriority="high" define:vars={{ prefix }}>
-        Object.defineProperty(window, "theme", {
-            get: () => {
-                let theme = localStorage.getItem("theme") || "auto";
-                if (theme === "auto") {
-                    theme = ["dark", "light"][
-                        +!window.matchMedia?.(
-                            "(prefers-color-scheme: dark)"
-                        )?.matches
-                    ];
-                }
-                return theme;
-            },
-        });
-        document.documentElement.dataset["theme"] = window.theme;
+            Object.defineProperty(window, "theme", {
+                get: () =>
+                    localStorage.getItem("theme") ??
+                    ["dark", "light"][
+                        +!window.matchMedia?.("(prefers-color-scheme: dark)")
+                            ?.matches
+                    ],
+            });
+            document.documentElement.dataset["theme"] = window.theme;
         </script>
         <script src="/src/scripts/client/theme/index.ts"></script>
         <script src="/src/scripts/client/copy.ts"></script>
