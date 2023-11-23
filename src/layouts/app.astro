@@ -23,7 +23,6 @@ const title =
         <meta name="generator" content={Astro.generator} />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="icon" type="image/svg+xml" href={favicon} />
-        <!-- 初始化主题值 `<Final Union<'dark'|'light'>>window.theme` -->
         <script is:inline fetchpriority="high" define:vars={{ prefix }}>
             Object.defineProperty(window, "theme", {
                 get: () =>

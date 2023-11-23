@@ -32,6 +32,16 @@
         opacity 0
         svg
             filter drop-shadow(0 0 2px _rgb(var(--blue-6)))
+    
+    &:where([data-init])
+        pointer-events none
+        i
+            left 11px
+            transform rotateY(90deg)
+            opacity 0 !important
+        label
+            background-color transparent
+
 
 #header-theme-switch:checked~i
     &:first-of-type

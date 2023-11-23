@@ -37,6 +37,9 @@ const { href } = Astro.props;
         class="header-theme-switch"
         title="theme"
         name="theme"
+        dataset={{
+            init: true
+        }}
     >
         {/**
           * 为了兼容 Safari浏览器里 `<svg>` 不能同时拥有 `box-shadow` 和 `drop-shadow`

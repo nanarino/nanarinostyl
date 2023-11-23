@@ -14,3 +14,4 @@ checkbox.onchange = (e: Event) => {
     const theme = themeTuple[+!(e.target as HTMLInputElement).checked];
     window.dispatchEvent(new CustomEvent<Theme>(`${prefix}-theme`, { detail: theme }))
 };
+delete checkbox.parentElement.dataset.init;
