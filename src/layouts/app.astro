@@ -22,7 +22,7 @@ const title =
         <title>{title}</title>
         <meta name="generator" content={Astro.generator} />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <link rel="icon" type="image/svg+xml" href={favicon} />
+        <link rel="icon" type="image/svg+xml" href={favicon.src} />
         <script is:inline fetchpriority="high" define:vars={{ prefix }}>
             Object.defineProperty(window, "theme", {
                 get: () =>
