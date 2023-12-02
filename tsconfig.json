@@ -3,8 +3,7 @@
     "compilerOptions": {
         "baseUrl": ".",
         "types": [
-            "astro/client",
-            //"@astrojs/image/client",
+            "astro/client"
         ],
         "paths": {
             "@stylus/*": [
