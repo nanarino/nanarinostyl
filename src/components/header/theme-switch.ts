@@ -2,7 +2,7 @@ import prefix from "src/scripts/prefix";
 
 type Theme = "dark" | "light";
 
-const themeTuple: ["dark", "light"] = ["dark", "light"];
+const themeTuple = ["dark", "light"] as const;
 
 
 // 开关触发
