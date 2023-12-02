@@ -9,7 +9,8 @@ import Icon from "astro-icon";
 import example from "src/assets/images/example.jpg";
 import "src/components/image/iine.styl";
 import Uploader from "src/components/image/uploader.astro";
-export * from 'src/components/markdown/map.mdx';
+import {components} from 'src/components/markdown/index.mdx';
+export {components};
 
 
 # image
@@ -17,10 +18,11 @@ export * from 'src/components/markdown/map.mdx';
 ![示例](./../../../assets/images/example.jpg)
 
 {/**
-  * 不支持相对路径和别名
+  * 
   * 开发时请忽略这个404错误
   * 使用绝对路径：
-  *   ![示例](/src/assets/images/example.jpg)
+  *   ![正确示例](/src/assets/images/example.jpg)
+  * 
   */}
 
 以上图片的显示来自拓展后的markdown。但是故意写错了src导致**加载失败**的效果。
