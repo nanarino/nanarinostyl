@@ -1,9 +1,7 @@
 {
   "name": "nanarinostyl",
   "description": "style lib",
-  "author": "☘",
-  "license": "MIT",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "./dist/index.css",
   "scripts": {
     "dev": "astro dev --host",
@@ -12,6 +10,20 @@
     "build-styl": "rma ./dist && stylus ./src/lib/index.styl --out ./dist",
     "build-gh-pages": "astro build --base /nanarinostyl/",
     "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanarino/nanarinostyl.git"
+  },
+  "homepage": "https://nanarino.github.io/nanarinostyl/",
+  "keywords": [
+    "ui",
+    "stylus"
+  ],
+  "author": "kogawananari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nanarino/nanarinostyl/issues"
   },
   "dependencies": {
     "stylus": "^0.62.0"
