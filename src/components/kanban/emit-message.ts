@@ -24,7 +24,7 @@ launcher.onclick = function (e) {
                         content: `
                             <svg 
                                 class="${prefix}-message-prefix"
-                                astro-icon="tips/fill/${icon}-circle-fill"
+                                data-icon="tips/fill/${icon}-circle-fill"
                             >
                                 <use
                                     xlink:href="#astroicon:tips/fill/${icon}-circle-fill"
@@ -57,7 +57,7 @@ launcher.onclick = function (e) {
                         content: `
                             <svg 
                                 class="${prefix}-message-prefix"
-                                astro-icon="tips/outline/${icon}-circle"
+                                data-icon="tips/outline/${icon}-circle"
                                 data-primary="${{
                                     check: 'success',
                                     close: 'danger',

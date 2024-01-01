@@ -5,7 +5,7 @@ title: 图片
 
 import T from "src/components/T.astro";
 import escape from "src/scripts/server/escape";
-import Icon from "astro-icon";
+import { Icon } from "astro-icon/components";
 import example from "src/assets/images/example.jpg";
 import "src/components/image/iine.styl";
 import Uploader from "src/components/image/uploader.astro";
@@ -106,18 +106,18 @@ export {components};
     .☘-image-mask(onclick=function(){
         event.target == this || this.parentElement.toggleAttribute('data-iine')
     })
-        svg(width="24px" astro-icon='interactive-button/outline/heart')
-        svg(width="24px" astro-icon='interactive-button/fill/heart-fill')
+        svg(width="24px" data-icon='interactive-button/outline/heart')
+        svg(width="24px" data-icon='interactive-button/fill/heart-fill')
 
 style(lang='stylus').
     .☘-image
-        svg[astro-icon='interactive-button/outline/heart']
-        svg[astro-icon='interactive-button/fill/heart-fill']
+        svg[data-icon='interactive-button/outline/heart']
+        svg[data-icon='interactive-button/fill/heart-fill']
             color rgb(var(--magenta-6))
             cursor pointer
         
-        &[data-iine] svg[astro-icon='interactive-button/outline/heart']
-        &:not([data-iine]) svg[astro-icon='interactive-button/fill/heart-fill']
+        &[data-iine] svg[data-icon='interactive-button/outline/heart']
+        &:not([data-iine]) svg[data-icon='interactive-button/fill/heart-fill']
             display none
 ```
 

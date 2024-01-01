@@ -6,7 +6,7 @@ title: 输入框
 import T from "src/components/T.astro";
 import Grid from "src/components/grid.astro";
 import escape from "src/scripts/server/escape";
-import Icon from "astro-icon";
+import { Icon } from "astro-icon/components";
 import {components} from 'src/components/markdown/index.mdx';
 export {components};
 
@@ -296,7 +296,7 @@ input.☘-input(
 })
     input.☘-input(title='out-suffix' disabled)
     button.☘-input-suffix(type="submit" title="search" disabled)
-        svg(astro-icon="interactive-button/outline/search" width="18px")
+        svg(data-icon="interactive-button/outline/search" width="18px")
 ```
 
 ***
@@ -322,5 +322,5 @@ input.☘-input(
         '--box-shadow-drop-bottom': 'none'
     })
     button(type="submit" title="search")
-        svg(astro-icon="interactive-button/outline/search" width="18px")
+        svg(data-icon="interactive-button/outline/search" width="18px")
 ```

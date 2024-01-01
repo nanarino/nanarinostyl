@@ -12,7 +12,7 @@ table.onclick = function (e) {
                     content: `
                         <svg
                             class="${prefix}-message-prefix"
-                            astro-icon="tips/outline/check-circle"
+                            data-icon="tips/outline/check-circle"
                             data-primary="success"
                         >
                             <use
