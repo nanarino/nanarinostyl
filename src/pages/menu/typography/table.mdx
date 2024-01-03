@@ -16,6 +16,13 @@ markdown中可以使用的表格
 
 <T class="☘-table-wrapper">
     <T tag="table" class="☘-table sm">
+        <colgroup>
+            <col />
+            <col style="border-left-style:solid" />
+            <col />
+            <col style="border-left-style:solid" />
+            <col />
+        </colgroup>
         <tr style="--text-align-cell: center">
             <th> </th>
             <th colspan="2"> abc at concert pitch </th>
@@ -97,18 +104,24 @@ markdown中可以使用的表格
 ```pug
 .☘-table-wrapper
     table.☘-table
+        colgroup
+            col
+            col(span="2" style="border-left-style:solid")
         thead
             tr
-                th ...
+                th Instrument
+                th(colspan="2") abc at concert pitch
         tbody
             tr
-                td ...
-        tfoot
-            tr
-                td ...
+                td double bass
+                td instrument=C/c
+                td score=C
+        tfoot ...
 ```
 
 ## `<div>`
+
+`<colgroup>` 不再有效
 
 <KeySignatures />
 
@@ -145,6 +158,8 @@ markdown中可以使用的表格
 td:first-child
     position: sticky
     left: 0
-    box-shadow: var(--box-shadow-divider-right) var(--box-shadow-divider-bottom)
+    // 覆盖行的hover效果
     background-color: rgb(var(--white))
+    // 也可以通过 `<colgroup>` 设置右边框
+    box-shadow: var(--box-shadow-divider-right) var(--box-shadow-divider-bottom)
 ```
