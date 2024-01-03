@@ -18,7 +18,8 @@ code.{prefix}-code
     tag()
 
 
-span.{prefix}-tag
+.{prefix}-tag
+kbd.{prefix}-kbd
 
     // --color-tag var(--primary-6)
     // --background-color-tag var(--primary-1)
@@ -28,4 +29,7 @@ span.{prefix}-tag
     color _rgb(var(--color-tag, var(--primary-6)))
     background-color _rgb(var(--background-color-tag, var(--primary-1)))
     tag()
-    
+
+    /kbd.{prefix}-kbd
+        border-bottom-style solid
+        padding var(--font-offset-parent) calc(var(--font-offset-parent) * 2)

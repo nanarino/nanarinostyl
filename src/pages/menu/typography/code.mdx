@@ -12,9 +12,7 @@ export {components};
 
 主要用来拓展markdown。但不提供语法高亮
 
-单行时 `code.☘-code`
-
-但是塞进 `pre.☘-pre` 里 可以用来显示多行代码
+`pre.☘-pre>code.☘-code` 里 可以用来显示多行代码
 
 ```pug
 code.☘-code.☘-font-mono
@@ -34,6 +32,19 @@ span.☘-tag #助眠
 ```
 
 相比 `code.☘-code` 除了字体更亮，样式没有区别
+
+
+### kbd
+
+<T tag='kbd' class='☘-kbd'>Ctrl</T> + <T tag='kbd' class='☘-kbd'>S</T>
+
+```pug
+kbd.☘-kbd Ctrl
+| + 
+kbd.☘-kbd S
+```
+
+相比 `.☘-tag` 多了一个下划线
 
 
 ## custom style
