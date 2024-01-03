@@ -20,8 +20,8 @@ devDependencies:
     specifier: ^3.6.4
     version: 3.6.4(@types/node@20.10.6)(stylus@0.62.0)
   astro-icon:
-    specifier: ^1.0.1
-    version: 1.0.1
+    specifier: ^1.0.2
+    version: 1.0.2
   copy-to-clipboard:
     specifier: ^3.3.3
     version: 3.3.3
@@ -1093,8 +1093,8 @@ packages:
     hasBin: true
     dev: true
 
-  /astro-icon@1.0.1:
-    resolution: {integrity: sha512-NtPyGeoSe/TJsGsea6T+8SDcW/wwZ7OIUq731DT7M6nw2B1p5BHuChiQI0bQvIIL79r48nMN7mQ8GBtwsDEucA==}
+  /astro-icon@1.0.2:
+    resolution: {integrity: sha512-MGgnjxHnI50bBWasBdt0pw/S9lWharfxhUv1sP2Vj1/KDaT/Cz35ZdlBgb4DKtfzQZREIJN2eQGqmVbvLq5p3w==}
     dependencies:
       '@iconify/tools': 3.0.7
       '@iconify/types': 2.0.0
@@ -1261,7 +1261,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001572
-      electron-to-chromium: 1.4.616
+      electron-to-chromium: 1.4.617
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
     dev: true
@@ -1654,8 +1654,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium@1.4.616:
-    resolution: {integrity: sha512-1n7zWYh8eS0L9Uy+GskE0lkBUNK83cXTVJI0pU3mGprFsbfSdAc15VTFbo+A+Bq4pwstmL30AVcEU3Fo463lNg==}
+  /electron-to-chromium@1.4.617:
+    resolution: {integrity: sha512-sYNE3QxcDS4ANW1k4S/wWYMXjCVcFSOX3Bg8jpuMFaXt/x8JCmp0R1Xe1ZXDX4WXnSRBf+GJ/3eGWicUuQq5cg==}
     dev: true
 
   /emoji-regex@10.3.0:

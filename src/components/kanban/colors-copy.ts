@@ -14,11 +14,11 @@ table.onclick = function (e) {
                             class="${prefix}-message-prefix"
                             data-icon="tips/outline/check-circle"
                             data-primary="success"
+                            viewBox="0 0 48 48"
                         >
                             <use
-                                xlink:href="#astroicon:tips/outline/check-circle"
-                            >
-                            </use>
+                                xlink:href="#ai:local:tips/outline/check-circle"
+                            ></use>
                         </svg>
                         <span>
                             复制成功

@@ -25,11 +25,11 @@ launcher.onclick = function (e) {
                             <svg 
                                 class="${prefix}-message-prefix"
                                 data-icon="tips/fill/${icon}-circle-fill"
+                                viewBox="0 0 48 48"
                             >
                                 <use
-                                    xlink:href="#astroicon:tips/fill/${icon}-circle-fill"
-                                >
-                                </use>
+                                    xlink:href="#ai:local:tips/fill/${icon}-circle-fill"
+                                ></use>
                             </svg>
                             <span>
                                 发射成功
@@ -64,11 +64,11 @@ launcher.onclick = function (e) {
                                     exclamation: 'warning',
                                     info: "",
                                 }[icon]}"
+                                viewBox="0 0 48 48"
                             >
                                 <use
-                                    xlink:href="#astroicon:tips/outline/${icon}-circle"
-                                >
-                                </use>
+                                    xlink:href="#ai:local:tips/outline/${icon}-circle"
+                                ></use>
                             </svg>
                             <span>
                                 发射成功
