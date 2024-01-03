@@ -1,6 +1,6 @@
 ---
 import prefix from "src/scripts/prefix";
-import Icon from "astro-icon";
+import { Icon } from "astro-icon/components";
 import colours from "./colors";
 ---
 
@@ -28,12 +28,14 @@ import colours from "./colors";
                                         })`,
                                     }}
                                     data-primary={i >= 5}
+                                    data-square
                                     title={`--${color}-${i + 1}`}
                                 >
                                     <Icon name="edit/outline/copy" />
                                 </button>
                             </td>
-                        ))}
+                        ))
+                    }
                 </tr>
             ))
         }
@@ -48,12 +50,10 @@ import colours from "./colors";
 #colors-kanban
     --text-align-cell center
     button.copy
-        width 32px
-        height 32px
-        --padding-vertical-button 6px
         --padding-horizonal-button 6px
         --border-radius-md 50%
         svg
+            font-size 20px
             pointer-events none
     td:first-child
         position sticky

@@ -2,12 +2,12 @@
 @import './../../lib/variable/functions.styl'
 
 .{prefix}-image
-
-    svg[astro-icon='interactive-button/outline/heart']
-    svg[astro-icon='interactive-button/fill/heart-fill']
+    svg[data-icon='interactive-button/outline/heart']
+    svg[data-icon='interactive-button/fill/heart-fill']
+        font-size 24px
         color _rgb(var(--magenta-6))
         cursor pointer
     
-    &[data-iine] svg[astro-icon='interactive-button/outline/heart']
-    &:not([data-iine]) svg[astro-icon='interactive-button/fill/heart-fill']
+    &[data-iine] svg[data-icon='interactive-button/outline/heart']
+    &:not([data-iine]) svg[data-icon='interactive-button/fill/heart-fill']
         display none

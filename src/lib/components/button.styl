@@ -113,6 +113,10 @@ button_background_color_init(background_color)
         // --padding-button 8px 16px
         --padding-vertical-button 8px
         --padding-horizonal-button 16px
+    &[data-square]
+        aspect-ratio 1 / 1
+        overflow hidden
+        --padding-vertical-button var(--padding-horizonal-button, 12px)
     
 
 

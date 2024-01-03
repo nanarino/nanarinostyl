@@ -1,33 +1,30 @@
 ---
 import prefix from "src/scripts/prefix";
-import { Sprite } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import Grid from "../grid.astro";
 ---
 
 <!--
     在这里声明过的图标 在其他地方可以使用替身
-    使用替身时 `width` 和 `height` 都需要指定 它不会等比例缩放
+    使用替身时 `width` 和 `height` 都需要指定 它不会等比例缩放 另外viewBox是必须的
 
     替身代码：
     
-    <svg astro-icon="tips/outline/check-circle">
-        <use xlink:href="#astroicon:tips/outline/check-circle"></use>
+    <svg data-icon="tips/outline/check-circle" viewBox="0 0 48 48">
+        <use xlink:href="#ai:local:tips/outline/check-circle"></use>
     </svg>
  -->
 <Grid inline style={{ display: "none" }}>
-    <Sprite.Provider>
+    <!--Sprite.Provider-->
+    <Icon name="tips/fill/check-circle-fill" />
+    <Icon name="tips/fill/close-circle-fill" />
+    <Icon name="tips/fill/exclamation-circle-fill" />
+    <Icon name="tips/fill/info-circle-fill" />
 
-        <Sprite name="tips/fill/check-circle-fill" />
-        <Sprite name="tips/fill/close-circle-fill" />
-        <Sprite name="tips/fill/exclamation-circle-fill" />
-        <Sprite name="tips/fill/info-circle-fill" />
-
-        <Sprite name="tips/outline/check-circle" />
-        <Sprite name="tips/outline/close-circle" />
-        <Sprite name="tips/outline/exclamation-circle" />
-        <Sprite name="tips/outline/info-circle" />
-
-    </Sprite.Provider>
+    <Icon name="tips/outline/check-circle" />
+    <Icon name="tips/outline/close-circle" />
+    <Icon name="tips/outline/exclamation-circle" />
+    <Icon name="tips/outline/info-circle" />
 </Grid>
 
 <div class={`${prefix}-message-queue`} id="message-queue"></div>

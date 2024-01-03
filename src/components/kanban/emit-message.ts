@@ -24,12 +24,12 @@ launcher.onclick = function (e) {
                         content: `
                             <svg 
                                 class="${prefix}-message-prefix"
-                                astro-icon="tips/fill/${icon}-circle-fill"
+                                data-icon="tips/fill/${icon}-circle-fill"
+                                viewBox="0 0 48 48"
                             >
                                 <use
-                                    xlink:href="#astroicon:tips/fill/${icon}-circle-fill"
-                                >
-                                </use>
+                                    xlink:href="#ai:local:tips/fill/${icon}-circle-fill"
+                                ></use>
                             </svg>
                             <span>
                                 发射成功
@@ -57,18 +57,18 @@ launcher.onclick = function (e) {
                         content: `
                             <svg 
                                 class="${prefix}-message-prefix"
-                                astro-icon="tips/outline/${icon}-circle"
+                                data-icon="tips/outline/${icon}-circle"
                                 data-primary="${{
                                     check: 'success',
                                     close: 'danger',
                                     exclamation: 'warning',
                                     info: "",
                                 }[icon]}"
+                                viewBox="0 0 48 48"
                             >
                                 <use
-                                    xlink:href="#astroicon:tips/outline/${icon}-circle"
-                                >
-                                </use>
+                                    xlink:href="#ai:local:tips/outline/${icon}-circle"
+                                ></use>
                             </svg>
                             <span>
                                 发射成功

@@ -6,7 +6,7 @@ title: 输入框
 import T from "src/components/T.astro";
 import Grid from "src/components/grid.astro";
 import escape from "src/scripts/server/escape";
-import Icon from "astro-icon";
+import { Icon } from "astro-icon/components";
 import {components} from 'src/components/markdown/index.mdx';
 export {components};
 
@@ -186,7 +186,9 @@ input.☘-input(
             name="interactive-button/outline/search"
             role="button"
             aria-label="search"
-            width="16px"/>
+            width="16px"
+            height="16px"
+        />
         <T
             tag="input"
             class="☘-input"
@@ -202,6 +204,7 @@ input.☘-input(
             role="button"
             aria-label="search"
             width="16px"
+            height="16px"
         />
         <T
             tag="input"
@@ -233,6 +236,7 @@ input.☘-input(
             role="button"
             aria-label="close"
             width="16px"
+            height="16px"
         />
     </T>
     <T class="☘-input-wrapper" style="
@@ -245,6 +249,7 @@ input.☘-input(
             role="button"
             aria-label="close"
             width="16px"
+            height="16px"
         />
     </T>
 </Grid>
@@ -286,7 +291,11 @@ input.☘-input(
         title="search"
         disabled
     >
-        <Icon name="interactive-button/outline/search" width="18px" />
+        <Icon 
+            name="interactive-button/outline/search"
+            width="18px"
+            height="18px"
+        />
     </T>
 </T>
 
@@ -296,7 +305,7 @@ input.☘-input(
 })
     input.☘-input(title='out-suffix' disabled)
     button.☘-input-suffix(type="submit" title="search" disabled)
-        svg(astro-icon="interactive-button/outline/search" width="18px")
+        svg(data-icon="interactive-button/outline/search" width="18px")
 ```
 
 ***
@@ -308,7 +317,11 @@ input.☘-input(
         '--box-shadow-drop-bottom': 'none'
     }} />
     <button type="submit" title="search">
-        <Icon name="interactive-button/outline/search" width="18px"/>
+        <Icon
+            name="interactive-button/outline/search"
+            width="18px"
+            height="18px"
+        />
     </button>
 </T>
 
@@ -322,5 +335,5 @@ input.☘-input(
         '--box-shadow-drop-bottom': 'none'
     })
     button(type="submit" title="search")
-        svg(astro-icon="interactive-button/outline/search" width="18px")
+        svg(data-icon="interactive-button/outline/search" width="18px")
 ```

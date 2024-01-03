@@ -4,7 +4,7 @@ title: 链接
 ---
 
 import T from "src/components/T.astro";
-import Icon from "astro-icon";
+import { Icon } from "astro-icon/components";
 import escape from "src/scripts/server/escape";
 import {components} from 'src/components/markdown/index.mdx';
 export {components};
@@ -70,6 +70,7 @@ each primary in ['', 'success', 'danger', 'warning']
     aria-label="twitter"
     aria-disabled
     width="18"
+    height="18"
 /><span style="vertical-align:middle">Twitter</span>
 
 ```pug

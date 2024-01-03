@@ -4,7 +4,7 @@ title: 按钮
 ---
 
 import T from "src/components/T.astro";
-import Icon from "astro-icon";
+import { Icon } from "astro-icon/components";
 import escape from "src/scripts/server/escape";
 import Grid from "src/components/grid.astro";
 import {components} from 'src/components/markdown/index.mdx';
@@ -69,6 +69,34 @@ button.☘-button(data-primary disabled) 导入
 button.☘-button(data-primary='danger' disabled) 删除
 ```
 
+
+## `data-square`
+
+长宽比 1：1 的按钮。
+
+<T
+    tag="button"
+    title="关机"
+    class="☘-button"
+    style="
+        padding: 5px;
+        font-size: 22px;
+    "
+    data-primary="danger"
+    data-square
+    onclick="window.close()">
+    <Icon name="interactive-button/outline/poweroff"/>
+</T>
+
+```pug
+button.☘-button(title="关机" data-primary="danger" data-square style={
+    'padding': '5px',
+    'font-size': '22px',
+} onclick=window.close)
+    svg(data-icon='interactive-button/outline/poweroff' width='1em')
+```
+
+
 ## custom style
 
 全局变量控制内边距
@@ -91,32 +119,7 @@ button.☘-button(data-primary='danger' disabled) 删除
     --background-color-button-focus: var(--blue-6);
     --background-color-button-disabled: var(--blue-2);
 ">饿死了么</T>
-        
 
-使用 `<svg/>` 需要设置容器或者其自身宽高。
-
-<T
-    tag="button"
-    title="关机"
-    class="☘-button"
-    style="
-        width: 32px;
-        height: 32px;
-        padding: 5px;
-    "
-    data-primary="danger"
-    onclick="window.close()">
-    <Icon name="interactive-button/outline/poweroff"/>
-</T>
-
-```pug
-button.☘-button(title="关机" data-primary="danger" style={
-    width: '32px',
-    height: '32px',
-    padding: '5px'
-} onclick=function(){window.close()})
-    svg(astro-icon='interactive-button/outline/poweroff')
-```
 
 ## upload
 
@@ -169,6 +172,7 @@ label(title="附件" for="uploader") 还未选择附件
                 class={escape('☘-input-prefix')}
                 name="interactive-button/outline/upload"
                 width="18px"
+                height="18px"
             />
         </T>
     )
