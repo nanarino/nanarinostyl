@@ -32,6 +32,7 @@ const { href } = Astro.props;
 
     <a href={href || import.meta.env.BASE_URL} class="logo">
         <Icon name="logo/color/clover" />
+        <span style="font-size:0">Return to cover or enter chapter</span>
     </a>
 
     <Switch
@@ -53,7 +54,7 @@ const { href } = Astro.props;
         <i class={`${prefix}-switch-mover`}>
             <Icon name="general/outline/moon"/>
         </i>
-        <label class={`${prefix}-switch-slot`} for="header-theme-switch"></label>
+        <label class={`${prefix}-switch-slot`} for="header-theme-switch">theme toggle</label>
     </Switch>
 </header>
 

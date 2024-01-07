@@ -4,16 +4,15 @@ import { Icon } from "astro-icon/components";
 import Grid from "../grid.astro";
 ---
 
-<!--
-    在这里声明过的图标 在其他地方可以使用替身
-    使用替身时 `width` 和 `height` 都需要指定 它不会等比例缩放 另外viewBox是必须的
-
-    替身代码：
-    
-    <svg data-icon="tips/outline/check-circle" viewBox="0 0 48 48">
-        <use xlink:href="#ai:local:tips/outline/check-circle"></use>
-    </svg>
- -->
+{/* 
+  * 在这里声明过的图标 在其他地方可以使用替身
+  * 使用替身时 `width` 和 `height` 都需要指定 它不会等比例缩放 另外viewBox是必须的
+  * 替身代码：
+  * <svg data-icon="tips/outline/check-circle" viewBox="0 0 48 48">
+  *     <use xlink:href="#ai:local:tips/outline/check-circle"></use>
+  * </svg>
+  *
+  */}
 <Grid inline style={{ display: "none" }}>
     <!--Sprite.Provider-->
     <Icon name="tips/fill/check-circle-fill" />
