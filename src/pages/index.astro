@@ -16,6 +16,7 @@ const menu = import.meta.env.BASE_URL + "menu/";
             <nav>
                 <a class="clover" href={menu}>
                     <Icon name="logo/color/clover" title="进入" />
+                    <i>{prefix}</i>
                 </a>
                 <a class="stylus" href="https://stylus-lang.com/" target="_blank">
                     <img
@@ -23,6 +24,7 @@ const menu = import.meta.env.BASE_URL + "menu/";
                         alt="Stylus logo"
                         title="stylus document"
                     />
+                    <i>stylus</i>
                 </a>
             </nav>
         </main>
@@ -68,12 +70,13 @@ nav
     align-content center
 
     a
-        display inline-block
+        display inline-flex
         position relative
         border-radius 50%
         will-change filter
         transition filter .3s
-
+        i
+            font-size 0
         img,svg
             width 6em
             height 6em
