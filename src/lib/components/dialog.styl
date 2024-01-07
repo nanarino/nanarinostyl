@@ -1,0 +1,23 @@
+@import './../variable/prefix.styl'
+@import './../variable/compatible.styl'
+
+.{prefix}-dialog
+    z-index 10
+    inset 0
+    margin auto
+    padding 16px 24px
+    border 0
+    border-radius var(--border-radius-lg)
+    box-shadow var(--box-shadow-drop-bottom)
+
+    form[method=dialog]
+        display grid
+        button:where(:last-child)
+            place-self end
+    
+    &::backdrop
+        // cursor not-allowed
+        pointer-events none
+        backdrop-filter brightness(.8) blur(1px)
+        /:root[data-theme=dark] &
+            backdrop-filter brightness(1.25) blur(1px)
