@@ -25,17 +25,15 @@
   "bugs": {
     "url": "https://github.com/nanarino/nanarinostyl/issues"
   },
-  "dependencies": {
-    "stylus": "^0.62.0"
-  },
   "devDependencies": {
-    "@astrojs/mdx": "^2.0.3",
-    "@types/node": "^20.10.6",
-    "astro": "^4.1.1",
+    "@astrojs/mdx": "^2.0.5",
+    "@types/node": "^20.11.5",
+    "astro": "^4.2.1",
     "astro-icon": "^1.0.2",
     "copy-to-clipboard": "^3.3.3",
     "css-doodle": "^0.34.11",
-    "rm-all": "^1.1.1"
+    "rm-all": "^1.1.1",
+    "stylus": "^0.62.0"
   },
   "files": [
     "dist",
