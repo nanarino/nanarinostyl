@@ -1,4 +1,6 @@
 import prefix from "src/scripts/prefix";
+import dark from "./cover.dark.styl?raw"
+import light from "./cover.light.styl?raw"
 
 interface Doodle extends HTMLElement {
     update: (styles: string) => void
@@ -6,41 +8,7 @@ interface Doodle extends HTMLElement {
 
 const doodle = document.querySelector('css-doodle') as Doodle;
 
-const style = {
-
-    light: `
-
-        :doodle {
-            @grid: 8 / 100%;
-            border-radius: 50%;
-        }
-            
-        transition: .2s @r(.6s);
-        border-radius: @pick(100% 0, 0 100%);
-        transform: scale(@r(.25, 1.25));
-            
-        background: hsla(
-            calc(240 - 6 * @x * @y),
-            70%, 68%, @r.8
-        )
-
-    `,
-
-    dark: `
-
-        :doodle {
-            @grid: 7 / 100%;
-            border-radius: 50%;
-        }
-
-        @shape: clover 5;
-        background: hsla(-@i(*4), 70%, 68%, @r.8);
-        transform:
-            scale(@r(.2, 1.5))
-            translate(@m2.@r(±50%));
-
-    `
-}
+const style = { light, dark } as const;
 
 // 初始化主题
 doodle.innerHTML = style[window.theme];
