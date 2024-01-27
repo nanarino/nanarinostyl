@@ -1,6 +1,7 @@
 @import './../variable/prefix.styl'
 @import './../variable/functions.styl'
 
+// details.{prefix}-panel
 .{prefix}-panel
     // --color-panel var(--primary-1)
 
@@ -22,10 +23,13 @@
         border-left 8px solid _rgb(var(--color-panel, var(--primary-1)))
         position relative
         color inherit
+        list-style none
         &::-webkit-details-marker
-            display none // Safari必须加 即使display不是list-item
+            display none
+        &::-moz-list-bullet
+            display none
         &::marker
-            display none // Safari必须加 即使display不是list-item
+            display none
         &::before
             // content url("/src/icons/direction/outline/caret-right.svg")
             content ''

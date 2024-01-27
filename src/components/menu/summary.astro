@@ -10,7 +10,7 @@ const base = Astro.props.base ?? "";
 const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
 ---
 
-<ul id="menu" class={`${prefix}-menu`}>
+<nav class={`${prefix}-menu`}>
     {
         menu.map((item) => {
             /**
@@ -21,32 +21,29 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
                 (item as menu).children.length > 0
             ) {
                 return (
-                    <li
-                        class={`${prefix}-menu-submenu`}
-                        style="order:1"
-                        data-folded={
-                            /**
-                             * 判断是否需要折叠菜单
-                             */
-                            !RegExp(`^${base}${item.path}`).test(
-                                Astro.url.pathname
-                            )
-                        }
+                    <details
+                        name="menu"
+                        class={`${prefix}-menu`}
+                        open={RegExp(`^${base}${item.path}`).test(
+                            Astro.url.pathname,
+                        )}
                     >
-                        <div
-                            class={`${prefix}-menu-submenu-title`}
-                            onclick="
-                            this.parentElement.toggleAttribute('data-folded')
-                            "
+                        <summary
+                            class={`${prefix}-menu-submenu`}
+                            style="order:1"
                         >
-                            <span>{getName(item.path)}</span>
-                            <i class={`${prefix}-menu-submenu-title-arrow`} />
-                        </div>
+                            <div class={`${prefix}-menu-submenu-title`}>
+                                <span>{getName(item.path)}</span>
+                                <i
+                                    class={`${prefix}-menu-submenu-title-arrow`}
+                                />
+                            </div>
+                        </summary>
                         <Astro.self
                             menu={(item as menu).children}
                             base={base}
                         />
-                    </li>
+                    </details>
                 );
             }
             /**
@@ -54,7 +51,7 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
              */
             if (RegExp(`^${base}${item.path}\/?$`).test(Astro.url.pathname)) {
                 return (
-                    <li
+                    <div
                         class={`${prefix}-menu-item ${prefix}-watermark`}
                         data-selected
                         style={{
@@ -63,14 +60,14 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
                         }}
                     >
                         {getName(item.path) || "readme"}
-                    </li>
+                    </div>
                 );
             }
             /**
              * 其他页面
              */
             return (
-                <li
+                <div
                     class={`${prefix}-menu-item`}
                     style={{ order: getName(item.path) ? 1 : 0 }}
                 >
@@ -80,8 +77,8 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
                     >
                         {getName(item.path) || "readme"}
                     </a>
-                </li>
+                </div>
             );
         })
     }
-</ul>
+</nav>

@@ -3,7 +3,8 @@ import App from "@layout/app.astro";
 import prefix from "src/scripts/prefix";
 import Header from "src/components/header/index.astro";
 import Footer from "src/components/footer.astro";
-import Menu from "src/components/menu.astro";
+import Menu from "src/components/menu/summary.astro";
+// import Menu from "src/components/menu/list.astro";
 import { getMenu } from "src/scripts/server/menu";
 
 const menu = await getMenu("./src/pages/menu");

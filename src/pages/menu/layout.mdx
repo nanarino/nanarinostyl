@@ -30,43 +30,16 @@ export {components};
 
 ## menu
 
-本文档的左侧菜单利用了这个
+本文档的左侧菜单利用了这个，但是使用的 [`details>summary`](https://github.com/nanarino/nanarinostyl/blob/main/src/components/menu/summary.astro)
 
-<Menu />
+结合 `details[name]` 属性可以在不写JavaScript的情况下保持只有一个子菜单展开
+
+在之前的实现是 [`ul>li`](https://github.com/nanarino/nanarinostyl/blob/main/src/components/menu/list.astro)
 
 - `li.☘-menu-submenu[data-folded]` 标记当前折叠的子菜单 切换时无动画
-- `li.☘-menu-item[data-selected]` 标记当前选中的菜单叶子
+    - `[data-selected]` 标记当前选中的叶子
 
-```pug
-ul.☘-menu#menu-tree-kanban
-    li.☘-menu-item
-        a.☘-menu-item-link 叶子-0
-    li.☘-menu-submenu(data-folded)
-        .☘-menu-submenu-title(onclick=function(){
-            this.parentElement.toggleAttribute('data-folded')
-        })
-            span 分类-1
-            i.☘-menu-submenu-title-arrow
-        ul.☘-menu
-            li.☘-menu-item
-                a.☘-menu-item-link 叶子-1-1
-            li.☘-menu-item
-                a.☘-menu-item-link 叶子-1-2
-    li.☘-menu-submenu
-        .☘-menu-submenu-title(onclick=function(){
-            this.parentElement.toggleAttribute('data-folded')
-        })
-            span 分类-2
-            i.☘-menu-submenu-title-arrow
-        ul.☘-menu
-            li.☘-menu-item.☘-watermark(data-selected) 叶子-2-1
-            li.☘-menu-item
-                a.☘-menu-item-link 叶子-2-2
-
-style(lang="stylus").
-    #menu-tree-kanban
-        --color-menu var(--gold-6)
-```
+<Menu />
 
 全局变量 `--color-menu` 可以自定义菜单主题颜色RGB值
 
