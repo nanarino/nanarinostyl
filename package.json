@@ -26,10 +26,10 @@
     "url": "https://github.com/nanarino/nanarinostyl/issues"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^2.0.5",
-    "@types/node": "^20.11.5",
-    "astro": "^4.2.1",
-    "astro-icon": "^1.0.2",
+    "@astrojs/mdx": "^2.1.0",
+    "@types/node": "^20.11.8",
+    "astro": "^4.2.6",
+    "astro-icon": "^1.0.3",
     "copy-to-clipboard": "^3.3.3",
     "css-doodle": "^0.34.11",
     "rm-all": "^1.1.1",
