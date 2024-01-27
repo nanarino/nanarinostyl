@@ -85,7 +85,11 @@ button.☘-button(data-primary='danger' disabled) 删除
     data-primary="danger"
     data-square
     onclick="window.close()">
-    <Icon name="interactive-button/outline/poweroff"/>
+    <Icon 
+        name="interactive-button/outline/poweroff"
+        width={22}
+        height={22}
+    />
 </T>
 
 ```pug
@@ -93,7 +97,10 @@ button.☘-button(title="关机" data-primary="danger" data-square style={
     'padding': '5px',
     'font-size': '22px',
 } onclick=window.close)
-    svg(data-icon='interactive-button/outline/poweroff' width='1em')
+    svg(
+        data-icon='interactive-button/outline/poweroff'
+        width='1em'
+    )
 ```
 
 
