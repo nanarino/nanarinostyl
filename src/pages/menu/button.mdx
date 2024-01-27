@@ -78,10 +78,7 @@ button.☘-button(data-primary='danger' disabled) 删除
     tag="button"
     title="关机"
     class="☘-button"
-    style="
-        padding: 5px;
-        font-size: 22px;
-    "
+    style="padding: 5px;"
     data-primary="danger"
     data-square
     onclick="window.close()">
@@ -95,11 +92,11 @@ button.☘-button(data-primary='danger' disabled) 删除
 ```pug
 button.☘-button(title="关机" data-primary="danger" data-square style={
     'padding': '5px',
-    'font-size': '22px',
 } onclick=window.close)
     svg(
         data-icon='interactive-button/outline/poweroff'
-        width='1em'
+        width='22px'
+        height='22px'
     )
 ```
 
