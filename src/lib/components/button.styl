@@ -14,7 +14,7 @@
  */
 button_background_color_init(background_color)
     background-color background_color
-    @supports (background paint(_component))
+    @supports (background paint(smooth-corners))
         background-image radial-gradient(circle, 
             transparent 0%,
             transparent var(--percent-button-wave),
@@ -26,10 +26,16 @@ button_background_color_init(background_color)
 .{prefix}-button
     /:root
         // --padding--button 5px 12px
-        @supports (background paint(_component))
+        @supports (background paint(smooth-corners))
             /** 
              * https://stackoverflow.com/questions/69612853/using-css-can-i-check-if-a-browser-supports-the-css-properties-and-values-api
-             * [Typed OM `@property` should be supported here] 
+             * [Typed OM `@property` should be supported here]
+             *
+             * 可以额外加载一个npm包：[smooth-corners](https://www.npmjs.com/package/smooth-corners)
+             *
+             * 无效的paint方法名也会进入 @supports
+             *
+             * https:和localhost:才能进入 @supports
              */
             @property --percent-button-wave
                 syntax '<percentage>'
@@ -59,13 +65,13 @@ button_background_color_init(background_color)
     padding var(--padding-vertical-button, 5px) var(--padding-horizonal-button, 12px)
     font-size var(--font-size-body)
     line-height var(--line-height-body)
-    border-radius var(--border-radius-md)
     border none
+    border-radius var(--border-radius-md)
 
-    @supports (background paint(_component))
+    @supports (background paint(smooth-corners))
         transition --percent-button-wave .5s, box-shadow .3s
         transition-timing-function ease-in
-    @supports not (background paint(_component))
+    @supports not (background paint(smooth-corners))
         transition background .8s
         transition-timing-function ease-in
 
@@ -90,9 +96,9 @@ button_background_color_init(background_color)
         background-color _rgb(var(--background-color-button-disabled))
     
     &:not([disabled]):focus
-        @supports (background paint(_component))
+        @supports (background paint(smooth-corners))
             background-color _rgb(var(--background-color-button-focus))
-        @supports not (background paint(_component))
+        @supports not (background paint(smooth-corners))
             background _rgb(var(--background-color-button)) radial-gradient(circle, 
                 transparent 1%,
                 _rgb(var(--background-color-button)) 1%
@@ -117,8 +123,13 @@ button_background_color_init(background_color)
         aspect-ratio 1 / 1
         overflow hidden
         --padding-vertical-button var(--padding-horizonal-button, 12px)
-    
 
+        @supports (background paint(smooth-corners)) 
+            &
+                border-radius 0 !important
+                -webkit-mask paint(smooth-corners)
+                mask paint(smooth-corners)
+            
 
     color _rgb(var(--color-button))
     &::-ms-browse

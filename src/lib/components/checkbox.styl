@@ -100,7 +100,12 @@
                     border 3px solid _rgb(var(--white))
                     border-top none
                     border-right none
-                    // 支持 `path()` 的浏览器增强效果
+                    /**
+                     * 支持 `path()` 的浏览器增强效果
+                     *
+                     * 在之前的版本里 `@supports` 并不检验 `path()` 的参数
+                     * 修复后使用一个简短的path参数 来校验是否支持 `path()` 
+                     */
                     @supports (clip-path path("M0,0 0,1 1,1 1,0z"))
                         &
                             clip-path path("M 0 1.5 \\

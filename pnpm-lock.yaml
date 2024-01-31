@@ -26,6 +26,9 @@ devDependencies:
   rm-all:
     specifier: ^1.1.1
     version: 1.1.1(js-cool@5.17.0)
+  smooth-corners:
+    specifier: ^1.0.8
+    version: 1.0.8
   stylus:
     specifier: ^0.62.0
     version: 0.62.0
@@ -3828,6 +3831,10 @@ packages:
 
   /sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
+    dev: true
+
+  /smooth-corners@1.0.8:
+    resolution: {integrity: sha512-JcHYm/7l3RZAX+Ev7/91tRX2zau1h+8nVWqMkl3mvqMsHQkUCbEQjFNKRj58s49PyqDcpl9TcUeC2zHHyGu2sQ==}
     dev: true
 
   /source-map-js@1.0.2:

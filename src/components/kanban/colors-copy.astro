@@ -26,6 +26,7 @@ import colours from "./colors";
                                         "--outline-color-focus": `var(--${color}-${
                                             i + 1
                                         })`,
+                                        "--smooth-corners": `${1.5 + i / 8}`
                                     }}
                                     data-primary={i >= 5}
                                     data-square
@@ -62,4 +63,5 @@ import colours from "./colors";
         left 0
         box-shadow var(--box-shadow-divider-right), var(--box-shadow-divider-bottom)
         background-color _rgb(var(--white))
+        z-index 1
 </style>
