@@ -5,10 +5,11 @@ const aside = toggle?.parentElement?.nextElementSibling?.querySelector?.('aside'
 
 if (toggle && aside) {
     toggle.onclick = (e: Event) => {
-        toggle.toggleAttribute('data-collapsed');
-        if (Reflect.has(toggle.dataset, 'collapsed')) {
+        if (toggle.matches('[aria-pressed=true]')) {
+            toggle.setAttribute('aria-pressed', 'false');
             Reflect.set(aside.dataset, 'collapsed', '');
         } else {
+            toggle.setAttribute('aria-pressed', 'true');
             Reflect.deleteProperty(aside.dataset, 'collapsed');
         }
     };

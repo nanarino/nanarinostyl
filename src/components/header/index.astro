@@ -20,9 +20,9 @@ const { href } = Astro.props;
                 id="header-menu-toggle"
                 class={`${prefix}-button`}
                 title="menu"
-                data-collapsed
                 data-square
                 type="button"
+                aria-pressed="false"
             >
                 <Icon name="direction/outline/menu-fold" />
                 <Icon name="direction/outline/menu-unfold" />

@@ -7,6 +7,6 @@
     svg
         grid-area 1 / 1 / 2 / 2
         transition opacity .3s 
-    &[data-collapsed]>svg[data-icon='direction/outline/menu-fold']
-    &:not([data-collapsed])>svg[data-icon='direction/outline/menu-unfold']
+    &[aria-pressed=false]>svg[data-icon='direction/outline/menu-fold']
+    &[aria-pressed=true]>svg[data-icon='direction/outline/menu-unfold']
         opacity 0
