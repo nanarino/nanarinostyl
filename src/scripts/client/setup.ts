@@ -1,13 +1,10 @@
-import js2url from "src/scripts/js2url";
-
-
 /**
  * CSS Houdini
  */
-import smoothCorners from "smooth-corners?raw";
+import smoothCorners from "smooth-corners?url";
 
 if (CSS && 'paintWorklet' in CSS) {
-    CSS.paintWorklet.addModule(js2url(smoothCorners));
+    CSS.paintWorklet.addModule(smoothCorners);
 }
 
 
