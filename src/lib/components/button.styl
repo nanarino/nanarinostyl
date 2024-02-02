@@ -119,14 +119,18 @@ button_background_color_init(background_color)
         // --padding-button 8px 16px
         --padding-vertical-button 8px
         --padding-horizonal-button 16px
-    &[data-square]
+    
+    &:where([data-round])
+    &:where([data-square])
         aspect-ratio 1 / 1
         overflow hidden
         --padding-vertical-button var(--padding-horizonal-button, 12px)
-
+    &:where([data-round])
+        border-radius 50%
+    &:where([data-square])
         @supports (background paint(smooth-corners)) 
             &
-                border-radius 0 !important
+                border-radius unset
                 -webkit-mask paint(smooth-corners)
                 mask paint(smooth-corners)
             

@@ -1,7 +1,7 @@
 {
   "name": "nanarinostyl",
   "description": "style lib",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "main": "./dist/index.css",
   "scripts": {
     "dev": "astro dev --host",
@@ -26,10 +26,10 @@
     "url": "https://github.com/nanarino/nanarinostyl/issues"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^2.1.0",
-    "@types/node": "^20.11.8",
-    "astro": "^4.2.6",
-    "astro-icon": "^1.0.3",
+    "@astrojs/mdx": "^2.1.1",
+    "@types/node": "^20.11.16",
+    "astro": "^4.3.1",
+    "astro-icon": "^1.0.4",
     "copy-to-clipboard": "^3.3.3",
     "css-doodle": "^0.34.11",
     "rm-all": "^1.1.1",

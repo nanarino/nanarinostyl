@@ -186,8 +186,8 @@ input.☘-input(
             name="interactive-button/outline/search"
             role="button"
             aria-label="search"
-            width="16px"
-            height="16px"
+            width={16}
+            height={16}
         />
         <T
             tag="input"
@@ -203,8 +203,8 @@ input.☘-input(
             name="interactive-button/outline/search"
             role="button"
             aria-label="search"
-            width="16px"
-            height="16px"
+            width={16}
+            height={16}
         />
         <T
             tag="input"
@@ -218,10 +218,10 @@ input.☘-input(
 
 ```pug
 .☘-input-wrapper
-    svg.☘-input-prefix(role="button" aria-label="search" width="16px")
+    svg.☘-input-prefix(role="button" aria-label="search" width=16 height=16)
     input.☘-input(title='with-prefix' data-with-prefix type="search")
 .☘-input-wrapper(data-primary)
-    svg.☘-input-prefix(role="button" aria-label="search" width="16px")
+    svg.☘-input-prefix(role="button" aria-label="search" width=16 height=16)
     input.☘-input(title='with-prefix' data-with-prefix type="search")
 ```
 
@@ -235,8 +235,8 @@ input.☘-input(
             name="tips/outline/close"
             role="button"
             aria-label="close"
-            width="16px"
-            height="16px"
+            width={16}
+            height={16}
         />
     </T>
     <T class="☘-input-wrapper" style="
@@ -248,8 +248,8 @@ input.☘-input(
             name="tips/outline/close"
             role="button"
             aria-label="close"
-            width="16px"
-            height="16px"
+            width={16}
+            height={16}
         />
     </T>
 </Grid>
@@ -257,12 +257,12 @@ input.☘-input(
 ```pug
 .☘-input-wrapper
     input.☘-input(title='with-suffix' data-with-suffix)
-    svg.☘-input-suffix(role="button" aria-label="close" width="16px")
+    svg.☘-input-suffix(role="button" aria-label="close" width=16 height=16)
 .☘-input-wrapper(style={
     '--color-input-wrapper': 'var(--blue-6)'
 })
     input.☘-input(title='with-suffix' data-with-suffix)
-    svg.☘-input-suffix(role="button" aria-label="close" width="16px")
+    svg.☘-input-suffix(role="button" aria-label="close" width=16 height=16)
 ```
 
 ***
@@ -293,8 +293,8 @@ input.☘-input(
     >
         <Icon 
             name="interactive-button/outline/search"
-            width="18px"
-            height="18px"
+            width={18}
+            height={18}
         />
     </T>
 </T>
@@ -305,7 +305,7 @@ input.☘-input(
 })
     input.☘-input(title='out-suffix' disabled)
     button.☘-input-suffix(type="submit" title="search" disabled)
-        svg(data-icon="interactive-button/outline/search" width="18px")
+        svg(data-icon="interactive-button/outline/search" width=18 height=18)
 ```
 
 ***
@@ -319,8 +319,8 @@ input.☘-input(
     <button type="submit" title="search">
         <Icon
             name="interactive-button/outline/search"
-            width="18px"
-            height="18px"
+            width={18}
+            height={18}
         />
     </button>
 </T>
@@ -335,5 +335,5 @@ input.☘-input(
         '--box-shadow-drop-bottom': 'none'
     })
     button(type="submit" title="search")
-        svg(data-icon="interactive-button/outline/search" width="18px")
+        svg(data-icon="interactive-button/outline/search" width=18 height=18)
 ```

@@ -180,7 +180,8 @@ style(lang='stylus').
             svg.☘-link(
                 role="button"
                 aria-label="Open the image in a new tab"
-                width="24px"
+                width=24
+                height=24
                 onclick=function(){
                     window.open("@/assets/images/example.jpg")
                 }
@@ -188,7 +189,8 @@ style(lang='stylus').
             svg.☘-link(
                 role="button"
                 aria-label="Download the image"
-                width="24px"
+                width=24
+                height=24
             )
 ```
 
@@ -231,7 +233,7 @@ span.☘-image.☘-input-wrapper(style={
     height: '100px',
 })
     input.☘-input(type='file' disabled)
-    svg(width="24px")
+    svg(width=24)
 
 span.☘-image.☘-input-wrapper(style={
     width: '100px',
@@ -248,7 +250,7 @@ span.☘-image.☘-input-wrapper(style={
             };
         }
     )
-    svg(width="24px")
+    svg(width=24)
 ```
 
 `.☘-input-wrapper` 也可以使用局部变量 `--color-input-wrapper` 修改颜色RGB值

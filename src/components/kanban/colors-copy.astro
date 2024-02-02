@@ -26,10 +26,9 @@ import colours from "./colors";
                                         "--outline-color-focus": `var(--${color}-${
                                             i + 1
                                         })`,
-                                        "--smooth-corners": `${1.5 + i / 8}`
                                     }}
                                     data-primary={i >= 5}
-                                    data-square
+                                    data-round
                                     title={`--${color}-${i + 1}`}
                                 >
                                     <Icon name="edit/outline/copy" />
@@ -52,7 +51,6 @@ import colours from "./colors";
     --text-align-cell center
     button.copy
         --padding-horizonal-button 6px
-        --border-radius-md 50%
         svg
             font-size 20px
             width 1em
