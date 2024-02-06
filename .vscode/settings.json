@@ -13,5 +13,9 @@
     },
     "files.associations": {
         "*.mdx": "markdown"
-    }
+    },
+    "cSpell.words": [
+        "nanarinostyl",
+        "styl"
+    ]
 }
