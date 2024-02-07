@@ -3,11 +3,12 @@
   "description": "style lib",
   "version": "0.2.11",
   "main": "./dist/index.css",
+  "type": "module",
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
     "build-docs": "astro build",
-    "build-styl": "gulp",
+    "build-styl": "node esbuild.config.js",
     "build-gh-pages": "astro build --base /nanarinostyl/",
     "preview": "astro preview"
   },
@@ -32,10 +33,8 @@
     "astro-icon": "^1.0.4",
     "copy-to-clipboard": "^3.3.3",
     "css-doodle": "^0.34.11",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-stylus": "^3.0.1",
+    "esbuild": "^0.20.0",
+    "esbuild-style-plugin": "^1.6.3",
     "rm-all": "^1.1.1",
     "smooth-corners": "^1.0.8",
     "stylus": "^0.62.0"
