@@ -1,4 +1,4 @@
-import{p as a}from"./hoisted.ESr9dguv.js";const l=document.getElementById("colors-kanban");l.onclick=function(n){const e=n.target;e.tagName==="BUTTON"&&e.title&&(window.copy(`rgb(var(${e.title}))`),window.dispatchEvent(new CustomEvent(`${a}-message`,{detail:{content:`
+import{p as a}from"./hoisted.CkYcegt6.js";const l=document.getElementById("colors-kanban");l.onclick=function(n){const e=n.target;e.tagName==="BUTTON"&&e.title&&(window.copy(`rgb(var(${e.title}))`),window.dispatchEvent(new CustomEvent(`${a}-message`,{detail:{content:`
                         <svg
                             class="${a}-message-prefix"
                             data-icon="tips/outline/check-circle"
