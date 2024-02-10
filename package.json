@@ -1,13 +1,13 @@
 {
   "name": "nanarinostyl",
   "description": "style lib",
-  "version": "0.2.11",
-  "main": "./dist/index.css",
+  "version": "0.3.0",
+  "main": "./dist/nanarinostyl.min.css",
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
     "build-docs": "astro build",
-    "build-styl": "rma ./dist && stylus ./src/lib/index.styl --out ./dist",
+    "build-styl": "rma ./dist && mkdir dist && stylus ./src/lib/index.styl -p | replace \"\\s?\\\\?\\s+\" \" \" -z | csso -o ./dist/nanarinostyl.min.css",
     "build-gh-pages": "astro build --base /nanarinostyl/",
     "preview": "astro preview"
   },
@@ -27,11 +27,13 @@
   },
   "devDependencies": {
     "@astrojs/mdx": "^2.1.1",
-    "@types/node": "^20.11.16",
+    "@types/node": "^20.11.17",
     "astro": "^4.3.1",
-    "astro-icon": "^1.0.4",
+    "astro-icon": "^1.1.0",
     "copy-to-clipboard": "^3.3.3",
     "css-doodle": "^0.34.11",
+    "csso-cli": "^4.0.2",
+    "replace": "^1.2.2",
     "rm-all": "^1.1.1",
     "smooth-corners": "^1.0.8",
     "stylus": "^0.62.0"
