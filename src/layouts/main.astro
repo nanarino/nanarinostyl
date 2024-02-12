@@ -15,7 +15,7 @@ const base = import.meta.env.BASE_URL + "menu/";
 <App {...Astro.props}>
     <Header />
     <section class={`${prefix}-layout`} data-has-aside>
-        <aside class={`${prefix}-layout-aside`} data-collapsed>
+        <aside class={`${prefix}-layout-aside`} aria-expanded="false">
             <Menu menu={menu} base={base} />
         </aside>
         <main class={`${prefix}-layout-content`}>
@@ -31,8 +31,9 @@ const base = import.meta.env.BASE_URL + "menu/";
         aside
             --width-aside 240px
             padding 1em 0
-            &[data-collapsed]
-                @media screen and (min-width 768px) // 大于等于 ipad mini 尺寸
+            &[aria-expanded=false]
+                @media screen and (min-width 768px) 
+                    // 大于等于 ipad mini 尺寸时 不设置菜单隐藏
                     width var(--width-aside, unset)
         main
             overflow-y auto

@@ -15,8 +15,7 @@ export {components};
 <Layouts />
 
 - `--width-aside` 侧边宽度 全局变量
-- `aside[data-folded]` 折叠侧边 切换时无动画
-- `aside[data-collapsed]` 塌陷侧边 切换时有动画
+- `aside[aria-expanded=false]` 折叠侧边
 
 
 ## watermark
@@ -36,7 +35,7 @@ export {components};
 
 在之前的实现是 [`ul>li`](https://github.com/nanarino/nanarinostyl/blob/main/src/components/menu/list.astro)
 
-- `li.☘-menu-submenu[data-folded]` 标记当前折叠的子菜单 切换时无动画
+- `li.☘-menu-submenu[aria-expanded=false]` 标记当前折叠的子菜单
     - `[data-selected]` 标记当前选中的叶子
 
 <Menu />

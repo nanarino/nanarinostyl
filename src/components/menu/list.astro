@@ -24,19 +24,21 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
                     <li
                         class={`${prefix}-menu-submenu`}
                         style="order:1"
-                        data-folded={
+                        aria-expanded={
                             /**
                              * 判断是否需要折叠菜单
                              */
-                            !RegExp(`^${base}${item.path}`).test(
-                                Astro.url.pathname
-                            )
+                            `${
+                                RegExp(`^${base}${item.path}`).test(
+                                    Astro.url.pathname
+                                )
+                            }`
                         }
                     >
                         <div
                             class={`${prefix}-menu-submenu-title`}
                             onclick="
-                            this.parentElement.toggleAttribute('data-folded')
+                            this.parentElement.setAttribute(`aria-expanded`, this.parentElement.getAttribute(`aria-expanded`) == 'false')
                             "
                         >
                             <span>{getName(item.path)}</span>

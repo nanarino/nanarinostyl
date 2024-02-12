@@ -21,21 +21,16 @@
         &:last-child
             --box-shadow-color @--box-shadow-color
             box-shadow var(--box-shadow-divider-left)
-        &:where([data-folded])
-            /**
-             * 折叠 无动画的收起
-             */
-            flex 0
-            padding-left 0
-            padding-right 0
-        &:where([data-collapsed])
+        &:where([aria-expanded=false])
             /**
              * 塌陷 有动画的收起
              */
-            width 0
+            width 0 // 如果需要无动画 需要将 `width 0` 改成 `flex 0`
             padding-left 0
             padding-right 0
-        transition padding-left .3s, padding-right .3s, width .3s
+            border-left 0
+            border-right 0
+        transition width .3s, padding-left .3s, padding-right .3s, border-left .3s, border-right .3s
 
     &-header
         --box-shadow-color @--box-shadow-color
