@@ -2,7 +2,6 @@ import prefix from "src/scripts/prefix";
 import sleep from "src/scripts/sleep";
 
 // const queue = document.createElement("div");
-const queue = document.getElementById("message-queue");
 
 // 监听自定义事件 发射消息时主动触发
 window.addEventListener(`${prefix}-message`, async (
@@ -26,6 +25,7 @@ window.addEventListener(`${prefix}-message`, async (
     }>
 ) => {
 
+    const queue = document.getElementById("message-queue");
     const msg = document.createElement("div");
 
     /**

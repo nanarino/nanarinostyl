@@ -1,15 +1,17 @@
 import prefix from "src/scripts/prefix";
 
-const table = document.getElementById("colors-kanban");
+document.addEventListener('astro:page-load', () => {
 
-table.onclick = function (e) {
-    const button = e.target as HTMLButtonElement;
-    if (button.tagName === "BUTTON" && button.title) {
-        window.copy(`rgb(var(${button.title}))`);
-        window.dispatchEvent(
-            new CustomEvent(`${prefix}-message`, {
-                detail: {
-                    content: `
+    const table = document.getElementById("colors-kanban");
+
+    if(table) table.onclick = function (e) {
+        const button = e.target as HTMLButtonElement;
+        if (button.tagName === "BUTTON" && button.title) {
+            window.copy(`rgb(var(${button.title}))`);
+            window.dispatchEvent(
+                new CustomEvent(`${prefix}-message`, {
+                    detail: {
+                        content: `
                         <svg
                             class="${prefix}-message-prefix"
                             data-icon="tips/outline/check-circle"
@@ -24,9 +26,11 @@ table.onclick = function (e) {
                             复制成功
                         </span>
                     `,
-                    // duration: 100000,
-                },
-            })
-        );
-    }
-};
+                        // duration: 100000,
+                    },
+                })
+            );
+        }
+    };
+
+})

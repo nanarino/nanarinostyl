@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import "@stylus/index.styl";
 import prefix from "src/scripts/prefix";
 import Queue from "src/components/message/queue.astro";
@@ -23,6 +24,7 @@ const title =
         <meta name="generator" content={Astro.generator} />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="icon" type="image/svg+xml" href={favicon.src} />
+        <ViewTransitions />
         <script is:inline fetchpriority="high" define:vars={{ prefix }}>
             Object.defineProperty(window, "theme", {
                 get: () =>

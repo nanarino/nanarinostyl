@@ -30,7 +30,7 @@ const { href } = Astro.props;
         )
     }
 
-    <a href={href || import.meta.env.BASE_URL} class="logo">
+    <a href={href || import.meta.env.BASE_URL} class="logo" data-astro-reload>
         <Icon name="logo/color/clover" />
         <span style="font-size:0">Return to cover or enter chapter</span>
     </a>
@@ -41,7 +41,7 @@ const { href } = Astro.props;
         title="theme"
         name="theme"
         dataset={{
-            init: true
+            init: !!href
         }}
     >
         {/**
