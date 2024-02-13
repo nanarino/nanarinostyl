@@ -39,7 +39,7 @@
         flex-direction column
         gap @gap
     &-submenu
-        &:where([aria-expanded=false])
+        &:where([data-folded])
             /**
               * 收起时 无间距
               */
@@ -77,7 +77,7 @@
                         transform rotate(45deg) translate(-2.5px)
 
                 details^[0]:not([open]) &
-                ^[1][aria-expanded=false] &
+                ^[1][data-folded] &
                     margin-top -5px
                     &:before
                         transform rotate(45deg) translate(2.5px)
@@ -112,7 +112,7 @@
         &:not(^[0]-item[data-selected]):hover
             color _rgb(var(--color-menu, var(--primary-6)))
         
-        ~/-submenu:where([aria-expanded=false]) ^[0]
+        ~/-submenu:where([data-folded]) ^[0]
             /**
              * 收起时 0高度
              */

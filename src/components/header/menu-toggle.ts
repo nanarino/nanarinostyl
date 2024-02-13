@@ -10,10 +10,10 @@ document.addEventListener('astro:page-load', () => {
         toggle.onclick = (e: Event) => {
             if (toggle.matches('[aria-pressed=true]')) {
                 toggle.setAttribute('aria-pressed', 'false');
-                aside.setAttribute('aria-expanded', 'false');
+                Reflect.set(aside.dataset, 'collapsed', '');
             } else {
                 toggle.setAttribute('aria-pressed', 'true');
-                aside.setAttribute('aria-expanded', 'true');
+                Reflect.deleteProperty(aside.dataset, 'collapsed');
             }
         };
     }
