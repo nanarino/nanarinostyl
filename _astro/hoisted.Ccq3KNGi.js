@@ -1,4 +1,4 @@
-import{p as o}from"./hoisted.Ddt7MgMd.js";const d=`:doodle {
+import{p as d}from"./hoisted.Ddt7MgMd.js";const t=`:doodle {
     @grid: 7 / 100%;
     border-radius: 50%;
 }
@@ -22,4 +22,4 @@ background: hsla(
     calc(240 - 6 * @x * @y),
     70%, 68%, @r.8
 )
-`,n=document.querySelector("css-doodle"),r={light:s,dark:d};n.innerHTML=r[window.theme];window.addEventListener(`${o}-theme`,e=>{n.update(r[e.detail])});
+`,e={light:s,dark:t};function o(){const n=document.querySelector("css-doodle");n&&(n.innerHTML=e[window.theme])}o();document.addEventListener("astro:after-swap",o);window.addEventListener(`${d}-theme`,n=>{const r=document.querySelector("css-doodle");r&&r.update(e[n.detail])});
