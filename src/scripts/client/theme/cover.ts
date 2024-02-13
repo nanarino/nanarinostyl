@@ -2,18 +2,23 @@ import prefix from "src/scripts/prefix";
 import dark from "./cover.dark.styl?raw"
 import light from "./cover.light.styl?raw"
 
+const style = { light, dark } as const;
+
 interface Doodle extends HTMLElement {
     update: (styles: string) => void
 }
 
-const doodle = document.querySelector('css-doodle') as Doodle;
+function _cover_init(){
+    const doodle = document.querySelector('css-doodle') as Doodle;
+    if (doodle) doodle.innerHTML = style[window.theme];
+}
 
-const style = { light, dark } as const;
-
-// 初始化主题
-doodle.innerHTML = style[window.theme];
+// 初始化
+_cover_init();
+document.addEventListener('astro:after-swap', _cover_init);
 
 // 响应主题
 window.addEventListener(`${prefix}-theme`, (event: CustomEvent<"dark" | "light">) => {
-    doodle.update(style[event.detail]);
+    const doodle = document.querySelector('css-doodle') as Doodle;
+    if (doodle) doodle.update(style[event.detail]);
 });
