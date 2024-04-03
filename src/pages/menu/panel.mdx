@@ -4,6 +4,7 @@ title: 面板
 ---
 
 import T from "src/components/T.astro";
+import { Icon } from "astro-icon/components";
 import "src/components/panel/summary-marker.styl";
 import {components} from 'src/components/markdown/index.mdx';
 export {components};
@@ -56,7 +57,7 @@ details.☘-panel(data-primary)
 
 ## `data-marker=">"`
 
-预设了另一个箭头符号，使用 `data-marker=">"` 启用，代替原先的🔺
+预设了另一个箭头符号<Icon style="vertical-align:sub" name="direction/outline/right" width={16} height={16} />，使用 `data-marker=">"` 启用，代替默认的<Icon style="vertical-align:sub" name="direction/outline/caret-right" width={16} height={16} />
 
 <T 
     tag="details" 
@@ -83,7 +84,7 @@ details.☘-panel(
 
 全局变量 `--color-panel` 可以覆盖面板背景色RGB值
 
-marker箭头由 `summary::before` 的 `mask` 遮罩图片实现，可以自定义添加你需要的🔺图形
+marker箭头由 `summary::before` 的 `mask` 遮罩图片实现，可以自定义添加你需要的<Icon style="vertical-align:sub" name="direction/outline/caret-right" width={16} height={16} />图形
 
 <T
     tag="details"

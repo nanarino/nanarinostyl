@@ -14,15 +14,8 @@
     :alt: Stylus Logo
     :target: https://stylus-lang.com/
 
-使用 ``styl`` 来编写
 
-使用 ``pug`` 作为伪代码 
-
-事实上在astro中渲染pug是很困难 它无法完全使用 ``☘`` （配置的前缀占位符）:
-
-::
-    
-    > Could not parse expression with acorn: Expecting Unicode escape sequence \uXXXX
+使用 ``styl`` 来编写的纯 CSS 库
 
 
 
@@ -30,13 +23,13 @@
 ======
 ::
 
-    # 安装
+    # 安装npm包
     pnpm i nanarinostyl
 
-    # 然后在jsx中 `import 'nanarinostyl';`
-    # 或是在css中 `@import url('nanarinostyl');`
+    # 然后在jsx中 `import 'nanarinostyl'`
+    # 或是在css中 `@import url('nanarinostyl')`
 
-    # 也可以引入stylus源码 `import 'nanarinostyl/src/lib/index.styl';`
+    # 也可以引入stylus源码以及其一部分 `import 'nanarinostyl/src/lib/index.styl'`
 
 
 
@@ -55,6 +48,7 @@
 ======
 ::
 
+    # 修改比如配色默认字体后你可以本地构建文档和样式
     # 构建文档
     pnpm build-docs
     # 构建样式
@@ -84,7 +78,7 @@
     - 引入顺序 ``@import`` 应先引入css 再引入stylus。
     - 出现vscode高亮丢失时，应该将其提成stylus变量来规避。
     - 禁止使用元组列 ``color = (red #F00)`` ，应该用字典 ``color = {red: #F00}`` 代替。
-
+    - 使通配符引入时要确保引入的优先级 譬如：要确保含有的 ``&>*`` 选择器（被） ``&`` 覆盖。
 
 兼容
 ======

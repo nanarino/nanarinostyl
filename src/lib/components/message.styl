@@ -34,10 +34,10 @@
         max-width 60vw
         margin 0
 
-        &>*
-            display inline-flex
-            vertical-align middle
-            align-items center
+        // &>*
+        //     display inline-flex
+        //     vertical-align middle
+        //     align-items center
         
         ^[1..1]>^[0]-prefix
             /**
@@ -46,8 +46,11 @@
              */
             width 16px
             height 16px
+            vertical-align middle
             &:where([data-primary])
                 color _rgb(var(--primary-6))
+            &+*
+                vertical-align middle
 
     
     &:where([data-primary])
