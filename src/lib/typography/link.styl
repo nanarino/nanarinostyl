@@ -16,18 +16,18 @@
     padding unset
     cursor pointer
     // text-decoration none
-    color _rgb(var(--color-link, var(--primary-6)))
+    color rgb(var(--color-link, var(--primary-6)))
     &:hover
-        color _rgb(var(--color-link-hover, var(--primary-5)))
+        color rgb(var(--color-link-hover, var(--primary-5)))
     &:focus
-        color _rgb(var(--color-link-focus, var(--primary-7)))
+        color rgb(var(--color-link-focus, var(--primary-7)))
     &[disabled]
     &[aria-disabled]
-        color _rgb(var(--color-link-disabled, var(--primary-2)))
+        color rgb(var(--color-link-disabled, var(--primary-2)))
         cursor not-allowed
         // pointer-events none
     &:focus-visible
-        outline-color _rgb(var(--outline-color-focus))
+        outline-color rgb(var(--outline-color-focus))
         border-radius var(--border-radius-sm)
     
     //.{prefix}-code

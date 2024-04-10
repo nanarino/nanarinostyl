@@ -11,26 +11,26 @@ input_stat()
     font-size var(--font-size-body)
     line-height var(--line-height-body)
 
-    caret-color _rgb(var(--outline-color-focus))
+    caret-color rgb(var(--outline-color-focus))
 
-    background-color _rgb(var(--gray-1))
+    background-color rgb(var(--gray-1))
     &:hover
         box-shadow var(--box-shadow-drop-bottom)
     &:focus
-        outline-color _rgb(var(--outline-color-focus))
+        outline-color rgb(var(--outline-color-focus))
     &:focus-visible
         box-shadow var(--box-shadow-drop-bottom)
     transition border-color .3s, box-shadow .3s
 
     &[disabled]
         cursor not-allowed
-        background-color _rgb(var(--gray-2))
-        color _rgb(var(--gray-6))
+        background-color rgb(var(--gray-2))
+        color rgb(var(--gray-6))
         &:hover
             box-shadow none
     
     &::-webkit-input-placeholder
-        color _rgb(var(--gray-5))
+        color rgb(var(--gray-5))
         font-size var(--font-size-body)
         line-height var(--line-height-body)
 
@@ -111,9 +111,9 @@ input.{prefix}-input
     display inline-flex
     align-items center
     position relative
-    border 2px none _rgb(var(--color-input-wrapper, var(--gray-1)))
+    border 2px none rgb(var(--color-input-wrapper, var(--gray-1)))
     border-radius var(--border-radius-md)
-    background-color _rgb(var(--gray-1))
+    background-color rgb(var(--gray-1))
 
     /**
      * 输入框前缀后缀的按钮
@@ -128,13 +128,13 @@ input.{prefix}-input
         --color-input-wrapper var(--primary-6)
         
         for tag in buttons
-            @supports _selector(':has(*)')
+            @supports selector(':has(*)')
                 &:has({tag}:not(.{prefix}-input-prefix))
                 &:has({tag}:not(.{prefix}-input-suffix))
-                    background-color _rgb(var(--color-input-wrapper))
-            @supports not (_selector(':has(*)'))
+                    background-color rgb(var(--color-input-wrapper))
+            @supports not (selector(':has(*)'))
                 {tag}:not(.{prefix}-input-prefix):not(.{prefix}-input-suffix)
-                    background-color _rgb(var(--color-input-wrapper))
+                    background-color rgb(var(--color-input-wrapper))
     &>*
         display inline-flex
         align-items center
@@ -144,9 +144,9 @@ input.{prefix}-input
             cursor pointer
             border-radius calc(var(--border-radius-md) - 2px)
             &:focus-visible
-                outline-color _rgb(var(--color-input-wrapper, var(--black)))
+                outline-color rgb(var(--color-input-wrapper, var(--black)))
             ~/:where([data-primary]) ^[-1..-1]
-                color _rgb(var(--white))
+                color rgb(var(--white))
             
             /**
              * 这是祛除button的代理样式
@@ -165,10 +165,10 @@ input.{prefix}-input
         bottom 0
         margin auto 0
         z-index 1
-        color _rgb(var(--color-input-wrapper, var(--black)))
+        color rgb(var(--color-input-wrapper, var(--black)))
 
         // ~/[data-primary] ^[-1..-1]
-        //     color _rgb(var(--color-input-wrapper))
+        //     color rgb(var(--color-input-wrapper))
         
         /**
          * 这是祛除button的代理样式 前面已经处理 除了padding不同

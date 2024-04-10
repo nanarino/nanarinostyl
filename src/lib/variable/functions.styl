@@ -1,18 +1,28 @@
 /**
  * 转为 css native rgb
- * _rgb(0 0 0 \/ .5) => rgb(0 0 0/0.5)
+ * 覆盖 stylus 的 rgb
+ * 
+ * @override rgb(0 0 0 \/ .5) => `rgb(0 0 0/0.5)`
  */
-_rgb(color)
+rgb(color)
     s('rgb(%s)', color)
 
 /**
- * _selector(':is()') => selector(:is())
+ * 覆盖 stylus 的 selector
+ * @override selector(':is()') => `selector(:is())`
+ *
+ * 不要省略not的括号 css支持 但是stylus不支持
+ * 如 css`@supports not selector(:is(a, b))` 
+ * 要写成 styl`@supports not (selector(:is(a, b))`
+ * 
+ * query: str
  */
-_selector(query)
+selector(query)
     s('selector(%s)', unquote(query))
 
 /**
  * 获取拼接的css变量
+ *
  * name: str
  * level: int
  * return: str

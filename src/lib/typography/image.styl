@@ -35,8 +35,8 @@
         position absolute
         z-index 2
         inset 0
-        color _rgb(var(--color-image, var(--white)))
-        background-color _rgb(var(--black) \/ 0.5)
+        color rgb(var(--color-image, var(--white)))
+        background-color rgb(var(--black) \/ 0.5)
         display flex
         align-items center
         justify-content center
@@ -51,13 +51,13 @@
         bottom 0
         left 0
         right 0
-        color _rgb(var(--color-image, var(--white)))
+        color rgb(var(--color-image, var(--white)))
         background-image linear-gradient(
             180deg,
             transparent 0%,
             transparent 0%,
-            _rgb(var(--color-image-mask, var(--black))) 100%,
-            _rgb(var(--color-image-mask, var(--black))) 100%
+            rgb(var(--color-image-mask, var(--black))) 100%,
+            rgb(var(--color-image-mask, var(--black))) 100%
         )
         display flex
         align-items center
@@ -87,7 +87,7 @@
     // 图片上传
     &.{prefix}-input-wrapper
 
-        color _rgb(var(--color-input-wrapper, var(--gray-6)))
+        color rgb(var(--color-input-wrapper, var(--gray-6)))
 
         input[type=file].{prefix}-input
 
@@ -100,7 +100,7 @@
             position absolute
             inset 0px
             border-radius var(--border-radius-md)
-            border 2px dashed _rgb(var(--outline-color-focus))
+            border 2px dashed rgb(var(--outline-color-focus))
             // opacity 0
             cursor pointer
             color transparent
@@ -114,12 +114,12 @@
                 cursor not-allowed
                 opacity .3
             &:focus-visible
-                outline-color _rgb(var(--outline-color-focus))
-            @supports not (_selector(':has(*)'))
+                outline-color rgb(var(--outline-color-focus))
+            @supports not (selector(':has(*)'))
                 opacity .8
                 &:not([disabled]):hover
                     opacity 1
             transition box-shadow .3s, opacity .3s
-        @supports _selector(':has(*)')
+        @supports selector(':has(*)')
             &:has(input[type=file].{prefix}-input:not([disabled])):hover
                 box-shadow var(--box-shadow-drop-bottom)

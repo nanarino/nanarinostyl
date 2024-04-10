@@ -75,39 +75,39 @@ button_background_color_init(background_color)
         transition background .8s
         transition-timing-function ease-in
 
-    button_background_color_init _rgb(var(--background-color-button))
+    button_background_color_init rgb(var(--background-color-button))
     
 
     &:focus-visible
-        outline-color _rgb(var(--outline-color-focus))
+        outline-color rgb(var(--outline-color-focus))
     
     &:not([disabled]):hover
         box-shadow var(--box-shadow-drop-bottom)
     
     &[disabled]
         cursor not-allowed
-        color _rgb(var(--color-button-disabled))
+        color rgb(var(--color-button-disabled))
         &::-ms-browse
-            color _rgb(var(--color-button-disabled))
+            color rgb(var(--color-button-disabled))
         &::-webkit-file-upload-button
-            color _rgb(var(--color-button-disabled))
+            color rgb(var(--color-button-disabled))
         &::file-selector-button
-            color _rgb(var(--color-button-disabled))
-        background-color _rgb(var(--background-color-button-disabled))
+            color rgb(var(--color-button-disabled))
+        background-color rgb(var(--background-color-button-disabled))
     
     &:not([disabled]):focus
         @supports (background paint(smooth-corners))
-            background-color _rgb(var(--background-color-button-focus))
+            background-color rgb(var(--background-color-button-focus))
         @supports not (background paint(smooth-corners))
-            background _rgb(var(--background-color-button)) radial-gradient(circle, 
+            background rgb(var(--background-color-button)) radial-gradient(circle, 
                 transparent 1%,
-                _rgb(var(--background-color-button)) 1%
+                rgb(var(--background-color-button)) 1%
             ) center/15000%
     
     &:not([disabled]):active
         --percent-button-wave 0%
         transition none
-        background-color _rgb(var(--background-color-button-focus))
+        background-color rgb(var(--background-color-button-focus))
         background-size 100%
 
 
@@ -135,19 +135,19 @@ button_background_color_init(background_color)
                 mask paint(smooth-corners)
             
 
-    color _rgb(var(--color-button))
+    color rgb(var(--color-button))
     &::-ms-browse
-        color _rgb(var(--color-button))
+        color rgb(var(--color-button))
     &::-webkit-file-upload-button
-        color _rgb(var(--color-button))
+        color rgb(var(--color-button))
     &::file-selector-button
-        color _rgb(var(--color-button))
+        color rgb(var(--color-button))
     
 
     // 文件上传
     /.{prefix}-input-wrapper
 
-        @supports _selector(':has(*)')
+        @supports selector(':has(*)')
             &:has(input[type=file].{prefix}-input^[0])
                 .{prefix}-input-prefix
                     pointer-events none
@@ -155,7 +155,7 @@ button_background_color_init(background_color)
             &:has(input[type=file].{prefix}-input^[0][data-primary])
             &:has(input[type=file].{prefix}-input^[0]:disabled)
                 .{prefix}-input-prefix
-                    color _rgb(var(--white))
+                    color rgb(var(--white))
         
         input[type=file].{prefix}-input^[0]
             font-size 0
@@ -184,13 +184,13 @@ button_background_color_init(background_color)
             &:where([data-with-prefix])
                 padding-left calc(var(--padding-horizonal-button, 12px) + 1.5 * var(--font-size-body))
 
-            @supports not (_selector(':has(*)')) 
+            @supports not (selector(':has(*)'))
                 &+.{prefix}-input-prefix
                     pointer-events none
                     transform translateX(.4em)
                 &:where([data-primary])+.{prefix}-input-prefix
                 &:disabled+.{prefix}-input-prefix
-                    color _rgb(var(--white))
+                    color rgb(var(--white))
             
             &+label
                 cursor pointer
