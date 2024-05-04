@@ -1,4 +1,5 @@
 import prefix from "src/scripts/prefix";
+import dedent from "dedent";
 
 document.addEventListener("astro:page-load", () => {
     const table = document.getElementById("colors-kanban");
@@ -11,7 +12,7 @@ document.addEventListener("astro:page-load", () => {
                 window.dispatchEvent(
                     new CustomEvent(`${prefix}-message`, {
                         detail: {
-                            content: `
+                            content: dedent`
                                 <svg
                                     class="${prefix}-message-prefix"
                                     data-icon="tips/outline/check-circle"

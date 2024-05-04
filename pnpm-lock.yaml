@@ -26,6 +26,9 @@ devDependencies:
   csso-cli:
     specifier: ^4.0.2
     version: 4.0.2
+  dedent:
+    specifier: ^1.5.3
+    version: 1.5.3
   replace:
     specifier: ^1.2.2
     version: 1.2.2
@@ -1598,6 +1601,15 @@ packages:
       mimic-response: 3.1.0
     dev: true
     optional: true
+
+  /dedent@1.5.3:
+    resolution: {integrity: sha512-NHQtfOOW68WD8lgypbLA5oT+Bt0xXJhiYvoR6SmmNXZfpzOGXwdKWmcwG8N7PwVVWV3eF/68nmD9BaJSsTBhyQ==}
+    peerDependencies:
+      babel-plugin-macros: ^3.1.0
+    peerDependenciesMeta:
+      babel-plugin-macros:
+        optional: true
+    dev: true
 
   /deep-extend@0.6.0:
     resolution: {integrity: sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==}

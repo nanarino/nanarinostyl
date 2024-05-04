@@ -1,5 +1,6 @@
 import prefix from "src/scripts/prefix";
 import sleep from "src/scripts/sleep";
+import dedent from "dedent";
 
 // const queue = document.createElement("div");
 
@@ -64,11 +65,11 @@ window.addEventListener(
             content = `${content.content ?? "☘"}`;
         }
 
-        msg.innerHTML = `
-        <div class="${prefix}-message">
-            <p class="${prefix}-paragraph">${content}</p>
-        </div>
-    `;
+        msg.innerHTML = dedent`
+            <div class="${prefix}-message">
+                <p class="${prefix}-paragraph">${content}</p>
+            </div>
+        `;
         if (primary) {
             const p = msg.firstElementChild as HTMLDivElement;
             p.dataset.primary = primary.toString();

@@ -33,6 +33,7 @@
         "copy-to-clipboard": "^3.3.3",
         "css-doodle": "^0.34.11",
         "csso-cli": "^4.0.2",
+        "dedent": "^1.5.3",
         "replace": "^1.2.2",
         "rm-all": "^1.1.1",
         "smooth-corners": "^1.0.8",

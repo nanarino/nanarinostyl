@@ -1,5 +1,6 @@
 import prefix from "src/scripts/prefix";
 import colours from "./colors";
+import dedent from "dedent";
 
 const icons = ["check", "close", "exclamation", "info"] as const;
 
@@ -19,7 +20,7 @@ document.addEventListener("astro:page-load", () => {
                     window.dispatchEvent(
                         new CustomEvent(`${prefix}-message`, {
                             detail: {
-                                content: `
+                                content: dedent`
                                     <svg 
                                         class="${prefix}-message-prefix"
                                         data-icon="tips/fill/${icon}-circle-fill"
@@ -58,28 +59,28 @@ document.addEventListener("astro:page-load", () => {
                     window.dispatchEvent(
                         new CustomEvent(`${prefix}-message`, {
                             detail: {
-                                content: `
-                            <svg 
-                                class="${prefix}-message-prefix"
-                                data-icon="tips/outline/${icon}-circle"
-                                data-primary="${
-                                    {
-                                        check: "success",
-                                        close: "danger",
-                                        exclamation: "warning",
-                                        info: "",
-                                    }[icon]
-                                }"
-                                viewBox="0 0 48 48"
-                            >
-                                <use
-                                    xlink:href="#ai:local:tips/outline/${icon}-circle"
-                                ></use>
-                            </svg>
-                            <span>
-                                发射成功
-                            </span>
-                        `,
+                                content: dedent`
+                                    <svg 
+                                        class="${prefix}-message-prefix"
+                                        data-icon="tips/outline/${icon}-circle"
+                                        data-primary="${
+                                            {
+                                                check: "success",
+                                                close: "danger",
+                                                exclamation: "warning",
+                                                info: "",
+                                            }[icon]
+                                        }"
+                                        viewBox="0 0 48 48"
+                                    >
+                                        <use
+                                            xlink:href="#ai:local:tips/outline/${icon}-circle"
+                                        ></use>
+                                    </svg>
+                                    <span>
+                                        发射成功
+                                    </span>
+                                `,
                                 primary,
                                 // duration: 100000,
                             },
