@@ -1,2 +1,2 @@
 pnpm build-styl
-npm publish
+pnpm publish

@@ -3,5 +3,5 @@ export default function (dataset: Record<string, any>) {
     for (const [k, v] of Object.entries(dataset)) {
         Reflect.set(attrs, `data-${k}`, v);
     }
-    return attrs
+    return attrs;
 }

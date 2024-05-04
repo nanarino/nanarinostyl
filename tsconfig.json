@@ -2,16 +2,10 @@
     "extends": "astro/tsconfigs/base",
     "compilerOptions": {
         "baseUrl": ".",
-        "types": [
-            "astro/client"
-        ],
+        "types": ["astro/client"],
         "paths": {
-            "@stylus/*": [
-                "src/lib/*"
-            ],
-            "@layout/*": [
-                "src/layouts/*"
-            ]
+            "@stylus/*": ["src/lib/*"],
+            "@layout/*": ["src/layouts/*"]
         }
     }
 }

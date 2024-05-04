@@ -25,7 +25,7 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
                         name="menu"
                         class={`${prefix}-menu`}
                         open={RegExp(`^${base}${item.path}`).test(
-                            Astro.url.pathname,
+                            Astro.url.pathname
                         )}
                         style="order:1"
                     >

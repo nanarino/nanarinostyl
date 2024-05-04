@@ -6,12 +6,13 @@
     "stylusSupremacy.insertNewLineAroundImports": true, // import之后是否换行
     "stylusSupremacy.insertNewLineAroundBlocks": false, // 两个选择器中是否换行
     "[astro]": {
-        "editor.tabSize": 4,
+        "editor.tabSize": 4
     },
     "[stylus]": {
-        "editor.tabSize": 4,
+        "editor.tabSize": 4
     },
     "files.associations": {
-        "*.mdx": "markdown"
+        "*.mdx": "markdown",
+        ".prettierrc": "yaml"
     }
 }

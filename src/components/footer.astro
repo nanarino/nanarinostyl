@@ -4,27 +4,20 @@ import { Icon } from "astro-icon/components";
 ---
 
 <footer class={`${prefix}-layout-footer`}>
-    &nbsp;
-    &nbsp;
-    &nbsp;
+    &nbsp; &nbsp; &nbsp;
     <!-- `&nbsp;` 空格是为了视觉重心平衡左右 -->
     由
-    <a 
-        class={`${prefix}-link`} 
-        href="https://astro.build"
-        target="_blank"
-    >
+    <a class={`${prefix}-link`} href="https://astro.build" target="_blank">
         {Astro.generator}
     </a>
-    构建
-    &nbsp;
+    构建 &nbsp;
     <a
         class={`${prefix}-link`}
         title="github"
         href="https://github.com/nanarino/nanarinostyl"
         target="_blank"
     >
-        <Icon name="logo/outline/github"/>
+        <Icon name="logo/outline/github" />
         <span style="font-size:0">github</span>
     </a>
 </footer>

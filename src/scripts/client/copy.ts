@@ -1,3 +1,3 @@
-import copy from 'copy-to-clipboard'
+import copy from "copy-to-clipboard";
 
-window.copy = copy
+window.copy = copy;

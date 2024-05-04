@@ -2,7 +2,6 @@
 ☘ 自用样式库
 ===========
 
-.. highlight:: bash
 
 .. image:: ./src/icons/logo/color/clover.svg
     :width: 64 px
