@@ -49,9 +49,9 @@
 
     # 修改比如配色默认字体后你可以本地构建文档和样式
     # 构建文档
-    pnpm build-docs
+    pnpm build:docs
     # 构建样式
-    pnpm build-styl
+    pnpm build:styl
 
 
 借物
