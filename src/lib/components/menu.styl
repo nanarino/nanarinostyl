@@ -15,22 +15,22 @@
     gap 0.5em
 
     ul&
-    details&
         list-style none
-        &::-webkit-details-marker
-            display none
-        &::-moz-list-bullet
-            display none
-        &::marker
-            display none
     details&
         margin 0
-        &[open]>summary
-            /**
-              * 展开时 有间距
-              */
-            margin-block-end @gap
-            gap 0
+        &>summary
+            &::-webkit-details-marker
+                display none
+            &::-moz-list-bullet
+                display none
+            &::marker
+                display none
+            ../[open]>summary
+                /**
+                * 展开时 有间距
+                */
+                margin-block-end @gap
+                gap 0
     // 在Safari中使用 `::before` 的元素不支持 `text-indent`
     // 请使用 `&::after`
     summary
