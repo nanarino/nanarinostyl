@@ -1,7 +1,7 @@
 {
     "name": "nanarinostyl",
     "description": "style lib",
-    "version": "0.4.2",
+    "version": "0.4.3",
     "main": "./dist/nanarinostyl.min.css",
     "scripts": {
         "dev": "astro dev --host",
@@ -26,7 +26,7 @@
         "url": "https://github.com/nanarino/nanarinostyl/issues"
     },
     "peerDependencies": {
-        "stylus": "^0.62.0"
+        "stylus": ">=0.63.0"
     },
     "devDependencies": {
         "@astrojs/mdx": "^2.3.1",
@@ -40,7 +40,7 @@
         "replace": "^1.2.2",
         "rm-all": "^1.1.1",
         "smooth-corners": "^1.0.8",
-        "stylus": "^0.62.0"
+        "stylus": ">=0.63.0"
     },
     "files": [
         "dist",
