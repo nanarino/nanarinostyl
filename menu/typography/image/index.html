@@ -7,8 +7,8 @@
                         +!window.matchMedia?.("(prefers-color-scheme: dark)")
                             ?.matches
                     ],
-            });
-            document.documentElement.dataset["theme"] = window.theme;
+            })
+            document.documentElement.dataset["theme"] = window.theme
         })();</script><style>.na-image svg[data-icon="interactive-button/outline/heart"],.na-image svg[data-icon="interactive-button/fill/heart-fill"]{width:24px;height:24px;color:rgb(var(--magenta-6));cursor:pointer}.na-image[data-iine] svg[data-icon="interactive-button/outline/heart"],.na-image:not([data-iine]) svg[data-icon="interactive-button/fill/heart-fill"]{display:none}
 </style>
 <link rel="stylesheet" href="/nanarinostyl/_astro/badge.BbSmtJ0x.css">
@@ -131,15 +131,15 @@ const accept = ["image/gif","image/jpeg","image/png"];
 
             const uploader = document.getElementById(id);
             uploader.onchange = (e) => {
-                const file = e.target.files[0];
+                const file = e.target.files[0]
                 if (accept.some((t) => new RegExp(t).test(file.type))) {
-                    const reader = new FileReader();
-                    reader.readAsDataURL(file);
+                    const reader = new FileReader()
+                    reader.readAsDataURL(file)
                     reader.onload = () => {
-                        uploader.parentElement.style.backgroundImage = `url(${reader.result})`;
-                    };
+                        uploader.parentElement.style.backgroundImage = `url(${reader.result})`
+                    }
                 }
-            };
+            }
         })();</script>
 <p class="na-paragraph na-font-serif"> 这里实现使用了 <code class="na-code na-font-mono">:has()</code> 选择器，如果你的浏览器不支持会被降级，样式会有些许区别 </p>
 <pre class="na-pre na-font-mono na-watermark"><code class="na-code na-font-mono"><span class="line"><span style="color:#85E89D">span</span><span style="color:#B392F0">.</span><span style="color:#FDAEB7;font-style:italic">na</span><span style="color:#B392F0">-image.</span><span style="color:#FDAEB7;font-style:italic">na</span><span style="color:#B392F0">-input-wrapper</span><span style="color:#79B8FF">(</span><span style="color:#B392F0">style</span><span style="color:#E1E4E8">={</span></span>
