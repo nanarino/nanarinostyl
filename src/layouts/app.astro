@@ -1,20 +1,18 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-import "@stylus/index.styl";
-import prefix from "src/scripts/prefix";
-import Queue from "src/components/message/queue.astro";
-import favicon from "src/icons/logo/color/clover.svg";
+import { ViewTransitions } from "astro:transitions"
+import "@stylus/index.styl"
+import prefix from "src/scripts/prefix"
+import Queue from "src/components/message/queue.astro"
+import favicon from "src/icons/logo/color/clover.svg"
 
 interface Props {
-    title?: string;
+    title?: string
     frontmatter?: {
-        title?: string;
-    };
+        title?: string
+    }
 }
 const title =
-    Astro.props.title ||
-    Astro.props.frontmatter?.title ||
-    `${prefix} style lib`;
+    Astro.props.title || Astro.props.frontmatter?.title || `${prefix} style lib`
 ---
 
 <html lang="zh-CN">
@@ -33,8 +31,8 @@ const title =
                         +!window.matchMedia?.("(prefers-color-scheme: dark)")
                             ?.matches
                     ],
-            });
-            document.documentElement.dataset["theme"] = window.theme;
+            })
+            document.documentElement.dataset["theme"] = window.theme
         </script>
         <script src="/src/scripts/client/setup.ts"></script>
         <script src="/src/scripts/client/theme/index.ts"></script>

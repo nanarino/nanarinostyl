@@ -1,17 +1,17 @@
 ---
-import prefix from "src/scripts/prefix";
-import dataset from "src/scripts/server/dataset";
+import prefix from "src/scripts/prefix"
+import dataset from "src/scripts/server/dataset"
 
-const props = Astro.props;
+const props = Astro.props
 interface Props {
-    tag: "header" | "main" | "footer" | "aside";
-    className: string;
-    title?: string;
-    dataset?: Record<string, any>;
-    content?: string;
+    tag: "header" | "main" | "footer" | "aside"
+    className: string
+    title?: string
+    dataset?: Record<string, any>
+    content?: string
 }
 
-const Tag = props.tag;
+const Tag = props.tag
 ---
 
 <Tag class={props.className}>

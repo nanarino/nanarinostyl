@@ -1,13 +1,13 @@
 /**
  * CSS Houdini
  */
-import smoothCorners from "smooth-corners?url";
+import smoothCorners from "smooth-corners?url"
 
 if (CSS && "paintWorklet" in CSS) {
-    CSS.paintWorklet.addModule(smoothCorners);
+    CSS.paintWorklet.addModule(smoothCorners)
 }
 
 /**
  * Web Components
  */
-import "css-doodle";
+import "css-doodle"

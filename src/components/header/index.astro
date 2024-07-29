@@ -1,15 +1,15 @@
 ---
-import prefix from "src/scripts/prefix";
-import Switch from "../switch/index.astro";
-import { Icon } from "astro-icon/components";
-import "./theme-switch.styl";
-import "./menu-toggle.styl";
-// import "./index-logo.styl";
+import prefix from "src/scripts/prefix"
+import Switch from "../switch/index.astro"
+import { Icon } from "astro-icon/components"
+import "./theme-switch.styl"
+import "./menu-toggle.styl"
+// import "./index-logo.styl"
 
 interface Props {
-    href?: string;
+    href?: string
 }
-const { href } = Astro.props;
+const { href } = Astro.props
 ---
 
 <header class={`${prefix}-layout-header`}>

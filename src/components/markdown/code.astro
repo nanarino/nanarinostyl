@@ -1,9 +1,9 @@
 ---
-import prefix from "src/scripts/prefix";
-import escape from "src/scripts/server/escape";
-let code: string = "";
+import prefix from "src/scripts/prefix"
+import escape from "src/scripts/server/escape"
+let code: string = ""
 if (Astro.slots.has("default")) {
-    code = escape(await Astro.slots.render("default"));
+    code = escape(await Astro.slots.render("default"))
 }
 ---
 

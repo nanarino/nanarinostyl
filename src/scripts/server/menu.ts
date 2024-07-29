@@ -1,25 +1,25 @@
-import fs from "fs";
-import path from "path";
-import { promisify } from "util";
+import fs from "fs"
+import path from "path"
+import { promisify } from "util"
 
-const stat = promisify(fs.stat);
-const readDir = promisify(fs.readdir);
+const stat = promisify(fs.stat)
+const readDir = promisify(fs.readdir)
 
 export interface page {
-    path: string;
+    path: string
 }
 export interface menu extends page {
-    children: page[];
+    children: page[]
 }
 
 export const getMenu = async (
     currentDir: string,
     rootDir: string = currentDir
 ): Promise<(page | menu)[]> => {
-    const children: (page | menu)[] = [];
-    if ((await stat(path.resolve(currentDir))).isFile()) return [];
+    const children: (page | menu)[] = []
+    if ((await stat(path.resolve(currentDir))).isFile()) return []
     for (const fileName of await readDir(currentDir)) {
-        const filePath = path.join(currentDir, fileName);
+        const filePath = path.join(currentDir, fileName)
         children.push({
             path: path
                 .relative(rootDir, filePath)
@@ -32,7 +32,7 @@ export const getMenu = async (
                 : {
                       children: await getMenu(filePath, rootDir),
                   }),
-        });
+        })
     }
-    return children;
-};
+    return children
+}

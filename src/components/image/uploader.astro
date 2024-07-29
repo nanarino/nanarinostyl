@@ -1,20 +1,20 @@
 ---
-import prefix from "src/scripts/prefix";
-import dataset from "src/scripts/server/dataset";
-import { Icon } from "astro-icon/components";
+import prefix from "src/scripts/prefix"
+import dataset from "src/scripts/server/dataset"
+import { Icon } from "astro-icon/components"
 
-const props = Astro.props;
+const props = Astro.props
 interface Props {
-    id?: string;
-    title?: string;
-    disabled?: boolean;
-    style: Record<string, any> | string;
-    dataset?: Record<string, any>;
+    id?: string
+    title?: string
+    disabled?: boolean
+    style: Record<string, any> | string
+    dataset?: Record<string, any>
 }
-const accept = [`image/gif`, `image/jpeg`, `image/png`] as const;
+const accept = [`image/gif`, `image/jpeg`, `image/png`] as const
 
 if(!props.disabled && !props.id){
-    throw new Error("`uploader`必须传入`id`或者`disabled`");
+    throw new Error("`uploader`必须传入`id`或者`disabled`")
 }
 ---
 
@@ -38,15 +38,15 @@ if(!props.disabled && !props.id){
         <script define:vars={{ id: props.id, accept }}>
             const uploader = document.getElementById(id);
             uploader.onchange = (e) => {
-                const file = e.target.files[0];
+                const file = e.target.files[0]
                 if (accept.some((t) => new RegExp(t).test(file.type))) {
-                    const reader = new FileReader();
-                    reader.readAsDataURL(file);
+                    const reader = new FileReader()
+                    reader.readAsDataURL(file)
                     reader.onload = () => {
-                        uploader.parentElement.style.backgroundImage = `url(${reader.result})`;
-                    };
+                        uploader.parentElement.style.backgroundImage = `url(${reader.result})`
+                    }
                 }
-            };
+            }
         </script>
     )
 }

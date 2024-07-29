@@ -1,22 +1,22 @@
-import prefix from "src/scripts/prefix";
-import colours from "./colors";
-import dedent from "dedent";
+import prefix from "src/scripts/prefix"
+import colours from "./colors"
+import dedent from "dedent"
 
-const icons = ["check", "close", "exclamation", "info"] as const;
+const icons = ["check", "close", "exclamation", "info"] as const
 
 document.addEventListener("astro:page-load", () => {
-    const launcher = document.getElementById("emit-message-kanban");
+    const launcher = document.getElementById("emit-message-kanban")
 
     if (launcher)
         launcher.onclick = function (e) {
-            const button = e.target as HTMLButtonElement;
+            const button = e.target as HTMLButtonElement
             if (button.tagName === "BUTTON") {
-                const primary = Object.hasOwn(button.dataset, "primary");
-                const icon = icons[Math.floor(Math.random() * icons.length)];
+                const primary = Object.hasOwn(button.dataset, "primary")
+                const icon = icons[Math.floor(Math.random() * icons.length)]
                 if (primary) {
                     // 取上一次的颜色
                     let color =
-                        Reflect.get(button.dataset, "color") || "primary";
+                        Reflect.get(button.dataset, "color") || "primary"
                     window.dispatchEvent(
                         new CustomEvent(`${prefix}-message`, {
                             detail: {
@@ -42,19 +42,19 @@ document.addEventListener("astro:page-load", () => {
                                 },
                             },
                         })
-                    );
+                    )
                     // 设置下一次的颜色
-                    color = colours[Math.floor(Math.random() * colours.length)];
-                    button.innerText = color;
-                    button.dataset.color = color;
+                    color = colours[Math.floor(Math.random() * colours.length)]
+                    button.innerText = color
+                    button.dataset.color = color
                     button.style.setProperty(
                         "--background-color-button",
                         `var(--${color}-5)`
-                    );
+                    )
                     button.style.setProperty(
                         "--background-color-button-focus",
                         `var(--${color}-6)`
-                    );
+                    )
                 } else {
                     window.dispatchEvent(
                         new CustomEvent(`${prefix}-message`, {
@@ -85,8 +85,8 @@ document.addEventListener("astro:page-load", () => {
                                 // duration: 100000,
                             },
                         })
-                    );
+                    )
                 }
             }
-        };
-});
+        }
+})

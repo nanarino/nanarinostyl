@@ -11,4 +11,4 @@ export default [
     "pinkpurple",
     "magenta",
     "gray",
-] as const;
+] as const

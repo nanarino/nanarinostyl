@@ -1,18 +1,18 @@
 ---
-import prefix from "src/scripts/prefix";
-import type { page, menu } from "src/scripts/server/menu";
+import prefix from "src/scripts/prefix"
+import type { page, menu } from "src/scripts/server/menu"
 interface Props {
-    menu: Array<page | menu>;
-    base?: string;
+    menu: Array<page | menu>
+    base?: string
 }
-const { menu } = Astro.props;
-const base = Astro.props.base ?? "";
-const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
+const { menu } = Astro.props
+const base = Astro.props.base ?? ""
+const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0]
 ---
 
 <ul class={`${prefix}-menu`}>
     {
-        menu.map((item) => {
+        menu.map(item => {
             /**
              * 当前菜单
              */
@@ -45,7 +45,7 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
                             base={base}
                         />
                     </li>
-                );
+                )
             }
             /**
              * 当前页面
@@ -62,7 +62,7 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
                     >
                         {getName(item.path) || "readme"}
                     </li>
-                );
+                )
             }
             /**
              * 其他页面
@@ -79,7 +79,7 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0];
                         {getName(item.path) || "readme"}
                     </a>
                 </li>
-            );
+            )
         })
     }
 </ul>

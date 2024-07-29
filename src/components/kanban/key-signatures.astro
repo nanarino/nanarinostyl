@@ -1,6 +1,6 @@
 ---
-import { KeySignature, offsetRange } from "./key-signatures";
-import T from "../T.astro";
+import { KeySignature, offsetRange } from "./key-signatures"
+import T from "../T.astro"
 
 const MODES = {
     "": new KeySignature("C"),
@@ -10,7 +10,7 @@ const MODES = {
     Phr: new KeySignature("E"),
     Lyd: new KeySignature("F"),
     Loc: new KeySignature("B"),
-} as const;
+} as const
 ---
 
 <T class="☘-table-wrapper">
@@ -38,7 +38,7 @@ const MODES = {
             </T>
         </T>
         {
-            offsetRange.map((offset) => (
+            offsetRange.map(offset => (
                 <T
                     class="☘-table-row"
                     dataset={{
@@ -53,7 +53,7 @@ const MODES = {
                         {offset == -1 ? "sharp" : ""}
                         {offset < -1 ? "flats" : ""}
                     </T>
-                    {Reflect.ownKeys(MODES).map((mode) => (
+                    {Reflect.ownKeys(MODES).map(mode => (
                         <T class="☘-table-cell">
                             <T tag="code" class="☘-code ☘-font-mono">
                                 {MODES[mode].offset(offset)}

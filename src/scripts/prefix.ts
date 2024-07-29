@@ -1,10 +1,10 @@
-import setPrefix from "@stylus/variable/prefix.styl?raw";
+import setPrefix from "@stylus/variable/prefix.styl?raw"
 
-let prefix: string = "";
+let prefix: string = ""
 try {
-    eval(setPrefix);
+    eval(setPrefix)
 } catch (error) {
-    console.log(error);
+    console.log(error)
 }
 
-export default prefix;
+export default prefix

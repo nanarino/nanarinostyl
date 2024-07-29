@@ -1,14 +1,14 @@
-import prefix from "src/scripts/prefix";
-import dedent from "dedent";
+import prefix from "src/scripts/prefix"
+import dedent from "dedent"
 
 document.addEventListener("astro:page-load", () => {
-    const table = document.getElementById("colors-kanban");
+    const table = document.getElementById("colors-kanban")
 
     if (table)
         table.onclick = function (e) {
-            const button = e.target as HTMLButtonElement;
+            const button = e.target as HTMLButtonElement
             if (button.tagName === "BUTTON" && button.title) {
-                window.copy(`rgb(var(${button.title}))`);
+                window.copy(`rgb(var(${button.title}))`)
                 window.dispatchEvent(
                     new CustomEvent(`${prefix}-message`, {
                         detail: {
@@ -30,7 +30,7 @@ document.addEventListener("astro:page-load", () => {
                             // duration: 100000,
                         },
                     })
-                );
+                )
             }
-        };
-});
+        }
+})

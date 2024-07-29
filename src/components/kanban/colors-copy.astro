@@ -1,13 +1,13 @@
 ---
-import prefix from "src/scripts/prefix";
-import { Icon } from "astro-icon/components";
-import colours from "./colors";
+import prefix from "src/scripts/prefix"
+import { Icon } from "astro-icon/components"
+import colours from "./colors"
 ---
 
 <div class={`${prefix}-table-wrapper`}>
     <table class={`${prefix}-table md`} id="colors-kanban">
         {
-            colours.map((color) => (
+            colours.map(color => (
                 <tr>
                     <td>{color}</td>
                     {Array(10)

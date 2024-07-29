@@ -1,6 +1,6 @@
-import prefix from "src/scripts/prefix";
-import sleep from "src/scripts/sleep";
-import dedent from "dedent";
+import prefix from "src/scripts/prefix"
+import sleep from "src/scripts/sleep"
+import dedent from "dedent"
 
 // const queue = document.createElement("div");
 
@@ -14,7 +14,7 @@ window.addEventListener(
                   /**
                    * 内容 相当于直接传string
                    */
-                  content?: string;
+                  content?: string
                   /**
                    * 主题 4种 其他非空值等效于传primary
                    */
@@ -23,20 +23,20 @@ window.addEventListener(
                       | "danger"
                       | "warning"
                       | "primary"
-                      | boolean;
+                      | boolean
                   /**
                    * 持续时间
                    */
-                  duration?: number;
+                  duration?: number
                   /**
                    * 额外的样式 需要传primary后才生效
                    */
-                  style?: Record<string, string>;
+                  style?: Record<string, string>
               }
         >
     ) => {
-        const queue = document.getElementById("message-queue");
-        const msg = document.createElement("div");
+        const queue = document.getElementById("message-queue")
+        const msg = document.createElement("div")
 
         /**
          * `final duration:number;` ❌
@@ -48,10 +48,10 @@ window.addEventListener(
          *
          * 检查项目其他地方有没有这个问题
          */
-        let duration: number = 2000;
-        let primary: string | boolean = false;
-        let style: Record<string, string> = {};
-        let content = event.detail ?? "☘";
+        let duration: number = 2000
+        let primary: string | boolean = false
+        let style: Record<string, string> = {}
+        let content = event.detail ?? "☘"
 
         if (typeof content != "string") {
             /**
@@ -59,20 +59,20 @@ window.addEventListener(
              * undefined 和 null的 `.toString()` 还是会报错
              * 而使用 `${}` 风险更大 需要指定默认值
              */
-            duration = content.duration ?? 2000;
-            primary = content.primary ?? false;
-            style = content.style ?? {};
-            content = `${content.content ?? "☘"}`;
+            duration = content.duration ?? 2000
+            primary = content.primary ?? false
+            style = content.style ?? {}
+            content = `${content.content ?? "☘"}`
         }
 
         msg.innerHTML = dedent`
             <div class="${prefix}-message">
                 <p class="${prefix}-paragraph">${content}</p>
             </div>
-        `;
+        `
         if (primary) {
-            const p = msg.firstElementChild as HTMLDivElement;
-            p.dataset.primary = primary.toString();
+            const p = msg.firstElementChild as HTMLDivElement
+            p.dataset.primary = primary.toString()
             /**
              * 不同于 `Object.assign(p.style, style)`
              *
@@ -80,16 +80,16 @@ window.addEventListener(
              * like "background-color" rather than "backgroundColor",
              * and that any units must be explicitly provided
              */
-            Object.entries(style).map((x) => p.style.setProperty(...x));
+            Object.entries(style).map(x => p.style.setProperty(...x))
         }
 
-        queue.appendChild(msg);
-        msg.style.height = `${msg.offsetHeight}px`;
-        msg.style.transition = "opacity 1s, height 2s";
-        await sleep(duration);
-        msg.style.opacity = "0";
-        msg.style.height = "0";
-        await sleep(2000); // 2000对应 transition height 2s
-        queue.removeChild(msg);
+        queue.appendChild(msg)
+        msg.style.height = `${msg.offsetHeight}px`
+        msg.style.transition = "opacity 1s, height 2s"
+        await sleep(duration)
+        msg.style.opacity = "0"
+        msg.style.height = "0"
+        await sleep(2000) // 2000对应 transition height 2s
+        queue.removeChild(msg)
     }
-);
+)
