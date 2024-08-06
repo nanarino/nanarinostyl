@@ -30,6 +30,7 @@
     },
     "devDependencies": {
         "@astrojs/mdx": "^2.3.1",
+        "@holy-two/data-theme": "^0.0.6",
         "@types/node": "^20.14.9",
         "astro": "^4.11.3",
         "astro-icon": "^1.1.0",

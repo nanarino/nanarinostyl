@@ -1,8 +1,5 @@
 import prefix from "src/scripts/prefix"
-
-type Theme = "dark" | "light"
-
-const themeTuple = ["dark", "light"] as const
+import { type Theme, default as themes } from "@holy-two/data-theme/dist/themes"
 
 document.addEventListener("astro:page-load", () => {
     // 开关触发
@@ -13,9 +10,11 @@ document.addEventListener("astro:page-load", () => {
     checkbox.checked = window.theme === "dark"
 
     checkbox.onchange = (e: Event) => {
-        const theme = themeTuple[+!(e.target as HTMLInputElement).checked]
+        const theme = themes[+!(e.target as HTMLInputElement).checked]
         window.dispatchEvent(
-            new CustomEvent<Theme>(`${prefix}-theme`, { detail: theme })
+            new CustomEvent<Theme>(`${prefix}-theme`, {
+                detail: theme,
+            })
         )
     }
     delete checkbox.parentElement.dataset.init

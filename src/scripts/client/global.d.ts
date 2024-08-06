@@ -12,5 +12,4 @@ interface Window {
             onCopy?: (clipboardData: object) => void
         }
     ) => boolean
-    readonly theme: "dark" | "light"
 }
