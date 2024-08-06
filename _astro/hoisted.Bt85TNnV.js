@@ -1,4 +1,4 @@
-import{p as a,d as i}from"./hoisted.CokUN6K0.js";document.addEventListener("astro:page-load",()=>{const n=document.getElementById("colors-kanban");n&&(n.onclick=function(s){const e=s.target;e.tagName==="BUTTON"&&e.title&&(window.copy(`rgb(var(${e.title}))`),window.dispatchEvent(new CustomEvent(`${a}-message`,{detail:{content:i`
+import{p as a,d as i}from"./hoisted.lEuKQ5FP.js";document.addEventListener("astro:page-load",()=>{const n=document.getElementById("colors-kanban");n&&(n.onclick=function(s){const e=s.target;e.tagName==="BUTTON"&&e.title&&(window.copy(`rgb(var(${e.title}))`),window.dispatchEvent(new CustomEvent(`${a}-message`,{detail:{content:i`
                                 <svg
                                     class="${a}-message-prefix"
                                     data-icon="tips/outline/check-circle"
