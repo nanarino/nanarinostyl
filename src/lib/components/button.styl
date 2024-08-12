@@ -168,9 +168,15 @@ button_background_color_init(background_color)
                 background-color transparent
                 outline none
                 margin 0 .2em
-                ../[data-with-prefix] ^[-1..-1]
-                    color red
+                /**
+                 * 以后 `:has()` 全面支持后这里可以刪掉以下代碼 且不写这俩data-with
+                 */
+                @supports not (selector(':has(*)'))
+                    ../[data-with-prefix] ^[-1..-1]
+                        margin 0 .4em 0 0 // 兼容右侧边距即使是0也会显示宽度的特性
+                ^[1]:has(.{prefix}-input-prefix) & // & 這裏相當於 ^[-2..-1]
                     margin 0 .4em 0 0 // 兼容右侧边距即使是0也会显示宽度的特性
+                
             &::-ms-browse
                 uploader-button()
             &::-webkit-file-upload-button
@@ -179,18 +185,21 @@ button_background_color_init(background_color)
                 uploader-button()
             
             /**
-            * 以后 `:has()` 全面支持后这里可以刪掉以下代碼 且不写这俩data-with
-            */
-            &:where([data-with-prefix])
-                padding-left calc(var(--padding-horizonal-button, 12px) + 1.5 * var(--font-size-body))
-
+             * 以后 `:has()` 全面支持后这里可以刪掉以下代碼 且不写这俩data-with
+             */
             @supports not (selector(':has(*)'))
+                &:where([data-with-prefix])
+                    padding-left calc(var(--padding-horizonal-button, 12px) + 1.5 * var(--font-size-body))
                 &+.{prefix}-input-prefix
                     pointer-events none
                     transform translateX(.4em)
                 &:where([data-primary])+.{prefix}-input-prefix
                 &:disabled+.{prefix}-input-prefix
                     color rgb(var(--white))
+            
+            ^[1]:has(.{prefix}-input-prefix) & // & 這裏相當於 ^[-2..-1]
+                padding-left calc(var(--padding-horizonal-button, 12px) + 1.5 * var(--font-size-body))
+
             
             &+label
                 cursor pointer
