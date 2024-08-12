@@ -98,12 +98,21 @@ input.{prefix}-input
             --color-input var(--primary-6)
 
         /**
-         * 以后 `:has()` 全面支持后这里可以不写这俩data-
+         * 以后 `:has()` 全面支持后这里可以刪掉以下代碼 且不写这俩data-with
          */
-        &:where([data-with-prefix])
-            padding-left calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
-        &:where([data-with-suffix])
-            padding-right calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
+        @supports not (selector(':has(*)'))
+            &:where([data-with-prefix])
+                padding-left calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
+            &:where([data-with-suffix])
+                padding-right calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
+
+        /.{prefix}-input-wrapper
+            &:has(.{prefix}-input-prefix)
+                & ^[0..1]
+                    padding-left calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
+            &:has(.{prefix}-input-suffix)
+                & ^[0..1]
+                    padding-right calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
 
 
 .{prefix}-input-wrapper
@@ -183,4 +192,3 @@ input.{prefix}-input
         left calc(var(--padding-horizonal-input, 12px) / 2)
     .{prefix}-input-suffix
         right calc(var(--padding-horizonal-input, 12px) / 2)
-        
