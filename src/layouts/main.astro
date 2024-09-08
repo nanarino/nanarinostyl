@@ -31,9 +31,12 @@ const base = import.meta.env.BASE_URL + "menu/"
         aside
             --width-aside 240px
             padding 1em 0
+            @media screen and (max-width 768px)
+                // 小於等于 ipad mini 竪屏尺寸時 菜單懸浮
+                position absolute
             &[data-collapsed]
-                @media screen and (min-width 768px) 
-                    // 大于等于 ipad mini 尺寸时 不设置菜单隐藏
+                @media screen and (min-width 1024px)
+                    // 大於和等於 ipad mini 橫屏尺寸時 菜單無法隱藏
                     width var(--width-aside, unset)
         main
             overflow-y auto
