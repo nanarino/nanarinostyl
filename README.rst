@@ -25,6 +25,9 @@
     :target: https://nodejs.org/
 
 
+.. highlight:: bash
+
+
 利用
 ======
 ::
@@ -32,10 +35,10 @@
     # 安装npm包
     pnpm i nanarinostyl
 
-    # 然后在jsx中 `import 'nanarinostyl'`
-    # 或是在css中 `@import url('nanarinostyl')`
+    # 在jsx中 `import 'nanarinostyl'`
+    # 在css中 `@import url('nanarinostyl')`
 
-    # 也可以引入stylus源码以及其一部分 `import 'nanarinostyl/src/lib/index.styl'`
+    # 在stylus中可以引入其部分源码 `import 'nanarinostyl/src/lib/index.styl'`
 
 
 

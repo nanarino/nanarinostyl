@@ -1,15 +1,11 @@
-declare namespace CSS {
-    const paintWorklet: Worklet
+import copy from "copy-to-clipboard"
+
+declare global {
+    interface Window {
+        copy: typeof copy
+    }
 }
 
-interface Window {
-    copy: (
-        text: string,
-        options?: {
-            debug?: boolean
-            message?: string
-            format?: string // MIME type
-            onCopy?: (clipboardData: object) => void
-        }
-    ) => boolean
+declare namespace CSS {
+    const paintWorklet: Worklet
 }
