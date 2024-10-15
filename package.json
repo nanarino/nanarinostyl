@@ -7,7 +7,7 @@
         "dev": "astro dev --host",
         "start": "astro dev",
         "build:docs": "astro build",
-        "build:styl": "rma ./dist && mkdir dist && stylus ./src/lib/index.styl -p | replace \"\\s?\\\\?\\s+\" \" \" -z | csso -o ./dist/nanarinostyl.min.css",
+        "build:styl": "rma ./dist && mkdir dist && stylus ./src/lib/index.styl -p | csso -o ./dist/nanarinostyl.min.css",
         "build:gh-pages": "astro build --base /nanarinostyl/",
         "preview": "astro preview"
     },
@@ -31,14 +31,13 @@
     "devDependencies": {
         "@astrojs/mdx": "^2.3.1",
         "@holy-two/data-theme": "^0.0.6",
-        "@types/node": "^20.16.5",
-        "astro": "^4.15.4",
+        "@types/node": "^20.16.11",
+        "astro": "^4.16.3",
         "astro-icon": "^1.1.1",
         "copy-to-clipboard": "^3.3.3",
         "css-doodle": "^0.34.11",
         "csso-cli": "^4.0.2",
         "dedent": "^1.5.3",
-        "replace": "^1.2.2",
         "rm-all": "^1.1.1",
         "smooth-corners": "^1.0.8",
         "stylus": "^0.63.0"

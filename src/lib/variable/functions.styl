@@ -15,10 +15,18 @@ rgb(color)
  * 如 css`@supports not selector(:is(a, b))` 
  * 要写成 styl`@supports not (selector(:is(a, b))`
  * 
- * query: str
  */
-selector(query)
-    s('selector(%s)', unquote(query))
+selector(query_str)
+    s('selector(%s)', unquote(query_str))
+
+/**
+ * 定義 path 函式
+ * 
+ * 刪除冗餘的縮進 需要用 '\\' 來換行
+ * 事實上 即使沒有這個函式 也需要用 '\\' 來換行
+ */
+path(path_str)
+    s('path(%s)', replace("\\\s+", "", path_str))
 
 /**
  * 获取拼接的css变量
@@ -27,12 +35,14 @@ selector(query)
  * level: int
  * return: str
  */
-_get_var_by(name, level)
-    '--%s-%s'%(unquote(name) level)
+_get_var_by(property, level)
+    '--%s-%s'%(unquote(property) level)
 
-
-mixin_line_clamp(n)
+/**
+ * 多行省略混入
+ */
+mixin_line_clamp(number)
     display -webkit-box
     -webkit-box-orient vertical
-    -webkit-line-clamp n
+    -webkit-line-clamp number
     overflow hidden
