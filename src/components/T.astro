@@ -2,10 +2,9 @@
 import escape from "src/scripts/server/escape"
 import dataset from "src/scripts/server/dataset"
 
-interface Props {
-    tag?: string
+interface Props extends astroHTML.JSX.HTMLAttributes {
+    tag?: keyof astroHTML.JSX.DefinedIntrinsicElements
     dataset?: Record<string, any>
-    [key: string]: any
 }
 
 const props = Astro.props
