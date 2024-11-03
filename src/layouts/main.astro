@@ -18,7 +18,7 @@ const base = import.meta.env.BASE_URL + "menu/"
         <aside class={`${prefix}-layout-aside`} data-collapsed>
             <Menu menu={menu} base={base} />
         </aside>
-        <main class={`${prefix}-layout-content`}>
+        <main class={`${prefix}-layout-content`} id="main-panel">
             <slot />
         </main>
     </section>

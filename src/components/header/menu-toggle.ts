@@ -8,7 +8,13 @@ document.addEventListener("astro:page-load", () => {
     ) as HTMLDivElement
 
     if (toggle && aside) {
-        toggle.onclick = (e: Event) => {
+        document.getElementById('main-panel').onclick = (_ev: MouseEvent) => {
+            if (toggle.matches("[aria-pressed=true]")) {
+                toggle.setAttribute("aria-pressed", "false")
+                Reflect.set(aside.dataset, "collapsed", "")
+            }
+        }
+        toggle.onclick = (_e: Event) => {
             if (toggle.matches("[aria-pressed=true]")) {
                 toggle.setAttribute("aria-pressed", "false")
                 Reflect.set(aside.dataset, "collapsed", "")
