@@ -1,4 +1,4 @@
-import{p as d}from"./hoisted.BpBWYKSw.js";const t=`:doodle {
+import{p as d}from"./prefix.DdUm4vFL.js";const t=`:doodle {
     @grid: 7 / 100%;
     border-radius: 50%;
 }
