@@ -13,6 +13,6 @@
     },
     "files.associations": {
         "*.mdx": "markdown",
-        ".prettierrc": "yaml"
+        "**/components/markdown/index.mdx": "typescript"
     }
 }
