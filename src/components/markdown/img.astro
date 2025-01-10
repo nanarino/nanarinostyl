@@ -13,7 +13,7 @@ const props = Astro.props
         ondragstart="return false"
         onerror={`
             this.src='${unknow.src}';
-            this.parentElement.dataset.error=true;
+            this.parentElement.dataset.error='';
             this.onerror='return false'
         `}
     />
