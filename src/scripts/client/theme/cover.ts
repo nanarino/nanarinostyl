@@ -7,19 +7,24 @@ const style = { light, dark } as const
 
 interface Doodle extends HTMLElement {
     update: (styles: string) => void
+    compiled?: Record<string, any>
 }
 
-function _cover_init() {
-    const doodle = document.querySelector("css-doodle") as Doodle
-    if (doodle) doodle.innerHTML = style[window.theme]
+function redraw(css = style[window.theme]) {
+    const doodle = document.querySelector("css-doodle") as Doodle | null
+    if (!doodle) return
+    if (doodle.compiled) {
+        doodle.update(css)
+    } else {
+        doodle.innerHTML = css
+    }
 }
 
 // 初始化
-_cover_init()
-document.addEventListener("astro:after-swap", _cover_init)
-
+redraw()
+// 路由切換
+document.addEventListener("astro:after-swap", () => redraw())
 // 响应主题
-window.addEventListener(`${prefix}-theme`, (event: CustomEvent<Theme>) => {
-    const doodle = document.querySelector("css-doodle") as Doodle
-    if (doodle) doodle.update(style[event.detail])
-})
+window.addEventListener(`${prefix}-theme`, (event: CustomEvent<Theme>) =>
+    redraw(style[event.detail])
+)
