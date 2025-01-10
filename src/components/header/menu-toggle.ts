@@ -3,7 +3,7 @@ document.addEventListener("astro:page-load", () => {
         "header-menu-toggle"
     ) as HTMLButtonElement
 
-    const aside = toggle?.parentElement?.nextElementSibling?.querySelector?.(
+    const aside = toggle?.parentElement?.parentElement?.querySelector?.(
         "aside"
     ) as HTMLDivElement
 
