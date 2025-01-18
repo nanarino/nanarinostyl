@@ -10,6 +10,8 @@
 
 修改變數名 `--badge-processing-weight` → `--weight-badge-processing`
 
+移除關於 [`path()`](https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape/path) 的兼容支援
+
 ## v0.5.0
 
 添加以下 css 變數
