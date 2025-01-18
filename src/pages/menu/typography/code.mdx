@@ -15,10 +15,19 @@ export {components};
 `pre.☘-pre>code.☘-code` 里 可以用来显示多行代码
 
 ```pug
-code.☘-code.☘-font-mono
-    pre.☘-pre.☘-font-mono
+pre.☘-pre
+    code.☘-code.☘-font-mono
         |    print("helloworld")
 ```
+- `--background-color-pre` 代码块背景色RGB值
+- `--background-color-pre-dark` 暗黑模式代码块背景色RGB值
+
+为了能被 *shiki* 等库设置语法高亮
+
+以下全局变量对 `pre.☘-pre>code.☘-code *` 生效
+
+- `--color-code` 高亮RGB值
+- `--color-code-dark` 暗黑模式高亮RGB值
 
 
 ## tag
@@ -44,7 +53,7 @@ kbd.☘-kbd Ctrl
 kbd.☘-kbd S
 ```
 
-相比 `.☘-tag` 多了一个下划线
+相比 `.☘-tag` 多了一个下方阴影
 
 
 ## custom style

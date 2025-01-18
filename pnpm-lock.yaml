@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      style-to-object:
+        specifier: ^1.0.8
+        version: 1.0.8
     devDependencies:
       '@astrojs/mdx':
         specifier: 4.0.4

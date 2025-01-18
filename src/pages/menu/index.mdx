@@ -12,6 +12,37 @@ export {components}
 
 # global
 
+这是一个非主流的基于css变量的试作型纯stylus套件
+
+所有css变量名都是定语后置的，就像方言里把公鸡叫做鸡公，例如 `--color-button-disabled`
+
+## install
+
+```bash
+pnpm i nanarinostyl
+```
+
+## import
+
+```css
+@import url('nanarinostyl')
+```
+
+或者 css in js
+
+按需需要熟悉源码（bushi🤣
+
+比如你只是使用按钮，图片，弹框
+
+```styl
+@import 'nanarinostyl/src/lib/variable/*'
+@import 'nanarinostyl/src/lib/font.styl'
+@import 'nanarinostyl/src/lib/primary.styl'
+@import 'nanarinostyl/src/lib/typography/image.styl'
+@import 'nanarinostyl/src/lib/components/button.styl'
+@import 'nanarinostyl/src/lib/components/dialog.styl'
+```
+
 ## `data-theme`
 
 主题变量 `theme: 'light'|'dark'`

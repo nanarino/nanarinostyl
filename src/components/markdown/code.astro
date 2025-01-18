@@ -1,9 +1,22 @@
 ---
 import prefix from "src/scripts/prefix"
 import escape from "src/scripts/server/escape"
+import parse from "style-to-object"
+import dedent from "dedent"
 let code: string = ""
 if (Astro.slots.has("default")) {
     code = escape(await Astro.slots.render("default"))
+    code = code.replace(/<span style="(.*?)">/gim, (span, cssText?: string) => {
+        // console.log(cssText)
+        if (cssText?.includes("--shiki-dark:")) {
+            const style = parse(cssText)
+            return dedent`<span style="
+                --color-code: from ${style.color} r g b;
+                --color-code-dark: from ${style["--shiki-dark"]} r g b;
+            ">`
+        }
+        return span
+    })
 }
 ---
 

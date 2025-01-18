@@ -6,4 +6,12 @@ import icon from "astro-icon"
 export default defineConfig({
     integrations: [mdx(), icon()],
     scopedStyleStrategy: "where",
+    markdown: {
+        shikiConfig: {
+            themes: {
+                light: "github-light",
+                dark: "github-dark",
+            },
+        },
+    },
 })
