@@ -6,11 +6,11 @@
     unicode-range U+1F000-1F644, U+203C-3299
 :root // 兜底
     font-size var(--font-size-body)
-    font-family 'system-ui', '—apple-system', 'Segoe UI', 'Rototo', 'Emoji', 'Helvetica', 'Arial', 'sans-serif'
+    font-family var(--font-family-base, 'system-ui', '—apple-system', 'Segoe UI', 'Rototo', 'Emoji', 'Helvetica', 'Arial', 'sans-serif')
 .{prefix}-font-serif // 衬线
-    font-family 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'
+    font-family var(--font-family-serif, 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif')
 .{prefix}-font-mono // 等宽
-    font-family 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'
+    font-family var(--font-family-mono, 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace')
 .{prefix}-connot-select // 无法选中和拖拽
     user-drag none
     user-select none

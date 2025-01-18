@@ -147,7 +147,7 @@ input.☘-input(
     <br/><T tag="input" class="☘-input lg" title="helloworld" placeholder="更大" />
 
 
-## affix
+## wrapper
 
 把 input 放在 `.☘-input-wrapper` 这个容器中可以用来显示前缀后缀
 
@@ -175,7 +175,7 @@ input.☘-input(
     })
 ```
 
-### `data-with-prefix`
+## prefix
 
 这里使用`type="search"` 在**Safari**上会有额外的放大镜图标
 
@@ -192,7 +192,6 @@ input.☘-input(
         <T
             tag="input"
             class="☘-input"
-            data-with-prefix
             title="with-prefix"
             type="search"
         />
@@ -209,7 +208,6 @@ input.☘-input(
         <T
             tag="input"
             class="☘-input"
-            data-with-prefix
             title="with-prefix"
             type="search"
         />
@@ -219,17 +217,17 @@ input.☘-input(
 ```pug
 .☘-input-wrapper
     svg.☘-input-prefix(role="button" aria-label="search" width=16 height=16)
-    input.☘-input(title='with-prefix' data-with-prefix type="search")
+    input.☘-input(title='with-prefix' type="search")
 .☘-input-wrapper(data-primary)
     svg.☘-input-prefix(role="button" aria-label="search" width=16 height=16)
-    input.☘-input(title='with-prefix' data-with-prefix type="search")
+    input.☘-input(title='with-prefix' type="search")
 ```
 
-### `data-with-suffix`
+## suffix
 
 <Grid inline>
     <T class="☘-input-wrapper">
-        <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
+        <T tag="input" class="☘-input" title="with-suffix" />
         <Icon
             class={escape('☘-input-suffix')}
             name="tips/outline/close"
@@ -242,7 +240,7 @@ input.☘-input(
     <T class="☘-input-wrapper" style="
         --color-input-wrapper: var(--blue-6)
     ">
-        <T tag="input" class="☘-input" data-with-suffix title="with-suffix" />
+        <T tag="input" class="☘-input" title="with-suffix" />
         <Icon
             class={escape('☘-input-suffix')}
             name="tips/outline/close"
@@ -256,12 +254,12 @@ input.☘-input(
 
 ```pug
 .☘-input-wrapper
-    input.☘-input(title='with-suffix' data-with-suffix)
+    input.☘-input(title='with-suffix')
     svg.☘-input-suffix(role="button" aria-label="close" width=16 height=16)
 .☘-input-wrapper(style={
     '--color-input-wrapper': 'var(--blue-6)'
 })
-    input.☘-input(title='with-suffix' data-with-suffix)
+    input.☘-input(title='with-suffix')
     svg.☘-input-suffix(role="button" aria-label="close" width=16 height=16)
 ```
 
@@ -281,7 +279,6 @@ input.☘-input(
         tag="input"
         class="☘-input"
         title="in-suffix"
-        data-with-suffix
         disabled
     />
     <T
@@ -324,8 +321,6 @@ input.☘-input(
         />
     </button>
 </T>
-
-这里实现使用了 `:has()` 选择器，如果你的浏览器不支持会被降级，样式会有些许区别
 
 ```pug
 .☘-input-wrapper(data-primary style={

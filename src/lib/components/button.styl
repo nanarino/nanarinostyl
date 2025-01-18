@@ -10,37 +10,24 @@
  * 当 变量 --percent-button-wave 从 0% -> 100% 时 按钮当前颜色从中心扩散
  * 一般来说 按钮当前颜色要比初始背景色要深
  *
- * 兼容实现 见 https://github.com/Deep-Codes/affinity-css/blob/main/components/_button.sass
  */
 button_background_color_init(background_color)
     background-color background_color
-    @supports (background paint(smooth-corners))
-        background-image radial-gradient(circle, 
-            transparent 0%,
-            transparent var(--percent-button-wave),
-            background_color var(--percent-button-wave), 
-            background_color 100%
-        )
+    background-image radial-gradient(circle, 
+        transparent 0%,
+        transparent var(--percent-button-wave),
+        background_color var(--percent-button-wave), 
+        background_color 100%
+    )
 
 
 .{prefix}-button
     /:root
         // --padding--button 5px 12px
-        @supports (background paint(smooth-corners))
-            /** 
-             * https://stackoverflow.com/questions/69612853/using-css-can-i-check-if-a-browser-supports-the-css-properties-and-values-api
-             * [Typed OM `@property` should be supported here]
-             *
-             * 可以额外加载一个npm包：[smooth-corners](https://www.npmjs.com/package/smooth-corners)
-             *
-             * 无效的paint方法名也会进入 @supports
-             *
-             * https:和localhost:才能进入 @supports
-             */
-            @property --percent-button-wave
-                syntax '<percentage>'
-                inherits false
-                initial-value 100%
+        @property --percent-button-wave
+            syntax '<percentage>'
+            inherits false
+            initial-value 100%
             
 
     --color-button var(--white)
@@ -68,12 +55,9 @@ button_background_color_init(background_color)
     border none
     border-radius var(--border-radius-md)
 
-    @supports (background paint(smooth-corners))
-        transition --percent-button-wave .5s, box-shadow .3s
-        transition-timing-function ease-in
-    @supports not (background paint(smooth-corners))
-        transition background .8s
-        transition-timing-function ease-in
+
+    transition --percent-button-wave .5s, box-shadow .3s
+    transition-timing-function ease-in
 
     button_background_color_init rgb(var(--background-color-button))
     
@@ -96,13 +80,7 @@ button_background_color_init(background_color)
         background-color rgb(var(--background-color-button-disabled))
     
     &:not([disabled]):focus
-        @supports (background paint(smooth-corners))
-            background-color rgb(var(--background-color-button-focus))
-        @supports not (background paint(smooth-corners))
-            background rgb(var(--background-color-button)) radial-gradient(circle, 
-                transparent 1%,
-                rgb(var(--background-color-button)) 1%
-            ) center/15000%
+        background-color rgb(var(--background-color-button-focus))
     
     &:not([disabled]):active
         --percent-button-wave 0%
@@ -147,15 +125,14 @@ button_background_color_init(background_color)
     // 文件上传
     /.{prefix}-input-wrapper
 
-        @supports selector(':has(*)')
-            &:has(input[type=file].{prefix}-input^[0])
-                .{prefix}-input-prefix
-                    pointer-events none
-                    transform translateX(.4em)
-            &:has(input[type=file].{prefix}-input^[0][data-primary])
-            &:has(input[type=file].{prefix}-input^[0]:disabled)
-                .{prefix}-input-prefix
-                    color rgb(var(--white))
+        &:has(input[type=file].{prefix}-input^[0])
+            .{prefix}-input-prefix
+                pointer-events none
+                transform translateX(.4em)
+        &:has(input[type=file].{prefix}-input^[0][data-primary])
+        &:has(input[type=file].{prefix}-input^[0]:disabled)
+            .{prefix}-input-prefix
+                color rgb(var(--white))
         
         input[type=file].{prefix}-input^[0]
             font-size 0
@@ -168,12 +145,6 @@ button_background_color_init(background_color)
                 background-color transparent
                 outline none
                 margin 0 .2em
-                /**
-                 * 以后 `:has()` 全面支持后这里可以刪掉以下代碼 且不写这俩data-with
-                 */
-                @supports not (selector(':has(*)'))
-                    ../[data-with-prefix] ^[-1..-1]
-                        margin 0 .4em 0 0 // 兼容右侧边距即使是0也会显示宽度的特性
                 ^[1]:has(.{prefix}-input-prefix) & // & 這裏相當於 ^[-2..-1]
                     margin 0 .4em 0 0 // 兼容右侧边距即使是0也会显示宽度的特性
                 
@@ -184,22 +155,9 @@ button_background_color_init(background_color)
             &::file-selector-button
                 uploader-button()
             
-            /**
-             * 以后 `:has()` 全面支持后这里可以刪掉以下代碼 且不写这俩data-with
-             */
-            @supports not (selector(':has(*)'))
-                &:where([data-with-prefix])
-                    padding-left calc(var(--padding-horizonal-button, 12px) + 1.5 * var(--font-size-body))
-                &+.{prefix}-input-prefix
-                    pointer-events none
-                    transform translateX(.4em)
-                &:where([data-primary])+.{prefix}-input-prefix
-                &:disabled+.{prefix}-input-prefix
-                    color rgb(var(--white))
-            
             ^[1]:has(.{prefix}-input-prefix) & // & 這裏相當於 ^[-2..-1]
                 padding-left calc(var(--padding-horizonal-button, 12px) + 1.5 * var(--font-size-body))
-
+            
             
             &+label
                 cursor pointer

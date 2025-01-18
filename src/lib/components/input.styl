@@ -97,15 +97,6 @@ input.{prefix}-input
         &:where([data-primary])
             --color-input var(--primary-6)
 
-        /**
-         * 以后 `:has()` 全面支持后这里可以刪掉以下代碼 且不写这俩data-with
-         */
-        @supports not (selector(':has(*)'))
-            &:where([data-with-prefix])
-                padding-left calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
-            &:where([data-with-suffix])
-                padding-right calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
-
         /.{prefix}-input-wrapper
             &:has(.{prefix}-input-prefix)
                 & ^[0..1]
@@ -137,13 +128,11 @@ input.{prefix}-input
         --color-input-wrapper var(--primary-6)
         
         for tag in buttons
-            @supports selector(':has(*)')
-                &:has({tag}:not(.{prefix}-input-prefix))
-                &:has({tag}:not(.{prefix}-input-suffix))
-                    background-color rgb(var(--color-input-wrapper))
-            @supports not (selector(':has(*)'))
-                {tag}:not(.{prefix}-input-prefix):not(.{prefix}-input-suffix)
-                    background-color rgb(var(--color-input-wrapper))
+            &:has({tag}:not(.{prefix}-input-prefix))
+            &:has({tag}:not(.{prefix}-input-suffix))
+                background-color rgb(var(--color-input-wrapper))
+            
+        
     &>*
         display inline-flex
         align-items center

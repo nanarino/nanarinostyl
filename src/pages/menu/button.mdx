@@ -23,15 +23,10 @@ export {components}
 ```pug
 button.☘-button(onclick=function(){
     window.dispatchEvent(
-        new CustomEvent('☘-message', { 
-            detail: `\☘`
-        })
+        new CustomEvent('☘-message', { detail: '\☘' })
     )
 }) 按
 ```
-
-点击按钮后再按回车等效于点击 是浏览器的默认行为。不宜屏蔽。
-
 
 ## `.sm` & `.lg`
 
@@ -164,7 +159,7 @@ input.☘-input.☘-button#uploader(
 label(title="附件" for="uploader") 还未选择附件
 ```
 
-### `data-with-prefix`
+### prefix
 
 <Grid inline>
 {
@@ -174,21 +169,20 @@ label(title="附件" for="uploader") 还未选择附件
         [false, true, false],
         [false, true, true],
     ].map(data => 
-        <T class="☘-input-wrapper" data-primary={data[0]}>
-            <T
-                tag="input"
-                class="☘-button ☘-input"
-                title="upload"
-                data-with-prefix
-                data-primary={data[1]}
-                type='file'
-                disabled={data[2]}
-            />
+        <T class="☘-input-wrapper" data-primary={data[0] ? '' : null}>
             <Icon 
                 class={escape('☘-input-prefix')}
                 name="interactive-button/outline/upload"
                 width={18}
                 height={18}
+            />
+            <T
+                tag="input"
+                class="☘-button ☘-input"
+                title="upload"
+                data-primary={data[1] ? '' : null}
+                type='file'
+                disabled={data[2]}
             />
         </T>
     )
@@ -197,16 +191,12 @@ label(title="附件" for="uploader") 还未选择附件
 
 ```pug
 .☘-input-wrapper(data-primary)
+    svg.☘-input-prefix(width=18 height=18)
     input.☘-input.☘-button(
         type="file"
-        data-with-prefix
         data-primary
     )
-    svg.☘-input-prefix(width=18 height=18)
 ```
 
-如果你的浏览器支持 `:has()` 选择器，你可以不用像示例代码一样，而是把prefix放在input之前
-
-- 仅支持前缀
 - 上传按钮不支持波纹点击效果
 - 上传按钮不继承容器主题色
