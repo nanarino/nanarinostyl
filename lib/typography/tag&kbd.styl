@@ -1,0 +1,32 @@
+tag()
+
+    box-sizing border-box
+    padding var(--font-offset-parent)
+    border-radius var(--border-radius-md)
+    // vertical-align middle
+
+code.{prefix}-code
+
+    // --color-code var(--primary-9)
+    // --background-color-code var(--primary-1)
+
+    color rgb(var(--color-code, var(--primary-9)))
+    background-color rgb(var(--background-color-code, var(--primary-1)))
+    tag()
+
+
+.{prefix}-tag
+kbd.{prefix}-kbd
+
+    // --color-tag var(--primary-6)
+    // --background-color-tag var(--primary-1)
+    
+    display inline-block
+    border 1px none rgb(var(--color-tag, var(--primary-6)))
+    color rgb(var(--color-tag, var(--primary-6)))
+    background-color rgb(var(--background-color-tag, var(--primary-1)))
+    tag()
+
+    /kbd.{prefix}-kbd
+        border-bottom-style solid
+        padding var(--font-offset-parent) calc(var(--font-offset-parent) * 2)

@@ -1,0 +1,52 @@
+---
+layout: "docs/layouts/main.astro"
+title: 表单
+---
+
+import T from "docs/components/T.astro"
+import Switch from "docs/components/switch/index.astro"
+import {components} from 'docs/components/markdown/index.mdx'
+export {components}
+
+
+# form
+
+
+## `title`
+
+输入框的规范的提示属性，没有提供 `placeholder` 的情况下需要传入 `title`
+
+如果输入框 `input#id` 有对应的 `label[for=id]`，则只需要至少其中之一传入 `title`
+
+```pug
+input(title='username')
+
+input#uname
+lable(for='uname' title='username') 用户名
+```
+另外 没有内容文字的按钮和超链接也需要添加 `title`
+
+
+
+## `:focus-visible`
+
+```sass
+&:focus-visible
+    outline-color: rgb(var(--black))
+```
+
+使用键盘获取焦点时应该强制实现这个样式。默认是黑白，事实上浏览器已经实现。
+
+- `button` tab或点击一次后回车触发
+    - <T tag="button" class="☘-button">按钮</T>
+- `a` tab或点击一次后回车触发
+    - <T tag="a" class="☘-link" href="#">链接</T>
+- `input` tab或点击一次后回车触发 但是普通的文本输入框不会触发
+    - <T tag="input" class="☘-input" title="input" placeholder='请输入' />
+    - <Switch id="switch" checked />
+- `textarea` 无法触发
+    - <T tag="textarea" class="☘-textarea ☘-font-mono" title="textarea" placeholder='请输入' />
+
+使用全局css变量 `--outline-color-focus` 可以覆盖这个颜色RGB值
+
+`input[data-primary]` 和 `textarea[data-primary]` 预设了 `--outline-color-focus` 主题色覆盖黑白。

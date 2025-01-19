@@ -1,0 +1,40 @@
+---
+import prefix from "docs/scripts/prefix"
+import { Icon } from "astro-icon/components"
+---
+
+<footer class={`${prefix}-layout-footer`}>
+    &nbsp; &nbsp; &nbsp;
+    <!-- `&nbsp;` 空格是为了视觉重心平衡左右 -->
+    由
+    <a class={`${prefix}-link`} href="https://astro.build" target="_blank">
+        {Astro.generator}
+    </a>
+    构建 &nbsp;
+    <a
+        class={`${prefix}-link`}
+        title="github"
+        href="https://github.com/nanarino/nanarinostyl"
+        target="_blank"
+    >
+        <Icon name="logo/outline/github" />
+        <span style="font-size:0">github</span>
+    </a>
+</footer>
+<style lang="stylus">
+footer
+    display flex
+    gap .5em
+    justify-content center
+    align-items center
+    line-height var(--line-height-2)
+    font-size var(--font-size-2)
+    color rgb(var(--gray-3))
+    --color-link var(--primary-2)
+    --color-link-hover var(--primary-3)
+    a
+        align-items center
+        svg
+            width 1em
+            height 1em
+</style>

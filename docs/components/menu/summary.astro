@@ -1,0 +1,82 @@
+---
+import prefix from "docs/scripts/prefix"
+import type { page, menu } from "docs/scripts/server/menu"
+interface Props {
+    menu: Array<page | menu>
+    base?: string
+}
+const { menu } = Astro.props
+const base = Astro.props.base ?? ""
+const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0]
+---
+
+<nav class={`${prefix}-menu`}>
+    {
+        menu.map(item => {
+            /**
+             * 当前菜单
+             */
+            if (
+                Array.isArray((item as menu).children) &&
+                (item as menu).children.length > 0
+            ) {
+                return (
+                    <details
+                        name="menu"
+                        class={`${prefix}-menu`}
+                        open={RegExp(`^${base}${item.path}`).test(
+                            Astro.url.pathname
+                        )}
+                        style="order:1"
+                    >
+                        <summary class={`${prefix}-menu-submenu`}>
+                            <div class={`${prefix}-menu-submenu-title`}>
+                                <span>{getName(item.path)}</span>
+                                <i
+                                    class={`${prefix}-menu-submenu-title-arrow`}
+                                />
+                            </div>
+                        </summary>
+                        <Astro.self
+                            menu={(item as menu).children}
+                            base={base}
+                        />
+                    </details>
+                )
+            }
+            /**
+             * 当前页面
+             */
+            if (RegExp(`^${base}${item.path}\/?$`).test(Astro.url.pathname)) {
+                return (
+                    <div
+                        class={`${prefix}-menu-item ${prefix}-watermark`}
+                        data-selected
+                        style={{
+                            order: getName(item.path) ? 1 : 0,
+                            "--opacity-watermark": 1,
+                        }}
+                    >
+                        {getName(item.path) || "readme"}
+                    </div>
+                )
+            }
+            /**
+             * 其他页面
+             */
+            return (
+                <div
+                    class={`${prefix}-menu-item`}
+                    style={{ order: getName(item.path) ? 1 : 0 }}
+                >
+                    <a
+                        class={`${prefix}-menu-item-link`}
+                        href={base + item.path}
+                    >
+                        {getName(item.path) || "readme"}
+                    </a>
+                </div>
+            )
+        })
+    }
+</nav>

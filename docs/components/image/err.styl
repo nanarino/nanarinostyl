@@ -1,0 +1,15 @@
+.{prefix}-image
+    svg[role=button]
+        width 24px
+        height 24px
+        cursor pointer
+    
+    svg[aria-disabled]
+        width 24px
+        height 24px
+        cursor not-allowed
+    
+    &[data-error] svg[data-icon='interactive-button/outline/eye']
+    &:not([data-error]) svg[data-icon='interactive-button/outline/eye-invisible']
+        display none
+

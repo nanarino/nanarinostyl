@@ -1,0 +1,81 @@
+---
+import prefix from "docs/scripts/prefix"
+import Switch from "../switch/index.astro"
+import { Icon } from "astro-icon/components"
+import "./theme-switch.styl"
+import "./menu-toggle.styl"
+// import "./index-logo.styl"
+
+interface Props {
+    href?: string
+}
+const { href } = Astro.props
+---
+
+<header class={`${prefix}-layout-header`}>
+    
+    {
+        href ? (<></>) : (
+            <button
+                id="header-menu-toggle"
+                class={`${prefix}-button`}
+                title="menu"
+                data-square
+                type="button"
+                aria-pressed="false"
+            >
+                <Icon name="direction/outline/menu-fold" />
+                <Icon name="direction/outline/menu-unfold" />
+            </button>
+        )
+    }
+
+    <a href={href || import.meta.env.BASE_URL} class="logo">
+        <Icon name="logo/color/clover" />
+        <span style="font-size:0">Return to cover or enter chapter</span>
+    </a>
+
+    <Switch
+        id="header-theme-switch"
+        class="header-theme-switch"
+        title="theme"
+        name="theme"
+        dataset={{
+            init: !!href
+        }}
+    >
+        {/**
+          * 为了兼容 Safari浏览器里 `<svg>` 不能同时拥有 `box-shadow` 和 `drop-shadow`
+          * 所以额外用了 `<i>` 来包裹 `<svg>`
+          */}
+        <i class={`${prefix}-switch-mover`}>
+            <Icon name="general/outline/sun"/>
+        </i>
+        <i class={`${prefix}-switch-mover`}>
+            <Icon name="general/outline/moon"/>
+        </i>
+        <label class={`${prefix}-switch-slot`} for="header-theme-switch">theme toggle</label>
+    </Switch>
+</header>
+
+<script src="./menu-toggle.ts"></script>
+<script src="./theme-switch.ts"></script>
+
+<style lang="stylus">
+header
+    display flex
+    align-items center
+    justify-content space-between
+    height var(--line-height-8)
+    padding .5em 1em
+
+    svg
+        width 1em
+        height 1em
+
+    a.logo
+        display flex
+        border-radius 50%
+        svg
+            font-size var(--font-size-8)
+</style>

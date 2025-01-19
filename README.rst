@@ -3,7 +3,7 @@
 ===========
 
 
-.. image:: ./src/icons/logo/color/clover.svg
+.. image:: ./docs/icons/logo/color/clover.svg
     :width: 64 px
     :alt: Nanarinostyl Logo
     :target: https://nanarino.github.io/nanarinostyl/
@@ -38,7 +38,7 @@
     # 在jsx中 `import 'nanarinostyl'`
     # 在css中 `@import url('nanarinostyl')`
 
-    # 在stylus中可以引入其部分源码 `import 'nanarinostyl/src/lib/index.styl'`
+    # 在stylus中可以引入其部分源码 见 `import 'nanarinostyl/lib/index.styl'`
 
 
 

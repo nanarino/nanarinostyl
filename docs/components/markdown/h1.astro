@@ -1,0 +1,16 @@
+---
+import prefix from "docs/scripts/prefix"
+import { Icon } from "astro-icon/components"
+---
+
+<h1 class={`${prefix}-title ${prefix}-font-serif`}>
+    <Icon name="logo/fill/clover" />
+    <slot />
+</h1>
+
+<style lang="stylus">
+svg
+    width 1em
+    height 1em
+    transform rotate(-76deg) rotateY(180deg)
+</style>

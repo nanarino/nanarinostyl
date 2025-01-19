@@ -1,0 +1,45 @@
+---
+layout: "docs/layouts/main.astro"
+title: 对话框
+---
+
+import T from "docs/components/T.astro"
+import {components} from 'docs/components/markdown/index.mdx'
+export {components}
+
+
+# dialog
+
+默认的`[open]`, 也可以调用 `.show()` 显示
+
+<T tag="button" class="☘-button" onclick="this.nextElementSibling.show()">show</T>
+<T tag="dialog" class="☘-dialog" open>
+    <T tag="p" class="☘-paragraph">Click to close 👇</T>
+    <form method="dialog">
+        <T tag="button" class="☘-button">OK</T>
+    </form>
+</T>
+
+```pug
+dialog.☘-dialog(open)
+    p.☘-paragraph Click to close 👇
+    form(method="dialog")
+        button.☘-button OK
+```
+
+## modal
+
+调用 `.showModal()` 显示的对话框拥有全屏遮罩（`::backdrop`）和 <T tag='kbd' class='☘-kbd'>Esc</T> 键触发关闭的行为
+
+<T tag="button" class="☘-button" onclick="this.nextElementSibling.showModal()">show modal</T>
+<T tag="dialog" class="☘-dialog">
+    <T tag="p" class="☘-paragraph">Press <T tag='kbd' class='☘-kbd'>Esc</T>  to close. 🤣👉📱</T>
+</T>
+
+```pug
+dialog.☘-dialog
+    p.☘-paragraph 
+        | Press
+        kbd.☘-kbd Esc
+        | to close. 🤣👉📱
+```

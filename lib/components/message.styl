@@ -1,0 +1,56 @@
+.{prefix}-message-queue
+    top 16px
+    left 0
+    right 0
+
+    z-index 2147
+    position fixed
+    height 0
+    overflow visible
+    display flex
+    flex-direction column
+    align-items center
+
+    color rgb(var(--gray-10))
+
+
+.{prefix}-message
+
+    --background-color-message var(--white)
+    --color-message var(--black)
+
+    border-radius var(--border-radius-md)
+    padding 8px
+    color rgb(var(--color-message))
+    background-color rgb(var(--background-color-message))
+    box-shadow var(--box-shadow-drop-bottom)
+    margin 4px
+
+
+    .{prefix}-paragraph
+        max-width 60vw
+        margin 0
+
+        // &>*
+        //     display inline-flex
+        //     vertical-align middle
+        //     align-items center
+        
+        ^[1..1]>^[0]-prefix
+            /**
+             * <svg> 在 <use> 的情况下需要给定宽和高
+             * 只给其中一个 另一个会复制本体的 而不是等比例缩放
+             */
+            width 16px
+            height 16px
+            vertical-align middle
+            &:where([data-primary])
+                color rgb(var(--primary-6))
+            &+*
+                vertical-align middle
+
+    
+    &:where([data-primary])
+        --color-message var(--white)
+        --background-color-message var(--primary-5)
+        --box-shadow-color  var(--primary-4)

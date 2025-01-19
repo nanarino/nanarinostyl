@@ -3,5 +3,5 @@ semi = false
 arrowParens = "avoid"
 
 [[overrides]]
-files = "src/components/markdown/index.mdx"
+files = "docs/components/markdown/index.mdx"
 options.parser = "typescript"

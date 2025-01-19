@@ -1,0 +1,25 @@
+.{prefix}-paragraph
+    margin 1em 0
+    padding 0
+    font-size var(--font-size-body)
+    line-height var(--line-height-body)
+    // &>*
+    //     vertical-align middle
+    &:has(.{prefix}-code)
+        line-height calc(var(--line-height-body) + var(--font-offset-parent))
+    
+    for i in range(1 6)
+        &:where([data-size=\"{i}\"])
+            --line-height-body var(_get_var_by(
+                line-height,
+                'h%s' % i
+            ))
+            --font-size-body var(_get_var_by(
+                font-size,
+                'h%s' % i
+            ))
+        &:where([data-ellipsis=\"{i}\"])
+            mixin_line_clamp(i)
+            height 'calc(%s * %s)' % (var(--line-height-body) i)
+    &:where([data-has-indent])
+        text-indent 2em

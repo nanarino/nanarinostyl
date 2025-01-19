@@ -1,0 +1,64 @@
+set_title_styl(size=6)
+    line-height var(_get_var_by(
+        line-height,
+        'h%s' % size
+    ))
+    // line-height @height
+    font-size var(_get_var_by(
+        font-size,
+        'h%s' % size
+    ))
+    
+    & ^[0]-subtitle
+        line-height var(_get_var_by(
+            line-height,
+            7 - size
+        ))
+        font-size var(_get_var_by(
+            font-size,
+            7 - size
+        ))
+
+
+set_has_prefix()
+    &:where([data-has-prefix])
+        // --color-title-prefix var(--primary-6)
+
+        position relative
+        padding-left calc(var(--font-offset-parent) * 3)
+
+        &::before
+            position absolute
+            content ""
+            width 4px
+            border-radius 2px
+            left 0
+            top var(--font-offset-parent)
+            bottom var(--font-offset-parent)
+            background-color rgb(var(--color-title-prefix, var(--primary-6)))
+
+
+.{prefix}-title
+    // &>*
+    //     display inline-flex
+    //     vertical-align middle
+    //     align-items center
+
+    padding 0
+    // mixin_line_clamp(1)
+    font-weight normal
+    margin 1em 0
+    set_title_styl()
+    set_has_prefix()
+    &-subtitle
+        margin-left var(--font-offset-parent)
+        vertical-align bottom
+        color rgb(var(_get_var_by('gray', 6)))
+        
+
+    for i in range(1 6)
+        /h{i}&
+            set_title_styl(i)
+            set_has_prefix()
+        &:where([data-size=\"{i}\"])
+            set_title_styl(i)

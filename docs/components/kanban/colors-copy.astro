@@ -1,0 +1,62 @@
+---
+import prefix from "docs/scripts/prefix"
+import { Icon } from "astro-icon/components"
+import colours from "./colors"
+---
+
+<div class={`${prefix}-table-wrapper`}>
+    <table class={`${prefix}-table md`} id="colors-kanban">
+        {
+            colours.map(color => (
+                <tr>
+                    <td>{color}</td>
+                    {Array(10)
+                        .fill(0)
+                        .map((x, i) => (
+                            <td>
+                                <button
+                                    class={`${prefix}-button copy`}
+                                    style={{
+                                        "--background-color-button": `var(--${color}-${
+                                            i + 1
+                                        })`,
+                                        "--background-color-button-focus": `var(--${
+                                            i >= 5 ? "white" : "gray-10"
+                                        })`,
+                                        "--outline-color-focus": `var(--${color}-${
+                                            i + 1
+                                        })`,
+                                    }}
+                                    data-primary={i >= 5 ? "" : null}
+                                    data-round
+                                    title={`--${color}-${i + 1}`}
+                                >
+                                    <Icon name="edit/outline/copy" />
+                                </button>
+                            </td>
+                        ))}
+                </tr>
+            ))
+        }
+    </table>
+</div>
+
+<script src="./colors-copy.ts"></script>
+
+<style lang="stylus" is:global>
+#colors-kanban
+    --text-align-cell center
+    button.copy
+        --padding-horizonal-button 6px
+        svg
+            font-size 20px
+            width 1em
+            height 1em
+            pointer-events none
+    td:first-child
+        position sticky
+        left 0
+        box-shadow var(--box-shadow-divider-right), var(--box-shadow-divider-bottom)
+        background-color rgb(var(--white))
+        z-index 1
+</style>

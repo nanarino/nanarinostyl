@@ -1,0 +1,254 @@
+---
+layout: "docs/layouts/main.astro"
+title: 图片
+---
+
+import T from "docs/components/T.astro";
+import escape from "docs/scripts/server/escape";
+import { Icon } from "astro-icon/components";
+import example from "docs/assets/images/example.jpg";
+import "docs/components/image/iine.styl";
+import Uploader from "docs/components/image/uploader.astro";
+import {components} from 'docs/components/markdown/index.mdx';
+export {components};
+
+
+# image
+
+![示例](./../../../assets/images/example.jpg)
+
+{/**
+  * 
+  * 开发时请忽略这个404错误
+  * 使用绝对路径：
+  *   ![正确示例](/docs/assets/images/example.jpg)
+  * 
+  */}
+
+以上图片的显示来自拓展后的markdown。但是故意写错了src导致**加载失败**的效果。
+
+
+## `<img>`
+
+以**容器**方式
+
+低版本浏览器需要指定 `width`
+
+<T class='☘-image' style="width:300px">
+    <img alt="示例" src={example.src} />
+</T>
+
+```pug
+.☘-image(style="width:300px")
+    img(alt="示例" src='@/assets/images/example.jpg')
+```
+
+
+## `background-image`
+
+以**背景**方式
+
+必须以某种方式指定宽高 
+
+比如指定 `height` 和 `aspect-ratio`
+
+也可用 `display: flex` 这相当于 `width: 100%`
+
+<T class='☘-image' style={{
+    display: 'flex',
+    height: '300px',
+    'background-image': `url(${example.src})`
+}}>
+    <T tag="p" class="☘-paragraph" data-size="1">🤡</T>
+</T>
+
+```pug
+.☘-image(style={
+    display: 'flex',
+    height: '300px',
+    'background-image': url('@/assets/images/example.png')
+})
+    p.☘-paragraph(data-size=1) 🤡
+```
+
+
+## mask
+
+背景图或容器都可以使用的遮罩 `.☘-image>.☘-image-mask`
+
+<T class='☘-image' style={{
+    width: '100px',
+    height: '100px',
+    'background-image': `url(${example.src})`,
+    'border-radius': '50%'
+}}>
+    <T
+        class='☘-image-mask'
+        role="button"
+        aria-label="like"
+        onclick="
+            event.target == this || this.parentElement.toggleAttribute('data-iine')
+        "
+    >
+        <Icon name="interactive-button/outline/heart" />
+        <Icon name="interactive-button/fill/heart-fill" />
+    </T>
+</T>
+
+
+```pug
+.☘-image(style={
+    width: '100px',
+    height: '100px',
+    'background-image': url('@/assets/images/example.jpg'),
+    'border-radius': '50%'
+})
+    .☘-image-mask(onclick=function(){
+        event.target == this || this.parentElement.toggleAttribute('data-iine')
+    })
+        svg(data-icon='interactive-button/outline/heart')
+        svg(data-icon='interactive-button/fill/heart-fill')
+
+style(lang='stylus').
+    .☘-image
+        svg[data-icon='interactive-button/outline/heart']
+        svg[data-icon='interactive-button/fill/heart-fill']
+            font-size 24px
+            color rgb(var(--magenta-6))
+            cursor pointer
+        
+        &[data-iine] svg[data-icon='interactive-button/outline/heart']
+        &:not([data-iine]) svg[data-icon='interactive-button/fill/heart-fill']
+            display none
+```
+
+### footer
+
+适用于大尺寸图片（ 128像素以上 ）的底部遮罩 `.☘-image>.☘-image-footer`
+
+<T class='☘-image' style="
+    width:300px;
+    height:300px;
+    border-radius:var(--border-radius-lg)
+">
+    <img alt="示例" src={example.src} />
+    <T class='☘-image-footer'>
+        <T class="☘-image-footer-content">
+            <T
+                class="☘-title"
+                data-size='5'
+            > 标题标题标题标题标题标题标题标题标题标题标题 </T>
+            <T
+                class="☘-paragraph"
+                data-ellipsis="1"
+            > 描述描述描述描述描述描述描述描述描述描述描述描述 </T>
+        </T>
+        <T class="☘-image-footer-action">
+            <Icon
+                class={escape('☘-link')}
+                name="interactive-button/outline/eye"
+                role="button"
+                aria-label="Open the image in a new tab"
+                onclick={`
+                    window.open('${example.src}')
+                `}
+            />
+            <Icon
+                class={escape('☘-link')}
+                name="interactive-button/outline/download"
+                role="button"
+                aria-label="Download the image"
+            />
+        </T>
+    </T>
+</T>
+
+```pug
+.☘-image(style={
+    width: "300px",
+    height: "300px",
+    "border-radius": "var(--border-radius-lg)"
+})
+    img(alt="示例" src='@/assets/images/example.jpg')
+    .☘-image-footer
+        .☘-image-footer-content
+            .☘-title(data-size=5)
+                | 标题标题标题标题标题标题标题标题标题标题标题
+            .☘-paragraph(data-ellipsis=1)
+                | 描述描述描述描述描述描述描述描述描述描述描述描述
+        .☘-image-footer-action
+            svg.☘-link(
+                role="button"
+                aria-label="Open the image in a new tab"
+                width=24
+                height=24
+                onclick=function(){
+                    window.open("@/assets/images/example.jpg")
+                }
+            )
+            svg.☘-link(
+                role="button"
+                aria-label="Download the image"
+                width=24
+                height=24
+            )
+```
+
+以下全局变量可以修改部分样式
+
+- `--color-image` 字体颜色RGB值
+- `--color-image-mask` 遮罩颜色RGB值
+
+局部还定义了 `☘-link` 的颜色样式 需要一并修改
+
+
+## upload
+
+配合 `.☘-input-wrapper>input[type=file].☘-input` 使用即可
+
+<Uploader 
+    disabled
+    style="
+        width:100px;
+        height:100px;
+        font-size:24px;
+" />
+
+<Uploader 
+    id="uploader"
+    title="点击上传图片"
+    style="
+        width:100px;
+        height:100px;
+        font-size:24px;
+    "
+    dataset={{primary: true}}
+/>
+
+```pug
+span.☘-image.☘-input-wrapper(style={
+    width: '100px',
+    height: '100px',
+})
+    input.☘-input(type='file' disabled)
+    svg(width=24)
+
+span.☘-image.☘-input-wrapper(style={
+    width: '100px',
+    height: '100px',
+} data-primary)
+    input.☘-input#uploader(
+        type='file'
+        title='点击上传图片'
+        onchange=function(e){
+            const reader = new FileReader();
+            reader.readAsDataURL(e.target.files[0]);
+            reader.onload = () => {
+                this.parentElement.style.backgroundImage = `url(${reader.result})`;
+            };
+        }
+    )
+    svg(width=24)
+```
+
+`.☘-input-wrapper` 也可以覆写局部变量 `--color-input-wrapper` 修改颜色RGB值

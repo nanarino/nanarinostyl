@@ -1,0 +1,15 @@
+---
+import prefix from "docs/scripts/prefix"
+import Grid from "../grid.astro"
+---
+
+<div id="emit-message-kanban">
+    <Grid>
+        <button class={`${prefix}-button`} title="emit" data-primary>
+            primary
+        </button>
+        <button class={`${prefix}-button`} title="emit"> normal</button>
+    </Grid>
+</div>
+
+<script src="./emit-message.ts"></script>

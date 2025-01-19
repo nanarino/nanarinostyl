@@ -1,0 +1,30 @@
+---
+import prefix from "docs/scripts/prefix"
+import { Icon } from "astro-icon/components"
+
+interface Props {
+    id: string
+}
+const props = Astro.props
+---
+
+<h6 class={`${prefix}-title ${prefix}-font-serif`} id={props.id}>
+    <a href={`#${props.id}`} class={`${prefix}-link ${prefix}-connot-select`}>
+        <Icon name="logo/outline/clover" />
+        <span style="font-size:0">######</span>
+    </a>
+    <slot />
+</h6>
+
+<style lang="stylus">
+a
+    &:focus-visible
+        outline none
+        filter drop-shadow(0 0 2px rgb(var(--outline-color-focus)))
+        svg
+            fill rgb(var(--outline-color-focus))
+svg
+    width 1em
+    height 1em
+    transform rotate(-17deg) rotateY(180deg)
+</style>

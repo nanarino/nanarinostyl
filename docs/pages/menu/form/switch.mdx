@@ -1,0 +1,153 @@
+---
+layout: "docs/layouts/main.astro"
+title: 开关
+---
+
+import Switch from "docs/components/switch/index.astro"
+import OxalisSwitch from "docs/components/switch/oxalis.astro"
+import T from "docs/components/T.astro"
+import {components} from 'docs/components/markdown/index.mdx'
+export {components}
+
+
+# switch
+
+<Switch title="hello" checked />
+
+```pug
+span.☘-switch
+    input.☘-input(type="checkbox" title="hello" checked)
+    i.☘-switch-mover
+    span.☘-switch-slot
+```
+
+注意，switch**不捆绑**`<label>` 标签，但是需要跟随：
+
+- `.☘-switch-mover` 动子
+- `.☘-switch-slot` 滑槽
+
+事实上，它们其中之一可以被换成 `<label>`，滑槽被换掉能让你点击整个开关的时候也触发切换
+
+
+## `.sm`
+
+<Switch title="small" class="sm"/>
+
+```pug
+span.☘-switch.sm
+    input.☘-input(type="checkbox" title="small")
+    i.☘-switch-mover
+    span.☘-switch-slot
+```
+
+
+## `disabled`
+
+<Switch title="hibit" checked disabled/>
+<Switch title="small-hibit" class="sm" disabled/>
+
+```pug
+span.☘-switch
+    input.☘-input(
+        type="checkbox"
+        title="hibit"
+        checked disabled
+    )
+    i.☘-switch-mover
+    span.☘-switch-slot
+span.☘-switch.sm
+    input.☘-input(
+        type="checkbox"
+        title="small-hibit"
+        disabled
+    )
+    i.☘-switch-mover
+    span.☘-switch-slot
+```
+
+
+## `data-wider-trigger`
+
+默认情况下**点击动子才能切换**开关。如果你不想借助 `label.☘-switch-slot[for=#id]`，
+
+可以添加 `[data-wider-trigger]` 属性，届时点击开关整体时也可以被切换，达到一样的效果。
+
+<Switch 
+    title="wider trigger conditions"
+    dataset={{"wider-trigger": true}}
+    checked
+/>
+
+```pug
+span.☘-switch(data-wider-trigger)
+    input.☘-input(
+        type="checkbox"
+        title="wider trigger conditions"
+        checked
+    )
+    i.☘-switch-mover
+    span.☘-switch-slot
+```
+
+
+## custom style
+
+动子里可以放置字符/icon，也可以有多个动子
+
+- 全局变量 `--box-shadow-width-switch` 可以修改阴影效果范围（默认值为全局变量 `--padding-switch` ，见下 ）
+
+与颜色有关的全局变量RGB值有：
+
+- `--color-switch` 关闭时颜色
+- `--color-switch-checked` 开启时主题颜色
+- `--color-switch-disabled` 禁用状态颜色
+- `--color-switch-checked-disabled` 禁用状态开启时主题颜色
+- `--color-switch-mover` 动子颜色
+- `--box-shadow-color-switch` 阴影主题颜色
+- `--box-shadow-color-switch-checked` 开启时阴影颜色
+
+描述中的占点主题色就会被 `[data-primary]` 影响
+
+<Switch title="fire" dataset={{ primary : "danger" }} style={{
+    "--box-shadow-width-switch": "16px",
+    "--box-shadow-color-switch-checked": "var(--blue-5)"
+}}>
+    <T class="☘-switch-mover">🔥</T>
+    <T class="☘-switch-slot"/>
+</Switch>
+
+```pug
+span.☘-switch(data-primary="danger" style={
+    "--box-shadow-width-switch": "16px",
+    "--box-shadow-color-switch-checked": "var(--blue-5)"
+})
+    input.☘-input(type="checkbox" title="fire")
+    div.☘-switch-mover 🔥
+    div.☘-switch-slot
+```
+
+***
+
+- 全局变量 `--size-switch` 开关尺寸
+- 全局变量 `--padding-switch` 开关与开关动子的距离
+
+<OxalisSwitch id="oxalis" />
+
+```pug
+span.☘-switch.oxalis-switch(
+    style={
+        ["--size-switch"]: "48px",
+        ["--padding-switch"]: "4px",
+        ["--color-switch-checked"]: "var(--lime-6)",
+        ["--color-switch-checked-disabled"]: "var(--lime-3)",
+        ["--color-switch"]: "var(--gold-3)",
+    }
+)
+    input#oxalis.☘-input(type="checkbox" title="oxalis")
+    span.☘-switch-mover.oxalis-switch-mover \☘
+    lable.☘-switch-slot(for="oxalis")
+
+style(lang="stylus").
+    .oxalis-switch>input:checked+.oxalis-switch-mover
+        transform rotate(360deg)
+```

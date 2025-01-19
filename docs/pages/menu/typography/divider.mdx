@@ -1,0 +1,65 @@
+---
+layout: "docs/layouts/main.astro"
+title: 分割线
+---
+
+import T from "docs/components/T.astro";
+import {components} from 'docs/components/markdown/index.mdx';
+export {components};
+
+# divider
+
+以下是拓展后的markdown的 `<hr>` , 可以使用 `---` 或 `***`
+
+***
+
+## `<div>`
+
+<T class="☘-divider" />
+
+```pug
+.☘-divider
+```
+
+## `<span>`
+
+<p>楚河<T tag="span" class="☘-divider" />漢界</p>
+
+```pug
+p
+    |楚河
+    span.☘-divider
+    |漢界
+```
+
+## `<hr>`
+
+<T tag="hr" class="☘-divider" />
+
+```pug
+hr.☘-divider
+```
+
+## custom style
+
+<T tag="hr" class="☘-divider" style="border: 1px dotted rgb(var(--primary-2)"/>
+
+```pug
+hr.☘-divider(style="border: 1px dotted rgb(var(--primary-2)")
+```
+
+<div style="display: flex; align-items: center">
+    <T class="☘-divider" style='flex: 1' />
+    <span>⭐</span>
+    <T class="☘-divider" style='flex: 1' />
+</div>
+
+```pug
+div(style={ 
+    "display": "flex", 
+    "align-items": "center" 
+})
+    .☘-divider(style={ "flex":1 })
+    span ⭐
+    .☘-divider(style={ "flex":1 })
+```

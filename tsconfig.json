@@ -4,10 +4,6 @@
     "exclude": ["dist"],
     "compilerOptions": {
         "baseUrl": ".",
-        "types": ["astro/client"],
-        "paths": {
-            "@stylus/*": ["src/lib/*"],
-            "@layout/*": ["src/layouts/*"]
-        }
+        "types": ["astro/client"]
     }
 }

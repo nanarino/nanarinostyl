@@ -1,0 +1,113 @@
+.{prefix}-menu
+    
+    // --padding-vertical-menu-item 0.5em
+    // --padding-horizonal-menu-item 1em
+
+    // --color-menu var(--primary-6)
+
+    margin 0 1em
+    padding 0
+    display flex
+    flex-direction column
+    gap 0.5em
+
+    ul&
+        list-style none
+    details&
+        margin 0
+        &:not([open])
+            gap 0
+        &>summary
+            &::-webkit-details-marker
+                display none
+            &::-moz-list-bullet
+                display none
+            &::marker
+                display none
+    // 在Safari中使用 `::before` 的元素不支持 `text-indent`
+    // 请使用 `&::after`
+    summary
+    &-submenu
+        display flex
+        flex-direction column
+        gap @gap
+    &-submenu
+        &:where([data-folded])
+            /**
+              * 收起时 无间距
+              */
+            gap 0
+        &-title
+            display flex
+            justify-content space-between
+            align-items center
+            cursor alias
+            line-height var(--line-height-body)
+            padding \
+                var(--padding-vertical-menu-item, .5em) \
+                var(--padding-horizonal-menu-item, 1em)
+            &-arrow
+                position relative
+                display inline-block
+                width 10px
+                transform translateY(-50%)
+                transition margin-top .3s
+                &:before
+                &:after
+                    position absolute
+                    width 6px
+                    height 1.5px
+                    background-color currentColor
+                    border-radius 2px
+                    transition transform .3s
+                    content ""
+
+                details^[0][open] &
+                &
+                    &:before
+                        transform rotate(-45deg) translate(2.5px)
+                    &:after
+                        transform rotate(45deg) translate(-2.5px)
+
+                details^[0]:not([open]) &
+                ^[1][data-folded] &
+                    margin-top -5px
+                    &:before
+                        transform rotate(45deg) translate(2.5px)
+                    &:after 
+                        transform rotate(-45deg) translate(-2.5px)
+
+    &-item
+        position relative
+        height calc(var(--line-height-body) + 2 * var(--padding-vertical-menu-item, .5em))
+        text-indent var(--padding-horizonal-menu-item, 1em)
+        display flex
+        align-items center
+        background-color transparent
+        color rgb(var(--black))
+        border-radius var(--border-radius-md)
+
+        ~/-item-link
+            position absolute
+            inset 0
+            display flex
+            align-items center
+            cursor pointer
+            text-decoration none
+            color inherit
+            border-radius @border-radius // 这个是为了 `a:focus-visible` 能有圆角
+
+        &:where([data-selected])
+            cursor auto
+            background-color rgb(var(--color-menu, var(--primary-6)))
+            color rgb(var(--white))
+        
+        &:not(^[0]-item[data-selected]):hover
+            color rgb(var(--color-menu, var(--primary-6)))
+        
+        ~/-submenu:where([data-folded]) ^[0]
+            /**
+             * 收起时 0高度
+             */
+            flex-basis 0
+            overflow hidden

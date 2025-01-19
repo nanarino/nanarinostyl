@@ -1,0 +1,180 @@
+input_stat()
+
+    box-sizing border-box
+    border none
+    outline 2px solid transparent
+    border-radius var(--border-radius-md)
+
+    font-size var(--font-size-body)
+    line-height var(--line-height-body)
+
+    caret-color rgb(var(--outline-color-focus))
+
+    background-color rgb(var(--gray-1))
+    &:hover
+        box-shadow var(--box-shadow-drop-bottom)
+    &:focus
+        outline-color rgb(var(--outline-color-focus))
+    &:focus-visible
+        box-shadow var(--box-shadow-drop-bottom)
+    transition border-color .3s, box-shadow .3s
+
+    &[disabled]
+        cursor not-allowed
+        background-color rgb(var(--gray-2))
+        color rgb(var(--gray-6))
+        &:hover
+            box-shadow none
+    
+    &::-webkit-input-placeholder
+        color rgb(var(--gray-5))
+        font-size var(--font-size-body)
+        line-height var(--line-height-body)
+
+
+textarea.{prefix}-textarea
+
+    // --padding-textarea 5px 12px
+    
+    --color-textarea var(--black)
+    --outline-color-focus var(--color-textarea)
+
+    display inline-flex
+    flex-direction column
+    padding var(--padding-textarea, 5px 12px)
+
+    &.sm
+        --padding-textarea 1px 12px
+    &.lg
+        --padding-textarea 8px 12px
+        --font-size-body var(--font-size-h5)
+        --line-height-body var(--line-height-h5)
+    
+    input_stat()
+
+    &:where([data-primary])
+        --color-textarea var(--primary-6)
+
+
+input.{prefix}-input
+
+    // --padding-vertical-input 4px
+    // --padding-horizonal-input 12px
+    
+    --color-input var(--black)
+    --outline-color-focus var(--color-input-wrapper, var(--color-input))
+
+    &:not([type])
+    &[type=text]
+    &[type=search]
+    &[type=number]
+    &[type=password]
+    &[type=email]
+    &[type=tel]
+    &[type=url]
+    &[type=date]
+    &[type=time]
+    &[type=month]
+    &[type=week]
+    &[type=datetime-local]
+    &[type=datetime]
+        flex 1
+        padding var(--padding-vertical-input, 4px) var(--padding-horizonal-input, 12px)
+
+        &.sm
+            --padding-vertical-input 0
+
+        &.lg
+            --padding-vertical-input 7px
+            --font-size-body var(--font-size-h5)
+            --line-height-body var(--line-height-h5)
+
+        input_stat()
+
+        &:where([data-primary])
+            --color-input var(--primary-6)
+
+        /.{prefix}-input-wrapper
+            &:has(.{prefix}-input-prefix)
+                & ^[0..1]
+                    padding-left calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
+            &:has(.{prefix}-input-suffix)
+                & ^[0..1]
+                    padding-right calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
+
+
+.{prefix}-input-wrapper
+
+    display inline-flex
+    align-items center
+    position relative
+    border 2px none rgb(var(--color-input-wrapper, var(--gray-1)))
+    border-radius var(--border-radius-md)
+    background-color rgb(var(--gray-1))
+
+    /**
+     * 输入框前缀后缀的按钮
+     */
+    buttons = button,
+        'input:where([type=button])',
+        'input:where([type=reset])',
+        'input:where([type=submit])'
+
+    &:where([data-primary])
+
+        --color-input-wrapper var(--primary-6)
+        
+        for tag in buttons
+            &:has({tag}:not(.{prefix}-input-prefix))
+            &:has({tag}:not(.{prefix}-input-suffix))
+                background-color rgb(var(--color-input-wrapper))
+            
+        
+    &>*
+        display inline-flex
+        align-items center
+    
+    for tag in buttons
+        {tag}
+            cursor pointer
+            border-radius calc(var(--border-radius-md) - 2px)
+            &:focus-visible
+                outline-color rgb(var(--color-input-wrapper, var(--black)))
+            ~/:where([data-primary]) ^[-1..-1]
+                color rgb(var(--white))
+            
+            /**
+             * 这是祛除button的代理样式
+             */
+            padding 6px
+            border none
+            background none
+            &[disabled]
+                cursor not-allowed 
+
+    .{prefix}-input-prefix
+    .{prefix}-input-suffix
+        // cursor pointer
+        position absolute
+        top 0
+        bottom 0
+        margin auto 0
+        z-index 1
+        color rgb(var(--color-input-wrapper, var(--black)))
+
+        // ~/[data-primary] ^[-1..-1]
+        //     color rgb(var(--color-input-wrapper))
+        
+        /**
+         * 这是祛除button的代理样式 前面已经处理 除了padding不同
+         */
+        padding 0
+        // border none
+        // background none
+        // &[disabled]
+        //     cursor not-allowed
+
+    .{prefix}-input-prefix
+        left calc(var(--padding-horizonal-input, 12px) / 2)
+    .{prefix}-input-suffix
+        right calc(var(--padding-horizonal-input, 12px) / 2)

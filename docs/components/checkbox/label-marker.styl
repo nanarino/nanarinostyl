@@ -1,0 +1,6 @@
+.{prefix}-checkbox
+    &[data-marker="*"]
+        &>input:checked+^[0]-label::after
+            content '*'
+            color rgb(var(--white))
+            font-size 18px
