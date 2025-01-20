@@ -14,7 +14,8 @@ export {components}
 
 <Checkbox id="world" checked style="--indent-checkbox: 2em">world</Checkbox>
 
-全局变量 `--indent-checkbox` 改变label文字左内边距，原本是用 `text-indent` 属性实现。但在Safari中使用 `::before` 的元素不支持 `text-indent`，遂改用 `padding-left` 来实现。默认值是1em（label紧贴input）
+全局变量 `--indent-checkbox` 改变label文字左内边距    
+这原本是用 `text-indent` 属性实现。但在Safari中使用 `::before` 的元素不支持 `text-indent`，遂改用 `padding-left` 来实现。默认值是1em（label紧贴input）
 
 ```pug
 span.☘-checkbox(style="--indent-checkbox: 2em")

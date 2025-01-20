@@ -7,7 +7,13 @@ src 目錄拆分 源碼引入時需要修改
 -   `src` -> `docs`
 -   `src/lib` -> `lib`
 
-提出了 mixins 源碼體積有所縮減
+析出了 mixins， 源碼體積有所縮減
+
+移除 [`backdrop-filter()`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter) 的兼容前綴 ~~`-webkit-`~~ （同時修復了 `dialog::backdrop` 的顯示異常）
+
+移除 [`filter()`](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) 的兼容前綴 ~~`-webkit-`~~
+
+移除 [`fit-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content) 的兼容前綴 ~~`-moz-`~~
 
 ## v0.6.0
 
