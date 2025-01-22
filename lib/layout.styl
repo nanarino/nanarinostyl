@@ -16,7 +16,7 @@
         width var(--width-aside, unset)
         overflow-x hidden
         background-color rgb(var(--white))
-        z-index 100
+        z-index 1000
         top 0
         bottom 0
         
@@ -47,8 +47,10 @@
         transition width .3s, padding-left .3s, padding-right .3s, border-left .3s, border-right .3s
 
     &-header
-        --box-shadow-color @--box-shadow-color
         box-shadow var(--box-shadow-divider-bottom)
     &-footer
-        --box-shadow-color @--box-shadow-color
         box-shadow var(--box-shadow-divider-top)
+    &-header
+    &-footer
+        --box-shadow-color @--box-shadow-color
+        
