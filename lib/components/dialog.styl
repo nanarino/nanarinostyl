@@ -1,18 +1,33 @@
-.{prefix}-dialog
-    z-index 1000
-    inset 0
-    margin auto
-    padding 16px 24px
+dialog(z = 0)
+    if z
+        z-index z
     border 0
-    border-radius var(--border-radius-lg)
     box-shadow var(--box-shadow-drop-bottom)
+    --box-shadow-color var(--gray-6)
+    background-color rgb(var(--white))
 
     form[method=dialog]
         display grid
-        button:where(:last-child)
-            place-self end
+        gap 8px
+
+
+.{prefix}-popover
+    dialog()
+    border-radius var(--border-radius-md)
+    padding .5em
+    inset unset
+    // 用户代理
+    //     position fixed
+
+.{prefix}-dialog
+    dialog(100)
+    border-radius var(--border-radius-lg)
+    padding 16px 24px
+    // 用户代理
+    //     .show() -> position absolute
+    //     .showModal() -> position fixed
     
-    &::backdrop
+    &[open]::backdrop
         // cursor not-allowed
         pointer-events none
         backdrop-filter brightness(.8) blur(1px)

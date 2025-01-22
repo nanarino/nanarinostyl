@@ -4,36 +4,75 @@ title: 对话框
 ---
 
 import T from "docs/components/T.astro"
+import { Icon } from "astro-icon/components"
 import {components} from 'docs/components/markdown/index.mdx'
 export {components}
 
 
 # dialog
 
-默认的`[open]`, 也可以调用 `.show()` 显示
+普通弹框。可以直接操作 `dialog[open]`, 也可以调用 `.show()/.close()` 显隐
 
-<T tag="button" class="☘-button" onclick="this.nextElementSibling.show()">show</T>
-<T tag="dialog" class="☘-dialog" open>
-    <T tag="p" class="☘-paragraph">Click to close 👇</T>
+用户代理默认 `position:absolute`
+
+<T 
+    tag="button"
+    class="☘-button"
+    onclick="this.nextElementSibling.show()"
+    title="show"
+> 设置Cookie取用 </T>
+<T tag="dialog" class="☘-dialog" open style={{
+    position: 'fixed',
+    inset: 'unset',
+    bottom: '2em',
+    right: '2em',
+    width: '260px',
+}}>
+    <T tag="p" class="☘-paragraph" data-size='4' style="margin-top:.5em">追踪 Cookie</T>
+    <T tag="p" class="☘-paragraph">我们使用这些来分析网站流量</T>
     <form method="dialog">
-        <T tag="button" class="☘-button">OK</T>
+        <T tag="button" class="☘-button" style="place-self:end">拒绝</T>
     </form>
 </T>
 
 ```pug
-dialog.☘-dialog(open)
-    p.☘-paragraph Click to close 👇
+dialog.☘-dialog(open style={
+    position: 'fixed',
+    inset: 'unset',
+    bottom: '2em',
+    right: '2em',
+    width: '260px',
+})
+    p.☘-paragraph(data-size=4 style="margin-top:.5em") 追踪 Cookie
+    p.☘-paragraph 我们使用这些来分析网站流量
     form(method="dialog")
-        button.☘-button OK
+        button.☘-button(style='place-self:end') 拒绝
 ```
+
+在 `dialog:not([popover]) form[method=dialog]` 里 `button` 或 `input[type=submit]` 都能触发关闭
+
+
 
 ## modal
 
-调用 `.showModal()` 显示的对话框拥有全屏遮罩（`::backdrop`）和 <T tag='kbd' class='☘-kbd'>Esc</T> 键触发关闭的行为
+模态弹框。务必调用 `.showModal()` 显示
 
-<T tag="button" class="☘-button" onclick="this.nextElementSibling.showModal()">show modal</T>
+相比于 `.show()` 打开的，对话框拥有全屏遮罩（`::backdrop`）    
+且默认会被 <T tag='kbd' class='☘-kbd'>Esc</T> 键关闭
+
+用户代理默认 `position:fixed`
+
+<T 
+    tag="button"
+    class="☘-button"
+    onclick="this.nextElementSibling.showModal()"
+    title="show modal"
+> 手机莫点 </T>
 <T tag="dialog" class="☘-dialog">
-    <T tag="p" class="☘-paragraph">Press <T tag='kbd' class='☘-kbd'>Esc</T>  to close. 🤣👉📱</T>
+    <T 
+        tag="p" 
+        class="☘-paragraph"
+    >按 <T tag='kbd' class='☘-kbd'>Esc</T> 才能关闭 🤣👉📱</T>
 </T>
 
 ```pug
@@ -43,3 +82,89 @@ dialog.☘-dialog
         kbd.☘-kbd Esc
         | to close. 🤣👉📱
 ```
+
+
+
+## popover
+
+气泡弹框。`[popover=auto]` 默认点击外部自动关闭气泡
+
+<div class="popover-wrapper" style={{
+    width: 'fit-content',
+    position: 'relative',
+    'anchor-name': '--popover-wrapper'
+}}>
+    <T 
+        tag="button"
+        class="☘-button"
+        popovertarget="pop"
+        title="toggle popover"
+    > 連絡先 </T>
+    <T 
+        tag="dialog"
+        class="☘-popover"
+        popover="auto"
+        id="pop"
+        style={{
+            'position-anchor': '--popover-wrapper',
+            left: 'anchor(left)',
+            right: 'anchor(right)',
+            top: 'calc(anchor(bottom) + 8px)',
+        }}
+    >
+        <form method="dialog">
+            <T tag="button" class="☘-button" data-primary style="
+                --background-color-button:var(--blue-8);
+                --background-color-button-focus:var(--blue-7);
+            ">
+                <Icon 
+                    name="logo/outline/facebook"
+                    width={22}
+                    height={22}
+                />
+            </T>
+            <T tag="button" class="☘-button" style="--color-button:var(--blue-6)">
+                <Icon 
+                    name="logo/outline/twitter"
+                    width={22}
+                    height={22}
+                />
+            </T>
+        </form>
+    </T>
+</div>
+
+```pug
+.popover-wrapper(style={
+    width: 'fit-content',
+    position: 'relative',
+    'anchor-name': '--popover-wrapper'
+})
+    button.☘-button(popovertarget="pop") 連絡先
+    dialog#pop.☘-popover(popover="auto" style={
+        'position-anchor': '--popover-wrapper',
+        left: 'anchor(left)',
+        right: 'anchor(right)',
+        top: 'calc(anchor(bottom) + 8px)',
+    })
+        form(method="dialog")
+            button.☘-button(data-primary style=`
+                --background-color-button:var(--blue-8);
+                --background-color-button-focus:var(--blue-7);
+            `)
+                svg(
+                    data-icon='logo/outline/facebook'
+                    width=22
+                    height=22
+                )
+            button.☘-button(style="--color-button:var(--blue-6)")
+                svg(
+                    data-icon='logo/outline/twitter'
+                    width=22
+                    height=22
+                )
+```
+
+案例使用 和实验性的 [`position:anchor`](https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor) 实现
+
+你完全可以用 `[popover]:popover-open+.☘-dialog` 或者仅使用 `dialog.☘-dialog`同js事件 模拟出这个功能
