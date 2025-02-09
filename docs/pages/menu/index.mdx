@@ -81,10 +81,19 @@ import 'nanarinostyl'
 
 `[data-primary]` 可以让有颜色的标签改变为以下4种目标颜色之一。
 
-- <T tag='code' class='☘-code'>[data-primary]</T>
-- <T tag='code' class='☘-code' data-primary="success">[data-primary=success]</T>
-- <T tag='code' class='☘-code' data-primary="danger">[data-primary=danger]</T>
-- <T tag='code' class='☘-code' data-primary="warning">[data-primary=warning]</T>
+<ul>
+{
+    ['', 'success', 'danger', 'warning'].map(primary => 
+        <T
+            tag='li'
+            class="☘-list"
+            data-primary={primary}
+        >
+            <T tag='code' class='☘-code ☘-font-mono'>[data-primary{primary && `=${primary}`}]</T>
+        </T>
+    )
+}
+</ul>
 
 需要 `[data-primary]` 才能额外获得主题色的组件往往具有局部变量，如 `button` 的 `--color-button`    
 不需要 `[data-primary]` 就具备主题色的组件往往具有全局变量，如 `tag` 的 `--color-tag`

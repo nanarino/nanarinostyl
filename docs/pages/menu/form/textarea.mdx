@@ -53,7 +53,7 @@ textarea.☘-textarea.☘-font-mono(
 
 <Grid inline>
 {
-    ['primary', 'success', 'danger', 'warning'].map(primary => 
+    ['', 'success', 'danger', 'warning'].map(primary => 
         <T
             tag="textarea"
             class="☘-textarea"
@@ -73,7 +73,7 @@ textarea.☘-textarea.☘-font-mono(
 </Grid>
 
 ```pug
-each primary in ['primary', 'success', 'danger', 'warning']
+each primary in ['', 'success', 'danger', 'warning']
     textarea.☘-textarea(
         title=primary
         placeholder=primary

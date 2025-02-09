@@ -29,10 +29,10 @@
         "stylus": ">=0.64.0"
     },
     "devDependencies": {
-        "@astrojs/mdx": "4.0.4",
+        "@astrojs/mdx": "4.0.8",
         "@holy-two/data-theme": "^0.0.6",
         "@types/node": "^22.10.5",
-        "astro": "^5.1.4",
+        "astro": "^5.2.5",
         "astro-icon": "^1.1.5",
         "copy-to-clipboard": "^3.3.3",
         "css-doodle": "^0.34.11",

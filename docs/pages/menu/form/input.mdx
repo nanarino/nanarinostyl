@@ -97,7 +97,7 @@ input.☘-input.☘-font-mono(
 
 <Grid inline>
 {
-    ['primary', 'success', 'danger', 'warning'].map(primary => 
+    ['', 'success', 'danger', 'warning'].map(primary => 
         <T
             tag='input'
             class="☘-input"
@@ -117,7 +117,7 @@ input.☘-input.☘-font-mono(
 </Grid>
 
 ```pug
-each primary in ['primary', 'success', 'danger', 'warning']
+each primary in ['', 'success', 'danger', 'warning']
     input.☘-input(
         title=primary
         placeholder=primary
