@@ -20,24 +20,6 @@ set_title_styl(size=6)
         ))
 
 
-set_has_prefix()
-    &:where([data-has-prefix])
-        // --color-title-prefix var(--primary-6)
-
-        position relative
-        padding-left calc(var(--font-offset-parent) * 3)
-
-        &::before
-            position absolute
-            content ""
-            width 4px
-            border-radius 2px
-            left 0
-            top var(--font-offset-parent)
-            bottom var(--font-offset-parent)
-            background-color rgb(var(--color-title-prefix, var(--primary-6)))
-
-
 .{prefix}-title
     // &>*
     //     display inline-flex
@@ -49,7 +31,6 @@ set_has_prefix()
     font-weight normal
     margin 1em 0
     set_title_styl()
-    set_has_prefix()
     &-subtitle
         margin-left var(--font-offset-parent)
         vertical-align bottom
@@ -62,3 +43,31 @@ set_has_prefix()
             set_has_prefix()
         &:where([data-size=\"{i}\"])
             set_title_styl(i)
+
+
+set_prefix()
+    // --color-title-prefix var(--primary-6)
+
+    position relative
+    padding-left calc(var(--font-offset-parent) * 3)
+
+    &::before
+        position absolute
+        content ""
+        width 4px
+        border-radius 2px
+        left 0
+        top var(--font-offset-parent)
+        bottom var(--font-offset-parent)
+        background-color rgb(var(--color-title-prefix, var(--color-blockquote-prefix, var(--gray-4))))
+        ^[-1]:where([data-primary])
+            --color-title-prefix var(--primary-6)
+
+
+.{prefix}-blockquote
+    margin 0
+    color rgb(var(--color-blockquote, var(--gray-7)))
+
+.{prefix}-blockquote
+.{prefix}-title:where([data-has-prefix])
+    set_prefix()

@@ -66,3 +66,19 @@ div(style={width: "20em"})
         | 半壁见海日，空中闻天鸡。 千岩万转路不定，迷花倚石忽已暝。
         | 熊咆龙吟殷岩泉，栗深林兮惊层巅。 云青青兮欲雨，水澹澹兮生烟。
 ```
+
+
+## `<blockquote>`
+
+markdown中的以 `> ` 为行首的段落即为 `<blockquote><p>`
+
+<T tag="blockquote" class="☘-blockquote">
+    二月二，龍抬頭。
+</T>
+
+```pug
+blockquote.☘-blockquote
+    .☘-paragraph 二月二，龍抬頭。
+```
+
+全局变量 `--color-blockquote`、`--color-blockquote-prefix` 可以自定义文字RGB值、前缀主题颜色RGB值
