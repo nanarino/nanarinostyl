@@ -20,6 +20,7 @@ const base = import.meta.env.BASE_URL + "menu/"
         </aside>
         <main class={`${prefix}-layout-content`}>
             <slot />
+            <div class="progress"></div>
         </main>
     </section>
     <Footer />
@@ -42,4 +43,48 @@ const base = import.meta.env.BASE_URL + "menu/"
             overflow-y auto
             scroll-behavior smooth
             padding 2em
+
+            /*
+            border-top 1px solid
+            border-image linear-gradient(\
+                to right,\
+                rgb(var(--magenta-5)) 0,\
+                rgb(var(--purple-5)) var(--timeline-y-main),\
+                transparent var(--timeline-y-main)\
+            ) 1
+            */
+
+
+            @property --timeline-y-main
+                syntax '<percentage>'
+                inherits false
+                initial-value 0%
+            
+
+            scroll-timeline-name --progress-y-main
+
+            @keyframes progress-y-main
+                from
+                    --timeline-y-main 0%
+                to
+                    --timeline-y-main 100%
+
+
+            .progress
+                position fixed
+                left 0
+                right 0
+                bottom 0
+                height 22px
+                width 100vw
+                animation-name progress-y-main
+                animation-duration 1ms
+                animation-direction alternate
+                animation-timeline --progress-y-main
+                background-image linear-gradient(\
+                    to right,\
+                    rgb(var(--magenta-6)) 0,\
+                    rgb(var(--purple-6)) var(--timeline-y-main),\
+                    transparent var(--timeline-y-main)\
+                )
 </style>
