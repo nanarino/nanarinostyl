@@ -15,6 +15,8 @@ src 目錄拆分 源碼引入時需要修改
 
 移除 [`fit-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content) 的兼容前綴 ~~`-moz-`~~
 
+移除 [`mask`](https://developer.mozilla.org/en-US/docs/Web/CSS/mask) 的兼容前綴 ~~`-webkit-`~~
+
 ## v0.6.0
 
 程式塊樣式修改并添加以下 css 變數
