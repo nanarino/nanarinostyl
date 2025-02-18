@@ -1,1 +1,0 @@
-import{p as t}from"./prefix.DdUm4vFL.js";document.addEventListener("astro:after-swap",()=>{document.documentElement.dataset.theme=window.theme});window.addEventListener(`${t}-theme`,e=>{document.documentElement.dataset.theme=e.detail,localStorage.setItem("theme",e.detail)});
