@@ -11,3 +11,13 @@ if (CSS && "paintWorklet" in CSS) {
  * Web Components
  */
 import "css-doodle"
+
+/**
+ * Auto move to #anchor
+ */
+window.addEventListener("load", () => {
+    const anchor = location.hash
+    if (!anchor) return
+    const h2 = document.querySelector(anchor)
+    h2?.scrollIntoView({ behavior: "smooth" })
+})

@@ -1,7 +1,8 @@
 {
     "recommendations": [
-        "thisismanta.stylus-supremacy",
+        // "thisismanta.stylus-supremacy",
         "astro-build.astro-vscode",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "sysoev.language-stylus"
     ]
 }
