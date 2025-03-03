@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      style-to-object:
-        specifier: ^1.0.8
-        version: 1.0.8
     devDependencies:
       '@astrojs/mdx':
         specifier: 4.0.8
@@ -43,6 +39,9 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(js-cool@5.19.2)
       smooth-corners:
+        specifier: ^1.0.8
+        version: 1.0.8
+      style-to-object:
         specifier: ^1.0.8
         version: 1.0.8
       stylus:

@@ -112,7 +112,11 @@ input.☘-input.☘-font-mono(
     class="☘-input"
     title="custom"
     placeholder="custom"
-    style="--color-input: var(--gold-6)"
+    style="
+        --color-input: var(--gold-6);
+        --background-color-selection: var(--gold-9);
+        --color-selection: var(--gold-1);
+    "
 />
 </Grid>
 
@@ -126,7 +130,11 @@ each primary in ['', 'success', 'danger', 'warning']
 input.☘-input(
     title="custom"
     placeholder="custom"
-    style="--color-input: var(--gold-6)"
+    style={
+        '--color-input': 'var(--gold-6)',
+        '--background-color-selection': 'var(--gold-9)',
+        '--color-selection': 'var(--gold-1)',
+    }
 )
 ```
 
@@ -238,7 +246,9 @@ input.☘-input(
         />
     </T>
     <T class="☘-input-wrapper" style="
-        --color-input-wrapper: var(--blue-6)
+        --color-input-wrapper: var(--blue-6);
+        --background-color-selection: var(--blue-9);
+        --color-selection: var(--blue-1);
     ">
         <T tag="input" class="☘-input" title="with-suffix" />
         <Icon
@@ -258,6 +268,8 @@ input.☘-input(
     svg.☘-input-suffix(role="button" aria-label="close" width=16 height=16)
 .☘-input-wrapper(style={
     '--color-input-wrapper': 'var(--blue-6)'
+    '--background-color-selection': 'var(--blue-9)',
+    '--color-selection': 'var(--blue-1)',
 })
     input.☘-input(title='with-suffix')
     svg.☘-input-suffix(role="button" aria-label="close" width=16 height=16)

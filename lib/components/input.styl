@@ -125,8 +125,7 @@ input.{prefix}-input
         --color-input-wrapper var(--primary-6)
         
         for tag in buttons
-            &:has({tag}:not(.{prefix}-input-prefix))
-            &:has({tag}:not(.{prefix}-input-suffix))
+            &:has({tag}:not(.{prefix}-input-prefix):not(.{prefix}-input-suffix))
                 background-color rgb(var(--color-input-wrapper))
             
         
@@ -150,7 +149,7 @@ input.{prefix}-input
             border none
             background none
             &[disabled]
-                cursor not-allowed 
+                cursor not-allowed
 
     .{prefix}-input-prefix
     .{prefix}-input-suffix

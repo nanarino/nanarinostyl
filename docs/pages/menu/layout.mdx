@@ -38,13 +38,21 @@ export {components}
 在之前的实现是 [_`ul>li`_](https://github.com/nanarino/nanarinostyl/blob/main/docs/components/menu/list.astro)
 
 - `li.☘-menu-submenu[data-folded]` 标记当前折叠的子菜单
-    - `[data-selected]` 标记当前选中的叶子
+    - `[data-selected|data-active]` 标记当前选中的叶子
 
 <Menu />
 
-全局变量 `--color-menu` 可以自定义菜单主题颜色RGB值
 
-以下全局变量控制内边距
+菜单有以下全局变量
 
+- `--color-menu` 菜单颜色（默认主题色）
+- `--color-menu-item` 菜单字体颜色（默认黑）
+- `--color-menu-item-hover` 鼠标悬停菜单字体颜色（默认菜单颜色）
+- `--color-menu-item-active` 当前所在菜单字体颜色（默认白）
+- `--background-color-menu-item` 菜单背景颜色（默认透明）
+- `--background-color-menu-item-hover` 鼠标悬停菜单背景颜色（默认透明）
+- `--background-color-menu-item-active` 当前所在菜单背景颜色（默认菜单颜色）
 - `--padding-horizonal-menu-item` 纵向内边距
 - `--padding-vertical-menu-item` 横向内边距
+
+全局变量 `--border-radius-md` 调整菜单圆角很常见

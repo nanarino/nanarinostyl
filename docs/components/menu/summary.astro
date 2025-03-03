@@ -51,7 +51,7 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0]
                 return (
                     <div
                         class={`${prefix}-menu-item ${prefix}-watermark`}
-                        data-selected
+                        data-active
                         style={{
                             order: getName(item.path) ? 1 : 0,
                             "--opacity-watermark": 1,

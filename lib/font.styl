@@ -12,6 +12,6 @@
 .{prefix}-connot-select // 无法选中和拖拽
     user-drag none
     user-select none
-::selection // 被选中
-    background-color rgb(var(--primary-9))
-    color rgb(var(--primary-1))
+*::selection // 被选中
+    background-color rgb(var(--background-color-selection, var(--primary-9)))
+    color rgb(var(--color-selection, var(--primary-1)))
