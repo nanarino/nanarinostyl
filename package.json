@@ -29,7 +29,7 @@
         "stylus": ">=0.64.0"
     },
     "devDependencies": {
-        "@astrojs/mdx": "4.0.8",
+        "@astrojs/mdx": "^4.2.2",
         "@holy-two/data-theme": "^0.0.6",
         "@types/node": "^22.13.14",
         "astro": "^5.5.5",
