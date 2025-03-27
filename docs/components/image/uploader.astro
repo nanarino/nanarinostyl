@@ -5,7 +5,11 @@ import { Icon } from "astro-icon/components"
 
 const props = Astro.props
 interface Props {
+    /** 不傳時隨機uuid */
     id?: string
+    /** 不傳時取id */
+    name?: string
+    /** 不傳時取name */
     title?: string
     disabled?: boolean
     style: Record<string, any> | string
@@ -13,8 +17,9 @@ interface Props {
 }
 const accept = [`image/gif`, `image/jpeg`, `image/png`] as const
 
-if(!props.disabled && !props.id){
-    throw new Error("`uploader`必须传入`id`或者`disabled`")
+let uuid: string
+if (!props.id) {
+    uuid = crypto.randomUUID()
 }
 ---
 
@@ -26,8 +31,9 @@ if(!props.disabled && !props.id){
     <input
         type="file"
         accept={accept.toString()}
-        id={props.id||''}
-        title={props.title || props.id}
+        id={props.id || uuid}
+        name={props.name || props.id || uuid}
+        title={props.title || props.name || ""}
         class={`${prefix}-input`}
         disabled={props.disabled}
     />
@@ -35,15 +41,14 @@ if(!props.disabled && !props.id){
 </span>
 {
     props.disabled ? (<></>) : (
-        <script define:vars={{ id: props.id, accept }}>
-            const uploader = document.getElementById(id);
-            uploader.onchange = (e) => {
+        <script define:vars={{ id: props.id || uuid, accept }}>
+            document.getElementById(id).onchange = function(e){
                 const file = e.target.files[0]
                 if (accept.some((t) => new RegExp(t).test(file.type))) {
                     const reader = new FileReader()
                     reader.readAsDataURL(file)
                     reader.onload = () => {
-                        uploader.parentElement.style.backgroundImage = `url(${reader.result})`
+                        this.parentElement.style.backgroundImage = `url(${reader.result})`
                     }
                 }
             }

@@ -3,9 +3,12 @@ import prefix from "docs/scripts/prefix"
 import attrs from "docs/scripts/server/dataset"
 const props = Astro.props
 interface Props {
+    /** 不傳時隨機uuid */
     id?: string
+    /** 不傳時取id */
+    name?: string
+    /** 不傳時取name */
     title?: string
-    name: string
     checked?: boolean
     disabled?: boolean
     class?: string
@@ -13,8 +16,9 @@ interface Props {
     dataset?: Record<string, any>
     onchange?: string
 }
-if (!props.name) {
-    throw new Error("`radio`必须传入`name`")
+let uuid: string
+if (!props.id) {
+    uuid = crypto.randomUUID()
 }
 ---
 
@@ -26,12 +30,12 @@ if (!props.name) {
     <input
         type="radio"
         class={`${prefix}-input`}
-        id={props.id}
-        name={props.name}
+        id={props.id || uuid}
+        name={props.name || props.id || uuid}
+        title={props.title || props.name || ""}
         checked={props.checked}
         disabled={props.disabled}
         onchange={props.onchange}
-        title={props.title || props.id || props.name}
     />
-    <label class={`${prefix}-radio-label`} for={props.id}><slot /></label>
+    <label class={`${prefix}-radio-label`} for={props.id || uuid}><slot /></label>
 </span>

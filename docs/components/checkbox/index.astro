@@ -3,9 +3,12 @@ import prefix from "docs/scripts/prefix"
 import attrs from "docs/scripts/server/dataset"
 const props = Astro.props
 interface Props {
+    /** 不傳時隨機uuid */
     id?: string
-    title?: string
+    /** 不傳時取id */
     name?: string
+    /** 不傳時取name */
+    title?: string
     checked?: boolean
     disabled?: boolean
     class?: string
@@ -14,8 +17,9 @@ interface Props {
     onchange?: string
 }
 
-if (!props.id && !props.name && !props.title) {
-    throw new Error("`checkbox`必须传入`id`或者`name`或者`title`")
+let uuid: string
+if (!props.id) {
+    uuid = crypto.randomUUID()
 }
 ---
 
@@ -27,12 +31,12 @@ if (!props.id && !props.name && !props.title) {
     <input
         type="checkbox"
         class={`${prefix}-input`}
-        id={props.id}
-        name={props.name || props.id}
+        id={props.id || uuid}
+        name={props.name || props.id || uuid}
+        title={props.title || props.name || ""}
         checked={props.checked}
         disabled={props.disabled}
         onchange={props.onchange}
-        title={props.title || props.id || props.name}
     />
-    <label class={`${prefix}-checkbox-label`} for={props.id}><slot /></label>
+    <label class={`${prefix}-checkbox-label`} for={props.id || uuid}><slot /></label>
 </span>

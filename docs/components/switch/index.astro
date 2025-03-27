@@ -3,18 +3,25 @@ import prefix from "docs/scripts/prefix";
 import dataset from "docs/scripts/server/dataset";
 const props = Astro.props;
 interface Props {
-    id?: string;
-    title?: string;
-    name?: string;
-    checked?: boolean;
-    disabled?: boolean;
-    class?: string;
-    style?: Record<string, any> | string;
-    dataset?: Record<string, any>;
+    /** 不傳時隨機uuid */
+    id?: string
+    /** 不傳時取id */
+    name?: string
+    /** 不傳時取name */
+    title?: string
+    checked?: boolean
+    disabled?: boolean
+    class?: string
+    style?: Record<string, any> | string
+    dataset?: Record<string, any>
 }
 let slots = "";
 if (Astro.slots.has("default")) {
     slots = await Astro.slots.render("default");
+}
+let uuid: string
+if (!props.id) {
+    uuid = crypto.randomUUID()
 }
 ---
 
@@ -26,11 +33,11 @@ if (Astro.slots.has("default")) {
     <input
         type="checkbox"
         class={`${prefix}-input`}
-        id={props.id}
-        name={props.name || props.id}
+        id={props.id || uuid}
+        name={props.name || props.id || uuid}
+        title={props.title || props.name || ""}
         checked={props.checked}
         disabled={props.disabled}
-        title={props.title || props.id || props.name}
     />
     {
         slots ? (
