@@ -5,16 +5,89 @@
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="title"> <a href="#title" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <symbol id="ai:local:logo/outline/clover" viewBox="0 0 682.667 682.667"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="30"><defs><clipPath id="a" clipPathUnits="userSpaceOnUse"><path d="M0 512h512V0H0Z"/></clipPath></defs><g clip-path="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 682.667)"><path d="m248.57 263.43 56.441-56.441a271.52 271.52 0 0 1 191.99-79.522M248.57 263.43v155.71c0 42.972-34.89 77.86-77.86 77.86s-77.85-34.888-77.85-77.86c-42.972 0-77.86-34.88-77.86-77.85s34.888-77.86 77.86-77.86zm0 0L98.16 223.129c-41.509-11.118-66.17-53.848-55.052-95.356C54.234 86.264 96.956 61.6 138.464 72.72c11.118-41.508 53.848-66.171 95.356-55.053 41.508 11.126 66.17 53.848 55.052 95.356zm0 0 150.407-40.302c41.51-11.118 84.23 13.544 95.356 55.052 11.118 41.509-13.545 84.238-55.053 95.356 11.118 41.508-13.544 84.229-55.052 95.355-41.509 11.119-84.238-13.543-95.356-55.052Zm-93.428 93.428 93.428-93.428m-66.067-114.426 66.066 114.427m114.427 66.066L248.57 263.43"/></g></g></symbol><use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> <code class="na-code na-font-mono">title</code> </h2> 
 <p class="na-paragraph na-font-serif"> 输入框的规范的提示属性，没有提供 <code class="na-code na-font-mono">placeholder</code> 的情况下需要传入 <code class="na-code na-font-mono">title</code> </p>
 <p class="na-paragraph na-font-serif"> 如果输入框 <code class="na-code na-font-mono">input#id</code> 有对应的 <code class="na-code na-font-mono">label[for=id]</code>，则只需要至少其中之一传入 <code class="na-code na-font-mono">title</code> </p>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">input(title=&#39;username&#39;)
-
-input#uname
-lable(for=&#39;uname&#39; title=&#39;username&#39;) 用户名
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;username&#39;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">#uname</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">lable</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">for</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;uname&#39;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;username&#39;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 用户名</span></span></code></pre>
 <p class="na-paragraph na-font-serif"> 另外 没有内容文字的按钮和超链接也需要添加 <code class="na-code na-font-mono">title</code> </p>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="focus-visible"> <a href="#focus-visible" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> <code class="na-code na-font-mono">:focus-visible</code> </h2> 
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">&amp;:focus-visible
-    outline-color: rgb(var(--black))
-</code></pre>
+<pre data-language="sass" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">&amp;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">:focus-visible</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">    outline-color</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">rgb(var(</span><span style="
+    --color-code: from #E36209 r g b;
+    --color-code-dark: from #FFAB70 r g b;
+">--black</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">))</span></span></code></pre>
 <p class="na-paragraph na-font-serif"> 使用键盘获取焦点时应该强制实现这个样式。默认是黑白，事实上浏览器已经实现。 </p>
 <ul>
 <li class="na-list"><code class="na-code na-font-mono">button</code> tab或点击一次后回车触发

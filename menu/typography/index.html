@@ -91,10 +91,42 @@
 <li class="na-list"><code class="na-code na-font-mono">--font-size-body</code> （部分组件有覆写）</li>
 </ul>
 <p class="na-paragraph na-font-serif"> 可以像下面这样写以改变全局变量使所有元件默认大小变成3级（即 <code class="na-code na-font-mono">&lt;h5/&gt;</code> 的大小） </p>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">body
-    --font-size-body: var(--font-size-3)
-    --line-height-body: var(--line-height-3)
-</code></pre>
+<pre data-language="sass" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">body</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">    --font-size-body</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">var(</span><span style="
+    --color-code: from #E36209 r g b;
+    --color-code-dark: from #FFAB70 r g b;
+">--font-size-3</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">    --line-height-body</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">var(</span><span style="
+    --color-code: from #E36209 r g b;
+    --color-code-dark: from #FFAB70 r g b;
+">--line-height-3</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">)</span></span></code></pre>
 <p class="na-paragraph na-font-serif"> 但标题等覆写全局变量的组件受到的影响不同，需要修改表格里的其他alias变量（如 <code class="na-code na-font-mono">--font-size-h3</code>）来控制 </p> <div class="progress astro-m5fpuu4z"></div> </main> </section> <footer class="na-layout-footer astro-vdvlf67m">
 &nbsp; &nbsp; &nbsp;
 <!-- `&nbsp;` 空格是为了视觉重心平衡左右 -->

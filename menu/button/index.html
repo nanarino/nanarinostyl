@@ -5,49 +5,398 @@
 <button class="na-button" onclick="
 window.dispatchEvent(new CustomEvent('na-message'))
 ">按</button>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">button.na-button(onclick=function(){
-    window.dispatchEvent(
-        new CustomEvent(&#39;na-message&#39;, { detail: &#39;☘&#39; })
-    )
-}) 按
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">button</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-button</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">onclick</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">function</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">(){</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">    window.</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">dispatchEvent</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">        new</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> CustomEvent</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">(</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;na-message&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">, { detail: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">☘</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> })</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">    )</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">}</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 按</span></span></code></pre>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="sm--lg"> <a href="#sm--lg" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <symbol id="ai:local:logo/outline/clover" viewBox="0 0 682.667 682.667"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="30"><defs><clipPath id="a" clipPathUnits="userSpaceOnUse"><path d="M0 512h512V0H0Z"/></clipPath></defs><g clip-path="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 682.667)"><path d="m248.57 263.43 56.441-56.441a271.52 271.52 0 0 1 191.99-79.522M248.57 263.43v155.71c0 42.972-34.89 77.86-77.86 77.86s-77.85-34.888-77.85-77.86c-42.972 0-77.86-34.88-77.86-77.85s34.888-77.86 77.86-77.86zm0 0L98.16 223.129c-41.509-11.118-66.17-53.848-55.052-95.356C54.234 86.264 96.956 61.6 138.464 72.72c11.118-41.508 53.848-66.171 95.356-55.053 41.508 11.126 66.17 53.848 55.052 95.356zm0 0 150.407-40.302c41.51-11.118 84.23 13.544 95.356 55.052 11.118 41.509-13.545 84.238-55.053 95.356 11.118 41.508-13.544 84.229-55.052 95.355-41.509 11.119-84.238-13.543-95.356-55.052Zm-93.428 93.428 93.428-93.428m-66.067-114.426 66.066 114.427m114.427 66.066L248.57 263.43"/></g></g></symbol><use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> <code class="na-code na-font-mono">.sm</code> &amp; <code class="na-code na-font-mono">.lg</code> </h2> 
 <button class="na-button sm">更小</button>
 <button class="na-button lg">更大</button>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">button.na-button.sm 更小
-button.na-button.lg 更大
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">button</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-button.sm</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 更小</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">button</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-button.lg</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 更大</span></span></code></pre>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="data-primary"> <a href="#data-primary" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> <code class="na-code na-font-mono">data-primary</code> </h2> 
 <p class="na-paragraph na-font-serif"> <code class="na-code na-font-mono">button.na-button[data-primary]</code> 这个属性需要启用后才能继承主题和拥有某些局部样式 </p>
 <button class="na-button" data-primary="true">导出</button>
 <button class="na-button" data-primary="success">创建</button>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">button.na-button(data-primary) 导出
-button.na-button(data-primary=&#39;success&#39;) 创建
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">button</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-button</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-primary</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 导出</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">button</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-button</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-primary</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;success&#39;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 创建</span></span></code></pre>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="disabled"> <a href="#disabled" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> <code class="na-code na-font-mono">disabled</code> </h2> 
 <button class="na-button" disabled>导入</button>
 <button class="na-button" data-primary="danger" disabled>删除</button>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">button.na-button(data-primary disabled) 导入
-button.na-button(data-primary=&#39;danger&#39; disabled) 删除
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">button</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-button</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-primary</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> disabled</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 导入</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">button</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-button</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-primary</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;danger&#39;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> disabled</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 删除</span></span></code></pre>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="data-square--data-round"> <a href="#data-square--data-round" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> <code class="na-code na-font-mono">data-square</code> &amp; <code class="na-code na-font-mono">data-round</code> </h2> 
 <p class="na-paragraph na-font-serif"> 方块的按钮，以及圆按钮 </p>
 <button title="关机" class="na-button" style="padding: 5px; margin: 5px" onclick="window.close()" data-primary="danger" data-square><svg width="22" height="22" data-icon="interactive-button/outline/poweroff">   <symbol id="ai:local:interactive-button/outline/poweroff" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-width="4" d="M15.5 9.274C10.419 12.214 7 17.708 7 24c0 9.389 7.611 17 17 17s17-7.611 17-17c0-6.292-3.419-11.786-8.5-14.726M24 5v22"/></symbol><use href="#ai:local:interactive-button/outline/poweroff"></use>  </svg></button><button title="关机" class="na-button" style="padding: 5px; margin: 5px" onclick="window.close()" data-primary="danger" data-round><svg width="22" height="22" viewBox="0 0 48 48" data-icon="interactive-button/outline/poweroff">   <use href="#ai:local:interactive-button/outline/poweroff"></use>  </svg></button>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">each k in [&#39;square&#39;, &#39;round&#39;]
-    button.na-button(
-        title=&quot;关机&quot;
-        data-primary=&quot;danger&quot;
-        data-round=k==&#39;round&#39;
-        data-square=k==&#39;square&#39;
-        style=&quot;padding: 5px; margin: 5px&quot;
-        onclick=window.close
-    )
-        svg(
-            data-icon=&#39;interactive-button/outline/poweroff&#39;
-            width=22
-            height=22
-        )
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">each</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> k </span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">in</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> [</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;square&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">, </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;round&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">]</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    button</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-button</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;关机&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        data-primary</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;danger&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        data-round</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=k</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">==</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;round&#39;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        data-square</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=k</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">==</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;square&#39;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;padding: 5px; margin: 5px&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        onclick</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=window.close</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">    )</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        svg</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            data-icon</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;interactive-button/outline/poweroff&#39;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            width</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">22</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            height</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">22</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">        )</span></span></code></pre>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="custom-style"> <a href="#custom-style" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> custom style </h2> 
 <p class="na-paragraph na-font-serif"> 全局变量控制内边距 </p>
 <ul>
@@ -75,24 +424,214 @@ button.na-button(data-primary=&#39;danger&#39; disabled) 删除
 this.nextElementSibling.innerText = window.event.target.files[0].name
 "/>
 <label for="uploader" title="附件">还未选择附件</label>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">input.na-input.na-button#uploader(
-    type=&quot;file&quot;
-    data-primary
-    onchange=function(e){
-        this.nextElementSibling.innerText = e.target.files[0].name
-    }
-)
-label(title=&quot;附件&quot; for=&quot;uploader&quot;) 还未选择附件
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-button#uploader</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;file&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    data-primary</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    onchange</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">function</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">(</span><span style="
+    --color-code: from #E36209 r g b;
+    --color-code-dark: from #FFAB70 r g b;
+">e</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">){</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">        this</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">.nextElementSibling.innerText </span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">=</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> e.target.files[</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">0</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">].name</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">    }</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">label</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;附件&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> for</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;uploader&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 还未选择附件</span></span></code></pre>
 <h3 class="na-title na-font-serif astro-6bg4rdkg" id="prefix"> <a href="#prefix" class="na-link na-connot-select astro-6bg4rdkg"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-6bg4rdkg" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-6bg4rdkg">###</span> </a> prefix </h3> 
 <div style="display:inline-grid;gap:1em" class="astro-rhkvn4pf"> <div class="na-input-wrapper"><svg width="18" height="18" class="na-input-prefix" data-icon="interactive-button/outline/upload">   <symbol id="ai:local:interactive-button/outline/upload" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-width="4" d="M14.93 17.071 24.001 8l9.071 9.071m-9.07 16.071v-25M40 35v6H8v-6"/></symbol><use href="#ai:local:interactive-button/outline/upload"></use>  </svg><input class="na-button na-input" title="upload" type="file"/></div><div class="na-input-wrapper" data-primary><svg width="18" height="18" viewBox="0 0 48 48" class="na-input-prefix" data-icon="interactive-button/outline/upload">   <use href="#ai:local:interactive-button/outline/upload"></use>  </svg><input class="na-button na-input" title="upload" type="file"/></div><div class="na-input-wrapper"><svg width="18" height="18" viewBox="0 0 48 48" class="na-input-prefix" data-icon="interactive-button/outline/upload">   <use href="#ai:local:interactive-button/outline/upload"></use>  </svg><input class="na-button na-input" title="upload" data-primary type="file"/></div><div class="na-input-wrapper"><svg width="18" height="18" viewBox="0 0 48 48" class="na-input-prefix" data-icon="interactive-button/outline/upload">   <use href="#ai:local:interactive-button/outline/upload"></use>  </svg><input class="na-button na-input" title="upload" data-primary type="file" disabled/></div> </div> 
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">.na-input-wrapper(data-primary)
-    svg.na-input-prefix(width=18 height=18)
-    input.na-input.na-button(
-        type=&quot;file&quot;
-        data-primary
-    )
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input-wrapper</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-primary</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    svg</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input-prefix</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">width</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">18</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> height</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">18)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-button</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;file&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        data-primary</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">    )</span></span></code></pre>
 <ul>
 <li class="na-list">上传按钮不支持波纹点击效果</li>
 <li class="na-list">上传按钮不继承容器主题色</li>

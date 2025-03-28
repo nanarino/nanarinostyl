@@ -5,64 +5,804 @@
 <div style="display:inline-grid;gap:1em;--indent-radio:20px" class="astro-rhkvn4pf"> <span class="na-radio "> <input type="radio" class="na-input" id="java" name="lang" title="lang" checked> <label class="na-radio-label" for="java">Java</label> </span><span class="na-radio "> <input type="radio" class="na-input" id="kotlin" name="lang" title="lang"> <label class="na-radio-label" for="kotlin">Kotlin</label> </span> </div> 
 <p class="na-paragraph na-font-serif"> 全局变量 <code class="na-code na-font-mono">--indent-radio</code> 改变label文字左内边距<br/>
 这原本是用 <code class="na-code na-font-mono">text-indent</code> 属性实现。但在Safari中使用 <code class="na-code na-font-mono">::before</code> 的元素不支持 <code class="na-code na-font-mono">text-indent</code>，遂改用 <code class="na-code na-font-mono">padding-left</code> 来实现。默认值是1em（label紧贴input） </p>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">div(style=&quot;--indent-radio: 20px&quot;)
-    span.na-radio
-        input#java.na-input(type=&quot;radio&quot; name=&quot;lang&quot; title=&quot;java&quot;)
-        label.na-radio-label(for=&quot;java&quot;) Java
-    span.na-radio
-        input#kotlin.na-input(type=&quot;radio&quot; name=&quot;lang&quot; title=&quot;kotlin&quot;)
-        label.na-radio-label(for=&quot;kotlin&quot;) Kotlin
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">div</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;--indent-radio: 20px&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-radio</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">#java.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;radio&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> name</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;lang&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;java&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-radio-label</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">for</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;java&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> Java</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-radio</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">#kotlin.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;radio&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> name</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;lang&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;kotlin&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-radio-label</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">for</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;kotlin&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> Kotlin</span></span></code></pre>
 <p class="na-paragraph na-font-serif"> 注意，radio<strong>捆绑</strong>了 <code class="na-code na-font-mono">&lt;label&gt;</code> ，你必须携带它，绑定<code class="na-code na-font-mono">[for]</code>时label被点击时也会触发选择或反选 </p>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="disabled"> <a href="#disabled" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <symbol id="ai:local:logo/outline/clover" viewBox="0 0 682.667 682.667"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="30"><defs><clipPath id="a" clipPathUnits="userSpaceOnUse"><path d="M0 512h512V0H0Z"/></clipPath></defs><g clip-path="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 682.667)"><path d="m248.57 263.43 56.441-56.441a271.52 271.52 0 0 1 191.99-79.522M248.57 263.43v155.71c0 42.972-34.89 77.86-77.86 77.86s-77.85-34.888-77.85-77.86c-42.972 0-77.86-34.88-77.86-77.85s34.888-77.86 77.86-77.86zm0 0L98.16 223.129c-41.509-11.118-66.17-53.848-55.052-95.356C54.234 86.264 96.956 61.6 138.464 72.72c11.118-41.508 53.848-66.171 95.356-55.053 41.508 11.126 66.17 53.848 55.052 95.356zm0 0 150.407-40.302c41.51-11.118 84.23 13.544 95.356 55.052 11.118 41.509-13.545 84.238-55.053 95.356 11.118 41.508-13.544 84.229-55.052 95.355-41.509 11.119-84.238-13.543-95.356-55.052Zm-93.428 93.428 93.428-93.428m-66.067-114.426 66.066 114.427m114.427 66.066L248.57 263.43"/></g></g></symbol><use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> <code class="na-code na-font-mono">disabled</code> </h2> 
 <div style="display:inline-grid;gap:1em;--indent-radio:20px" class="astro-rhkvn4pf"> <span class="na-radio "> <input type="radio" class="na-input" id="HTTP" name="type" title="type" checked disabled> <label class="na-radio-label" for="HTTP">HTTP</label> </span><span class="na-radio " data-primary="success"> <input type="radio" class="na-input" id="HTTPS" name="type" title="type" disabled> <label class="na-radio-label" for="HTTPS">HTTPS</label> </span> </div> 
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">div(style={&#39;--indent-radio&#39;: &#39;20px&#39;})
-    span.na-radio
-        input#HTTP.na-input(type=&quot;radio&quot; title=&quot;HTTP&quot; checked disabled)
-        label.na-radio-label(for=&quot;HTTP&quot;) HTTP
-    span.na-radio(data-primary=&quot;success&quot;)
-        input#HTTPS.na-input(type=&quot;radio&quot; title=&quot;HTTPS&quot; disabled)
-        label.na-radio-label(for=&quot;HTTPS&quot;) HTTPS
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">div</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">={</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;--indent-radio&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;20px&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">}</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-radio</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">#HTTP.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;radio&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;HTTP&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> checked</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> disabled</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-radio-label</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">for</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;HTTP&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> HTTP</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-radio</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-primary</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;success&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">#HTTPS.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;radio&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;HTTPS&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> disabled</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-radio-label</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">for</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;HTTPS&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> HTTPS</span></span></code></pre>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="custom-style"> <a href="#custom-style" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> custom style </h2> 
 <ul>
 <li class="na-list"><code class="na-code na-font-mono">--color-radio</code> 全局变量覆盖颜色RGB值</li>
 <li class="na-list"><code class="na-code na-font-mono">--color-radio-disabled</code> 禁用状态全局变量覆盖颜色RGB值</li>
 </ul>
 <div style="display:inline-grid;gap:1em;--indent-radio:20px" class="astro-rhkvn4pf"> <span class="na-radio " style="--color-radio:var(--gold-6)"> <input type="radio" class="na-input" id="meituan" name="lunch" title="lunch"> <label class="na-radio-label" for="meituan">美团</label> </span><span class="na-radio " style="--color-radio:var(--blue-6)"> <input type="radio" class="na-input" id="eleme" name="lunch" title="lunch" checked> <label class="na-radio-label" for="eleme">饿了么</label> </span> </div> 
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">div(style=&quot;--indent-radio: 20px&quot;)
-    span.na-radio
-        input#meituan.na-input(
-            type=&quot;radio&quot;
-            name=&quot;lunch&quot;
-            style={&#39;--color-radio&#39;: &#39;var(--gold-6)&#39;}
-            title=&quot;meituan&quot;
-        )
-        label.na-radio-label(for=&quot;meituan&quot;) 美团
-    span.na-radio
-        input#eleme.na-input(
-            type=&quot;radio&quot;
-            name=&quot;lunch&quot;
-            style={&#39;--color-radio&#39;: &#39;var(--blue-6)&#39;}
-            checked
-            title=&quot;eleme&quot;
-        )
-        label.na-radio-label(for=&quot;eleme&quot;) 饿了么
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">div</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;--indent-radio: 20px&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-radio</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">#meituan.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;radio&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            name</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;lunch&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">={</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;--color-radio&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;var(--gold-6)&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">}</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;meituan&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">        )</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-radio-label</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">for</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;meituan&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 美团</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-radio</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">#eleme.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;radio&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            name</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;lunch&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">={</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;--color-radio&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;var(--blue-6)&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">}</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            checked</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;eleme&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">        )</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-radio-label</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">for</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;eleme&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 饿了么</span></span></code></pre>
 <h3 class="na-title na-font-serif astro-6bg4rdkg" id="hide-label"> <a href="#hide-label" class="na-link na-connot-select astro-6bg4rdkg"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-6bg4rdkg" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-6bg4rdkg">###</span> </a> hide label </h3> 
 <p class="na-paragraph na-font-serif"> label为空即可不显示 </p>
-<div style="display: inline-flex; gap: 6px"><span class="na-radio " style="--color-radio:var(--red-6)"> <input type="radio" class="na-input" id="d0a7ea5e-b232-40d2-9220-8d668beec216" name="radio-color" title="red" checked> <label class="na-radio-label" for="d0a7ea5e-b232-40d2-9220-8d668beec216"></label> </span><span class="na-radio " style="--color-radio:var(--orange-6)"> <input type="radio" class="na-input" id="69adc8f0-edb1-40a9-b2a5-e9f5c05061bf" name="radio-color" title="orange"> <label class="na-radio-label" for="69adc8f0-edb1-40a9-b2a5-e9f5c05061bf"></label> </span><span class="na-radio " style="--color-radio:var(--gold-6)"> <input type="radio" class="na-input" id="38d623c8-ac1b-42b8-a2ed-53d3e9752bf5" name="radio-color" title="gold"> <label class="na-radio-label" for="38d623c8-ac1b-42b8-a2ed-53d3e9752bf5"></label> </span><span class="na-radio " style="--color-radio:var(--yellow-6)"> <input type="radio" class="na-input" id="da561c99-22de-484c-aed9-b78f64ce2242" name="radio-color" title="yellow"> <label class="na-radio-label" for="da561c99-22de-484c-aed9-b78f64ce2242"></label> </span><span class="na-radio " style="--color-radio:var(--lime-6)"> <input type="radio" class="na-input" id="e8703645-2a09-40bd-ac31-38bf0f848584" name="radio-color" title="lime"> <label class="na-radio-label" for="e8703645-2a09-40bd-ac31-38bf0f848584"></label> </span><span class="na-radio " style="--color-radio:var(--green-6)"> <input type="radio" class="na-input" id="19f5aaf9-abff-45e6-a709-afda5b647a05" name="radio-color" title="green"> <label class="na-radio-label" for="19f5aaf9-abff-45e6-a709-afda5b647a05"></label> </span><span class="na-radio " style="--color-radio:var(--cyan-6)"> <input type="radio" class="na-input" id="00892aa4-7bc0-4d8b-91ec-7283ac59a81c" name="radio-color" title="cyan"> <label class="na-radio-label" for="00892aa4-7bc0-4d8b-91ec-7283ac59a81c"></label> </span><span class="na-radio " style="--color-radio:var(--blue-6)"> <input type="radio" class="na-input" id="a6bc4cd2-5217-4925-b6db-45eb261b090f" name="radio-color" title="blue"> <label class="na-radio-label" for="a6bc4cd2-5217-4925-b6db-45eb261b090f"></label> </span><span class="na-radio " style="--color-radio:var(--purple-6)"> <input type="radio" class="na-input" id="f44d54e8-e7c1-4d11-94ee-915c6fd9611f" name="radio-color" title="purple"> <label class="na-radio-label" for="f44d54e8-e7c1-4d11-94ee-915c6fd9611f"></label> </span><span class="na-radio " style="--color-radio:var(--pinkpurple-6)"> <input type="radio" class="na-input" id="e31a7a99-076f-425b-96cb-80374fc82d71" name="radio-color" title="pinkpurple"> <label class="na-radio-label" for="e31a7a99-076f-425b-96cb-80374fc82d71"></label> </span><span class="na-radio " style="--color-radio:var(--magenta-6)"> <input type="radio" class="na-input" id="b470b688-4b1a-4e0e-ba21-c762451fd1a8" name="radio-color" title="magenta"> <label class="na-radio-label" for="b470b688-4b1a-4e0e-ba21-c762451fd1a8"></label> </span><span class="na-radio " style="--color-radio:var(--gray-6)"> <input type="radio" class="na-input" id="10856a96-462d-42dd-8b15-e510d4382c57" name="radio-color" title="gray"> <label class="na-radio-label" for="10856a96-462d-42dd-8b15-e510d4382c57"></label> </span></div>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">each color, i in colors
-    span.na-radio
-        input.na-color(
-            type=&quot;radio&quot;
-            checked=i==0
-            name=&quot;radio-color&quot;
-            style={&#39;--color-radio&#39;: `var(--${color}-6)`}
-            title=color
-        )
-        label.na-radio-label
-</code></pre>
+<div style="display: inline-flex; gap: 6px"><span class="na-radio " style="--color-radio:var(--red-6)"> <input type="radio" class="na-input" id="1fcfcd89-eac3-43c3-bc09-52ace63f5ffb" name="radio-color" title="red" checked> <label class="na-radio-label" for="1fcfcd89-eac3-43c3-bc09-52ace63f5ffb"></label> </span><span class="na-radio " style="--color-radio:var(--orange-6)"> <input type="radio" class="na-input" id="95d60392-6cd0-43ab-abde-1fc2abba45c4" name="radio-color" title="orange"> <label class="na-radio-label" for="95d60392-6cd0-43ab-abde-1fc2abba45c4"></label> </span><span class="na-radio " style="--color-radio:var(--gold-6)"> <input type="radio" class="na-input" id="c01a1154-b828-47ac-91ff-d398d8d019b3" name="radio-color" title="gold"> <label class="na-radio-label" for="c01a1154-b828-47ac-91ff-d398d8d019b3"></label> </span><span class="na-radio " style="--color-radio:var(--yellow-6)"> <input type="radio" class="na-input" id="28c0dc01-b3f7-41a8-9b8b-0198b035c90a" name="radio-color" title="yellow"> <label class="na-radio-label" for="28c0dc01-b3f7-41a8-9b8b-0198b035c90a"></label> </span><span class="na-radio " style="--color-radio:var(--lime-6)"> <input type="radio" class="na-input" id="ece704e8-a060-415b-8066-62ef12e2c1d7" name="radio-color" title="lime"> <label class="na-radio-label" for="ece704e8-a060-415b-8066-62ef12e2c1d7"></label> </span><span class="na-radio " style="--color-radio:var(--green-6)"> <input type="radio" class="na-input" id="e40eb597-737c-4010-b5f0-ebe6a5d01a0f" name="radio-color" title="green"> <label class="na-radio-label" for="e40eb597-737c-4010-b5f0-ebe6a5d01a0f"></label> </span><span class="na-radio " style="--color-radio:var(--cyan-6)"> <input type="radio" class="na-input" id="27a1e48a-8388-4d5c-9d72-5e6f20aba9e3" name="radio-color" title="cyan"> <label class="na-radio-label" for="27a1e48a-8388-4d5c-9d72-5e6f20aba9e3"></label> </span><span class="na-radio " style="--color-radio:var(--blue-6)"> <input type="radio" class="na-input" id="c00d0724-2c7c-4bd0-9541-75c5dbda12c3" name="radio-color" title="blue"> <label class="na-radio-label" for="c00d0724-2c7c-4bd0-9541-75c5dbda12c3"></label> </span><span class="na-radio " style="--color-radio:var(--purple-6)"> <input type="radio" class="na-input" id="a42649b5-1c88-4a00-ba0a-b768e88388a8" name="radio-color" title="purple"> <label class="na-radio-label" for="a42649b5-1c88-4a00-ba0a-b768e88388a8"></label> </span><span class="na-radio " style="--color-radio:var(--pinkpurple-6)"> <input type="radio" class="na-input" id="ae2faee1-dc73-4064-b5da-0d7383b2cfe3" name="radio-color" title="pinkpurple"> <label class="na-radio-label" for="ae2faee1-dc73-4064-b5da-0d7383b2cfe3"></label> </span><span class="na-radio " style="--color-radio:var(--magenta-6)"> <input type="radio" class="na-input" id="c45d6103-60b5-4493-8433-3926983eb770" name="radio-color" title="magenta"> <label class="na-radio-label" for="c45d6103-60b5-4493-8433-3926983eb770"></label> </span><span class="na-radio " style="--color-radio:var(--gray-6)"> <input type="radio" class="na-input" id="955e1381-d07f-4b67-91e3-b4964882f84a" name="radio-color" title="gray"> <label class="na-radio-label" for="955e1381-d07f-4b67-91e3-b4964882f84a"></label> </span></div>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">each</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> color, i </span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">in</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> colors</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-radio</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-color</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;radio&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            checked</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=i</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">==</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">0</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            name</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;radio-color&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">={</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;--color-radio&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">`var(--${</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">color</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">}-6)`</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">}</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=color</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">        )</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-radio-label</span></span></code></pre>
 <p class="na-paragraph na-font-serif"> 如果你只是需要label无法点击，只有单选框能被点击，可以不传入 <code class="na-code na-font-mono">[for]</code> </p> <div class="progress astro-m5fpuu4z"></div> </main> </section> <footer class="na-layout-footer astro-vdvlf67m">
 &nbsp; &nbsp; &nbsp;
 <!-- `&nbsp;` 空格是为了视觉重心平衡左右 -->

@@ -7,56 +7,586 @@
 <span class="na-checkbox " style="--indent-checkbox: 2em"> <input type="checkbox" class="na-input" id="world" name="world" title checked> <label class="na-checkbox-label" for="world">world</label> </span>
 <p class="na-paragraph na-font-serif"> 全局变量 <code class="na-code na-font-mono">--indent-checkbox</code> 改变label文字左内边距<br/>
 这原本是用 <code class="na-code na-font-mono">text-indent</code> 属性实现。但在Safari中使用 <code class="na-code na-font-mono">::before</code> 的元素不支持 <code class="na-code na-font-mono">text-indent</code>，遂改用 <code class="na-code na-font-mono">padding-left</code> 来实现。默认值是1em（label紧贴input） </p>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">span.na-checkbox(style=&quot;--indent-checkbox: 2em&quot;)
-    input#hello.na-input(type=&quot;checkbox&quot; title=&quot;world&quot;)
-    label.na-checkbox-label(for=&quot;hello&quot;) world
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-checkbox</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;--indent-checkbox: 2em&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">#hello.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;checkbox&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;world&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-checkbox-label</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">for</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;hello&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> world</span></span></code></pre>
 <p class="na-paragraph na-font-serif"> 注意，checkbox<strong>捆绑</strong>了 <code class="na-code na-font-mono">&lt;label&gt;</code> ，你必须携带它，绑定<code class="na-code na-font-mono">[for]</code>时label被点击时也会触发选择或反选 </p>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="disabled"> <a href="#disabled" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <symbol id="ai:local:logo/outline/clover" viewBox="0 0 682.667 682.667"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="30"><defs><clipPath id="a" clipPathUnits="userSpaceOnUse"><path d="M0 512h512V0H0Z"/></clipPath></defs><g clip-path="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 682.667)"><path d="m248.57 263.43 56.441-56.441a271.52 271.52 0 0 1 191.99-79.522M248.57 263.43v155.71c0 42.972-34.89 77.86-77.86 77.86s-77.85-34.888-77.85-77.86c-42.972 0-77.86-34.88-77.86-77.85s34.888-77.86 77.86-77.86zm0 0L98.16 223.129c-41.509-11.118-66.17-53.848-55.052-95.356C54.234 86.264 96.956 61.6 138.464 72.72c11.118-41.508 53.848-66.171 95.356-55.053 41.508 11.126 66.17 53.848 55.052 95.356zm0 0 150.407-40.302c41.51-11.118 84.23 13.544 95.356 55.052 11.118 41.509-13.545 84.238-55.053 95.356 11.118 41.508-13.544 84.229-55.052 95.355-41.509 11.119-84.238-13.543-95.356-55.052Zm-93.428 93.428 93.428-93.428m-66.067-114.426 66.066 114.427m114.427 66.066L248.57 263.43"/></g></g></symbol><use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> <code class="na-code na-font-mono">disabled</code> </h2> 
 <div style="display:inline-grid;gap:1em;--indent-checkbox:20px" class="astro-rhkvn4pf"> <span class="na-checkbox "> <input type="checkbox" class="na-input" id="HTTP" name="HTTP" title disabled> <label class="na-checkbox-label" for="HTTP">HTTP</label> </span><span class="na-checkbox " data-primary="success"> <input type="checkbox" class="na-input" id="HTTPS" name="HTTPS" title checked disabled> <label class="na-checkbox-label" for="HTTPS">HTTPS</label> </span> </div> 
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">div(style={&#39;--indent-checkbox&#39;: &#39;20px&#39;})
-    span.na-checkbox
-        input#HTTP.na-input(type=&quot;checkbox&quot; title=&quot;HTTP&quot; disabled)
-        label.na-checkbox-label(for=&quot;HTTP&quot;) HTTP
-    span.na-checkbox(data-primary=&quot;success&quot;)
-        input#HTTPS.na-input(type=&quot;checkbox&quot; title=&quot;HTTPS&quot; checked disabled)
-        label.na-checkbox-label(for=&quot;HTTPS&quot;) HTTPS
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">div</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">={</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;--indent-checkbox&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;20px&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">}</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-checkbox</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">#HTTP.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;checkbox&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;HTTP&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> disabled</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-checkbox-label</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">for</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;HTTP&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> HTTP</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-checkbox</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-primary</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;success&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">#HTTPS.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;checkbox&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;HTTPS&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> checked</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> disabled</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-checkbox-label</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">for</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;HTTPS&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> HTTPS</span></span></code></pre>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="data-indeterminate"> <a href="#data-indeterminate" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> <code class="na-code na-font-mono">data-indeterminate</code> </h2> 
 <p class="na-paragraph na-font-serif"> 这个样式设计来自于 <a class="na-link" href="https://sap.github.io/ui5-webcomponents/components/CheckBox/"> <em>ui5 check-box</em> </a> </p>
 <span class="na-checkbox " style="--indent-checkbox: 20px" data-indeterminate> <input type="checkbox" class="na-input" id="Superposition" name="Superposition" title onchange="
 this.parentElement.removeAttribute('data-indeterminate')
 "> <label class="na-checkbox-label" for="Superposition">半信半疑</label> </span>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">span.na-checkbox(
-    data-indeterminate
-    style=&quot;--indent-checkbox: 20px&quot;
-)
-    input#Superposition.na-input(
-        type=&quot;checkbox&quot;
-        onchange=function(){
-            this.parentElement.removeAttribute(&#39;data-indeterminate&#39;)
-        }
-        title=&quot;Superposition&quot;
-    )
-    label.na-checkbox-label(for=&quot;Superposition&quot;) 半信半疑
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-checkbox</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    data-indeterminate</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;--indent-checkbox: 20px&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">#Superposition.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;checkbox&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        onchange</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">function</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">(){</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">            this</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">.parentElement.</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">removeAttribute</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">(</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;data-indeterminate&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">        }</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;Superposition&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">    )</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-checkbox-label</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">for</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;Superposition&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 半信半疑</span></span></code></pre>
 <p class="na-paragraph na-font-serif"> 注意：<code class="na-code na-font-mono">[data-indeterminate]</code> 在 checked与否 的不同状态下 观感并不相同。 </p>
 <p class="na-paragraph na-font-serif"> 在这个示例里，初始没有选择，选择后<strong>清除</strong>了 <code class="na-code na-font-mono">[data-indeterminate]</code>，但你可以不 </p>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="data-marker"> <a href="#data-marker" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> <code class="na-code na-font-mono">data-marker=&quot;-&quot;</code> </h2> 
 <p class="na-paragraph na-font-serif"> 预设了另一个<strong>checked</strong>符号，使用 <code class="na-code na-font-mono">data-marker=&quot;-&quot;</code> 启用，代替原先的✔ </p>
 <p class="na-paragraph na-font-serif"> 它一般放在列表表头，用来描述只选中了一部分 </p>
 <span class="na-checkbox " style="--indent-checkbox: 20px" data-marker="-"> <input type="checkbox" class="na-input" id="DashAsMark" name="DashAsMark" title checked> <label class="na-checkbox-label" for="DashAsMark">部分选择</label> </span>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">span.na-checkbox(
-    data-marker=&quot;-&quot;
-    style=&quot;--indent-checkbox: 20px&quot;
-)
-    input#DashAsMark.na-input(
-        type=&quot;checkbox&quot;
-        title=&quot;DashAsMark&quot;
-        checked
-    )
-    label.na-checkbox-label(for=&quot;DashAsMark&quot;) 部分选择
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-checkbox</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    data-marker</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;-&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;--indent-checkbox: 20px&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">#DashAsMark.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;checkbox&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;DashAsMark&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        checked</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">    )</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-checkbox-label</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">for</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;DashAsMark&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 部分选择</span></span></code></pre>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="custom-style"> <a href="#custom-style" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> custom style </h2> 
 <ul>
 <li class="na-list"><code class="na-code na-font-mono">--color-checkbox</code> 全局变量覆盖颜色RGB值</li>
@@ -64,37 +594,338 @@ this.parentElement.removeAttribute('data-indeterminate')
 </ul>
 <p class="na-paragraph na-font-serif"> marker钩号或破折号由 <code class="na-code na-font-mono">label::after</code> 实现，可以自定义添加你需要的✔图形 </p>
 <span class="na-checkbox " style="--color-checkbox:var(--blue-6);--color-checkbox-disabled:var(--blue-2);--indent-checkbox:20px;color:rgb(var(--blue-6))" data-marker="*"> <input type="checkbox" class="na-input" id="BlueTIMBox" name="BlueTIMBox" title checked> <label class="na-checkbox-label" for="BlueTIMBox">Tim</label> </span>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">span.na-checkbox(
-    data-marker=&quot;*&quot;
-    style={
-    &#39;--color-checkbox&#39;: &#39;var(--blue-6)&#39;,
-    &#39;--color-checkbox-disabled&#39;: &#39;var(--blue-2)&#39;,
-    &#39;--indent-checkbox&#39;: &#39;20px&#39;,
-    color: &#39;rgb(var(--blue-6))&#39;
-})
-    input#BlueTIMBox.na-input(
-        type=&quot;checkbox&quot;
-        title=&quot;BlueTIMBox&quot;
-        checked
-        disabled
-    )
-    label.na-checkbox-label(for=&quot;BlueTIMBox&quot;) Tim
-
-style(lang=&quot;stylus&quot;).
-    .na-checkbox
-        &amp;[data-marker=&quot;*&quot;]
-            &amp;&gt;input:checked+^[0]-label::after
-                content &#39;*&#39;
-                font-size 18px
-                color rgb(var(--white))
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-checkbox</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    data-marker</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;*&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">={</span></span>
+<span class="line"><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">    &#39;--color-checkbox&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;var(--blue-6)&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">    &#39;--color-checkbox-disabled&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;var(--blue-2)&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">    &#39;--indent-checkbox&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;20px&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    color</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;rgb(var(--blue-6))&#39;</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">}</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">#BlueTIMBox.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;checkbox&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;BlueTIMBox&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        checked</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        disabled</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">    )</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-checkbox-label</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">for</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;BlueTIMBox&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> Tim</span></span>
+<span class="line"></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">style</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">lang</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;stylus&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">.</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    .na-checkbox</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">        &amp;[</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-marker</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;*&quot;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">]</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">            &amp;</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">&gt;</span><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">:checked</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">+</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">^[0]-label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">::after</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">                content</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> &#39;</span><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">*</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">&#39;</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">                font-size</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 18px</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">                color rgb(var(--white))</span></span></code></pre>
 <h3 class="na-title na-font-serif astro-6bg4rdkg" id="hide-label"> <a href="#hide-label" class="na-link na-connot-select astro-6bg4rdkg"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-6bg4rdkg" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-6bg4rdkg">###</span> </a> hide label </h3> 
 <p class="na-paragraph na-font-serif"> label为空即可不显示 </p>
-<span class="na-checkbox " data-indeterminate> <input type="checkbox" class="na-input" id="df2f881b-fe41-417a-8951-a7b69bc5ec71" name="饿死了" title="饿死了"> <label class="na-checkbox-label" for="df2f881b-fe41-417a-8951-a7b69bc5ec71"></label> </span>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">span.na-checkbox(data-indeterminate)
-    input.na-input(type=&quot;checkbox&quot; title=&quot;饿死了&quot;)
-    label.na-checkbox-label
-</code></pre>
+<span class="na-checkbox " data-indeterminate> <input type="checkbox" class="na-input" id="b54e388b-3541-4962-97b3-1e3c39126eb5" name="饿死了" title="饿死了"> <label class="na-checkbox-label" for="b54e388b-3541-4962-97b3-1e3c39126eb5"></label> </span>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-checkbox</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-indeterminate</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;checkbox&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;饿死了&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    label</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-checkbox-label</span></span></code></pre>
 <p class="na-paragraph na-font-serif"> 如果你只是需要label无法点击，只有单选框能被点击，可以不传入 <code class="na-code na-font-mono">[for]</code> </p> <div class="progress astro-m5fpuu4z"></div> </main> </section> <footer class="na-layout-footer astro-vdvlf67m">
 &nbsp; &nbsp; &nbsp;
 <!-- `&nbsp;` 空格是为了视觉重心平衡左右 -->

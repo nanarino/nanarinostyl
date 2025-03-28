@@ -6,18 +6,209 @@
 <p class="na-paragraph na-font-serif"> 用户代理默认 <code class="na-code na-font-mono">position:absolute</code> </p>
 <button class="na-button" onclick="this.nextElementSibling.show()" title="show"> 设置Cookie取用 </button>
 <dialog class="na-dialog" open style="position:fixed;inset:unset;bottom:2em;right:2em;width:260px"><p class="na-paragraph" data-size="4" style="margin-top:.5em">追踪 Cookie</p><p class="na-paragraph">我们使用这些来分析网站流量</p><form method="dialog"><button class="na-button" style="place-self:end">拒绝</button></form></dialog>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">dialog.na-dialog(open style={
-    position: &#39;fixed&#39;,
-    inset: &#39;unset&#39;,
-    bottom: &#39;2em&#39;,
-    right: &#39;2em&#39;,
-    width: &#39;260px&#39;,
-})
-    p.na-paragraph(data-size=4 style=&quot;margin-top:.5em&quot;) 追踪 Cookie
-    p.na-paragraph 我们使用这些来分析网站流量
-    form(method=&quot;dialog&quot;)
-        button.na-button(style=&#39;place-self:end&#39;) 拒绝
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">dialog</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-dialog</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">open</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">={</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    position</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;fixed&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    inset</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;unset&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    bottom</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;2em&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    right</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;2em&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    width</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;260px&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">}</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    p</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-paragraph</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-size</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">4</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;margin-top:.5em&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 追踪 Cookie</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    p</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-paragraph</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 我们使用这些来分析网站流量</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    form</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">method</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;dialog&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        button</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-button</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;place-self:end&#39;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 拒绝</span></span></code></pre>
 <p class="na-paragraph na-font-serif"> 在 <code class="na-code na-font-mono">dialog:not([popover]) form[method=dialog]</code> 里 <code class="na-code na-font-mono">button</code> 或 <code class="na-code na-font-mono">input[type=submit]</code> 都能触发关闭 </p>
 <p class="na-paragraph na-font-serif"> 全局变量 <code class="na-code na-font-mono">--padding-dialog</code> 可以设置弹框内边距 </p>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="modal"> <a href="#modal" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <symbol id="ai:local:logo/outline/clover" viewBox="0 0 682.667 682.667"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="30"><defs><clipPath id="a" clipPathUnits="userSpaceOnUse"><path d="M0 512h512V0H0Z"/></clipPath></defs><g clip-path="url(#a)" transform="matrix(1.33333 0 0 -1.33333 0 682.667)"><path d="m248.57 263.43 56.441-56.441a271.52 271.52 0 0 1 191.99-79.522M248.57 263.43v155.71c0 42.972-34.89 77.86-77.86 77.86s-77.85-34.888-77.85-77.86c-42.972 0-77.86-34.88-77.86-77.85s34.888-77.86 77.86-77.86zm0 0L98.16 223.129c-41.509-11.118-66.17-53.848-55.052-95.356C54.234 86.264 96.956 61.6 138.464 72.72c11.118-41.508 53.848-66.171 95.356-55.053 41.508 11.126 66.17 53.848 55.052 95.356zm0 0 150.407-40.302c41.51-11.118 84.23 13.544 95.356 55.052 11.118 41.509-13.545 84.238-55.053 95.356 11.118 41.508-13.544 84.229-55.052 95.355-41.509 11.119-84.238-13.543-95.356-55.052Zm-93.428 93.428 93.428-93.428m-66.067-114.426 66.066 114.427m114.427 66.066L248.57 263.43"/></g></g></symbol><use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> modal </h2> 
@@ -26,47 +217,414 @@
 <p class="na-paragraph na-font-serif"> 用户代理默认 <code class="na-code na-font-mono">position:fixed</code> </p>
 <button class="na-button" onclick="this.nextElementSibling.showModal()" title="show modal"> 手机莫点 </button>
 <dialog class="na-dialog"><p class="na-paragraph">按 <kbd class="na-kbd">Esc</kbd> 才能关闭 🤣👉📱</p></dialog>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">dialog.na-dialog
-    p.na-paragraph 
-        | Press
-        kbd.na-kbd Esc
-        | to close. 🤣👉📱
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">dialog</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-dialog</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    p</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-paragraph</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> </span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">        | Press</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        kbd</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-kbd</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> Esc</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">        | to close. 🤣👉📱</span></span></code></pre>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="popover"> <a href="#popover" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> popover </h2> 
 <p class="na-paragraph na-font-serif"> 气泡弹框。<code class="na-code na-font-mono">[popover=auto]</code> 默认点击外部自动关闭气泡 </p>
 <div class="popover-wrapper" style="width:fit-content;position:relative;anchor-name:--popover-wrapper"><button class="na-button" popovertarget="pop" title="toggle popover"> 連絡先 </button><dialog class="na-popover" popover="auto" id="pop" style="position-anchor:--popover-wrapper;left:anchor(left);right:anchor(right);top:calc(anchor(bottom) + 8px)"><form method="dialog"><button class="na-button" data-primary="true" style="
 --background-color-button:var(--blue-8);
 --background-color-button-focus:var(--blue-7);
 "><svg width="22" height="22" data-icon="logo/outline/facebook">   <symbol id="ai:local:logo/outline/facebook" viewBox="0 0 48 48"><path fill="currentColor" d="M35.184 15.727 34.312 24h-6.613v24h-9.933V24h-4.95v-8.273h4.95v-4.98C17.766 4.016 20.564 0 28.518 0h6.61v8.273H30.99c-3.086 0-3.292 1.166-3.292 3.32v4.134z"/></symbol><use href="#ai:local:logo/outline/facebook"></use>  </svg></button><button class="na-button" style="--color-button:var(--blue-6)"><svg width="22" height="22" data-icon="logo/outline/twitter">   <symbol id="ai:local:logo/outline/twitter" viewBox="0 0 48 48"><path fill="currentColor" d="M43.277 13.575c0 16.613-10.912 28.575-26.962 29.1-6.788.525-11.438-1.537-15.6-4.65 4.65.525 10.912-1.012 13.987-4.163-4.65 0-7.275-2.625-8.812-6.187h4.162C5.89 26.1 2.74 22.988 2.74 17.813c1.012.524 2.062 1.012 4.162 1.012-3.637-2.062-5.7-8.812-3.112-12.975 4.65 5.175 10.35 9.863 19.762 10.35C20.927 5.85 34.465.6 40.165 7.388c2.625-.525 4.162-1.538 6.187-2.625-.525 2.625-2.062 4.162-4.162 5.175 2.062 0 3.637-.525 5.175-1.538-.488 2.063-2.55 4.163-4.088 5.175"/></symbol><use href="#ai:local:logo/outline/twitter"></use>  </svg></button></form></dialog></div>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">.popover-wrapper(style={
-    width: &#39;fit-content&#39;,
-    position: &#39;relative&#39;,
-    &#39;anchor-name&#39;: &#39;--popover-wrapper&#39;
-})
-    button.na-button(popovertarget=&quot;pop&quot;) 連絡先
-    dialog#pop.na-popover(popover=&quot;auto&quot; style={
-        &#39;position-anchor&#39;: &#39;--popover-wrapper&#39;,
-        left: &#39;anchor(left)&#39;,
-        right: &#39;anchor(right)&#39;,
-        top: &#39;calc(anchor(bottom) + 8px)&#39;,
-    })
-        form(method=&quot;dialog&quot;)
-            button.na-button(data-primary style=`
-                --background-color-button:var(--blue-8);
-                --background-color-button-focus:var(--blue-7);
-            `)
-                svg(
-                    data-icon=&#39;logo/outline/facebook&#39;
-                    width=22
-                    height=22
-                )
-            button.na-button(style=&quot;--color-button:var(--blue-6)&quot;)
-                svg(
-                    data-icon=&#39;logo/outline/twitter&#39;
-                    width=22
-                    height=22
-                )
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.popover-wrapper</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">={</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    width</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;fit-content&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    position</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;relative&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">    &#39;anchor-name&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;--popover-wrapper&#39;</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">}</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    button</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-button</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">popovertarget</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;pop&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 連絡先</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    dialog</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">#pop.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-popover</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">popover</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;auto&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">={</span></span>
+<span class="line"><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">        &#39;position-anchor&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;--popover-wrapper&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        left</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;anchor(left)&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        right</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;anchor(right)&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        top</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;calc(anchor(bottom) + 8px)&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">    }</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        form</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">method</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;dialog&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">            button</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-button</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-primary</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">`</span></span>
+<span class="line"><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">                --background-color-button:var(--blue-8);</span></span>
+<span class="line"><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">                --background-color-button-focus:var(--blue-7);</span></span>
+<span class="line"><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">            `</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">                svg</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                    data-icon</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;logo/outline/facebook&#39;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                    width</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">22</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                    height</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">22</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">                )</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">            button</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-button</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;--color-button:var(--blue-6)&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">                svg</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                    data-icon</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;logo/outline/twitter&#39;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                    width</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">22</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                    height</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">22</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">                )</span></span></code></pre>
 <p class="na-paragraph na-font-serif"> 案例使用实验性的 <a class="na-link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor"> <code class="na-code na-font-mono">position-anchor</code> </a> 实现 </p>
 <p class="na-paragraph na-font-serif"> 你完全可以用 <code class="na-code na-font-mono">[popover]:popover-open+.na-dialog</code> 或者仅使用 <code class="na-code na-font-mono">dialog.na-dialog</code>同js事件 模拟出这个功能 </p>
 <p class="na-paragraph na-font-serif"> 全局变量 <code class="na-code na-font-mono">--padding-popover</code> 可以设置弹框内边距，<code class="na-code na-font-mono">.na-popover.sm</code> 预设了更小的 </p> <div class="progress astro-m5fpuu4z"></div> </main> </section> <footer class="na-layout-footer astro-vdvlf67m">

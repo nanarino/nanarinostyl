@@ -14,51 +14,504 @@
 <p class="na-paragraph na-font-serif"> 以<strong>容器</strong>方式 </p>
 <p class="na-paragraph na-font-serif"> 低版本浏览器需要指定 <code class="na-code na-font-mono">width</code> </p>
 <div class="na-image" style="width:300px"><img alt="示例" src="/nanarinostyl/_astro/example.D0Q2OADA.jpg"/></div>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">.na-image(style=&quot;width:300px&quot;)
-    img(alt=&quot;示例&quot; src=&#39;@/assets/images/example.jpg&#39;)
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-image</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;width:300px&quot;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    img</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">alt</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;示例&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> src</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;@/assets/images/example.jpg&#39;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span></code></pre>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="background-image"> <a href="#background-image" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> <code class="na-code na-font-mono">background-image</code> </h2> 
 <p class="na-paragraph na-font-serif"> 以<strong>背景</strong>方式 </p>
 <p class="na-paragraph na-font-serif"> 必须以某种方式指定宽高 </p>
 <p class="na-paragraph na-font-serif"> 比如指定 <code class="na-code na-font-mono">height</code> 和 <code class="na-code na-font-mono">aspect-ratio</code> </p>
 <p class="na-paragraph na-font-serif"> 也可用 <code class="na-code na-font-mono">display: flex</code> 这相当于 <code class="na-code na-font-mono">width: 100%</code> </p>
 <div class="na-image" style="display:flex;height:300px;background-image:url(/nanarinostyl/_astro/example.D0Q2OADA.jpg)"><p class="na-paragraph" data-size="1">🤡</p></div>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">.na-image(style={
-    display: &#39;flex&#39;,
-    height: &#39;300px&#39;,
-    &#39;background-image&#39;: url(&#39;@/assets/images/example.png&#39;)
-})
-    p.na-paragraph(data-size=1) 🤡
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-image</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">={</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    display</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;flex&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    height</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;300px&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">    &#39;background-image&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">url</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">(</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;@/assets/images/example.png&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">}</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    p</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-paragraph</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-size</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">1)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 🤡</span></span></code></pre>
 <h2 class="na-title na-font-serif astro-7bm3c7wc" id="mask"> <a href="#mask" class="na-link na-connot-select astro-7bm3c7wc"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-7bm3c7wc" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-7bm3c7wc">##</span> </a> mask </h2> 
 <p class="na-paragraph na-font-serif"> 背景图或容器都可以使用的遮罩 <code class="na-code na-font-mono">.na-image&gt;.na-image-mask</code> </p>
 <div class="na-image" style="width:100px;height:100px;background-image:url(/nanarinostyl/_astro/example.D0Q2OADA.jpg);border-radius:50%"><div class="na-image-mask" role="button" aria-label="like" onclick="
 event.target == this || this.parentElement.toggleAttribute('data-iine')
 "><svg width="1em" height="1em" data-icon="interactive-button/outline/heart">   <symbol id="ai:local:interactive-button/outline/heart" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-width="4" d="M38.083 12.912a9.93 9.93 0 0 1 .177 13.878l-.177.18L25.76 39.273c-.972.97-2.548.97-3.52 0L9.917 26.971l-.177-.181a9.93 9.93 0 0 1 .177-13.878c3.889-3.883 10.194-3.883 14.083 0 3.889-3.883 10.194-3.883 14.083 0Z"/></symbol><use href="#ai:local:interactive-button/outline/heart"></use>  </svg><svg width="1em" height="1em" data-icon="interactive-button/fill/heart-fill">   <symbol id="ai:local:interactive-button/fill/heart-fill" viewBox="0 0 48 48"><path fill="currentColor" d="M24 10.542c4.35-4.523 11.405-4.815 15.756-.293 4.35 4.522 4.15 11.365.448 17.135C36.153 33.7 28 41.5 24 42c-4-.5-12.152-8.3-16.204-14.616-3.702-5.77-3.902-12.613.448-17.135S19.65 6.019 24 10.54"/></symbol><use href="#ai:local:interactive-button/fill/heart-fill"></use>  </svg></div></div>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">.na-image(style={
-    width: &#39;100px&#39;,
-    height: &#39;100px&#39;,
-    &#39;background-image&#39;: url(&#39;@/assets/images/example.jpg&#39;),
-    &#39;border-radius&#39;: &#39;50%&#39;
-})
-    .na-image-mask(onclick=function(){
-        event.target == this || this.parentElement.toggleAttribute(&#39;data-iine&#39;)
-    })
-        svg(data-icon=&#39;interactive-button/outline/heart&#39;)
-        svg(data-icon=&#39;interactive-button/fill/heart-fill&#39;)
-
-style(lang=&#39;stylus&#39;).
-    .na-image
-        svg[data-icon=&#39;interactive-button/outline/heart&#39;]
-        svg[data-icon=&#39;interactive-button/fill/heart-fill&#39;]
-            font-size 24px
-            color rgb(var(--magenta-6))
-            cursor pointer
-        
-        &amp;[data-iine] svg[data-icon=&#39;interactive-button/outline/heart&#39;]
-        &amp;:not([data-iine]) svg[data-icon=&#39;interactive-button/fill/heart-fill&#39;]
-            display none
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-image</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">={</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    width</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;100px&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    height</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;100px&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">    &#39;background-image&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">url</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">(</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;@/assets/images/example.jpg&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">),</span></span>
+<span class="line"><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">    &#39;border-radius&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;50%&#39;</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">}</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    .</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-image-mask</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">onclick</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">function</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">(){</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">        event.target </span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">==</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+"> this</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+"> ||</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+"> this</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">.parentElement.</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">toggleAttribute</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">(</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;data-iine&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">    }</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        svg</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-icon</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;interactive-button/outline/heart&#39;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        svg</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-icon</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;interactive-button/fill/heart-fill&#39;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">style</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">lang</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;stylus&#39;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">.</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    .na-image</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        svg</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">[</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-icon</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;interactive-button/outline/heart&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">]</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">        svg</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">[</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-icon</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;interactive-button/fill/heart-fill&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">]</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">            font-size</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> 24px</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">            color rgb(var(--magenta-6))</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">            cursor</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> pointer</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">        </span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">        &amp;[</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-iine</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">] </span><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">svg</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">[</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-icon</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;interactive-button/outline/heart&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">]</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">        &amp;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">:not</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">([</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-iine</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">]) </span><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">svg</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">[</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-icon</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;interactive-button/fill/heart-fill&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">]</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">            display none</span></span></code></pre>
 <h3 class="na-title na-font-serif astro-6bg4rdkg" id="footer"> <a href="#footer" class="na-link na-connot-select astro-6bg4rdkg"> <svg width="1em" height="1em" viewBox="0 0 682.667 682.667" class="astro-6bg4rdkg" data-icon="logo/outline/clover">   <use href="#ai:local:logo/outline/clover"></use>  </svg> <span style="font-size:0" class="astro-6bg4rdkg">###</span> </a> footer </h3> 
 <p class="na-paragraph na-font-serif"> 适用于大尺寸图片（ 128像素以上 ）的底部遮罩 <code class="na-code na-font-mono">.na-image&gt;.na-image-footer</code> </p>
 <div class="na-image" style="
@@ -68,35 +521,331 @@ border-radius:var(--border-radius-lg)
 "><img alt="示例" src="/nanarinostyl/_astro/example.D0Q2OADA.jpg"/><div class="na-image-footer"><div class="na-image-footer-content"><div class="na-title" data-size="5"> 标题标题标题标题标题标题标题标题标题标题标题 </div><div class="na-paragraph" data-ellipsis="1"> 描述描述描述描述描述描述描述描述描述描述描述描述 </div></div><div class="na-image-footer-action"><svg width="1em" height="1em" class="na-link" role="button" aria-label="Open the image in a new tab" onclick="
                   window.open('/nanarinostyl/_astro/example.D0Q2OADA.jpg')
               " data-icon="interactive-button/outline/eye">   <symbol id="ai:local:interactive-button/outline/eye" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="4"><path d="M24 37q9.94 0 18-13-8.06-13-18-13T6 24q8.06 13 18 13Z" clip-rule="evenodd"/><path d="M29 24a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/></g></symbol><use href="#ai:local:interactive-button/outline/eye"></use>  </svg><svg width="1em" height="1em" class="na-link" role="button" aria-label="Download the image" data-icon="interactive-button/outline/download">   <symbol id="ai:local:interactive-button/outline/download" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-width="4" d="m33.072 22.071-9.07 9.071-9.072-9.07M24 5v26m16 4v6H8v-6"/></symbol><use href="#ai:local:interactive-button/outline/download"></use>  </svg></div></div></div>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">.na-image(style={
-    width: &quot;300px&quot;,
-    height: &quot;300px&quot;,
-    &quot;border-radius&quot;: &quot;var(--border-radius-lg)&quot;
-})
-    img(alt=&quot;示例&quot; src=&#39;@/assets/images/example.jpg&#39;)
-    .na-image-footer
-        .na-image-footer-content
-            .na-title(data-size=5)
-                | 标题标题标题标题标题标题标题标题标题标题标题
-            .na-paragraph(data-ellipsis=1)
-                | 描述描述描述描述描述描述描述描述描述描述描述描述
-        .na-image-footer-action
-            svg.na-link(
-                role=&quot;button&quot;
-                aria-label=&quot;Open the image in a new tab&quot;
-                width=24
-                height=24
-                onclick=function(){
-                    window.open(&quot;@/assets/images/example.jpg&quot;)
-                }
-            )
-            svg.na-link(
-                role=&quot;button&quot;
-                aria-label=&quot;Download the image&quot;
-                width=24
-                height=24
-            )
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-image</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">={</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    width</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;300px&quot;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    height</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;300px&quot;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">    &quot;border-radius&quot;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;var(--border-radius-lg)&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">}</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    img</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">alt</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;示例&quot;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> src</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;@/assets/images/example.jpg&#39;</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    .</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-image-footer</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        .</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-image-footer-content</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            .</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-title</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-size</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">5)</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">                | 标题标题标题标题标题标题标题标题标题标题标题</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">            .</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-paragraph</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-ellipsis</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">1)</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">                | 描述描述描述描述描述描述描述描述描述描述描述描述</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        .</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-image-footer-action</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">            svg</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-link</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                role</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;button&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                aria-label</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;Open the image in a new tab&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                width</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">24</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                height</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">24</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                onclick</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">function</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">(){</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">                    window.</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">open</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">(</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;@/assets/images/example.jpg&quot;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">                }</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">            )</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">            svg</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-link</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                role</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;button&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                aria-label</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&quot;Download the image&quot;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                width</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">24</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">                height</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">24</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">            )</span></span></code></pre>
 <p class="na-paragraph na-font-serif"> 以下全局变量可以修改部分样式 </p>
 <ul>
 <li class="na-list"><code class="na-code na-font-mono">--color-image</code> 字体颜色RGB值</li>
@@ -109,7 +858,7 @@ border-radius:var(--border-radius-lg)
 width:100px;
 height:100px;
 font-size:24px;
-"> <input type="file" accept="image/gif,image/jpeg,image/png" id="82fd7801-7b24-4944-bece-eef853f54b46" name="82fd7801-7b24-4944-bece-eef853f54b46" title class="na-input" disabled> <svg width="1em" height="1em" data-icon="tips/outline/plus">   <symbol id="ai:local:tips/outline/plus" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-width="4" d="M5 24h38M24 5v38"/></symbol><use href="#ai:local:tips/outline/plus"></use>  </svg> </span> 
+"> <input type="file" accept="image/gif,image/jpeg,image/png" id="78de9204-6f83-419b-af66-a7cd2bf04c16" name="78de9204-6f83-419b-af66-a7cd2bf04c16" title class="na-input" disabled> <svg width="1em" height="1em" data-icon="tips/outline/plus">   <symbol id="ai:local:tips/outline/plus" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-width="4" d="M5 24h38M24 5v38"/></symbol><use href="#ai:local:tips/outline/plus"></use>  </svg> </span> 
 <span class="na-image na-input-wrapper" style="
 width:100px;
 height:100px;
@@ -128,30 +877,344 @@ const accept = ["image/gif","image/jpeg","image/png"];
                 }
             }
         })();</script>
-<pre class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono">span.na-image.na-input-wrapper(style={
-    width: &#39;100px&#39;,
-    height: &#39;100px&#39;,
-})
-    input.na-input(type=&#39;file&#39; disabled)
-    svg(width=24)
-
-span.na-image.na-input-wrapper(style={
-    width: &#39;100px&#39;,
-    height: &#39;100px&#39;,
-} data-primary)
-    input.na-input#uploader(
-        type=&#39;file&#39;
-        title=&#39;点击上传图片&#39;
-        onchange=function(e){
-            const reader = new FileReader();
-            reader.readAsDataURL(e.target.files[0]);
-            reader.onload = () =&gt; {
-                this.parentElement.style.backgroundImage = `url(${reader.result})`;
-            };
-        }
-    )
-    svg(width=24)
-</code></pre>
+<pre data-language="pug" class="na-pre na-font-mono na-watermark" style=""><code class="na-code na-font-mono"><span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-image.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input-wrapper</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">={</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    width</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;100px&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    height</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;100px&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">}</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;file&#39;</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> disabled</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    svg</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">width</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">24)</span></span>
+<span class="line"></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">span</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-image.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input-wrapper</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">style</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">={</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    width</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;100px&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">    height</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">: </span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;100px&#39;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">,</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">} </span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">data-primary</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">)</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    input</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">.</span><span style="
+    --color-code: from #B31D28 r g b;
+    --color-code-dark: from #FDAEB7 r g b;
+">na</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">-input#uploader</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        type</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;file&#39;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        title</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">&#39;点击上传图片&#39;</span></span>
+<span class="line"><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">        onchange</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">function</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">(</span><span style="
+    --color-code: from #E36209 r g b;
+    --color-code-dark: from #FFAB70 r g b;
+">e</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">){</span></span>
+<span class="line"><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">            const</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+"> reader</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+"> =</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+"> new</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+"> FileReader</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">();</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">            reader.</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">readAsDataURL</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">(e.target.files[</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">0</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">]);</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">            reader.</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">onload</span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+"> =</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> () </span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">=&gt;</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+"> {</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">                this</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">.parentElement.style.backgroundImage </span><span style="
+    --color-code: from #D73A49 r g b;
+    --color-code-dark: from #F97583 r g b;
+">=</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+"> `url(${</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">reader</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">.</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">result</span><span style="
+    --color-code: from #032F62 r g b;
+    --color-code-dark: from #9ECBFF r g b;
+">})`</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">;</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">            };</span></span>
+<span class="line"><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">        }</span></span>
+<span class="line"><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">    )</span></span>
+<span class="line"><span style="
+    --color-code: from #22863A r g b;
+    --color-code-dark: from #85E89D r g b;
+">    svg</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">(</span><span style="
+    --color-code: from #6F42C1 r g b;
+    --color-code-dark: from #B392F0 r g b;
+">width</span><span style="
+    --color-code: from #24292E r g b;
+    --color-code-dark: from #E1E4E8 r g b;
+">=</span><span style="
+    --color-code: from #005CC5 r g b;
+    --color-code-dark: from #79B8FF r g b;
+">24)</span></span></code></pre>
 <p class="na-paragraph na-font-serif"> <code class="na-code na-font-mono">.na-input-wrapper</code> 也可以覆写局部变量 <code class="na-code na-font-mono">--color-input-wrapper</code> 修改颜色RGB值 </p> <div class="progress astro-m5fpuu4z"></div> </main> </section> <footer class="na-layout-footer astro-vdvlf67m">
 &nbsp; &nbsp; &nbsp;
 <!-- `&nbsp;` 空格是为了视觉重心平衡左右 -->
