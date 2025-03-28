@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@astrojs/mdx':
-        specifier: 4.2.2
+        specifier: ^4.2.2
         version: 4.2.2(astro@5.5.5(@types/node@22.13.14)(rollup@4.37.0)(stylus@0.64.0)(typescript@5.5.4))
       '@holy-two/data-theme':
         specifier: ^0.0.6
