@@ -1,0 +1,19 @@
+---
+import T from "../T.astro"
+import { Icon } from "astro-icon/components"
+---
+
+<T
+    tag="button"
+    class="☘-button"
+    data-primary
+    style={{
+        "--background-color-button": "var(--blue-8)",
+        "--background-color-button-focus": "var(--blue-7)",
+    }}
+>
+    <Icon name="logo/outline/facebook" width={22} height={22} />
+</T>
+<T tag="button" class="☘-button" style="--color-button:var(--blue-6)">
+    <Icon name="logo/outline/twitter" width={22} height={22} />
+</T>

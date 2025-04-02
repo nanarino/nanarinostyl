@@ -1,28 +1,51 @@
-dialog(z = 0)
-    if z
-        z-index z
+dropdown()
+    display grid
+    gap var(--gap-dialog-form, 8px)
+
+
+dialog()
+    z-index 100
     border 0
     box-shadow var(--box-shadow-drop-bottom)
     --box-shadow-color var(--gray-6)
     background-color rgb(var(--white))
 
     form[method=dialog]
-        display grid
-        gap var(--padding-popover, 8px)
+        dropdown()
 
 
+.{prefix}-popover-wrapper
+.{prefix}-dropdown-wrapper
+    width fit-content
+    position relative
+.{prefix}-dropdown-wrapper>dialog
+    visibility hidden
+    & + .{prefix}-dropdown
+        display none
+        position absolute
+        left 0
+        right 0
+        top calc(100% + var(--gap-dialog-form, 8px))
+        padding var(--gap-dialog-form, 8px)
+    &:popover-open + .{prefix}-dropdown
+        dropdown()
+
+
+.{prefix}-dropdown
 .{prefix}-popover
     dialog()
     border-radius var(--border-radius-md)
-    padding var(--padding-popover, 8px)
     inset unset
     // 用户代理
     //     position fixed
     &.sm
-        --padding-popover: 4px
+        --gap-dialog-form 4px
+.{prefix}-popover
+    padding var(--padding-dialog, var(--gap-dialog-form, 8px))
+
 
 .{prefix}-dialog
-    dialog(100)
+    dialog()
     border-radius var(--border-radius-lg)
     padding var(--padding-dialog, 16px 24px)
     // 用户代理

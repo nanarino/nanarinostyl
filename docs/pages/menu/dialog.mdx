@@ -4,7 +4,7 @@ title: 对话框
 ---
 
 import T from "docs/components/T.astro"
-import { Icon } from "astro-icon/components"
+import Rennrakusaki from "docs/components/kanban/rennrakusaki.astro"
 import {components} from 'docs/components/markdown/index.mdx'
 export {components}
 
@@ -89,9 +89,7 @@ dialog.☘-dialog
 
 气泡弹框。`[popover=auto]` 默认点击外部自动关闭气泡
 
-<div class="popover-wrapper" style={{
-    width: 'fit-content',
-    position: 'relative',
+<T class="☘-popover-wrapper" style={{
     'anchor-name': '--popover-wrapper'
 }}>
     <T 
@@ -113,29 +111,13 @@ dialog.☘-dialog
         }}
     >
         <form method="dialog">
-            <T tag="button" class="☘-button" data-primary style="
-                --background-color-button:var(--blue-8);
-                --background-color-button-focus:var(--blue-7);
-            ">
-                <Icon 
-                    name="logo/outline/facebook"
-                    width={22}
-                    height={22}
-                />
-            </T>
-            <T tag="button" class="☘-button" style="--color-button:var(--blue-6)">
-                <Icon 
-                    name="logo/outline/twitter"
-                    width={22}
-                    height={22}
-                />
-            </T>
+            <Rennrakusaki />
         </form>
     </T>
-</div>
+</T>
 
 ```pug
-.popover-wrapper(style={
+.☘-popover-wrapper(style={
     width: 'fit-content',
     position: 'relative',
     'anchor-name': '--popover-wrapper'
@@ -165,8 +147,53 @@ dialog.☘-dialog
                 )
 ```
 
-案例使用实验性的 [`position-anchor`](https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor) 实现
+案例使用**实验性**的 [`position-anchor`](https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor) 实现
 
-你完全可以用 `[popover]:popover-open+.☘-dialog` 或者仅使用 `dialog.☘-dialog`同js事件 模拟出这个功能
+不建议使用。可以用 js 模拟出这个功能
 
-全局变量 `--padding-popover` 可以设置弹框内边距，`.☘-popover.sm` 预设了更小的
+全局变量 `--padding-dialog` 可以设置弹框内边距（优先）
+
+全局变量 `--gap-dialog-form` 可以设置弹框内边距和表单网格间距，`.☘-popover.sm` 预设了更小的
+
+
+## dropdown
+
+下拉气泡框。`[popover=auto]` 默认点击外部自动关闭气泡
+
+<T class="☘-dropdown-wrapper">
+    <T tag="button"
+        class="☘-button"
+        popovertarget="drop"
+        title="toggle dropdown"
+    > 連絡先 </T>
+    <dialog id="drop" popover="auto"></dialog>
+    <T class="☘-dropdown">
+        <Rennrakusaki />
+    </T>
+</T>
+
+```pug
+.☘-dropdown-wrapper
+    button.☘-button(popovertarget="drop") 連絡先
+    dialog#drop(popover="auto")
+    .☘-dropdown
+        button.☘-button(data-primary style=`
+            --background-color-button:var(--blue-8);
+            --background-color-button-focus:var(--blue-7);
+        `)
+            svg(
+                data-icon='logo/outline/facebook'
+                width=22
+                height=22
+            )
+        button.☘-button(style="--color-button:var(--blue-6)")
+            svg(
+                data-icon='logo/outline/twitter'
+                width=22
+                height=22
+            )
+```
+
+案例使用 `[popover=auto]:popover-open+☘-dropdown` 实现，`.☘-dropdown` 不属于弹框内，因而点击页面任意位置都会自动关闭
+
+全局变量 `--gap-dialog-form` 可以设置弹框内边距和表单网格间距，`.☘-dropdown.sm` 预设了更小的
