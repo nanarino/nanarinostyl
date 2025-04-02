@@ -23,10 +23,12 @@ dialog()
     & + .{prefix}-dropdown
         display none
         position absolute
-        left 0
-        right 0
+        left 50%
+        transform translateX(-50%)
         top calc(100% + var(--gap-dialog-form, 8px))
         padding var(--gap-dialog-form, 8px)
+        width fit-content
+        margin auto
     &:popover-open + .{prefix}-dropdown
         dropdown()
 
