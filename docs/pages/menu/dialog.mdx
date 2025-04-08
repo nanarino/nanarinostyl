@@ -11,7 +11,7 @@ export {components}
 
 # dialog
 
-普通弹框。可以直接操作 `dialog[open]`, 也可以调用 `.show()/.close()` 显隐
+普通弹框。可以直接操作 `dialog[open]`， 也可以调用 `.show()`/`.close()` 显隐
 
 用户代理默认 `position:absolute`
 
@@ -87,7 +87,7 @@ dialog.☘-dialog
 
 ## popover
 
-气泡弹框。`[popover=auto]` 默认点击外部自动关闭气泡
+气泡弹框。`[popover=auto]` 默认点击外部自动关闭气泡，也可以调用 `.showPopover()`/`.hidePopover()`/`.togglePopover()` 显隐
 
 <T class="☘-popover-wrapper" style={{
     'anchor-name': '--popover-wrapper'
@@ -158,7 +158,7 @@ dialog.☘-dialog
 
 ## dropdown
 
-下拉气泡框。`[popover=auto]` 默认点击外部自动关闭气泡
+下拉气泡框
 
 <T class="☘-dropdown-wrapper">
     <T tag="button"
