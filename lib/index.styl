@@ -1,15 +1,12 @@
 @require './mixins/*'
 // base
 @require './variables/*'
-@require './font'
 @require './primary'
-@require './layout'
-@require './watermark'
 
 /**
  * 使通配符引入时要确保引入的优先级 譬如：含有的 `&>*` 选择器被 `&` 覆盖
  */
-
+@require './common/*'
 // typography / markdown
 @require './typography/*'
 // components

@@ -1,21 +1,21 @@
 {
     "name": "nanarinostyl",
     "description": "style lib",
-    "version": "0.7.7",
-    "main": "./dist/nanarinostyl.min.css",
+    "version": "0.8.0",
+    "main": "./dist/style.min.css",
     "scripts": {
         "dev": "astro dev --host",
         "start": "astro dev",
         "build:docs": "astro build",
-        "build:styl": "rma ./dist && mkdir dist && stylus ./lib/index.styl -p | csso -o ./dist/nanarinostyl.min.css",
-        "build:gh-pages": "astro build --base /nanarinostyl/",
+        "build:styl": "rma ./dist && mkdir dist && stylus ./lib/index.styl -p | csso -o ./dist/style.min.css",
+        "build:gh-pages": "astro build --base /stylus/",
         "preview": "astro preview"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/nanarino/nanarinostyl.git"
+        "url": "git+https://github.com/nanarino/stylus.git"
     },
-    "homepage": "https://nanarino.github.io/nanarinostyl/",
+    "homepage": "https://nanarino.github.io/stylus/",
     "keywords": [
         "ui",
         "stylus"
@@ -23,19 +23,19 @@
     "author": "kogawananari",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/nanarino/nanarinostyl/issues"
+        "url": "https://github.com/nanarino/stylus/issues"
     },
     "peerDependencies": {
         "stylus": "^0.64.0"
     },
     "devDependencies": {
-        "@astrojs/mdx": "^4.2.3",
+        "@astrojs/mdx": "^4.2.5",
         "@holy-two/data-theme": "^0.0.6",
-        "@types/node": "^22.14.0",
-        "astro": "^5.6.1",
+        "@types/node": "^22.14.1",
+        "astro": "^5.7.5",
         "astro-icon": "^1.1.5",
         "copy-to-clipboard": "^3.3.3",
-        "css-doodle": "^0.42.2",
+        "css-doodle": "^0.42.3",
         "csso-cli": "^4.0.2",
         "dedent": "^1.5.3",
         "rm-all": "^1.1.1",

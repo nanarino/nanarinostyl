@@ -1,12 +1,12 @@
 ===========
-☘ 自用样式库
+☘ 自用样式包
 ===========
 
 
 .. image:: ./docs/icons/logo/color/clover.svg
     :width: 64 px
-    :alt: Nanarinostyl Logo
-    :target: https://nanarino.github.io/nanarinostyl/
+    :alt: nanarino Logo
+    :target: https://nanarino.github.io/stylus/
 
 
 使用 ``styl`` 来编写的纯 CSS 库
@@ -32,7 +32,9 @@
 ======
 ::
 
-    # 安装npm包
+    # 安装 npm 套件
+    # 包名就叫這個👇 以後也許叫【@nanarino/stylus】 但是其元件庫命名感覺會有歧義
+
     pnpm i nanarinostyl
 
     # 在jsx中 `import 'nanarinostyl'`
