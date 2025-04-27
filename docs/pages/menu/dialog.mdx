@@ -11,7 +11,7 @@ export {components}
 
 # dialog
 
-普通弹框。可以直接操作 `dialog[open]`， 也可以调用 `.show()`/`.close()` 显隐
+普通弹框 `.☘-dialog`。可以直接操作 `dialog[open]`， 也可以调用 `.show()`/`.close()` 显隐
 
 用户代理默认 `position:absolute`
 
@@ -56,9 +56,9 @@ dialog.☘-dialog(open style={
 
 ## modal
 
-模态弹框。务必调用 `.showModal()` 显示
+模态弹框 `.☘-dialog`。务必调用 `.showModal()` 显示
 
-相比于 `.show()` 打开的，对话框拥有全屏遮罩（`::backdrop`），且默认会被 <T tag='kbd' class='☘-kbd'>Esc</T> 键关闭
+相比于 `.show()` 打开的普通弹框，对话框拥有全屏遮罩（`::backdrop`），且默认会被 <T tag='kbd' class='☘-kbd'>Esc</T> 键关闭
 
 用户代理默认 `position:fixed`
 
@@ -87,7 +87,11 @@ dialog.☘-dialog
 
 ## popover
 
-气泡弹框。`[popover=auto]` 默认点击外部自动关闭气泡，也可以调用 `.showPopover()`/`.hidePopover()`/`.togglePopover()` 显隐
+气泡弹框 `.☘-popover`
+
+`[popover=auto]` 默认点击外部自动关闭气泡
+
+也可以调用 `.showPopover()`/`.hidePopover()`/`.togglePopover()` 显隐
 
 <T class="☘-popover-wrapper" style={{
     'anchor-name': '--popover-wrapper'
@@ -158,7 +162,7 @@ dialog.☘-dialog
 
 ## dropdown
 
-下拉气泡框
+下拉气泡框 `.☘-dropdown-wrapper > .☘-dropdown` 实际上就是预设了绝对定位至下方的 `.☘-popover`
 
 <T class="☘-dropdown-wrapper">
     <T tag="button"
@@ -194,8 +198,8 @@ dialog.☘-dialog
             )
 ```
 
-案例使用 `[popover=auto]:popover-open + .☘-dropdown` 实现
+使用 `dialog+.☘-dropdown` 丐版实现， 其在非展开【`:not(:popover-open)`】的弹框后面会隐藏
 
-由于 `.☘-dropdown` 不属于弹框内，点击页面任意位置都会自动关闭
+由于 `[popover=auto]+.☘-dropdown` 不属于弹框内，点击页面任意位置都会自动关闭，不够完美，而且只实现了往下一个方向
 
 全局变量 `--gap-dialog-form` 可以设置弹框内边距和表单网格间距，`.☘-dropdown.sm` 预设了更小的

@@ -1,7 +1,7 @@
 {
     "name": "nanarinostyl",
     "description": "style lib",
-    "version": "0.8.0",
+    "version": "0.8.1",
     "main": "./dist/style.min.css",
     "scripts": {
         "dev": "astro dev --host",
@@ -31,7 +31,7 @@
     "devDependencies": {
         "@astrojs/mdx": "^4.2.5",
         "@holy-two/data-theme": "^0.0.6",
-        "@types/node": "^22.14.1",
+        "@types/node": "^22.15.2",
         "astro": "^5.7.5",
         "astro-icon": "^1.1.5",
         "copy-to-clipboard": "^3.3.3",

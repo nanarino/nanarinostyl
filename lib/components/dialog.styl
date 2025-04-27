@@ -18,10 +18,12 @@ dialog()
 .{prefix}-dropdown-wrapper
     width fit-content
     position relative
-.{prefix}-dropdown-wrapper>dialog
-    visibility hidden
-    & + .{prefix}-dropdown
-        display none
+.{prefix}-dropdown-wrapper
+    dialog
+        visibility hidden
+        &:not(:popover-open)+.{prefix}-dropdown
+            display none
+    .{prefix}-dropdown
         position absolute
         left 50%
         transform translateX(-50%)
@@ -29,8 +31,8 @@ dialog()
         padding var(--gap-dialog-form, 8px)
         width fit-content
         margin auto
-    &:popover-open + .{prefix}-dropdown
         dropdown()
+
 
 
 .{prefix}-dropdown
