@@ -89,7 +89,7 @@ dialog.☘-dialog
 
 气泡弹框 `.☘-popover`
 
-`[popover=auto]` 默认点击外部自动关闭气泡
+`[popover=auto]` 默认点击外部自动关闭气泡， 默认会被 <T tag='kbd' class='☘-kbd'>Esc</T> 键关闭
 
 也可以调用 `.showPopover()`/`.hidePopover()`/`.togglePopover()` 显隐
 
@@ -110,7 +110,6 @@ dialog.☘-dialog
         style={{
             'position-anchor': '--popover-wrapper',
             left: 'anchor(left)',
-            right: 'anchor(right)',
             top: 'calc(anchor(bottom) + 8px)',
         }}
     >
@@ -122,15 +121,12 @@ dialog.☘-dialog
 
 ```pug
 .☘-popover-wrapper(style={
-    width: 'fit-content',
-    position: 'relative',
     'anchor-name': '--popover-wrapper'
 })
     button.☘-button(popovertarget="pop") 連絡先
     dialog#pop.☘-popover(popover="auto" style={
         'position-anchor': '--popover-wrapper',
-        left: 'anchor(left)',   // 拿不到 anchor(width) 只能左对齐
-        right: 'anchor(right)', // 宽度小的时候居中
+        left: 'anchor(left)',   // 左对齐
         top: 'calc(anchor(bottom) + 8px)',
     })
         form(method="dialog" style="width:96px")
@@ -200,6 +196,6 @@ dialog.☘-dialog
 
 使用 `dialog+.☘-dropdown` 丐版实现， 其在非展开【`:not(:popover-open)`】的弹框后面会隐藏
 
-由于 `[popover=auto]+.☘-dropdown` 不属于弹框内，点击页面任意位置都会自动关闭，不够完美，而且只实现了往下一个方向
+由于 `[popover=auto]+.☘-dropdown` 不属于弹框内，点击页面任意位置都会自动关闭，不够完美，而且只实现了往下一个方向。默认会被 <T tag='kbd' class='☘-kbd'>Esc</T> 键关闭
 
 全局变量 `--gap-dialog-form` 可以设置弹框内边距和表单网格间距，`.☘-dropdown.sm` 预设了更小的
