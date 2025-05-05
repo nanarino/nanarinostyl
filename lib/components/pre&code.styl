@@ -6,9 +6,9 @@
 
     // --background-color-pre var(--gray-2)
     // --background-color-pre-dark var(--gray-2)
-    background-color rgb(var(--background-color-pre, var(--gray-2)))
+    background-color rgb(var(--background-color-pre, var(--gray-2)) \/ .8)
     /:root[data-theme=dark] &
-        background-color rgb(var(--background-color-pre-dark, var(--gray-2)))
+        background-color rgb(var(--background-color-pre-dark, var(--gray-2)) \/ .8)
     
     padding calc(var(--font-offset-parent) + .5em) 1em
     margin 1rem 0
