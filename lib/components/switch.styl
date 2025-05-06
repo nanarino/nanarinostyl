@@ -9,9 +9,9 @@
     box-shadow-width-switch = var(--box-shadow-width-switch, var(--padding-switch, 2px))
     // --color-switch var(--gray-4)
     // --color-switch-checked var(--primary-6)
-    // --color-switch-disabled var(--gray-3)
+    // --color-switch-disabled var(--gray-1)
     // --color-switch-checked-disabled var(--primary-3)
-    // --color-switch-mover var(--gray-1)
+    // --color-switch-mover var(--gray-2)
     // --box-shadow-color-switch var(--color-switch-checked)
     // --box-shadow-color-switch-checked var(--color-switch)
     box-shadow-color-switch = var(
@@ -45,7 +45,7 @@
         z-index 1
         overflow hidden
         border-radius 50%
-        background-color rgb(var(--color-switch-mover, var(--gray-1)))
+        background-color rgb(var(--color-switch-mover, var(--gray-2)))
         will-change filter
     &-slot
         position absolute
@@ -84,7 +84,7 @@
         ^[-1..-1]:disabled~^[0]-mover
             cursor not-allowed
         ^[-1..-1]:disabled~^[0]-slot
-            background-color rgb(var(--color-switch-disabled, var(--gray-3)))
+            background-color rgb(var(--color-switch-disabled, var(--gray-1)))
         ^[-1..-1]:checked:disabled~^[0]-slot
             background-color rgb(var(--color-switch-checked-disabled, var(--primary-3)))
         

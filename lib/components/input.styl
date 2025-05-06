@@ -10,7 +10,7 @@ input_stat()
 
     caret-color rgb(var(--outline-color-focus))
 
-    background-color rgb(var(--gray-1))
+    background-color rgb(var(--gray-2))
     &:hover
         box-shadow var(--box-shadow-drop-bottom)
     &:focus
@@ -21,7 +21,7 @@ input_stat()
 
     &[disabled]
         cursor not-allowed
-        background-color rgb(var(--gray-2))
+        background-color rgb(var(--gray-1))
         color rgb(var(--gray-6))
         &:hover
             box-shadow none
@@ -108,9 +108,9 @@ input.{prefix}-input
     display inline-flex
     align-items center
     position relative
-    border 2px none rgb(var(--color-input-wrapper, var(--gray-1)))
+    border 2px none rgb(var(--color-input-wrapper, var(--gray-2)))
     border-radius var(--border-radius-md)
-    background-color rgb(var(--gray-1))
+    background-color rgb(var(--gray-2))
 
     /**
      * 输入框前缀后缀的按钮

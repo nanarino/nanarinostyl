@@ -66,9 +66,9 @@
                 border-color rgb(var(--color-checkbox-disabled, var(--primary-3)))
                 background-color @border-color
             ^[1..1]:disabled+&
-                background-color rgb(var(--gray-3))
-            ^[1..1]:disabled:not(:checked)+&
                 background-color rgb(var(--gray-1))
+            ^[1..1]:disabled:not(:checked)+&
+                background-color rgb(var(--gray-2))
             ~/[data-indeterminate] &
                 padding 2px
                 background-color rgb(var(--color-checkbox, var(--primary-6)))
