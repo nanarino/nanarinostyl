@@ -7,6 +7,7 @@
         "dev": "astro dev --host",
         "start": "astro dev",
         "build:docs": "astro build",
+        "build:demo": "rma ./dist && mkdir dist && stylus ./demo/index.styl -o ./dist/demo.css",
         "build:styl": "rma ./dist && mkdir dist && stylus ./lib/index.styl -p | csso -o ./dist/style.min.css",
         "build:gh-pages": "astro build --base /stylus/",
         "preview": "astro preview"
@@ -29,15 +30,15 @@
         "stylus": "^0.64.0"
     },
     "devDependencies": {
-        "@astrojs/mdx": "^4.2.5",
+        "@astrojs/mdx": "^4.2.6",
         "@holy-two/data-theme": "^0.0.6",
-        "@types/node": "^22.15.2",
-        "astro": "^5.7.5",
+        "@types/node": "^22.15.15",
+        "astro": "^5.7.11",
         "astro-icon": "^1.1.5",
         "copy-to-clipboard": "^3.3.3",
         "css-doodle": "^0.42.3",
         "csso-cli": "^4.0.2",
-        "dedent": "^1.5.3",
+        "dedent": "^1.6.0",
         "rm-all": "^1.1.1",
         "smooth-corners": "^1.0.8",
         "style-to-object": "^1.0.8",
