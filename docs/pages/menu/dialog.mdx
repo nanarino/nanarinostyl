@@ -109,8 +109,9 @@ dialog.☘-dialog
         id="pop"
         style={{
             'position-anchor': '--popover-wrapper',
-            left: 'anchor(left)',
-            top: 'calc(anchor(bottom) + 8px)',
+            left: "anchor(center)",
+            top: "calc(anchor(bottom) + 8px)",
+            transform: "translateX(-50%)",
         }}
     >
         <form method="dialog" style="width:96px">
@@ -126,8 +127,9 @@ dialog.☘-dialog
     button.☘-button(popovertarget="pop") 連絡先
     dialog#pop.☘-popover(popover="auto" style={
         'position-anchor': '--popover-wrapper',
-        left: 'anchor(left)',   // 左对齐
+        left: 'anchor(center)',
         top: 'calc(anchor(bottom) + 8px)',
+        transform: 'translateX(-50%)',
     })
         form(method="dialog" style="width:96px")
             button.☘-button(data-primary style=`
@@ -148,8 +150,6 @@ dialog.☘-dialog
 ```
 
 案例使用**实验性**的 [`position-anchor`](https://developer.mozilla.org/en-US/docs/Web/CSS/position-anchor) 实现，需要自订定位宽高以及对齐
-
-不建议使用。可以用 js 模拟出这个功能
 
 全局变量 `--padding-dialog` 可以设置弹框内边距（优先）
 
