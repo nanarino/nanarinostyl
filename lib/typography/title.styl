@@ -46,7 +46,7 @@ set_title_styl(size=6)
 
 
 set_prefix()
-    // --color-title-prefix var(--primary-6)
+    // --color-title-prefix var(--gray-3)
 
     position relative
     padding-left calc(var(--font-offset-parent) * 3)
@@ -59,9 +59,9 @@ set_prefix()
         left 0
         top var(--font-offset-parent)
         bottom var(--font-offset-parent)
-        background-color rgb(var(--color-title-prefix, var(--color-blockquote-prefix, var(--gray-4))))
+        background-color rgb(var(--color-title-prefix, var(--color-blockquote-prefix, var(--gray-3))))
         ^[-1]:where([data-primary])
-            --color-title-prefix var(--primary-6)
+            --color-title-prefix var(--primary-5)
 
 
 .{prefix}-blockquote
