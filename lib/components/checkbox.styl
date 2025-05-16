@@ -25,6 +25,9 @@
         cursor pointer
         &:disabled
             cursor not-allowed
+        /.{prefix}-input-wrapper
+            &:has(^[0..1])
+                gap 8px
         ~/-label
             padding-left var(--indent-checkbox, 1em)
             min-width 2px
@@ -37,7 +40,7 @@
              * 使用 `^[1..1]` 代替 `../` 减少编译后体积以及选择器冗余
              */
             ^[1..1]:focus-visible+&
-                outline 2px solid rgb(var(--outline-color-focus))
+                outline 2px solid rgb(var(--color-input-wrapper, var(--outline-color-focus)))
                 border-radius var(--border-radius-sm)
             ^[1..1]:disabled+&
                 color rgb(var(--gray-6))

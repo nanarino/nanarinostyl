@@ -1,0 +1,75 @@
+---
+import T from "../T.astro"
+
+const card_type = [
+    { label: "银联", value: "UnionPay" },
+    { label: "万事达", value: "MasterCard" },
+    { label: "美国运通", value: "AmericanExpress" },
+]
+---
+
+<form id="formitems-kanban" onsubmit="console.log(this.elements);return false">
+    <T class="☘-form-item">
+        <label>卡号</label>
+        <T class="☘-input-wrapper" data-primary>
+            <T
+                tag="input"
+                id="keywords"
+                name="keywords"
+                type="search"
+                class="☘-input"
+                placeholder="请输入卡号"
+                required
+            />
+            <T
+                tag="span"
+                class="☘-form-item-message error-msg"
+                data-primary="danger">卡号必填</T
+            >
+        </T>
+    </T>
+    <T class="☘-form-item">
+        <label>类型</label>
+        <T class="☘-input-wrapper" data-primary>
+            {
+                card_type.map(i => (
+                    <T tag="span" class="☘-radio">
+                        <T
+                            tag="input"
+                            id={i.value}
+                            type="radio"
+                            class="☘-input"
+                            name="type"
+                            title={i.label}
+                            required
+                        />
+                        <T tag="label" class="na-radio-label" for={i.value}>
+                            {i.label}
+                        </T>
+                    </T>
+                ))
+            }
+            <T
+                tag="span"
+                class="☘-form-item-message error-msg"
+                data-primary="danger">卡类型必填</T
+            >
+        </T>
+    </T>
+    <T tag="input" type="reset" value="重置" class="☘-button" />
+    <T tag="input" type="submit" value="查找" class="☘-button" />
+</form>
+<style lang="stylus" is:global>
+#formitems-kanban
+    --indent-radio 20px
+
+    .error-msg
+        visibility hidden
+
+    .{prefix}-input-wrapper[data-primary]:has(:focus:invalid)
+        --color-input-wrapper var(--danger-6)
+        --background-color-selection var(--danger-9)
+        --color-selection var(--danger-1)
+        .error-msg
+            visibility visible
+</style>

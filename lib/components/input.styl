@@ -1,4 +1,4 @@
-input_stat()
+input_stat(tag)
 
     box-sizing border-box
     border none
@@ -8,13 +8,13 @@ input_stat()
     font-size var(--font-size-body)
     line-height var(--line-height-body)
 
-    caret-color rgb(var(--outline-color-focus))
+    caret-color rgb(var(_get_var_by(color, tag)))
 
     background-color rgb(var(--gray-2))
     &:hover
         box-shadow var(--box-shadow-drop-bottom)
     &:focus
-        outline-color rgb(var(--outline-color-focus))
+        outline-color rgb(var(_get_var_by(color, tag)))
     &:focus-visible
         box-shadow var(--box-shadow-drop-bottom)
     transition border-color .3s, box-shadow .3s
@@ -36,8 +36,7 @@ textarea.{prefix}-textarea
 
     // --padding-textarea 5px 12px
     
-    --color-textarea var(--black)
-    --outline-color-focus var(--color-textarea)
+    --color-textarea var(--color-input-wrapper, var(--outline-color-focus))
 
     display inline-flex
     flex-direction column
@@ -50,7 +49,7 @@ textarea.{prefix}-textarea
         --font-size-body var(--font-size-h5)
         --line-height-body var(--line-height-h5)
     
-    input_stat()
+    input_stat(textarea)
 
     &:where([data-primary])
         --color-textarea var(--primary-6)
@@ -61,8 +60,7 @@ input.{prefix}-input
     // --padding-vertical-input 4px
     // --padding-horizonal-input 12px
     
-    --color-input var(--black)
-    --outline-color-focus var(--color-input-wrapper, var(--color-input))
+    --color-input var(--color-input-wrapper, var(--outline-color-focus))
 
     &:not([type])
     &[type=text]
@@ -89,12 +87,14 @@ input.{prefix}-input
             --font-size-body var(--font-size-h5)
             --line-height-body var(--line-height-h5)
 
-        input_stat()
+        input_stat(input)
 
         &:where([data-primary])
             --color-input var(--primary-6)
 
         /.{prefix}-input-wrapper
+            &:has(^[0..1])
+                background-color rgb(var(--gray-2))
             &:has(.{prefix}-input-prefix)
                 & ^[0..1]
                     padding-left calc(var(--padding-horizonal-input, 12px) + var(--font-size-body))
@@ -110,7 +110,6 @@ input.{prefix}-input
     position relative
     border 2px none rgb(var(--color-input-wrapper, var(--gray-2)))
     border-radius var(--border-radius-md)
-    background-color rgb(var(--gray-2))
 
     /**
      * 输入框前缀后缀的按钮
@@ -127,7 +126,10 @@ input.{prefix}-input
         for tag in buttons
             &:has({tag}:not(.{prefix}-input-prefix):not(.{prefix}-input-suffix))
                 background-color rgb(var(--color-input-wrapper))
-            
+    
+    // 校驗后樣式由用戶自訂是:invalid或響應式框架控制更靈活
+    // &:has(:invalid)
+    //    --color-input-wrapper var(--danger-6)
         
     &>*
         display inline-flex

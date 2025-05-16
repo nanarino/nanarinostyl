@@ -5,6 +5,7 @@ import dataset from "docs/scripts/server/dataset"
 interface Props extends astroHTML.JSX.HTMLAttributes {
     tag?: keyof astroHTML.JSX.DefinedIntrinsicElements
     dataset?: Record<string, any>
+    [k: string]: any
 }
 
 const props = Astro.props

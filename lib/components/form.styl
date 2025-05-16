@@ -1,0 +1,16 @@
+.{prefix}-form-item
+    display flex
+    gap 8px
+    margin-bottom 16px
+    align-items center
+    &:where([data-inline])
+        display inline-flex
+    
+.{prefix}-form-item-message
+    // visibility hidden
+    color rgb(var(--primary-6))
+    position absolute
+    left 0
+    bottom -1.5em
+    font-size var(--font-size-base)
+    line-height var(--line-height-base)
