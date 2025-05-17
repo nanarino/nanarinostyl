@@ -21,3 +21,8 @@ window.addEventListener("load", () => {
     const h2 = document.querySelector(anchor)
     h2?.scrollIntoView({ behavior: "smooth" })
 })
+
+/**
+ * test
+ */
+import "./fonts.spec"

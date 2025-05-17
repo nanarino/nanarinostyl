@@ -72,7 +72,7 @@
 * color: `arco默认配色 <https://arco.design/palette/list>`_
 * background: `css-doodle <https://css-doodle.com/>`_
 * inspiration: `affinity-css <https://github.com/Deep-Codes/affinity-css/>`_
-
+* fonts:  ``HYWenHei-85W-zh`` 和 ``JetBrains Mono`` （本地测试环境下 ``127.0.0.1`` 限）
 
 约束
 ======
@@ -85,11 +85,11 @@
     - 不能含有js/ts注释。
     - 分割线使用 ``***`` 而不 ``---``。
 * styl:
-    - 尽量省略冒号分号逗号和花括号。
-    - 引入顺序 ``@import`` 应先引入css 再引入stylus。
-    - 出现vscode高亮丢失时，应该将其提成stylus变量来规避。
-    - 禁止使用元组列 ``colors = (red #F00)`` ，应该用字典 ``colors = {red: #F00}`` 代替。
-    - 使通配符引入时要确保引入的优先级 譬如：要确保含有的 ``&>*`` 选择器（被） ``&`` 覆盖。
+    - 非跨行组件不设置行高。
+    - 省略冒号分号逗号和花括号。
+    - 用 ``@import`` 先引入css ，再用 ``@require`` 引入stylus。
+    - ``colors = (red #F00)`` 写法应改为Record ``colors = {red: #F00}`` 。
+    - 使通配符引入时要确保引入顺序 以确保譬如含有 ``&>*`` 的选择器被 ``&`` 覆盖。
 
 兼容
 ======

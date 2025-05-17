@@ -14,12 +14,11 @@ interface Props {
     }
 }
 const props = Astro.props
-const style = props.style
 ---
 
 <pre
     data-language={props["data-language"]}
-    class={`${prefix}-pre ${prefix}-font-mono ${prefix}-watermark`}
+    class={`${prefix}-pre ${prefix}-watermark`}
     style={{
         // "--background-color-pre": `from ${style.backgroundColor} r g b`,
         // "--background-color-pre-dark": `from ${style["--shiki-dark-bg"]} r g b`,

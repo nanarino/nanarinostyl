@@ -49,7 +49,9 @@ button_background_color_init(background_color)
     align-items center
     padding var(--padding-vertical-button, 5px) var(--padding-horizonal-button, 12px)
     font-size var(--font-size-body)
-    line-height var(--line-height-body)
+    // line-height var(--line-height-body)
+    min-height var(--line-height-body)
+    box-sizing content-box
     border none
     border-radius var(--border-radius-md)
 
@@ -138,7 +140,6 @@ button_background_color_init(background_color)
         
         input[type=file].{prefix}-input^[0]
             font-size 0
-            line-height 0
             uploader-button()
                 font-size var(--font-size-body)
                 line-height var(--line-height-body)
