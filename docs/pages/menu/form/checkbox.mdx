@@ -15,7 +15,7 @@ export {components}
 <Checkbox id="world" checked style="--indent-checkbox: 2em">world</Checkbox>
 
 全局变量 `--indent-checkbox` 改变label文字左内边距    
-这原本是用 `text-indent` 属性实现。但在Safari中使用 `::before` 的元素不支持 `text-indent`，遂改用 `padding-left` 来实现。默认值是1em（label紧贴input）
+这原本是用 `text-indent` 属性实现。但在Safari中使用 `::before` 的元素不支持 `text-indent`，遂改用 `padding-left` 来实现。默认值是1.4em
 
 ```pug
 span.☘-checkbox(style="--indent-checkbox: 2em")
@@ -27,7 +27,7 @@ span.☘-checkbox(style="--indent-checkbox: 2em")
 
 ## `disabled`
 
-<Grid inline style={{'--indent-checkbox': '20px'}}>
+<Grid inline>
     <Checkbox id="HTTP" disabled>HTTP</Checkbox>
     <Checkbox id="HTTPS" checked disabled dataset={{ 
         primary : "success" 
@@ -35,7 +35,7 @@ span.☘-checkbox(style="--indent-checkbox: 2em")
 </Grid>
 
 ```pug
-div(style={'--indent-checkbox': '20px'})
+div
     span.☘-checkbox
         input#HTTP.☘-input(type="checkbox" title="HTTP" disabled)
         label.☘-checkbox-label(for="HTTP") HTTP
@@ -52,16 +52,12 @@ div(style={'--indent-checkbox': '20px'})
 <Checkbox
     id="Superposition"
     dataset={{ indeterminate : true }}
-    style="--indent-checkbox: 20px"
     onchange="
     this.parentElement.removeAttribute('data-indeterminate')
 ">半信半疑</Checkbox>
 
 ```pug
-span.☘-checkbox(
-    data-indeterminate
-    style="--indent-checkbox: 20px"
-)
+span.☘-checkbox(data-indeterminate)
     input#Superposition.☘-input(
         type="checkbox"
         onchange=function(){
@@ -88,14 +84,10 @@ span.☘-checkbox(
     id="DashAsMark"
     checked
     dataset={{ marker : "-" }}
-    style="--indent-checkbox: 20px"
 >部分选择</Checkbox>
 
 ```pug
-span.☘-checkbox(
-    data-marker="-"
-    style="--indent-checkbox: 20px"
-)
+span.☘-checkbox(data-marker="-")
     input#DashAsMark.☘-input(
         type="checkbox"
         title="DashAsMark"
@@ -118,7 +110,6 @@ marker钩号或破折号由 `label::after` 实现，可以自定义添加你需�
     style={{
         '--color-checkbox': 'var(--blue-6)',
         '--color-checkbox-disabled': 'var(--blue-2)',
-        '--indent-checkbox': '20px',
         color: 'rgb(var(--blue-6))'
 }}>Tim</Checkbox>
 
@@ -128,7 +119,6 @@ span.☘-checkbox(
     style={
     '--color-checkbox': 'var(--blue-6)',
     '--color-checkbox-disabled': 'var(--blue-2)',
-    '--indent-checkbox': '20px',
     color: 'rgb(var(--blue-6))'
 })
     input#BlueTIMBox.☘-input(

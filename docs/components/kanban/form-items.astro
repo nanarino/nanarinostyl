@@ -1,5 +1,6 @@
 ---
 import T from "../T.astro"
+import Radio from "../radio.astro"
 
 const card_type = [
     { label: "银联", value: "UnionPay" },
@@ -33,20 +34,15 @@ const card_type = [
         <T class="☘-input-wrapper" data-primary>
             {
                 card_type.map(i => (
-                    <T tag="span" class="☘-radio">
-                        <T
-                            tag="input"
-                            id={i.value}
-                            type="radio"
-                            class="☘-input"
-                            name="type"
-                            title={i.label}
-                            required
-                        />
-                        <T tag="label" class="na-radio-label" for={i.value}>
-                            {i.label}
-                        </T>
-                    </T>
+                    <Radio
+                        id={i.value}
+                        name="type"
+                        title={i.label}
+                        value={i.value}
+                        required
+                    >
+                        {i.label}
+                    </Radio>
                 ))
             }
             <T
@@ -61,7 +57,6 @@ const card_type = [
 </form>
 <style lang="stylus" is:global>
 #formitems-kanban
-    --indent-radio 20px
 
     .error-msg
         visibility hidden

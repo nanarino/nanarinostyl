@@ -89,6 +89,7 @@ form#formitems-kanban(onsubmit=function(){console.log(this.elements);return fals
                         class="☘-input"
                         name="type"
                         title=item.label
+                        value=item.value
                         required
                     )
                     label.☘-radio-label(for=item.value)= item.label
@@ -97,7 +98,6 @@ form#formitems-kanban(onsubmit=function(){console.log(this.elements);return fals
 
 style(lang="stylus").
     #formitems-kanban
-        --indent-radio 20px
         .error-msg
             visibility hidden
         .☘-input-wrapper[data-primary]:has(:focus:invalid)

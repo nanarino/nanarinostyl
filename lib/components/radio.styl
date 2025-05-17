@@ -5,16 +5,15 @@
  */
 .{prefix}-radio
 
-    // --indent-radio 1em
+    // --indent-radio 1.4em
     // --color-radio var(--primary-6)
     // --color-radio-disabled var(--primary-3)
 
     min-height 1em
     position relative
-    font-size var(--font-size-body)
-    line-height var(--line-height-body)
+    min-height var(--line-height-body)
     display inline-flex
-    // text-indent 1.5em // IOS中不支持 遂改用label的padding-left
+    // text-indent 1.4em // IOS中不支持 遂改用label的padding-left
     // vertical-align middle
     input.{prefix}-input[type=radio]
         margin 0
@@ -34,7 +33,7 @@
             &:has(^[0..1])
                 gap 8px
         ~/-label
-            padding-left var(--indent-radio, 1em)
+            padding-left var(--indent-radio, 1.4em)
             min-width 2px
             position relative
             display inline-flex

@@ -5,9 +5,10 @@ const props = Astro.props
 interface Props {
     /** 不傳時隨機uuid */
     id?: string
-    /** 不傳時取id */
     name?: string
-    /** 不傳時取name */
+    /** 不傳時取id */
+    value?: string
+    /** 不傳時取value */
     title?: string
     checked?: boolean
     disabled?: boolean
@@ -15,6 +16,7 @@ interface Props {
     style?: Record<string, any> | string
     dataset?: Record<string, any>
     onchange?: string
+    required?: boolean
 }
 let uuid: string
 if (!props.id) {
@@ -30,12 +32,16 @@ if (!props.id) {
     <input
         type="radio"
         class={`${prefix}-input`}
-        id={props.id || uuid}
-        name={props.name || props.id || uuid}
-        title={props.title || props.name || ""}
+        id={props.id ?? uuid}
+        name={props.name ?? ""}
+        value={props.value ?? props.id ?? uuid}
+        title={props.title ?? props.value ?? props.id ?? props.name ?? ""}
         checked={props.checked}
         disabled={props.disabled}
         onchange={props.onchange}
+        required={props.required}
     />
-    <label class={`${prefix}-radio-label`} for={props.id || uuid}><slot /></label>
+    <label class={`${prefix}-radio-label`} for={props.id ?? uuid}
+        ><slot /></label
+    >
 </span>

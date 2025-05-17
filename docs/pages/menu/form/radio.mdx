@@ -12,21 +12,21 @@ export {components}
 
 # Radio
 
-<Grid inline style={{"--indent-radio": "20px"}}>
+<Grid inline>
     <Radio name="lang" id="java" checked>Java</Radio>
     <Radio name="lang" id="kotlin">Kotlin</Radio>
 </Grid>
 
 全局变量 `--indent-radio` 改变label文字左内边距    
-这原本是用 `text-indent` 属性实现。但在Safari中使用 `::before` 的元素不支持 `text-indent`，遂改用 `padding-left` 来实现。默认值是1em（label紧贴input）
+这原本是用 `text-indent` 属性实现。但在Safari中使用 `::before` 的元素不支持 `text-indent`，遂改用 `padding-left` 来实现。默认值是1.4em
 
 ```pug
-div(style="--indent-radio: 20px")
+div
     span.☘-radio
-        input#java.☘-input(type="radio" name="lang" title="java")
+        input#java.☘-input(type="radio" name="lang" title="java" value="java")
         label.☘-radio-label(for="java") Java
     span.☘-radio
-        input#kotlin.☘-input(type="radio" name="lang" title="kotlin")
+        input#kotlin.☘-input(type="radio" name="lang" title="kotlin" value="kotlin")
         label.☘-radio-label(for="kotlin") Kotlin
 ```
 
@@ -34,7 +34,7 @@ div(style="--indent-radio: 20px")
 
 ## `disabled`
 
-<Grid inline style={{'--indent-radio': '20px'}}>
+<Grid inline>
     <Radio name="type" id="HTTP" checked disabled>HTTP</Radio>
     <Radio name="type" id="HTTPS" disabled dataset={{ 
         primary : "success" 
@@ -42,12 +42,12 @@ div(style="--indent-radio: 20px")
 </Grid>
 
 ```pug
-div(style={'--indent-radio': '20px'})
+div
     span.☘-radio
-        input#HTTP.☘-input(type="radio" title="HTTP" checked disabled)
+        input#HTTP.☘-input(type="radio" title="HTTP" value="HTTP" checked disabled)
         label.☘-radio-label(for="HTTP") HTTP
     span.☘-radio(data-primary="success")
-        input#HTTPS.☘-input(type="radio" title="HTTPS" disabled)
+        input#HTTPS.☘-input(type="radio" title="HTTPS" value="HTTPS" disabled)
         label.☘-radio-label(for="HTTPS") HTTPS
 ```
 
@@ -56,7 +56,7 @@ div(style={'--indent-radio': '20px'})
 - `--color-radio` 全局变量覆盖颜色RGB值
 - `--color-radio-disabled` 禁用状态全局变量覆盖颜色RGB值
 
-<Grid inline style={{"--indent-radio": "20px"}}>
+<Grid inline>
     <Radio name="lunch" id="meituan" style={{
         '--color-radio': 'var(--gold-6)'
     }}>美团</Radio>
@@ -66,13 +66,14 @@ div(style={'--indent-radio': '20px'})
 </Grid>
 
 ```pug
-div(style="--indent-radio: 20px")
+div
     span.☘-radio
         input#meituan.☘-input(
             type="radio"
             name="lunch"
             style={'--color-radio': 'var(--gold-6)'}
             title="meituan"
+            value="meituan"
         )
         label.☘-radio-label(for="meituan") 美团
     span.☘-radio
@@ -82,6 +83,7 @@ div(style="--indent-radio: 20px")
             style={'--color-radio': 'var(--blue-6)'}
             checked
             title="eleme"
+            value="eleme"
         )
         label.☘-radio-label(for="eleme") 饿了么
 ```
@@ -90,11 +92,11 @@ div(style="--indent-radio: 20px")
 
 label为空即可不显示
 
-<div style="display: inline-flex; gap: 6px">
+<div style="display: inline-flex">
 {
     colours.map((color, i) => 
         <Radio 
-            title={color}
+            value={color}
             checked={i==0}
             name="radio-color"
             style={{'--color-radio': `var(--${color}-6)`}}
@@ -112,6 +114,7 @@ each color, i in colors
             name="radio-color"
             style={'--color-radio': `var(--${color}-6)`}
             title=color
+            value=color
         )
         label.☘-radio-label
 ```
