@@ -14,12 +14,18 @@ interface Props {
     }
 }
 const props = Astro.props
+// const style = props.style
 ---
 
-<pre
-    data-language={props["data-language"]}
-    class={`${prefix}-pre ${prefix}-watermark`}
-    style={{
-        // "--background-color-pre": `from ${style.backgroundColor} r g b`,
-        // "--background-color-pre-dark": `from ${style["--shiki-dark-bg"]} r g b`,
-    }}><slot /></pre>
+<section
+    class={`${prefix}-watermark`}
+    style="--border-radius-watermark:var(--border-radius-md)"
+>
+    <pre
+        data-language={props["data-language"]}
+        class={`${prefix}-pre`}
+        style={{
+            // "--background-color-pre": `from ${style.backgroundColor} r g b`,
+            // "--background-color-pre-dark": `from ${style["--shiki-dark-bg"]} r g b`,
+        }}><slot /></pre>
+</section>
