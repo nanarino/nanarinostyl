@@ -5,7 +5,7 @@
     align-items center
     &:where([data-inline])
         display inline-flex
-    
+
 .{prefix}-form-item-message
     // visibility hidden
     color rgb(var(--primary-6))
@@ -14,3 +14,11 @@
     bottom -1.5em
     font-size var(--font-size-base)
     line-height var(--line-height-base)
+
+.{prefix}-input-wrapper:where([data-validate])
+    &:where(:has(:focus:invalid))
+        for i in range(1 10)
+            {_get_var_by('primary', i)} var(_get_var_by('danger', i))
+    &:where(:not(:has(:focus:invalid)))
+        .{prefix}-form-item-message
+            visibility hidden

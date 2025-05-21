@@ -57,7 +57,7 @@ lable(for='uname' title='username') 用户名
 
 `☘-form-item` 可以用来给表单项布局
 
-`☘-form-item-message[data-primary]` 可以显示提示消息
+`☘-form-item-message[data-validate]` 可以显示提示消息（覆盖 `[data-primary]` 主題色为 `danger`）
 
 <FormItems />
 
@@ -65,7 +65,7 @@ lable(for='uname' title='username') 用户名
 form#formitems-kanban(onsubmit=function(){console.log(this.elements);return false})
     .☘-form-item
         label(for="keywords") 卡号
-        .☘-input-wrapper(data-primary)
+        .☘-input-wrapper(data-validate)
             input#keywords.☘-input(
                 name="keywords"
                 type="search"
@@ -73,10 +73,10 @@ form#formitems-kanban(onsubmit=function(){console.log(this.elements);return fals
                 placeholder="请输入卡号"
                 required
             )
-            span.☘-form-item-message.error-msg(data-primary="danger") 卡号必填
+            span.☘-form-item-message(data-primary="danger") 卡号必填
     .☘-form-item
         label(for="keywords") 类型
-        .☘-input-wrapper(data-primary)
+        .☘-input-wrapper(data-validate)
             each item in [
                 { label: "银联", value: "UnionPay" },
                 { label: "万事达", value: "MasterCard" },
@@ -93,19 +93,8 @@ form#formitems-kanban(onsubmit=function(){console.log(this.elements);return fals
                         required
                     )
                     label.☘-radio-label(for=item.value)= item.label
-            span.☘-form-item-message.error-msg(data-primary="danger") 类型必填
+            span.☘-form-item-message(data-primary="danger") 类型必填
     input.☘-button(type="submit" value="查找")
-
-style(lang="stylus").
-    #formitems-kanban
-        .error-msg
-            visibility hidden
-        .☘-input-wrapper[data-primary]:has(:focus:invalid)
-            --color-input-wrapper var(--danger-6)
-            --background-color-selection var(--danger-9)
-            --color-selection var(--danger-1)
-            .error-msg
-                visibility visible
 ```
 
 这里使用 `:invalid` 來自定义校验样式，你也可以使用如 `vue` 等响应式库来控制

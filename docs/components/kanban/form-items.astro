@@ -12,7 +12,7 @@ const card_type = [
 <form id="formitems-kanban" onsubmit="console.log(this.elements);return false">
     <T class="☘-form-item">
         <label>卡号</label>
-        <T class="☘-input-wrapper" data-primary>
+        <T class="☘-input-wrapper" data-validate>
             <T
                 tag="input"
                 id="keywords"
@@ -22,16 +22,14 @@ const card_type = [
                 placeholder="请输入卡号"
                 required
             />
-            <T
-                tag="span"
-                class="☘-form-item-message error-msg"
-                data-primary="danger">卡号必填</T
+            <T tag="span" class="☘-form-item-message" data-primary="danger"
+                >卡号必填</T
             >
         </T>
     </T>
     <T class="☘-form-item">
         <label>类型</label>
-        <T class="☘-input-wrapper" data-primary>
+        <T class="☘-input-wrapper" data-validate>
             {
                 card_type.map(i => (
                     <Radio
@@ -45,26 +43,11 @@ const card_type = [
                     </Radio>
                 ))
             }
-            <T
-                tag="span"
-                class="☘-form-item-message error-msg"
-                data-primary="danger">卡类型必填</T
+            <T tag="span" class="☘-form-item-message" data-primary="danger"
+                >卡类型必填</T
             >
         </T>
     </T>
     <T tag="input" type="reset" value="重置" class="☘-button" />
     <T tag="input" type="submit" value="查找" class="☘-button" />
 </form>
-<style lang="stylus" is:global>
-#formitems-kanban
-
-    .error-msg
-        visibility hidden
-
-    .{prefix}-input-wrapper[data-primary]:has(:focus:invalid)
-        --color-input-wrapper var(--danger-6)
-        --background-color-selection var(--danger-9)
-        --color-selection var(--danger-1)
-        .error-msg
-            visibility visible
-</style>
