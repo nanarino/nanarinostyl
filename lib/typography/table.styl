@@ -48,6 +48,8 @@ gray-cell()
         td, th, &-cell
             display table-cell
             box-sizing border-box
+            // white-space nowrap
+            white-space var(--white-space-cell, normal)
             min-width var(--min-width-cell, unset)
             padding var(--padding-cell, 9px 12px)
             text-align var(--text-align-cell, left)
