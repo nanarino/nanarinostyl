@@ -1,16 +1,29 @@
 ---
 import prefix from "docs/scripts/prefix"
+import clover0 from "docs/icons/logo/outline/clover.svg?raw"
+import clover1 from "docs/icons/logo/fill/clover.svg?raw"
 import type { page, menu } from "docs/scripts/server/menu"
 interface Props {
     menu: Array<page | menu>
     base?: string
+    deep?: number
 }
 const { menu } = Astro.props
 const base = Astro.props.base ?? ""
 const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0]
+const deep = Astro.props.deep ?? 0
+const watermark = [
+    `url("data:image/svg+xml;utf8,${encodeURIComponent(clover0.replace(/currentColor/g, "#846"))}") 0 0 / 36px 36px`,
+    `url("data:image/svg+xml;utf8,${encodeURIComponent(clover1.replace(/currentColor/g, "#846"))}") 0 0 / 36px 36px`,
+][deep % 2]
 ---
 
-<ul class={`${prefix}-menu`}>
+<ul
+    class={`${prefix}-menu`}
+    style={{
+        "--background-watermark": watermark,
+    }}
+>
     {
         menu.map(item => {
             /**
@@ -43,6 +56,7 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0]
                         <Astro.self
                             menu={(item as menu).children}
                             base={base}
+                            deep={deep + 1}
                         />
                     </li>
                 )
@@ -57,7 +71,6 @@ const getName = (path: string) => path?.match?.(/[^/]*$/)?.[0]
                         data-active
                         style={{
                             order: getName(item.path) ? 1 : 0,
-                            "--opacity-watermark": 1,
                         }}
                     >
                         {getName(item.path) || "readme"}

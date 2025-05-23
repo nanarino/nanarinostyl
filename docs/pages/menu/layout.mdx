@@ -5,6 +5,7 @@ title: 布局
 
 import Layouts from "docs/components/kanban/layouts.astro"
 import Menu from "docs/components/kanban/menu-tree.astro"
+import watermark from "docs/assets/images/watermark.svg?raw";
 import {components} from 'docs/components/markdown/index.mdx'
 export {components}
 
@@ -28,8 +29,9 @@ export {components}
 
 这个页面充满了水印
 
-- 全局变量 `--opacity-watermark` 水印调整透明度（默认0.5）
+- 全局变量 `--opacity-watermark` 水印调整透明度（默认0.1）
 - 全局变量 `--border-radius-watermark` 水印调整圆角（默认unset）
+- 全局变量 `--background-watermark` 水印调整图案（默认<a class="na-link" href="https://github.com/nanarino/stylus/blob/main/docs/assets/images/watermark.svg" style="vertical-align: top; box-shadow: var(--box-shadow-drop-right);"><Fragment set:html={watermark} /></a>）填充色推荐是 `fill="#808080"`
 
 
 ## menu
