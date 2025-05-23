@@ -31,25 +31,33 @@ textarea.☘-textarea.☘-font-mono(
 
 ## `placeholder`
 
-<T
-    tag="textarea"
-    class="☘-textarea ☘-font-mono"
-    title="helloworld"
-    placeholder='helloworld'
-/>
+<T class="☘-form-item">
+    <label>程式代码</label>
+    <T class="☘-input-wrapper">
+        <T
+            tag="textarea"
+            class="☘-textarea ☘-font-mono"
+            title="helloworld"
+            placeholder='helloworld'
+        />
+    </T>
+</T>
 
 ```pug
-textarea.☘-textarea.☘-font-mono(
-    title='helloworld'
-    placeholder='helloworld'
-)
+.☘-form-item
+    label 程式代码
+    .☘-input-wrapper
+        textarea.☘-textarea.☘-font-mono(
+            title='helloworld'
+            placeholder='helloworld'
+        )
 ```
 
 ## `data-primary`
 
 设置 `textarea.☘-textarea[data-primary]` 可以覆盖全局css变量 `--outline-color-focus`
 
-直接使用局部变量 `--color-textarea` 也可以设置主题颜色RGB值
+直接使用局部变量 `--color-textarea` 也可以设置主题颜色RGB值， 优先于 `--color-input*-wrapper` 
 
 <Grid inline>
 {
@@ -70,6 +78,14 @@ textarea.☘-textarea.☘-font-mono(
     placeholder="custom"
     style="--color-textarea: var(--blue-6)"
 />
+<T class="☘-input-wrapper" data-primary>
+    <T
+        tag="textarea"
+        class="☘-textarea"
+        title="wrapper"
+        placeholder="wrapper"
+    />
+</T>
 </Grid>
 
 ```pug
@@ -84,6 +100,11 @@ textarea.☘-textarea(
     placeholder="primary"
     style="--color-textarea: var(--blue-6)"
 )
+.☘-input-wrapper(data-primary)
+    textarea.☘-textarea(
+        title="wrapper"
+        placeholder="wrapper"
+    )
 ```
 
 ## `.sm` & `.lg`

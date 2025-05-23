@@ -118,6 +118,14 @@ input.☘-input.☘-font-mono(
         --color-selection: var(--gold-1);
     "
 />
+<T class="☘-input-wrapper" data-primary>
+    <T
+        tag="input"
+        class="☘-input"
+        title="wrapper"
+        placeholder="wrapper"
+    />
+</T>
 </Grid>
 
 ```pug
@@ -136,6 +144,11 @@ input.☘-input(
         '--color-selection': 'var(--gold-1)',
     }
 )
+.☘-input-wrapper(data-primary)
+    input.☘-input(
+        title="wrapper"
+        placeholder="wrapper"
+    )
 ```
 
 ## `.sm` & `.lg`
@@ -161,31 +174,51 @@ input.☘-input(
 
 该容器启用 `.☘-input-wrapper[data-primary]` 也会覆盖全局css变量 `--outline-color-focus` 和继承某些样式
 
-直接使用局部变量 `--color-input-wrapper` 也可以设置主题以及焦点时颜色RGB值，优先级低于 `--color-input`
+直接使用局部变量 `--color-input*-wrapper` 也可以设置主题以及焦点时颜色RGB值，优先级低于 `--color-input`。 其中的星号 `*` 意味着这是一个广义的 `input`，也能作用于 `select`、`textarea`
 
 <Grid inline>
-    <T class="☘-input-wrapper">
-        <T tag="input" class="☘-input" title="helloworld" value='helloworld'/>
+    <T class="☘-form-item">
+        <label>单号</label>
+        <T class="☘-input-wrapper" data-primary>
+            <T tag="input" class="☘-input" title="单号" value='114514'/>
+        </T>
     </T>
-    <T class="☘-input-wrapper">
-        <T tag="input" class="☘-input" title="helloworld" value='helloworld'
-            style="--color-input: var(--yellow-5)"
-        />
+    <T class="☘-form-item">
+        <label>流水号</label>
+        <T class="☘-input-wrapper">
+            <T tag="input" class="☘-input" title="流水号" value='1919810'
+                style="--color-input: var(--yellow-5)"
+            />
+        </T>
     </T>
 </Grid>
 
 ```pug
-.☘-input-wrapper
-    input.☘-input(title='helloworld' value='helloworld')
-.☘-input-wrapper
-    input.☘-input(title='helloworld' value='helloworld' style={
-        '--color-input': 'var(--yellow-5)'
-    })
+.☘-form-item
+    label 单号
+    .☘-input-wrapper(data-primary)
+        input.☘-input(title='单号' value='114514')
+.☘-form-item
+    label 流水号
+    .☘-input-wrapper
+        input.☘-input(title='流水号' value='1919810' style={
+            '--color-input': 'var(--yellow-5)'
+        })
 ```
 
-## prefix
+注意，使用 `*` 可能需要转义：
 
-这里使用`type="search"` 在**Safari**上会有额外的放大镜图标
+- `ipt.style.setProperty('--color-input*-wrapper', '0 255 255')`
+- `ipt.style = '--color-input\*-wrapper: 0 255 255'`
+
+
+另外参见：[_表单_](/menu/form/#form-item)
+
+### prefix
+
+需要在 `.☘-input-wrapper` 中使用
+
+这里使用 `[type="search]"` 在**Safari**上会有额外的放大镜图标
 
 <Grid inline>
     <T class="☘-input-wrapper">
@@ -231,7 +264,9 @@ input.☘-input(
     input.☘-input(title='with-prefix' type="search")
 ```
 
-## suffix
+### suffix
+
+需要在 `.☘-input-wrapper` 中使用
 
 通配变量 `--background-color-selection` 和 `--color-selection` 可以修改选中文字颜色（RGB）
 
@@ -248,7 +283,7 @@ input.☘-input(
         />
     </T>
     <T class="☘-input-wrapper" style="
-        --color-input-wrapper: var(--blue-6);
+        --color-input\*-wrapper: var(--blue-6);
         --background-color-selection: var(--blue-9);
         --color-selection: var(--blue-1);
     ">
@@ -269,7 +304,7 @@ input.☘-input(
     input.☘-input(title='with-suffix')
     svg.☘-input-suffix(role="button" aria-label="close" width=16 height=16)
 .☘-input-wrapper(style={
-    '--color-input-wrapper': 'var(--blue-6)'
+    '--color-input*-wrapper': 'var(--blue-6)'
     '--background-color-selection': 'var(--blue-9)',
     '--color-selection': 'var(--blue-1)',
 })
@@ -321,28 +356,33 @@ input.☘-input(
 
 ***
 
-<T class="☘-input-wrapper" data-primary style={{
-    'border-style': 'solid'
-}}>
-    <T tag="input" class="☘-input" title="out-suffix" style={{
-        '--box-shadow-drop-bottom': 'none'
-    }} />
-    <button type="submit" title="search">
-        <Icon
-            name="interactive-button/outline/search"
-            width={18}
-            height={18}
-        />
-    </button>
+<T class="☘-form-item">
+    <label>查找历史订单</label>
+    <T class="☘-input-wrapper" data-primary style={{
+        'border-style': 'solid'
+    }}>
+        <T tag="input" class="☘-input" title="out-suffix" style={{
+            '--box-shadow-drop-bottom': 'none'
+        }} />
+        <button type="submit" title="search">
+            <Icon
+                name="interactive-button/outline/search"
+                width={18}
+                height={18}
+            />
+        </button>
+    </T>
 </T>
 
 ```pug
-.☘-input-wrapper(data-primary style={
-    'border-style': 'solid'
-})
-    input.☘-input(title='out-suffix' style={
-        '--box-shadow-drop-bottom': 'none'
+.☘-form-item
+    label 查找历史订单
+    .☘-input-wrapper(data-primary style={
+        'border-style': 'solid'
     })
-    button(type="submit" title="search")
-        svg(data-icon="interactive-button/outline/search" width=18 height=18)
+        input.☘-input(title='out-suffix' style={
+            '--box-shadow-drop-bottom': 'none'
+        })
+        button(type="submit" title="search")
+            svg(data-icon="interactive-button/outline/search" width=18 height=18)
 ```

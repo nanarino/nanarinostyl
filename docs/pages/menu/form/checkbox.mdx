@@ -3,6 +3,7 @@ layout: "docs/layouts/main.astro"
 title: 复选框
 ---
 
+import T from "docs/components/T.astro"
 import Checkbox from "docs/components/checkbox/index.astro"
 import "docs/components/checkbox/label-marker.styl"
 import Grid from "docs/components/grid.astro"
@@ -142,12 +143,20 @@ style(lang="stylus").
 
 label为空即可不显示
 
-<Checkbox name="饿死了" dataset={{ indeterminate : true }}/>
+<T class="☘-form-item">
+    <label>是否完成</label>
+    <T class="☘-input-wrapper" data-primary>
+        <Checkbox name="饿死了" dataset={{ indeterminate : true }}/>
+    </T>
+</T>
 
 ```pug
-span.☘-checkbox(data-indeterminate)
-    input.☘-input(type="checkbox" title="饿死了")
-    label.☘-checkbox-label
+.☘-form-item
+    label 查找历史订单
+    .☘-input-wrapper
+        span.☘-checkbox(data-indeterminate)
+            input.☘-input(type="checkbox" title="饿死了")
+            label.☘-checkbox-label
 ```
 
 如果你只是需要label无法点击，只有单选框能被点击，可以不传入 `[for]`

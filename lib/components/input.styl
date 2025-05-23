@@ -36,7 +36,7 @@ textarea.{prefix}-textarea
 
     // --padding-textarea 5px 12px
     
-    --color-textarea var(--color-input-wrapper, var(--outline-color-focus))
+    --color-textarea var(_get_var_by("color-input\*", wrapper), var(--outline-color-focus))
 
     display inline-flex
     flex-direction column
@@ -60,7 +60,7 @@ input.{prefix}-input
     // --padding-vertical-input 4px
     // --padding-horizonal-input 12px
     
-    --color-input var(--color-input-wrapper, var(--outline-color-focus))
+    --color-input var(_get_var_by("color-input\*", wrapper), var(--outline-color-focus))
 
     &:not([type])
     &[type=text]
@@ -109,7 +109,7 @@ input.{prefix}-input
     min-height var(--line-height-body)
     align-items center
     position relative
-    border 2px none rgb(var(--color-input-wrapper, var(--gray-2)))
+    border 2px none rgb(var(_get_var_by("color-input\*", wrapper), var(--gray-2)))
     border-radius var(--border-radius-md)
 
     /**
@@ -123,15 +123,15 @@ input.{prefix}-input
     &:where([data-primary])
     &:where([data-validate])
 
-        --color-input-wrapper var(--primary-6)
+        {_get_var_by("color-input\*", wrapper)} var(--primary-6)
         
         for tag in buttons
             &:has({tag}:not(.{prefix}-input-prefix):not(.{prefix}-input-suffix))
-                background-color rgb(var(--color-input-wrapper))
+                background-color rgb(var(_get_var_by("color-input\*", wrapper)))
     
     // 校驗后樣式由用戶自訂是:invalid或響應式框架控制更靈活
     // &:has(:invalid)
-    //    --color-input-wrapper var(--danger-6)
+    //    {_get_var_by("color-input\*", wrapper)} var(--danger-6)
         
     &>*
         display inline-flex
@@ -142,7 +142,7 @@ input.{prefix}-input
             cursor pointer
             border-radius calc(var(--border-radius-md) - 2px)
             &:focus-visible
-                outline-color rgb(var(--color-input-wrapper, var(--black)))
+                outline-color rgb(var(_get_var_by("color-input\*", wrapper), var(--black)))
             ~/:where([data-primary]) ^[-1..-1]
                 color rgb(var(--white))
             
@@ -163,10 +163,10 @@ input.{prefix}-input
         bottom 0
         margin auto 0
         z-index 1
-        color rgb(var(--color-input-wrapper, var(--black)))
+        color rgb(var(_get_var_by("color-input\*", wrapper), var(--black)))
 
         // ~/[data-primary] ^[-1..-1]
-        //     color rgb(var(--color-input-wrapper))
+        //     color rgb(var(_get_var_by("color-input\*", wrapper)))
         
         /**
          * 这是祛除button的代理样式 前面已经处理 除了padding不同

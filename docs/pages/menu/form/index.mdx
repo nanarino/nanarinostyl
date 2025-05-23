@@ -38,16 +38,6 @@ lable(for='uname' title='username') 用户名
 
 使用键盘获取焦点时应该强制实现这个样式。默认是黑白，事实上浏览器已经实现。
 
-- `button` tab或点击一次后回车触发
-    - <T tag="button" class="☘-button">按钮</T>
-- `a` tab或点击一次后回车触发
-    - <T tag="a" class="☘-link" href="#">链接</T>
-- `input` tab或点击一次后回车触发 但是普通的文本输入框不会触发
-    - <T tag="input" class="☘-input" title="input" placeholder='请输入' />
-    - <Switch id="switch" checked />
-- `textarea` 无法触发
-    - <T tag="textarea" class="☘-textarea ☘-font-mono" title="textarea" placeholder='请输入' />
-
 使用全局css变量 `--outline-color-focus` 可以覆盖这个颜色RGB值
 
 `input[data-primary]` 和 `textarea[data-primary]` 预设了 `--outline-color-focus` 主题色覆盖黑白。
@@ -55,16 +45,17 @@ lable(for='uname' title='username') 用户名
 
 ## `form-item`
 
-`☘-form-item` 可以用来给表单项布局
-
-`☘-form-item-message[data-validate]` 可以显示提示消息（覆盖 `[data-primary]` 主題色为 `danger`）
+- `.☘-form-item` 可以用来给表单项布局
+- `.☘-form-item[data-inline]` 可以行内布局
+- `.☘-form-item-message` 可以显示提示消息
+- `.☘-input-wrapper[data-validate]` 开启表单校验 （覆盖 `[data-primary]` 主題色为 `danger`）
 
 <FormItems />
 
 ```pug
 form#formitems-kanban(onsubmit=function(){console.log(this.elements);return false})
     .☘-form-item
-        label(for="keywords") 卡号
+        label 卡号
         .☘-input-wrapper(data-validate)
             input#keywords.☘-input(
                 name="keywords"
@@ -75,7 +66,7 @@ form#formitems-kanban(onsubmit=function(){console.log(this.elements);return fals
             )
             span.☘-form-item-message(data-primary="danger") 卡号必填
     .☘-form-item
-        label(for="keywords") 类型
+        label 类型
         .☘-input-wrapper(data-validate)
             each item in [
                 { label: "银联", value: "UnionPay" },

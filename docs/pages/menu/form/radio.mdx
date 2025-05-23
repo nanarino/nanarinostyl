@@ -3,6 +3,7 @@ layout: "docs/layouts/main.astro"
 title: 单选框
 ---
 
+import T from "docs/components/T.astro"
 import Radio from "docs/components/radio.astro"
 import Grid from "docs/components/grid.astro"
 import colours from "docs/components/kanban/colors.ts"
@@ -10,7 +11,7 @@ import {components} from 'docs/components/markdown/index.mdx'
 export {components}
 
 
-# Radio
+# radio
 
 <Grid inline>
     <Radio name="lang" id="java" checked>Java</Radio>
@@ -92,31 +93,37 @@ div
 
 label为空即可不显示
 
-<div style="display: inline-flex">
-{
-    colours.map((color, i) => 
-        <Radio 
-            value={color}
-            checked={i==0}
-            name="radio-color"
-            style={{'--color-radio': `var(--${color}-6)`}}
-        />
-    )
-}
-</div>
+<T class="☘-form-item">
+    <label>颜色</label>
+    <T class="☘-input-wrapper" style="gap:0">
+    {
+        colours.map((color, i) => 
+            <Radio 
+                value={color}
+                checked={i==0}
+                name="radio-color"
+                style={{'--color-radio': `var(--${color}-6)`}}
+            />
+        )
+    }
+    </T>
+</T>
 
 ```pug
-each color, i in colors
-    span.☘-radio
-        input.☘-color(
-            type="radio"
-            checked=i==0
-            name="radio-color"
-            style={'--color-radio': `var(--${color}-6)`}
-            title=color
-            value=color
-        )
-        label.☘-radio-label
+.☘-form-item
+    label 程式代码
+    .☘-input-wrapper(style="gap:0")
+        each color, i in colors
+            span.☘-radio
+                input.☘-color(
+                    type="radio"
+                    checked=i==0
+                    name="radio-color"
+                    style={'--color-radio': `var(--${color}-6)`}
+                    title=color
+                    value=color
+                )
+                label.☘-radio-label
 ```
 
 如果你只是需要label无法点击，只有单选框能被点击，可以不传入 `[for]`

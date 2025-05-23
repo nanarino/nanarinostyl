@@ -1,0 +1,152 @@
+---
+layout: "docs/layouts/main.astro"
+title: 下拉选单
+---
+
+import T from "docs/components/T.astro"
+import { Icon } from "astro-icon/components"
+import {components} from 'docs/components/markdown/index.mdx'
+export {components}
+
+
+# select
+
+原生下拉框的样式修改是实验型功能
+
+没有 `option[selected]` 时自动选中第一个
+
+<T tag="select" class="☘-select" style="width:120px">
+    <option value="genshin">原神</option>
+    <option value="hsr">崩鉄</option>
+    <option value="zzz">絕區零</option>
+</T>
+
+```pug
+select.☘-select(style="width:120px")
+    option(value="genshin") 原神
+    option(value="hsr") 崩鉄
+    option(value="zzz") 絕區零
+```
+
+
+## `data-primary`
+
+`select.☘-select[data-primary]` 这个属性需要启用后才能继承主题和拥有某些局部样式
+
+局部变量 `--color-select` 可以直接设置主题颜色RGB值， 这优先于 `--color-input*-wrapper` 
+
+<T tag="select" class="☘-select" data-primary style="width:120px">
+    <option value="genshin">原神</option>
+    <option value="hsr">崩鉄</option>
+    <option value="zzz">絕區零</option>
+</T>
+
+```pug
+select.☘-select(data-primary style="width:120px")
+    option(value="genshin") 原神
+    option(value="hsr") 崩鉄
+    option(value="zzz") 絕區零
+```
+
+
+## `disabled`
+
+<T tag="select" class="☘-select" disabled style="width:120px">
+    <option value="genshin">原神</option>
+    <option value="hsr">崩鉄</option>
+    <option value="zzz" selected>絕區零</option>
+</T>
+
+```pug
+select.☘-select(disabled style="width:120px")
+    option(value="genshin") 原神
+    option(value="hsr") 崩鉄
+    option(value="zzz" selected) 絕區零
+```
+
+
+## `.sm` & `.lg`
+
+全局变量控制内边距
+
+- `--padding-horizonal-select` 纵向内边距
+- `--padding-vertical-select` 横向内边距
+
+有下面两个预设尺寸：
+
+-   <T class="☘-form-item">
+        <label>更小 `select.☘-select.sm`</label>
+        <T class="☘-input-wrapper" data-primary>
+            <T tag="select" class="☘-select sm" style="width:120px">
+                <option value="genshin">原神</option>
+                <option value="hsr">崩鉄</option>
+                <option value="zzz">絕區零</option>
+            </T>
+        </T>
+    </T>
+-   <T class="☘-form-item">
+        <label>更大 `select.☘-select.lg`</label>
+        <T class="☘-input-wrapper" data-primary>
+            <T tag="select" class="☘-select lg" style="width:120px">
+                <option value="genshin">原神</option>
+                <option value="hsr">崩鉄</option>
+                <option value="zzz">絕區零</option>
+            </T>
+        </T>
+    </T>
+
+
+
+## custom
+
+自定义图标很容易
+
+<T class="☘-form-item">
+    <label>故障机型</label>
+    <T class="☘-input-wrapper" data-primary>
+        <T tag="select" class="☘-select" style="width:180px">
+            <button>
+                <selectedcontent></selectedcontent>
+                <Icon
+                    name="direction/outline/down"
+                    width={16}
+                    height={16}
+                    style="color:rgb(var(--gray-6))"
+                />
+            </button>
+            <optgroup label="iPhone">
+                <option value="">iphone 16</option>
+                <option value="pro">iphone 16 pro</option>
+                <option value="se" data-primary="danger" selected>iphone 16e</option>
+            </optgroup>
+            <optgroup label="iPad">
+                <option value="mini" data-primary="warning">ipad mini 7 pro</option>
+                <option value="air">ipad air 13</option>
+                <option value="pro">ipad pro 13</option>
+            </optgroup>
+        </T>
+    </T>
+</T>
+
+```pug
+.☘-form-item
+    label 故障机型
+    .☘-input-wrapper(data-primary)
+        select.☘-select(style="width:180px")
+            button
+                selectedcontent
+                svg(
+                    data-icon='direction/outline/down'
+                    width=16
+                    height=16
+                    style="color:rgb(var(--gray-6))"
+                )
+            optgroup(label="iPhone")
+                option(value="") iphone 16
+                option(value="pro") iphone 16 pro
+                option(value="se" data-primary="danger" selected) iphone 16e
+            optgroup(label="iPad")
+                option(value="mini" data-primary="warning") ipad mini 7 pro
+                option(value="air") ipad air 13
+                option(value="pro") ipad pro 13
+```

@@ -83,12 +83,12 @@
     // 图片上传
     &.{prefix}-input-wrapper
 
-        color rgb(var(--color-input-wrapper, var(--gray-6)))
+        color rgb(var(_get_var_by("color-input\*", wrapper), var(--gray-6)))
 
         input[type=file].{prefix}-input
 
             --color-input var(--gray-6)
-            --outline-color-focus var(--color-input-wrapper, var(--color-input))
+            --outline-color-focus var(_get_var_by("color-input\*", wrapper), var(--color-input))
 
             &:where([data-primary])
                 --color-input var(--primary-6)

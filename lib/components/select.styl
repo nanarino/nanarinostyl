@@ -1,0 +1,82 @@
+select.{prefix}-select
+    // --padding-vertical-select 4px
+    // --padding-horizonal-select 12px
+    --color-select var(_get_var_by("color-input\*", wrapper), var(--outline-color-focus))
+    
+    flex 1
+    // 默认的
+    // display inline-flex
+    align-items center
+    padding var(--padding-vertical-select, 4px) var(--padding-horizonal-select, 12px)
+    &.sm
+        --padding-vertical-select 0
+
+    &.lg
+        --padding-vertical-select 7px
+        --font-size-body var(--font-size-h5)
+        --line-height-body var(--line-height-h5)
+    &:where([data-primary])
+        --color-select var(--primary-6)
+
+    // 以下来自 ./input.styl def input_stat():
+
+    appearance base-select
+    box-sizing border-box
+    border none
+    outline 2px solid transparent
+    border-radius var(--border-radius-md)
+    font-size var(--font-size-body)
+    line-height var(--line-height-body)
+    background-color rgb(var(--gray-2))
+    &:hover
+        box-shadow var(--box-shadow-drop-bottom)
+    &:open
+    &:focus
+        outline-color rgb(var(_get_var_by(color, select)))
+    &:focus-visible
+        box-shadow var(--box-shadow-drop-bottom)
+    transition border-color .3s, box-shadow .3s
+
+    &[disabled]
+        cursor not-allowed
+        background-color rgb(var(--gray-1))
+        color rgb(var(--gray-6))
+        &:hover
+            box-shadow none
+    
+    optgroup
+        display grid
+        gap 2px
+        line-height calc(var(--line-height-body) + 8px)
+    option
+        padding @padding
+        line-height @line-height
+        border-radius @border-radius
+        outline-color rgb(var(_get_var_by(color, select)))
+        &:hover
+        &:focus
+            color rgb(var(--primary-6))
+            background-color rgb(var(--primary-1))
+    
+    // 彈出層
+    &::picker(select)
+        border none
+        transform translateY(8px)
+        border-radius @border-radius
+        box-shadow var(--box-shadow-drop-bottom)
+        appearance base-select
+        background rgb(var(--white))
+        padding 4px
+        gap 4px
+        ^[0]:open^[-1..-1]
+            display grid
+    
+    &:where(:has(selectedcontent))
+        &::picker-icon
+            display none
+        button
+            color rgb(var(--black))
+
+    selectedcontent
+        flex 1
+    
