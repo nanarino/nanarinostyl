@@ -7,6 +7,10 @@ interface Props {
 const href = Astro.props.href.replace(/^\//, import.meta.env.BASE_URL)
 ---
 
-<a class={`${prefix}-link`} href={href}>
+<a
+    class={`${prefix}-link`}
+    href={href}
+    target={/^\//.test(Astro.props.href) ? "_self" : "_blank"}
+>
     <slot />
 </a>

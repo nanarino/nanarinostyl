@@ -71,11 +71,11 @@ select.{prefix}-select
         ^[0]:open^[-1..-1]
             display grid
     
-    &:where(:has(selectedcontent))
-        &::picker-icon
-            display none
-        button
-            color rgb(var(--black))
+    &:where(:has(selectedcontent))::picker-icon
+        display none
+    
+    button
+        color rgb(var(--black))
 
     selectedcontent
         flex 1

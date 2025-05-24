@@ -67,7 +67,7 @@ select.☘-select(disabled style="width:120px")
 
 ## `.sm` & `.lg`
 
-全局变量控制内边距
+全局变量控制内边距，数值和预设都与 `input.☘-input` 一致
 
 - `--padding-horizonal-select` 纵向内边距
 - `--padding-vertical-select` 横向内边距
@@ -77,7 +77,7 @@ select.☘-select(disabled style="width:120px")
 -   <T class="☘-form-item">
         <label>更小 `select.☘-select.sm`</label>
         <T class="☘-input-wrapper" data-primary>
-            <T tag="select" class="☘-select sm" style="width:120px">
+            <T tag="select" class="☘-select sm" style="width:90px">
                 <option value="genshin">原神</option>
                 <option value="hsr">崩鉄</option>
                 <option value="zzz">絕區零</option>
@@ -87,7 +87,7 @@ select.☘-select(disabled style="width:120px")
 -   <T class="☘-form-item">
         <label>更大 `select.☘-select.lg`</label>
         <T class="☘-input-wrapper" data-primary>
-            <T tag="select" class="☘-select lg" style="width:120px">
+            <T tag="select" class="☘-select lg" style="width:90px">
                 <option value="genshin">原神</option>
                 <option value="hsr">崩鉄</option>
                 <option value="zzz">絕區零</option>
@@ -97,9 +97,9 @@ select.☘-select(disabled style="width:120px")
 
 
 
-## custom
+## custom style
 
-自定义图标很容易
+自定义图标很容易，不需要覆盖 `select::picker-icon` 直接使用 `select>button:first-of-type` 来狸猫换太子
 
 <T class="☘-form-item">
     <label>故障机型</label>
