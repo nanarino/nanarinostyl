@@ -28,6 +28,8 @@ select.☘-select(style="width:120px")
     option(value="zzz") 絕區零
 ```
 
+未预设 `select::picker-icon` 伪元素图标，原因见[自定义样式](/menu/form/select#custom-style)
+
 
 ## `data-primary`
 
@@ -77,7 +79,7 @@ select.☘-select(disabled style="width:120px")
 -   <T class="☘-form-item">
         <label>更小 `select.☘-select.sm`</label>
         <T class="☘-input-wrapper" data-primary>
-            <T tag="select" class="☘-select sm" style="width:90px">
+            <T tag="select" class="☘-select sm" style="width:88px">
                 <option value="genshin">原神</option>
                 <option value="hsr">崩鉄</option>
                 <option value="zzz">絕區零</option>
@@ -87,7 +89,7 @@ select.☘-select(disabled style="width:120px")
 -   <T class="☘-form-item">
         <label>更大 `select.☘-select.lg`</label>
         <T class="☘-input-wrapper" data-primary>
-            <T tag="select" class="☘-select lg" style="width:90px">
+            <T tag="select" class="☘-select lg" style="width:99px">
                 <option value="genshin">原神</option>
                 <option value="hsr">崩鉄</option>
                 <option value="zzz">絕區零</option>
@@ -99,7 +101,7 @@ select.☘-select(disabled style="width:120px")
 
 ## custom style
 
-自定义图标很容易，不需要覆盖 `select::picker-icon` 直接使用 `select>button:first-of-type` 来狸猫换太子
+自定义图标很容易，不需要覆盖 `select::picker-icon`，直接使用 `select>button:first-of-type` 来狸猫换太子，这便于利用到 `svg>symbol` 节省文档渲染
 
 <T class="☘-form-item">
     <label>故障机型</label>

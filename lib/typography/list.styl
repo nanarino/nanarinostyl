@@ -1,6 +1,10 @@
+// ul.{prefix}-list
+// li.{prefix}-list
 .{prefix}-list
     line-height 2
-    &>*:only-child
+    &>*
+    &>li>*
         vertical-align middle
     &::marker
+    &>li::marker
         color rgb(var(--primary-5))

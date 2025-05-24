@@ -1,4 +1,5 @@
-select.{prefix}-select
+// select.{prefix}-select
+.{prefix}-select
     // --padding-vertical-select 4px
     // --padding-horizonal-select 12px
     --color-select var(_get_var_by("color-input\*", wrapper), var(--outline-color-focus))
@@ -74,6 +75,8 @@ select.{prefix}-select
     &:where(:has(selectedcontent))::picker-icon
         display none
     
+    // 要先引入 input 再引入 select
+    // 纔能保證未被 `.☘-input-wrapper:where([data-primary]) button` 覆蓋 
     button
         color rgb(var(--black))
 
