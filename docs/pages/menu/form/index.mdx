@@ -5,6 +5,7 @@ title: 表单
 
 import T from "docs/components/T.astro"
 import Switch from "docs/components/switch/index.astro"
+import Radio from "docs/components/radio.astro"
 import FormItems from "docs/components/kanban/form-items.astro"
 import {components} from 'docs/components/markdown/index.mdx'
 export {components}
@@ -32,25 +33,40 @@ lable(for='uname' title='username') 用户名
 ## `:focus-visible`
 
 ```sass
+outline 2px solid transparent // 覆盖暗黑模式情况下白色优先
 &:focus-visible
     outline-color: rgb(var(--black))
 ```
 
-使用键盘获取焦点时应该强制实现这个样式。默认是黑白，事实上浏览器已经实现。
+使用键盘获取焦点时应该实现这个样式。默认是黑白。
 
 使用全局css变量 `--outline-color-focus` 可以覆盖这个颜色RGB值
 
-`input[data-primary]` 和 `textarea[data-primary]` 预设了 `--outline-color-focus` 主题色覆盖黑白。
+`input[data-primary]` 等元件预设了 `--outline-color-focus` 主题色覆盖黑白。
 
-- `button` tab 或点击事件后回车
-    - <T tag="button" class="☘-button">按钮</T>
-- `a` tab 或点击事件后回车
-    - <T tag="a" class="☘-link" href="#">链接</T>
-- `input` tab 单选框可以使用左右 下拉框可以使用上下
-    - <T tag="input" class="☘-input" title="input" placeholder='请输入' />
-    - <Switch id="switch" checked />
-- `textarea` tab
+- `button`
+    - <T tag="button" class="☘-button sm">按钮</T>
+      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">Enter</kbd>
+- `a`
+    - <T tag="a" class="☘-link" href="#focus-visible">链接</T>
+      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">Enter</kbd>
+- `input`
+    - <T tag="input" class="☘-input sm" title="input" placeholder='请输入' />
+      支援：<kbd class="na-kbd">Tab</kbd>
+    - <Switch id="switch" class="sm" checked />
+      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">Space</kbd>
+    - <Radio name="lang" id="A" checked>A</Radio> <Radio name="lang" id="B">B</Radio>
+      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">&larr;</kbd><kbd class="na-kbd">&rarr;</kbd> <kbd class="na-kbd">&uarr;</kbd><kbd class="na-kbd">&darr;</kbd>
+- `textarea`
     - <T tag="textarea" class="☘-textarea ☘-font-mono" title="textarea" placeholder='请输入' />
+      支援：<kbd class="na-kbd">Tab</kbd>
+- `select` `option`
+    - <T tag="select" class="☘-select" style="width:120px">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </T> 
+      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">Space</kbd> <kbd class="na-kbd">Enter</kbd> <kbd class="na-kbd">&larr;</kbd><kbd class="na-kbd">&rarr;</kbd> <kbd class="na-kbd">&uarr;</kbd><kbd class="na-kbd">&darr;</kbd>
 
 
 ## `form-item`
@@ -84,10 +100,9 @@ form#formitems-kanban(onsubmit=function(){console.log(this.elements);return fals
                 { label: "美国运通", value: "AmericanExpress" },
             ]
                 span.☘-radio
-                    input(
+                    input.☘-input(
                         id=item.value
                         type="radio"
-                        class="☘-input"
                         name="type"
                         title=item.label
                         value=item.value
@@ -95,7 +110,8 @@ form#formitems-kanban(onsubmit=function(){console.log(this.elements);return fals
                     )
                     label.☘-radio-label(for=item.value)= item.label
             span.☘-form-item-message(data-primary="danger") 类型必填
-    input.☘-button(type="submit" value="查找")
+    input.☘-button(type="reset" value="重置")
+    input.☘-button(type="submit" value="查找" data-primary)
 ```
 
 这里使用 `:invalid` 來自定义校验样式，你也可以使用如 `vue` 等响应式库来控制

@@ -32,11 +32,10 @@
     &:hover
         box-shadow var(--box-shadow-drop-bottom)
     &:open
-    &:focus
-        outline-color rgb(var(_get_var_by(color, select)))
     &:focus-visible
+        outline-color rgb(var(_get_var_by(color, select)))
         box-shadow var(--box-shadow-drop-bottom)
-    transition border-color .3s, box-shadow .3s
+    transition outline-color .3s, box-shadow .3s
 
     &[disabled]
         cursor not-allowed
@@ -53,11 +52,13 @@
         padding @padding
         line-height @line-height
         border-radius @border-radius
-        outline-color rgb(var(_get_var_by(color, select)))
+        outline @outline
         &:hover
-        &:focus
+        &:focus-visible
             color rgb(var(--primary-6))
             background-color rgb(var(--primary-1))
+        &:focus-visible
+            outline-color rgb(var(_get_var_by(color, select)))
     
     // 彈出層
     &::picker(select)

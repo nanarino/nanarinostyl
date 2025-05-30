@@ -12,12 +12,11 @@ input_stat(tag)
 
     background-color rgb(var(--gray-2))
     &:hover
-        box-shadow var(--box-shadow-drop-bottom)
-    &:focus
-        outline-color rgb(var(_get_var_by(color, tag)))
     &:focus-visible
         box-shadow var(--box-shadow-drop-bottom)
-    transition border-color .3s, box-shadow .3s
+    &:focus-visible
+        outline-color rgb(var(_get_var_by(color, tag)))
+    transition outline-color .3s, box-shadow .3s
 
     &[disabled]
         cursor not-allowed
@@ -141,6 +140,7 @@ input.{prefix}-input
         {tag}
             cursor pointer
             border-radius calc(var(--border-radius-md) - 2px)
+            outline 2px solid transparent
             &:focus-visible
                 outline-color rgb(var(_get_var_by("color-input\*", wrapper), var(--black)))
             ~/:where([data-primary]) ^[-1..-1]
