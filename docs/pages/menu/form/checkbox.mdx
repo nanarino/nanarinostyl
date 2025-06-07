@@ -13,13 +13,13 @@ export {components}
 
 # checkbox
 
-<Checkbox id="world" checked style="--indent-checkbox: 2em">world</Checkbox>
+<Checkbox id="world" checked style="--indent-checkbox: 2em; line-height: 2">world</Checkbox>
 
 全局变量 `--indent-checkbox` 改变label文字左内边距    
 这原本是用 `text-indent` 属性实现。但在Safari中使用 `::before` 的元素不支持 `text-indent`，遂改用 `padding-left` 来实现。默认值是1.4em
 
 ```pug
-span.☘-checkbox(style="--indent-checkbox: 2em")
+span.☘-checkbox(style="--indent-checkbox: 2em; line-height: 2")
     input#hello.☘-input(type="checkbox" title="world")
     label.☘-checkbox-label(for="hello") world
 ```

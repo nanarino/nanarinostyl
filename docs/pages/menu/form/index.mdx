@@ -46,17 +46,17 @@ outline 2px solid transparent // 覆盖暗黑模式情况下白色优先
 
 - `button`
     - <T tag="button" class="☘-button sm">按钮</T>
-      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">Enter</kbd>
+      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">Enter</kbd> <kbd class="na-kbd">Shift</kbd>
 - `a`
     - <T tag="a" class="☘-link" href="#focus-visible">链接</T>
-      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">Enter</kbd>
+      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">Enter</kbd> <kbd class="na-kbd">Shift</kbd>
 - `input`
     - <T tag="input" class="☘-input sm" title="input" placeholder='请输入' />
       支援：<kbd class="na-kbd">Tab</kbd>
     - <Switch id="switch" class="sm" checked />
-      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">Space</kbd>
+      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">Space</kbd> <kbd class="na-kbd">Shift</kbd>
     - <Radio name="lang" id="A" checked>A</Radio> <Radio name="lang" id="B">B</Radio>
-      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">&larr;</kbd><kbd class="na-kbd">&rarr;</kbd> <kbd class="na-kbd">&uarr;</kbd><kbd class="na-kbd">&darr;</kbd>
+      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">&larr;</kbd><kbd class="na-kbd">&rarr;</kbd> <kbd class="na-kbd">&uarr;</kbd><kbd class="na-kbd">&darr;</kbd> <kbd class="na-kbd">Shift</kbd>
 - `textarea`
     - <T tag="textarea" class="☘-textarea ☘-font-mono" title="textarea" placeholder='请输入' />
       支援：<kbd class="na-kbd">Tab</kbd>
@@ -66,7 +66,7 @@ outline 2px solid transparent // 覆盖暗黑模式情况下白色优先
         <option value="2">2</option>
         <option value="3">3</option>
       </T> 
-      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">Space</kbd> <kbd class="na-kbd">Enter</kbd> <kbd class="na-kbd">&larr;</kbd><kbd class="na-kbd">&rarr;</kbd> <kbd class="na-kbd">&uarr;</kbd><kbd class="na-kbd">&darr;</kbd>
+      支援：<kbd class="na-kbd">Tab</kbd> <kbd class="na-kbd">Space</kbd> <kbd class="na-kbd">Enter</kbd> <kbd class="na-kbd">&larr;</kbd><kbd class="na-kbd">&rarr;</kbd> <kbd class="na-kbd">&uarr;</kbd><kbd class="na-kbd">&darr;</kbd> <kbd class="na-kbd">Shift</kbd>
 
 
 ## `form-item`
@@ -114,4 +114,4 @@ form#formitems-kanban(onsubmit=function(){console.log(this.elements);return fals
     input.☘-button(type="submit" value="查找" data-primary)
 ```
 
-这里使用 `:invalid` 來自定义校验样式，你也可以使用如 `vue` 等响应式库来控制
+`[data-validate]` 使用 `:invalid` 來自定义校验样式，你也可以使用如 `vue` 等响应式库来控制
