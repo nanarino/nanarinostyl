@@ -33,23 +33,37 @@ select.☘-select(style="width:120px")
 
 ## `data-primary`
 
-`select.☘-select[data-primary]` 这个属性需要启用后才能继承主题和拥有某些局部样式
+`select.☘-select[data-primary]` 这个属性需要启用后才能继承主题和拥有某些局部样式，或置于 `☘-input-wrapper[data-primary]` 中
 
-局部变量 `--color-select` 可以直接设置主题颜色RGB值， 这优先于 `--color-input*-wrapper` 
+局部变量 `--color-select` 可以直接设置主题颜色RGB值， 这优先于 `--color-input*-wrapper`
 
-<T tag="select" class="☘-select" data-primary style="width:120px">
+<T tag="select" class="☘-select" data-primary="success" style="width:120px">
     <option value="genshin">原神</option>
     <option value="hsr">崩鉄</option>
     <option value="zzz">絕區零</option>
 </T>
 
 ```pug
-select.☘-select(data-primary style="width:120px")
+select.☘-select(data-primary="success" style="width:120px")
     option(value="genshin") 原神
     option(value="hsr") 崩鉄
     option(value="zzz") 絕區零
 ```
 
+但会被 `select.☘-select>option[data-primary]` 的效果覆盖
+
+<T tag="select" class="☘-select" data-primary style="width:120px">
+    <option value="genshin">原神</option>
+    <option value="hsr">崩鉄</option>
+    <option value="zzz" data-primary="success">絕區零</option>
+</T>
+
+```pug
+select.☘-select(data-primary style="width:120px")
+    option(value="genshin") 原神
+    option(value="hsr") 崩鉄
+    option(value="zzz" data-primary="success") 絕區零
+```
 
 ## `disabled`
 

@@ -91,9 +91,9 @@ input.☘-input.☘-font-mono(
 
 ## `data-primary`
 
-设置 `input.☘-input[data-primary]` 可以覆盖全局css变量 `--outline-color-focus`
+设置 `input.☘-input[data-primary]` 可以覆盖全局css变量 `--outline-color-focus`，或置于 `☘-input-wrapper[data-primary]` 中
 
-局部变量 `--color-input` 可以直接设置主题颜色RGB值
+局部变量 `--color-input` 可以直接设置主题颜色RGB值，这优先于 `--color-input*-wrapper`
 
 <Grid inline>
 {
@@ -168,55 +168,11 @@ input.☘-input(
     <br/><T tag="input" class="☘-input lg" title="helloworld" placeholder="更大" />
 
 
-## wrapper
 
-把 input 放在 `.☘-input-wrapper` 这个容器中可以用来显示前缀后缀
-
-该容器启用 `.☘-input-wrapper[data-primary]` 也会覆盖全局css变量 `--outline-color-focus` 和继承某些样式
-
-直接使用局部变量 `--color-input*-wrapper` 也可以设置主题以及焦点时颜色RGB值，优先级低于 `--color-input`。 其中的星号 `*` 意味着这是一个广义的 `input`，也能作用于 `select`、`textarea`
-
-<Grid inline>
-    <T class="☘-form-item">
-        <label>单号</label>
-        <T class="☘-input-wrapper" data-primary>
-            <T tag="input" class="☘-input" title="单号" value='114514'/>
-        </T>
-    </T>
-    <T class="☘-form-item">
-        <label>流水号</label>
-        <T class="☘-input-wrapper">
-            <T tag="input" class="☘-input" title="流水号" value='1919810'
-                style="--color-input: var(--yellow-5)"
-            />
-        </T>
-    </T>
-</Grid>
-
-```pug
-.☘-form-item
-    label 单号
-    .☘-input-wrapper(data-primary)
-        input.☘-input(title='单号' value='114514')
-.☘-form-item
-    label 流水号
-    .☘-input-wrapper
-        input.☘-input(title='流水号' value='1919810' style={
-            '--color-input': 'var(--yellow-5)'
-        })
-```
-
-注意，使用 `*` 可能需要转义：
-
-- `ipt.style.setProperty('--color-input*-wrapper', '0 255 255')`
-- `ipt.style = '--color-input\*-wrapper: 0 255 255'`
-
-
-另外参见：[_表单_](/menu/form/#form-item)
 
 ### prefix
 
-需要在 `.☘-input-wrapper` 中使用
+需要在 `.☘-input-wrapper` 中使用，参见：[_表单_](/menu/form/#wrapper)
 
 这里使用 `[type="search]"` 在**Safari**上会有额外的放大镜图标
 

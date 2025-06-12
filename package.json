@@ -1,7 +1,7 @@
 {
     "name": "nanarinostyl",
     "description": "style lib",
-    "version": "0.10.3",
+    "version": "0.10.4",
     "main": "./dist/style.min.css",
     "scripts": {
         "dev": "astro dev --host",
@@ -32,16 +32,16 @@
     "devDependencies": {
         "@astrojs/mdx": "^4.3.0",
         "@holy-two/data-theme": "^0.0.6",
-        "@types/node": "^22.15.26",
-        "astro": "^5.8.1",
+        "@types/node": "^22.15.31",
+        "astro": "^5.9.2",
         "astro-icon": "^1.1.5",
         "copy-to-clipboard": "^3.3.3",
-        "css-doodle": "^0.42.4",
+        "css-doodle": "^0.42.6",
         "csso-cli": "^4.0.2",
         "dedent": "^1.6.0",
         "rm-all": "^1.1.1",
         "smooth-corners": "^1.0.8",
-        "style-to-object": "^1.0.8",
+        "style-to-object": "^1.0.9",
         "stylus": "^0.64.0"
     },
     "files": [
